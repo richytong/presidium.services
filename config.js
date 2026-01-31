@@ -1,5 +1,7 @@
 const ScriptTag = require('./lib/ScriptTag')
 const StylesheetTag = require('./lib/StylesheetTag')
+const ClassNames = require('./internal/ClassNames')
+const presidium = require('../presidium')
 
 module.exports = {
   domain: 'presidium.services',
@@ -29,7 +31,7 @@ module.exports = {
 
   stylesheets: [
     StylesheetTag('https://fonts.googleapis.com'),
-    StylesheetTag('/global.css'),
+    StylesheetTag('/index.css'),
     StylesheetTag('/vendor/codemirror/styles.css'),
     StylesheetTag('/vendor/codemirror/theme/rubico.css'),
     StylesheetTag('/vendor/codemirror/theme/coffeescript.css'),
@@ -40,9 +42,22 @@ module.exports = {
   pages: [
     {
       title: 'Presidium',
-      description: 'A library for creating web services',
+      description: 'Documentation for Presidium',
       url: '/',
       filepath: '/index.html',
     },
+    {
+      title: 'Presidium Docs',
+      description: 'Documentation for Presidium',
+      url: '/docs',
+      filepath: '/docs.html',
+    },
+
+    ...ClassNames(presidium).map(className => ({
+      title: `${className} | Presidium Docs`,
+      description: `Documentation for Presidium ${className}`,
+      url: `/docs/${className}`,
+      filepath: `/docs/${className}.html`,
+    }))
   ],
 }

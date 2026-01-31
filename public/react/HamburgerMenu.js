@@ -1,4 +1,4 @@
-// import DocsNav from './DocsNav.js'
+import DocsNav from './DocsNav.js'
 import useIsHamburgerMenuActive from './useIsHamburgerMenuActive.js'
 
 const HamburgerMenu = ReactElement(props => {
@@ -18,7 +18,7 @@ const HamburgerMenu = ReactElement(props => {
     ]),
 
     Div({ class: 'docs-nav' }, [
-      // DocsNav(props),
+      DocsNav(props),
     ]),
   ])
 })

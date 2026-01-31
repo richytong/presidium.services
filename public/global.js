@@ -34,3 +34,4 @@ window.useState = React.useState
 
 // config
 window.defaultPresidiumVersion = 'V1'
+window.defaultDocsViewerClassName = 'Archive'

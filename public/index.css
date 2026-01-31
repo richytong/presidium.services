@@ -88,6 +88,34 @@ body {
   font-size: 31px;
 }
 
+#layout > nav > .home > .links {
+  display: flex;
+  align-items: center;
+  margin-left: 10%;
+  padding-top: 5px;
+  font-size: 31px;
+  font-weight: 600;
+}
+@media only screen and (max-width: 768px) {
+  #layout > nav > .home > .links {
+    display: none;
+  }
+}
+
+#layout > nav > .home > .links {
+}
+
+.nav-link {
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+}
+.nav-link.active {
+  color: #000;
+  text-decoration: underline;
+  text-decoration-color: #000;
+}
+
 #layout > footer {
   padding: 15px 30px;
 }
@@ -195,6 +223,7 @@ body {
 #hamburger-menu .docs-nav nav .docs-nav-item {
   font-size: 1.2rem;
   padding: 1px 0px;
+  overflow-x: scroll;
 }
 
 .slider {
@@ -218,4 +247,77 @@ article .image {
 
 article a {
   text-decoration: none;
+}
+
+#docs {
+  display: flex;
+}
+
+#docs .viewer > a {
+  text-decoration: none;
+}
+
+#docs .sidebar {
+  padding-top: 10px;
+  border-right: 1px solid #e4e4e4;
+  width: 20%;
+  padding-right: 2%;
+  overflow-x: hidden;
+}
+@media only screen and (max-width: 768px) {
+  #docs .sidebar {
+    display: none;
+  }
+}
+
+#docs .sidebar nav {
+}
+#docs .sidebar nav section {
+  margin-bottom: 10px;
+}
+#docs .sidebar nav h4 {
+  font-size: 18px;
+  padding: 3px 0px;
+}
+#docs .sidebar nav .docs-nav-item {
+  padding: 1px 0px;
+}
+
+#docs .viewer {
+  width: 75%;
+  padding-left: 2%;
+}
+@media only screen and (max-width: 768px) {
+  #docs .viewer {
+    width: 100%;
+  }
+}
+
+#docs .viewer h1 {
+  font-size: 42px;
+  margin: 12px 0px;
+  color: #000;
+  overflow-x: scroll;
+}
+@media only screen and (max-width: 768px) {
+  #docs .viewer h1 {
+    font-size: 2rem;
+  }
+}
+
+#docs-search input {
+  background: url('/assets/magnifying-glass-docs-search-d4d4d4.svg') no-repeat 98% 5px;
+  background-size: 15px;
+  padding: 5px 3%;
+  width: calc(94% - 5px);
+  padding-right: 15px;
+  border: 1px solid #e4e4e4;
+  border-radius: 5px;
+}
+
+.docs-nav-item a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  overflow-x: scroll;
 }

@@ -55,13 +55,15 @@ async function main() {
     } catch (error) {
       if (error.message.includes('ENOENT')) {
         console.log('Creating page', fullFilepath.replace(process.env.HOME, '~'))
+        const dirname = fullFilepath.split('/').slice(0, -1).join('/')
+        await fs.promises.mkdir(dirname, { recursive: true })
         await fs.promises.writeFile(fullFilepath, PageHTML({
           title,
           description,
           url: `https://${domain}${url}`,
           scripts,
           stylesheets,
-          bodyHTML: '',
+          bodyHTML: '<div id="react-root"></div>',
         }))
       } else {
         throw error

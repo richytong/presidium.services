@@ -1,3 +1,4 @@
+import NavLink from './NavLink.js'
 import Slider from './Slider.js'
 import HamburgerMenu from './HamburgerMenu.js'
 import HamburgerMenuIcon from './HamburgerMenuIcon.js'
@@ -36,7 +37,7 @@ const Layout = ReactElement(props => {
   return Div({ id: 'layout' }, [
     Nav([
       Div({ class: 'home' }, [
-        A({
+        NavLink({
           id: 'home-link',
           href: '/',
         }, [
@@ -59,8 +60,7 @@ const Layout = ReactElement(props => {
         ]),
 
         Div({ class: 'links' }, [
-          // A({ href: '/tour' }, 'Tour'),
-          // A({ href: '/docs' }, 'Docs'),
+          NavLink({ href: '/docs' }, 'Docs'),
           // A({ href: '/blog' }, 'Blog'),
         ]),
       ]),

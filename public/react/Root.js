@@ -1,9 +1,7 @@
 import Home from './Home.js'
+import DocsHome from './DocsHome.js'
 import NotFoundHome from './NotFoundHome.js'
-
-const path = location.pathname.endsWith('/') && location.pathname != '/'
-  ? location.pathname.slice(0, -1)
-  : location.pathname
+import usePath from './usePath.js'
 
 /**
  * @name Root
@@ -14,8 +12,23 @@ const path = location.pathname.endsWith('/') && location.pathname != '/'
  * ```
  */
 const Root = ReactElement(() => {
+  const [path, setPath] = usePath()
+
+  useEffect(() => {
+    const listener = addEventListener('popstate', () => {
+      console.log(path, document.location)
+    })
+
+    return () => {
+      removeEventListener(listener)
+    }
+  }, [])
+
   if (path == '/') {
     return Home()
+  }
+  if (path == '/docs' || path.startsWith('/docs')) {
+    return DocsHome()
   }
   return NotFoundHome()
 })

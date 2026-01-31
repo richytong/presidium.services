@@ -14,7 +14,11 @@ const createMdastFile = async function (source, dest, options = {}) {
     readFileUtf8,
     cronist.parseMarkdown,
     data => fs.promises.writeFile(dest, `
-export default ${inspect(data, { depth: Infinity, maxArrayLength: null })}
+export default ${inspect(data, {
+  depth: Infinity,
+  maxArrayLength: null,
+  maxStringLength: Infinity,
+})}
   `.trim()),
   ])
 }
@@ -31,32 +35,42 @@ const createCronistFile = async function (source, dest, options = {}) {
     ])),
 
     data => fs.promises.writeFile(dest, `
-export default ${inspect(data, { depth: Infinity, maxArrayLength: null })}
+export default ${inspect(data, {
+  depth: Infinity,
+  maxArrayLength: null,
+  maxStringLength: Infinity,
+})}
   `.trim()),
   ])
 }
 
 // createMdast() -> Promise<>
 const createMdast = async function () {
-  const publicFs = new FileSystem({ cwd: `${__dirname}/public` })
-
   console.log('Creating mdast/readme.js')
   await createMdastFile(
     `${__dirname}/../presidium/README.md`,
     `${__dirname}/public/mdast/readme.js`,
   )
 
-  const rubicoVersion = require('rubico/package').version
-  const rubicoMajorVersion = rubicoVersion.split('.')[0]
-  console.log(`Creating cronist/presidium-v${rubicoMajorVersion}.js`)
+  const presidiumVersion = require('../presidium/package').version
+  const presidiumMajorVersion = presidiumVersion.split('.')[0]
+  console.log(`Creating cronist/presidium-v${presidiumMajorVersion}.js`)
   await createCronistFile(
     `${__dirname}/../presidium`,
-    `${__dirname}/public/cronist/presidium-v${rubicoMajorVersion}.js`,
+    `${__dirname}/public/cronist/presidium-v${presidiumMajorVersion}.js`,
     {
       requiredKeys: ['name', 'docs', 'description'],
       ignoreDirs: ['node_modules', 'archive'],
     },
   )
+
+  console.log(`Creating presidium/v${presidiumMajorVersion}-filenames.js`)
+  const presidiumFiles = require('../presidium/package').files
+  await fs.promises.writeFile(`${__dirname}/public/presidium/v${presidiumMajorVersion}-filenames.js`, `
+export default [
+  ${presidiumFiles.map(name => `'${name}',`).join('\n  ')}
+]
+  `.trim())
 }
 
 if (require.main == module) {
