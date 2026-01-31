@@ -1,0 +1,217 @@
+html {
+  /*
+  font-family:
+    -apple-system, system-ui, BlinkMacSystemFont, 
+    'Segoe UI', Roboto, 'Helvetica Neue', 
+    Ubuntu, Arial, sans-serif;
+    */
+}
+
+* {
+  color: #1f2328;
+  font-family: Inter, sans-serif;
+}
+
+@font-face {
+  font-family: Inter;
+  src: url(/assets/fonts/Inter/Inter_24pt-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Inter;
+  src: url(/assets/fonts/Inter/Inter_24pt-Medium.ttf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Inter;
+  src: url(./assets/fonts/Inter/Inter_24pt-Bold.ttf);
+  font-weight: 700;
+}
+
+body {
+  margin: 0;
+  background-color: #fff;
+}
+
+#layout {
+  width: 100%;
+  margin: 0 auto;
+}
+#layout main {
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 5px 2%;
+  padding-bottom: 25px;
+  width: 94%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 5px auto;
+  min-height: 100vh;
+}
+@media only screen and (max-width: 768px) {
+  #layout main {
+    width: 96%;
+  }
+}
+#layout > nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px;
+}
+#layout > nav > .right-links {
+  position: relative;
+  padding-right: 2%;
+  padding-top: 5px;
+}
+@media only screen and (max-width: 768px) {
+  #layout > nav > .right-links {
+    padding-top: 0px;
+  }
+}
+
+#layout > nav > .home {
+  display: flex;
+  align-items: center;
+}
+#layout > nav > .home select {
+  position: relative;
+  top: 3px;
+  border: none;
+  outline: none;
+  padding: 8px 5px;
+  border-radius: 5px;
+  margin-left: 15px;
+  background-color: #e4e4e4;
+  color: #000;
+  cursor: pointer;
+}
+@media only screen and (max-width: 768px) {
+  #layout > nav > .home {
+  }
+  #layout > nav > .home select {
+    top: 0;
+    margin-left: 0px;
+  }
+}
+
+#home-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #1f2328;
+  margin-left: 20px;
+  /*
+  margin-right: 8vw;
+  */
+}
+#home-link .text1 {
+  margin-top: 8px;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1em;
+}
+#home-link > img {
+  width: 150px;
+  margin: 0px 15px;
+}
+@media only screen and (max-width: 768px) {
+  #home-link {
+  }
+  #home-link .text1 {
+    display: none;
+  }
+  #home-link > img {
+    width: 100px;
+  }
+}
+
+#hamburger-menu {
+  display: none;
+}
+#hamburger-menu.active {
+  display: block;
+}
+
+#hamburger-menu-icon {
+  width: 50px;
+  height: 50px;
+  overflow-y: hidden;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 0;
+  position: absolute;
+  left: -50px;
+  background-color: transparent;
+}
+#hamburger-menu-icon svg {
+  transition: opacity 0.25s;
+  opacity: 1;
+  position: absolute;
+  top: -50px;
+  left: 0;
+}
+#hamburger-menu-icon.active svg {
+  opacity: 0.5;
+}
+
+#hamburger-menu {
+}
+#hamburger-menu nav {
+  width: 70%;
+  padding-right: 5%;
+  padding-left: 2%;
+  background-color: #fff;
+  margin: 10px 3%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+}
+#hamburger-menu nav > .nav-link {
+  display: block;
+  font-size: 28px;
+  padding: 5px 3%;
+}
+#hamburger-menu nav > hr {
+  position: relative;
+  left: -3%;
+  margin: 0;
+  height: 1px;
+  background-color: #e4e4e4;
+  border: none;
+}
+#hamburger-menu nav > .nav-link.active {
+  text-decoration: none;
+}
+
+#hamburger-menu .docs-nav nav {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+#hamburger-menu .docs-nav nav section {
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+#hamburger-menu .docs-nav nav h4 {
+  font-size: 1.5rem;
+  padding: 3px 0px;
+}
+#hamburger-menu .docs-nav nav .docs-nav-item {
+  font-size: 1.2rem;
+  padding: 1px 0px;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+.slider > .panels {
+  transform: translate(0%);
+  transition: transform .25s;
+}
+.slider > .panels > .panel {
+  display: inline-block;
+  float: left;
+  width: 100%;
+}

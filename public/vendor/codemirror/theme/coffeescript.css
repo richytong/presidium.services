@@ -1,0 +1,72 @@
+.cm-s-coffeescript.CodeMirror {
+  background: #f6f8fa;
+  color: black;
+  border-radius: 1em;
+  padding: 10px;
+  pointer-events: none;
+}
+
+.cm-s-coffeescript .CodeMirror-scroll > .CodeMirror-sizer {
+  border-radius: .25em;
+  padding: .5em 0em;
+}
+
+.cm-s-coffeescript div.CodeMirror-selected { background: #51D48D; }
+
+.cm-s-coffeescript .CodeMirror-line::selection, .cm-s-coffeescript .CodeMirror-line > span::selection, .cm-s-coffeescript .CodeMirror-line > span > span::selection {
+  /* background: rgba(48, 48, 48, .99); */
+  background: white;
+}
+
+.cm-s-coffeescript .CodeMirror-line::-moz-selection,
+.cm-s-coffeescript .CodeMirror-line > span::-moz-selection,
+.cm-s-coffeescript .CodeMirror-line > span > span::-moz-selection {
+  /* background: rgba(48, 48, 48, .99); */
+  background: white;
+}
+
+.cm-s-coffeescript .CodeMirror-gutters { background: darkslategrey; border-right: 0px; }
+
+.cm-s-coffeescript .CodeMirror-guttermarker { color: #ac4142; }
+
+.cm-s-coffeescript .CodeMirror-guttermarker-subtle { color: #505050; }
+
+.cm-s-coffeescript .CodeMirror-linenumber { color: grey; }
+
+.cm-s-coffeescript .CodeMirror-cursor { border-left: thin solid #b0b0b0; }
+
+/*
+.cm-s-coffeescript span.cm-comment { color: darkseagreen; }
+*/
+
+.cm-s-coffeescript span.cm-comment { color: darkseagreen; }
+
+.cm-s-coffeescript span.cm-atom { color: #aa759f; }
+
+.cm-s-coffeescript span.cm-number { color: mediumorchid; }
+
+.cm-s-coffeescript span.cm-property, .cm-s-coffeescript span.cm-attribute { color: aliceblue; }
+
+.cm-s-coffeescript span.cm-keyword { color: mediumturquoise; }
+
+.cm-s-coffeescript span.cm-string { color: #f4bf75; }
+
+.cm-s-coffeescript span.cm-operator { color: #65799B; }
+
+.cm-s-coffeescript span.cm-variable { color: #333; }
+
+.cm-s-coffeescript span.cm-variable-2 { color: black; }
+
+.cm-s-coffeescript span.cm-def { color: aliceblue; }
+
+.cm-s-coffeescript span.cm-bracket { color: #e0e0e0; }
+
+.cm-s-coffeescript span.cm-tag { color: #ac4142; }
+
+.cm-s-coffeescript span.cm-link { color: #aa759f; }
+
+.cm-s-coffeescript span.cm-error { background: #ac4142; color: #b0b0b0; }
+
+.cm-s-coffeescript .CodeMirror-activeline-background { background: #202020; }
+
+.cm-s-coffeescript .CodeMirror-matchingbracket { text-decoration: underline; color: white !important; }

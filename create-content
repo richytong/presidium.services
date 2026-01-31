@@ -1,0 +1,66 @@
+#!/usr/bin/env node
+
+require('rubico/global')
+const cronist = require('cronist')
+const fs = require('fs')
+const FileSystem = require('./internal/FileSystem')
+const walkPathForJSFilePaths = require('./internal/walkPathForJSFilePaths')
+const { inspect } = require('util')
+
+const readFileUtf8 = path => fs.promises.readFile(path, { encoding: 'utf8' })
+
+const createMdastFile = async function (source, dest, options = {}) {
+  await pipe(source, [
+    readFileUtf8,
+    cronist.parseMarkdown,
+    data => fs.promises.writeFile(dest, `
+export default ${inspect(data, { depth: Infinity, maxArrayLength: null })}
+  `.trim()),
+  ])
+}
+
+const createCronistFile = async function (source, dest, options = {}) {
+  const { requiredKeys, ignoreDirs } = options
+  await pipe(source, [
+    curry.arity(2, walkPathForJSFilePaths, __, { ignoreDirs }),
+
+    flatMap(async fileName => pipe(fileName, [
+      readFileUtf8,
+      cronist,
+      map(assign({ fileName: always(fileName) })),
+    ])),
+
+    data => fs.promises.writeFile(dest, `
+export default ${inspect(data, { depth: Infinity, maxArrayLength: null })}
+  `.trim()),
+  ])
+}
+
+// createMdast() -> Promise<>
+const createMdast = async function () {
+  const publicFs = new FileSystem({ cwd: `${__dirname}/public` })
+
+  console.log('Creating mdast/readme.js')
+  await createMdastFile(
+    `${__dirname}/../presidium/README.md`,
+    `${__dirname}/public/mdast/readme.js`,
+  )
+
+  const rubicoVersion = require('rubico/package').version
+  const rubicoMajorVersion = rubicoVersion.split('.')[0]
+  console.log(`Creating cronist/presidium-v${rubicoMajorVersion}.js`)
+  await createCronistFile(
+    `${__dirname}/../presidium`,
+    `${__dirname}/public/cronist/presidium-v${rubicoMajorVersion}.js`,
+    {
+      requiredKeys: ['name', 'docs', 'description'],
+      ignoreDirs: ['node_modules', 'archive'],
+    },
+  )
+}
+
+if (require.main == module) {
+  createMdast()
+}
+
+module.exports = createMdast

@@ -1,0 +1,25 @@
+{
+  "name": "presidium.services",
+  "version": "0.0.0",
+  "description": "Home page for Presidium",
+  "author": "Richard Tong",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "github:richytong/presidium.services"
+  },
+  "homepage": "https://github.com/richytong/presidium.services",
+  "scripts": {
+    "start": "serve -p 4507 public"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  },
+  "dependencies": {
+    "cronist": "^0.3.0",
+    "jquery": "^3.7.1",
+    "jsdom": "^26.1.0",
+    "minimatch": "^10.0.3",
+    "presidium": "^0.29.13"
+  }
+}

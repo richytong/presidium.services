@@ -1,0 +1,49 @@
+#!/usr/bin/env node
+
+const AwsCredentials = require('presidium/AwsCredentials')
+const S3Bucket = require('presidium/S3Bucket')
+const fs = require('fs')
+const path = require('path')
+const ContentType = require('./lib/ContentType')
+const findPaths = require('./lib/findPaths')
+const validateConfig = require('./lib/validateConfig')
+const config = require('./config')
+
+validateConfig(config)
+
+const { domain, publicDir } = config
+
+/**
+ * @name main
+ *
+ * @synopsis
+ * ```coffeescript [specscript]
+ * main() -> Promise<>
+ * ```
+ */
+async function main() {
+  const awsCreds = await AwsCredentials(process.env.AWS_PROFILE ?? 'default')
+
+  const bucket = new S3Bucket({
+    name: domain,
+    ...awsCreds,
+  })
+  await bucket.ready
+
+  const dir = path.join(__dirname, publicDir)
+  const paths = await findPaths(dir)
+
+  for (const path of paths) {
+    const key = path.replace(`${dir}/`, '')
+    const contentBuffer = await fs.promises.readFile(path)
+    const content = contentBuffer.toString('utf8')
+    const contentType = ContentType(key, content)
+    console.log(`Uploading ${path.replace(process.env.HOME, '~')} as ${key} [${contentType}]`)
+    await bucket.upload(key, content, {
+      ContentType: contentType,
+      Expires: new Date(),
+    })
+  }
+}
+
+main()

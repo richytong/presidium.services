@@ -1,0 +1,73 @@
+#!/usr/bin/env node
+
+const fs = require('fs')
+const findPaths = require('./lib/findPaths')
+const PageHTML = require('./lib/PageHTML')
+const parseHTML = require('./lib/parseHTML')
+const validateConfig = require('./lib/validateConfig')
+const config = require('./config')
+
+validateConfig(config)
+
+const {
+  domain,
+  scripts,
+  stylesheets,
+  publicDir,
+  pages,
+} = config
+
+/**
+ * @name main
+ *
+ * @synopsis
+ * ```coffeescript [specscript]
+ * main() -> Promise<>
+ * ```
+ */
+async function main() {
+  if (fs.existsSync(`${__dirname}/${publicDir}`)) {
+    // continue
+  } else {
+    console.log('Creating public directory', publicDir)
+    await fs.promises.mkdir(`${__dirname}/${publicDir}`)
+  }
+
+  for (const page of pages) {
+    const { title, description, url, filepath } = page
+    const fullFilepath = `${__dirname}/${publicDir}${filepath}`
+    try {
+      const content = await fs.promises.readFile(fullFilepath)
+        .then(buf => buf.toString('utf8'))
+      const $ = parseHTML(content)
+      const bodyHTML = $('body').html().trim()
+
+      console.log('Updating page', fullFilepath.replace(process.env.HOME, '~'))
+
+      await fs.promises.writeFile(fullFilepath, PageHTML({
+        title,
+        description,
+        url: `https://${domain}${url}`,
+        scripts,
+        stylesheets,
+        bodyHTML,
+      }))
+    } catch (error) {
+      if (error.message.includes('ENOENT')) {
+        console.log('Creating page', fullFilepath.replace(process.env.HOME, '~'))
+        await fs.promises.writeFile(fullFilepath, PageHTML({
+          title,
+          description,
+          url: `https://${domain}${url}`,
+          scripts,
+          stylesheets,
+          bodyHTML: '',
+        }))
+      } else {
+        throw error
+      }
+    }
+  }
+}
+
+main()
