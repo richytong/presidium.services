@@ -36,6 +36,7 @@ const NavLink = ReactElement(props => {
       event.preventDefault()
       setPath(href)
       setIsHamburgerMenuActive(false)
+      scrollTo(0, 0)
     },
   }, children)
 })

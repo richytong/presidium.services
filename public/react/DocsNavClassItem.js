@@ -27,6 +27,7 @@ const DocsNavClassItem = ReactElement(props => {
         setDocsViewerClassName(name)
         setPath(href)
         setIsHamburgerMenuActive(false)
+        scrollTo(0, 0)
       },
     }, name)
   ])
