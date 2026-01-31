@@ -5,6 +5,7 @@ import useDocsSearchQuery from './useDocsSearchQuery.js'
 import ClassNames from './ClassNames.js'
 import usePath from './usePath.js'
 import presidiumV1Filenames from '../presidium/v1-filenames.js'
+import useIsHamburgerMenuActive from './useIsHamburgerMenuActive.js'
 
 const presidiumV1ClassNames =
   presidiumV1Filenames
@@ -24,6 +25,9 @@ const DocsNav = ReactElement(props => {
   const [presidiumVersion] = usePresidiumVersion()
   const [docsViewerFuncName, setDocsViewerFuncName] = useDocsViewerClassName()
   const [docsSearchQuery] = useDocsSearchQuery()
+  const [
+    isHamburgerMenuActive, setIsHamburgerMenuActive,
+  ] = useIsHamburgerMenuActive()
 
   const CoreDocsNavItem = name => {
     const href = `/docs/${name}`
@@ -34,6 +38,7 @@ const DocsNav = ReactElement(props => {
           event.preventDefault()
           setDocsViewerFuncName(name)
           setPath(href)
+          setIsHamburgerMenuActive(false)
         },
       }, name)
     ])
