@@ -244,14 +244,11 @@ export default {
       lang: 'javascript',
       meta: null,
       value: "const DynamoDBTable = require('presidium/DynamoDBTable')\n" +
-        'const DynamoDBGlobalSecondaryIndex =\n' +
-        "require('presidium/DynamoDBGlobalSecondaryIndex')\n" +
+        "const DynamoDBGlobalSecondaryIndex = require('presidium/DynamoDBGlobalSecondaryIndex')\n" +
+        "const AwsCredentials = require('presidium/AwsCredentials')\n" +
         '\n' +
-        'const awsCreds = {\n' +
-        '  accessKeyId: process.env.AWS_ACCESS_KEY_ID,\n' +
-        '  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,\n' +
-        '  region: process.env.AWS_REGION,\n' +
-        '}\n' +
+        "const awsCreds = await AwsCredentials('default')\n" +
+        "awsCreds.region = 'us-east-1'\n" +
         '\n' +
         'const myTable = new DynamoDBTable({\n' +
         "  name: 'my-table',\n" +
@@ -274,24 +271,24 @@ export default {
         "await myTable.putItemJSON({ id: '3', name: 'Jane', age: 33, type: 'person' })\n" +
         '\n' +
         '{\n' +
-        "  const response = await myTable.getItem({ id: { S: '1' } }),\n" +
-        '  console.log(response)\n' +
+        "  const data = await myTable.getItem({ id: { S: '1' } }),\n" +
+        '  console.log(data)\n' +
         "  // { Item: { id: { S: '1' }, name: { S: 'John' }, age: { N: '32' } } }\n" +
         '}\n' +
         '\n' +
         '{\n' +
-        "  const response = await myTable.getItemJSON({ id: '1' })\n" +
-        '  console.log(response)\n' +
+        "  const data = await myTable.getItemJSON({ id: '1' })\n" +
+        '  console.log(data)\n' +
         "  // { item: { id: '1', name: 'John', age: 32 } }\n" +
         '}\n' +
         '\n' +
         '{\n' +
-        '  const response = await myTypeAgeIndex.query(\n' +
+        '  const data = await myTypeAgeIndex.query(\n' +
         "    'type = :type AND age < :age',\n" +
         "    { type: { S: 'person' }, age: { N: '100' } },\n" +
         '    { Limit: 2, ScanIndexForward: true },\n' +
         '  )\n' +
-        '  console.log(response)\n' +
+        '  console.log(data)\n' +
         '  // {\n' +
         '  //   Items: [\n' +
         "  //     { id: { S: '1' }, name: { S: 'John' }, age: { N: '32' }, type: { S: 'person' } },\n" +
@@ -303,12 +300,12 @@ export default {
         '}\n' +
         '\n' +
         '{\n' +
-        '  const response = await myTypeAgeIndex.queryJSON(\n' +
+        '  const data = await myTypeAgeIndex.queryJSON(\n' +
         "    'type = :type AND age < :age',\n" +
         "    { type: 'person', age: 100 },\n" +
         '    { Limit: 2, ScanIndexForward: true },\n' +
         '  )\n' +
-        '  console.log(response)\n' +
+        '  console.log(data)\n' +
         '  // {\n' +
         '  //   ItemsJSON: [\n' +
         "  //     { id: '1', name: 'John', age: 32, type: 'person' },\n" +
@@ -348,7 +345,7 @@ export default {
         '}',
       position: {
         start: { line: 54, column: 1, offset: 1498 },
-        end: { line: 158, column: 4, offset: 4526 }
+        end: { line: 155, column: 4, offset: 4477 }
       }
     },
     {
@@ -359,14 +356,14 @@ export default {
           type: 'text',
           value: 'Consume DynamoDB Streams',
           position: {
-            start: { line: 160, column: 4, offset: 4531 },
-            end: { line: 160, column: 28, offset: 4555 }
+            start: { line: 157, column: 4, offset: 4482 },
+            end: { line: 157, column: 28, offset: 4506 }
           }
         }
       ],
       position: {
-        start: { line: 160, column: 1, offset: 4528 },
-        end: { line: 160, column: 28, offset: 4555 }
+        start: { line: 157, column: 1, offset: 4479 },
+        end: { line: 157, column: 28, offset: 4506 }
       }
     },
     {
@@ -375,12 +372,10 @@ export default {
       meta: null,
       value: "const DynamoDBTable = require('presidium/DynamoDBTable')\n" +
         "const DynamoDBStream = require('presidium/DynamoDBStream')\n" +
+        "const AwsCredentials = require('presidium/AwsCredentials')\n" +
         '\n' +
-        'const awsCreds = {\n' +
-        '  accessKeyId: process.env.AWS_ACCESS_KEY_ID,\n' +
-        '  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,\n' +
-        '  region: process.env.AWS_REGION,\n' +
-        '}\n' +
+        "const awsCreds = await AwsCredentials('default')\n" +
+        "awsCreds.region = 'us-east-1'\n" +
         '\n' +
         'const myTable = new DynamoDBTable({\n' +
         "  name: 'my-table',\n" +
@@ -416,8 +411,8 @@ export default {
         '  // { dynamodb: { KeysJSON: {...}, NewImageJSON: {...}, OldImageJSON: {...} }  }\n' +
         '}',
       position: {
-        start: { line: 161, column: 1, offset: 4556 },
-        end: { line: 204, column: 4, offset: 5771 }
+        start: { line: 158, column: 1, offset: 4507 },
+        end: { line: 199, column: 4, offset: 5705 }
       }
     },
     {
@@ -428,14 +423,14 @@ export default {
           type: 'text',
           value: 'Upload to S3',
           position: {
-            start: { line: 206, column: 4, offset: 5776 },
-            end: { line: 206, column: 16, offset: 5788 }
+            start: { line: 201, column: 4, offset: 5710 },
+            end: { line: 201, column: 16, offset: 5722 }
           }
         }
       ],
       position: {
-        start: { line: 206, column: 1, offset: 5773 },
-        end: { line: 206, column: 16, offset: 5788 }
+        start: { line: 201, column: 1, offset: 5707 },
+        end: { line: 201, column: 16, offset: 5722 }
       }
     },
     {
@@ -443,12 +438,10 @@ export default {
       lang: 'javascript',
       meta: null,
       value: "const S3Bucket = require('presidium/S3Bucket')\n" +
+        "const AwsCredentials = require('presidium/AwsCredentials')\n" +
         '\n' +
-        'const awsCreds = {\n' +
-        '  accessKeyId: process.env.AWS_ACCESS_KEY_ID,\n' +
-        '  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,\n' +
-        '  region: process.env.AWS_REGION,\n' +
-        '}\n' +
+        "const awsCreds = await AwsCredentials('default')\n" +
+        "awsCreds.region = 'us-east-1'\n" +
         '\n' +
         'const myBucket = new S3Bucket({\n' +
         "  name: 'my-bucket',\n" +
@@ -460,16 +453,15 @@ export default {
         "  ContentType: 'application/json',\n" +
         '})\n' +
         '\n' +
-        '{\n' +
-        "  const response = await myBucket.getObject('some-key')\n" +
-        `  console.log(response) // { Etag: '...', Body: '{"hello":"world"}', ContentType: 'application/json' }\n` +
-        '}\n' +
+        "const data = await myBucket.getObject('some-key')\n" +
+        'console.log(data)\n' +
+        "// { Etag: '...', Body: <Buffer 7b 22 68 ...>, ContentType: 'application/json' }\n" +
         '\n' +
         'await myBucket.deleteAllObjects()\n' +
         'await myBucket.delete()',
       position: {
-        start: { line: 207, column: 1, offset: 5789 },
-        end: { line: 233, column: 4, offset: 6424 }
+        start: { line: 202, column: 1, offset: 5723 },
+        end: { line: 225, column: 4, offset: 6327 }
       }
     },
     {
@@ -480,14 +472,14 @@ export default {
           type: 'text',
           value: 'Build and Push Docker Images',
           position: {
-            start: { line: 235, column: 4, offset: 6429 },
-            end: { line: 235, column: 32, offset: 6457 }
+            start: { line: 227, column: 4, offset: 6332 },
+            end: { line: 227, column: 32, offset: 6360 }
           }
         }
       ],
       position: {
-        start: { line: 235, column: 1, offset: 6426 },
-        end: { line: 235, column: 32, offset: 6457 }
+        start: { line: 227, column: 1, offset: 6329 },
+        end: { line: 227, column: 32, offset: 6360 }
       }
     },
     {
@@ -500,20 +492,20 @@ export default {
               type: 'text',
               value: 'No more --build-arg for npm tokens!',
               position: {
-                start: { line: 236, column: 3, offset: 6460 },
-                end: { line: 236, column: 38, offset: 6495 }
+                start: { line: 228, column: 3, offset: 6363 },
+                end: { line: 228, column: 38, offset: 6398 }
               }
             }
           ],
           position: {
-            start: { line: 236, column: 3, offset: 6460 },
-            end: { line: 236, column: 38, offset: 6495 }
+            start: { line: 228, column: 3, offset: 6363 },
+            end: { line: 228, column: 38, offset: 6398 }
           }
         }
       ],
       position: {
-        start: { line: 236, column: 1, offset: 6458 },
-        end: { line: 236, column: 38, offset: 6495 }
+        start: { line: 228, column: 1, offset: 6361 },
+        end: { line: 228, column: 38, offset: 6398 }
       }
     },
     {
@@ -521,8 +513,14 @@ export default {
       lang: 'javascript',
       meta: null,
       value: "const Docker = require('presidium/Docker')\n" +
+        "const NpmToken = require('presidium/NpmToken')\n" +
+        "const fs = require('fs')\n" +
         '\n' +
         "const myImage = 'my-app:1.0.0'\n" +
+        '\n' +
+        "const npmrc = fs.createWriteStream('.npmrc')\n" +
+        'npmrc.write(`//registry.npmjs.org/:_authToken=${await NpmToken()}`)\n' +
+        'npmrc.end()\n' +
         '\n' +
         'const buildStream = await docker.buildImage(__dirname, {\n' +
         '  image: myImage,\n' +
@@ -532,9 +530,8 @@ export default {
         'FROM node:15-alpine\n' +
         'WORKDIR /opt\n' +
         'COPY . .\n' +
-        'RUN echo //registry.npmjs.org/:_authToken=${myNpmToken} > .npmrc \\\n' +
-        '  && npm i \\\n' +
-        '  && rm .npmrc\n' +
+        'RUN npm i \\\n' +
+        '  && rm .npmrc \\\n' +
         '  && rm Dockerfile\n' +
         'EXPOSE 8080\n' +
         'CMD ["npm", "start"]\n' +
@@ -543,17 +540,16 @@ export default {
         '})\n' +
         '\n' +
         'buildStream.pipe(process.stdout)\n' +
+        "await new Promise(resolve => buildStream.on('end', resolve))\n" +
         '\n' +
-        "buildStream.on('end', () => {\n" +
-        '  const pushStream = await docker.pushImage({\n' +
-        '    image: myImage,\n' +
-        "    repository: 'my-registry.io',\n" +
-        '  })\n' +
-        '  pushStream.pipe(process.stdout)\n' +
-        '})',
+        'const pushStream = await docker.pushImage({\n' +
+        '  image: myImage,\n' +
+        "  repository: 'my-registry.io',\n" +
+        '})\n' +
+        'pushStream.pipe(process.stdout)',
       position: {
-        start: { line: 237, column: 1, offset: 6496 },
-        end: { line: 269, column: 4, offset: 7145 }
+        start: { line: 229, column: 1, offset: 6399 },
+        end: { line: 265, column: 4, offset: 7198 }
       }
     },
     {
@@ -564,14 +560,14 @@ export default {
           type: 'text',
           value: 'Run Docker Containers',
           position: {
-            start: { line: 271, column: 4, offset: 7150 },
-            end: { line: 271, column: 25, offset: 7171 }
+            start: { line: 267, column: 4, offset: 7203 },
+            end: { line: 267, column: 25, offset: 7224 }
           }
         }
       ],
       position: {
-        start: { line: 271, column: 1, offset: 7147 },
-        end: { line: 271, column: 25, offset: 7171 }
+        start: { line: 267, column: 1, offset: 7200 },
+        end: { line: 267, column: 25, offset: 7224 }
       }
     },
     {
@@ -591,8 +587,8 @@ export default {
         '\n' +
         'runStream.pipe(process.stdout) // Example',
       position: {
-        start: { line: 272, column: 1, offset: 7172 },
-        end: { line: 285, column: 4, offset: 7475 }
+        start: { line: 268, column: 1, offset: 7225 },
+        end: { line: 281, column: 4, offset: 7528 }
       }
     },
     {
@@ -603,14 +599,14 @@ export default {
           type: 'text',
           value: 'Deploy Docker Swarm Services',
           position: {
-            start: { line: 287, column: 4, offset: 7480 },
-            end: { line: 287, column: 32, offset: 7508 }
+            start: { line: 283, column: 4, offset: 7533 },
+            end: { line: 283, column: 32, offset: 7561 }
           }
         }
       ],
       position: {
-        start: { line: 287, column: 1, offset: 7477 },
-        end: { line: 287, column: 32, offset: 7508 }
+        start: { line: 283, column: 1, offset: 7530 },
+        end: { line: 283, column: 32, offset: 7561 }
       }
     },
     {
@@ -624,7 +620,7 @@ export default {
         '// initialize docker swarm\n' +
         "await docker.initSwarm('eth0:2377')\n" +
         '\n' +
-        'const myService = await docker.createService({\n' +
+        'await docker.createService({\n' +
         "  name: 'my-service',\n" +
         "  image: 'nginx:1.19',\n" +
         '  publish: { 80: 80 },\n' +
@@ -633,8 +629,8 @@ export default {
         '})\n' +
         '// new nginx service is deploying to the docker swarm',
       position: {
-        start: { line: 288, column: 1, offset: 7509 },
-        end: { line: 304, column: 4, offset: 7884 }
+        start: { line: 284, column: 1, offset: 7562 },
+        end: { line: 300, column: 4, offset: 7919 }
       }
     },
     {
@@ -645,14 +641,14 @@ export default {
           type: 'text',
           value: 'Support',
           position: {
-            start: { line: 306, column: 3, offset: 7888 },
-            end: { line: 306, column: 10, offset: 7895 }
+            start: { line: 302, column: 3, offset: 7923 },
+            end: { line: 302, column: 10, offset: 7930 }
           }
         }
       ],
       position: {
-        start: { line: 306, column: 1, offset: 7886 },
-        end: { line: 306, column: 10, offset: 7895 }
+        start: { line: 302, column: 1, offset: 7921 },
+        end: { line: 302, column: 10, offset: 7930 }
       }
     },
     {
@@ -673,31 +669,31 @@ export default {
                   type: 'text',
                   value: 'minimum Node.js version: 16',
                   position: {
-                    start: { line: 307, column: 4, offset: 7899 },
-                    end: { line: 307, column: 31, offset: 7926 }
+                    start: { line: 303, column: 4, offset: 7934 },
+                    end: { line: 303, column: 31, offset: 7961 }
                   }
                 }
               ],
               position: {
-                start: { line: 307, column: 4, offset: 7899 },
-                end: { line: 307, column: 31, offset: 7926 }
+                start: { line: 303, column: 4, offset: 7934 },
+                end: { line: 303, column: 31, offset: 7961 }
               }
             }
           ],
           position: {
-            start: { line: 307, column: 2, offset: 7897 },
-            end: { line: 307, column: 31, offset: 7926 }
+            start: { line: 303, column: 2, offset: 7932 },
+            end: { line: 303, column: 31, offset: 7961 }
           }
         }
       ],
       position: {
-        start: { line: 307, column: 2, offset: 7897 },
-        end: { line: 307, column: 31, offset: 7926 }
+        start: { line: 303, column: 2, offset: 7932 },
+        end: { line: 303, column: 31, offset: 7961 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 308, column: 1, offset: 7927 }
+    end: { line: 304, column: 1, offset: 7962 }
   }
 }

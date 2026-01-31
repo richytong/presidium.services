@@ -8,7 +8,7 @@ html {
 }
 
 * {
-  color: #1f2328;
+  color: #000;
   font-family: Inter, sans-serif;
 }
 
@@ -79,20 +79,17 @@ body {
   top: 3px;
   border: none;
   outline: none;
-  padding: 8px 5px;
-  border-radius: 5px;
-  margin-left: 15px;
-  background-color: #e4e4e4;
+  padding: 0px 5px;
+  background-color: transparent;
+  color: #1f2328;
   color: #000;
   cursor: pointer;
+  font-weight: 600;
+  font-size: 31px;
 }
-@media only screen and (max-width: 768px) {
-  #layout > nav > .home {
-  }
-  #layout > nav > .home select {
-    top: 0;
-    margin-left: 0px;
-  }
+
+#layout > footer {
+  padding: 15px 30px;
 }
 
 #home-link {
@@ -119,7 +116,6 @@ body {
   #home-link {
   }
   #home-link .text1 {
-    display: none;
   }
   #home-link > img {
     width: 100px;
@@ -149,7 +145,7 @@ body {
   transition: opacity 0.25s;
   opacity: 1;
   position: absolute;
-  top: -50px;
+  top: -55px;
   left: 0;
 }
 #hamburger-menu-icon.active svg {
@@ -214,4 +210,12 @@ body {
   display: inline-block;
   float: left;
   width: 100%;
+}
+
+article .image {
+  display: inline
+}
+
+article a {
+  text-decoration: none;
 }
