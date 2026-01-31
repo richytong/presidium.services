@@ -223,8 +223,11 @@ body {
 }
 #hamburger-menu .docs-nav nav .docs-nav-item {
   font-size: 1.2rem;
-  padding: 1px 0px;
+  padding: 2px 0px;
   overflow-x: scroll;
+}
+#hamburger-menu .docs-nav nav .docs-nav-item.method {
+  padding-left: 20px;
 }
 
 .slider {
@@ -275,10 +278,6 @@ article a {
   }
 }
 
-#docs .sidebar nav {
-  position: sticky;
-  top: 15px;
-}
 #docs .sidebar nav section {
   margin-bottom: 10px;
 }
@@ -287,8 +286,11 @@ article a {
   padding: 3px 0px;
 }
 #docs .sidebar nav .docs-nav-item {
-  padding: 1px 0px;
+  padding: 2px 0px;
   overflow-x: scroll;
+}
+#docs .sidebar nav .docs-nav-item.method {
+  padding-left: 20px;
 }
 #docs .sidebar nav .docs-nav-item a {
 }
@@ -315,7 +317,11 @@ article a {
   }
 }
 
-#docs-search input {
+#docs .viewer .docs .methods {
+  margin-bottom: 10px;
+}
+
+#docs-search-bar input {
   background: url('/assets/magnifying-glass-docs-search-d4d4d4.svg') no-repeat 98% 5px;
   background-size: 15px;
   padding: 5px 3%;
@@ -334,4 +340,10 @@ article a {
 
 .docs .method a {
   text-decoration: none;
+}
+
+#docs-nav {
+}
+#docs-nav .methods {
+  margin-bottom: 10px;
 }
