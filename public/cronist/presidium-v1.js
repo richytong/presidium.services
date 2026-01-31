@@ -1297,8 +1297,7 @@ export default [
           '  Id: string,\n' +
           '  Warnings: Array<string>,\n' +
           '}>\n' +
-          '\n' +
-          'https://docs.docker.com/engine/reference/commandline/create/\n' +
+          '```\n' +
           '\n' +
           'Restart policies:\n' +
           '  * `no` - do not restart the container when it exits\n' +
@@ -1311,7 +1310,9 @@ export default [
           "  * `['NONE']` - disable healthcheck\n" +
           "  * `['CMD', ...args]` - exec arguments directly\n" +
           "  * `['CMD-SHELL', command string]` - run command with system's default shell\n" +
-          '```',
+          '\n' +
+          'References:\n' +
+          'https://docs.docker.com/engine/reference/commandline/create/',
         mdast: {
           name: {
             type: 'root',
@@ -1383,30 +1384,396 @@ export default [
                   '}) -> data Promise<{\n' +
                   '  Id: string,\n' +
                   '  Warnings: Array<string>,\n' +
-                  '}>\n' +
-                  '\n' +
-                  'https://docs.docker.com/engine/reference/commandline/create/\n' +
-                  '\n' +
-                  'Restart policies:\n' +
-                  '  * `no` - do not restart the container when it exits\n' +
-                  '  * `on-failure` - restart only if container exits with non-zero exit code\n' +
-                  '  * `always` - always restart container regardless of exit code\n' +
-                  '  * `unless-stopped` - like `always` except if the container was put into a stopped state before the Docker daemon was stopped\n' +
-                  '\n' +
-                  'Health checks:\n' +
-                  '  * `[]` - inherit healthcheck from image or parent image\n' +
-                  "  * `['NONE']` - disable healthcheck\n" +
-                  "  * `['CMD', ...args]` - exec arguments directly\n" +
-                  "  * `['CMD-SHELL', command string]` - run command with system's default shell",
+                  '}>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 54, column: 4, offset: 2271 }
+                  end: { line: 40, column: 4, offset: 1632 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Restart policies:',
+                    position: {
+                      start: { line: 42, column: 1, offset: 1634 },
+                      end: { line: 42, column: 18, offset: 1651 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 42, column: 1, offset: 1634 },
+                  end: { line: 42, column: 18, offset: 1651 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'no',
+                            position: {
+                              start: { line: 43, column: 5, offset: 1656 },
+                              end: { line: 43, column: 9, offset: 1660 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - do not restart the container when it exits',
+                            position: {
+                              start: { line: 43, column: 9, offset: 1660 },
+                              end: { line: 43, column: 54, offset: 1705 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 43, column: 5, offset: 1656 },
+                          end: { line: 43, column: 54, offset: 1705 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 43, column: 3, offset: 1654 },
+                      end: { line: 43, column: 54, offset: 1705 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'on-failure',
+                            position: {
+                              start: { line: 44, column: 5, offset: 1710 },
+                              end: { line: 44, column: 17, offset: 1722 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - restart only if container exits with non-zero exit code',
+                            position: {
+                              start: { line: 44, column: 17, offset: 1722 },
+                              end: { line: 44, column: 75, offset: 1780 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 44, column: 5, offset: 1710 },
+                          end: { line: 44, column: 75, offset: 1780 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 44, column: 3, offset: 1708 },
+                      end: { line: 44, column: 75, offset: 1780 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'always',
+                            position: {
+                              start: { line: 45, column: 5, offset: 1785 },
+                              end: { line: 45, column: 13, offset: 1793 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - always restart container regardless of exit code',
+                            position: {
+                              start: { line: 45, column: 13, offset: 1793 },
+                              end: { line: 45, column: 64, offset: 1844 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 45, column: 5, offset: 1785 },
+                          end: { line: 45, column: 64, offset: 1844 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 45, column: 3, offset: 1783 },
+                      end: { line: 45, column: 64, offset: 1844 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'unless-stopped',
+                            position: {
+                              start: { line: 46, column: 5, offset: 1849 },
+                              end: { line: 46, column: 21, offset: 1865 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - like ',
+                            position: {
+                              start: { line: 46, column: 21, offset: 1865 },
+                              end: { line: 46, column: 29, offset: 1873 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'always',
+                            position: {
+                              start: { line: 46, column: 29, offset: 1873 },
+                              end: { line: 46, column: 37, offset: 1881 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' except if the container was put into a stopped state before the Docker daemon was stopped',
+                            position: {
+                              start: { line: 46, column: 37, offset: 1881 },
+                              end: { line: 46, column: 127, offset: 1971 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 46, column: 5, offset: 1849 },
+                          end: { line: 46, column: 127, offset: 1971 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 46, column: 3, offset: 1847 },
+                      end: { line: 46, column: 127, offset: 1971 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 43, column: 3, offset: 1654 },
+                  end: { line: 46, column: 127, offset: 1971 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Health checks:',
+                    position: {
+                      start: { line: 48, column: 1, offset: 1973 },
+                      end: { line: 48, column: 15, offset: 1987 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 48, column: 1, offset: 1973 },
+                  end: { line: 48, column: 15, offset: 1987 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: '[]',
+                            position: {
+                              start: { line: 49, column: 5, offset: 1992 },
+                              end: { line: 49, column: 9, offset: 1996 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - inherit healthcheck from image or parent image',
+                            position: {
+                              start: { line: 49, column: 9, offset: 1996 },
+                              end: { line: 49, column: 58, offset: 2045 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 49, column: 5, offset: 1992 },
+                          end: { line: 49, column: 58, offset: 2045 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 49, column: 3, offset: 1990 },
+                      end: { line: 49, column: 58, offset: 2045 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: "['NONE']",
+                            position: {
+                              start: { line: 50, column: 5, offset: 2050 },
+                              end: { line: 50, column: 15, offset: 2060 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - disable healthcheck',
+                            position: {
+                              start: { line: 50, column: 15, offset: 2060 },
+                              end: { line: 50, column: 37, offset: 2082 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 50, column: 5, offset: 2050 },
+                          end: { line: 50, column: 37, offset: 2082 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 50, column: 3, offset: 2048 },
+                      end: { line: 50, column: 37, offset: 2082 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: "['CMD', ...args]",
+                            position: {
+                              start: { line: 51, column: 5, offset: 2087 },
+                              end: { line: 51, column: 23, offset: 2105 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - exec arguments directly',
+                            position: {
+                              start: { line: 51, column: 23, offset: 2105 },
+                              end: { line: 51, column: 49, offset: 2131 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 51, column: 5, offset: 2087 },
+                          end: { line: 51, column: 49, offset: 2131 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 51, column: 3, offset: 2085 },
+                      end: { line: 51, column: 49, offset: 2131 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: "['CMD-SHELL', command string]",
+                            position: {
+                              start: { line: 52, column: 5, offset: 2136 },
+                              end: { line: 52, column: 36, offset: 2167 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: " - run command with system's default shell",
+                            position: {
+                              start: { line: 52, column: 36, offset: 2167 },
+                              end: { line: 52, column: 78, offset: 2209 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 52, column: 5, offset: 2136 },
+                          end: { line: 52, column: 78, offset: 2209 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 52, column: 3, offset: 2134 },
+                      end: { line: 52, column: 78, offset: 2209 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 49, column: 3, offset: 1990 },
+                  end: { line: 52, column: 78, offset: 2209 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'References:\n' +
+                      'https://docs.docker.com/engine/reference/commandline/create/',
+                    position: {
+                      start: { line: 54, column: 1, offset: 2211 },
+                      end: { line: 55, column: 61, offset: 2283 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 54, column: 1, offset: 2211 },
+                  end: { line: 55, column: 61, offset: 2283 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 54, column: 4, offset: 2271 }
+              end: { line: 55, column: 61, offset: 2283 }
             }
           }
         }
@@ -2100,10 +2467,11 @@ export default [
           '}) -> message Promise<string>\n' +
           '```\n' +
           '\n' +
-          'Options:\n' +
+          'Arguments:\n' +
           '  * `address` - address used for inter-manager communication that is also advertised to other nodes.\n' +
-          '  * `RemoteAddrs` - address or interface for data path traffic. Used to separate data traffic from management traffic.\n' +
-          '  * `JoinToken` - worker or manager token for joining the swarm.',
+          '  * `options`:\n' +
+          '    * `RemoteAddrs` - address or interface for data path traffic. Used to separate data traffic from management traffic.\n' +
+          '    * `JoinToken` - worker or manager token for joining the swarm.',
         mdast: {
           name: {
             type: 'root',
@@ -2152,16 +2520,16 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'Options:',
+                    value: 'Arguments:',
                     position: {
                       start: { line: 8, column: 1, offset: 151 },
-                      end: { line: 8, column: 9, offset: 159 }
+                      end: { line: 8, column: 11, offset: 161 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 8, column: 1, offset: 151 },
-                  end: { line: 8, column: 9, offset: 159 }
+                  end: { line: 8, column: 11, offset: 161 }
                 }
               },
               {
@@ -2182,28 +2550,28 @@ export default [
                             type: 'inlineCode',
                             value: 'address',
                             position: {
-                              start: { line: 9, column: 5, offset: 164 },
-                              end: { line: 9, column: 14, offset: 173 }
+                              start: { line: 9, column: 5, offset: 166 },
+                              end: { line: 9, column: 14, offset: 175 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - address used for inter-manager communication that is also advertised to other nodes.',
                             position: {
-                              start: { line: 9, column: 14, offset: 173 },
-                              end: { line: 9, column: 101, offset: 260 }
+                              start: { line: 9, column: 14, offset: 175 },
+                              end: { line: 9, column: 101, offset: 262 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 9, column: 5, offset: 164 },
-                          end: { line: 9, column: 101, offset: 260 }
+                          start: { line: 9, column: 5, offset: 166 },
+                          end: { line: 9, column: 101, offset: 262 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 9, column: 3, offset: 162 },
-                      end: { line: 9, column: 101, offset: 260 }
+                      start: { line: 9, column: 3, offset: 164 },
+                      end: { line: 9, column: 101, offset: 262 }
                     }
                   },
                   {
@@ -2216,78 +2584,162 @@ export default [
                         children: [
                           {
                             type: 'inlineCode',
-                            value: 'RemoteAddrs',
+                            value: 'options',
                             position: {
-                              start: { line: 10, column: 5, offset: 265 },
-                              end: { line: 10, column: 18, offset: 278 }
+                              start: { line: 10, column: 5, offset: 267 },
+                              end: { line: 10, column: 14, offset: 276 }
                             }
                           },
                           {
                             type: 'text',
-                            value: ' - address or interface for data path traffic. Used to separate data traffic from management traffic.',
+                            value: ':',
                             position: {
-                              start: { line: 10, column: 18, offset: 278 },
-                              end: { line: 10, column: 119, offset: 379 }
+                              start: { line: 10, column: 14, offset: 276 },
+                              end: { line: 10, column: 15, offset: 277 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 10, column: 5, offset: 265 },
-                          end: { line: 10, column: 119, offset: 379 }
+                          start: { line: 10, column: 5, offset: 267 },
+                          end: { line: 10, column: 15, offset: 277 }
                         }
-                      }
-                    ],
-                    position: {
-                      start: { line: 10, column: 3, offset: 263 },
-                      end: { line: 10, column: 119, offset: 379 }
-                    }
-                  },
-                  {
-                    type: 'listItem',
-                    spread: false,
-                    checked: null,
-                    children: [
+                      },
                       {
-                        type: 'paragraph',
+                        type: 'list',
+                        ordered: false,
+                        start: null,
+                        spread: false,
                         children: [
                           {
-                            type: 'inlineCode',
-                            value: 'JoinToken',
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'RemoteAddrs',
+                                    position: {
+                                      start: {
+                                        line: 11,
+                                        column: 7,
+                                        offset: 284
+                                      },
+                                      end: {
+                                        line: 11,
+                                        column: 20,
+                                        offset: 297
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - address or interface for data path traffic. Used to separate data traffic from management traffic.',
+                                    position: {
+                                      start: {
+                                        line: 11,
+                                        column: 20,
+                                        offset: 297
+                                      },
+                                      end: {
+                                        line: 11,
+                                        column: 121,
+                                        offset: 398
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 11, column: 7, offset: 284 },
+                                  end: {
+                                    line: 11,
+                                    column: 121,
+                                    offset: 398
+                                  }
+                                }
+                              }
+                            ],
                             position: {
-                              start: { line: 11, column: 5, offset: 384 },
-                              end: { line: 11, column: 16, offset: 395 }
+                              start: { line: 11, column: 5, offset: 282 },
+                              end: { line: 11, column: 121, offset: 398 }
                             }
                           },
                           {
-                            type: 'text',
-                            value: ' - worker or manager token for joining the swarm.',
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'JoinToken',
+                                    position: {
+                                      start: {
+                                        line: 12,
+                                        column: 7,
+                                        offset: 405
+                                      },
+                                      end: {
+                                        line: 12,
+                                        column: 18,
+                                        offset: 416
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - worker or manager token for joining the swarm.',
+                                    position: {
+                                      start: {
+                                        line: 12,
+                                        column: 18,
+                                        offset: 416
+                                      },
+                                      end: {
+                                        line: 12,
+                                        column: 67,
+                                        offset: 465
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 12, column: 7, offset: 405 },
+                                  end: { line: 12, column: 67, offset: 465 }
+                                }
+                              }
+                            ],
                             position: {
-                              start: { line: 11, column: 16, offset: 395 },
-                              end: { line: 11, column: 65, offset: 444 }
+                              start: { line: 12, column: 5, offset: 403 },
+                              end: { line: 12, column: 67, offset: 465 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 11, column: 5, offset: 384 },
-                          end: { line: 11, column: 65, offset: 444 }
+                          start: { line: 11, column: 5, offset: 282 },
+                          end: { line: 12, column: 67, offset: 465 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 11, column: 3, offset: 382 },
-                      end: { line: 11, column: 65, offset: 444 }
+                      start: { line: 10, column: 3, offset: 265 },
+                      end: { line: 12, column: 67, offset: 465 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 9, column: 3, offset: 162 },
-                  end: { line: 11, column: 65, offset: 444 }
+                  start: { line: 9, column: 3, offset: 164 },
+                  end: { line: 12, column: 67, offset: 465 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 11, column: 65, offset: 444 }
+              end: { line: 12, column: 67, offset: 465 }
             }
           }
         }

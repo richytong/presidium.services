@@ -47,7 +47,7 @@ const DocsHome = ReactElement(props => {
   }, [presidiumVersion])
 
   const docsData = cronistMap.get(docsViewerClassName)
-  const excludedMethods = presidiumClassExludedMethods.get(docsViewerClassName)
+  const excludedMethods = presidiumClassExludedMethods.get(docsViewerClassName) ?? []
 
   return Layout(props, [
     Div({ id: 'docs' }, [
