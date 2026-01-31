@@ -11,6 +11,7 @@
  */
 const Slider = ReactElement(props => {
   const { children, index, translateOffset } = props
+
   const childrenArray = Array.isArray(children) ? children : [children]
   return Div({ class: 'slider' }, [
     Div({

@@ -81,7 +81,7 @@ const DocsNav = ReactElement(props => {
           }),
 
           className == docsViewerClassName ? [
-            Div({ class: 'methods' }, [
+            docsData.methods.length == 0 ? [] : Div({ class: 'methods' }, [
               ...docsData.methods
               .filter(methodData =>
                   !methodData.name.startsWith('_')

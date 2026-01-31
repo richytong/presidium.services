@@ -39,6 +39,7 @@ body {
 #layout {
   width: 100%;
   margin: 0 auto;
+  margin-top: 60px;
 }
 #layout main {
   border-radius: 10px;
@@ -59,6 +60,12 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 10px 0px;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #e4e4e4;
 }
 #layout > nav > .right-links {
   position: relative;

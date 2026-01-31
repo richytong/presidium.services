@@ -1,4 +1,5 @@
 import usePath from './usePath.js'
+import useIsHamburgerMenuActive from './useIsHamburgerMenuActive.js'
 
 /**
  * @name NavLink
@@ -16,6 +17,7 @@ const NavLink = ReactElement(props => {
   const { href, id, children } = props
 
   const [path, setPath] = usePath()
+  const [isHamburgerMenuActive, setIsHamburgerMenuActive] = useIsHamburgerMenuActive()
 
   let isActive = false
   if (href == '/') {
@@ -33,6 +35,7 @@ const NavLink = ReactElement(props => {
     onClick(event) {
       event.preventDefault()
       setPath(href)
+      setIsHamburgerMenuActive(false)
     },
   }, children)
 })

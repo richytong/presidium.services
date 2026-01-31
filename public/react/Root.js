@@ -24,6 +24,27 @@ const Root = ReactElement(() => {
     }
   }, [])
 
+  useEffect(() => {
+    const listener = document.body.addEventListener('click', event => {
+      let anchorTarget = event.target
+      while (anchorTarget && anchorTarget.tagName != 'A') {
+        anchorTarget = anchorTarget.parentNode
+      }
+      if (anchorTarget?.tagName == 'A') {
+        const anchor = new URL(anchorTarget.href).hash
+        if (anchor.length > 0) {
+          setTimeout(() => {
+            window.scrollTo(0, document.getElementById(anchor.slice(1)).offsetTop + 0)
+          }, 10)
+        }
+      }
+    })
+
+    return () => {
+      removeEventListener(listener)
+    }
+  }, [])
+
   if (path == '/') {
     return Home()
   }

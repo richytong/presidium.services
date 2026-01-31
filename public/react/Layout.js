@@ -7,6 +7,8 @@ import useMediaQuery from './useMediaQuery.js'
 import usePresidiumVersion from './usePresidiumVersion.js'
 import useIsHamburgerMenuActive from './useIsHamburgerMenuActive.js'
 
+let lastScrollY =  0
+
 /**
  * @name Layout
  *
@@ -75,6 +77,17 @@ const Layout = ReactElement(props => {
             class: isHamburgerMenuActive ? 'active' : '',
             onClick() {
               setIsHamburgerMenuActive(!isHamburgerMenuActive)
+              window.scrollTo(0, 0)
+
+              /*
+              if (isHamburgerMenuActive) {
+                window.scrollTo(0, lastScrollY)
+              } else {
+                lastScrollY = window.scrollY
+                window.scrollTo(0, 0)
+              }
+              */
+
             },
           }, [
             HamburgerMenuIcon(),

@@ -12,7 +12,12 @@
  * ```
  */
 const DocsNavClassItem = ReactElement(props => {
-  const { name, setDocsViewerClassName } = props
+  const {
+    name,
+    setPath,
+    setDocsViewerClassName,
+    setIsHamburgerMenuActive,
+  } = props
   const href = `/docs/${name}`
   return Div({ class: 'docs-nav-item' }, [
     A({
