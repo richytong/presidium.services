@@ -31,7 +31,15 @@ const createCronistFile = async function (source, dest, options = {}) {
     flatMap(async fileName => pipe(fileName, [
       readFileUtf8,
       cronist,
-      map(assign({ fileName: always(fileName) })),
+      switchCase([
+        data => data.length > 0,
+        ([classDocsData, ...methodsDocsData]) => [{
+          ...classDocsData,
+          methods: methodsDocsData,
+        }],
+        data => data,
+      ]),
+      map(assign({ fileName })),
     ])),
 
     data => fs.promises.writeFile(dest, `

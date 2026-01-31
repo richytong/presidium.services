@@ -321,3 +321,7 @@ article a {
   font-size: 16px;
   overflow-x: scroll;
 }
+
+.docs .method a {
+  text-decoration: none;
+}
