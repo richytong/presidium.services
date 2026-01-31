@@ -16,7 +16,7 @@ const Root = ReactElement(() => {
 
   useEffect(() => {
     const listener = addEventListener('popstate', () => {
-      console.log(path, document.location)
+      setPath(document.location.pathname, { ignoreHistory: true })
     })
 
     return () => {

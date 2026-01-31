@@ -4,6 +4,7 @@ import usePresidiumVersion from './usePresidiumVersion.js'
 import useDocsViewerClassName from './useDocsViewerClassName.js'
 import ReactElementFromMdast from './ReactElementFromMdast.js'
 import usePath from './usePath.js'
+import useCronistMap from './useCronistMap.js'
 import presidiumClassExludedMethods from './presidiumClassExcludedMethods.js'
 
 /**
@@ -17,7 +18,7 @@ import presidiumClassExludedMethods from './presidiumClassExcludedMethods.js'
 const DocsHome = ReactElement(props => {
 
   const [presidiumVersion] = usePresidiumVersion()
-  const [cronistMap, setCronistMap] = useState(new Map())
+  const [cronistMap, setCronistMap] = useCronistMap()
   const [docsViewerClassName, setDocsViewerClassName] = useDocsViewerClassName('')
   const [path, setPath] = usePath()
 
@@ -32,19 +33,14 @@ const DocsHome = ReactElement(props => {
     setDocsViewerClassName(funcName)
   }, [path])
 
-  useEffect(function updateMdastMap() {
-    if (presidiumVersion != cronistMap.version) {
-      import(`../cronist/presidium-${presidiumVersion.toLowerCase()}.js`).then(module => {
-        const cronistPresidium = module.default
-        const cronistMap1 = new Map()
-        cronistPresidium.forEach(item => {
-          cronistMap1.set(item.name, item)
-        })
-        cronistMap1.version = presidiumVersion
-        setCronistMap(cronistMap1)
-      })
+  useEffect(function scrollToAnchor() {
+    const anchor = new URL(location.href).hash
+    if (anchor.length > 0) {
+      setTimeout(() => {
+        window.scrollTo(0, document.getElementById(anchor.slice(1)).offsetTop + 60)
+      }, 10)
     }
-  }, [presidiumVersion])
+  }, [])
 
   const docsData = cronistMap.get(docsViewerClassName)
   const excludedMethods = presidiumClassExludedMethods.get(docsViewerClassName) ?? []
@@ -65,8 +61,7 @@ const DocsHome = ReactElement(props => {
 
             docsData.methods
             .filter(methodData =>
-              methodData.name != '_readyPromise'
-                && !methodData.name.startsWith('_awsRequest')
+                !methodData.name.startsWith('_')
                 && !excludedMethods.includes(methodData.name)
             )
             .map(methodData => Div({

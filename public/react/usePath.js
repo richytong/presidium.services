@@ -14,11 +14,6 @@ const usePath = function () {
       clean = value.slice(0, -1)
     }
 
-    console.log({
-      path: clean,
-      prevPath: path,
-    })
-
     setPath(clean)
     if (options.ignoreHistory) {
       // noop

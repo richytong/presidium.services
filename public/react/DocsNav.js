@@ -1,4 +1,4 @@
-import DocsSearch from './DocsSearch.js'
+import DocsSearchBar from './DocsSearchBar.js'
 import usePresidiumVersion from './usePresidiumVersion.js'
 import useDocsViewerClassName from './useDocsViewerClassName.js'
 import useDocsSearchQuery from './useDocsSearchQuery.js'
@@ -6,6 +6,11 @@ import ClassNames from './ClassNames.js'
 import usePath from './usePath.js'
 import presidiumV1Filenames from '../presidium/v1-filenames.js'
 import useIsHamburgerMenuActive from './useIsHamburgerMenuActive.js'
+import useCronistMap from './useCronistMap.js'
+import presidiumClassExludedMethods from './presidiumClassExcludedMethods.js'
+import DocsNavClassItem from './DocsNavClassItem.js'
+import DocsNavClassMethodItem from './DocsNavClassMethodItem.js'
+import DocsNavSearch from './DocsNavSearch.js'
 
 const presidiumV1ClassNames =
   presidiumV1Filenames
@@ -23,8 +28,9 @@ const presidiumV1ClassNames =
 const DocsNav = ReactElement(props => {
   const [path, setPath] = usePath()
   const [presidiumVersion] = usePresidiumVersion()
-  const [docsViewerFuncName, setDocsViewerFuncName] = useDocsViewerClassName()
+  const [docsViewerClassName, setDocsViewerClassName] = useDocsViewerClassName()
   const [docsSearchQuery] = useDocsSearchQuery()
+  const [cronistMap, setCronistMap] = useCronistMap()
   const [
     isHamburgerMenuActive, setIsHamburgerMenuActive,
   ] = useIsHamburgerMenuActive()
@@ -36,7 +42,7 @@ const DocsNav = ReactElement(props => {
         href,
         onClick(event) {
           event.preventDefault()
-          setDocsViewerFuncName(name)
+          setDocsViewerClassName(name)
           setPath(href)
           setIsHamburgerMenuActive(false)
         },
@@ -44,32 +50,56 @@ const DocsNav = ReactElement(props => {
     ])
   }
 
-  const [docsSearchCandidates, setDocsSearchCandidates] = useState(presidiumV1ClassNames)
-
-  const DocsSearchQueryNavItems = ({
-    docsSearchQuery, docsSearchCandidates,
-  }) => {
-    return docsSearchCandidates
-    .filter(funcName => (
-      funcName.toLowerCase().includes(docsSearchQuery)
-    ))
-    .map(funcName => (
-      CoreDocsNavItem(funcName)
-    ))
+  const CoreDocsNavItemMethod = (name, method) => {
+    const href = `/docs/${name}#${method}`
+    return Div({ key: name, class: 'docs-nav-item method' }, [
+      A({
+        href,
+        onClick() {
+          setIsHamburgerMenuActive(false)
+        }
+      }, method)
+    ])
   }
 
-  return Nav([
+  const docsData = cronistMap.get(docsViewerClassName) ?? { methods: [] }
+  const excludedMethods = presidiumClassExludedMethods.get(docsViewerClassName) ?? []
+
+  return Nav({ id: 'docs-nav' }, [
     Section([
-      DocsSearch(),
+      DocsSearchBar(),
     ]),
 
     docsSearchQuery == '' ? [
       Section([
-        presidiumV1ClassNames.map(className => CoreDocsNavItem(className)),
+        presidiumV1ClassNames.map(className => Div({ key: className }, [
+          DocsNavClassItem({
+            name: className,
+            setDocsViewerClassName,
+            setPath,
+            setIsHamburgerMenuActive,
+          }),
+
+          className == docsViewerClassName ? [
+            Div({ class: 'methods' }, [
+              ...docsData.methods
+              .filter(methodData =>
+                  !methodData.name.startsWith('_')
+                  && !excludedMethods.includes(methodData.name)
+              )
+              .map(methodData => DocsNavClassMethodItem({
+                key: `${className}-${methodData.name}`,
+                name: className,
+                method: methodData.name,
+                setIsHamburgerMenuActive,
+              }))
+            ]),
+          ] : [],
+        ])),
       ]),
     ] : [
       Section([
-        DocsSearchQueryNavItems({ docsSearchQuery, docsSearchCandidates }),
+        DocsNavSearch()
       ]),
     ]
   ])

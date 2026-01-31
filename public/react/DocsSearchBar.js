@@ -3,7 +3,7 @@ import useDocsSearchQuery from './useDocsSearchQuery.js'
 // DocsSearch(props {}) -> ReactElement
 const DocsSearch = ReactElement(props => {
   const [docsSearchQuery, setDocsSearchQuery] = useDocsSearchQuery()
-  return Div({ id: 'docs-search' }, [
+  return Div({ id: 'docs-search-bar' }, [
     Input({
       type: 'text',
       value: docsSearchQuery,
