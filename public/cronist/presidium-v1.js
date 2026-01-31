@@ -13124,9 +13124,7 @@ export default [
   },
   {
     name: 'S3Bucket',
-    docs: 'Presidium S3Bucket client for [Amazon S3](https://aws.amazon.com/s3/). Creates a new S3 bucket under `name` if a bucket does not already exist. Access to the newly creaed S3 bucket is private.\n' +
-      '\n' +
-      '```coffeescript [specscript]\n' +
+    docs: '```coffeescript [specscript]\n' +
       'new S3Bucket(options {\n' +
       '  name string,\n' +
       '  accessKeyId: string,\n' +
@@ -13147,14 +13145,14 @@ export default [
       '}) -> bucket S3Bucket\n' +
       '```\n' +
       '\n' +
+      'Presidium S3Bucket client for [Amazon S3](https://aws.amazon.com/s3/). Creates a new S3 bucket under `name` if a bucket does not already exist. Access to the newly creaed S3 bucket is private.\n' +
+      '\n' +
       '```javascript\n' +
       "const S3Bucket = require('presidium/S3Bucket')\n" +
+      "const AwsCredentials = require('presidium/AwsCredentials')\n" +
       '\n' +
-      'const awsCreds = {\n' +
-      "  accessKeyId: 'my-access-key-id',\n" +
-      "  secretAccessKey: 'my-secret-access-key',\n" +
-      "  region: 'my-region'\n" +
-      '}\n' +
+      "const awsCreds = await AwsCredentials('default')\n" +
+      "awsCreds.region = 'us-east-1'\n" +
       '\n' +
       'const myBucket = new S3Bucket({\n' +
       "  name: 'my-bucket-name',\n" +
@@ -13235,66 +13233,6 @@ export default [
         type: 'root',
         children: [
           {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'Presidium S3Bucket client for ',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 31, offset: 30 }
-                }
-              },
-              {
-                type: 'link',
-                title: null,
-                url: 'https://aws.amazon.com/s3/',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'Amazon S3',
-                    position: {
-                      start: { line: 1, column: 32, offset: 31 },
-                      end: { line: 1, column: 41, offset: 40 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 31, offset: 30 },
-                  end: { line: 1, column: 70, offset: 69 }
-                }
-              },
-              {
-                type: 'text',
-                value: '. Creates a new S3 bucket under ',
-                position: {
-                  start: { line: 1, column: 70, offset: 69 },
-                  end: { line: 1, column: 102, offset: 101 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: 'name',
-                position: {
-                  start: { line: 1, column: 102, offset: 101 },
-                  end: { line: 1, column: 108, offset: 107 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' if a bucket does not already exist. Access to the newly creaed S3 bucket is private.',
-                position: {
-                  start: { line: 1, column: 108, offset: 107 },
-                  end: { line: 1, column: 193, offset: 192 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 193, offset: 192 }
-            }
-          },
-          {
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
@@ -13317,8 +13255,68 @@ export default [
               "  VersioningStatus: 'Enabled'|'Suspended',\n" +
               '}) -> bucket S3Bucket',
             position: {
-              start: { line: 3, column: 1, offset: 194 },
-              end: { line: 22, column: 4, offset: 801 }
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 20, column: 4, offset: 607 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Presidium S3Bucket client for ',
+                position: {
+                  start: { line: 22, column: 1, offset: 609 },
+                  end: { line: 22, column: 31, offset: 639 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: 'https://aws.amazon.com/s3/',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Amazon S3',
+                    position: {
+                      start: { line: 22, column: 32, offset: 640 },
+                      end: { line: 22, column: 41, offset: 649 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 22, column: 31, offset: 639 },
+                  end: { line: 22, column: 70, offset: 678 }
+                }
+              },
+              {
+                type: 'text',
+                value: '. Creates a new S3 bucket under ',
+                position: {
+                  start: { line: 22, column: 70, offset: 678 },
+                  end: { line: 22, column: 102, offset: 710 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'name',
+                position: {
+                  start: { line: 22, column: 102, offset: 710 },
+                  end: { line: 22, column: 108, offset: 716 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' if a bucket does not already exist. Access to the newly creaed S3 bucket is private.',
+                position: {
+                  start: { line: 22, column: 108, offset: 716 },
+                  end: { line: 22, column: 193, offset: 801 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 22, column: 1, offset: 609 },
+              end: { line: 22, column: 193, offset: 801 }
             }
           },
           {
@@ -13326,12 +13324,10 @@ export default [
             lang: 'javascript',
             meta: null,
             value: "const S3Bucket = require('presidium/S3Bucket')\n" +
+              "const AwsCredentials = require('presidium/AwsCredentials')\n" +
               '\n' +
-              'const awsCreds = {\n' +
-              "  accessKeyId: 'my-access-key-id',\n" +
-              "  secretAccessKey: 'my-secret-access-key',\n" +
-              "  region: 'my-region'\n" +
-              '}\n' +
+              "const awsCreds = await AwsCredentials('default')\n" +
+              "awsCreds.region = 'us-east-1'\n" +
               '\n' +
               'const myBucket = new S3Bucket({\n' +
               "  name: 'my-bucket-name',\n" +
@@ -13341,7 +13337,7 @@ export default [
               '// myBucket is operational',
             position: {
               start: { line: 24, column: 1, offset: 803 },
-              end: { line: 39, column: 4, offset: 1114 }
+              end: { line: 37, column: 4, offset: 1131 }
             }
           },
           {
@@ -13351,14 +13347,14 @@ export default [
                 type: 'text',
                 value: 'Options:',
                 position: {
-                  start: { line: 41, column: 1, offset: 1116 },
-                  end: { line: 41, column: 9, offset: 1124 }
+                  start: { line: 39, column: 1, offset: 1133 },
+                  end: { line: 39, column: 9, offset: 1141 }
                 }
               }
             ],
             position: {
-              start: { line: 41, column: 1, offset: 1116 },
-              end: { line: 41, column: 9, offset: 1124 }
+              start: { line: 39, column: 1, offset: 1133 },
+              end: { line: 39, column: 9, offset: 1141 }
             }
           },
           {
@@ -13379,28 +13375,28 @@ export default [
                         type: 'inlineCode',
                         value: 'name',
                         position: {
-                          start: { line: 42, column: 5, offset: 1129 },
-                          end: { line: 42, column: 11, offset: 1135 }
+                          start: { line: 40, column: 5, offset: 1146 },
+                          end: { line: 40, column: 11, offset: 1152 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - globally unique name of the AWS S3 Bucket.',
                         position: {
-                          start: { line: 42, column: 11, offset: 1135 },
-                          end: { line: 42, column: 56, offset: 1180 }
+                          start: { line: 40, column: 11, offset: 1152 },
+                          end: { line: 40, column: 56, offset: 1197 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 42, column: 5, offset: 1129 },
-                      end: { line: 42, column: 56, offset: 1180 }
+                      start: { line: 40, column: 5, offset: 1146 },
+                      end: { line: 40, column: 56, offset: 1197 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 42, column: 3, offset: 1127 },
-                  end: { line: 42, column: 56, offset: 1180 }
+                  start: { line: 40, column: 3, offset: 1144 },
+                  end: { line: 40, column: 56, offset: 1197 }
                 }
               },
               {
@@ -13415,16 +13411,16 @@ export default [
                         type: 'inlineCode',
                         value: 'accessKeyId',
                         position: {
-                          start: { line: 43, column: 5, offset: 1185 },
-                          end: { line: 43, column: 18, offset: 1198 }
+                          start: { line: 41, column: 5, offset: 1202 },
+                          end: { line: 41, column: 18, offset: 1215 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - long term credential (ID) of an ',
                         position: {
-                          start: { line: 43, column: 18, offset: 1198 },
-                          end: { line: 43, column: 53, offset: 1233 }
+                          start: { line: 41, column: 18, offset: 1215 },
+                          end: { line: 41, column: 53, offset: 1250 }
                         }
                       },
                       {
@@ -13436,34 +13432,34 @@ export default [
                             type: 'text',
                             value: 'IAM',
                             position: {
-                              start: { line: 43, column: 54, offset: 1234 },
-                              end: { line: 43, column: 57, offset: 1237 }
+                              start: { line: 41, column: 54, offset: 1251 },
+                              end: { line: 41, column: 57, offset: 1254 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 43, column: 53, offset: 1233 },
-                          end: { line: 43, column: 87, offset: 1267 }
+                          start: { line: 41, column: 53, offset: 1250 },
+                          end: { line: 41, column: 87, offset: 1284 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' user.',
                         position: {
-                          start: { line: 43, column: 87, offset: 1267 },
-                          end: { line: 43, column: 93, offset: 1273 }
+                          start: { line: 41, column: 87, offset: 1284 },
+                          end: { line: 41, column: 93, offset: 1290 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 43, column: 5, offset: 1185 },
-                      end: { line: 43, column: 93, offset: 1273 }
+                      start: { line: 41, column: 5, offset: 1202 },
+                      end: { line: 41, column: 93, offset: 1290 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 43, column: 3, offset: 1183 },
-                  end: { line: 43, column: 93, offset: 1273 }
+                  start: { line: 41, column: 3, offset: 1200 },
+                  end: { line: 41, column: 93, offset: 1290 }
                 }
               },
               {
@@ -13478,16 +13474,16 @@ export default [
                         type: 'inlineCode',
                         value: 'secretAccessKey',
                         position: {
-                          start: { line: 44, column: 5, offset: 1278 },
-                          end: { line: 44, column: 22, offset: 1295 }
+                          start: { line: 42, column: 5, offset: 1295 },
+                          end: { line: 42, column: 22, offset: 1312 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - long term credential (secret) of an ',
                         position: {
-                          start: { line: 44, column: 22, offset: 1295 },
-                          end: { line: 44, column: 61, offset: 1334 }
+                          start: { line: 42, column: 22, offset: 1312 },
+                          end: { line: 42, column: 61, offset: 1351 }
                         }
                       },
                       {
@@ -13499,34 +13495,34 @@ export default [
                             type: 'text',
                             value: 'IAM',
                             position: {
-                              start: { line: 44, column: 62, offset: 1335 },
-                              end: { line: 44, column: 65, offset: 1338 }
+                              start: { line: 42, column: 62, offset: 1352 },
+                              end: { line: 42, column: 65, offset: 1355 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 44, column: 61, offset: 1334 },
-                          end: { line: 44, column: 95, offset: 1368 }
+                          start: { line: 42, column: 61, offset: 1351 },
+                          end: { line: 42, column: 95, offset: 1385 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' user.',
                         position: {
-                          start: { line: 44, column: 95, offset: 1368 },
-                          end: { line: 44, column: 101, offset: 1374 }
+                          start: { line: 42, column: 95, offset: 1385 },
+                          end: { line: 42, column: 101, offset: 1391 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 44, column: 5, offset: 1278 },
-                      end: { line: 44, column: 101, offset: 1374 }
+                      start: { line: 42, column: 5, offset: 1295 },
+                      end: { line: 42, column: 101, offset: 1391 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 44, column: 3, offset: 1276 },
-                  end: { line: 44, column: 101, offset: 1374 }
+                  start: { line: 42, column: 3, offset: 1293 },
+                  end: { line: 42, column: 101, offset: 1391 }
                 }
               },
               {
@@ -13541,48 +13537,48 @@ export default [
                         type: 'inlineCode',
                         value: 'region',
                         position: {
-                          start: { line: 45, column: 5, offset: 1379 },
-                          end: { line: 45, column: 13, offset: 1387 }
+                          start: { line: 43, column: 5, offset: 1396 },
+                          end: { line: 43, column: 13, offset: 1404 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - geographic location of data center cluster, e.g. ',
                         position: {
-                          start: { line: 45, column: 13, offset: 1387 },
-                          end: { line: 45, column: 65, offset: 1439 }
+                          start: { line: 43, column: 13, offset: 1404 },
+                          end: { line: 43, column: 65, offset: 1456 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: 'us-east-1',
                         position: {
-                          start: { line: 45, column: 65, offset: 1439 },
-                          end: { line: 45, column: 76, offset: 1450 }
+                          start: { line: 43, column: 65, offset: 1456 },
+                          end: { line: 43, column: 76, offset: 1467 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' or ',
                         position: {
-                          start: { line: 45, column: 76, offset: 1450 },
-                          end: { line: 45, column: 80, offset: 1454 }
+                          start: { line: 43, column: 76, offset: 1467 },
+                          end: { line: 43, column: 80, offset: 1471 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: 'us-west-2',
                         position: {
-                          start: { line: 45, column: 80, offset: 1454 },
-                          end: { line: 45, column: 91, offset: 1465 }
+                          start: { line: 43, column: 80, offset: 1471 },
+                          end: { line: 43, column: 91, offset: 1482 }
                         }
                       },
                       {
                         type: 'text',
                         value: '. ',
                         position: {
-                          start: { line: 45, column: 91, offset: 1465 },
-                          end: { line: 45, column: 93, offset: 1467 }
+                          start: { line: 43, column: 91, offset: 1482 },
+                          end: { line: 43, column: 93, offset: 1484 }
                         }
                       },
                       {
@@ -13594,26 +13590,26 @@ export default [
                             type: 'text',
                             value: 'Full list of AWS regions',
                             position: {
-                              start: { line: 45, column: 94, offset: 1468 },
-                              end: { line: 45, column: 118, offset: 1492 }
+                              start: { line: 43, column: 94, offset: 1485 },
+                              end: { line: 43, column: 118, offset: 1509 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 45, column: 93, offset: 1467 },
-                          end: { line: 45, column: 220, offset: 1594 }
+                          start: { line: 43, column: 93, offset: 1484 },
+                          end: { line: 43, column: 220, offset: 1611 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 45, column: 5, offset: 1379 },
-                      end: { line: 45, column: 220, offset: 1594 }
+                      start: { line: 43, column: 5, offset: 1396 },
+                      end: { line: 43, column: 220, offset: 1611 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 45, column: 3, offset: 1377 },
-                  end: { line: 45, column: 220, offset: 1594 }
+                  start: { line: 43, column: 3, offset: 1394 },
+                  end: { line: 43, column: 220, offset: 1611 }
                 }
               },
               {
@@ -13628,60 +13624,60 @@ export default [
                         type: 'inlineCode',
                         value: 'BlockPublicACLs',
                         position: {
-                          start: { line: 46, column: 5, offset: 1599 },
-                          end: { line: 46, column: 22, offset: 1616 }
+                          start: { line: 44, column: 5, offset: 1616 },
+                          end: { line: 44, column: 22, offset: 1633 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - if ',
                         position: {
-                          start: { line: 46, column: 22, offset: 1616 },
-                          end: { line: 46, column: 28, offset: 1622 }
+                          start: { line: 44, column: 22, offset: 1633 },
+                          end: { line: 44, column: 28, offset: 1639 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: 'false',
                         position: {
-                          start: { line: 46, column: 28, offset: 1622 },
-                          end: { line: 46, column: 35, offset: 1629 }
+                          start: { line: 44, column: 28, offset: 1639 },
+                          end: { line: 44, column: 35, offset: 1646 }
                         }
                       },
                       {
                         type: 'text',
                         value: ', AWS S3 does not block public access control lists (ACLs) for this bucket and objects in this bucket. Default ',
                         position: {
-                          start: { line: 46, column: 35, offset: 1629 },
-                          end: { line: 46, column: 146, offset: 1740 }
+                          start: { line: 44, column: 35, offset: 1646 },
+                          end: { line: 44, column: 146, offset: 1757 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: 'true',
                         position: {
-                          start: { line: 46, column: 146, offset: 1740 },
-                          end: { line: 46, column: 152, offset: 1746 }
+                          start: { line: 44, column: 146, offset: 1757 },
+                          end: { line: 44, column: 152, offset: 1763 }
                         }
                       },
                       {
                         type: 'text',
                         value: '.',
                         position: {
-                          start: { line: 46, column: 152, offset: 1746 },
-                          end: { line: 46, column: 153, offset: 1747 }
+                          start: { line: 44, column: 152, offset: 1763 },
+                          end: { line: 44, column: 153, offset: 1764 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 46, column: 5, offset: 1599 },
-                      end: { line: 46, column: 153, offset: 1747 }
+                      start: { line: 44, column: 5, offset: 1616 },
+                      end: { line: 44, column: 153, offset: 1764 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 46, column: 3, offset: 1597 },
-                  end: { line: 46, column: 153, offset: 1747 }
+                  start: { line: 44, column: 3, offset: 1614 },
+                  end: { line: 44, column: 153, offset: 1764 }
                 }
               },
               {
@@ -13696,60 +13692,60 @@ export default [
                         type: 'inlineCode',
                         value: 'IgnorePublicACLs',
                         position: {
-                          start: { line: 47, column: 5, offset: 1752 },
-                          end: { line: 47, column: 23, offset: 1770 }
+                          start: { line: 45, column: 5, offset: 1769 },
+                          end: { line: 45, column: 23, offset: 1787 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - if ',
                         position: {
-                          start: { line: 47, column: 23, offset: 1770 },
-                          end: { line: 47, column: 29, offset: 1776 }
+                          start: { line: 45, column: 23, offset: 1787 },
+                          end: { line: 45, column: 29, offset: 1793 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: 'false',
                         position: {
-                          start: { line: 47, column: 29, offset: 1776 },
-                          end: { line: 47, column: 36, offset: 1783 }
+                          start: { line: 45, column: 29, offset: 1793 },
+                          end: { line: 45, column: 36, offset: 1800 }
                         }
                       },
                       {
                         type: 'text',
                         value: ', AWS S3 does not ignore public access control lists (ACLs) for this bucket and objects in this bucket. Default ',
                         position: {
-                          start: { line: 47, column: 36, offset: 1783 },
-                          end: { line: 47, column: 148, offset: 1895 }
+                          start: { line: 45, column: 36, offset: 1800 },
+                          end: { line: 45, column: 148, offset: 1912 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: 'true',
                         position: {
-                          start: { line: 47, column: 148, offset: 1895 },
-                          end: { line: 47, column: 154, offset: 1901 }
+                          start: { line: 45, column: 148, offset: 1912 },
+                          end: { line: 45, column: 154, offset: 1918 }
                         }
                       },
                       {
                         type: 'text',
                         value: '.',
                         position: {
-                          start: { line: 47, column: 154, offset: 1901 },
-                          end: { line: 47, column: 155, offset: 1902 }
+                          start: { line: 45, column: 154, offset: 1918 },
+                          end: { line: 45, column: 155, offset: 1919 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 47, column: 5, offset: 1752 },
-                      end: { line: 47, column: 155, offset: 1902 }
+                      start: { line: 45, column: 5, offset: 1769 },
+                      end: { line: 45, column: 155, offset: 1919 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 47, column: 3, offset: 1750 },
-                  end: { line: 47, column: 155, offset: 1902 }
+                  start: { line: 45, column: 3, offset: 1767 },
+                  end: { line: 45, column: 155, offset: 1919 }
                 }
               },
               {
@@ -13764,60 +13760,60 @@ export default [
                         type: 'inlineCode',
                         value: 'BlockPublicPolicy',
                         position: {
-                          start: { line: 48, column: 5, offset: 1907 },
-                          end: { line: 48, column: 24, offset: 1926 }
+                          start: { line: 46, column: 5, offset: 1924 },
+                          end: { line: 46, column: 24, offset: 1943 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - if ',
                         position: {
-                          start: { line: 48, column: 24, offset: 1926 },
-                          end: { line: 48, column: 30, offset: 1932 }
+                          start: { line: 46, column: 24, offset: 1943 },
+                          end: { line: 46, column: 30, offset: 1949 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: 'false',
                         position: {
-                          start: { line: 48, column: 30, offset: 1932 },
-                          end: { line: 48, column: 37, offset: 1939 }
+                          start: { line: 46, column: 30, offset: 1949 },
+                          end: { line: 46, column: 37, offset: 1956 }
                         }
                       },
                       {
                         type: 'text',
                         value: ', AWS S3 does not block public bucket policies for this bucket. Default ',
                         position: {
-                          start: { line: 48, column: 37, offset: 1939 },
-                          end: { line: 48, column: 109, offset: 2011 }
+                          start: { line: 46, column: 37, offset: 1956 },
+                          end: { line: 46, column: 109, offset: 2028 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: 'true',
                         position: {
-                          start: { line: 48, column: 109, offset: 2011 },
-                          end: { line: 48, column: 115, offset: 2017 }
+                          start: { line: 46, column: 109, offset: 2028 },
+                          end: { line: 46, column: 115, offset: 2034 }
                         }
                       },
                       {
                         type: 'text',
                         value: '.',
                         position: {
-                          start: { line: 48, column: 115, offset: 2017 },
-                          end: { line: 48, column: 116, offset: 2018 }
+                          start: { line: 46, column: 115, offset: 2034 },
+                          end: { line: 46, column: 116, offset: 2035 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 48, column: 5, offset: 1907 },
-                      end: { line: 48, column: 116, offset: 2018 }
+                      start: { line: 46, column: 5, offset: 1924 },
+                      end: { line: 46, column: 116, offset: 2035 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 48, column: 3, offset: 1905 },
-                  end: { line: 48, column: 116, offset: 2018 }
+                  start: { line: 46, column: 3, offset: 1922 },
+                  end: { line: 46, column: 116, offset: 2035 }
                 }
               },
               {
@@ -13832,60 +13828,60 @@ export default [
                         type: 'inlineCode',
                         value: 'RestrictPublicBuckets',
                         position: {
-                          start: { line: 49, column: 5, offset: 2023 },
-                          end: { line: 49, column: 28, offset: 2046 }
+                          start: { line: 47, column: 5, offset: 2040 },
+                          end: { line: 47, column: 28, offset: 2063 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - if ',
                         position: {
-                          start: { line: 49, column: 28, offset: 2046 },
-                          end: { line: 49, column: 34, offset: 2052 }
+                          start: { line: 47, column: 28, offset: 2063 },
+                          end: { line: 47, column: 34, offset: 2069 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: 'false',
                         position: {
-                          start: { line: 49, column: 34, offset: 2052 },
-                          end: { line: 49, column: 41, offset: 2059 }
+                          start: { line: 47, column: 34, offset: 2069 },
+                          end: { line: 47, column: 41, offset: 2076 }
                         }
                       },
                       {
                         type: 'text',
                         value: ', AWS S3 does not restrict public bucket policies for this bucket. Default ',
                         position: {
-                          start: { line: 49, column: 41, offset: 2059 },
-                          end: { line: 49, column: 116, offset: 2134 }
+                          start: { line: 47, column: 41, offset: 2076 },
+                          end: { line: 47, column: 116, offset: 2151 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: 'true',
                         position: {
-                          start: { line: 49, column: 116, offset: 2134 },
-                          end: { line: 49, column: 122, offset: 2140 }
+                          start: { line: 47, column: 116, offset: 2151 },
+                          end: { line: 47, column: 122, offset: 2157 }
                         }
                       },
                       {
                         type: 'text',
                         value: '.',
                         position: {
-                          start: { line: 49, column: 122, offset: 2140 },
-                          end: { line: 49, column: 123, offset: 2141 }
+                          start: { line: 47, column: 122, offset: 2157 },
+                          end: { line: 47, column: 123, offset: 2158 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 49, column: 5, offset: 2023 },
-                      end: { line: 49, column: 123, offset: 2141 }
+                      start: { line: 47, column: 5, offset: 2040 },
+                      end: { line: 47, column: 123, offset: 2158 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 49, column: 3, offset: 2021 },
-                  end: { line: 49, column: 123, offset: 2141 }
+                  start: { line: 47, column: 3, offset: 2038 },
+                  end: { line: 47, column: 123, offset: 2158 }
                 }
               },
               {
@@ -13900,44 +13896,44 @@ export default [
                         type: 'inlineCode',
                         value: 'RequestPayer',
                         position: {
-                          start: { line: 50, column: 5, offset: 2146 },
-                          end: { line: 50, column: 19, offset: 2160 }
+                          start: { line: 48, column: 5, offset: 2163 },
+                          end: { line: 48, column: 19, offset: 2177 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - the payer for requests to the AWS S3 bucket. Defaults to ',
                         position: {
-                          start: { line: 50, column: 19, offset: 2160 },
-                          end: { line: 50, column: 79, offset: 2220 }
+                          start: { line: 48, column: 19, offset: 2177 },
+                          end: { line: 48, column: 79, offset: 2237 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: 'BucketOwner',
                         position: {
-                          start: { line: 50, column: 79, offset: 2220 },
-                          end: { line: 50, column: 92, offset: 2233 }
+                          start: { line: 48, column: 79, offset: 2237 },
+                          end: { line: 48, column: 92, offset: 2250 }
                         }
                       },
                       {
                         type: 'text',
                         value: '.',
                         position: {
-                          start: { line: 50, column: 92, offset: 2233 },
-                          end: { line: 50, column: 93, offset: 2234 }
+                          start: { line: 48, column: 92, offset: 2250 },
+                          end: { line: 48, column: 93, offset: 2251 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 50, column: 5, offset: 2146 },
-                      end: { line: 50, column: 93, offset: 2234 }
+                      start: { line: 48, column: 5, offset: 2163 },
+                      end: { line: 48, column: 93, offset: 2251 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 50, column: 3, offset: 2144 },
-                  end: { line: 50, column: 93, offset: 2234 }
+                  start: { line: 48, column: 3, offset: 2161 },
+                  end: { line: 48, column: 93, offset: 2251 }
                 }
               },
               {
@@ -13952,60 +13948,60 @@ export default [
                         type: 'inlineCode',
                         value: 'ObjectLockEnabled',
                         position: {
-                          start: { line: 51, column: 5, offset: 2239 },
-                          end: { line: 51, column: 24, offset: 2258 }
+                          start: { line: 49, column: 5, offset: 2256 },
+                          end: { line: 49, column: 24, offset: 2275 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - if ',
                         position: {
-                          start: { line: 51, column: 24, offset: 2258 },
-                          end: { line: 51, column: 30, offset: 2264 }
+                          start: { line: 49, column: 24, offset: 2275 },
+                          end: { line: 49, column: 30, offset: 2281 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: 'true',
                         position: {
-                          start: { line: 51, column: 30, offset: 2264 },
-                          end: { line: 51, column: 36, offset: 2270 }
+                          start: { line: 49, column: 30, offset: 2281 },
+                          end: { line: 49, column: 36, offset: 2287 }
                         }
                       },
                       {
                         type: 'text',
                         value: ', AWS S3 enables Object Lock for this bucket. Defaults to ',
                         position: {
-                          start: { line: 51, column: 36, offset: 2270 },
-                          end: { line: 51, column: 94, offset: 2328 }
+                          start: { line: 49, column: 36, offset: 2287 },
+                          end: { line: 49, column: 94, offset: 2345 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: 'false',
                         position: {
-                          start: { line: 51, column: 94, offset: 2328 },
-                          end: { line: 51, column: 101, offset: 2335 }
+                          start: { line: 49, column: 94, offset: 2345 },
+                          end: { line: 49, column: 101, offset: 2352 }
                         }
                       },
                       {
                         type: 'text',
                         value: '.',
                         position: {
-                          start: { line: 51, column: 101, offset: 2335 },
-                          end: { line: 51, column: 102, offset: 2336 }
+                          start: { line: 49, column: 101, offset: 2352 },
+                          end: { line: 49, column: 102, offset: 2353 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 51, column: 5, offset: 2239 },
-                      end: { line: 51, column: 102, offset: 2336 }
+                      start: { line: 49, column: 5, offset: 2256 },
+                      end: { line: 49, column: 102, offset: 2353 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 51, column: 3, offset: 2237 },
-                  end: { line: 51, column: 102, offset: 2336 }
+                  start: { line: 49, column: 3, offset: 2254 },
+                  end: { line: 49, column: 102, offset: 2353 }
                 }
               },
               {
@@ -14020,62 +14016,62 @@ export default [
                         type: 'inlineCode',
                         value: 'ObjectLockDefaultRetentionMode',
                         position: {
-                          start: { line: 52, column: 5, offset: 2341 },
-                          end: { line: 52, column: 37, offset: 2373 }
+                          start: { line: 50, column: 5, offset: 2358 },
+                          end: { line: 50, column: 37, offset: 2390 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - the default Object Lock mode (',
                         position: {
-                          start: { line: 52, column: 37, offset: 2373 },
-                          end: { line: 52, column: 70, offset: 2406 }
+                          start: { line: 50, column: 37, offset: 2390 },
+                          end: { line: 50, column: 70, offset: 2423 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: "'GOVERNANCE'",
                         position: {
-                          start: { line: 52, column: 70, offset: 2406 },
-                          end: { line: 52, column: 84, offset: 2420 }
+                          start: { line: 50, column: 70, offset: 2423 },
+                          end: { line: 50, column: 84, offset: 2437 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' or ',
                         position: {
-                          start: { line: 52, column: 84, offset: 2420 },
-                          end: { line: 52, column: 88, offset: 2424 }
+                          start: { line: 50, column: 84, offset: 2437 },
+                          end: { line: 50, column: 88, offset: 2441 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: "'COMPLIANCE'",
                         position: {
-                          start: { line: 52, column: 88, offset: 2424 },
-                          end: { line: 52, column: 102, offset: 2438 }
+                          start: { line: 50, column: 88, offset: 2441 },
+                          end: { line: 50, column: 102, offset: 2455 }
                         }
                       },
                       {
                         type: 'text',
                         value: ') for this bucket. Defaults to ',
                         position: {
-                          start: { line: 52, column: 102, offset: 2438 },
-                          end: { line: 52, column: 133, offset: 2469 }
+                          start: { line: 50, column: 102, offset: 2455 },
+                          end: { line: 50, column: 133, offset: 2486 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: "'COMPLIANCE'",
                         position: {
-                          start: { line: 52, column: 133, offset: 2469 },
-                          end: { line: 52, column: 147, offset: 2483 }
+                          start: { line: 50, column: 133, offset: 2486 },
+                          end: { line: 50, column: 147, offset: 2500 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 52, column: 5, offset: 2341 },
-                      end: { line: 52, column: 147, offset: 2483 }
+                      start: { line: 50, column: 5, offset: 2358 },
+                      end: { line: 50, column: 147, offset: 2500 }
                     }
                   },
                   {
@@ -14096,11 +14092,11 @@ export default [
                                 type: 'inlineCode',
                                 value: "'COMPLIANCE'",
                                 position: {
-                                  start: { line: 53, column: 7, offset: 2490 },
+                                  start: { line: 51, column: 7, offset: 2507 },
                                   end: {
-                                    line: 53,
+                                    line: 51,
                                     column: 21,
-                                    offset: 2504
+                                    offset: 2521
                                   }
                                 }
                               },
@@ -14109,27 +14105,27 @@ export default [
                                 value: ' - no one, including the root user, can delete a locked object.',
                                 position: {
                                   start: {
-                                    line: 53,
+                                    line: 51,
                                     column: 21,
-                                    offset: 2504
+                                    offset: 2521
                                   },
                                   end: {
-                                    line: 53,
+                                    line: 51,
                                     column: 84,
-                                    offset: 2567
+                                    offset: 2584
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 53, column: 7, offset: 2490 },
-                              end: { line: 53, column: 84, offset: 2567 }
+                              start: { line: 51, column: 7, offset: 2507 },
+                              end: { line: 51, column: 84, offset: 2584 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 53, column: 5, offset: 2488 },
-                          end: { line: 53, column: 84, offset: 2567 }
+                          start: { line: 51, column: 5, offset: 2505 },
+                          end: { line: 51, column: 84, offset: 2584 }
                         }
                       },
                       {
@@ -14144,11 +14140,11 @@ export default [
                                 type: 'inlineCode',
                                 value: "'GOVERNANCE'",
                                 position: {
-                                  start: { line: 54, column: 7, offset: 2574 },
+                                  start: { line: 52, column: 7, offset: 2591 },
                                   end: {
-                                    line: 54,
+                                    line: 52,
                                     column: 21,
-                                    offset: 2588
+                                    offset: 2605
                                   }
                                 }
                               },
@@ -14157,39 +14153,39 @@ export default [
                                 value: ' - users with special permissions can delete a locked object.',
                                 position: {
                                   start: {
-                                    line: 54,
+                                    line: 52,
                                     column: 21,
-                                    offset: 2588
+                                    offset: 2605
                                   },
                                   end: {
-                                    line: 54,
+                                    line: 52,
                                     column: 82,
-                                    offset: 2649
+                                    offset: 2666
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 54, column: 7, offset: 2574 },
-                              end: { line: 54, column: 82, offset: 2649 }
+                              start: { line: 52, column: 7, offset: 2591 },
+                              end: { line: 52, column: 82, offset: 2666 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 54, column: 5, offset: 2572 },
-                          end: { line: 54, column: 82, offset: 2649 }
+                          start: { line: 52, column: 5, offset: 2589 },
+                          end: { line: 52, column: 82, offset: 2666 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 53, column: 5, offset: 2488 },
-                      end: { line: 54, column: 82, offset: 2649 }
+                      start: { line: 51, column: 5, offset: 2505 },
+                      end: { line: 52, column: 82, offset: 2666 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 52, column: 3, offset: 2339 },
-                  end: { line: 54, column: 82, offset: 2649 }
+                  start: { line: 50, column: 3, offset: 2356 },
+                  end: { line: 52, column: 82, offset: 2666 }
                 }
               },
               {
@@ -14204,28 +14200,28 @@ export default [
                         type: 'inlineCode',
                         value: 'ObjectLockDefaultRetentionDays',
                         position: {
-                          start: { line: 55, column: 5, offset: 2654 },
-                          end: { line: 55, column: 37, offset: 2686 }
+                          start: { line: 53, column: 5, offset: 2671 },
+                          end: { line: 53, column: 37, offset: 2703 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - number of days that a locked object is protected by Object Lock for this bucket.',
                         position: {
-                          start: { line: 55, column: 37, offset: 2686 },
-                          end: { line: 55, column: 120, offset: 2769 }
+                          start: { line: 53, column: 37, offset: 2703 },
+                          end: { line: 53, column: 120, offset: 2786 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 55, column: 5, offset: 2654 },
-                      end: { line: 55, column: 120, offset: 2769 }
+                      start: { line: 53, column: 5, offset: 2671 },
+                      end: { line: 53, column: 120, offset: 2786 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 55, column: 3, offset: 2652 },
-                  end: { line: 55, column: 120, offset: 2769 }
+                  start: { line: 53, column: 3, offset: 2669 },
+                  end: { line: 53, column: 120, offset: 2786 }
                 }
               },
               {
@@ -14240,28 +14236,28 @@ export default [
                         type: 'inlineCode',
                         value: 'ObjectLockDefaultRetentionYears',
                         position: {
-                          start: { line: 56, column: 5, offset: 2774 },
-                          end: { line: 56, column: 38, offset: 2807 }
+                          start: { line: 54, column: 5, offset: 2791 },
+                          end: { line: 54, column: 38, offset: 2824 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - number of years that a locked object is protected by Object Lock for this bucket.',
                         position: {
-                          start: { line: 56, column: 38, offset: 2807 },
-                          end: { line: 56, column: 122, offset: 2891 }
+                          start: { line: 54, column: 38, offset: 2824 },
+                          end: { line: 54, column: 122, offset: 2908 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 56, column: 5, offset: 2774 },
-                      end: { line: 56, column: 122, offset: 2891 }
+                      start: { line: 54, column: 5, offset: 2791 },
+                      end: { line: 54, column: 122, offset: 2908 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 56, column: 3, offset: 2772 },
-                  end: { line: 56, column: 122, offset: 2891 }
+                  start: { line: 54, column: 3, offset: 2789 },
+                  end: { line: 54, column: 122, offset: 2908 }
                 }
               },
               {
@@ -14276,60 +14272,60 @@ export default [
                         type: 'inlineCode',
                         value: 'VersioningMfaDelete',
                         position: {
-                          start: { line: 57, column: 5, offset: 2896 },
-                          end: { line: 57, column: 26, offset: 2917 }
+                          start: { line: 55, column: 5, offset: 2913 },
+                          end: { line: 55, column: 26, offset: 2934 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - if ',
                         position: {
-                          start: { line: 57, column: 26, offset: 2917 },
-                          end: { line: 57, column: 32, offset: 2923 }
+                          start: { line: 55, column: 26, offset: 2934 },
+                          end: { line: 55, column: 32, offset: 2940 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: "'Enabled'",
                         position: {
-                          start: { line: 57, column: 32, offset: 2923 },
-                          end: { line: 57, column: 43, offset: 2934 }
+                          start: { line: 55, column: 32, offset: 2940 },
+                          end: { line: 55, column: 43, offset: 2951 }
                         }
                       },
                       {
                         type: 'text',
                         value: ', AWS S3 requires multifactor authentication (MFA) before permanently deleting object versions or change bucket versioning states for this bucket. Defaults to ',
                         position: {
-                          start: { line: 57, column: 43, offset: 2934 },
-                          end: { line: 57, column: 202, offset: 3093 }
+                          start: { line: 55, column: 43, offset: 2951 },
+                          end: { line: 55, column: 202, offset: 3110 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: "'Disabled'",
                         position: {
-                          start: { line: 57, column: 202, offset: 3093 },
-                          end: { line: 57, column: 214, offset: 3105 }
+                          start: { line: 55, column: 202, offset: 3110 },
+                          end: { line: 55, column: 214, offset: 3122 }
                         }
                       },
                       {
                         type: 'text',
                         value: '.',
                         position: {
-                          start: { line: 57, column: 214, offset: 3105 },
-                          end: { line: 57, column: 215, offset: 3106 }
+                          start: { line: 55, column: 214, offset: 3122 },
+                          end: { line: 55, column: 215, offset: 3123 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 57, column: 5, offset: 2896 },
-                      end: { line: 57, column: 215, offset: 3106 }
+                      start: { line: 55, column: 5, offset: 2913 },
+                      end: { line: 55, column: 215, offset: 3123 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 57, column: 3, offset: 2894 },
-                  end: { line: 57, column: 215, offset: 3106 }
+                  start: { line: 55, column: 3, offset: 2911 },
+                  end: { line: 55, column: 215, offset: 3123 }
                 }
               },
               {
@@ -14344,98 +14340,98 @@ export default [
                         type: 'inlineCode',
                         value: 'VersioningStatus',
                         position: {
-                          start: { line: 58, column: 5, offset: 3111 },
-                          end: { line: 58, column: 23, offset: 3129 }
+                          start: { line: 56, column: 5, offset: 3128 },
+                          end: { line: 56, column: 23, offset: 3146 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - if ',
                         position: {
-                          start: { line: 58, column: 23, offset: 3129 },
-                          end: { line: 58, column: 29, offset: 3135 }
+                          start: { line: 56, column: 23, offset: 3146 },
+                          end: { line: 56, column: 29, offset: 3152 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: "'Enabled'",
                         position: {
-                          start: { line: 58, column: 29, offset: 3135 },
-                          end: { line: 58, column: 40, offset: 3146 }
+                          start: { line: 56, column: 29, offset: 3152 },
+                          end: { line: 56, column: 40, offset: 3163 }
                         }
                       },
                       {
                         type: 'text',
                         value: ', AWS S3 enables versioning for objects in this bucket, and all objects added to the bucket receive a unique Version ID. If ',
                         position: {
-                          start: { line: 58, column: 40, offset: 3146 },
-                          end: { line: 58, column: 164, offset: 3270 }
+                          start: { line: 56, column: 40, offset: 3163 },
+                          end: { line: 56, column: 164, offset: 3287 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: "'Suspended'",
                         position: {
-                          start: { line: 58, column: 164, offset: 3270 },
-                          end: { line: 58, column: 177, offset: 3283 }
+                          start: { line: 56, column: 164, offset: 3287 },
+                          end: { line: 56, column: 177, offset: 3300 }
                         }
                       },
                       {
                         type: 'text',
                         value: ', existing object versions remain in the bucket, new objects receive a ',
                         position: {
-                          start: { line: 58, column: 177, offset: 3283 },
-                          end: { line: 58, column: 248, offset: 3354 }
+                          start: { line: 56, column: 177, offset: 3300 },
+                          end: { line: 56, column: 248, offset: 3371 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: 'null',
                         position: {
-                          start: { line: 58, column: 248, offset: 3354 },
-                          end: { line: 58, column: 254, offset: 3360 }
+                          start: { line: 56, column: 248, offset: 3371 },
+                          end: { line: 56, column: 254, offset: 3377 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' Version ID, and overwrites of objects behave as they would in an unversioned bucket. Defaults to ',
                         position: {
-                          start: { line: 58, column: 254, offset: 3360 },
-                          end: { line: 58, column: 352, offset: 3458 }
+                          start: { line: 56, column: 254, offset: 3377 },
+                          end: { line: 56, column: 352, offset: 3475 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: "'Suspended'",
                         position: {
-                          start: { line: 58, column: 352, offset: 3458 },
-                          end: { line: 58, column: 365, offset: 3471 }
+                          start: { line: 56, column: 352, offset: 3475 },
+                          end: { line: 56, column: 365, offset: 3488 }
                         }
                       },
                       {
                         type: 'text',
                         value: '.',
                         position: {
-                          start: { line: 58, column: 365, offset: 3471 },
-                          end: { line: 58, column: 366, offset: 3472 }
+                          start: { line: 56, column: 365, offset: 3488 },
+                          end: { line: 56, column: 366, offset: 3489 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 58, column: 5, offset: 3111 },
-                      end: { line: 58, column: 366, offset: 3472 }
+                      start: { line: 56, column: 5, offset: 3128 },
+                      end: { line: 56, column: 366, offset: 3489 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 58, column: 3, offset: 3109 },
-                  end: { line: 58, column: 366, offset: 3472 }
+                  start: { line: 56, column: 3, offset: 3126 },
+                  end: { line: 56, column: 366, offset: 3489 }
                 }
               }
             ],
             position: {
-              start: { line: 42, column: 3, offset: 1127 },
-              end: { line: 58, column: 366, offset: 3472 }
+              start: { line: 40, column: 3, offset: 1144 },
+              end: { line: 56, column: 366, offset: 3489 }
             }
           },
           {
@@ -14445,14 +14441,14 @@ export default [
                 type: 'text',
                 value: 'Methods:',
                 position: {
-                  start: { line: 60, column: 1, offset: 3474 },
-                  end: { line: 60, column: 9, offset: 3482 }
+                  start: { line: 58, column: 1, offset: 3491 },
+                  end: { line: 58, column: 9, offset: 3499 }
                 }
               }
             ],
             position: {
-              start: { line: 60, column: 1, offset: 3474 },
-              end: { line: 60, column: 9, offset: 3482 }
+              start: { line: 58, column: 1, offset: 3491 },
+              end: { line: 58, column: 9, offset: 3499 }
             }
           },
           {
@@ -14478,26 +14474,26 @@ export default [
                             type: 'text',
                             value: 'getLocation',
                             position: {
-                              start: { line: 61, column: 6, offset: 3488 },
-                              end: { line: 61, column: 17, offset: 3499 }
+                              start: { line: 59, column: 6, offset: 3505 },
+                              end: { line: 59, column: 17, offset: 3516 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 61, column: 5, offset: 3487 },
-                          end: { line: 61, column: 32, offset: 3514 }
+                          start: { line: 59, column: 5, offset: 3504 },
+                          end: { line: 59, column: 32, offset: 3531 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 61, column: 5, offset: 3487 },
-                      end: { line: 61, column: 32, offset: 3514 }
+                      start: { line: 59, column: 5, offset: 3504 },
+                      end: { line: 59, column: 32, offset: 3531 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 61, column: 3, offset: 3485 },
-                  end: { line: 61, column: 32, offset: 3514 }
+                  start: { line: 59, column: 3, offset: 3502 },
+                  end: { line: 59, column: 32, offset: 3531 }
                 }
               },
               {
@@ -14517,26 +14513,26 @@ export default [
                             type: 'text',
                             value: 'create',
                             position: {
-                              start: { line: 62, column: 6, offset: 3520 },
-                              end: { line: 62, column: 12, offset: 3526 }
+                              start: { line: 60, column: 6, offset: 3537 },
+                              end: { line: 60, column: 12, offset: 3543 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 62, column: 5, offset: 3519 },
-                          end: { line: 62, column: 22, offset: 3536 }
+                          start: { line: 60, column: 5, offset: 3536 },
+                          end: { line: 60, column: 22, offset: 3553 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 62, column: 5, offset: 3519 },
-                      end: { line: 62, column: 22, offset: 3536 }
+                      start: { line: 60, column: 5, offset: 3536 },
+                      end: { line: 60, column: 22, offset: 3553 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 62, column: 3, offset: 3517 },
-                  end: { line: 62, column: 22, offset: 3536 }
+                  start: { line: 60, column: 3, offset: 3534 },
+                  end: { line: 60, column: 22, offset: 3553 }
                 }
               },
               {
@@ -14556,26 +14552,26 @@ export default [
                             type: 'text',
                             value: 'create',
                             position: {
-                              start: { line: 63, column: 6, offset: 3542 },
-                              end: { line: 63, column: 12, offset: 3548 }
+                              start: { line: 61, column: 6, offset: 3559 },
+                              end: { line: 61, column: 12, offset: 3565 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 63, column: 5, offset: 3541 },
-                          end: { line: 63, column: 22, offset: 3558 }
+                          start: { line: 61, column: 5, offset: 3558 },
+                          end: { line: 61, column: 22, offset: 3575 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 63, column: 5, offset: 3541 },
-                      end: { line: 63, column: 22, offset: 3558 }
+                      start: { line: 61, column: 5, offset: 3558 },
+                      end: { line: 61, column: 22, offset: 3575 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 63, column: 3, offset: 3539 },
-                  end: { line: 63, column: 22, offset: 3558 }
+                  start: { line: 61, column: 3, offset: 3556 },
+                  end: { line: 61, column: 22, offset: 3575 }
                 }
               },
               {
@@ -14595,26 +14591,26 @@ export default [
                             type: 'text',
                             value: 'putPolicy',
                             position: {
-                              start: { line: 64, column: 6, offset: 3564 },
-                              end: { line: 64, column: 15, offset: 3573 }
+                              start: { line: 62, column: 6, offset: 3581 },
+                              end: { line: 62, column: 15, offset: 3590 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 64, column: 5, offset: 3563 },
-                          end: { line: 64, column: 28, offset: 3586 }
+                          start: { line: 62, column: 5, offset: 3580 },
+                          end: { line: 62, column: 28, offset: 3603 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 64, column: 5, offset: 3563 },
-                      end: { line: 64, column: 28, offset: 3586 }
+                      start: { line: 62, column: 5, offset: 3580 },
+                      end: { line: 62, column: 28, offset: 3603 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 64, column: 3, offset: 3561 },
-                  end: { line: 64, column: 28, offset: 3586 }
+                  start: { line: 62, column: 3, offset: 3578 },
+                  end: { line: 62, column: 28, offset: 3603 }
                 }
               },
               {
@@ -14634,26 +14630,26 @@ export default [
                             type: 'text',
                             value: 'getPolicy',
                             position: {
-                              start: { line: 65, column: 6, offset: 3592 },
-                              end: { line: 65, column: 15, offset: 3601 }
+                              start: { line: 63, column: 6, offset: 3609 },
+                              end: { line: 63, column: 15, offset: 3618 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 65, column: 5, offset: 3591 },
-                          end: { line: 65, column: 28, offset: 3614 }
+                          start: { line: 63, column: 5, offset: 3608 },
+                          end: { line: 63, column: 28, offset: 3631 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 65, column: 5, offset: 3591 },
-                      end: { line: 65, column: 28, offset: 3614 }
+                      start: { line: 63, column: 5, offset: 3608 },
+                      end: { line: 63, column: 28, offset: 3631 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 65, column: 3, offset: 3589 },
-                  end: { line: 65, column: 28, offset: 3614 }
+                  start: { line: 63, column: 3, offset: 3606 },
+                  end: { line: 63, column: 28, offset: 3631 }
                 }
               },
               {
@@ -14673,26 +14669,26 @@ export default [
                             type: 'text',
                             value: 'closeConnections',
                             position: {
-                              start: { line: 66, column: 6, offset: 3620 },
-                              end: { line: 66, column: 22, offset: 3636 }
+                              start: { line: 64, column: 6, offset: 3637 },
+                              end: { line: 64, column: 22, offset: 3653 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 66, column: 5, offset: 3619 },
-                          end: { line: 66, column: 42, offset: 3656 }
+                          start: { line: 64, column: 5, offset: 3636 },
+                          end: { line: 64, column: 42, offset: 3673 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 66, column: 5, offset: 3619 },
-                      end: { line: 66, column: 42, offset: 3656 }
+                      start: { line: 64, column: 5, offset: 3636 },
+                      end: { line: 64, column: 42, offset: 3673 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 66, column: 3, offset: 3617 },
-                  end: { line: 66, column: 42, offset: 3656 }
+                  start: { line: 64, column: 3, offset: 3634 },
+                  end: { line: 64, column: 42, offset: 3673 }
                 }
               },
               {
@@ -14712,26 +14708,26 @@ export default [
                             type: 'text',
                             value: 'delete',
                             position: {
-                              start: { line: 67, column: 6, offset: 3662 },
-                              end: { line: 67, column: 12, offset: 3668 }
+                              start: { line: 65, column: 6, offset: 3679 },
+                              end: { line: 65, column: 12, offset: 3685 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 67, column: 5, offset: 3661 },
-                          end: { line: 67, column: 22, offset: 3678 }
+                          start: { line: 65, column: 5, offset: 3678 },
+                          end: { line: 65, column: 22, offset: 3695 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 67, column: 5, offset: 3661 },
-                      end: { line: 67, column: 22, offset: 3678 }
+                      start: { line: 65, column: 5, offset: 3678 },
+                      end: { line: 65, column: 22, offset: 3695 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 67, column: 3, offset: 3659 },
-                  end: { line: 67, column: 22, offset: 3678 }
+                  start: { line: 65, column: 3, offset: 3676 },
+                  end: { line: 65, column: 22, offset: 3695 }
                 }
               },
               {
@@ -14751,26 +14747,26 @@ export default [
                             type: 'text',
                             value: 'putObject',
                             position: {
-                              start: { line: 68, column: 6, offset: 3684 },
-                              end: { line: 68, column: 15, offset: 3693 }
+                              start: { line: 66, column: 6, offset: 3701 },
+                              end: { line: 66, column: 15, offset: 3710 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 68, column: 5, offset: 3683 },
-                          end: { line: 68, column: 28, offset: 3706 }
+                          start: { line: 66, column: 5, offset: 3700 },
+                          end: { line: 66, column: 28, offset: 3723 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 68, column: 5, offset: 3683 },
-                      end: { line: 68, column: 28, offset: 3706 }
+                      start: { line: 66, column: 5, offset: 3700 },
+                      end: { line: 66, column: 28, offset: 3723 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 68, column: 3, offset: 3681 },
-                  end: { line: 68, column: 28, offset: 3706 }
+                  start: { line: 66, column: 3, offset: 3698 },
+                  end: { line: 66, column: 28, offset: 3723 }
                 }
               },
               {
@@ -14790,26 +14786,26 @@ export default [
                             type: 'text',
                             value: 'getObject',
                             position: {
-                              start: { line: 69, column: 6, offset: 3712 },
-                              end: { line: 69, column: 15, offset: 3721 }
+                              start: { line: 67, column: 6, offset: 3729 },
+                              end: { line: 67, column: 15, offset: 3738 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 69, column: 5, offset: 3711 },
-                          end: { line: 69, column: 28, offset: 3734 }
+                          start: { line: 67, column: 5, offset: 3728 },
+                          end: { line: 67, column: 28, offset: 3751 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 69, column: 5, offset: 3711 },
-                      end: { line: 69, column: 28, offset: 3734 }
+                      start: { line: 67, column: 5, offset: 3728 },
+                      end: { line: 67, column: 28, offset: 3751 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 69, column: 3, offset: 3709 },
-                  end: { line: 69, column: 28, offset: 3734 }
+                  start: { line: 67, column: 3, offset: 3726 },
+                  end: { line: 67, column: 28, offset: 3751 }
                 }
               },
               {
@@ -14829,26 +14825,26 @@ export default [
                             type: 'text',
                             value: 'getObjectACL',
                             position: {
-                              start: { line: 70, column: 6, offset: 3740 },
-                              end: { line: 70, column: 18, offset: 3752 }
+                              start: { line: 68, column: 6, offset: 3757 },
+                              end: { line: 68, column: 18, offset: 3769 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 70, column: 5, offset: 3739 },
-                          end: { line: 70, column: 34, offset: 3768 }
+                          start: { line: 68, column: 5, offset: 3756 },
+                          end: { line: 68, column: 34, offset: 3785 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 70, column: 5, offset: 3739 },
-                      end: { line: 70, column: 34, offset: 3768 }
+                      start: { line: 68, column: 5, offset: 3756 },
+                      end: { line: 68, column: 34, offset: 3785 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 70, column: 3, offset: 3737 },
-                  end: { line: 70, column: 34, offset: 3768 }
+                  start: { line: 68, column: 3, offset: 3754 },
+                  end: { line: 68, column: 34, offset: 3785 }
                 }
               },
               {
@@ -14868,26 +14864,26 @@ export default [
                             type: 'text',
                             value: 'headObject',
                             position: {
-                              start: { line: 71, column: 6, offset: 3774 },
-                              end: { line: 71, column: 16, offset: 3784 }
+                              start: { line: 69, column: 6, offset: 3791 },
+                              end: { line: 69, column: 16, offset: 3801 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 71, column: 5, offset: 3773 },
-                          end: { line: 71, column: 30, offset: 3798 }
+                          start: { line: 69, column: 5, offset: 3790 },
+                          end: { line: 69, column: 30, offset: 3815 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 71, column: 5, offset: 3773 },
-                      end: { line: 71, column: 30, offset: 3798 }
+                      start: { line: 69, column: 5, offset: 3790 },
+                      end: { line: 69, column: 30, offset: 3815 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 71, column: 3, offset: 3771 },
-                  end: { line: 71, column: 30, offset: 3798 }
+                  start: { line: 69, column: 3, offset: 3788 },
+                  end: { line: 69, column: 30, offset: 3815 }
                 }
               },
               {
@@ -14907,26 +14903,26 @@ export default [
                             type: 'text',
                             value: 'deleteObject',
                             position: {
-                              start: { line: 72, column: 6, offset: 3804 },
-                              end: { line: 72, column: 18, offset: 3816 }
+                              start: { line: 70, column: 6, offset: 3821 },
+                              end: { line: 70, column: 18, offset: 3833 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 72, column: 5, offset: 3803 },
-                          end: { line: 72, column: 34, offset: 3832 }
+                          start: { line: 70, column: 5, offset: 3820 },
+                          end: { line: 70, column: 34, offset: 3849 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 72, column: 5, offset: 3803 },
-                      end: { line: 72, column: 34, offset: 3832 }
+                      start: { line: 70, column: 5, offset: 3820 },
+                      end: { line: 70, column: 34, offset: 3849 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 72, column: 3, offset: 3801 },
-                  end: { line: 72, column: 34, offset: 3832 }
+                  start: { line: 70, column: 3, offset: 3818 },
+                  end: { line: 70, column: 34, offset: 3849 }
                 }
               },
               {
@@ -14946,26 +14942,26 @@ export default [
                             type: 'text',
                             value: 'deleteObjects',
                             position: {
-                              start: { line: 73, column: 6, offset: 3838 },
-                              end: { line: 73, column: 19, offset: 3851 }
+                              start: { line: 71, column: 6, offset: 3855 },
+                              end: { line: 71, column: 19, offset: 3868 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 73, column: 5, offset: 3837 },
-                          end: { line: 73, column: 36, offset: 3868 }
+                          start: { line: 71, column: 5, offset: 3854 },
+                          end: { line: 71, column: 36, offset: 3885 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 73, column: 5, offset: 3837 },
-                      end: { line: 73, column: 36, offset: 3868 }
+                      start: { line: 71, column: 5, offset: 3854 },
+                      end: { line: 71, column: 36, offset: 3885 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 73, column: 3, offset: 3835 },
-                  end: { line: 73, column: 36, offset: 3868 }
+                  start: { line: 71, column: 3, offset: 3852 },
+                  end: { line: 71, column: 36, offset: 3885 }
                 }
               },
               {
@@ -14985,26 +14981,26 @@ export default [
                             type: 'text',
                             value: 'deleteAllObjects',
                             position: {
-                              start: { line: 74, column: 6, offset: 3874 },
-                              end: { line: 74, column: 22, offset: 3890 }
+                              start: { line: 72, column: 6, offset: 3891 },
+                              end: { line: 72, column: 22, offset: 3907 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 74, column: 5, offset: 3873 },
-                          end: { line: 74, column: 42, offset: 3910 }
+                          start: { line: 72, column: 5, offset: 3890 },
+                          end: { line: 72, column: 42, offset: 3927 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 74, column: 5, offset: 3873 },
-                      end: { line: 74, column: 42, offset: 3910 }
+                      start: { line: 72, column: 5, offset: 3890 },
+                      end: { line: 72, column: 42, offset: 3927 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 74, column: 3, offset: 3871 },
-                  end: { line: 74, column: 42, offset: 3910 }
+                  start: { line: 72, column: 3, offset: 3888 },
+                  end: { line: 72, column: 42, offset: 3927 }
                 }
               },
               {
@@ -15024,26 +15020,26 @@ export default [
                             type: 'text',
                             value: 'listObjects',
                             position: {
-                              start: { line: 75, column: 6, offset: 3916 },
-                              end: { line: 75, column: 17, offset: 3927 }
+                              start: { line: 73, column: 6, offset: 3933 },
+                              end: { line: 73, column: 17, offset: 3944 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 75, column: 5, offset: 3915 },
-                          end: { line: 75, column: 32, offset: 3942 }
+                          start: { line: 73, column: 5, offset: 3932 },
+                          end: { line: 73, column: 32, offset: 3959 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 75, column: 5, offset: 3915 },
-                      end: { line: 75, column: 32, offset: 3942 }
+                      start: { line: 73, column: 5, offset: 3932 },
+                      end: { line: 73, column: 32, offset: 3959 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 75, column: 3, offset: 3913 },
-                  end: { line: 75, column: 32, offset: 3942 }
+                  start: { line: 73, column: 3, offset: 3930 },
+                  end: { line: 73, column: 32, offset: 3959 }
                 }
               },
               {
@@ -15063,32 +15059,32 @@ export default [
                             type: 'text',
                             value: 'listObjectVersions',
                             position: {
-                              start: { line: 76, column: 6, offset: 3948 },
-                              end: { line: 76, column: 24, offset: 3966 }
+                              start: { line: 74, column: 6, offset: 3965 },
+                              end: { line: 74, column: 24, offset: 3983 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 76, column: 5, offset: 3947 },
-                          end: { line: 76, column: 46, offset: 3988 }
+                          start: { line: 74, column: 5, offset: 3964 },
+                          end: { line: 74, column: 46, offset: 4005 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 76, column: 5, offset: 3947 },
-                      end: { line: 76, column: 46, offset: 3988 }
+                      start: { line: 74, column: 5, offset: 3964 },
+                      end: { line: 74, column: 46, offset: 4005 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 76, column: 3, offset: 3945 },
-                  end: { line: 76, column: 46, offset: 3988 }
+                  start: { line: 74, column: 3, offset: 3962 },
+                  end: { line: 74, column: 46, offset: 4005 }
                 }
               }
             ],
             position: {
-              start: { line: 61, column: 3, offset: 3485 },
-              end: { line: 76, column: 46, offset: 3988 }
+              start: { line: 59, column: 3, offset: 3502 },
+              end: { line: 74, column: 46, offset: 4005 }
             }
           },
           {
@@ -15098,14 +15094,14 @@ export default [
                 type: 'text',
                 value: 'Attributes:',
                 position: {
-                  start: { line: 78, column: 1, offset: 3990 },
-                  end: { line: 78, column: 12, offset: 4001 }
+                  start: { line: 76, column: 1, offset: 4007 },
+                  end: { line: 76, column: 12, offset: 4018 }
                 }
               }
             ],
             position: {
-              start: { line: 78, column: 1, offset: 3990 },
-              end: { line: 78, column: 12, offset: 4001 }
+              start: { line: 76, column: 1, offset: 4007 },
+              end: { line: 76, column: 12, offset: 4018 }
             }
           },
           {
@@ -15131,38 +15127,38 @@ export default [
                             type: 'text',
                             value: 'ready',
                             position: {
-                              start: { line: 79, column: 6, offset: 4007 },
-                              end: { line: 79, column: 11, offset: 4012 }
+                              start: { line: 77, column: 6, offset: 4024 },
+                              end: { line: 77, column: 11, offset: 4029 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 79, column: 5, offset: 4006 },
-                          end: { line: 79, column: 20, offset: 4021 }
+                          start: { line: 77, column: 5, offset: 4023 },
+                          end: { line: 77, column: 20, offset: 4038 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 79, column: 5, offset: 4006 },
-                      end: { line: 79, column: 20, offset: 4021 }
+                      start: { line: 77, column: 5, offset: 4023 },
+                      end: { line: 77, column: 20, offset: 4038 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 79, column: 3, offset: 4004 },
-                  end: { line: 79, column: 20, offset: 4021 }
+                  start: { line: 77, column: 3, offset: 4021 },
+                  end: { line: 77, column: 20, offset: 4038 }
                 }
               }
             ],
             position: {
-              start: { line: 79, column: 3, offset: 4004 },
-              end: { line: 79, column: 20, offset: 4021 }
+              start: { line: 77, column: 3, offset: 4021 },
+              end: { line: 77, column: 20, offset: 4038 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 79, column: 20, offset: 4021 }
+          end: { line: 77, column: 20, offset: 4038 }
         }
       },
       reference: {
@@ -15439,11 +15435,11 @@ export default [
       },
       {
         name: 'create',
-        docs: 'Create the Amazon S3 bucket.\n' +
-          '\n' +
-          '```coffeescript [specscript]\n' +
+        docs: '```coffeescript [specscript]\n' +
           'bucket.create() -> data Promise<{}>\n' +
           '```\n' +
+          '\n' +
+          'Create the Amazon S3 bucket.\n' +
           '\n' +
           '```javascript\n' +
           'await myBucket.create()\n' +
@@ -15479,30 +15475,30 @@ export default [
             type: 'root',
             children: [
               {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: 'bucket.create() -> data Promise<{}>',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 4, offset: 68 }
+                }
+              },
+              {
                 type: 'paragraph',
                 children: [
                   {
                     type: 'text',
                     value: 'Create the Amazon S3 bucket.',
                     position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 29, offset: 28 }
+                      start: { line: 5, column: 1, offset: 70 },
+                      end: { line: 5, column: 29, offset: 98 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 29, offset: 28 }
-                }
-              },
-              {
-                type: 'code',
-                lang: 'coffeescript',
-                meta: '[specscript]',
-                value: 'bucket.create() -> data Promise<{}>',
-                position: {
-                  start: { line: 3, column: 1, offset: 30 },
-                  end: { line: 5, column: 4, offset: 98 }
+                  start: { line: 5, column: 1, offset: 70 },
+                  end: { line: 5, column: 29, offset: 98 }
                 }
               },
               {
@@ -15525,11 +15521,11 @@ export default [
       },
       {
         name: 'putPublicAccessBlock',
-        docs: 'Create or replace the `PublicAccessBlock` configuration for the Amazon S3 Bucket.\n' +
-          '\n' +
-          '```coffeescript [specscript]\n' +
+        docs: '```coffeescript [specscript]\n' +
           'putPublicAccessBlock() -> data Promise<{}>\n' +
-          '```',
+          '```\n' +
+          '\n' +
+          'Create or replace the `PublicAccessBlock` configuration for the Amazon S3 Bucket.',
         mdast: {
           name: {
             type: 'root',
@@ -15561,63 +15557,63 @@ export default [
             type: 'root',
             children: [
               {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: 'putPublicAccessBlock() -> data Promise<{}>',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 4, offset: 75 }
+                }
+              },
+              {
                 type: 'paragraph',
                 children: [
                   {
                     type: 'text',
                     value: 'Create or replace the ',
                     position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 23, offset: 22 }
+                      start: { line: 5, column: 1, offset: 77 },
+                      end: { line: 5, column: 23, offset: 99 }
                     }
                   },
                   {
                     type: 'inlineCode',
                     value: 'PublicAccessBlock',
                     position: {
-                      start: { line: 1, column: 23, offset: 22 },
-                      end: { line: 1, column: 42, offset: 41 }
+                      start: { line: 5, column: 23, offset: 99 },
+                      end: { line: 5, column: 42, offset: 118 }
                     }
                   },
                   {
                     type: 'text',
                     value: ' configuration for the Amazon S3 Bucket.',
                     position: {
-                      start: { line: 1, column: 42, offset: 41 },
-                      end: { line: 1, column: 82, offset: 81 }
+                      start: { line: 5, column: 42, offset: 118 },
+                      end: { line: 5, column: 82, offset: 158 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 82, offset: 81 }
-                }
-              },
-              {
-                type: 'code',
-                lang: 'coffeescript',
-                meta: '[specscript]',
-                value: 'putPublicAccessBlock() -> data Promise<{}>',
-                position: {
-                  start: { line: 3, column: 1, offset: 83 },
-                  end: { line: 5, column: 4, offset: 158 }
+                  start: { line: 5, column: 1, offset: 77 },
+                  end: { line: 5, column: 82, offset: 158 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 158 }
+              end: { line: 5, column: 82, offset: 158 }
             }
           }
         }
       },
       {
         name: 'putRequestPayment',
-        docs: 'Create or replace the `RequestPayment` configuration for the Amazon S3 Bucket.\n' +
-          '\n' +
-          '```coffeescript [specscript]\n' +
+        docs: '```coffeescript [specscript]\n' +
           'putRequestPayment() -> data Promise<{}> \n' +
-          '```',
+          '```\n' +
+          '\n' +
+          'Create or replace the `RequestPayment` configuration for the Amazon S3 Bucket.',
         mdast: {
           name: {
             type: 'root',
@@ -15649,63 +15645,63 @@ export default [
             type: 'root',
             children: [
               {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: 'putRequestPayment() -> data Promise<{}> ',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 4, offset: 73 }
+                }
+              },
+              {
                 type: 'paragraph',
                 children: [
                   {
                     type: 'text',
                     value: 'Create or replace the ',
                     position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 23, offset: 22 }
+                      start: { line: 5, column: 1, offset: 75 },
+                      end: { line: 5, column: 23, offset: 97 }
                     }
                   },
                   {
                     type: 'inlineCode',
                     value: 'RequestPayment',
                     position: {
-                      start: { line: 1, column: 23, offset: 22 },
-                      end: { line: 1, column: 39, offset: 38 }
+                      start: { line: 5, column: 23, offset: 97 },
+                      end: { line: 5, column: 39, offset: 113 }
                     }
                   },
                   {
                     type: 'text',
                     value: ' configuration for the Amazon S3 Bucket.',
                     position: {
-                      start: { line: 1, column: 39, offset: 38 },
-                      end: { line: 1, column: 79, offset: 78 }
+                      start: { line: 5, column: 39, offset: 113 },
+                      end: { line: 5, column: 79, offset: 153 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 79, offset: 78 }
-                }
-              },
-              {
-                type: 'code',
-                lang: 'coffeescript',
-                meta: '[specscript]',
-                value: 'putRequestPayment() -> data Promise<{}> ',
-                position: {
-                  start: { line: 3, column: 1, offset: 80 },
-                  end: { line: 5, column: 4, offset: 153 }
+                  start: { line: 5, column: 1, offset: 75 },
+                  end: { line: 5, column: 79, offset: 153 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 153 }
+              end: { line: 5, column: 79, offset: 153 }
             }
           }
         }
       },
       {
         name: 'putObjectLockConfiguration',
-        docs: 'Apply an AWS S3 bucket policy to an AWS S3 bucket.\n' +
-          '\n' +
-          '```coffeescript [specscript]\n' +
+        docs: '```coffeescript [specscript]\n' +
           'putObjectLockConfiguration() -> Promise<{}>\n' +
-          '```',
+          '```\n' +
+          '\n' +
+          'Apply an AWS S3 bucket policy to an AWS S3 bucket.',
         mdast: {
           name: {
             type: 'root',
@@ -15737,47 +15733,47 @@ export default [
             type: 'root',
             children: [
               {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: 'putObjectLockConfiguration() -> Promise<{}>',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 4, offset: 76 }
+                }
+              },
+              {
                 type: 'paragraph',
                 children: [
                   {
                     type: 'text',
                     value: 'Apply an AWS S3 bucket policy to an AWS S3 bucket.',
                     position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 51, offset: 50 }
+                      start: { line: 5, column: 1, offset: 78 },
+                      end: { line: 5, column: 51, offset: 128 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 51, offset: 50 }
-                }
-              },
-              {
-                type: 'code',
-                lang: 'coffeescript',
-                meta: '[specscript]',
-                value: 'putObjectLockConfiguration() -> Promise<{}>',
-                position: {
-                  start: { line: 3, column: 1, offset: 52 },
-                  end: { line: 5, column: 4, offset: 128 }
+                  start: { line: 5, column: 1, offset: 78 },
+                  end: { line: 5, column: 51, offset: 128 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 128 }
+              end: { line: 5, column: 51, offset: 128 }
             }
           }
         }
       },
       {
         name: 'putVersioning',
-        docs: 'Apply an AWS S3 bucket policy to an AWS S3 bucket.\n' +
-          '\n' +
-          '```coffeescript [specscript]\n' +
+        docs: '```coffeescript [specscript]\n' +
           'putVersioning() -> Promise<{}>\n' +
-          '```',
+          '```\n' +
+          '\n' +
+          'Apply an AWS S3 bucket policy to an AWS S3 bucket.',
         mdast: {
           name: {
             type: 'root',
@@ -15809,49 +15805,49 @@ export default [
             type: 'root',
             children: [
               {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: 'putVersioning() -> Promise<{}>',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 4, offset: 63 }
+                }
+              },
+              {
                 type: 'paragraph',
                 children: [
                   {
                     type: 'text',
                     value: 'Apply an AWS S3 bucket policy to an AWS S3 bucket.',
                     position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 51, offset: 50 }
+                      start: { line: 5, column: 1, offset: 65 },
+                      end: { line: 5, column: 51, offset: 115 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 51, offset: 50 }
-                }
-              },
-              {
-                type: 'code',
-                lang: 'coffeescript',
-                meta: '[specscript]',
-                value: 'putVersioning() -> Promise<{}>',
-                position: {
-                  start: { line: 3, column: 1, offset: 52 },
-                  end: { line: 5, column: 4, offset: 115 }
+                  start: { line: 5, column: 1, offset: 65 },
+                  end: { line: 5, column: 51, offset: 115 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 115 }
+              end: { line: 5, column: 51, offset: 115 }
             }
           }
         }
       },
       {
         name: 'putPolicy',
-        docs: 'Apply an AWS S3 bucket policy to an AWS S3 bucket.\n' +
-          '\n' +
-          '```coffeescript [specscript]\n' +
+        docs: '```coffeescript [specscript]\n' +
           'putPolicy(options {\n' +
           '  policy: object,\n' +
           '}) -> Promise<{}>\n' +
           '```\n' +
+          '\n' +
+          'Apply an AWS S3 bucket policy to an AWS S3 bucket.\n' +
           '\n' +
           'Example policy:\n' +
           '```\n' +
@@ -15899,30 +15895,30 @@ export default [
             type: 'root',
             children: [
               {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: 'putPolicy(options {\n  policy: object,\n}) -> Promise<{}>',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 5, column: 4, offset: 88 }
+                }
+              },
+              {
                 type: 'paragraph',
                 children: [
                   {
                     type: 'text',
                     value: 'Apply an AWS S3 bucket policy to an AWS S3 bucket.',
                     position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 51, offset: 50 }
+                      start: { line: 7, column: 1, offset: 90 },
+                      end: { line: 7, column: 51, offset: 140 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 51, offset: 50 }
-                }
-              },
-              {
-                type: 'code',
-                lang: 'coffeescript',
-                meta: '[specscript]',
-                value: 'putPolicy(options {\n  policy: object,\n}) -> Promise<{}>',
-                position: {
-                  start: { line: 3, column: 1, offset: 52 },
-                  end: { line: 7, column: 4, offset: 140 }
+                  start: { line: 7, column: 1, offset: 90 },
+                  end: { line: 7, column: 51, offset: 140 }
                 }
               },
               {
@@ -15973,15 +15969,14 @@ export default [
       },
       {
         name: 'getPolicy',
-        docs: 'Apply an AWS S3 bucket policy to an AWS S3 bucket.\n' +
-          '\n' +
-          '```coffeescript [specscript]\n' +
+        docs: '```coffeescript [specscript]\n' +
           'getPolicy() -> BucketPolicy Promise<{\n' +
           '  Version: string,\n' +
           '  Id: string,\n' +
           '  Statement: Array,\n' +
           '}>\n' +
           '```\n' +
+          'Apply an AWS S3 bucket policy to an AWS S3 bucket.\n' +
           '\n' +
           'Example policy:\n' +
           '```\n' +
@@ -16029,23 +16024,6 @@ export default [
             type: 'root',
             children: [
               {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'Apply an AWS S3 bucket policy to an AWS S3 bucket.',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 51, offset: 50 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 51, offset: 50 }
-                }
-              },
-              {
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
@@ -16055,8 +16033,25 @@ export default [
                   '  Statement: Array,\n' +
                   '}>',
                 position: {
-                  start: { line: 3, column: 1, offset: 52 },
-                  end: { line: 9, column: 4, offset: 178 }
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 7, column: 4, offset: 126 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Apply an AWS S3 bucket policy to an AWS S3 bucket.',
+                    position: {
+                      start: { line: 8, column: 1, offset: 127 },
+                      end: { line: 8, column: 51, offset: 177 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 1, offset: 127 },
+                  end: { line: 8, column: 51, offset: 177 }
                 }
               },
               {
@@ -16066,14 +16061,14 @@ export default [
                     type: 'text',
                     value: 'Example policy:',
                     position: {
-                      start: { line: 11, column: 1, offset: 180 },
-                      end: { line: 11, column: 16, offset: 195 }
+                      start: { line: 10, column: 1, offset: 179 },
+                      end: { line: 10, column: 16, offset: 194 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 11, column: 1, offset: 180 },
-                  end: { line: 11, column: 16, offset: 195 }
+                  start: { line: 10, column: 1, offset: 179 },
+                  end: { line: 10, column: 16, offset: 194 }
                 }
               },
               {
@@ -16093,25 +16088,25 @@ export default [
                   '  ]\n' +
                   '}',
                 position: {
-                  start: { line: 12, column: 1, offset: 196 },
-                  end: { line: 25, column: 4, offset: 402 }
+                  start: { line: 11, column: 1, offset: 195 },
+                  end: { line: 24, column: 4, offset: 401 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 25, column: 4, offset: 402 }
+              end: { line: 24, column: 4, offset: 401 }
             }
           }
         }
       },
       {
         name: 'closeConnections',
-        docs: 'Close underlying TCP connections.\n' +
-          '\n' +
-          '```coffeescript [specscript]\n' +
+        docs: '```coffeescript [specscript]\n' +
           'closeConnections() -> ()\n' +
-          '```',
+          '```\n' +
+          '\n' +
+          'Close underlying TCP connections.',
         mdast: {
           name: {
             type: 'root',
@@ -16143,49 +16138,49 @@ export default [
             type: 'root',
             children: [
               {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: 'closeConnections() -> ()',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 4, offset: 57 }
+                }
+              },
+              {
                 type: 'paragraph',
                 children: [
                   {
                     type: 'text',
                     value: 'Close underlying TCP connections.',
                     position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 34, offset: 33 }
+                      start: { line: 5, column: 1, offset: 59 },
+                      end: { line: 5, column: 34, offset: 92 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 34, offset: 33 }
-                }
-              },
-              {
-                type: 'code',
-                lang: 'coffeescript',
-                meta: '[specscript]',
-                value: 'closeConnections() -> ()',
-                position: {
-                  start: { line: 3, column: 1, offset: 35 },
-                  end: { line: 5, column: 4, offset: 92 }
+                  start: { line: 5, column: 1, offset: 59 },
+                  end: { line: 5, column: 34, offset: 92 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 92 }
+              end: { line: 5, column: 34, offset: 92 }
             }
           }
         }
       },
       {
         name: 'delete',
-        docs: 'Delete the Amazon S3 Bucket.\n' +
-          '\n' +
-          '```coffeescript [specscript]\n' +
+        docs: '```coffeescript [specscript]\n' +
           'bucket.delete(options {\n' +
           '  Id: string,\n' +
           '}) -> response Promise<{}>\n' +
           '```\n' +
+          '\n' +
+          'Delete the Amazon S3 Bucket.\n' +
           '\n' +
           '```javascript\n' +
           'await myBucket.delete()\n' +
@@ -16224,23 +16219,6 @@ export default [
             type: 'root',
             children: [
               {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'Delete the Amazon S3 Bucket.',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 29, offset: 28 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 29, offset: 28 }
-                }
-              },
-              {
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
@@ -16248,8 +16226,25 @@ export default [
                   '  Id: string,\n' +
                   '}) -> response Promise<{}>',
                 position: {
-                  start: { line: 3, column: 1, offset: 30 },
-                  end: { line: 7, column: 4, offset: 127 }
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 5, column: 4, offset: 97 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Delete the Amazon S3 Bucket.',
+                    position: {
+                      start: { line: 7, column: 1, offset: 99 },
+                      end: { line: 7, column: 29, offset: 127 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 7, column: 1, offset: 99 },
+                  end: { line: 7, column: 29, offset: 127 }
                 }
               },
               {
@@ -16364,9 +16359,7 @@ export default [
       },
       {
         name: 'putObject',
-        docs: 'Add an object to the Amazon S3 Bucket.\n' +
-          '\n' +
-          '```coffeescript [specscript]\n' +
+        docs: '```coffeescript [specscript]\n' +
           'type DateString = string # Wed Dec 31 1969 16:00:00 GMT-0800 (PST)\n' +
           'type TimestampSeconds = number # 1751111429\n' +
           '\n' +
@@ -16430,6 +16423,8 @@ export default [
           '  BucketKeyEnabled: boolean,\n' +
           '}>\n' +
           '```\n' +
+          '\n' +
+          'Add an object to the Amazon S3 Bucket.\n' +
           '\n' +
           '```javascript\n' +
           `await myBucket.putObject('some-key', '{"hello":"world"}', {\n` +
@@ -16520,23 +16515,6 @@ export default [
             type: 'root',
             children: [
               {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'Add an object to the Amazon S3 Bucket.',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 39, offset: 38 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 39, offset: 38 }
-                }
-              },
-              {
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
@@ -16603,8 +16581,25 @@ export default [
                   '  BucketKeyEnabled: boolean,\n' +
                   '}>',
                 position: {
-                  start: { line: 3, column: 1, offset: 40 },
-                  end: { line: 66, column: 4, offset: 2243 }
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 64, column: 4, offset: 2203 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Add an object to the Amazon S3 Bucket.',
+                    position: {
+                      start: { line: 66, column: 1, offset: 2205 },
+                      end: { line: 66, column: 39, offset: 2243 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 66, column: 1, offset: 2205 },
+                  end: { line: 66, column: 39, offset: 2243 }
                 }
               },
               {
@@ -21402,9 +21397,7 @@ export default [
       },
       {
         name: 'getObject',
-        docs: 'Retrieve an object from the Amazon S3 Bucket.\n' +
-          '\n' +
-          '```coffeescript [specscript]\n' +
+        docs: '```coffeescript [specscript]\n' +
           'type DateString = string # Wed Dec 31 1969 16:00:00 GMT-0800 (PST)\n' +
           'type TimestampSeconds = number # 1751111429\n' +
           '\n' +
@@ -21472,6 +21465,8 @@ export default [
           "  ObjectLockLegalHoldStatus: 'ON'|'OFF'\n" +
           '}>\n' +
           '```\n' +
+          '\n' +
+          'Retrieve an object from the Amazon S3 Bucket.\n' +
           '\n' +
           '```javascript\n' +
           "const data = await myBucket.getObject('my-key')\n" +
@@ -21586,23 +21581,6 @@ export default [
             type: 'root',
             children: [
               {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'Retrieve an object from the Amazon S3 Bucket.',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 46, offset: 45 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 46, offset: 45 }
-                }
-              },
-              {
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
@@ -21673,8 +21651,25 @@ export default [
                   "  ObjectLockLegalHoldStatus: 'ON'|'OFF'\n" +
                   '}>',
                 position: {
-                  start: { line: 3, column: 1, offset: 47 },
-                  end: { line: 70, column: 4, offset: 2162 }
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 68, column: 4, offset: 2115 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Retrieve an object from the Amazon S3 Bucket.',
+                    position: {
+                      start: { line: 70, column: 1, offset: 2117 },
+                      end: { line: 70, column: 46, offset: 2162 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 70, column: 1, offset: 2117 },
+                  end: { line: 70, column: 46, offset: 2162 }
                 }
               },
               {
@@ -26668,9 +26663,7 @@ export default [
       },
       {
         name: 'getObjectACL',
-        docs: 'Retrieve the access control list (ACL) of an object from the Amazon S3 Bucket.\n' +
-          '\n' +
-          '```coffeescript [specscript]\n' +
+        docs: '```coffeescript [specscript]\n' +
           'getObjectACL(key string, options {\n' +
           '}) -> data Promise<{\n' +
           '  Grants: Array<{\n' +
@@ -26682,7 +26675,9 @@ export default [
           '    Permission: string\n' +
           '  }>\n' +
           '}>\n' +
-          '```',
+          '```\n' +
+          '\n' +
+          'Retrieve the access control list (ACL) of an object from the Amazon S3 Bucket.',
         mdast: {
           name: {
             type: 'root',
@@ -26714,23 +26709,6 @@ export default [
             type: 'root',
             children: [
               {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'Retrieve the access control list (ACL) of an object from the Amazon S3 Bucket.',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 79, offset: 78 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 79, offset: 78 }
-                }
-              },
-              {
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
@@ -26746,23 +26724,38 @@ export default [
                   '  }>\n' +
                   '}>',
                 position: {
-                  start: { line: 3, column: 1, offset: 80 },
-                  end: { line: 15, column: 4, offset: 303 }
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 13, column: 4, offset: 223 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Retrieve the access control list (ACL) of an object from the Amazon S3 Bucket.',
+                    position: {
+                      start: { line: 15, column: 1, offset: 225 },
+                      end: { line: 15, column: 79, offset: 303 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 15, column: 1, offset: 225 },
+                  end: { line: 15, column: 79, offset: 303 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 15, column: 4, offset: 303 }
+              end: { line: 15, column: 79, offset: 303 }
             }
           }
         }
       },
       {
         name: 'headObject',
-        docs: 'Retrieve the headers of an object from the Amazon S3 Bucket.\n' +
-          '\n' +
-          '```coffeescript [specscript]\n' +
+        docs: '```coffeescript [specscript]\n' +
           'headObject(\n' +
           '  key string,\n' +
           '  options {\n' +
@@ -26819,6 +26812,8 @@ export default [
           "  ObjectLockLegalHoldStatus: 'ON'|'OFF'\n" +
           '}>\n' +
           '```\n' +
+          '\n' +
+          'Retrieve the headers of an object from the Amazon S3 Bucket.\n' +
           '\n' +
           '```javascript\n' +
           "const response = await myBucket.headObject('my-key')\n" +
@@ -26911,23 +26906,6 @@ export default [
             type: 'root',
             children: [
               {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'Retrieve the headers of an object from the Amazon S3 Bucket.',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 61, offset: 60 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 61, offset: 60 }
-                }
-              },
-              {
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
@@ -26987,8 +26965,25 @@ export default [
                   "  ObjectLockLegalHoldStatus: 'ON'|'OFF'\n" +
                   '}>',
                 position: {
-                  start: { line: 3, column: 1, offset: 62 },
-                  end: { line: 59, column: 4, offset: 1807 }
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 57, column: 4, offset: 1745 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Retrieve the headers of an object from the Amazon S3 Bucket.',
+                    position: {
+                      start: { line: 59, column: 1, offset: 1747 },
+                      end: { line: 59, column: 61, offset: 1807 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 59, column: 1, offset: 1747 },
+                  end: { line: 59, column: 61, offset: 1807 }
                 }
               },
               {
@@ -31868,9 +31863,7 @@ export default [
       },
       {
         name: 'deleteObject',
-        docs: 'Remove an object from the Amazon S3 Bucket.\n' +
-          '\n' +
-          '```coffeescript [specscript]\n' +
+        docs: '```coffeescript [specscript]\n' +
           'deleteObject(key string, options {\n' +
           '  MFA: string,\n' +
           '  VersionId: string,\n' +
@@ -31880,6 +31873,8 @@ export default [
           '  VersionId: string,\n' +
           '}>\n' +
           '```\n' +
+          '\n' +
+          'Remove an object from the Amazon S3 Bucket.\n' +
           '\n' +
           '```javascript\n' +
           "await myBucket.deleteObject('my-key')\n" +
@@ -31924,23 +31919,6 @@ export default [
             type: 'root',
             children: [
               {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'Remove an object from the Amazon S3 Bucket.',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 44, offset: 43 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 44, offset: 43 }
-                }
-              },
-              {
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
@@ -31953,8 +31931,25 @@ export default [
                   '  VersionId: string,\n' +
                   '}>',
                 position: {
-                  start: { line: 3, column: 1, offset: 45 },
-                  end: { line: 12, column: 4, offset: 260 }
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 10, column: 4, offset: 215 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Remove an object from the Amazon S3 Bucket.',
+                    position: {
+                      start: { line: 12, column: 1, offset: 217 },
+                      end: { line: 12, column: 44, offset: 260 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 12, column: 1, offset: 217 },
+                  end: { line: 12, column: 44, offset: 260 }
                 }
               },
               {
@@ -32580,9 +32575,7 @@ export default [
       },
       {
         name: 'deleteObjects',
-        docs: 'Remove multiple objects from the Amazon S3 Bucket.\n' +
-          '\n' +
-          '```coffeescript [specscript]\n' +
+        docs: '```coffeescript [specscript]\n' +
           'bucket.deleteObjects(\n' +
           '  keys Array<string|{ Key: string, VersionId: string }>,\n' +
           '  options {\n' +
@@ -32603,6 +32596,8 @@ export default [
           '  }>\n' +
           '}>\n' +
           '```\n' +
+          '\n' +
+          'Remove multiple objects from the Amazon S3 Bucket.\n' +
           '\n' +
           'Options:\n' +
           '  * `BypassGovernanceRetention` - if `true`, S3 Object Lock bypasses [Governance mode](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html#object-lock-retention-modes) restrictions to process this operation. Requires the `s3:BypassGovernanceRetention` permission.\n' +
@@ -32653,23 +32648,6 @@ export default [
             type: 'root',
             children: [
               {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'Remove multiple objects from the Amazon S3 Bucket.',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 51, offset: 50 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 51, offset: 50 }
-                }
-              },
-              {
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
@@ -32693,8 +32671,25 @@ export default [
                   '  }>\n' +
                   '}>',
                 position: {
-                  start: { line: 3, column: 1, offset: 52 },
-                  end: { line: 23, column: 4, offset: 469 }
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 21, column: 4, offset: 417 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Remove multiple objects from the Amazon S3 Bucket.',
+                    position: {
+                      start: { line: 23, column: 1, offset: 419 },
+                      end: { line: 23, column: 51, offset: 469 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 23, column: 1, offset: 419 },
+                  end: { line: 23, column: 51, offset: 469 }
                 }
               },
               {
@@ -33696,9 +33691,7 @@ export default [
       },
       {
         name: 'deleteAllObjects',
-        docs: 'Remove all objects from an S3 Bucket.\n' +
-          '\n' +
-          '```coffeescript [specscript]\n' +
+        docs: '```coffeescript [specscript]\n' +
           'bucket.deleteAllObjects(options {\n' +
           '  Quiet: boolean,\n' +
           '  BypassGovernanceRetention: boolean,\n' +
@@ -33718,6 +33711,8 @@ export default [
           '  }>\n' +
           '}>\n' +
           '```\n' +
+          '\n' +
+          'Remove all objects from an S3 Bucket.\n' +
           '\n' +
           '```javascript\n' +
           'await myBucket.deleteAllObjects()\n' +
@@ -33753,23 +33748,6 @@ export default [
             type: 'root',
             children: [
               {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'Remove all objects from an S3 Bucket.',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 38, offset: 37 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 38, offset: 37 }
-                }
-              },
-              {
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
@@ -33792,8 +33770,25 @@ export default [
                   '  }>\n' +
                   '}>',
                 position: {
-                  start: { line: 3, column: 1, offset: 39 },
-                  end: { line: 22, column: 4, offset: 431 }
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 20, column: 4, offset: 392 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Remove all objects from an S3 Bucket.',
+                    position: {
+                      start: { line: 22, column: 1, offset: 394 },
+                      end: { line: 22, column: 38, offset: 431 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 22, column: 1, offset: 394 },
+                  end: { line: 22, column: 38, offset: 431 }
                 }
               },
               {
@@ -33816,9 +33811,7 @@ export default [
       },
       {
         name: 'listObjects',
-        docs: 'Retrieve some or all (up to 1,000) objects from the Amazon S3 Bucket. Objects are returned in [lexicographical order](https://help.splunk.com/en/splunk-cloud-platform/search/spl2-search-manual/sort-and-order/lexicographical-order).\n' +
-          '\n' +
-          '```coffeescript [specscript]\n' +
+        docs: '```coffeescript [specscript]\n' +
           'bucket.listObjects(options {\n' +
           '  Delimiter: string,\n' +
           "  EncodingType: 'url',\n" +
@@ -33848,6 +33841,8 @@ export default [
           '  NextContinuationToken: string,\n' +
           '}>\n' +
           '```\n' +
+          '\n' +
+          'Retrieve some or all (up to 1,000) objects from the Amazon S3 Bucket. Objects are returned in [lexicographical order](https://help.splunk.com/en/splunk-cloud-platform/search/spl2-search-manual/sort-and-order/lexicographical-order).\n' +
           '\n' +
           '```javascript\n' +
           'const response = await myBucket.listObjects()\n' +
@@ -33913,50 +33908,6 @@ export default [
             type: 'root',
             children: [
               {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'Retrieve some or all (up to 1,000) objects from the Amazon S3 Bucket. Objects are returned in ',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 95, offset: 94 }
-                    }
-                  },
-                  {
-                    type: 'link',
-                    title: null,
-                    url: 'https://help.splunk.com/en/splunk-cloud-platform/search/spl2-search-manual/sort-and-order/lexicographical-order',
-                    children: [
-                      {
-                        type: 'text',
-                        value: 'lexicographical order',
-                        position: {
-                          start: { line: 1, column: 96, offset: 95 },
-                          end: { line: 1, column: 117, offset: 116 }
-                        }
-                      }
-                    ],
-                    position: {
-                      start: { line: 1, column: 95, offset: 94 },
-                      end: { line: 1, column: 231, offset: 230 }
-                    }
-                  },
-                  {
-                    type: 'text',
-                    value: '.',
-                    position: {
-                      start: { line: 1, column: 231, offset: 230 },
-                      end: { line: 1, column: 232, offset: 231 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 232, offset: 231 }
-                }
-              },
-              {
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
@@ -33989,8 +33940,52 @@ export default [
                   '  NextContinuationToken: string,\n' +
                   '}>',
                 position: {
-                  start: { line: 3, column: 1, offset: 233 },
-                  end: { line: 32, column: 4, offset: 1043 }
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 30, column: 4, offset: 810 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Retrieve some or all (up to 1,000) objects from the Amazon S3 Bucket. Objects are returned in ',
+                    position: {
+                      start: { line: 32, column: 1, offset: 812 },
+                      end: { line: 32, column: 95, offset: 906 }
+                    }
+                  },
+                  {
+                    type: 'link',
+                    title: null,
+                    url: 'https://help.splunk.com/en/splunk-cloud-platform/search/spl2-search-manual/sort-and-order/lexicographical-order',
+                    children: [
+                      {
+                        type: 'text',
+                        value: 'lexicographical order',
+                        position: {
+                          start: { line: 32, column: 96, offset: 907 },
+                          end: { line: 32, column: 117, offset: 928 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 32, column: 95, offset: 906 },
+                      end: { line: 32, column: 231, offset: 1042 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: '.',
+                    position: {
+                      start: { line: 32, column: 231, offset: 1042 },
+                      end: { line: 32, column: 232, offset: 1043 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 32, column: 1, offset: 812 },
+                  end: { line: 32, column: 232, offset: 1043 }
                 }
               },
               {
@@ -35802,9 +35797,7 @@ export default [
       },
       {
         name: 'listObjectVersions',
-        docs: 'Retrieve some or all (up to 1,000) objects from the Amazon S3 Bucket. Objects are returned in [lexicographical order](https://help.splunk.com/en/splunk-cloud-platform/search/spl2-search-manual/sort-and-order/lexicographical-order).\n' +
-          '\n' +
-          '```coffeescript [specscript]\n' +
+        docs: '```coffeescript [specscript]\n' +
           'bucket.listObjectVersions(options {\n' +
           '  Delimiter: string,\n' +
           "  EncodingType: 'url',\n" +
@@ -35846,6 +35839,8 @@ export default [
           '  NextVersionIdMarker: string,\n' +
           '}>\n' +
           '```\n' +
+          '\n' +
+          'Retrieve some or all (up to 1,000) objects from the Amazon S3 Bucket. Objects are returned in [lexicographical order](https://help.splunk.com/en/splunk-cloud-platform/search/spl2-search-manual/sort-and-order/lexicographical-order).\n' +
           '\n' +
           '```javascript\n' +
           'const response = await myBucket.listObjectVersions()\n' +
@@ -35921,50 +35916,6 @@ export default [
             type: 'root',
             children: [
               {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'Retrieve some or all (up to 1,000) objects from the Amazon S3 Bucket. Objects are returned in ',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 95, offset: 94 }
-                    }
-                  },
-                  {
-                    type: 'link',
-                    title: null,
-                    url: 'https://help.splunk.com/en/splunk-cloud-platform/search/spl2-search-manual/sort-and-order/lexicographical-order',
-                    children: [
-                      {
-                        type: 'text',
-                        value: 'lexicographical order',
-                        position: {
-                          start: { line: 1, column: 96, offset: 95 },
-                          end: { line: 1, column: 117, offset: 116 }
-                        }
-                      }
-                    ],
-                    position: {
-                      start: { line: 1, column: 95, offset: 94 },
-                      end: { line: 1, column: 231, offset: 230 }
-                    }
-                  },
-                  {
-                    type: 'text',
-                    value: '.',
-                    position: {
-                      start: { line: 1, column: 231, offset: 230 },
-                      end: { line: 1, column: 232, offset: 231 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 232, offset: 231 }
-                }
-              },
-              {
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
@@ -36009,8 +35960,52 @@ export default [
                   '  NextVersionIdMarker: string,\n' +
                   '}>',
                 position: {
-                  start: { line: 3, column: 1, offset: 233 },
-                  end: { line: 44, column: 4, offset: 1300 }
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 42, column: 4, offset: 1067 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Retrieve some or all (up to 1,000) objects from the Amazon S3 Bucket. Objects are returned in ',
+                    position: {
+                      start: { line: 44, column: 1, offset: 1069 },
+                      end: { line: 44, column: 95, offset: 1163 }
+                    }
+                  },
+                  {
+                    type: 'link',
+                    title: null,
+                    url: 'https://help.splunk.com/en/splunk-cloud-platform/search/spl2-search-manual/sort-and-order/lexicographical-order',
+                    children: [
+                      {
+                        type: 'text',
+                        value: 'lexicographical order',
+                        position: {
+                          start: { line: 44, column: 96, offset: 1164 },
+                          end: { line: 44, column: 117, offset: 1185 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 44, column: 95, offset: 1163 },
+                      end: { line: 44, column: 231, offset: 1299 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: '.',
+                    position: {
+                      start: { line: 44, column: 231, offset: 1299 },
+                      end: { line: 44, column: 232, offset: 1300 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 44, column: 1, offset: 1069 },
+                  end: { line: 44, column: 232, offset: 1300 }
                 }
               },
               {
