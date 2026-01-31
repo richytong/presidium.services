@@ -9,10 +9,6 @@ presidium.services/
         README.md
     public/
         react/
-            ClickExample.js
-        elements/
-            LoadMoreButton.js
-            TodoCardElements.js
         global.js
         global.css
         index.html
@@ -27,10 +23,6 @@ presidium.services/
 ### [public/react/](/public/react)
 
 Put [React](https://react.dev/) components in this directory.
-
-### [public/elements/](/public/elements)
-
-Put [elements](https://developer.mozilla.org/en-US/docs/Web/API/Element) in this directory.
 
 ### [public/global.js](/public/global.js)
 
