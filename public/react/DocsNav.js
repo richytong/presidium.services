@@ -7,7 +7,9 @@ import usePath from './usePath.js'
 import presidiumV1Filenames from '../presidium/v1-filenames.js'
 
 const presidiumV1ClassNames =
-  presidiumV1Filenames.map(filename => filename.replace('.js', ''))
+  presidiumV1Filenames
+  .filter(filename => filename != 'index.js' && filename != 'userAgent.js')
+  .map(filename => filename.replace('.js', ''))
 
 /**
  * @name DocsNav
