@@ -29,8 +29,11 @@ const DocsHome = ReactElement(props => {
   }, [path])
 
   useEffect(function updateDocsViewerFuncNameFromPath() {
-    let funcName = path.replace('/docs/', '')
-    setDocsViewerClassName(funcName)
+    if (path == '/docs') {
+    } else {
+      let funcName = path.replace('/docs/', '')
+      setDocsViewerClassName(funcName)
+    }
   }, [path])
 
   useEffect(function scrollToAnchor() {
