@@ -1,5 +1,5 @@
 # presidium.services
-Home page for [Presidium](https://presidium.services/).
+Home page for [Presidium](https://github.com/richytong/presidium).
 
 ## Project Structure
 
