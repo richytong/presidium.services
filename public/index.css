@@ -35,6 +35,20 @@ body {
   background-color: #fff;
 }
 
+code {
+  background-color: #f6f8fa;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont,
+             'Segoe UI', Roboto, 'Helvetica Neue',
+             Ubuntu, Arial, sans-serif;
+  padding: 3px 6px;
+}
+
+.code-viewer * {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont,
+             'Segoe UI', Roboto, 'Helvetica Neue',
+             Ubuntu, Arial, sans-serif;
+}
+
 #layout {
   width: 100%;
   margin: 0 auto;
@@ -312,6 +326,7 @@ article a {
   margin: 12px 0px;
   color: #000;
   overflow-x: scroll;
+  width: fit-content;
 }
 @media only screen and (max-width: 768px) {
   #docs .viewer h1 {
@@ -342,6 +357,9 @@ article a {
 
 .docs .method a {
   text-decoration: none;
+  font-weight: 600;
+  display: block;
+  width: fit-content;
 }
 
 #docs-nav {

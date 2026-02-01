@@ -1,4 +1,5 @@
 export default [
+  'internal',
   'Archive.js',
   'AwsCredentials.js',
   'Docker.js',
