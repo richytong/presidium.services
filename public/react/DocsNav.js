@@ -4,18 +4,13 @@ import useDocsViewerClassName from './useDocsViewerClassName.js'
 import useDocsSearchQuery from './useDocsSearchQuery.js'
 import ClassNames from './ClassNames.js'
 import usePath from './usePath.js'
-import presidiumV1Filenames from '../presidium/v1-filenames.js'
+import presidiumV1ClassNames from './presidiumV1ClassNames.js'
 import useIsHamburgerMenuActive from './useIsHamburgerMenuActive.js'
 import useCronistMap from './useCronistMap.js'
-import presidiumClassExludedMethods from './presidiumClassExcludedMethods.js'
+import presidiumClassExcludedMethods from './presidiumClassExcludedMethods.js'
 import DocsNavClassItem from './DocsNavClassItem.js'
 import DocsNavClassMethodItem from './DocsNavClassMethodItem.js'
 import DocsNavSearch from './DocsNavSearch.js'
-
-const presidiumV1ClassNames =
-  presidiumV1Filenames
-  .filter(filename => filename != 'index.js' && filename != 'userAgent.js')
-  .map(filename => filename.replace('.js', ''))
 
 /**
  * @name DocsNav
@@ -63,7 +58,7 @@ const DocsNav = ReactElement(props => {
   }
 
   const docsData = cronistMap.get(docsViewerClassName) ?? { methods: [] }
-  const excludedMethods = presidiumClassExludedMethods.get(docsViewerClassName) ?? []
+  const excludedMethods = presidiumClassExcludedMethods.get(docsViewerClassName) ?? []
 
   return Nav({ id: 'docs-nav' }, [
     Section([
