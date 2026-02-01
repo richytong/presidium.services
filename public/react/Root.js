@@ -32,9 +32,12 @@ const Root = ReactElement(() => {
       }
       if (anchorTarget?.tagName == 'A') {
         const anchor = new URL(anchorTarget.href).hash
-        if (anchor.length > 0) {
+        const desiredScrollY = document.getElementById(anchor.slice(1)).offsetTop
+        if (window.scrollY == desiredScrollY) {
+          event.preventDefault()
+        } else if (anchor.length > 0) {
           setTimeout(() => {
-            window.scrollTo(0, document.getElementById(anchor.slice(1)).offsetTop + 0)
+            window.scrollTo(0, desiredScrollY)
           }, 10)
         }
       }
