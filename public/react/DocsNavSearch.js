@@ -1,5 +1,5 @@
 import useDocsSearchQuery from './useDocsSearchQuery.js'
-import presidiumV1Filenames from '../presidium/v1-filenames.js'
+import presidiumV1ClassNames from './presidiumV1ClassNames.js'
 import useCronistMap from './useCronistMap.js'
 import usePath from './usePath.js'
 import useIsHamburgerMenuActive from './useIsHamburgerMenuActive.js'
@@ -7,11 +7,6 @@ import useDocsViewerClassName from './useDocsViewerClassName.js'
 import DocsNavClassItem from './DocsNavClassItem.js'
 import DocsNavClassMethodItem from './DocsNavClassMethodItem.js'
 import presidiumClassExludedMethods from './presidiumClassExcludedMethods.js'
-
-const presidiumV1ClassNames =
-  presidiumV1Filenames
-  .filter(filename => filename != 'index.js' && filename != 'userAgent.js')
-  .map(filename => filename.replace('.js', ''))
 
 /**
  * @name DocsNavSearch
