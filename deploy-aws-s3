@@ -22,13 +22,40 @@ const { domain, publicDir } = config
  * ```
  */
 async function main() {
-  const awsCreds = await AwsCredentials(process.env.AWS_PROFILE ?? 'default')
+  const awsCreds = await AwsCredentials('presidium')
+  awsCreds.region = 'us-east-1'
 
   const bucket = new S3Bucket({
     name: domain,
+    BlockPublicAccess: false,
+    BlockPublicACLs: false,
+    BlockPublicPolicy: false,
+    IgnorePublicACLs: false,
+    RestrictPublicBuckets: false,
     ...awsCreds,
   })
   await bucket.ready
+
+  try {
+    await testBucket3.getPolicy()
+  } catch (_error) {
+    const policy = {
+      "Version": "2008-10-17",
+      "Id": "Policy1380877762691",
+      "Statement": [
+        {
+          "Sid": "Stmt1380877761162",
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "*"
+          },
+          "Action": "s3:GetObject",
+          "Resource": `arn:aws:s3:::${bucketName}/*`,
+        }
+      ]
+    }
+    await testBucket3.putPolicy({ policy })
+  }
 
   const dir = path.join(__dirname, publicDir)
   const paths = await findPaths(dir)
@@ -39,7 +66,7 @@ async function main() {
     const content = contentBuffer.toString('utf8')
     const contentType = ContentType(key, content)
     console.log(`Uploading ${path.replace(process.env.HOME, '~')} as ${key} [${contentType}]`)
-    await bucket.upload(key, content, {
+    await bucket.putObject(key, content, {
       ContentType: contentType,
       Expires: new Date(),
     })
