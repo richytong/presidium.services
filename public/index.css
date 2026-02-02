@@ -355,11 +355,16 @@ article a {
   overflow-x: scroll;
 }
 
-.docs .method a {
+.docs .method > a {
   text-decoration: none;
   font-weight: 600;
   display: block;
   width: fit-content;
+}
+
+.docs .method a {
+  text-decoration: none;
+  font-weight: 600;
 }
 
 #docs-nav {
