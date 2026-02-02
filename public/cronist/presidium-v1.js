@@ -2,7 +2,7 @@ export default [
   {
     name: 'Archive',
     docs: '```coffeescript [specscript]\n' +
-      'new Archive(base Object<string>) -> archive Archive\n' +
+      'new Archive(contentObject Object<string>) -> archive Archive\n' +
       '```',
     mdast: {
       name: {
@@ -38,34 +38,36 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'new Archive(base Object<string>) -> archive Archive',
+            value: 'new Archive(contentObject Object<string>) -> archive Archive',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 3, column: 4, offset: 84 }
+              end: { line: 3, column: 4, offset: 93 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 3, column: 4, offset: 84 }
+          end: { line: 3, column: 4, offset: 93 }
         }
       }
     },
     methods: [
       {
-        name: 'Archive.prototype.tar',
+        name: 'tar',
         docs: '```coffeescript [specscript]\n' +
           "module tar 'https://github.com/mafintosh/tar-stream'\n" +
           '\n' +
-          'archive.tar(path string, options {\n' +
-          '  ignore: Array<string>, // paths or names to ignore\n' +
+          'tar(path string, options {\n' +
+          '  ignore: Array<string>,\n' +
           '}) -> pack tar.Pack\n' +
           '```\n' +
           '\n' +
-          'Note: `path` must be absolute\n' +
-          'Note: Returned readable stream is hot, so please pipe this immediately\n' +
-          'Note: pack.packing is a Promise that represents the entire packing operation of the tar\n' +
-          'Note: pack.packing resolves when the tar operation is complete',
+          'Bundle multiple files and directories from a parent directory into a tarball.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * `path` - the path to the parent directory which contains the files and directories to bundle.\n' +
+          '  * `options`\n' +
+          '    * `ignore` - filepaths, filenames, or patterns to ignore.',
         mdast: {
           name: {
             type: 'root',
@@ -75,22 +77,22 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'Archive.prototype.tar',
+                    value: 'tar',
                     position: {
                       start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 22, offset: 21 }
+                      end: { line: 1, column: 4, offset: 3 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 22, offset: 21 }
+                  end: { line: 1, column: 4, offset: 3 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 22, offset: 21 }
+              end: { line: 1, column: 4, offset: 3 }
             }
           },
           docs: {
@@ -102,12 +104,12 @@ export default [
                 meta: '[specscript]',
                 value: "module tar 'https://github.com/mafintosh/tar-stream'\n" +
                   '\n' +
-                  'archive.tar(path string, options {\n' +
-                  '  ignore: Array<string>, // paths or names to ignore\n' +
+                  'tar(path string, options {\n' +
+                  '  ignore: Array<string>,\n' +
                   '}) -> pack tar.Pack',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 7, column: 4, offset: 194 }
+                  end: { line: 7, column: 4, offset: 158 }
                 }
               },
               {
@@ -115,57 +117,197 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'Note: ',
+                    value: 'Bundle multiple files and directories from a parent directory into a tarball.',
                     position: {
-                      start: { line: 9, column: 1, offset: 196 },
-                      end: { line: 9, column: 7, offset: 202 }
-                    }
-                  },
-                  {
-                    type: 'inlineCode',
-                    value: 'path',
-                    position: {
-                      start: { line: 9, column: 7, offset: 202 },
-                      end: { line: 9, column: 13, offset: 208 }
-                    }
-                  },
-                  {
-                    type: 'text',
-                    value: ' must be absolute\n' +
-                      'Note: Returned readable stream is hot, so please pipe this immediately\n' +
-                      'Note: pack.packing is a Promise that represents the entire packing operation of the tar\n' +
-                      'Note: pack.packing resolves when the tar operation is complete',
-                    position: {
-                      start: { line: 9, column: 13, offset: 208 },
-                      end: { line: 12, column: 63, offset: 447 }
+                      start: { line: 9, column: 1, offset: 160 },
+                      end: { line: 9, column: 78, offset: 237 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 9, column: 1, offset: 196 },
-                  end: { line: 12, column: 63, offset: 447 }
+                  start: { line: 9, column: 1, offset: 160 },
+                  end: { line: 9, column: 78, offset: 237 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 11, column: 1, offset: 239 },
+                      end: { line: 11, column: 11, offset: 249 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 1, offset: 239 },
+                  end: { line: 11, column: 11, offset: 249 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'path',
+                            position: {
+                              start: { line: 12, column: 5, offset: 254 },
+                              end: { line: 12, column: 11, offset: 260 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - the path to the parent directory which contains the files and directories to bundle.',
+                            position: {
+                              start: { line: 12, column: 11, offset: 260 },
+                              end: { line: 12, column: 98, offset: 347 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 12, column: 5, offset: 254 },
+                          end: { line: 12, column: 98, offset: 347 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 12, column: 3, offset: 252 },
+                      end: { line: 12, column: 98, offset: 347 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'options',
+                            position: {
+                              start: { line: 13, column: 5, offset: 352 },
+                              end: { line: 13, column: 14, offset: 361 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 13, column: 5, offset: 352 },
+                          end: { line: 13, column: 14, offset: 361 }
+                        }
+                      },
+                      {
+                        type: 'list',
+                        ordered: false,
+                        start: null,
+                        spread: false,
+                        children: [
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'ignore',
+                                    position: {
+                                      start: {
+                                        line: 14,
+                                        column: 7,
+                                        offset: 368
+                                      },
+                                      end: {
+                                        line: 14,
+                                        column: 15,
+                                        offset: 376
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - filepaths, filenames, or patterns to ignore.',
+                                    position: {
+                                      start: {
+                                        line: 14,
+                                        column: 15,
+                                        offset: 376
+                                      },
+                                      end: {
+                                        line: 14,
+                                        column: 62,
+                                        offset: 423
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 14, column: 7, offset: 368 },
+                                  end: { line: 14, column: 62, offset: 423 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 14, column: 5, offset: 366 },
+                              end: { line: 14, column: 62, offset: 423 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 14, column: 5, offset: 366 },
+                          end: { line: 14, column: 62, offset: 423 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 13, column: 3, offset: 350 },
+                      end: { line: 14, column: 62, offset: 423 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 12, column: 3, offset: 252 },
+                  end: { line: 14, column: 62, offset: 423 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 63, offset: 447 }
+              end: { line: 14, column: 62, offset: 423 }
             }
           }
         }
       },
       {
-        name: 'Archive.prototype.untar',
+        name: 'untar',
         docs: '```coffeescript [specscript]\n' +
           "module tar 'https://github.com/mafintosh/tar-stream'\n" +
+          "module presidium 'https://presidium.services/docs'\n" +
           '\n' +
-          'archive.untar(\n' +
-          '  pack tar.Pack,\n' +
-          '  options {\n' +
-          '    ignore: Array<string>, // paths or names to ignore\n' +
-          '  },\n' +
-          ') -> Map<(header EntryHeader)=>(stream EntryStream)>\n' +
-          '```',
+          'untar(pack tar.Pack) ->\n' +
+          '  contentMap Promise<Map<(filepath string)=>(content presidium.Readable)> >\n' +
+          '```\n' +
+          '\n' +
+          'Extract a tarball into a map of file paths to content streams.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * `pack` - a tarball represented by the `tar.Pack` type. Returned by the [tar](#tar) method.',
         mdast: {
           name: {
             type: 'root',
@@ -175,22 +317,22 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'Archive.prototype.untar',
+                    value: 'untar',
                     position: {
                       start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 24, offset: 23 }
+                      end: { line: 1, column: 6, offset: 5 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 24, offset: 23 }
+                  end: { line: 1, column: 6, offset: 5 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 24, offset: 23 }
+              end: { line: 1, column: 6, offset: 5 }
             }
           },
           docs: {
@@ -201,22 +343,144 @@ export default [
                 lang: 'coffeescript',
                 meta: '[specscript]',
                 value: "module tar 'https://github.com/mafintosh/tar-stream'\n" +
+                  "module presidium 'https://presidium.services/docs'\n" +
                   '\n' +
-                  'archive.untar(\n' +
-                  '  pack tar.Pack,\n' +
-                  '  options {\n' +
-                  '    ignore: Array<string>, // paths or names to ignore\n' +
-                  '  },\n' +
-                  ') -> Map<(header EntryHeader)=>(stream EntryStream)>',
+                  'untar(pack tar.Pack) ->\n' +
+                  '  contentMap Promise<Map<(filepath string)=>(content presidium.Readable)> >',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 10, column: 4, offset: 243 }
+                  end: { line: 7, column: 4, offset: 237 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Extract a tarball into a map of file paths to content streams.',
+                    position: {
+                      start: { line: 9, column: 1, offset: 239 },
+                      end: { line: 9, column: 63, offset: 301 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 9, column: 1, offset: 239 },
+                  end: { line: 9, column: 63, offset: 301 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 11, column: 1, offset: 303 },
+                      end: { line: 11, column: 11, offset: 313 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 1, offset: 303 },
+                  end: { line: 11, column: 11, offset: 313 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'pack',
+                            position: {
+                              start: { line: 12, column: 5, offset: 318 },
+                              end: { line: 12, column: 11, offset: 324 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - a tarball represented by the ',
+                            position: {
+                              start: { line: 12, column: 11, offset: 324 },
+                              end: { line: 12, column: 43, offset: 356 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'tar.Pack',
+                            position: {
+                              start: { line: 12, column: 43, offset: 356 },
+                              end: { line: 12, column: 53, offset: 366 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' type. Returned by the ',
+                            position: {
+                              start: { line: 12, column: 53, offset: 366 },
+                              end: { line: 12, column: 76, offset: 389 }
+                            }
+                          },
+                          {
+                            type: 'link',
+                            title: null,
+                            url: '#tar',
+                            children: [
+                              {
+                                type: 'text',
+                                value: 'tar',
+                                position: {
+                                  start: { line: 12, column: 77, offset: 390 },
+                                  end: { line: 12, column: 80, offset: 393 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 12, column: 76, offset: 389 },
+                              end: { line: 12, column: 87, offset: 400 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' method.',
+                            position: {
+                              start: { line: 12, column: 87, offset: 400 },
+                              end: { line: 12, column: 95, offset: 408 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 12, column: 5, offset: 318 },
+                          end: { line: 12, column: 95, offset: 408 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 12, column: 3, offset: 316 },
+                      end: { line: 12, column: 95, offset: 408 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 12, column: 3, offset: 316 },
+                  end: { line: 12, column: 95, offset: 408 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 10, column: 4, offset: 243 }
+              end: { line: 12, column: 95, offset: 408 }
             }
           }
         }
@@ -227,16 +491,29 @@ export default [
   {
     name: 'AwsCredentials',
     docs: '```coffeescript [specscript]\n' +
-      'AwsCredentials(profile string, options? {\n' +
+      'AwsCredentials(profile string, options {\n' +
       '  credentialsFileDirname: string\n' +
       '  credentialsFilename: string,\n' +
       '  recurse: boolean,\n' +
       '}) -> awsCreds Promise<{\n' +
       '  accessKeyId: string,\n' +
       '  secretAccessKey: string,\n' +
-      '  region: string,\n' +
       '}>\n' +
-      '```',
+      '```\n' +
+      '\n' +
+      'Finds and reads the AWS access key ID and secret access key from local files. Looks in the `~/.aws/credentials` file by default.\n' +
+      '\n' +
+      'Arguments:\n' +
+      "  * `profile` - the AWS profile associated with the credentials. Defaults to `'default'`.\n" +
+      '  * `options`\n' +
+      "    * `credentialsFileDirname` - the name of the directory that stores the credentials file. Defaults to `'.aws'`.\n" +
+      "    * `credentialsFilename` - the name of the credentials file. Defaults to `'credentials'`.\n" +
+      '    * `recurse` - if `true`, AwsCredentials will look for the AWS credential file in every parent directory up to the root directory (`/`). If `false`, AwsCredentials will only look for the AWS credential file in the current working directory. Defaults to `true`.\n' +
+      '\n' +
+      'Return:\n' +
+      '  * `awsCreds` - the AWS credentials object.\n' +
+      '    * `accessKeyId` - the AWS access key ID retrieved from the credentials file.\n' +
+      '    * `secretAccessKey` - the AWS secret access key retrieved from the credentials.',
     mdast: {
       name: {
         type: 'root',
@@ -271,24 +548,626 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'AwsCredentials(profile string, options? {\n' +
+            value: 'AwsCredentials(profile string, options {\n' +
               '  credentialsFileDirname: string\n' +
               '  credentialsFilename: string,\n' +
               '  recurse: boolean,\n' +
               '}) -> awsCreds Promise<{\n' +
               '  accessKeyId: string,\n' +
               '  secretAccessKey: string,\n' +
-              '  region: string,\n' +
               '}>',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 11, column: 4, offset: 254 }
+              end: { line: 10, column: 4, offset: 235 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Finds and reads the AWS access key ID and secret access key from local files. Looks in the ',
+                position: {
+                  start: { line: 12, column: 1, offset: 237 },
+                  end: { line: 12, column: 92, offset: 328 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: '~/.aws/credentials',
+                position: {
+                  start: { line: 12, column: 92, offset: 328 },
+                  end: { line: 12, column: 112, offset: 348 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' file by default.',
+                position: {
+                  start: { line: 12, column: 112, offset: 348 },
+                  end: { line: 12, column: 129, offset: 365 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 12, column: 1, offset: 237 },
+              end: { line: 12, column: 129, offset: 365 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Arguments:',
+                position: {
+                  start: { line: 14, column: 1, offset: 367 },
+                  end: { line: 14, column: 11, offset: 377 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 14, column: 1, offset: 367 },
+              end: { line: 14, column: 11, offset: 377 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'profile',
+                        position: {
+                          start: { line: 15, column: 5, offset: 382 },
+                          end: { line: 15, column: 14, offset: 391 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ' - the AWS profile associated with the credentials. Defaults to ',
+                        position: {
+                          start: { line: 15, column: 14, offset: 391 },
+                          end: { line: 15, column: 78, offset: 455 }
+                        }
+                      },
+                      {
+                        type: 'inlineCode',
+                        value: "'default'",
+                        position: {
+                          start: { line: 15, column: 78, offset: 455 },
+                          end: { line: 15, column: 89, offset: 466 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: '.',
+                        position: {
+                          start: { line: 15, column: 89, offset: 466 },
+                          end: { line: 15, column: 90, offset: 467 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 15, column: 5, offset: 382 },
+                      end: { line: 15, column: 90, offset: 467 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 15, column: 3, offset: 380 },
+                  end: { line: 15, column: 90, offset: 467 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'options',
+                        position: {
+                          start: { line: 16, column: 5, offset: 472 },
+                          end: { line: 16, column: 14, offset: 481 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 16, column: 5, offset: 472 },
+                      end: { line: 16, column: 14, offset: 481 }
+                    }
+                  },
+                  {
+                    type: 'list',
+                    ordered: false,
+                    start: null,
+                    spread: false,
+                    children: [
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'credentialsFileDirname',
+                                position: {
+                                  start: { line: 17, column: 7, offset: 488 },
+                                  end: { line: 17, column: 31, offset: 512 }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - the name of the directory that stores the credentials file. Defaults to ',
+                                position: {
+                                  start: { line: 17, column: 31, offset: 512 },
+                                  end: {
+                                    line: 17,
+                                    column: 106,
+                                    offset: 587
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: "'.aws'",
+                                position: {
+                                  start: {
+                                    line: 17,
+                                    column: 106,
+                                    offset: 587
+                                  },
+                                  end: {
+                                    line: 17,
+                                    column: 114,
+                                    offset: 595
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: '.',
+                                position: {
+                                  start: {
+                                    line: 17,
+                                    column: 114,
+                                    offset: 595
+                                  },
+                                  end: {
+                                    line: 17,
+                                    column: 115,
+                                    offset: 596
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 17, column: 7, offset: 488 },
+                              end: { line: 17, column: 115, offset: 596 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 17, column: 5, offset: 486 },
+                          end: { line: 17, column: 115, offset: 596 }
+                        }
+                      },
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'credentialsFilename',
+                                position: {
+                                  start: { line: 18, column: 7, offset: 603 },
+                                  end: { line: 18, column: 28, offset: 624 }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - the name of the credentials file. Defaults to ',
+                                position: {
+                                  start: { line: 18, column: 28, offset: 624 },
+                                  end: { line: 18, column: 77, offset: 673 }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: "'credentials'",
+                                position: {
+                                  start: { line: 18, column: 77, offset: 673 },
+                                  end: { line: 18, column: 92, offset: 688 }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: '.',
+                                position: {
+                                  start: { line: 18, column: 92, offset: 688 },
+                                  end: { line: 18, column: 93, offset: 689 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 18, column: 7, offset: 603 },
+                              end: { line: 18, column: 93, offset: 689 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 18, column: 5, offset: 601 },
+                          end: { line: 18, column: 93, offset: 689 }
+                        }
+                      },
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'recurse',
+                                position: {
+                                  start: { line: 19, column: 7, offset: 696 },
+                                  end: { line: 19, column: 16, offset: 705 }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - if ',
+                                position: {
+                                  start: { line: 19, column: 16, offset: 705 },
+                                  end: { line: 19, column: 22, offset: 711 }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'true',
+                                position: {
+                                  start: { line: 19, column: 22, offset: 711 },
+                                  end: { line: 19, column: 28, offset: 717 }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ', AwsCredentials will look for the AWS credential file in every parent directory up to the root directory (',
+                                position: {
+                                  start: { line: 19, column: 28, offset: 717 },
+                                  end: {
+                                    line: 19,
+                                    column: 135,
+                                    offset: 824
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: '/',
+                                position: {
+                                  start: {
+                                    line: 19,
+                                    column: 135,
+                                    offset: 824
+                                  },
+                                  end: {
+                                    line: 19,
+                                    column: 138,
+                                    offset: 827
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: '). If ',
+                                position: {
+                                  start: {
+                                    line: 19,
+                                    column: 138,
+                                    offset: 827
+                                  },
+                                  end: {
+                                    line: 19,
+                                    column: 144,
+                                    offset: 833
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'false',
+                                position: {
+                                  start: {
+                                    line: 19,
+                                    column: 144,
+                                    offset: 833
+                                  },
+                                  end: {
+                                    line: 19,
+                                    column: 151,
+                                    offset: 840
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ', AwsCredentials will only look for the AWS credential file in the current working directory. Defaults to ',
+                                position: {
+                                  start: {
+                                    line: 19,
+                                    column: 151,
+                                    offset: 840
+                                  },
+                                  end: {
+                                    line: 19,
+                                    column: 257,
+                                    offset: 946
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'true',
+                                position: {
+                                  start: {
+                                    line: 19,
+                                    column: 257,
+                                    offset: 946
+                                  },
+                                  end: {
+                                    line: 19,
+                                    column: 263,
+                                    offset: 952
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: '.',
+                                position: {
+                                  start: {
+                                    line: 19,
+                                    column: 263,
+                                    offset: 952
+                                  },
+                                  end: {
+                                    line: 19,
+                                    column: 264,
+                                    offset: 953
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 19, column: 7, offset: 696 },
+                              end: { line: 19, column: 264, offset: 953 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 19, column: 5, offset: 694 },
+                          end: { line: 19, column: 264, offset: 953 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 17, column: 5, offset: 486 },
+                      end: { line: 19, column: 264, offset: 953 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 16, column: 3, offset: 470 },
+                  end: { line: 19, column: 264, offset: 953 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 15, column: 3, offset: 380 },
+              end: { line: 19, column: 264, offset: 953 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Return:',
+                position: {
+                  start: { line: 21, column: 1, offset: 955 },
+                  end: { line: 21, column: 8, offset: 962 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 21, column: 1, offset: 955 },
+              end: { line: 21, column: 8, offset: 962 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'awsCreds',
+                        position: {
+                          start: { line: 22, column: 5, offset: 967 },
+                          end: { line: 22, column: 15, offset: 977 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ' - the AWS credentials object.',
+                        position: {
+                          start: { line: 22, column: 15, offset: 977 },
+                          end: { line: 22, column: 45, offset: 1007 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 22, column: 5, offset: 967 },
+                      end: { line: 22, column: 45, offset: 1007 }
+                    }
+                  },
+                  {
+                    type: 'list',
+                    ordered: false,
+                    start: null,
+                    spread: false,
+                    children: [
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'accessKeyId',
+                                position: {
+                                  start: { line: 23, column: 7, offset: 1014 },
+                                  end: {
+                                    line: 23,
+                                    column: 20,
+                                    offset: 1027
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - the AWS access key ID retrieved from the credentials file.',
+                                position: {
+                                  start: {
+                                    line: 23,
+                                    column: 20,
+                                    offset: 1027
+                                  },
+                                  end: {
+                                    line: 23,
+                                    column: 81,
+                                    offset: 1088
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 23, column: 7, offset: 1014 },
+                              end: { line: 23, column: 81, offset: 1088 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 23, column: 5, offset: 1012 },
+                          end: { line: 23, column: 81, offset: 1088 }
+                        }
+                      },
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'secretAccessKey',
+                                position: {
+                                  start: { line: 24, column: 7, offset: 1095 },
+                                  end: {
+                                    line: 24,
+                                    column: 24,
+                                    offset: 1112
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - the AWS secret access key retrieved from the credentials.',
+                                position: {
+                                  start: {
+                                    line: 24,
+                                    column: 24,
+                                    offset: 1112
+                                  },
+                                  end: {
+                                    line: 24,
+                                    column: 84,
+                                    offset: 1172
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 24, column: 7, offset: 1095 },
+                              end: { line: 24, column: 84, offset: 1172 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 24, column: 5, offset: 1093 },
+                          end: { line: 24, column: 84, offset: 1172 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 23, column: 5, offset: 1012 },
+                      end: { line: 24, column: 84, offset: 1172 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 22, column: 3, offset: 965 },
+                  end: { line: 24, column: 84, offset: 1172 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 22, column: 3, offset: 965 },
+              end: { line: 24, column: 84, offset: 1172 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 11, column: 4, offset: 254 }
+          end: { line: 24, column: 84, offset: 1172 }
         }
       }
     },
@@ -297,7 +1176,11 @@ export default [
   },
   {
     name: 'Docker',
-    docs: 'new Docker() -> Docker',
+    docs: '```coffeescript [specscript]\n' +
+      'new Docker() -> docker Docker\n' +
+      '```\n' +
+      '\n' +
+      'Presidium Docker client. Connects to the Docker socket.',
     mdast: {
       name: {
         type: 'root',
@@ -329,26 +1212,36 @@ export default [
         type: 'root',
         children: [
           {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'new Docker() -> docker Docker',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 62 }
+            }
+          },
+          {
             type: 'paragraph',
             children: [
               {
                 type: 'text',
-                value: 'new Docker() -> Docker',
+                value: 'Presidium Docker client. Connects to the Docker socket.',
                 position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 23, offset: 22 }
+                  start: { line: 5, column: 1, offset: 64 },
+                  end: { line: 5, column: 56, offset: 119 }
                 }
               }
             ],
             position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 23, offset: 22 }
+              start: { line: 5, column: 1, offset: 64 },
+              end: { line: 5, column: 56, offset: 119 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 23, offset: 22 }
+          end: { line: 5, column: 56, offset: 119 }
         }
       }
     },
@@ -360,11 +1253,36 @@ export default [
           '  username: string,\n' +
           '  password: string,\n' +
           '  email: string,\n' +
-          '  serveraddress: string, // domain/IP without a protocol\n' +
+          '  serveraddress: string,\n' +
           '}) -> data Promise<{\n' +
           '  Status: string,\n' +
           '  IdentityToken: string,\n' +
           '}>\n' +
+          '```\n' +
+          '\n' +
+          'Validates credentials for a Docker container registry. If available, gets an identity token for accessing the registry without password.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * `options` - address used for inter-manager communication that is also advertised to other nodes.\n' +
+          '    * `username` - authentication credentials.\n' +
+          '    * `password` - authentication credentials.\n' +
+          '    * `email` - authentication credentials.\n' +
+          '    * `serveraddress` - domain or IP of the registry server.\n' +
+          '\n' +
+          'Return:\n' +
+          '  * `data`\n' +
+          '    * `Status` - the status message of the authentication\n' +
+          '    * `IdentityToken` - a token used to authenticate the user in place of a username and password.\n' +
+          '\n' +
+          '```javascript\n' +
+          'const docker = new Docker()\n' +
+          '\n' +
+          'const data = await docker.auth({\n' +
+          "  username: 'admin',\n" +
+          "  password: 'password',\n" +
+          "  email: 'test@example.com',\n" +
+          "  serveraddress: 'localhost:5000',\n" +
+          '})\n' +
           '```',
         mdast: {
           name: {
@@ -404,20 +1322,512 @@ export default [
                   '  username: string,\n' +
                   '  password: string,\n' +
                   '  email: string,\n' +
-                  '  serveraddress: string, // domain/IP without a protocol\n' +
+                  '  serveraddress: string,\n' +
                   '}) -> data Promise<{\n' +
                   '  Status: string,\n' +
                   '  IdentityToken: string,\n' +
                   '}>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 11, column: 4, offset: 228 }
+                  end: { line: 11, column: 4, offset: 196 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Validates credentials for a Docker container registry. If available, gets an identity token for accessing the registry without password.',
+                    position: {
+                      start: { line: 13, column: 1, offset: 198 },
+                      end: { line: 13, column: 137, offset: 334 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 13, column: 1, offset: 198 },
+                  end: { line: 13, column: 137, offset: 334 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 15, column: 1, offset: 336 },
+                      end: { line: 15, column: 11, offset: 346 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 15, column: 1, offset: 336 },
+                  end: { line: 15, column: 11, offset: 346 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'options',
+                            position: {
+                              start: { line: 16, column: 5, offset: 351 },
+                              end: { line: 16, column: 14, offset: 360 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - address used for inter-manager communication that is also advertised to other nodes.',
+                            position: {
+                              start: { line: 16, column: 14, offset: 360 },
+                              end: { line: 16, column: 101, offset: 447 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 16, column: 5, offset: 351 },
+                          end: { line: 16, column: 101, offset: 447 }
+                        }
+                      },
+                      {
+                        type: 'list',
+                        ordered: false,
+                        start: null,
+                        spread: false,
+                        children: [
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'username',
+                                    position: {
+                                      start: {
+                                        line: 17,
+                                        column: 7,
+                                        offset: 454
+                                      },
+                                      end: {
+                                        line: 17,
+                                        column: 17,
+                                        offset: 464
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - authentication credentials.',
+                                    position: {
+                                      start: {
+                                        line: 17,
+                                        column: 17,
+                                        offset: 464
+                                      },
+                                      end: {
+                                        line: 17,
+                                        column: 47,
+                                        offset: 494
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 17, column: 7, offset: 454 },
+                                  end: { line: 17, column: 47, offset: 494 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 17, column: 5, offset: 452 },
+                              end: { line: 17, column: 47, offset: 494 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'password',
+                                    position: {
+                                      start: {
+                                        line: 18,
+                                        column: 7,
+                                        offset: 501
+                                      },
+                                      end: {
+                                        line: 18,
+                                        column: 17,
+                                        offset: 511
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - authentication credentials.',
+                                    position: {
+                                      start: {
+                                        line: 18,
+                                        column: 17,
+                                        offset: 511
+                                      },
+                                      end: {
+                                        line: 18,
+                                        column: 47,
+                                        offset: 541
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 18, column: 7, offset: 501 },
+                                  end: { line: 18, column: 47, offset: 541 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 18, column: 5, offset: 499 },
+                              end: { line: 18, column: 47, offset: 541 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'email',
+                                    position: {
+                                      start: {
+                                        line: 19,
+                                        column: 7,
+                                        offset: 548
+                                      },
+                                      end: {
+                                        line: 19,
+                                        column: 14,
+                                        offset: 555
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - authentication credentials.',
+                                    position: {
+                                      start: {
+                                        line: 19,
+                                        column: 14,
+                                        offset: 555
+                                      },
+                                      end: {
+                                        line: 19,
+                                        column: 44,
+                                        offset: 585
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 19, column: 7, offset: 548 },
+                                  end: { line: 19, column: 44, offset: 585 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 19, column: 5, offset: 546 },
+                              end: { line: 19, column: 44, offset: 585 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'serveraddress',
+                                    position: {
+                                      start: {
+                                        line: 20,
+                                        column: 7,
+                                        offset: 592
+                                      },
+                                      end: {
+                                        line: 20,
+                                        column: 22,
+                                        offset: 607
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - domain or IP of the registry server.',
+                                    position: {
+                                      start: {
+                                        line: 20,
+                                        column: 22,
+                                        offset: 607
+                                      },
+                                      end: {
+                                        line: 20,
+                                        column: 61,
+                                        offset: 646
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 20, column: 7, offset: 592 },
+                                  end: { line: 20, column: 61, offset: 646 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 20, column: 5, offset: 590 },
+                              end: { line: 20, column: 61, offset: 646 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 17, column: 5, offset: 452 },
+                          end: { line: 20, column: 61, offset: 646 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 16, column: 3, offset: 349 },
+                      end: { line: 20, column: 61, offset: 646 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 16, column: 3, offset: 349 },
+                  end: { line: 20, column: 61, offset: 646 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 22, column: 1, offset: 648 },
+                      end: { line: 22, column: 8, offset: 655 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 22, column: 1, offset: 648 },
+                  end: { line: 22, column: 8, offset: 655 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'data',
+                            position: {
+                              start: { line: 23, column: 5, offset: 660 },
+                              end: { line: 23, column: 11, offset: 666 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 23, column: 5, offset: 660 },
+                          end: { line: 23, column: 11, offset: 666 }
+                        }
+                      },
+                      {
+                        type: 'list',
+                        ordered: false,
+                        start: null,
+                        spread: false,
+                        children: [
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Status',
+                                    position: {
+                                      start: {
+                                        line: 24,
+                                        column: 7,
+                                        offset: 673
+                                      },
+                                      end: {
+                                        line: 24,
+                                        column: 15,
+                                        offset: 681
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the status message of the authentication',
+                                    position: {
+                                      start: {
+                                        line: 24,
+                                        column: 15,
+                                        offset: 681
+                                      },
+                                      end: {
+                                        line: 24,
+                                        column: 58,
+                                        offset: 724
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 24, column: 7, offset: 673 },
+                                  end: { line: 24, column: 58, offset: 724 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 24, column: 5, offset: 671 },
+                              end: { line: 24, column: 58, offset: 724 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'IdentityToken',
+                                    position: {
+                                      start: {
+                                        line: 25,
+                                        column: 7,
+                                        offset: 731
+                                      },
+                                      end: {
+                                        line: 25,
+                                        column: 22,
+                                        offset: 746
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - a token used to authenticate the user in place of a username and password.',
+                                    position: {
+                                      start: {
+                                        line: 25,
+                                        column: 22,
+                                        offset: 746
+                                      },
+                                      end: {
+                                        line: 25,
+                                        column: 99,
+                                        offset: 823
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 25, column: 7, offset: 731 },
+                                  end: { line: 25, column: 99, offset: 823 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 25, column: 5, offset: 729 },
+                              end: { line: 25, column: 99, offset: 823 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 24, column: 5, offset: 671 },
+                          end: { line: 25, column: 99, offset: 823 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 23, column: 3, offset: 658 },
+                      end: { line: 25, column: 99, offset: 823 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 23, column: 3, offset: 658 },
+                  end: { line: 25, column: 99, offset: 823 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'const docker = new Docker()\n' +
+                  '\n' +
+                  'const data = await docker.auth({\n' +
+                  "  username: 'admin',\n" +
+                  "  password: 'password',\n" +
+                  "  email: 'test@example.com',\n" +
+                  "  serveraddress: 'localhost:5000',\n" +
+                  '})',
+                position: {
+                  start: { line: 27, column: 1, offset: 825 },
+                  end: { line: 36, column: 4, offset: 1016 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 11, column: 4, offset: 228 }
+              end: { line: 36, column: 4, offset: 1016 }
             }
           }
         }
@@ -440,6 +1850,31 @@ export default [
           '  Manifests: Array<DockerDocs.ImageManifestSummary>,\n' +
           '  Descriptor: DockerDocs.OCIDescriptor,\n' +
           ']>\n' +
+          '```\n' +
+          '\n' +
+          'Returns a list of Docker images stored on the server.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * (none)\n' +
+          '\n' +
+          'Return:\n' +
+          '  * `data`\n' +
+          '    * `Id` - the image ID.\n' +
+          '    * `ParentId` - ID of the parent image.\n' +
+          '    * `RepoTags` - list of image names and tags in the local image cache that reference the image.\n' +
+          '    * `RepoDigests` - list of content-addressable digests of locally available image manifests that the image is referenced from.\n' +
+          '    * `Created` - the date and time at which the image was created as seconds since EPOCH (January 1, 1970 at midnight UTC/GMT). \n' +
+          '    * `Size` - the total size in bytes of the image including all layers that the image is composed of.\n' +
+          '    * `SharedSize` - total size of image layers that are shared between the image and other images. `-1` indicates that this value has not been calculated.\n' +
+          '    * `Labels` - object of user-defined key/value metadata.\n' +
+          '    * `Containers` - number of containers using this image. Includes both stopped and running containers. `-1` indicates that this value has not been calculated.\n' +
+          '    * `Manifests` - list of [image manifests](https://docs.docker.com/reference/cli/docker/manifest/) available in the image. Warning: `Manifests` is experimental and may change at any time without any backward compatibility.\n' +
+          '    * `Descriptor` - an object containing digest, media type, and size for the image, as defined in the [OCI Content Descriptors Specification](https://github.com/opencontainers/image-spec/blob/v1.0.1/descriptor.md).\n' +
+          '\n' +
+          '```javascript\n' +
+          'const docker = new Docker()\n' +
+          '\n' +
+          'const data = await docker.listImages()\n' +
           '```',
         mdast: {
           name: {
@@ -494,11 +1929,968 @@ export default [
                   start: { line: 1, column: 1, offset: 0 },
                   end: { line: 17, column: 4, offset: 475 }
                 }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Returns a list of Docker images stored on the server.',
+                    position: {
+                      start: { line: 19, column: 1, offset: 477 },
+                      end: { line: 19, column: 54, offset: 530 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 19, column: 1, offset: 477 },
+                  end: { line: 19, column: 54, offset: 530 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 21, column: 1, offset: 532 },
+                      end: { line: 21, column: 11, offset: 542 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 21, column: 1, offset: 532 },
+                  end: { line: 21, column: 11, offset: 542 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'text',
+                            value: '(none)',
+                            position: {
+                              start: { line: 22, column: 5, offset: 547 },
+                              end: { line: 22, column: 11, offset: 553 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 22, column: 5, offset: 547 },
+                          end: { line: 22, column: 11, offset: 553 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 22, column: 3, offset: 545 },
+                      end: { line: 22, column: 11, offset: 553 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 22, column: 3, offset: 545 },
+                  end: { line: 22, column: 11, offset: 553 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 24, column: 1, offset: 555 },
+                      end: { line: 24, column: 8, offset: 562 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 24, column: 1, offset: 555 },
+                  end: { line: 24, column: 8, offset: 562 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'data',
+                            position: {
+                              start: { line: 25, column: 5, offset: 567 },
+                              end: { line: 25, column: 11, offset: 573 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 25, column: 5, offset: 567 },
+                          end: { line: 25, column: 11, offset: 573 }
+                        }
+                      },
+                      {
+                        type: 'list',
+                        ordered: false,
+                        start: null,
+                        spread: false,
+                        children: [
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Id',
+                                    position: {
+                                      start: {
+                                        line: 26,
+                                        column: 7,
+                                        offset: 580
+                                      },
+                                      end: {
+                                        line: 26,
+                                        column: 11,
+                                        offset: 584
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the image ID.',
+                                    position: {
+                                      start: {
+                                        line: 26,
+                                        column: 11,
+                                        offset: 584
+                                      },
+                                      end: {
+                                        line: 26,
+                                        column: 27,
+                                        offset: 600
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 26, column: 7, offset: 580 },
+                                  end: { line: 26, column: 27, offset: 600 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 26, column: 5, offset: 578 },
+                              end: { line: 26, column: 27, offset: 600 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'ParentId',
+                                    position: {
+                                      start: {
+                                        line: 27,
+                                        column: 7,
+                                        offset: 607
+                                      },
+                                      end: {
+                                        line: 27,
+                                        column: 17,
+                                        offset: 617
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - ID of the parent image.',
+                                    position: {
+                                      start: {
+                                        line: 27,
+                                        column: 17,
+                                        offset: 617
+                                      },
+                                      end: {
+                                        line: 27,
+                                        column: 43,
+                                        offset: 643
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 27, column: 7, offset: 607 },
+                                  end: { line: 27, column: 43, offset: 643 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 27, column: 5, offset: 605 },
+                              end: { line: 27, column: 43, offset: 643 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'RepoTags',
+                                    position: {
+                                      start: {
+                                        line: 28,
+                                        column: 7,
+                                        offset: 650
+                                      },
+                                      end: {
+                                        line: 28,
+                                        column: 17,
+                                        offset: 660
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - list of image names and tags in the local image cache that reference the image.',
+                                    position: {
+                                      start: {
+                                        line: 28,
+                                        column: 17,
+                                        offset: 660
+                                      },
+                                      end: {
+                                        line: 28,
+                                        column: 99,
+                                        offset: 742
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 28, column: 7, offset: 650 },
+                                  end: { line: 28, column: 99, offset: 742 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 28, column: 5, offset: 648 },
+                              end: { line: 28, column: 99, offset: 742 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'RepoDigests',
+                                    position: {
+                                      start: {
+                                        line: 29,
+                                        column: 7,
+                                        offset: 749
+                                      },
+                                      end: {
+                                        line: 29,
+                                        column: 20,
+                                        offset: 762
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - list of content-addressable digests of locally available image manifests that the image is referenced from.',
+                                    position: {
+                                      start: {
+                                        line: 29,
+                                        column: 20,
+                                        offset: 762
+                                      },
+                                      end: {
+                                        line: 29,
+                                        column: 130,
+                                        offset: 872
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 29, column: 7, offset: 749 },
+                                  end: {
+                                    line: 29,
+                                    column: 130,
+                                    offset: 872
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 29, column: 5, offset: 747 },
+                              end: { line: 29, column: 130, offset: 872 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Created',
+                                    position: {
+                                      start: {
+                                        line: 30,
+                                        column: 7,
+                                        offset: 879
+                                      },
+                                      end: {
+                                        line: 30,
+                                        column: 16,
+                                        offset: 888
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the date and time at which the image was created as seconds since EPOCH (January 1, 1970 at midnight UTC/GMT).',
+                                    position: {
+                                      start: {
+                                        line: 30,
+                                        column: 16,
+                                        offset: 888
+                                      },
+                                      end: {
+                                        line: 30,
+                                        column: 129,
+                                        offset: 1001
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 30, column: 7, offset: 879 },
+                                  end: {
+                                    line: 30,
+                                    column: 130,
+                                    offset: 1002
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 30, column: 5, offset: 877 },
+                              end: { line: 30, column: 130, offset: 1002 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Size',
+                                    position: {
+                                      start: {
+                                        line: 31,
+                                        column: 7,
+                                        offset: 1009
+                                      },
+                                      end: {
+                                        line: 31,
+                                        column: 13,
+                                        offset: 1015
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the total size in bytes of the image including all layers that the image is composed of.',
+                                    position: {
+                                      start: {
+                                        line: 31,
+                                        column: 13,
+                                        offset: 1015
+                                      },
+                                      end: {
+                                        line: 31,
+                                        column: 104,
+                                        offset: 1106
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 31, column: 7, offset: 1009 },
+                                  end: {
+                                    line: 31,
+                                    column: 104,
+                                    offset: 1106
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 31, column: 5, offset: 1007 },
+                              end: { line: 31, column: 104, offset: 1106 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'SharedSize',
+                                    position: {
+                                      start: {
+                                        line: 32,
+                                        column: 7,
+                                        offset: 1113
+                                      },
+                                      end: {
+                                        line: 32,
+                                        column: 19,
+                                        offset: 1125
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - total size of image layers that are shared between the image and other images. ',
+                                    position: {
+                                      start: {
+                                        line: 32,
+                                        column: 19,
+                                        offset: 1125
+                                      },
+                                      end: {
+                                        line: 32,
+                                        column: 101,
+                                        offset: 1207
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: '-1',
+                                    position: {
+                                      start: {
+                                        line: 32,
+                                        column: 101,
+                                        offset: 1207
+                                      },
+                                      end: {
+                                        line: 32,
+                                        column: 105,
+                                        offset: 1211
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' indicates that this value has not been calculated.',
+                                    position: {
+                                      start: {
+                                        line: 32,
+                                        column: 105,
+                                        offset: 1211
+                                      },
+                                      end: {
+                                        line: 32,
+                                        column: 156,
+                                        offset: 1262
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 32, column: 7, offset: 1113 },
+                                  end: {
+                                    line: 32,
+                                    column: 156,
+                                    offset: 1262
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 32, column: 5, offset: 1111 },
+                              end: { line: 32, column: 156, offset: 1262 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Labels',
+                                    position: {
+                                      start: {
+                                        line: 33,
+                                        column: 7,
+                                        offset: 1269
+                                      },
+                                      end: {
+                                        line: 33,
+                                        column: 15,
+                                        offset: 1277
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - object of user-defined key/value metadata.',
+                                    position: {
+                                      start: {
+                                        line: 33,
+                                        column: 15,
+                                        offset: 1277
+                                      },
+                                      end: {
+                                        line: 33,
+                                        column: 60,
+                                        offset: 1322
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 33, column: 7, offset: 1269 },
+                                  end: {
+                                    line: 33,
+                                    column: 60,
+                                    offset: 1322
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 33, column: 5, offset: 1267 },
+                              end: { line: 33, column: 60, offset: 1322 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Containers',
+                                    position: {
+                                      start: {
+                                        line: 34,
+                                        column: 7,
+                                        offset: 1329
+                                      },
+                                      end: {
+                                        line: 34,
+                                        column: 19,
+                                        offset: 1341
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - number of containers using this image. Includes both stopped and running containers. ',
+                                    position: {
+                                      start: {
+                                        line: 34,
+                                        column: 19,
+                                        offset: 1341
+                                      },
+                                      end: {
+                                        line: 34,
+                                        column: 107,
+                                        offset: 1429
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: '-1',
+                                    position: {
+                                      start: {
+                                        line: 34,
+                                        column: 107,
+                                        offset: 1429
+                                      },
+                                      end: {
+                                        line: 34,
+                                        column: 111,
+                                        offset: 1433
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' indicates that this value has not been calculated.',
+                                    position: {
+                                      start: {
+                                        line: 34,
+                                        column: 111,
+                                        offset: 1433
+                                      },
+                                      end: {
+                                        line: 34,
+                                        column: 162,
+                                        offset: 1484
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 34, column: 7, offset: 1329 },
+                                  end: {
+                                    line: 34,
+                                    column: 162,
+                                    offset: 1484
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 34, column: 5, offset: 1327 },
+                              end: { line: 34, column: 162, offset: 1484 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Manifests',
+                                    position: {
+                                      start: {
+                                        line: 35,
+                                        column: 7,
+                                        offset: 1491
+                                      },
+                                      end: {
+                                        line: 35,
+                                        column: 18,
+                                        offset: 1502
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - list of ',
+                                    position: {
+                                      start: {
+                                        line: 35,
+                                        column: 18,
+                                        offset: 1502
+                                      },
+                                      end: {
+                                        line: 35,
+                                        column: 29,
+                                        offset: 1513
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'link',
+                                    title: null,
+                                    url: 'https://docs.docker.com/reference/cli/docker/manifest/',
+                                    children: [
+                                      {
+                                        type: 'text',
+                                        value: 'image manifests',
+                                        position: {
+                                          start: {
+                                            line: 35,
+                                            column: 30,
+                                            offset: 1514
+                                          },
+                                          end: {
+                                            line: 35,
+                                            column: 45,
+                                            offset: 1529
+                                          }
+                                        }
+                                      }
+                                    ],
+                                    position: {
+                                      start: {
+                                        line: 35,
+                                        column: 29,
+                                        offset: 1513
+                                      },
+                                      end: {
+                                        line: 35,
+                                        column: 102,
+                                        offset: 1586
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' available in the image. Warning: ',
+                                    position: {
+                                      start: {
+                                        line: 35,
+                                        column: 102,
+                                        offset: 1586
+                                      },
+                                      end: {
+                                        line: 35,
+                                        column: 136,
+                                        offset: 1620
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Manifests',
+                                    position: {
+                                      start: {
+                                        line: 35,
+                                        column: 136,
+                                        offset: 1620
+                                      },
+                                      end: {
+                                        line: 35,
+                                        column: 147,
+                                        offset: 1631
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' is experimental and may change at any time without any backward compatibility.',
+                                    position: {
+                                      start: {
+                                        line: 35,
+                                        column: 147,
+                                        offset: 1631
+                                      },
+                                      end: {
+                                        line: 35,
+                                        column: 226,
+                                        offset: 1710
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 35, column: 7, offset: 1491 },
+                                  end: {
+                                    line: 35,
+                                    column: 226,
+                                    offset: 1710
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 35, column: 5, offset: 1489 },
+                              end: { line: 35, column: 226, offset: 1710 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Descriptor',
+                                    position: {
+                                      start: {
+                                        line: 36,
+                                        column: 7,
+                                        offset: 1717
+                                      },
+                                      end: {
+                                        line: 36,
+                                        column: 19,
+                                        offset: 1729
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - an object containing digest, media type, and size for the image, as defined in the ',
+                                    position: {
+                                      start: {
+                                        line: 36,
+                                        column: 19,
+                                        offset: 1729
+                                      },
+                                      end: {
+                                        line: 36,
+                                        column: 105,
+                                        offset: 1815
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'link',
+                                    title: null,
+                                    url: 'https://github.com/opencontainers/image-spec/blob/v1.0.1/descriptor.md',
+                                    children: [
+                                      {
+                                        type: 'text',
+                                        value: 'OCI Content Descriptors Specification',
+                                        position: {
+                                          start: {
+                                            line: 36,
+                                            column: 106,
+                                            offset: 1816
+                                          },
+                                          end: {
+                                            line: 36,
+                                            column: 143,
+                                            offset: 1853
+                                          }
+                                        }
+                                      }
+                                    ],
+                                    position: {
+                                      start: {
+                                        line: 36,
+                                        column: 105,
+                                        offset: 1815
+                                      },
+                                      end: {
+                                        line: 36,
+                                        column: 216,
+                                        offset: 1926
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: '.',
+                                    position: {
+                                      start: {
+                                        line: 36,
+                                        column: 216,
+                                        offset: 1926
+                                      },
+                                      end: {
+                                        line: 36,
+                                        column: 217,
+                                        offset: 1927
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 36, column: 7, offset: 1717 },
+                                  end: {
+                                    line: 36,
+                                    column: 217,
+                                    offset: 1927
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 36, column: 5, offset: 1715 },
+                              end: { line: 36, column: 217, offset: 1927 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 26, column: 5, offset: 578 },
+                          end: { line: 36, column: 217, offset: 1927 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 25, column: 3, offset: 565 },
+                      end: { line: 36, column: 217, offset: 1927 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 25, column: 3, offset: 565 },
+                  end: { line: 36, column: 217, offset: 1927 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'const docker = new Docker()\n' +
+                  '\n' +
+                  'const data = await docker.listImages()',
+                position: {
+                  start: { line: 38, column: 1, offset: 1929 },
+                  end: { line: 42, column: 4, offset: 2014 }
+                }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 17, column: 4, offset: 475 }
+              end: { line: 42, column: 4, offset: 2014 }
             }
           }
         }
@@ -535,7 +2927,31 @@ export default [
           '    FailingStreak: number,\n' +
           '  },\n' +
           ']>\n' +
-          '```',
+          '```\n' +
+          '\n' +
+          'Returns a list of Docker containers on the server.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * (none)\n' +
+          '\n' +
+          'Return:\n' +
+          '  * `Id` - the container ID\n' +
+          '  * `Names` - the names associated with the container.\n' +
+          '  * `Image` - the name or ID of the image used to create the container.\n' +
+          '  * `ImageID` - the ID of the image used to create the container.\n' +
+          '  * `ImageManifestDescriptor` - an object containing digest, media type, and size for the image used to create the container, as defined in the [OCI Content Descriptors Specification](https://github.com/opencontainers/image-spec/blob/v1.0.1/descriptor.md).\n' +
+          '  * `Command` - the command to run when starting the container.\n' +
+          '  * `Created` - the date and time at which the image was created as seconds since EPOCH (January 1, 1970 at midnight UTC/GMT). \n' +
+          '  * `Ports` - port-mappings for the container.\n' +
+          '  * `SizeRw` - the size of files that have been created or changed by the container.\n' +
+          '  * `SizeRootFs` - the total size of all files in the read-only layers of the image that are used by the container.\n' +
+          '  * `Labels` - object of user-defined key/value metadata.\n' +
+          '  * `State` - the state of the container.\n' +
+          "  * `Status` - additional human-readable status of the container, e.g. `'Exit 0'`.\n" +
+          '  * `HostConfig` - summary of host-specific runtime information of the container.\n' +
+          "  * `NetworkSettings` - summary of the container's network settings.\n" +
+          '  * `Mounts` - list of mounts used by the container.\n' +
+          "  * `Health` - summary of the container's health status.",
         mdast: {
           name: {
             type: 'root',
@@ -603,11 +3019,777 @@ export default [
                   start: { line: 1, column: 1, offset: 0 },
                   end: { line: 31, column: 4, offset: 828 }
                 }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Returns a list of Docker containers on the server.',
+                    position: {
+                      start: { line: 33, column: 1, offset: 830 },
+                      end: { line: 33, column: 51, offset: 880 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 33, column: 1, offset: 830 },
+                  end: { line: 33, column: 51, offset: 880 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 35, column: 1, offset: 882 },
+                      end: { line: 35, column: 11, offset: 892 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 35, column: 1, offset: 882 },
+                  end: { line: 35, column: 11, offset: 892 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'text',
+                            value: '(none)',
+                            position: {
+                              start: { line: 36, column: 5, offset: 897 },
+                              end: { line: 36, column: 11, offset: 903 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 36, column: 5, offset: 897 },
+                          end: { line: 36, column: 11, offset: 903 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 36, column: 3, offset: 895 },
+                      end: { line: 36, column: 11, offset: 903 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 36, column: 3, offset: 895 },
+                  end: { line: 36, column: 11, offset: 903 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 38, column: 1, offset: 905 },
+                      end: { line: 38, column: 8, offset: 912 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 38, column: 1, offset: 905 },
+                  end: { line: 38, column: 8, offset: 912 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'Id',
+                            position: {
+                              start: { line: 39, column: 5, offset: 917 },
+                              end: { line: 39, column: 9, offset: 921 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - the container ID',
+                            position: {
+                              start: { line: 39, column: 9, offset: 921 },
+                              end: { line: 39, column: 28, offset: 940 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 39, column: 5, offset: 917 },
+                          end: { line: 39, column: 28, offset: 940 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 39, column: 3, offset: 915 },
+                      end: { line: 39, column: 28, offset: 940 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'Names',
+                            position: {
+                              start: { line: 40, column: 5, offset: 945 },
+                              end: { line: 40, column: 12, offset: 952 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - the names associated with the container.',
+                            position: {
+                              start: { line: 40, column: 12, offset: 952 },
+                              end: { line: 40, column: 55, offset: 995 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 40, column: 5, offset: 945 },
+                          end: { line: 40, column: 55, offset: 995 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 40, column: 3, offset: 943 },
+                      end: { line: 40, column: 55, offset: 995 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'Image',
+                            position: {
+                              start: { line: 41, column: 5, offset: 1000 },
+                              end: { line: 41, column: 12, offset: 1007 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - the name or ID of the image used to create the container.',
+                            position: {
+                              start: { line: 41, column: 12, offset: 1007 },
+                              end: { line: 41, column: 72, offset: 1067 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 41, column: 5, offset: 1000 },
+                          end: { line: 41, column: 72, offset: 1067 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 41, column: 3, offset: 998 },
+                      end: { line: 41, column: 72, offset: 1067 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'ImageID',
+                            position: {
+                              start: { line: 42, column: 5, offset: 1072 },
+                              end: { line: 42, column: 14, offset: 1081 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - the ID of the image used to create the container.',
+                            position: {
+                              start: { line: 42, column: 14, offset: 1081 },
+                              end: { line: 42, column: 66, offset: 1133 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 42, column: 5, offset: 1072 },
+                          end: { line: 42, column: 66, offset: 1133 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 42, column: 3, offset: 1070 },
+                      end: { line: 42, column: 66, offset: 1133 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'ImageManifestDescriptor',
+                            position: {
+                              start: { line: 43, column: 5, offset: 1138 },
+                              end: { line: 43, column: 30, offset: 1163 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - an object containing digest, media type, and size for the image used to create the container, as defined in the ',
+                            position: {
+                              start: { line: 43, column: 30, offset: 1163 },
+                              end: { line: 43, column: 145, offset: 1278 }
+                            }
+                          },
+                          {
+                            type: 'link',
+                            title: null,
+                            url: 'https://github.com/opencontainers/image-spec/blob/v1.0.1/descriptor.md',
+                            children: [
+                              {
+                                type: 'text',
+                                value: 'OCI Content Descriptors Specification',
+                                position: {
+                                  start: {
+                                    line: 43,
+                                    column: 146,
+                                    offset: 1279
+                                  },
+                                  end: {
+                                    line: 43,
+                                    column: 183,
+                                    offset: 1316
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 43, column: 145, offset: 1278 },
+                              end: { line: 43, column: 256, offset: 1389 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: '.',
+                            position: {
+                              start: { line: 43, column: 256, offset: 1389 },
+                              end: { line: 43, column: 257, offset: 1390 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 43, column: 5, offset: 1138 },
+                          end: { line: 43, column: 257, offset: 1390 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 43, column: 3, offset: 1136 },
+                      end: { line: 43, column: 257, offset: 1390 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'Command',
+                            position: {
+                              start: { line: 44, column: 5, offset: 1395 },
+                              end: { line: 44, column: 14, offset: 1404 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - the command to run when starting the container.',
+                            position: {
+                              start: { line: 44, column: 14, offset: 1404 },
+                              end: { line: 44, column: 64, offset: 1454 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 44, column: 5, offset: 1395 },
+                          end: { line: 44, column: 64, offset: 1454 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 44, column: 3, offset: 1393 },
+                      end: { line: 44, column: 64, offset: 1454 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'Created',
+                            position: {
+                              start: { line: 45, column: 5, offset: 1459 },
+                              end: { line: 45, column: 14, offset: 1468 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - the date and time at which the image was created as seconds since EPOCH (January 1, 1970 at midnight UTC/GMT).',
+                            position: {
+                              start: { line: 45, column: 14, offset: 1468 },
+                              end: { line: 45, column: 127, offset: 1581 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 45, column: 5, offset: 1459 },
+                          end: { line: 45, column: 128, offset: 1582 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 45, column: 3, offset: 1457 },
+                      end: { line: 45, column: 128, offset: 1582 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'Ports',
+                            position: {
+                              start: { line: 46, column: 5, offset: 1587 },
+                              end: { line: 46, column: 12, offset: 1594 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - port-mappings for the container.',
+                            position: {
+                              start: { line: 46, column: 12, offset: 1594 },
+                              end: { line: 46, column: 47, offset: 1629 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 46, column: 5, offset: 1587 },
+                          end: { line: 46, column: 47, offset: 1629 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 46, column: 3, offset: 1585 },
+                      end: { line: 46, column: 47, offset: 1629 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'SizeRw',
+                            position: {
+                              start: { line: 47, column: 5, offset: 1634 },
+                              end: { line: 47, column: 13, offset: 1642 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - the size of files that have been created or changed by the container.',
+                            position: {
+                              start: { line: 47, column: 13, offset: 1642 },
+                              end: { line: 47, column: 85, offset: 1714 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 47, column: 5, offset: 1634 },
+                          end: { line: 47, column: 85, offset: 1714 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 47, column: 3, offset: 1632 },
+                      end: { line: 47, column: 85, offset: 1714 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'SizeRootFs',
+                            position: {
+                              start: { line: 48, column: 5, offset: 1719 },
+                              end: { line: 48, column: 17, offset: 1731 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - the total size of all files in the read-only layers of the image that are used by the container.',
+                            position: {
+                              start: { line: 48, column: 17, offset: 1731 },
+                              end: { line: 48, column: 116, offset: 1830 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 48, column: 5, offset: 1719 },
+                          end: { line: 48, column: 116, offset: 1830 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 48, column: 3, offset: 1717 },
+                      end: { line: 48, column: 116, offset: 1830 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'Labels',
+                            position: {
+                              start: { line: 49, column: 5, offset: 1835 },
+                              end: { line: 49, column: 13, offset: 1843 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - object of user-defined key/value metadata.',
+                            position: {
+                              start: { line: 49, column: 13, offset: 1843 },
+                              end: { line: 49, column: 58, offset: 1888 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 49, column: 5, offset: 1835 },
+                          end: { line: 49, column: 58, offset: 1888 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 49, column: 3, offset: 1833 },
+                      end: { line: 49, column: 58, offset: 1888 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'State',
+                            position: {
+                              start: { line: 50, column: 5, offset: 1893 },
+                              end: { line: 50, column: 12, offset: 1900 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - the state of the container.',
+                            position: {
+                              start: { line: 50, column: 12, offset: 1900 },
+                              end: { line: 50, column: 42, offset: 1930 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 50, column: 5, offset: 1893 },
+                          end: { line: 50, column: 42, offset: 1930 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 50, column: 3, offset: 1891 },
+                      end: { line: 50, column: 42, offset: 1930 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'Status',
+                            position: {
+                              start: { line: 51, column: 5, offset: 1935 },
+                              end: { line: 51, column: 13, offset: 1943 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - additional human-readable status of the container, e.g. ',
+                            position: {
+                              start: { line: 51, column: 13, offset: 1943 },
+                              end: { line: 51, column: 72, offset: 2002 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: "'Exit 0'",
+                            position: {
+                              start: { line: 51, column: 72, offset: 2002 },
+                              end: { line: 51, column: 82, offset: 2012 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: '.',
+                            position: {
+                              start: { line: 51, column: 82, offset: 2012 },
+                              end: { line: 51, column: 83, offset: 2013 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 51, column: 5, offset: 1935 },
+                          end: { line: 51, column: 83, offset: 2013 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 51, column: 3, offset: 1933 },
+                      end: { line: 51, column: 83, offset: 2013 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'HostConfig',
+                            position: {
+                              start: { line: 52, column: 5, offset: 2018 },
+                              end: { line: 52, column: 17, offset: 2030 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - summary of host-specific runtime information of the container.',
+                            position: {
+                              start: { line: 52, column: 17, offset: 2030 },
+                              end: { line: 52, column: 82, offset: 2095 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 52, column: 5, offset: 2018 },
+                          end: { line: 52, column: 82, offset: 2095 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 52, column: 3, offset: 2016 },
+                      end: { line: 52, column: 82, offset: 2095 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'NetworkSettings',
+                            position: {
+                              start: { line: 53, column: 5, offset: 2100 },
+                              end: { line: 53, column: 22, offset: 2117 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: " - summary of the container's network settings.",
+                            position: {
+                              start: { line: 53, column: 22, offset: 2117 },
+                              end: { line: 53, column: 69, offset: 2164 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 53, column: 5, offset: 2100 },
+                          end: { line: 53, column: 69, offset: 2164 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 53, column: 3, offset: 2098 },
+                      end: { line: 53, column: 69, offset: 2164 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'Mounts',
+                            position: {
+                              start: { line: 54, column: 5, offset: 2169 },
+                              end: { line: 54, column: 13, offset: 2177 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - list of mounts used by the container.',
+                            position: {
+                              start: { line: 54, column: 13, offset: 2177 },
+                              end: { line: 54, column: 53, offset: 2217 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 54, column: 5, offset: 2169 },
+                          end: { line: 54, column: 53, offset: 2217 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 54, column: 3, offset: 2167 },
+                      end: { line: 54, column: 53, offset: 2217 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'Health',
+                            position: {
+                              start: { line: 55, column: 5, offset: 2222 },
+                              end: { line: 55, column: 13, offset: 2230 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: " - summary of the container's health status.",
+                            position: {
+                              start: { line: 55, column: 13, offset: 2230 },
+                              end: { line: 55, column: 57, offset: 2274 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 55, column: 5, offset: 2222 },
+                          end: { line: 55, column: 57, offset: 2274 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 55, column: 3, offset: 2220 },
+                      end: { line: 55, column: 57, offset: 2274 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 39, column: 3, offset: 915 },
+                  end: { line: 55, column: 57, offset: 2274 }
+                }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 31, column: 4, offset: 828 }
+              end: { line: 55, column: 57, offset: 2274 }
             }
           }
         }
@@ -620,17 +3802,46 @@ export default [
           'pullImage(\n' +
           '  name string,\n' +
           '  options {\n' +
-          '    repo: string, // additional path prefix saved on this machine\n' +
-          '    tag?: string, // if not in name\n' +
-          '    message?: string, // commit message for image\n' +
-          "    platform?: ''|'<os>[/arch[/variant]]'\n" +
+          '    repo: string,\n' +
+          '    tag: string,\n' +
+          '    message: string,\n' +
+          "    platform: string, # '<os>[/arch[/variant]]'\n" +
           '    username: string,\n' +
           '    password: string,\n' +
-          '    email?: string,\n' +
-          '    serveraddress?: string,\n' +
-          '    identitytoken?: string,\n' +
+          '    email: string,\n' +
+          '    serveraddress: string,\n' +
+          '    identitytoken: string,\n' +
           '  },\n' +
           ') -> dataStream Promise<stream.Readable>\n' +
+          '```\n' +
+          '\n' +
+          'Pulls or imports a Docker image to the server.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * `name` - name of the image to pull. May include a tag or digest.\n' +
+          '  * `options`\n' +
+          '    * `repo` - repository name given to the image after it is pulled. May include a tag or digest.\n' +
+          '    * `tag` - the tag or digest of the image.\n' +
+          '    * `message` - sets the commit message for the pulled image.\n' +
+          "    * `platform` - the platform of the image. If present, the Docker daemon checks if the given image is present in the local image cache with the given OS and Architecture instead of the host's native OS and Architecture. If the given image does exist in the local image cache, but its OS and Architecture do not match, a warning is produced.\n" +
+          '    * `username` - authentication credentials.\n' +
+          '    * `password` - authentication credentials.\n' +
+          '    * `email` - authentication credentials.\n' +
+          '    * `serveraddress` - domain or IP of the registry server.\n' +
+          '    * `identitytoken` - a token used to authenticate the user in place of a username and password.\n' +
+          '\n' +
+          'Return:\n' +
+          '  * `dataStream` - a readable stream of the progress of the Docker `pullImage` operation.\n' +
+          '\n' +
+          '```javascript\n' +
+          'const docker = new Docker()\n' +
+          '\n' +
+          "const pullStream = await docker.pullImage('nginx:1.19')\n" +
+          '\n' +
+          'pullStream.pipe(process.stdout)\n' +
+          "pullStream.on('end', () => {\n" +
+          "  console.log('pullImage success')\n" +
+          '})\n' +
           '```',
         mdast: {
           name: {
@@ -671,26 +3882,738 @@ export default [
                   'pullImage(\n' +
                   '  name string,\n' +
                   '  options {\n' +
-                  '    repo: string, // additional path prefix saved on this machine\n' +
-                  '    tag?: string, // if not in name\n' +
-                  '    message?: string, // commit message for image\n' +
-                  "    platform?: ''|'<os>[/arch[/variant]]'\n" +
+                  '    repo: string,\n' +
+                  '    tag: string,\n' +
+                  '    message: string,\n' +
+                  "    platform: string, # '<os>[/arch[/variant]]'\n" +
                   '    username: string,\n' +
                   '    password: string,\n' +
-                  '    email?: string,\n' +
-                  '    serveraddress?: string,\n' +
-                  '    identitytoken?: string,\n' +
+                  '    email: string,\n' +
+                  '    serveraddress: string,\n' +
+                  '    identitytoken: string,\n' +
                   '  },\n' +
                   ') -> dataStream Promise<stream.Readable>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 18, column: 4, offset: 482 }
+                  end: { line: 18, column: 4, offset: 389 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Pulls or imports a Docker image to the server.',
+                    position: {
+                      start: { line: 20, column: 1, offset: 391 },
+                      end: { line: 20, column: 47, offset: 437 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 20, column: 1, offset: 391 },
+                  end: { line: 20, column: 47, offset: 437 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 22, column: 1, offset: 439 },
+                      end: { line: 22, column: 11, offset: 449 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 22, column: 1, offset: 439 },
+                  end: { line: 22, column: 11, offset: 449 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'name',
+                            position: {
+                              start: { line: 23, column: 5, offset: 454 },
+                              end: { line: 23, column: 11, offset: 460 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - name of the image to pull. May include a tag or digest.',
+                            position: {
+                              start: { line: 23, column: 11, offset: 460 },
+                              end: { line: 23, column: 69, offset: 518 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 23, column: 5, offset: 454 },
+                          end: { line: 23, column: 69, offset: 518 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 23, column: 3, offset: 452 },
+                      end: { line: 23, column: 69, offset: 518 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'options',
+                            position: {
+                              start: { line: 24, column: 5, offset: 523 },
+                              end: { line: 24, column: 14, offset: 532 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 24, column: 5, offset: 523 },
+                          end: { line: 24, column: 14, offset: 532 }
+                        }
+                      },
+                      {
+                        type: 'list',
+                        ordered: false,
+                        start: null,
+                        spread: false,
+                        children: [
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'repo',
+                                    position: {
+                                      start: {
+                                        line: 25,
+                                        column: 7,
+                                        offset: 539
+                                      },
+                                      end: {
+                                        line: 25,
+                                        column: 13,
+                                        offset: 545
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - repository name given to the image after it is pulled. May include a tag or digest.',
+                                    position: {
+                                      start: {
+                                        line: 25,
+                                        column: 13,
+                                        offset: 545
+                                      },
+                                      end: {
+                                        line: 25,
+                                        column: 99,
+                                        offset: 631
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 25, column: 7, offset: 539 },
+                                  end: { line: 25, column: 99, offset: 631 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 25, column: 5, offset: 537 },
+                              end: { line: 25, column: 99, offset: 631 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'tag',
+                                    position: {
+                                      start: {
+                                        line: 26,
+                                        column: 7,
+                                        offset: 638
+                                      },
+                                      end: {
+                                        line: 26,
+                                        column: 12,
+                                        offset: 643
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the tag or digest of the image.',
+                                    position: {
+                                      start: {
+                                        line: 26,
+                                        column: 12,
+                                        offset: 643
+                                      },
+                                      end: {
+                                        line: 26,
+                                        column: 46,
+                                        offset: 677
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 26, column: 7, offset: 638 },
+                                  end: { line: 26, column: 46, offset: 677 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 26, column: 5, offset: 636 },
+                              end: { line: 26, column: 46, offset: 677 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'message',
+                                    position: {
+                                      start: {
+                                        line: 27,
+                                        column: 7,
+                                        offset: 684
+                                      },
+                                      end: {
+                                        line: 27,
+                                        column: 16,
+                                        offset: 693
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - sets the commit message for the pulled image.',
+                                    position: {
+                                      start: {
+                                        line: 27,
+                                        column: 16,
+                                        offset: 693
+                                      },
+                                      end: {
+                                        line: 27,
+                                        column: 64,
+                                        offset: 741
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 27, column: 7, offset: 684 },
+                                  end: { line: 27, column: 64, offset: 741 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 27, column: 5, offset: 682 },
+                              end: { line: 27, column: 64, offset: 741 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'platform',
+                                    position: {
+                                      start: {
+                                        line: 28,
+                                        column: 7,
+                                        offset: 748
+                                      },
+                                      end: {
+                                        line: 28,
+                                        column: 17,
+                                        offset: 758
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: " - the platform of the image. If present, the Docker daemon checks if the given image is present in the local image cache with the given OS and Architecture instead of the host's native OS and Architecture. If the given image does exist in the local image cache, but its OS and Architecture do not match, a warning is produced.",
+                                    position: {
+                                      start: {
+                                        line: 28,
+                                        column: 17,
+                                        offset: 758
+                                      },
+                                      end: {
+                                        line: 28,
+                                        column: 344,
+                                        offset: 1085
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 28, column: 7, offset: 748 },
+                                  end: {
+                                    line: 28,
+                                    column: 344,
+                                    offset: 1085
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 28, column: 5, offset: 746 },
+                              end: { line: 28, column: 344, offset: 1085 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'username',
+                                    position: {
+                                      start: {
+                                        line: 29,
+                                        column: 7,
+                                        offset: 1092
+                                      },
+                                      end: {
+                                        line: 29,
+                                        column: 17,
+                                        offset: 1102
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - authentication credentials.',
+                                    position: {
+                                      start: {
+                                        line: 29,
+                                        column: 17,
+                                        offset: 1102
+                                      },
+                                      end: {
+                                        line: 29,
+                                        column: 47,
+                                        offset: 1132
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 29, column: 7, offset: 1092 },
+                                  end: {
+                                    line: 29,
+                                    column: 47,
+                                    offset: 1132
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 29, column: 5, offset: 1090 },
+                              end: { line: 29, column: 47, offset: 1132 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'password',
+                                    position: {
+                                      start: {
+                                        line: 30,
+                                        column: 7,
+                                        offset: 1139
+                                      },
+                                      end: {
+                                        line: 30,
+                                        column: 17,
+                                        offset: 1149
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - authentication credentials.',
+                                    position: {
+                                      start: {
+                                        line: 30,
+                                        column: 17,
+                                        offset: 1149
+                                      },
+                                      end: {
+                                        line: 30,
+                                        column: 47,
+                                        offset: 1179
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 30, column: 7, offset: 1139 },
+                                  end: {
+                                    line: 30,
+                                    column: 47,
+                                    offset: 1179
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 30, column: 5, offset: 1137 },
+                              end: { line: 30, column: 47, offset: 1179 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'email',
+                                    position: {
+                                      start: {
+                                        line: 31,
+                                        column: 7,
+                                        offset: 1186
+                                      },
+                                      end: {
+                                        line: 31,
+                                        column: 14,
+                                        offset: 1193
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - authentication credentials.',
+                                    position: {
+                                      start: {
+                                        line: 31,
+                                        column: 14,
+                                        offset: 1193
+                                      },
+                                      end: {
+                                        line: 31,
+                                        column: 44,
+                                        offset: 1223
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 31, column: 7, offset: 1186 },
+                                  end: {
+                                    line: 31,
+                                    column: 44,
+                                    offset: 1223
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 31, column: 5, offset: 1184 },
+                              end: { line: 31, column: 44, offset: 1223 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'serveraddress',
+                                    position: {
+                                      start: {
+                                        line: 32,
+                                        column: 7,
+                                        offset: 1230
+                                      },
+                                      end: {
+                                        line: 32,
+                                        column: 22,
+                                        offset: 1245
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - domain or IP of the registry server.',
+                                    position: {
+                                      start: {
+                                        line: 32,
+                                        column: 22,
+                                        offset: 1245
+                                      },
+                                      end: {
+                                        line: 32,
+                                        column: 61,
+                                        offset: 1284
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 32, column: 7, offset: 1230 },
+                                  end: {
+                                    line: 32,
+                                    column: 61,
+                                    offset: 1284
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 32, column: 5, offset: 1228 },
+                              end: { line: 32, column: 61, offset: 1284 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'identitytoken',
+                                    position: {
+                                      start: {
+                                        line: 33,
+                                        column: 7,
+                                        offset: 1291
+                                      },
+                                      end: {
+                                        line: 33,
+                                        column: 22,
+                                        offset: 1306
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - a token used to authenticate the user in place of a username and password.',
+                                    position: {
+                                      start: {
+                                        line: 33,
+                                        column: 22,
+                                        offset: 1306
+                                      },
+                                      end: {
+                                        line: 33,
+                                        column: 99,
+                                        offset: 1383
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 33, column: 7, offset: 1291 },
+                                  end: {
+                                    line: 33,
+                                    column: 99,
+                                    offset: 1383
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 33, column: 5, offset: 1289 },
+                              end: { line: 33, column: 99, offset: 1383 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 25, column: 5, offset: 537 },
+                          end: { line: 33, column: 99, offset: 1383 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 24, column: 3, offset: 521 },
+                      end: { line: 33, column: 99, offset: 1383 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 23, column: 3, offset: 452 },
+                  end: { line: 33, column: 99, offset: 1383 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 35, column: 1, offset: 1385 },
+                      end: { line: 35, column: 8, offset: 1392 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 35, column: 1, offset: 1385 },
+                  end: { line: 35, column: 8, offset: 1392 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'dataStream',
+                            position: {
+                              start: { line: 36, column: 5, offset: 1397 },
+                              end: { line: 36, column: 17, offset: 1409 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - a readable stream of the progress of the Docker ',
+                            position: {
+                              start: { line: 36, column: 17, offset: 1409 },
+                              end: { line: 36, column: 68, offset: 1460 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'pullImage',
+                            position: {
+                              start: { line: 36, column: 68, offset: 1460 },
+                              end: { line: 36, column: 79, offset: 1471 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' operation.',
+                            position: {
+                              start: { line: 36, column: 79, offset: 1471 },
+                              end: { line: 36, column: 90, offset: 1482 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 36, column: 5, offset: 1397 },
+                          end: { line: 36, column: 90, offset: 1482 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 36, column: 3, offset: 1395 },
+                      end: { line: 36, column: 90, offset: 1482 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 36, column: 3, offset: 1395 },
+                  end: { line: 36, column: 90, offset: 1482 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'const docker = new Docker()\n' +
+                  '\n' +
+                  "const pullStream = await docker.pullImage('nginx:1.19')\n" +
+                  '\n' +
+                  'pullStream.pipe(process.stdout)\n' +
+                  "pullStream.on('end', () => {\n" +
+                  "  console.log('pullImage success')\n" +
+                  '})',
+                position: {
+                  start: { line: 38, column: 1, offset: 1484 },
+                  end: { line: 47, column: 4, offset: 1686 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 18, column: 4, offset: 482 }
+              end: { line: 47, column: 4, offset: 1686 }
             }
           }
         }
@@ -702,58 +4625,80 @@ export default [
           '\n' +
           'buildImage(path string, options {\n' +
           '  image: string,\n' +
-          '  ignore: Array<string>, // paths or names to ignore in build context tarball\n' +
-          '  archive: Object<[path string]: content string>, // object representation of the base archive for build context\n' +
-          '  archiveDockerfile: string, // path to Dockerfile in archive\n' +
-          '  platform: string, // e.g. linux/x86_64\n' +
+          '  ignore: Array<string>,\n' +
+          '  archive: Object<\n' +
+          '    Dockerfile: content string,\n' +
+          '    [filepath string]: content string,\n' +
+          '    ...\n' +
+          '  >,\n' +
+          '  archiveDockerfile: string,\n' +
+          "  platform: string, # '<os>[/arch[/variant]]'\n" +
           '}) -> dataStream Promise<stream.Readable>\n' +
           '```\n' +
           '\n' +
-          'Build a Docker Image.\n' +
+          'Builds a Docker Image.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * `path` - parent directory of the build context.\n' +
+          '  * `options`\n' +
+          "    * `image` - the name and optional tag of the image. If no tag is present, `'LATEST'` is assumed as the value for the tag.\n" +
+          '    * `ignore` - filepaths or filenames to ignore when bundling files and directories for the build context.\n' +
+          '    * `archive` - an object of filenames and file contents that will be present in the build context.\n' +
+          "    * `archiveDockerfile` - the filepath including filename of the Dockerfile, e.g. `'Dockerfiles/Dockerfile2'`. Defaults to `'Dockerfile'`.\n" +
+          "    * `platform` - target platform for the build, e.g. `'linux/arm64'`.\n" +
+          '\n' +
+          'Return:\n' +
+          '  * `dataStream` - a readable stream of the progress of the Docker `buildImage` operation.\n' +
           '\n' +
           '```javascript\n' +
           'const docker = new Docker()\n' +
           '\n' +
-          'await docker.buildImage(path string, {\n' +
+          'const buildStream = await docker.buildImage(__dirname, {\n' +
           "  image: 'my-image',\n" +
           '  archive: {\n' +
           '    Dockerfile: `\n' +
           'FROM node:15-alpine\n' +
           'RUN apk add openssh neovim\n' +
-          'EXPOSE 8080`,\n' +
+          'EXPOSE 8080\n' +
+          '    `,\n' +
           '  },\n' +
-          "  ignore: ['Dockerfile'],\n" +
           '})\n' +
           '\n' +
-          'Dockerfile Syntax\n' +
+          'buildStream.pipe(process.stdout)\n' +
+          "buildStream.on('end', () => {\n" +
+          "  console.log('Build success')\n" +
+          '})\n' +
+          '```\n' +
+          '\n' +
+          '### Dockerfile Syntax\n' +
           '```sh\n' +
           'HEALTHCHECK \\\n' +
           "  [--interval=<duration '30s'|string>] \\\n" +
           "  [--timeout=<duration '30s'|string>] \\\n" +
           "  [--start-period=<duration '0s'|string>] \\\n" +
-          '  [--retries=<3|number>] \\\n' +
-          'CMD <string>\n' +
+          "  [--start-interval=<duration '5s'|string>] \\\n" +
+          '  [--retries=<3|number>]\n' +
           '\n' +
-          'ENV <key>=<value> ...<key>=<value>\n' +
+          'ENV <key>=<value> ...\n' +
           '\n' +
-          "EXPOSE <port> [...<port>/<protocol 'tcp'|'udp'>]\n" +
+          "EXPOSE <port>/<protocol 'tcp'|'udp'> ...\n" +
           '\n' +
           'WORKDIR <path>\n' +
           '\n' +
-          'VOLUME ["<path>", ..."<paths>"]|<paths string>\n' +
+          'VOLUME ["<path>", ...]\n' +
+          'VOLUME <path> ...\n' +
           '\n' +
           'USER <user>[:<group>]|<UID>[:<GID>]\n' +
           '\n' +
-          'ENTRYPOINT ["<executable>", ..."<parameter>"]\n' +
-          '  |"<command> ...<parameter>"\n' +
+          'ENTRYPOINT ["<command>", "<parameter>", ...]\n' +
+          'ENTRYPOINT <command> <parameter> ...\n' +
           '\n' +
-          'CMD ["<executable>", ..."<parameter>"] # exec form\n' +
-          '  |[..."<parameter>"] # default parameters to ENTRYPOINT\n' +
-          '  |"<command> ...<parameter>" # shell form\n' +
+          'CMD ["<command>", "<parameter>", ...]\n' +
+          'CMD ["<parameter>", ...]\n' +
+          'CMD <command> <parameter> ...\n' +
           '```\n' +
           '\n' +
-          'References:\n' +
-          '[Dockerfile docs](https://docs.docker.com/engine/reference/builder/)',
+          'Dockerfile reference: [https://docs.docker.com/engine/reference/builder/](https://docs.docker.com/engine/reference/builder/)',
         mdast: {
           name: {
             type: 'root',
@@ -792,14 +4737,18 @@ export default [
                   '\n' +
                   'buildImage(path string, options {\n' +
                   '  image: string,\n' +
-                  '  ignore: Array<string>, // paths or names to ignore in build context tarball\n' +
-                  '  archive: Object<[path string]: content string>, // object representation of the base archive for build context\n' +
-                  '  archiveDockerfile: string, // path to Dockerfile in archive\n' +
-                  '  platform: string, // e.g. linux/x86_64\n' +
+                  '  ignore: Array<string>,\n' +
+                  '  archive: Object<\n' +
+                  '    Dockerfile: content string,\n' +
+                  '    [filepath string]: content string,\n' +
+                  '    ...\n' +
+                  '  >,\n' +
+                  '  archiveDockerfile: string,\n' +
+                  "  platform: string, # '<os>[/arch[/variant]]'\n" +
                   '}) -> dataStream Promise<stream.Readable>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 11, column: 4, offset: 471 }
+                  end: { line: 15, column: 4, offset: 380 }
                 }
               },
               {
@@ -807,16 +4756,610 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'Build a Docker Image.',
+                    value: 'Builds a Docker Image.',
                     position: {
-                      start: { line: 13, column: 1, offset: 473 },
-                      end: { line: 13, column: 22, offset: 494 }
+                      start: { line: 17, column: 1, offset: 382 },
+                      end: { line: 17, column: 23, offset: 404 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 13, column: 1, offset: 473 },
-                  end: { line: 13, column: 22, offset: 494 }
+                  start: { line: 17, column: 1, offset: 382 },
+                  end: { line: 17, column: 23, offset: 404 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 19, column: 1, offset: 406 },
+                      end: { line: 19, column: 11, offset: 416 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 19, column: 1, offset: 406 },
+                  end: { line: 19, column: 11, offset: 416 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'path',
+                            position: {
+                              start: { line: 20, column: 5, offset: 421 },
+                              end: { line: 20, column: 11, offset: 427 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - parent directory of the build context.',
+                            position: {
+                              start: { line: 20, column: 11, offset: 427 },
+                              end: { line: 20, column: 52, offset: 468 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 20, column: 5, offset: 421 },
+                          end: { line: 20, column: 52, offset: 468 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 20, column: 3, offset: 419 },
+                      end: { line: 20, column: 52, offset: 468 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'options',
+                            position: {
+                              start: { line: 21, column: 5, offset: 473 },
+                              end: { line: 21, column: 14, offset: 482 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 21, column: 5, offset: 473 },
+                          end: { line: 21, column: 14, offset: 482 }
+                        }
+                      },
+                      {
+                        type: 'list',
+                        ordered: false,
+                        start: null,
+                        spread: false,
+                        children: [
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'image',
+                                    position: {
+                                      start: {
+                                        line: 22,
+                                        column: 7,
+                                        offset: 489
+                                      },
+                                      end: {
+                                        line: 22,
+                                        column: 14,
+                                        offset: 496
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the name and optional tag of the image. If no tag is present, ',
+                                    position: {
+                                      start: {
+                                        line: 22,
+                                        column: 14,
+                                        offset: 496
+                                      },
+                                      end: {
+                                        line: 22,
+                                        column: 79,
+                                        offset: 561
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: "'LATEST'",
+                                    position: {
+                                      start: {
+                                        line: 22,
+                                        column: 79,
+                                        offset: 561
+                                      },
+                                      end: {
+                                        line: 22,
+                                        column: 89,
+                                        offset: 571
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' is assumed as the value for the tag.',
+                                    position: {
+                                      start: {
+                                        line: 22,
+                                        column: 89,
+                                        offset: 571
+                                      },
+                                      end: {
+                                        line: 22,
+                                        column: 126,
+                                        offset: 608
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 22, column: 7, offset: 489 },
+                                  end: {
+                                    line: 22,
+                                    column: 126,
+                                    offset: 608
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 22, column: 5, offset: 487 },
+                              end: { line: 22, column: 126, offset: 608 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'ignore',
+                                    position: {
+                                      start: {
+                                        line: 23,
+                                        column: 7,
+                                        offset: 615
+                                      },
+                                      end: {
+                                        line: 23,
+                                        column: 15,
+                                        offset: 623
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - filepaths or filenames to ignore when bundling files and directories for the build context.',
+                                    position: {
+                                      start: {
+                                        line: 23,
+                                        column: 15,
+                                        offset: 623
+                                      },
+                                      end: {
+                                        line: 23,
+                                        column: 109,
+                                        offset: 717
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 23, column: 7, offset: 615 },
+                                  end: {
+                                    line: 23,
+                                    column: 109,
+                                    offset: 717
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 23, column: 5, offset: 613 },
+                              end: { line: 23, column: 109, offset: 717 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'archive',
+                                    position: {
+                                      start: {
+                                        line: 24,
+                                        column: 7,
+                                        offset: 724
+                                      },
+                                      end: {
+                                        line: 24,
+                                        column: 16,
+                                        offset: 733
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - an object of filenames and file contents that will be present in the build context.',
+                                    position: {
+                                      start: {
+                                        line: 24,
+                                        column: 16,
+                                        offset: 733
+                                      },
+                                      end: {
+                                        line: 24,
+                                        column: 102,
+                                        offset: 819
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 24, column: 7, offset: 724 },
+                                  end: {
+                                    line: 24,
+                                    column: 102,
+                                    offset: 819
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 24, column: 5, offset: 722 },
+                              end: { line: 24, column: 102, offset: 819 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'archiveDockerfile',
+                                    position: {
+                                      start: {
+                                        line: 25,
+                                        column: 7,
+                                        offset: 826
+                                      },
+                                      end: {
+                                        line: 25,
+                                        column: 26,
+                                        offset: 845
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the filepath including filename of the Dockerfile, e.g. ',
+                                    position: {
+                                      start: {
+                                        line: 25,
+                                        column: 26,
+                                        offset: 845
+                                      },
+                                      end: {
+                                        line: 25,
+                                        column: 85,
+                                        offset: 904
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: "'Dockerfiles/Dockerfile2'",
+                                    position: {
+                                      start: {
+                                        line: 25,
+                                        column: 85,
+                                        offset: 904
+                                      },
+                                      end: {
+                                        line: 25,
+                                        column: 112,
+                                        offset: 931
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: '. Defaults to ',
+                                    position: {
+                                      start: {
+                                        line: 25,
+                                        column: 112,
+                                        offset: 931
+                                      },
+                                      end: {
+                                        line: 25,
+                                        column: 126,
+                                        offset: 945
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: "'Dockerfile'",
+                                    position: {
+                                      start: {
+                                        line: 25,
+                                        column: 126,
+                                        offset: 945
+                                      },
+                                      end: {
+                                        line: 25,
+                                        column: 140,
+                                        offset: 959
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: '.',
+                                    position: {
+                                      start: {
+                                        line: 25,
+                                        column: 140,
+                                        offset: 959
+                                      },
+                                      end: {
+                                        line: 25,
+                                        column: 141,
+                                        offset: 960
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 25, column: 7, offset: 826 },
+                                  end: {
+                                    line: 25,
+                                    column: 141,
+                                    offset: 960
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 25, column: 5, offset: 824 },
+                              end: { line: 25, column: 141, offset: 960 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'platform',
+                                    position: {
+                                      start: {
+                                        line: 26,
+                                        column: 7,
+                                        offset: 967
+                                      },
+                                      end: {
+                                        line: 26,
+                                        column: 17,
+                                        offset: 977
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - target platform for the build, e.g. ',
+                                    position: {
+                                      start: {
+                                        line: 26,
+                                        column: 17,
+                                        offset: 977
+                                      },
+                                      end: {
+                                        line: 26,
+                                        column: 56,
+                                        offset: 1016
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: "'linux/arm64'",
+                                    position: {
+                                      start: {
+                                        line: 26,
+                                        column: 56,
+                                        offset: 1016
+                                      },
+                                      end: {
+                                        line: 26,
+                                        column: 71,
+                                        offset: 1031
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: '.',
+                                    position: {
+                                      start: {
+                                        line: 26,
+                                        column: 71,
+                                        offset: 1031
+                                      },
+                                      end: {
+                                        line: 26,
+                                        column: 72,
+                                        offset: 1032
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 26, column: 7, offset: 967 },
+                                  end: {
+                                    line: 26,
+                                    column: 72,
+                                    offset: 1032
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 26, column: 5, offset: 965 },
+                              end: { line: 26, column: 72, offset: 1032 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 22, column: 5, offset: 487 },
+                          end: { line: 26, column: 72, offset: 1032 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 21, column: 3, offset: 471 },
+                      end: { line: 26, column: 72, offset: 1032 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 20, column: 3, offset: 419 },
+                  end: { line: 26, column: 72, offset: 1032 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 28, column: 1, offset: 1034 },
+                      end: { line: 28, column: 8, offset: 1041 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 28, column: 1, offset: 1034 },
+                  end: { line: 28, column: 8, offset: 1041 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'dataStream',
+                            position: {
+                              start: { line: 29, column: 5, offset: 1046 },
+                              end: { line: 29, column: 17, offset: 1058 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - a readable stream of the progress of the Docker ',
+                            position: {
+                              start: { line: 29, column: 17, offset: 1058 },
+                              end: { line: 29, column: 68, offset: 1109 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'buildImage',
+                            position: {
+                              start: { line: 29, column: 68, offset: 1109 },
+                              end: { line: 29, column: 80, offset: 1121 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' operation.',
+                            position: {
+                              start: { line: 29, column: 80, offset: 1121 },
+                              end: { line: 29, column: 91, offset: 1132 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 29, column: 5, offset: 1046 },
+                          end: { line: 29, column: 91, offset: 1132 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 29, column: 3, offset: 1044 },
+                      end: { line: 29, column: 91, offset: 1132 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 29, column: 3, offset: 1044 },
+                  end: { line: 29, column: 91, offset: 1132 }
                 }
               },
               {
@@ -825,45 +5368,75 @@ export default [
                 meta: null,
                 value: 'const docker = new Docker()\n' +
                   '\n' +
-                  'await docker.buildImage(path string, {\n' +
+                  'const buildStream = await docker.buildImage(__dirname, {\n' +
                   "  image: 'my-image',\n" +
                   '  archive: {\n' +
                   '    Dockerfile: `\n' +
                   'FROM node:15-alpine\n' +
                   'RUN apk add openssh neovim\n' +
-                  'EXPOSE 8080`,\n' +
+                  'EXPOSE 8080\n' +
+                  '    `,\n' +
                   '  },\n' +
-                  "  ignore: ['Dockerfile'],\n" +
                   '})\n' +
                   '\n' +
-                  'Dockerfile Syntax\n' +
-                  '```sh\n' +
-                  'HEALTHCHECK \\\n' +
+                  'buildStream.pipe(process.stdout)\n' +
+                  "buildStream.on('end', () => {\n" +
+                  "  console.log('Build success')\n" +
+                  '})',
+                position: {
+                  start: { line: 31, column: 1, offset: 1134 },
+                  end: { line: 49, column: 4, offset: 1461 }
+                }
+              },
+              {
+                type: 'heading',
+                depth: 3,
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Dockerfile Syntax',
+                    position: {
+                      start: { line: 51, column: 5, offset: 1467 },
+                      end: { line: 51, column: 22, offset: 1484 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 51, column: 1, offset: 1463 },
+                  end: { line: 51, column: 22, offset: 1484 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'sh',
+                meta: null,
+                value: 'HEALTHCHECK \\\n' +
                   "  [--interval=<duration '30s'|string>] \\\n" +
                   "  [--timeout=<duration '30s'|string>] \\\n" +
                   "  [--start-period=<duration '0s'|string>] \\\n" +
-                  '  [--retries=<3|number>] \\\n' +
-                  'CMD <string>\n' +
+                  "  [--start-interval=<duration '5s'|string>] \\\n" +
+                  '  [--retries=<3|number>]\n' +
                   '\n' +
-                  'ENV <key>=<value> ...<key>=<value>\n' +
+                  'ENV <key>=<value> ...\n' +
                   '\n' +
-                  "EXPOSE <port> [...<port>/<protocol 'tcp'|'udp'>]\n" +
+                  "EXPOSE <port>/<protocol 'tcp'|'udp'> ...\n" +
                   '\n' +
                   'WORKDIR <path>\n' +
                   '\n' +
-                  'VOLUME ["<path>", ..."<paths>"]|<paths string>\n' +
+                  'VOLUME ["<path>", ...]\n' +
+                  'VOLUME <path> ...\n' +
                   '\n' +
                   'USER <user>[:<group>]|<UID>[:<GID>]\n' +
                   '\n' +
-                  'ENTRYPOINT ["<executable>", ..."<parameter>"]\n' +
-                  '  |"<command> ...<parameter>"\n' +
+                  'ENTRYPOINT ["<command>", "<parameter>", ...]\n' +
+                  'ENTRYPOINT <command> <parameter> ...\n' +
                   '\n' +
-                  'CMD ["<executable>", ..."<parameter>"] # exec form\n' +
-                  '  |[..."<parameter>"] # default parameters to ENTRYPOINT\n' +
-                  '  |"<command> ...<parameter>" # shell form',
+                  'CMD ["<command>", "<parameter>", ...]\n' +
+                  'CMD ["<parameter>", ...]\n' +
+                  'CMD <command> <parameter> ...',
                 position: {
-                  start: { line: 15, column: 1, offset: 496 },
-                  end: { line: 54, column: 4, offset: 1348 }
+                  start: { line: 52, column: 1, offset: 1485 },
+                  end: { line: 77, column: 4, offset: 2041 }
                 }
               },
               {
@@ -871,10 +5444,10 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'References:\n',
+                    value: 'Dockerfile reference: ',
                     position: {
-                      start: { line: 56, column: 1, offset: 1350 },
-                      end: { line: 57, column: 1, offset: 1362 }
+                      start: { line: 79, column: 1, offset: 2043 },
+                      end: { line: 79, column: 23, offset: 2065 }
                     }
                   },
                   {
@@ -884,28 +5457,28 @@ export default [
                     children: [
                       {
                         type: 'text',
-                        value: 'Dockerfile docs',
+                        value: 'https://docs.docker.com/engine/reference/builder/',
                         position: {
-                          start: { line: 57, column: 2, offset: 1363 },
-                          end: { line: 57, column: 17, offset: 1378 }
+                          start: { line: 79, column: 24, offset: 2066 },
+                          end: { line: 79, column: 73, offset: 2115 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 57, column: 1, offset: 1362 },
-                      end: { line: 57, column: 69, offset: 1430 }
+                      start: { line: 79, column: 23, offset: 2065 },
+                      end: { line: 79, column: 125, offset: 2167 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 56, column: 1, offset: 1350 },
-                  end: { line: 57, column: 69, offset: 1430 }
+                  start: { line: 79, column: 1, offset: 2043 },
+                  end: { line: 79, column: 125, offset: 2167 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 57, column: 69, offset: 1430 }
+              end: { line: 79, column: 125, offset: 2167 }
             }
           }
         }
@@ -916,20 +5489,45 @@ export default [
           "module stream 'https://nodejs.org/api/stream.html'\n" +
           '\n' +
           'pushImage(options {\n' +
-          '  image: string,\n' +
-          '  repository: string,\n' +
-          '  authorization: {\n' +
-          '    username: string,\n' +
-          '    password: string,\n' +
-          '    email: string,\n' +
-          '    serveraddress: string,\n' +
-          '  }|{\n' +
-          '    identitytoken: string,\n' +
-          '  },\n' +
+          "  image: string, # '[<repo>/]<name>:<tag>'\n" +
+          '  registry: string,\n' +
+          '  authToken: string,\n' +
+          '  username: string,\n' +
+          '  password: string,\n' +
+          '  email: string,\n' +
+          '  serveraddress: string,\n' +
+          '  identitytoken: string,\n' +
           '}) -> dataStream Promise<stream.Readable>\n' +
           '```\n' +
           '\n' +
-          'https://docs.docker.com/registry/deploying/',
+          'Pushes a Docker image to a registry.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * `options`\n' +
+          '    * `image` - the name, optional repo, and tag of the image.\n' +
+          '    * `registry` - the remote registry to which to push the image.\n' +
+          '    * `authToken` - a base64-encoded token containing the username and password authentication credentials. Returned from [ECR getAuthorizationToken](/docs/ECR#getAuthorizationToken).\n' +
+          '    * `username` - authentication credentials.\n' +
+          '    * `password` - authentication credentials.\n' +
+          '    * `email` - authentication credentials.\n' +
+          '    * `serveraddress` - domain or IP of the registry server.\n' +
+          '    * `identitytoken` - a token used to authenticate the user in place of a username and password.\n' +
+          '\n' +
+          'Return:\n' +
+          '  * `dataStream` - a readable stream of the progress of the Docker `pushImage` operation.\n' +
+          '\n' +
+          '```javascript\n' +
+          'const docker = new Docker()\n' +
+          '\n' +
+          'const dataStream = await docker.pushImage({\n' +
+          "  image: 'repo/my-image:mytag',\n" +
+          "  registry: 'my-registry.io',\n" +
+          '})\n' +
+          'dataStream.pipe(process.stdout)\n' +
+          "dataStream.on('end', () => {\n" +
+          "  console.log('Push success')\n" +
+          '})\n' +
+          '```',
         mdast: {
           name: {
             type: 'root',
@@ -967,20 +5565,18 @@ export default [
                 value: "module stream 'https://nodejs.org/api/stream.html'\n" +
                   '\n' +
                   'pushImage(options {\n' +
-                  '  image: string,\n' +
-                  '  repository: string,\n' +
-                  '  authorization: {\n' +
-                  '    username: string,\n' +
-                  '    password: string,\n' +
-                  '    email: string,\n' +
-                  '    serveraddress: string,\n' +
-                  '  }|{\n' +
-                  '    identitytoken: string,\n' +
-                  '  },\n' +
+                  "  image: string, # '[<repo>/]<name>:<tag>'\n" +
+                  '  registry: string,\n' +
+                  '  authToken: string,\n' +
+                  '  username: string,\n' +
+                  '  password: string,\n' +
+                  '  email: string,\n' +
+                  '  serveraddress: string,\n' +
+                  '  identitytoken: string,\n' +
                   '}) -> dataStream Promise<stream.Readable>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 16, column: 4, offset: 332 }
+                  end: { line: 14, column: 4, offset: 337 }
                 }
               },
               {
@@ -988,22 +5584,666 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'https://docs.docker.com/registry/deploying/',
+                    value: 'Pushes a Docker image to a registry.',
                     position: {
-                      start: { line: 18, column: 1, offset: 334 },
-                      end: { line: 18, column: 44, offset: 377 }
+                      start: { line: 16, column: 1, offset: 339 },
+                      end: { line: 16, column: 37, offset: 375 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 18, column: 1, offset: 334 },
-                  end: { line: 18, column: 44, offset: 377 }
+                  start: { line: 16, column: 1, offset: 339 },
+                  end: { line: 16, column: 37, offset: 375 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 18, column: 1, offset: 377 },
+                      end: { line: 18, column: 11, offset: 387 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 18, column: 1, offset: 377 },
+                  end: { line: 18, column: 11, offset: 387 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'options',
+                            position: {
+                              start: { line: 19, column: 5, offset: 392 },
+                              end: { line: 19, column: 14, offset: 401 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 19, column: 5, offset: 392 },
+                          end: { line: 19, column: 14, offset: 401 }
+                        }
+                      },
+                      {
+                        type: 'list',
+                        ordered: false,
+                        start: null,
+                        spread: false,
+                        children: [
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'image',
+                                    position: {
+                                      start: {
+                                        line: 20,
+                                        column: 7,
+                                        offset: 408
+                                      },
+                                      end: {
+                                        line: 20,
+                                        column: 14,
+                                        offset: 415
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the name, optional repo, and tag of the image.',
+                                    position: {
+                                      start: {
+                                        line: 20,
+                                        column: 14,
+                                        offset: 415
+                                      },
+                                      end: {
+                                        line: 20,
+                                        column: 63,
+                                        offset: 464
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 20, column: 7, offset: 408 },
+                                  end: { line: 20, column: 63, offset: 464 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 20, column: 5, offset: 406 },
+                              end: { line: 20, column: 63, offset: 464 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'registry',
+                                    position: {
+                                      start: {
+                                        line: 21,
+                                        column: 7,
+                                        offset: 471
+                                      },
+                                      end: {
+                                        line: 21,
+                                        column: 17,
+                                        offset: 481
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the remote registry to which to push the image.',
+                                    position: {
+                                      start: {
+                                        line: 21,
+                                        column: 17,
+                                        offset: 481
+                                      },
+                                      end: {
+                                        line: 21,
+                                        column: 67,
+                                        offset: 531
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 21, column: 7, offset: 471 },
+                                  end: { line: 21, column: 67, offset: 531 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 21, column: 5, offset: 469 },
+                              end: { line: 21, column: 67, offset: 531 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'authToken',
+                                    position: {
+                                      start: {
+                                        line: 22,
+                                        column: 7,
+                                        offset: 538
+                                      },
+                                      end: {
+                                        line: 22,
+                                        column: 18,
+                                        offset: 549
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - a base64-encoded token containing the username and password authentication credentials. Returned from ',
+                                    position: {
+                                      start: {
+                                        line: 22,
+                                        column: 18,
+                                        offset: 549
+                                      },
+                                      end: {
+                                        line: 22,
+                                        column: 123,
+                                        offset: 654
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'link',
+                                    title: null,
+                                    url: '/docs/ECR#getAuthorizationToken',
+                                    children: [
+                                      {
+                                        type: 'text',
+                                        value: 'ECR getAuthorizationToken',
+                                        position: {
+                                          start: {
+                                            line: 22,
+                                            column: 124,
+                                            offset: 655
+                                          },
+                                          end: {
+                                            line: 22,
+                                            column: 149,
+                                            offset: 680
+                                          }
+                                        }
+                                      }
+                                    ],
+                                    position: {
+                                      start: {
+                                        line: 22,
+                                        column: 123,
+                                        offset: 654
+                                      },
+                                      end: {
+                                        line: 22,
+                                        column: 183,
+                                        offset: 714
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: '.',
+                                    position: {
+                                      start: {
+                                        line: 22,
+                                        column: 183,
+                                        offset: 714
+                                      },
+                                      end: {
+                                        line: 22,
+                                        column: 184,
+                                        offset: 715
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 22, column: 7, offset: 538 },
+                                  end: {
+                                    line: 22,
+                                    column: 184,
+                                    offset: 715
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 22, column: 5, offset: 536 },
+                              end: { line: 22, column: 184, offset: 715 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'username',
+                                    position: {
+                                      start: {
+                                        line: 23,
+                                        column: 7,
+                                        offset: 722
+                                      },
+                                      end: {
+                                        line: 23,
+                                        column: 17,
+                                        offset: 732
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - authentication credentials.',
+                                    position: {
+                                      start: {
+                                        line: 23,
+                                        column: 17,
+                                        offset: 732
+                                      },
+                                      end: {
+                                        line: 23,
+                                        column: 47,
+                                        offset: 762
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 23, column: 7, offset: 722 },
+                                  end: { line: 23, column: 47, offset: 762 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 23, column: 5, offset: 720 },
+                              end: { line: 23, column: 47, offset: 762 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'password',
+                                    position: {
+                                      start: {
+                                        line: 24,
+                                        column: 7,
+                                        offset: 769
+                                      },
+                                      end: {
+                                        line: 24,
+                                        column: 17,
+                                        offset: 779
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - authentication credentials.',
+                                    position: {
+                                      start: {
+                                        line: 24,
+                                        column: 17,
+                                        offset: 779
+                                      },
+                                      end: {
+                                        line: 24,
+                                        column: 47,
+                                        offset: 809
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 24, column: 7, offset: 769 },
+                                  end: { line: 24, column: 47, offset: 809 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 24, column: 5, offset: 767 },
+                              end: { line: 24, column: 47, offset: 809 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'email',
+                                    position: {
+                                      start: {
+                                        line: 25,
+                                        column: 7,
+                                        offset: 816
+                                      },
+                                      end: {
+                                        line: 25,
+                                        column: 14,
+                                        offset: 823
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - authentication credentials.',
+                                    position: {
+                                      start: {
+                                        line: 25,
+                                        column: 14,
+                                        offset: 823
+                                      },
+                                      end: {
+                                        line: 25,
+                                        column: 44,
+                                        offset: 853
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 25, column: 7, offset: 816 },
+                                  end: { line: 25, column: 44, offset: 853 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 25, column: 5, offset: 814 },
+                              end: { line: 25, column: 44, offset: 853 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'serveraddress',
+                                    position: {
+                                      start: {
+                                        line: 26,
+                                        column: 7,
+                                        offset: 860
+                                      },
+                                      end: {
+                                        line: 26,
+                                        column: 22,
+                                        offset: 875
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - domain or IP of the registry server.',
+                                    position: {
+                                      start: {
+                                        line: 26,
+                                        column: 22,
+                                        offset: 875
+                                      },
+                                      end: {
+                                        line: 26,
+                                        column: 61,
+                                        offset: 914
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 26, column: 7, offset: 860 },
+                                  end: { line: 26, column: 61, offset: 914 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 26, column: 5, offset: 858 },
+                              end: { line: 26, column: 61, offset: 914 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'identitytoken',
+                                    position: {
+                                      start: {
+                                        line: 27,
+                                        column: 7,
+                                        offset: 921
+                                      },
+                                      end: {
+                                        line: 27,
+                                        column: 22,
+                                        offset: 936
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - a token used to authenticate the user in place of a username and password.',
+                                    position: {
+                                      start: {
+                                        line: 27,
+                                        column: 22,
+                                        offset: 936
+                                      },
+                                      end: {
+                                        line: 27,
+                                        column: 99,
+                                        offset: 1013
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 27, column: 7, offset: 921 },
+                                  end: {
+                                    line: 27,
+                                    column: 99,
+                                    offset: 1013
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 27, column: 5, offset: 919 },
+                              end: { line: 27, column: 99, offset: 1013 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 20, column: 5, offset: 406 },
+                          end: { line: 27, column: 99, offset: 1013 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 19, column: 3, offset: 390 },
+                      end: { line: 27, column: 99, offset: 1013 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 19, column: 3, offset: 390 },
+                  end: { line: 27, column: 99, offset: 1013 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 29, column: 1, offset: 1015 },
+                      end: { line: 29, column: 8, offset: 1022 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 29, column: 1, offset: 1015 },
+                  end: { line: 29, column: 8, offset: 1022 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'dataStream',
+                            position: {
+                              start: { line: 30, column: 5, offset: 1027 },
+                              end: { line: 30, column: 17, offset: 1039 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - a readable stream of the progress of the Docker ',
+                            position: {
+                              start: { line: 30, column: 17, offset: 1039 },
+                              end: { line: 30, column: 68, offset: 1090 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'pushImage',
+                            position: {
+                              start: { line: 30, column: 68, offset: 1090 },
+                              end: { line: 30, column: 79, offset: 1101 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' operation.',
+                            position: {
+                              start: { line: 30, column: 79, offset: 1101 },
+                              end: { line: 30, column: 90, offset: 1112 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 30, column: 5, offset: 1027 },
+                          end: { line: 30, column: 90, offset: 1112 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 30, column: 3, offset: 1025 },
+                      end: { line: 30, column: 90, offset: 1112 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 30, column: 3, offset: 1025 },
+                  end: { line: 30, column: 90, offset: 1112 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'const docker = new Docker()\n' +
+                  '\n' +
+                  'const dataStream = await docker.pushImage({\n' +
+                  "  image: 'repo/my-image:mytag',\n" +
+                  "  registry: 'my-registry.io',\n" +
+                  '})\n' +
+                  'dataStream.pipe(process.stdout)\n' +
+                  "dataStream.on('end', () => {\n" +
+                  "  console.log('Push success')\n" +
+                  '})',
+                position: {
+                  start: { line: 32, column: 1, offset: 1114 },
+                  end: { line: 43, column: 4, offset: 1363 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 18, column: 44, offset: 377 }
+              end: { line: 43, column: 4, offset: 1363 }
             }
           }
         }
@@ -1037,6 +6277,37 @@ export default [
           '    LastTagTime: string, # timestamp in seconds\n' +
           '  },\n' +
           '}>\n' +
+          '```\n' +
+          '\n' +
+          'Returns low-level information about a Docker image.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * `image` - the name or ID of the image to inspect\n' +
+          '\n' +
+          'Return:\n' +
+          '  * `data`\n' +
+          '    * `Id` - the content-addressable ID of an image.\n' +
+          '    * `Descriptor` - an object containing digest, media type, and size for the image, as defined in the [OCI Content Descriptors Specification](https://github.com/opencontainers/image-spec/blob/v1.0.1/descriptor.md).\n' +
+          '    * `Manifests` - list of [image manifests](https://docs.docker.com/reference/cli/docker/manifest/) available in the image. Warning: `Manifests` is experimental and may change at any time without any backward compatibility.\n' +
+          '    * `RepoTags` - list of image names and tags in the local image cache that reference the image.\n' +
+          '    * `RepoDigests` - list of content-addressable digests of locally available image manifests that the image is referenced from.\n' +
+          '    * `Comment` - optional message that was set when committing or importing the image.\n' +
+          '    * `Created` - the date and time at which the image was created as seconds since EPOCH (January 1, 1970 at midnight UTC/GMT). \n' +
+          '    * `Author` - the name of the author that was specified when committing the image.\n' +
+          '    * `Config` - the configuration of the image. `Config` fields are used as defaults when starting a container from an image.\n' +
+          '    * `Architecture` - the CPU architecture that the image runs on.\n' +
+          '    * `Variant` - a CPU architecture variant.\n' +
+          '    * `Os` - the operating system that the image is built to run on.\n' +
+          '    * `OsVersion` - the version of the operating system that the image is built to run on.\n' +
+          '    * `Size` - the total size in bytes of the image including all layers that the image is composed of.\n' +
+          '    * `GraphDriver` - information about the storage driver that stores the filesystem used by the container and the image.\n' +
+          "    * `RootFS` - information about the image's RootFS, including the layer IDs.\n" +
+          '    * `Metadata` - additional metadata of the image in the local cache. This information is not part of the image itself.\n' +
+          '\n' +
+          '```javascript\n' +
+          'const docker = new Docker()\n' +
+          '\n' +
+          "const data = await docker.inspectImage('my-image:example')\n" +
           '```',
         mdast: {
           name: {
@@ -1102,11 +6373,1288 @@ export default [
                   start: { line: 1, column: 1, offset: 0 },
                   end: { line: 28, column: 4, offset: 716 }
                 }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Returns low-level information about a Docker image.',
+                    position: {
+                      start: { line: 30, column: 1, offset: 718 },
+                      end: { line: 30, column: 52, offset: 769 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 30, column: 1, offset: 718 },
+                  end: { line: 30, column: 52, offset: 769 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 32, column: 1, offset: 771 },
+                      end: { line: 32, column: 11, offset: 781 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 32, column: 1, offset: 771 },
+                  end: { line: 32, column: 11, offset: 781 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'image',
+                            position: {
+                              start: { line: 33, column: 5, offset: 786 },
+                              end: { line: 33, column: 12, offset: 793 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - the name or ID of the image to inspect',
+                            position: {
+                              start: { line: 33, column: 12, offset: 793 },
+                              end: { line: 33, column: 53, offset: 834 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 33, column: 5, offset: 786 },
+                          end: { line: 33, column: 53, offset: 834 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 33, column: 3, offset: 784 },
+                      end: { line: 33, column: 53, offset: 834 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 33, column: 3, offset: 784 },
+                  end: { line: 33, column: 53, offset: 834 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 35, column: 1, offset: 836 },
+                      end: { line: 35, column: 8, offset: 843 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 35, column: 1, offset: 836 },
+                  end: { line: 35, column: 8, offset: 843 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'data',
+                            position: {
+                              start: { line: 36, column: 5, offset: 848 },
+                              end: { line: 36, column: 11, offset: 854 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 36, column: 5, offset: 848 },
+                          end: { line: 36, column: 11, offset: 854 }
+                        }
+                      },
+                      {
+                        type: 'list',
+                        ordered: false,
+                        start: null,
+                        spread: false,
+                        children: [
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Id',
+                                    position: {
+                                      start: {
+                                        line: 37,
+                                        column: 7,
+                                        offset: 861
+                                      },
+                                      end: {
+                                        line: 37,
+                                        column: 11,
+                                        offset: 865
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the content-addressable ID of an image.',
+                                    position: {
+                                      start: {
+                                        line: 37,
+                                        column: 11,
+                                        offset: 865
+                                      },
+                                      end: {
+                                        line: 37,
+                                        column: 53,
+                                        offset: 907
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 37, column: 7, offset: 861 },
+                                  end: { line: 37, column: 53, offset: 907 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 37, column: 5, offset: 859 },
+                              end: { line: 37, column: 53, offset: 907 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Descriptor',
+                                    position: {
+                                      start: {
+                                        line: 38,
+                                        column: 7,
+                                        offset: 914
+                                      },
+                                      end: {
+                                        line: 38,
+                                        column: 19,
+                                        offset: 926
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - an object containing digest, media type, and size for the image, as defined in the ',
+                                    position: {
+                                      start: {
+                                        line: 38,
+                                        column: 19,
+                                        offset: 926
+                                      },
+                                      end: {
+                                        line: 38,
+                                        column: 105,
+                                        offset: 1012
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'link',
+                                    title: null,
+                                    url: 'https://github.com/opencontainers/image-spec/blob/v1.0.1/descriptor.md',
+                                    children: [
+                                      {
+                                        type: 'text',
+                                        value: 'OCI Content Descriptors Specification',
+                                        position: {
+                                          start: {
+                                            line: 38,
+                                            column: 106,
+                                            offset: 1013
+                                          },
+                                          end: {
+                                            line: 38,
+                                            column: 143,
+                                            offset: 1050
+                                          }
+                                        }
+                                      }
+                                    ],
+                                    position: {
+                                      start: {
+                                        line: 38,
+                                        column: 105,
+                                        offset: 1012
+                                      },
+                                      end: {
+                                        line: 38,
+                                        column: 216,
+                                        offset: 1123
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: '.',
+                                    position: {
+                                      start: {
+                                        line: 38,
+                                        column: 216,
+                                        offset: 1123
+                                      },
+                                      end: {
+                                        line: 38,
+                                        column: 217,
+                                        offset: 1124
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 38, column: 7, offset: 914 },
+                                  end: {
+                                    line: 38,
+                                    column: 217,
+                                    offset: 1124
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 38, column: 5, offset: 912 },
+                              end: { line: 38, column: 217, offset: 1124 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Manifests',
+                                    position: {
+                                      start: {
+                                        line: 39,
+                                        column: 7,
+                                        offset: 1131
+                                      },
+                                      end: {
+                                        line: 39,
+                                        column: 18,
+                                        offset: 1142
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - list of ',
+                                    position: {
+                                      start: {
+                                        line: 39,
+                                        column: 18,
+                                        offset: 1142
+                                      },
+                                      end: {
+                                        line: 39,
+                                        column: 29,
+                                        offset: 1153
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'link',
+                                    title: null,
+                                    url: 'https://docs.docker.com/reference/cli/docker/manifest/',
+                                    children: [
+                                      {
+                                        type: 'text',
+                                        value: 'image manifests',
+                                        position: {
+                                          start: {
+                                            line: 39,
+                                            column: 30,
+                                            offset: 1154
+                                          },
+                                          end: {
+                                            line: 39,
+                                            column: 45,
+                                            offset: 1169
+                                          }
+                                        }
+                                      }
+                                    ],
+                                    position: {
+                                      start: {
+                                        line: 39,
+                                        column: 29,
+                                        offset: 1153
+                                      },
+                                      end: {
+                                        line: 39,
+                                        column: 102,
+                                        offset: 1226
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' available in the image. Warning: ',
+                                    position: {
+                                      start: {
+                                        line: 39,
+                                        column: 102,
+                                        offset: 1226
+                                      },
+                                      end: {
+                                        line: 39,
+                                        column: 136,
+                                        offset: 1260
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Manifests',
+                                    position: {
+                                      start: {
+                                        line: 39,
+                                        column: 136,
+                                        offset: 1260
+                                      },
+                                      end: {
+                                        line: 39,
+                                        column: 147,
+                                        offset: 1271
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' is experimental and may change at any time without any backward compatibility.',
+                                    position: {
+                                      start: {
+                                        line: 39,
+                                        column: 147,
+                                        offset: 1271
+                                      },
+                                      end: {
+                                        line: 39,
+                                        column: 226,
+                                        offset: 1350
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 39, column: 7, offset: 1131 },
+                                  end: {
+                                    line: 39,
+                                    column: 226,
+                                    offset: 1350
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 39, column: 5, offset: 1129 },
+                              end: { line: 39, column: 226, offset: 1350 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'RepoTags',
+                                    position: {
+                                      start: {
+                                        line: 40,
+                                        column: 7,
+                                        offset: 1357
+                                      },
+                                      end: {
+                                        line: 40,
+                                        column: 17,
+                                        offset: 1367
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - list of image names and tags in the local image cache that reference the image.',
+                                    position: {
+                                      start: {
+                                        line: 40,
+                                        column: 17,
+                                        offset: 1367
+                                      },
+                                      end: {
+                                        line: 40,
+                                        column: 99,
+                                        offset: 1449
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 40, column: 7, offset: 1357 },
+                                  end: {
+                                    line: 40,
+                                    column: 99,
+                                    offset: 1449
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 40, column: 5, offset: 1355 },
+                              end: { line: 40, column: 99, offset: 1449 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'RepoDigests',
+                                    position: {
+                                      start: {
+                                        line: 41,
+                                        column: 7,
+                                        offset: 1456
+                                      },
+                                      end: {
+                                        line: 41,
+                                        column: 20,
+                                        offset: 1469
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - list of content-addressable digests of locally available image manifests that the image is referenced from.',
+                                    position: {
+                                      start: {
+                                        line: 41,
+                                        column: 20,
+                                        offset: 1469
+                                      },
+                                      end: {
+                                        line: 41,
+                                        column: 130,
+                                        offset: 1579
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 41, column: 7, offset: 1456 },
+                                  end: {
+                                    line: 41,
+                                    column: 130,
+                                    offset: 1579
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 41, column: 5, offset: 1454 },
+                              end: { line: 41, column: 130, offset: 1579 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Comment',
+                                    position: {
+                                      start: {
+                                        line: 42,
+                                        column: 7,
+                                        offset: 1586
+                                      },
+                                      end: {
+                                        line: 42,
+                                        column: 16,
+                                        offset: 1595
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - optional message that was set when committing or importing the image.',
+                                    position: {
+                                      start: {
+                                        line: 42,
+                                        column: 16,
+                                        offset: 1595
+                                      },
+                                      end: {
+                                        line: 42,
+                                        column: 88,
+                                        offset: 1667
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 42, column: 7, offset: 1586 },
+                                  end: {
+                                    line: 42,
+                                    column: 88,
+                                    offset: 1667
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 42, column: 5, offset: 1584 },
+                              end: { line: 42, column: 88, offset: 1667 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Created',
+                                    position: {
+                                      start: {
+                                        line: 43,
+                                        column: 7,
+                                        offset: 1674
+                                      },
+                                      end: {
+                                        line: 43,
+                                        column: 16,
+                                        offset: 1683
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the date and time at which the image was created as seconds since EPOCH (January 1, 1970 at midnight UTC/GMT).',
+                                    position: {
+                                      start: {
+                                        line: 43,
+                                        column: 16,
+                                        offset: 1683
+                                      },
+                                      end: {
+                                        line: 43,
+                                        column: 129,
+                                        offset: 1796
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 43, column: 7, offset: 1674 },
+                                  end: {
+                                    line: 43,
+                                    column: 130,
+                                    offset: 1797
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 43, column: 5, offset: 1672 },
+                              end: { line: 43, column: 130, offset: 1797 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Author',
+                                    position: {
+                                      start: {
+                                        line: 44,
+                                        column: 7,
+                                        offset: 1804
+                                      },
+                                      end: {
+                                        line: 44,
+                                        column: 15,
+                                        offset: 1812
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the name of the author that was specified when committing the image.',
+                                    position: {
+                                      start: {
+                                        line: 44,
+                                        column: 15,
+                                        offset: 1812
+                                      },
+                                      end: {
+                                        line: 44,
+                                        column: 86,
+                                        offset: 1883
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 44, column: 7, offset: 1804 },
+                                  end: {
+                                    line: 44,
+                                    column: 86,
+                                    offset: 1883
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 44, column: 5, offset: 1802 },
+                              end: { line: 44, column: 86, offset: 1883 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Config',
+                                    position: {
+                                      start: {
+                                        line: 45,
+                                        column: 7,
+                                        offset: 1890
+                                      },
+                                      end: {
+                                        line: 45,
+                                        column: 15,
+                                        offset: 1898
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the configuration of the image. ',
+                                    position: {
+                                      start: {
+                                        line: 45,
+                                        column: 15,
+                                        offset: 1898
+                                      },
+                                      end: {
+                                        line: 45,
+                                        column: 50,
+                                        offset: 1933
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Config',
+                                    position: {
+                                      start: {
+                                        line: 45,
+                                        column: 50,
+                                        offset: 1933
+                                      },
+                                      end: {
+                                        line: 45,
+                                        column: 58,
+                                        offset: 1941
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' fields are used as defaults when starting a container from an image.',
+                                    position: {
+                                      start: {
+                                        line: 45,
+                                        column: 58,
+                                        offset: 1941
+                                      },
+                                      end: {
+                                        line: 45,
+                                        column: 127,
+                                        offset: 2010
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 45, column: 7, offset: 1890 },
+                                  end: {
+                                    line: 45,
+                                    column: 127,
+                                    offset: 2010
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 45, column: 5, offset: 1888 },
+                              end: { line: 45, column: 127, offset: 2010 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Architecture',
+                                    position: {
+                                      start: {
+                                        line: 46,
+                                        column: 7,
+                                        offset: 2017
+                                      },
+                                      end: {
+                                        line: 46,
+                                        column: 21,
+                                        offset: 2031
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the CPU architecture that the image runs on.',
+                                    position: {
+                                      start: {
+                                        line: 46,
+                                        column: 21,
+                                        offset: 2031
+                                      },
+                                      end: {
+                                        line: 46,
+                                        column: 68,
+                                        offset: 2078
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 46, column: 7, offset: 2017 },
+                                  end: {
+                                    line: 46,
+                                    column: 68,
+                                    offset: 2078
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 46, column: 5, offset: 2015 },
+                              end: { line: 46, column: 68, offset: 2078 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Variant',
+                                    position: {
+                                      start: {
+                                        line: 47,
+                                        column: 7,
+                                        offset: 2085
+                                      },
+                                      end: {
+                                        line: 47,
+                                        column: 16,
+                                        offset: 2094
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - a CPU architecture variant.',
+                                    position: {
+                                      start: {
+                                        line: 47,
+                                        column: 16,
+                                        offset: 2094
+                                      },
+                                      end: {
+                                        line: 47,
+                                        column: 46,
+                                        offset: 2124
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 47, column: 7, offset: 2085 },
+                                  end: {
+                                    line: 47,
+                                    column: 46,
+                                    offset: 2124
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 47, column: 5, offset: 2083 },
+                              end: { line: 47, column: 46, offset: 2124 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Os',
+                                    position: {
+                                      start: {
+                                        line: 48,
+                                        column: 7,
+                                        offset: 2131
+                                      },
+                                      end: {
+                                        line: 48,
+                                        column: 11,
+                                        offset: 2135
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the operating system that the image is built to run on.',
+                                    position: {
+                                      start: {
+                                        line: 48,
+                                        column: 11,
+                                        offset: 2135
+                                      },
+                                      end: {
+                                        line: 48,
+                                        column: 69,
+                                        offset: 2193
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 48, column: 7, offset: 2131 },
+                                  end: {
+                                    line: 48,
+                                    column: 69,
+                                    offset: 2193
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 48, column: 5, offset: 2129 },
+                              end: { line: 48, column: 69, offset: 2193 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'OsVersion',
+                                    position: {
+                                      start: {
+                                        line: 49,
+                                        column: 7,
+                                        offset: 2200
+                                      },
+                                      end: {
+                                        line: 49,
+                                        column: 18,
+                                        offset: 2211
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the version of the operating system that the image is built to run on.',
+                                    position: {
+                                      start: {
+                                        line: 49,
+                                        column: 18,
+                                        offset: 2211
+                                      },
+                                      end: {
+                                        line: 49,
+                                        column: 91,
+                                        offset: 2284
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 49, column: 7, offset: 2200 },
+                                  end: {
+                                    line: 49,
+                                    column: 91,
+                                    offset: 2284
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 49, column: 5, offset: 2198 },
+                              end: { line: 49, column: 91, offset: 2284 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Size',
+                                    position: {
+                                      start: {
+                                        line: 50,
+                                        column: 7,
+                                        offset: 2291
+                                      },
+                                      end: {
+                                        line: 50,
+                                        column: 13,
+                                        offset: 2297
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the total size in bytes of the image including all layers that the image is composed of.',
+                                    position: {
+                                      start: {
+                                        line: 50,
+                                        column: 13,
+                                        offset: 2297
+                                      },
+                                      end: {
+                                        line: 50,
+                                        column: 104,
+                                        offset: 2388
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 50, column: 7, offset: 2291 },
+                                  end: {
+                                    line: 50,
+                                    column: 104,
+                                    offset: 2388
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 50, column: 5, offset: 2289 },
+                              end: { line: 50, column: 104, offset: 2388 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'GraphDriver',
+                                    position: {
+                                      start: {
+                                        line: 51,
+                                        column: 7,
+                                        offset: 2395
+                                      },
+                                      end: {
+                                        line: 51,
+                                        column: 20,
+                                        offset: 2408
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - information about the storage driver that stores the filesystem used by the container and the image.',
+                                    position: {
+                                      start: {
+                                        line: 51,
+                                        column: 20,
+                                        offset: 2408
+                                      },
+                                      end: {
+                                        line: 51,
+                                        column: 123,
+                                        offset: 2511
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 51, column: 7, offset: 2395 },
+                                  end: {
+                                    line: 51,
+                                    column: 123,
+                                    offset: 2511
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 51, column: 5, offset: 2393 },
+                              end: { line: 51, column: 123, offset: 2511 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'RootFS',
+                                    position: {
+                                      start: {
+                                        line: 52,
+                                        column: 7,
+                                        offset: 2518
+                                      },
+                                      end: {
+                                        line: 52,
+                                        column: 15,
+                                        offset: 2526
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: " - information about the image's RootFS, including the layer IDs.",
+                                    position: {
+                                      start: {
+                                        line: 52,
+                                        column: 15,
+                                        offset: 2526
+                                      },
+                                      end: {
+                                        line: 52,
+                                        column: 80,
+                                        offset: 2591
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 52, column: 7, offset: 2518 },
+                                  end: {
+                                    line: 52,
+                                    column: 80,
+                                    offset: 2591
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 52, column: 5, offset: 2516 },
+                              end: { line: 52, column: 80, offset: 2591 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Metadata',
+                                    position: {
+                                      start: {
+                                        line: 53,
+                                        column: 7,
+                                        offset: 2598
+                                      },
+                                      end: {
+                                        line: 53,
+                                        column: 17,
+                                        offset: 2608
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - additional metadata of the image in the local cache. This information is not part of the image itself.',
+                                    position: {
+                                      start: {
+                                        line: 53,
+                                        column: 17,
+                                        offset: 2608
+                                      },
+                                      end: {
+                                        line: 53,
+                                        column: 122,
+                                        offset: 2713
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 53, column: 7, offset: 2598 },
+                                  end: {
+                                    line: 53,
+                                    column: 122,
+                                    offset: 2713
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 53, column: 5, offset: 2596 },
+                              end: { line: 53, column: 122, offset: 2713 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 37, column: 5, offset: 859 },
+                          end: { line: 53, column: 122, offset: 2713 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 36, column: 3, offset: 846 },
+                      end: { line: 53, column: 122, offset: 2713 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 36, column: 3, offset: 846 },
+                  end: { line: 53, column: 122, offset: 2713 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'const docker = new Docker()\n' +
+                  '\n' +
+                  "const data = await docker.inspectImage('my-image:example')",
+                position: {
+                  start: { line: 55, column: 1, offset: 2715 },
+                  end: { line: 59, column: 4, offset: 2820 }
+                }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 28, column: 4, offset: 716 }
+              end: { line: 59, column: 4, offset: 2820 }
             }
           }
         }
@@ -1115,9 +7663,24 @@ export default [
         name: 'tagImage',
         docs: '```coffeescript [specscript]\n' +
           'tagImage(\n' +
-          "  sourceImageTag string, # '<image>:<tag>'\n" +
-          "  targetImageTag string, # '<image>:<tag>'\n" +
+          "  sourceImageTag string, # '[<repo>/]<image>:<tag>'\n" +
+          "  targetImageTag string, # '[<repo>/]<image>:<tag>'\n" +
           ') -> data Promise<{}>\n' +
+          '```\n' +
+          '\n' +
+          'Creates a Docker image tag that refers to a source Docker image tag.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * `sourceImageTag` - the source Docker image tag\n' +
+          '  * `targetImageTag` - the Docker image tag to create\n' +
+          '\n' +
+          'Return:\n' +
+          '  * `data` - empty object.\n' +
+          '\n' +
+          '```javascript\n' +
+          'const docker = new Docker()\n' +
+          '\n' +
+          "await docker.tagImage('my-image:example', 'my-registry/my-image:example')\n" +
           '```',
         mdast: {
           name: {
@@ -1154,18 +7717,213 @@ export default [
                 lang: 'coffeescript',
                 meta: '[specscript]',
                 value: 'tagImage(\n' +
-                  "  sourceImageTag string, # '<image>:<tag>'\n" +
-                  "  targetImageTag string, # '<image>:<tag>'\n" +
+                  "  sourceImageTag string, # '[<repo>/]<image>:<tag>'\n" +
+                  "  targetImageTag string, # '[<repo>/]<image>:<tag>'\n" +
                   ') -> data Promise<{}>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 6, column: 4, offset: 150 }
+                  end: { line: 6, column: 4, offset: 168 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Creates a Docker image tag that refers to a source Docker image tag.',
+                    position: {
+                      start: { line: 8, column: 1, offset: 170 },
+                      end: { line: 8, column: 69, offset: 238 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 1, offset: 170 },
+                  end: { line: 8, column: 69, offset: 238 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 10, column: 1, offset: 240 },
+                      end: { line: 10, column: 11, offset: 250 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 10, column: 1, offset: 240 },
+                  end: { line: 10, column: 11, offset: 250 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'sourceImageTag',
+                            position: {
+                              start: { line: 11, column: 5, offset: 255 },
+                              end: { line: 11, column: 21, offset: 271 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - the source Docker image tag',
+                            position: {
+                              start: { line: 11, column: 21, offset: 271 },
+                              end: { line: 11, column: 51, offset: 301 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 11, column: 5, offset: 255 },
+                          end: { line: 11, column: 51, offset: 301 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 11, column: 3, offset: 253 },
+                      end: { line: 11, column: 51, offset: 301 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'targetImageTag',
+                            position: {
+                              start: { line: 12, column: 5, offset: 306 },
+                              end: { line: 12, column: 21, offset: 322 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - the Docker image tag to create',
+                            position: {
+                              start: { line: 12, column: 21, offset: 322 },
+                              end: { line: 12, column: 54, offset: 355 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 12, column: 5, offset: 306 },
+                          end: { line: 12, column: 54, offset: 355 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 12, column: 3, offset: 304 },
+                      end: { line: 12, column: 54, offset: 355 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 3, offset: 253 },
+                  end: { line: 12, column: 54, offset: 355 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 14, column: 1, offset: 357 },
+                      end: { line: 14, column: 8, offset: 364 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 14, column: 1, offset: 357 },
+                  end: { line: 14, column: 8, offset: 364 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'data',
+                            position: {
+                              start: { line: 15, column: 5, offset: 369 },
+                              end: { line: 15, column: 11, offset: 375 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - empty object.',
+                            position: {
+                              start: { line: 15, column: 11, offset: 375 },
+                              end: { line: 15, column: 27, offset: 391 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 15, column: 5, offset: 369 },
+                          end: { line: 15, column: 27, offset: 391 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 15, column: 3, offset: 367 },
+                      end: { line: 15, column: 27, offset: 391 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 15, column: 3, offset: 367 },
+                  end: { line: 15, column: 27, offset: 391 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'const docker = new Docker()\n' +
+                  '\n' +
+                  "await docker.tagImage('my-image:example', 'my-registry/my-image:example')",
+                position: {
+                  start: { line: 17, column: 1, offset: 393 },
+                  end: { line: 21, column: 4, offset: 513 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 6, column: 4, offset: 150 }
+              end: { line: 21, column: 4, offset: 513 }
             }
           }
         }
@@ -1175,11 +7933,28 @@ export default [
         docs: '```coffeescript [specscript]\n' +
           'removeImage(image string, options? {\n' +
           '  force: boolean,\n' +
-          '  noprune: boolean, // do not delete untagged parent images\n' +
+          '  noprune: boolean,\n' +
           '}) -> data Promise<Array<{ Untagged: string }|{ Deleted: string }>>\n' +
           '```\n' +
           '\n' +
-          '`image` is a docker image name or ID',
+          "Removes a Docker image and any untagged parent images that were referenced by the Docker image from the server. Docker images can't be removed if they have descendant images, are being used by a running container, or are being used by a build.\n" +
+          '\n' +
+          'Arguments:\n' +
+          '  * `image` - the name or ID of the image to remove.\n' +
+          '  * `options`\n' +
+          '    * `force` - if `true`, removes the image even if it is being used by stopped containers or has other tags. If `false`, the operation will error if the image is being used by stopped containers. Defaults to `false`.\n' +
+          '    * `noprune` - if `true`, the operation will not delete untagged parent images. If `false`, the operation will delete untagged parent images. Defaults to `false`.\n' +
+          '\n' +
+          'Return:\n' +
+          '  * `data`\n' +
+          '    * `Untagged` - the image ID of an image that was untagged.\n' +
+          '    * `Deleted` - the image ID of an image that was deleted.\n' +
+          '\n' +
+          '```javascript\n' +
+          'const docker = new Docker()\n' +
+          '\n' +
+          "await docker.removeImage('my-image:example')\n" +
+          '```',
         mdast: {
           name: {
             type: 'root',
@@ -1216,42 +7991,632 @@ export default [
                 meta: '[specscript]',
                 value: 'removeImage(image string, options? {\n' +
                   '  force: boolean,\n' +
-                  '  noprune: boolean, // do not delete untagged parent images\n' +
+                  '  noprune: boolean,\n' +
                   '}) -> data Promise<Array<{ Untagged: string }|{ Deleted: string }>>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 6, column: 4, offset: 215 }
+                  end: { line: 6, column: 4, offset: 175 }
                 }
               },
               {
                 type: 'paragraph',
                 children: [
                   {
-                    type: 'inlineCode',
-                    value: 'image',
-                    position: {
-                      start: { line: 8, column: 1, offset: 217 },
-                      end: { line: 8, column: 8, offset: 224 }
-                    }
-                  },
-                  {
                     type: 'text',
-                    value: ' is a docker image name or ID',
+                    value: "Removes a Docker image and any untagged parent images that were referenced by the Docker image from the server. Docker images can't be removed if they have descendant images, are being used by a running container, or are being used by a build.",
                     position: {
-                      start: { line: 8, column: 8, offset: 224 },
-                      end: { line: 8, column: 37, offset: 253 }
+                      start: { line: 8, column: 1, offset: 177 },
+                      end: { line: 8, column: 244, offset: 420 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 8, column: 1, offset: 217 },
-                  end: { line: 8, column: 37, offset: 253 }
+                  start: { line: 8, column: 1, offset: 177 },
+                  end: { line: 8, column: 244, offset: 420 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 10, column: 1, offset: 422 },
+                      end: { line: 10, column: 11, offset: 432 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 10, column: 1, offset: 422 },
+                  end: { line: 10, column: 11, offset: 432 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'image',
+                            position: {
+                              start: { line: 11, column: 5, offset: 437 },
+                              end: { line: 11, column: 12, offset: 444 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - the name or ID of the image to remove.',
+                            position: {
+                              start: { line: 11, column: 12, offset: 444 },
+                              end: { line: 11, column: 53, offset: 485 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 11, column: 5, offset: 437 },
+                          end: { line: 11, column: 53, offset: 485 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 11, column: 3, offset: 435 },
+                      end: { line: 11, column: 53, offset: 485 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'options',
+                            position: {
+                              start: { line: 12, column: 5, offset: 490 },
+                              end: { line: 12, column: 14, offset: 499 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 12, column: 5, offset: 490 },
+                          end: { line: 12, column: 14, offset: 499 }
+                        }
+                      },
+                      {
+                        type: 'list',
+                        ordered: false,
+                        start: null,
+                        spread: false,
+                        children: [
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'force',
+                                    position: {
+                                      start: {
+                                        line: 13,
+                                        column: 7,
+                                        offset: 506
+                                      },
+                                      end: {
+                                        line: 13,
+                                        column: 14,
+                                        offset: 513
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - if ',
+                                    position: {
+                                      start: {
+                                        line: 13,
+                                        column: 14,
+                                        offset: 513
+                                      },
+                                      end: {
+                                        line: 13,
+                                        column: 20,
+                                        offset: 519
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'true',
+                                    position: {
+                                      start: {
+                                        line: 13,
+                                        column: 20,
+                                        offset: 519
+                                      },
+                                      end: {
+                                        line: 13,
+                                        column: 26,
+                                        offset: 525
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ', removes the image even if it is being used by stopped containers or has other tags. If ',
+                                    position: {
+                                      start: {
+                                        line: 13,
+                                        column: 26,
+                                        offset: 525
+                                      },
+                                      end: {
+                                        line: 13,
+                                        column: 115,
+                                        offset: 614
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'false',
+                                    position: {
+                                      start: {
+                                        line: 13,
+                                        column: 115,
+                                        offset: 614
+                                      },
+                                      end: {
+                                        line: 13,
+                                        column: 122,
+                                        offset: 621
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ', the operation will error if the image is being used by stopped containers. Defaults to ',
+                                    position: {
+                                      start: {
+                                        line: 13,
+                                        column: 122,
+                                        offset: 621
+                                      },
+                                      end: {
+                                        line: 13,
+                                        column: 211,
+                                        offset: 710
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'false',
+                                    position: {
+                                      start: {
+                                        line: 13,
+                                        column: 211,
+                                        offset: 710
+                                      },
+                                      end: {
+                                        line: 13,
+                                        column: 218,
+                                        offset: 717
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: '.',
+                                    position: {
+                                      start: {
+                                        line: 13,
+                                        column: 218,
+                                        offset: 717
+                                      },
+                                      end: {
+                                        line: 13,
+                                        column: 219,
+                                        offset: 718
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 13, column: 7, offset: 506 },
+                                  end: {
+                                    line: 13,
+                                    column: 219,
+                                    offset: 718
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 13, column: 5, offset: 504 },
+                              end: { line: 13, column: 219, offset: 718 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'noprune',
+                                    position: {
+                                      start: {
+                                        line: 14,
+                                        column: 7,
+                                        offset: 725
+                                      },
+                                      end: {
+                                        line: 14,
+                                        column: 16,
+                                        offset: 734
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - if ',
+                                    position: {
+                                      start: {
+                                        line: 14,
+                                        column: 16,
+                                        offset: 734
+                                      },
+                                      end: {
+                                        line: 14,
+                                        column: 22,
+                                        offset: 740
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'true',
+                                    position: {
+                                      start: {
+                                        line: 14,
+                                        column: 22,
+                                        offset: 740
+                                      },
+                                      end: {
+                                        line: 14,
+                                        column: 28,
+                                        offset: 746
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ', the operation will not delete untagged parent images. If ',
+                                    position: {
+                                      start: {
+                                        line: 14,
+                                        column: 28,
+                                        offset: 746
+                                      },
+                                      end: {
+                                        line: 14,
+                                        column: 87,
+                                        offset: 805
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'false',
+                                    position: {
+                                      start: {
+                                        line: 14,
+                                        column: 87,
+                                        offset: 805
+                                      },
+                                      end: {
+                                        line: 14,
+                                        column: 94,
+                                        offset: 812
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ', the operation will delete untagged parent images. Defaults to ',
+                                    position: {
+                                      start: {
+                                        line: 14,
+                                        column: 94,
+                                        offset: 812
+                                      },
+                                      end: {
+                                        line: 14,
+                                        column: 158,
+                                        offset: 876
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'false',
+                                    position: {
+                                      start: {
+                                        line: 14,
+                                        column: 158,
+                                        offset: 876
+                                      },
+                                      end: {
+                                        line: 14,
+                                        column: 165,
+                                        offset: 883
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: '.',
+                                    position: {
+                                      start: {
+                                        line: 14,
+                                        column: 165,
+                                        offset: 883
+                                      },
+                                      end: {
+                                        line: 14,
+                                        column: 166,
+                                        offset: 884
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 14, column: 7, offset: 725 },
+                                  end: {
+                                    line: 14,
+                                    column: 166,
+                                    offset: 884
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 14, column: 5, offset: 723 },
+                              end: { line: 14, column: 166, offset: 884 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 13, column: 5, offset: 504 },
+                          end: { line: 14, column: 166, offset: 884 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 12, column: 3, offset: 488 },
+                      end: { line: 14, column: 166, offset: 884 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 3, offset: 435 },
+                  end: { line: 14, column: 166, offset: 884 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 16, column: 1, offset: 886 },
+                      end: { line: 16, column: 8, offset: 893 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 16, column: 1, offset: 886 },
+                  end: { line: 16, column: 8, offset: 893 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'data',
+                            position: {
+                              start: { line: 17, column: 5, offset: 898 },
+                              end: { line: 17, column: 11, offset: 904 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 17, column: 5, offset: 898 },
+                          end: { line: 17, column: 11, offset: 904 }
+                        }
+                      },
+                      {
+                        type: 'list',
+                        ordered: false,
+                        start: null,
+                        spread: false,
+                        children: [
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Untagged',
+                                    position: {
+                                      start: {
+                                        line: 18,
+                                        column: 7,
+                                        offset: 911
+                                      },
+                                      end: {
+                                        line: 18,
+                                        column: 17,
+                                        offset: 921
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the image ID of an image that was untagged.',
+                                    position: {
+                                      start: {
+                                        line: 18,
+                                        column: 17,
+                                        offset: 921
+                                      },
+                                      end: {
+                                        line: 18,
+                                        column: 63,
+                                        offset: 967
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 18, column: 7, offset: 911 },
+                                  end: { line: 18, column: 63, offset: 967 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 18, column: 5, offset: 909 },
+                              end: { line: 18, column: 63, offset: 967 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Deleted',
+                                    position: {
+                                      start: {
+                                        line: 19,
+                                        column: 7,
+                                        offset: 974
+                                      },
+                                      end: {
+                                        line: 19,
+                                        column: 16,
+                                        offset: 983
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the image ID of an image that was deleted.',
+                                    position: {
+                                      start: {
+                                        line: 19,
+                                        column: 16,
+                                        offset: 983
+                                      },
+                                      end: {
+                                        line: 19,
+                                        column: 61,
+                                        offset: 1028
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 19, column: 7, offset: 974 },
+                                  end: {
+                                    line: 19,
+                                    column: 61,
+                                    offset: 1028
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 19, column: 5, offset: 972 },
+                              end: { line: 19, column: 61, offset: 1028 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 18, column: 5, offset: 909 },
+                          end: { line: 19, column: 61, offset: 1028 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 17, column: 3, offset: 896 },
+                      end: { line: 19, column: 61, offset: 1028 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 17, column: 3, offset: 896 },
+                  end: { line: 19, column: 61, offset: 1028 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'const docker = new Docker()\n' +
+                  '\n' +
+                  "await docker.removeImage('my-image:example')",
+                position: {
+                  start: { line: 21, column: 1, offset: 1030 },
+                  end: { line: 25, column: 4, offset: 1121 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 8, column: 37, offset: 253 }
+              end: { line: 25, column: 4, offset: 1121 }
             }
           }
         }
@@ -4853,11 +12218,11 @@ export default [
           '}\n' +
           '\n' +
           'type DynamoDBJSONObject = Object<\n' +
-          '  { S: string }\n' +
-          '  |{ N: number }\n' +
-          '  |{ B: Buffer }\n' +
-          '  |{ L: Array<DynamoDBJSONObject> }\n' +
-          '  |{ M: Object<DynamoDBJSONObject> }\n' +
+          '  [key string]: { S: string }\n' +
+          '                |{ N: number }\n' +
+          '                |{ B: Buffer }\n' +
+          '                |{ L: Array<DynamoDBJSONObject> }\n' +
+          '                |{ M: Object<DynamoDBJSONObject> }\n' +
           '>\n' +
           '\n' +
           'query(\n' +
@@ -4943,11 +12308,11 @@ export default [
                   '}\n' +
                   '\n' +
                   'type DynamoDBJSONObject = Object<\n' +
-                  '  { S: string }\n' +
-                  '  |{ N: number }\n' +
-                  '  |{ B: Buffer }\n' +
-                  '  |{ L: Array<DynamoDBJSONObject> }\n' +
-                  '  |{ M: Object<DynamoDBJSONObject> }\n' +
+                  '  [key string]: { S: string }\n' +
+                  '                |{ N: number }\n' +
+                  '                |{ B: Buffer }\n' +
+                  '                |{ L: Array<DynamoDBJSONObject> }\n' +
+                  '                |{ M: Object<DynamoDBJSONObject> }\n' +
                   '>\n' +
                   '\n' +
                   'query(\n' +
@@ -4963,7 +12328,7 @@ export default [
                   ') -> data Promise<{ Items: Array<DynamoDBJSONObject> }>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 26, column: 4, offset: 751 }
+                  end: { line: 26, column: 4, offset: 821 }
                 }
               },
               {
@@ -4973,14 +12338,14 @@ export default [
                     type: 'text',
                     value: 'Query a DynamoDB Global Secondary Index using DynamoDB JSON format.',
                     position: {
-                      start: { line: 28, column: 1, offset: 753 },
-                      end: { line: 28, column: 68, offset: 820 }
+                      start: { line: 28, column: 1, offset: 823 },
+                      end: { line: 28, column: 68, offset: 890 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 28, column: 1, offset: 753 },
-                  end: { line: 28, column: 68, offset: 820 }
+                  start: { line: 28, column: 1, offset: 823 },
+                  end: { line: 28, column: 68, offset: 890 }
                 }
               },
               {
@@ -4990,24 +12355,24 @@ export default [
                     type: 'text',
                     value: "Use the hash and sort keys as query parameters and to construct the key condition expression. The key condition expression is a SQL-like query language comprised of the table's hashKey and sortKey, e.g. ",
                     position: {
-                      start: { line: 30, column: 1, offset: 822 },
-                      end: { line: 30, column: 204, offset: 1025 }
+                      start: { line: 30, column: 1, offset: 892 },
+                      end: { line: 30, column: 204, offset: 1095 }
                     }
                   },
                   {
                     type: 'inlineCode',
                     value: 'myHashKey = :a AND mySortKey < :b',
                     position: {
-                      start: { line: 30, column: 204, offset: 1025 },
-                      end: { line: 30, column: 239, offset: 1060 }
+                      start: { line: 30, column: 204, offset: 1095 },
+                      end: { line: 30, column: 239, offset: 1130 }
                     }
                   },
                   {
                     type: 'text',
                     value: '. Read more about ',
                     position: {
-                      start: { line: 30, column: 239, offset: 1060 },
-                      end: { line: 30, column: 257, offset: 1078 }
+                      start: { line: 30, column: 239, offset: 1130 },
+                      end: { line: 30, column: 257, offset: 1148 }
                     }
                   },
                   {
@@ -5019,28 +12384,28 @@ export default [
                         type: 'text',
                         value: 'key condition expressions',
                         position: {
-                          start: { line: 30, column: 258, offset: 1079 },
-                          end: { line: 30, column: 283, offset: 1104 }
+                          start: { line: 30, column: 258, offset: 1149 },
+                          end: { line: 30, column: 283, offset: 1174 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 30, column: 257, offset: 1078 },
-                      end: { line: 30, column: 385, offset: 1206 }
+                      start: { line: 30, column: 257, offset: 1148 },
+                      end: { line: 30, column: 385, offset: 1276 }
                     }
                   },
                   {
                     type: 'text',
                     value: '.',
                     position: {
-                      start: { line: 30, column: 385, offset: 1206 },
-                      end: { line: 30, column: 386, offset: 1207 }
+                      start: { line: 30, column: 385, offset: 1276 },
+                      end: { line: 30, column: 386, offset: 1277 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 30, column: 1, offset: 822 },
-                  end: { line: 30, column: 386, offset: 1207 }
+                  start: { line: 30, column: 1, offset: 892 },
+                  end: { line: 30, column: 386, offset: 1277 }
                 }
               },
               {
@@ -5065,8 +12430,8 @@ export default [
                   '//   ...\n' +
                   '// ]',
                 position: {
-                  start: { line: 32, column: 1, offset: 1209 },
-                  end: { line: 50, column: 4, offset: 1761 }
+                  start: { line: 32, column: 1, offset: 1279 },
+                  end: { line: 50, column: 4, offset: 1831 }
                 }
               },
               {
@@ -5076,14 +12441,14 @@ export default [
                     type: 'text',
                     value: 'Options:',
                     position: {
-                      start: { line: 52, column: 1, offset: 1763 },
-                      end: { line: 52, column: 9, offset: 1771 }
+                      start: { line: 52, column: 1, offset: 1833 },
+                      end: { line: 52, column: 9, offset: 1841 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 52, column: 1, offset: 1763 },
-                  end: { line: 52, column: 9, offset: 1771 }
+                  start: { line: 52, column: 1, offset: 1833 },
+                  end: { line: 52, column: 9, offset: 1841 }
                 }
               },
               {
@@ -5104,28 +12469,28 @@ export default [
                             type: 'inlineCode',
                             value: 'Limit',
                             position: {
-                              start: { line: 53, column: 5, offset: 1776 },
-                              end: { line: 53, column: 12, offset: 1783 }
+                              start: { line: 53, column: 5, offset: 1846 },
+                              end: { line: 53, column: 12, offset: 1853 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - Maximum number of items (hard limited by the total size of the response).',
                             position: {
-                              start: { line: 53, column: 12, offset: 1783 },
-                              end: { line: 53, column: 88, offset: 1859 }
+                              start: { line: 53, column: 12, offset: 1853 },
+                              end: { line: 53, column: 88, offset: 1929 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 53, column: 5, offset: 1776 },
-                          end: { line: 53, column: 88, offset: 1859 }
+                          start: { line: 53, column: 5, offset: 1846 },
+                          end: { line: 53, column: 88, offset: 1929 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 53, column: 3, offset: 1774 },
-                      end: { line: 53, column: 88, offset: 1859 }
+                      start: { line: 53, column: 3, offset: 1844 },
+                      end: { line: 53, column: 88, offset: 1929 }
                     }
                   },
                   {
@@ -5140,28 +12505,28 @@ export default [
                             type: 'inlineCode',
                             value: 'ExclusiveStartKey',
                             position: {
-                              start: { line: 54, column: 5, offset: 1864 },
-                              end: { line: 54, column: 24, offset: 1883 }
+                              start: { line: 54, column: 5, offset: 1934 },
+                              end: { line: 54, column: 24, offset: 1953 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - DynamoDB JSON Key after which to start reading.',
                             position: {
-                              start: { line: 54, column: 24, offset: 1883 },
-                              end: { line: 54, column: 74, offset: 1933 }
+                              start: { line: 54, column: 24, offset: 1953 },
+                              end: { line: 54, column: 74, offset: 2003 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 54, column: 5, offset: 1864 },
-                          end: { line: 54, column: 74, offset: 1933 }
+                          start: { line: 54, column: 5, offset: 1934 },
+                          end: { line: 54, column: 74, offset: 2003 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 54, column: 3, offset: 1862 },
-                      end: { line: 54, column: 74, offset: 1933 }
+                      start: { line: 54, column: 3, offset: 1932 },
+                      end: { line: 54, column: 74, offset: 2003 }
                     }
                   },
                   {
@@ -5176,76 +12541,76 @@ export default [
                             type: 'inlineCode',
                             value: 'ScanIndexForward',
                             position: {
-                              start: { line: 55, column: 5, offset: 1938 },
-                              end: { line: 55, column: 23, offset: 1956 }
+                              start: { line: 55, column: 5, offset: 2008 },
+                              end: { line: 55, column: 23, offset: 2026 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - if ',
                             position: {
-                              start: { line: 55, column: 23, offset: 1956 },
-                              end: { line: 55, column: 29, offset: 1962 }
+                              start: { line: 55, column: 23, offset: 2026 },
+                              end: { line: 55, column: 29, offset: 2032 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'true',
                             position: {
-                              start: { line: 55, column: 29, offset: 1962 },
-                              end: { line: 55, column: 35, offset: 1968 }
+                              start: { line: 55, column: 29, offset: 2032 },
+                              end: { line: 55, column: 35, offset: 2038 }
                             }
                           },
                           {
                             type: 'text',
                             value: ', returned items are sorted in ascending order. If ',
                             position: {
-                              start: { line: 55, column: 35, offset: 1968 },
-                              end: { line: 55, column: 86, offset: 2019 }
+                              start: { line: 55, column: 35, offset: 2038 },
+                              end: { line: 55, column: 86, offset: 2089 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'false',
                             position: {
-                              start: { line: 55, column: 86, offset: 2019 },
-                              end: { line: 55, column: 93, offset: 2026 }
+                              start: { line: 55, column: 86, offset: 2089 },
+                              end: { line: 55, column: 93, offset: 2096 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' returned items are sorted in descending order. Defaults to ',
                             position: {
-                              start: { line: 55, column: 93, offset: 2026 },
-                              end: { line: 55, column: 153, offset: 2086 }
+                              start: { line: 55, column: 93, offset: 2096 },
+                              end: { line: 55, column: 153, offset: 2156 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'true',
                             position: {
-                              start: { line: 55, column: 153, offset: 2086 },
-                              end: { line: 55, column: 159, offset: 2092 }
+                              start: { line: 55, column: 153, offset: 2156 },
+                              end: { line: 55, column: 159, offset: 2162 }
                             }
                           },
                           {
                             type: 'text',
                             value: '.',
                             position: {
-                              start: { line: 55, column: 159, offset: 2092 },
-                              end: { line: 55, column: 160, offset: 2093 }
+                              start: { line: 55, column: 159, offset: 2162 },
+                              end: { line: 55, column: 160, offset: 2163 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 55, column: 5, offset: 1938 },
-                          end: { line: 55, column: 160, offset: 2093 }
+                          start: { line: 55, column: 5, offset: 2008 },
+                          end: { line: 55, column: 160, offset: 2163 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 55, column: 3, offset: 1936 },
-                      end: { line: 55, column: 160, offset: 2093 }
+                      start: { line: 55, column: 3, offset: 2006 },
+                      end: { line: 55, column: 160, offset: 2163 }
                     }
                   },
                   {
@@ -5260,44 +12625,44 @@ export default [
                             type: 'inlineCode',
                             value: 'ProjectionExpression',
                             position: {
-                              start: { line: 56, column: 5, offset: 2098 },
-                              end: { line: 56, column: 27, offset: 2120 }
+                              start: { line: 56, column: 5, offset: 2168 },
+                              end: { line: 56, column: 27, offset: 2190 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - list of attributes to be returned for each item in query result, e.g. ',
                             position: {
-                              start: { line: 56, column: 27, offset: 2120 },
-                              end: { line: 56, column: 100, offset: 2193 }
+                              start: { line: 56, column: 27, offset: 2190 },
+                              end: { line: 56, column: 100, offset: 2263 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'fieldA,fieldB,fieldC',
                             position: {
-                              start: { line: 56, column: 100, offset: 2193 },
-                              end: { line: 56, column: 122, offset: 2215 }
+                              start: { line: 56, column: 100, offset: 2263 },
+                              end: { line: 56, column: 122, offset: 2285 }
                             }
                           },
                           {
                             type: 'text',
                             value: '.',
                             position: {
-                              start: { line: 56, column: 122, offset: 2215 },
-                              end: { line: 56, column: 123, offset: 2216 }
+                              start: { line: 56, column: 122, offset: 2285 },
+                              end: { line: 56, column: 123, offset: 2286 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 56, column: 5, offset: 2098 },
-                          end: { line: 56, column: 123, offset: 2216 }
+                          start: { line: 56, column: 5, offset: 2168 },
+                          end: { line: 56, column: 123, offset: 2286 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 56, column: 3, offset: 2096 },
-                      end: { line: 56, column: 123, offset: 2216 }
+                      start: { line: 56, column: 3, offset: 2166 },
+                      end: { line: 56, column: 123, offset: 2286 }
                     }
                   },
                   {
@@ -5312,56 +12677,56 @@ export default [
                             type: 'inlineCode',
                             value: 'FilterExpression',
                             position: {
-                              start: { line: 57, column: 5, offset: 2221 },
-                              end: { line: 57, column: 23, offset: 2239 }
+                              start: { line: 57, column: 5, offset: 2291 },
+                              end: { line: 57, column: 23, offset: 2309 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - filter queried results by this expression, e.g. ',
                             position: {
-                              start: { line: 57, column: 23, offset: 2239 },
-                              end: { line: 57, column: 74, offset: 2290 }
+                              start: { line: 57, column: 23, offset: 2309 },
+                              end: { line: 57, column: 74, offset: 2360 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'fieldA >= :someValue',
                             position: {
-                              start: { line: 57, column: 74, offset: 2290 },
-                              end: { line: 57, column: 96, offset: 2312 }
+                              start: { line: 57, column: 74, offset: 2360 },
+                              end: { line: 57, column: 96, offset: 2382 }
                             }
                           },
                           {
                             type: 'text',
                             value: '.',
                             position: {
-                              start: { line: 57, column: 96, offset: 2312 },
-                              end: { line: 57, column: 97, offset: 2313 }
+                              start: { line: 57, column: 96, offset: 2382 },
+                              end: { line: 57, column: 97, offset: 2383 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 57, column: 5, offset: 2221 },
-                          end: { line: 57, column: 97, offset: 2313 }
+                          start: { line: 57, column: 5, offset: 2291 },
+                          end: { line: 57, column: 97, offset: 2383 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 57, column: 3, offset: 2219 },
-                      end: { line: 57, column: 97, offset: 2313 }
+                      start: { line: 57, column: 3, offset: 2289 },
+                      end: { line: 57, column: 97, offset: 2383 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 53, column: 3, offset: 1774 },
-                  end: { line: 57, column: 97, offset: 2313 }
+                  start: { line: 53, column: 3, offset: 1844 },
+                  end: { line: 57, column: 97, offset: 2383 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 57, column: 97, offset: 2313 }
+              end: { line: 57, column: 97, offset: 2383 }
             }
           }
         }
@@ -5883,11 +13248,11 @@ export default [
         docs: '```coffeescript [specscript]\n' +
           'type JSONObject = Object<[key string]: string|number|binary|Array|Object>\n' +
           'type DynamoDBJSONObject = Object<\n' +
-          '  { S: string }\n' +
-          '  |{ N: number }\n' +
-          '  |{ B: Buffer }\n' +
-          '  |{ L: Array<DynamoDBJSONObject> }\n' +
-          '  |{ M: Object<DynamoDBJSONObject> }\n' +
+          '  [key string]: { S: string }\n' +
+          '                |{ N: number }\n' +
+          '                |{ B: Buffer }\n' +
+          '                |{ L: Array<DynamoDBJSONObject> }\n' +
+          '                |{ M: Object<DynamoDBJSONObject> }\n' +
           '>\n' +
           '\n' +
           'index.queryItemsIterator(\n' +
@@ -5966,11 +13331,11 @@ export default [
                 meta: '[specscript]',
                 value: 'type JSONObject = Object<[key string]: string|number|binary|Array|Object>\n' +
                   'type DynamoDBJSONObject = Object<\n' +
-                  '  { S: string }\n' +
-                  '  |{ N: number }\n' +
-                  '  |{ B: Buffer }\n' +
-                  '  |{ L: Array<DynamoDBJSONObject> }\n' +
-                  '  |{ M: Object<DynamoDBJSONObject> }\n' +
+                  '  [key string]: { S: string }\n' +
+                  '                |{ N: number }\n' +
+                  '                |{ B: Buffer }\n' +
+                  '                |{ L: Array<DynamoDBJSONObject> }\n' +
+                  '                |{ M: Object<DynamoDBJSONObject> }\n' +
                   '>\n' +
                   '\n' +
                   'index.queryItemsIterator(\n' +
@@ -5986,7 +13351,7 @@ export default [
                   ') -> AsyncIterator<DynamoDBJSONObject>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 22, column: 4, offset: 620 }
+                  end: { line: 22, column: 4, offset: 690 }
                 }
               },
               {
@@ -5996,30 +13361,30 @@ export default [
                     type: 'text',
                     value: 'Get an ',
                     position: {
-                      start: { line: 24, column: 1, offset: 622 },
-                      end: { line: 24, column: 8, offset: 629 }
+                      start: { line: 24, column: 1, offset: 692 },
+                      end: { line: 24, column: 8, offset: 699 }
                     }
                   },
                   {
                     type: 'inlineCode',
                     value: 'AsyncIterator',
                     position: {
-                      start: { line: 24, column: 8, offset: 629 },
-                      end: { line: 24, column: 23, offset: 644 }
+                      start: { line: 24, column: 8, offset: 699 },
+                      end: { line: 24, column: 23, offset: 714 }
                     }
                   },
                   {
                     type: 'text',
                     value: ' of all items represented by a query on a DynamoDB Global Secondary Index (GSI) in DynamoDB JSON format.',
                     position: {
-                      start: { line: 24, column: 23, offset: 644 },
-                      end: { line: 24, column: 127, offset: 748 }
+                      start: { line: 24, column: 23, offset: 714 },
+                      end: { line: 24, column: 127, offset: 818 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 24, column: 1, offset: 622 },
-                  end: { line: 24, column: 127, offset: 748 }
+                  start: { line: 24, column: 1, offset: 692 },
+                  end: { line: 24, column: 127, offset: 818 }
                 }
               },
               {
@@ -6029,24 +13394,24 @@ export default [
                     type: 'text',
                     value: "The key condition expression is a SQL-like query language comprised of the table's hashKey and sortKey, e.g. ",
                     position: {
-                      start: { line: 26, column: 1, offset: 750 },
-                      end: { line: 26, column: 110, offset: 859 }
+                      start: { line: 26, column: 1, offset: 820 },
+                      end: { line: 26, column: 110, offset: 929 }
                     }
                   },
                   {
                     type: 'inlineCode',
                     value: 'myHashKey = :a AND mySortKey < :b',
                     position: {
-                      start: { line: 26, column: 110, offset: 859 },
-                      end: { line: 26, column: 145, offset: 894 }
+                      start: { line: 26, column: 110, offset: 929 },
+                      end: { line: 26, column: 145, offset: 964 }
                     }
                   },
                   {
                     type: 'text',
                     value: '. Read more about ',
                     position: {
-                      start: { line: 26, column: 145, offset: 894 },
-                      end: { line: 26, column: 163, offset: 912 }
+                      start: { line: 26, column: 145, offset: 964 },
+                      end: { line: 26, column: 163, offset: 982 }
                     }
                   },
                   {
@@ -6058,28 +13423,28 @@ export default [
                         type: 'text',
                         value: 'key condition expressions',
                         position: {
-                          start: { line: 26, column: 164, offset: 913 },
-                          end: { line: 26, column: 189, offset: 938 }
+                          start: { line: 26, column: 164, offset: 983 },
+                          end: { line: 26, column: 189, offset: 1008 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 26, column: 163, offset: 912 },
-                      end: { line: 26, column: 291, offset: 1040 }
+                      start: { line: 26, column: 163, offset: 982 },
+                      end: { line: 26, column: 291, offset: 1110 }
                     }
                   },
                   {
                     type: 'text',
                     value: '.',
                     position: {
-                      start: { line: 26, column: 291, offset: 1040 },
-                      end: { line: 26, column: 292, offset: 1041 }
+                      start: { line: 26, column: 291, offset: 1110 },
+                      end: { line: 26, column: 292, offset: 1111 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 26, column: 1, offset: 750 },
-                  end: { line: 26, column: 292, offset: 1041 }
+                  start: { line: 26, column: 1, offset: 820 },
+                  end: { line: 26, column: 292, offset: 1111 }
                 }
               },
               {
@@ -6101,8 +13466,8 @@ export default [
                   '  // ...\n' +
                   '}',
                 position: {
-                  start: { line: 28, column: 1, offset: 1043 },
-                  end: { line: 43, column: 4, offset: 1469 }
+                  start: { line: 28, column: 1, offset: 1113 },
+                  end: { line: 43, column: 4, offset: 1539 }
                 }
               },
               {
@@ -6112,14 +13477,14 @@ export default [
                     type: 'text',
                     value: 'Options:',
                     position: {
-                      start: { line: 45, column: 1, offset: 1471 },
-                      end: { line: 45, column: 9, offset: 1479 }
+                      start: { line: 45, column: 1, offset: 1541 },
+                      end: { line: 45, column: 9, offset: 1549 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 45, column: 1, offset: 1471 },
-                  end: { line: 45, column: 9, offset: 1479 }
+                  start: { line: 45, column: 1, offset: 1541 },
+                  end: { line: 45, column: 9, offset: 1549 }
                 }
               },
               {
@@ -6140,44 +13505,44 @@ export default [
                             type: 'inlineCode',
                             value: 'BatchLimit',
                             position: {
-                              start: { line: 46, column: 5, offset: 1484 },
-                              end: { line: 46, column: 17, offset: 1496 }
+                              start: { line: 46, column: 5, offset: 1554 },
+                              end: { line: 46, column: 17, offset: 1566 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - Max number of items to retrieve per ',
                             position: {
-                              start: { line: 46, column: 17, offset: 1496 },
-                              end: { line: 46, column: 56, offset: 1535 }
+                              start: { line: 46, column: 17, offset: 1566 },
+                              end: { line: 46, column: 56, offset: 1605 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'query',
                             position: {
-                              start: { line: 46, column: 56, offset: 1535 },
-                              end: { line: 46, column: 63, offset: 1542 }
+                              start: { line: 46, column: 56, offset: 1605 },
+                              end: { line: 46, column: 63, offset: 1612 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' call.',
                             position: {
-                              start: { line: 46, column: 63, offset: 1542 },
-                              end: { line: 46, column: 69, offset: 1548 }
+                              start: { line: 46, column: 63, offset: 1612 },
+                              end: { line: 46, column: 69, offset: 1618 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 46, column: 5, offset: 1484 },
-                          end: { line: 46, column: 69, offset: 1548 }
+                          start: { line: 46, column: 5, offset: 1554 },
+                          end: { line: 46, column: 69, offset: 1618 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 46, column: 3, offset: 1482 },
-                      end: { line: 46, column: 69, offset: 1548 }
+                      start: { line: 46, column: 3, offset: 1552 },
+                      end: { line: 46, column: 69, offset: 1618 }
                     }
                   },
                   {
@@ -6192,28 +13557,28 @@ export default [
                             type: 'inlineCode',
                             value: 'Limit',
                             position: {
-                              start: { line: 47, column: 5, offset: 1553 },
-                              end: { line: 47, column: 12, offset: 1560 }
+                              start: { line: 47, column: 5, offset: 1623 },
+                              end: { line: 47, column: 12, offset: 1630 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - Maximum number of items (hard limited by the total size of the response).',
                             position: {
-                              start: { line: 47, column: 12, offset: 1560 },
-                              end: { line: 47, column: 88, offset: 1636 }
+                              start: { line: 47, column: 12, offset: 1630 },
+                              end: { line: 47, column: 88, offset: 1706 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 47, column: 5, offset: 1553 },
-                          end: { line: 47, column: 88, offset: 1636 }
+                          start: { line: 47, column: 5, offset: 1623 },
+                          end: { line: 47, column: 88, offset: 1706 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 47, column: 3, offset: 1551 },
-                      end: { line: 47, column: 88, offset: 1636 }
+                      start: { line: 47, column: 3, offset: 1621 },
+                      end: { line: 47, column: 88, offset: 1706 }
                     }
                   },
                   {
@@ -6228,76 +13593,76 @@ export default [
                             type: 'inlineCode',
                             value: 'ScanIndexForward',
                             position: {
-                              start: { line: 48, column: 5, offset: 1641 },
-                              end: { line: 48, column: 23, offset: 1659 }
+                              start: { line: 48, column: 5, offset: 1711 },
+                              end: { line: 48, column: 23, offset: 1729 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - if ',
                             position: {
-                              start: { line: 48, column: 23, offset: 1659 },
-                              end: { line: 48, column: 29, offset: 1665 }
+                              start: { line: 48, column: 23, offset: 1729 },
+                              end: { line: 48, column: 29, offset: 1735 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'true',
                             position: {
-                              start: { line: 48, column: 29, offset: 1665 },
-                              end: { line: 48, column: 35, offset: 1671 }
+                              start: { line: 48, column: 29, offset: 1735 },
+                              end: { line: 48, column: 35, offset: 1741 }
                             }
                           },
                           {
                             type: 'text',
                             value: ', returned items are sorted in ascending order. If ',
                             position: {
-                              start: { line: 48, column: 35, offset: 1671 },
-                              end: { line: 48, column: 86, offset: 1722 }
+                              start: { line: 48, column: 35, offset: 1741 },
+                              end: { line: 48, column: 86, offset: 1792 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'false',
                             position: {
-                              start: { line: 48, column: 86, offset: 1722 },
-                              end: { line: 48, column: 93, offset: 1729 }
+                              start: { line: 48, column: 86, offset: 1792 },
+                              end: { line: 48, column: 93, offset: 1799 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' returned items are sorted in descending order. Defaults to ',
                             position: {
-                              start: { line: 48, column: 93, offset: 1729 },
-                              end: { line: 48, column: 153, offset: 1789 }
+                              start: { line: 48, column: 93, offset: 1799 },
+                              end: { line: 48, column: 153, offset: 1859 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'true',
                             position: {
-                              start: { line: 48, column: 153, offset: 1789 },
-                              end: { line: 48, column: 159, offset: 1795 }
+                              start: { line: 48, column: 153, offset: 1859 },
+                              end: { line: 48, column: 159, offset: 1865 }
                             }
                           },
                           {
                             type: 'text',
                             value: '.',
                             position: {
-                              start: { line: 48, column: 159, offset: 1795 },
-                              end: { line: 48, column: 160, offset: 1796 }
+                              start: { line: 48, column: 159, offset: 1865 },
+                              end: { line: 48, column: 160, offset: 1866 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 48, column: 5, offset: 1641 },
-                          end: { line: 48, column: 160, offset: 1796 }
+                          start: { line: 48, column: 5, offset: 1711 },
+                          end: { line: 48, column: 160, offset: 1866 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 48, column: 3, offset: 1639 },
-                      end: { line: 48, column: 160, offset: 1796 }
+                      start: { line: 48, column: 3, offset: 1709 },
+                      end: { line: 48, column: 160, offset: 1866 }
                     }
                   },
                   {
@@ -6312,44 +13677,44 @@ export default [
                             type: 'inlineCode',
                             value: 'ProjectionExpression',
                             position: {
-                              start: { line: 49, column: 5, offset: 1801 },
-                              end: { line: 49, column: 27, offset: 1823 }
+                              start: { line: 49, column: 5, offset: 1871 },
+                              end: { line: 49, column: 27, offset: 1893 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - list of attributes to be returned for each item in query result, e.g. ',
                             position: {
-                              start: { line: 49, column: 27, offset: 1823 },
-                              end: { line: 49, column: 100, offset: 1896 }
+                              start: { line: 49, column: 27, offset: 1893 },
+                              end: { line: 49, column: 100, offset: 1966 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'fieldA,fieldB,fieldC',
                             position: {
-                              start: { line: 49, column: 100, offset: 1896 },
-                              end: { line: 49, column: 122, offset: 1918 }
+                              start: { line: 49, column: 100, offset: 1966 },
+                              end: { line: 49, column: 122, offset: 1988 }
                             }
                           },
                           {
                             type: 'text',
                             value: '.',
                             position: {
-                              start: { line: 49, column: 122, offset: 1918 },
-                              end: { line: 49, column: 123, offset: 1919 }
+                              start: { line: 49, column: 122, offset: 1988 },
+                              end: { line: 49, column: 123, offset: 1989 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 49, column: 5, offset: 1801 },
-                          end: { line: 49, column: 123, offset: 1919 }
+                          start: { line: 49, column: 5, offset: 1871 },
+                          end: { line: 49, column: 123, offset: 1989 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 49, column: 3, offset: 1799 },
-                      end: { line: 49, column: 123, offset: 1919 }
+                      start: { line: 49, column: 3, offset: 1869 },
+                      end: { line: 49, column: 123, offset: 1989 }
                     }
                   },
                   {
@@ -6364,56 +13729,56 @@ export default [
                             type: 'inlineCode',
                             value: 'FilterExpression',
                             position: {
-                              start: { line: 50, column: 5, offset: 1924 },
-                              end: { line: 50, column: 23, offset: 1942 }
+                              start: { line: 50, column: 5, offset: 1994 },
+                              end: { line: 50, column: 23, offset: 2012 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - filter queried results by this expression, e.g. ',
                             position: {
-                              start: { line: 50, column: 23, offset: 1942 },
-                              end: { line: 50, column: 74, offset: 1993 }
+                              start: { line: 50, column: 23, offset: 2012 },
+                              end: { line: 50, column: 74, offset: 2063 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'fieldA >= :someValue',
                             position: {
-                              start: { line: 50, column: 74, offset: 1993 },
-                              end: { line: 50, column: 96, offset: 2015 }
+                              start: { line: 50, column: 74, offset: 2063 },
+                              end: { line: 50, column: 96, offset: 2085 }
                             }
                           },
                           {
                             type: 'text',
                             value: '.',
                             position: {
-                              start: { line: 50, column: 96, offset: 2015 },
-                              end: { line: 50, column: 97, offset: 2016 }
+                              start: { line: 50, column: 96, offset: 2085 },
+                              end: { line: 50, column: 97, offset: 2086 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 50, column: 5, offset: 1924 },
-                          end: { line: 50, column: 97, offset: 2016 }
+                          start: { line: 50, column: 5, offset: 1994 },
+                          end: { line: 50, column: 97, offset: 2086 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 50, column: 3, offset: 1922 },
-                      end: { line: 50, column: 97, offset: 2016 }
+                      start: { line: 50, column: 3, offset: 1992 },
+                      end: { line: 50, column: 97, offset: 2086 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 46, column: 3, offset: 1482 },
-                  end: { line: 50, column: 97, offset: 2016 }
+                  start: { line: 46, column: 3, offset: 1552 },
+                  end: { line: 50, column: 97, offset: 2086 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 50, column: 97, offset: 2016 }
+              end: { line: 50, column: 97, offset: 2086 }
             }
           }
         }
@@ -6439,7 +13804,7 @@ export default [
           '\n' +
           'Get an `AsyncIterator` of all items represented by a query on a DynamoDB Table in JSON format.\n' +
           '\n' +
-          "The key condition expression is a SQL-like query language comprised of the table's hashKey and sortKey, e.g. `myHashKey = :a AND mySortKey <!-- < :b`. Read more about [key condition expressions](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.KeyConditionExpressions.html).\n" +
+          "The key condition expression is a SQL-like query language comprised of the table's hashKey and sortKey, e.g. `myHashKey = :a AND mySortKey < :b`. Read more about [key condition expressions](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.KeyConditionExpressions.html).\n" +
           '\n' +
           '```javascript\n' +
           '// myIndex has hashKey type and sortKey time\n' +
@@ -6563,18 +13928,18 @@ export default [
                   },
                   {
                     type: 'inlineCode',
-                    value: 'myHashKey = :a AND mySortKey <!-- < :b',
+                    value: 'myHashKey = :a AND mySortKey < :b',
                     position: {
                       start: { line: 20, column: 110, offset: 712 },
-                      end: { line: 20, column: 150, offset: 752 }
+                      end: { line: 20, column: 145, offset: 747 }
                     }
                   },
                   {
                     type: 'text',
                     value: '. Read more about ',
                     position: {
-                      start: { line: 20, column: 150, offset: 752 },
-                      end: { line: 20, column: 168, offset: 770 }
+                      start: { line: 20, column: 145, offset: 747 },
+                      end: { line: 20, column: 163, offset: 765 }
                     }
                   },
                   {
@@ -6586,28 +13951,28 @@ export default [
                         type: 'text',
                         value: 'key condition expressions',
                         position: {
-                          start: { line: 20, column: 169, offset: 771 },
-                          end: { line: 20, column: 194, offset: 796 }
+                          start: { line: 20, column: 164, offset: 766 },
+                          end: { line: 20, column: 189, offset: 791 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 20, column: 168, offset: 770 },
-                      end: { line: 20, column: 296, offset: 898 }
+                      start: { line: 20, column: 163, offset: 765 },
+                      end: { line: 20, column: 291, offset: 893 }
                     }
                   },
                   {
                     type: 'text',
                     value: '.',
                     position: {
-                      start: { line: 20, column: 296, offset: 898 },
-                      end: { line: 20, column: 297, offset: 899 }
+                      start: { line: 20, column: 291, offset: 893 },
+                      end: { line: 20, column: 292, offset: 894 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 20, column: 1, offset: 603 },
-                  end: { line: 20, column: 297, offset: 899 }
+                  end: { line: 20, column: 292, offset: 894 }
                 }
               },
               {
@@ -6629,8 +13994,8 @@ export default [
                   '  // ...\n' +
                   '}',
                 position: {
-                  start: { line: 22, column: 1, offset: 901 },
-                  end: { line: 37, column: 4, offset: 1285 }
+                  start: { line: 22, column: 1, offset: 896 },
+                  end: { line: 37, column: 4, offset: 1280 }
                 }
               },
               {
@@ -6640,14 +14005,14 @@ export default [
                     type: 'text',
                     value: 'Options:',
                     position: {
-                      start: { line: 39, column: 1, offset: 1287 },
-                      end: { line: 39, column: 9, offset: 1295 }
+                      start: { line: 39, column: 1, offset: 1282 },
+                      end: { line: 39, column: 9, offset: 1290 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 39, column: 1, offset: 1287 },
-                  end: { line: 39, column: 9, offset: 1295 }
+                  start: { line: 39, column: 1, offset: 1282 },
+                  end: { line: 39, column: 9, offset: 1290 }
                 }
               },
               {
@@ -6668,44 +14033,44 @@ export default [
                             type: 'inlineCode',
                             value: 'BatchLimit',
                             position: {
-                              start: { line: 40, column: 5, offset: 1300 },
-                              end: { line: 40, column: 17, offset: 1312 }
+                              start: { line: 40, column: 5, offset: 1295 },
+                              end: { line: 40, column: 17, offset: 1307 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - Max number of items to retrieve per ',
                             position: {
-                              start: { line: 40, column: 17, offset: 1312 },
-                              end: { line: 40, column: 56, offset: 1351 }
+                              start: { line: 40, column: 17, offset: 1307 },
+                              end: { line: 40, column: 56, offset: 1346 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'query',
                             position: {
-                              start: { line: 40, column: 56, offset: 1351 },
-                              end: { line: 40, column: 63, offset: 1358 }
+                              start: { line: 40, column: 56, offset: 1346 },
+                              end: { line: 40, column: 63, offset: 1353 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' call.',
                             position: {
-                              start: { line: 40, column: 63, offset: 1358 },
-                              end: { line: 40, column: 69, offset: 1364 }
+                              start: { line: 40, column: 63, offset: 1353 },
+                              end: { line: 40, column: 69, offset: 1359 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 40, column: 5, offset: 1300 },
-                          end: { line: 40, column: 69, offset: 1364 }
+                          start: { line: 40, column: 5, offset: 1295 },
+                          end: { line: 40, column: 69, offset: 1359 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 40, column: 3, offset: 1298 },
-                      end: { line: 40, column: 69, offset: 1364 }
+                      start: { line: 40, column: 3, offset: 1293 },
+                      end: { line: 40, column: 69, offset: 1359 }
                     }
                   },
                   {
@@ -6720,28 +14085,28 @@ export default [
                             type: 'inlineCode',
                             value: 'Limit',
                             position: {
-                              start: { line: 41, column: 5, offset: 1369 },
-                              end: { line: 41, column: 12, offset: 1376 }
+                              start: { line: 41, column: 5, offset: 1364 },
+                              end: { line: 41, column: 12, offset: 1371 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - Maximum number of items (hard limited by the total size of the response).',
                             position: {
-                              start: { line: 41, column: 12, offset: 1376 },
-                              end: { line: 41, column: 88, offset: 1452 }
+                              start: { line: 41, column: 12, offset: 1371 },
+                              end: { line: 41, column: 88, offset: 1447 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 41, column: 5, offset: 1369 },
-                          end: { line: 41, column: 88, offset: 1452 }
+                          start: { line: 41, column: 5, offset: 1364 },
+                          end: { line: 41, column: 88, offset: 1447 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 41, column: 3, offset: 1367 },
-                      end: { line: 41, column: 88, offset: 1452 }
+                      start: { line: 41, column: 3, offset: 1362 },
+                      end: { line: 41, column: 88, offset: 1447 }
                     }
                   },
                   {
@@ -6756,76 +14121,76 @@ export default [
                             type: 'inlineCode',
                             value: 'ScanIndexForward',
                             position: {
-                              start: { line: 42, column: 5, offset: 1457 },
-                              end: { line: 42, column: 23, offset: 1475 }
+                              start: { line: 42, column: 5, offset: 1452 },
+                              end: { line: 42, column: 23, offset: 1470 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - if ',
                             position: {
-                              start: { line: 42, column: 23, offset: 1475 },
-                              end: { line: 42, column: 29, offset: 1481 }
+                              start: { line: 42, column: 23, offset: 1470 },
+                              end: { line: 42, column: 29, offset: 1476 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'true',
                             position: {
-                              start: { line: 42, column: 29, offset: 1481 },
-                              end: { line: 42, column: 35, offset: 1487 }
+                              start: { line: 42, column: 29, offset: 1476 },
+                              end: { line: 42, column: 35, offset: 1482 }
                             }
                           },
                           {
                             type: 'text',
                             value: ', returned items are sorted in ascending order. If ',
                             position: {
-                              start: { line: 42, column: 35, offset: 1487 },
-                              end: { line: 42, column: 86, offset: 1538 }
+                              start: { line: 42, column: 35, offset: 1482 },
+                              end: { line: 42, column: 86, offset: 1533 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'false',
                             position: {
-                              start: { line: 42, column: 86, offset: 1538 },
-                              end: { line: 42, column: 93, offset: 1545 }
+                              start: { line: 42, column: 86, offset: 1533 },
+                              end: { line: 42, column: 93, offset: 1540 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' returned items are sorted in descending order. Defaults to ',
                             position: {
-                              start: { line: 42, column: 93, offset: 1545 },
-                              end: { line: 42, column: 153, offset: 1605 }
+                              start: { line: 42, column: 93, offset: 1540 },
+                              end: { line: 42, column: 153, offset: 1600 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'true',
                             position: {
-                              start: { line: 42, column: 153, offset: 1605 },
-                              end: { line: 42, column: 159, offset: 1611 }
+                              start: { line: 42, column: 153, offset: 1600 },
+                              end: { line: 42, column: 159, offset: 1606 }
                             }
                           },
                           {
                             type: 'text',
                             value: '.',
                             position: {
-                              start: { line: 42, column: 159, offset: 1611 },
-                              end: { line: 42, column: 160, offset: 1612 }
+                              start: { line: 42, column: 159, offset: 1606 },
+                              end: { line: 42, column: 160, offset: 1607 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 42, column: 5, offset: 1457 },
-                          end: { line: 42, column: 160, offset: 1612 }
+                          start: { line: 42, column: 5, offset: 1452 },
+                          end: { line: 42, column: 160, offset: 1607 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 42, column: 3, offset: 1455 },
-                      end: { line: 42, column: 160, offset: 1612 }
+                      start: { line: 42, column: 3, offset: 1450 },
+                      end: { line: 42, column: 160, offset: 1607 }
                     }
                   },
                   {
@@ -6840,44 +14205,44 @@ export default [
                             type: 'inlineCode',
                             value: 'ProjectionExpression',
                             position: {
-                              start: { line: 43, column: 5, offset: 1617 },
-                              end: { line: 43, column: 27, offset: 1639 }
+                              start: { line: 43, column: 5, offset: 1612 },
+                              end: { line: 43, column: 27, offset: 1634 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - list of attributes to be returned for each item in query result, e.g. ',
                             position: {
-                              start: { line: 43, column: 27, offset: 1639 },
-                              end: { line: 43, column: 100, offset: 1712 }
+                              start: { line: 43, column: 27, offset: 1634 },
+                              end: { line: 43, column: 100, offset: 1707 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'fieldA,fieldB,fieldC',
                             position: {
-                              start: { line: 43, column: 100, offset: 1712 },
-                              end: { line: 43, column: 122, offset: 1734 }
+                              start: { line: 43, column: 100, offset: 1707 },
+                              end: { line: 43, column: 122, offset: 1729 }
                             }
                           },
                           {
                             type: 'text',
                             value: '.',
                             position: {
-                              start: { line: 43, column: 122, offset: 1734 },
-                              end: { line: 43, column: 123, offset: 1735 }
+                              start: { line: 43, column: 122, offset: 1729 },
+                              end: { line: 43, column: 123, offset: 1730 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 43, column: 5, offset: 1617 },
-                          end: { line: 43, column: 123, offset: 1735 }
+                          start: { line: 43, column: 5, offset: 1612 },
+                          end: { line: 43, column: 123, offset: 1730 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 43, column: 3, offset: 1615 },
-                      end: { line: 43, column: 123, offset: 1735 }
+                      start: { line: 43, column: 3, offset: 1610 },
+                      end: { line: 43, column: 123, offset: 1730 }
                     }
                   },
                   {
@@ -6892,56 +14257,56 @@ export default [
                             type: 'inlineCode',
                             value: 'FilterExpression',
                             position: {
-                              start: { line: 44, column: 5, offset: 1740 },
-                              end: { line: 44, column: 23, offset: 1758 }
+                              start: { line: 44, column: 5, offset: 1735 },
+                              end: { line: 44, column: 23, offset: 1753 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - filter queried results by this expression, e.g. ',
                             position: {
-                              start: { line: 44, column: 23, offset: 1758 },
-                              end: { line: 44, column: 74, offset: 1809 }
+                              start: { line: 44, column: 23, offset: 1753 },
+                              end: { line: 44, column: 74, offset: 1804 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'fieldA >= :someValue',
                             position: {
-                              start: { line: 44, column: 74, offset: 1809 },
-                              end: { line: 44, column: 96, offset: 1831 }
+                              start: { line: 44, column: 74, offset: 1804 },
+                              end: { line: 44, column: 96, offset: 1826 }
                             }
                           },
                           {
                             type: 'text',
                             value: '.',
                             position: {
-                              start: { line: 44, column: 96, offset: 1831 },
-                              end: { line: 44, column: 97, offset: 1832 }
+                              start: { line: 44, column: 96, offset: 1826 },
+                              end: { line: 44, column: 97, offset: 1827 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 44, column: 5, offset: 1740 },
-                          end: { line: 44, column: 97, offset: 1832 }
+                          start: { line: 44, column: 5, offset: 1735 },
+                          end: { line: 44, column: 97, offset: 1827 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 44, column: 3, offset: 1738 },
-                      end: { line: 44, column: 97, offset: 1832 }
+                      start: { line: 44, column: 3, offset: 1733 },
+                      end: { line: 44, column: 97, offset: 1827 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 40, column: 3, offset: 1298 },
-                  end: { line: 44, column: 97, offset: 1832 }
+                  start: { line: 40, column: 3, offset: 1293 },
+                  end: { line: 44, column: 97, offset: 1827 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 44, column: 97, offset: 1832 }
+              end: { line: 44, column: 97, offset: 1827 }
             }
           }
         }
@@ -7530,11 +14895,11 @@ export default [
         name: '[Symbol.asyncIterator]',
         docs: '```coffeescript [specscript]\n' +
           'type DynamoDBJSONObject = Object<\n' +
-          '  { S: string }\n' +
-          '  |{ N: number }\n' +
-          '  |{ B: Buffer }\n' +
-          '  |{ L: Array<DynamoDBJSONObject> }\n' +
-          '  |{ M: Object<DynamoDBJSONObject> }\n' +
+          '  [key string]: { S: string }\n' +
+          '                |{ N: number }\n' +
+          '                |{ B: Buffer }\n' +
+          '                |{ L: Array<DynamoDBJSONObject> }\n' +
+          '                |{ M: Object<DynamoDBJSONObject> }\n' +
           '>\n' +
           '\n' +
           'stream[Symbol.asyncIterator]() -> asyncIterator AsyncIterator<Record {\n' +
@@ -7641,11 +15006,11 @@ export default [
                 lang: 'coffeescript',
                 meta: '[specscript]',
                 value: 'type DynamoDBJSONObject = Object<\n' +
-                  '  { S: string }\n' +
-                  '  |{ N: number }\n' +
-                  '  |{ B: Buffer }\n' +
-                  '  |{ L: Array<DynamoDBJSONObject> }\n' +
-                  '  |{ M: Object<DynamoDBJSONObject> }\n' +
+                  '  [key string]: { S: string }\n' +
+                  '                |{ N: number }\n' +
+                  '                |{ B: Buffer }\n' +
+                  '                |{ L: Array<DynamoDBJSONObject> }\n' +
+                  '                |{ M: Object<DynamoDBJSONObject> }\n' +
                   '>\n' +
                   '\n' +
                   'stream[Symbol.asyncIterator]() -> asyncIterator AsyncIterator<Record {\n' +
@@ -7664,7 +15029,7 @@ export default [
                   '}>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 24, column: 4, offset: 607 }
+                  end: { line: 24, column: 4, offset: 677 }
                 }
               },
               {
@@ -7674,8 +15039,8 @@ export default [
                     type: 'text',
                     value: 'Implements the ',
                     position: {
-                      start: { line: 26, column: 1, offset: 609 },
-                      end: { line: 26, column: 16, offset: 624 }
+                      start: { line: 26, column: 1, offset: 679 },
+                      end: { line: 26, column: 16, offset: 694 }
                     }
                   },
                   {
@@ -7687,28 +15052,28 @@ export default [
                         type: 'text',
                         value: 'async iterable protocol',
                         position: {
-                          start: { line: 26, column: 17, offset: 625 },
-                          end: { line: 26, column: 40, offset: 648 }
+                          start: { line: 26, column: 17, offset: 695 },
+                          end: { line: 26, column: 40, offset: 718 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 26, column: 16, offset: 624 },
-                      end: { line: 26, column: 176, offset: 784 }
+                      start: { line: 26, column: 16, offset: 694 },
+                      end: { line: 26, column: 176, offset: 854 }
                     }
                   },
                   {
                     type: 'text',
                     value: '. Allows for consumption of the DynamoDB stream as an async iterable.',
                     position: {
-                      start: { line: 26, column: 176, offset: 784 },
-                      end: { line: 26, column: 245, offset: 853 }
+                      start: { line: 26, column: 176, offset: 854 },
+                      end: { line: 26, column: 245, offset: 923 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 26, column: 1, offset: 609 },
-                  end: { line: 26, column: 245, offset: 853 }
+                  start: { line: 26, column: 1, offset: 679 },
+                  end: { line: 26, column: 245, offset: 923 }
                 }
               },
               {
@@ -7741,8 +15106,8 @@ export default [
                   "  // { eventID: '...', eventName: '...', dynamodb: {...}, ... }\n" +
                   '}',
                 position: {
-                  start: { line: 28, column: 1, offset: 855 },
-                  end: { line: 54, column: 4, offset: 1457 }
+                  start: { line: 28, column: 1, offset: 925 },
+                  end: { line: 54, column: 4, offset: 1527 }
                 }
               },
               {
@@ -7752,14 +15117,14 @@ export default [
                     type: 'text',
                     value: 'Same DynamoDBStream instance [Symbol.asyncIterator] interface may be invoked to produce multiple streams of the same records',
                     position: {
-                      start: { line: 56, column: 1, offset: 1459 },
-                      end: { line: 56, column: 125, offset: 1583 }
+                      start: { line: 56, column: 1, offset: 1529 },
+                      end: { line: 56, column: 125, offset: 1653 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 56, column: 1, offset: 1459 },
-                  end: { line: 56, column: 125, offset: 1583 }
+                  start: { line: 56, column: 1, offset: 1529 },
+                  end: { line: 56, column: 125, offset: 1653 }
                 }
               },
               {
@@ -7786,14 +15151,14 @@ export default [
                   '  }\n' +
                   '})()',
                 position: {
-                  start: { line: 58, column: 1, offset: 1585 },
-                  end: { line: 78, column: 4, offset: 2264 }
+                  start: { line: 58, column: 1, offset: 1655 },
+                  end: { line: 78, column: 4, offset: 2334 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 78, column: 4, offset: 2264 }
+              end: { line: 78, column: 4, offset: 2334 }
             }
           }
         }
@@ -8479,11 +15844,11 @@ export default [
         name: 'putItem',
         docs: '```coffeescript [specscript]\n' +
           'type DynamoDBJSONObject = Object<\n' +
-          '  { S: string }\n' +
-          '  |{ N: number }\n' +
-          '  |{ B: Buffer }\n' +
-          '  |{ L: Array<DynamoDBJSONObject> }\n' +
-          '  |{ M: Object<DynamoDBJSONObject> }\n' +
+          '  [key string]: { S: string }\n' +
+          '                |{ N: number }\n' +
+          '                |{ B: Buffer }\n' +
+          '                |{ L: Array<DynamoDBJSONObject> }\n' +
+          '                |{ M: Object<DynamoDBJSONObject> }\n' +
           '>\n' +
           '\n' +
           'putItem(item DynamoDBJSONObject, options {\n' +
@@ -8544,11 +15909,11 @@ export default [
                 lang: 'coffeescript',
                 meta: '[specscript]',
                 value: 'type DynamoDBJSONObject = Object<\n' +
-                  '  { S: string }\n' +
-                  '  |{ N: number }\n' +
-                  '  |{ B: Buffer }\n' +
-                  '  |{ L: Array<DynamoDBJSONObject> }\n' +
-                  '  |{ M: Object<DynamoDBJSONObject> }\n' +
+                  '  [key string]: { S: string }\n' +
+                  '                |{ N: number }\n' +
+                  '                |{ B: Buffer }\n' +
+                  '                |{ L: Array<DynamoDBJSONObject> }\n' +
+                  '                |{ M: Object<DynamoDBJSONObject> }\n' +
                   '>\n' +
                   '\n' +
                   'putItem(item DynamoDBJSONObject, options {\n' +
@@ -8564,7 +15929,7 @@ export default [
                   '}>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 21, column: 4, offset: 487 }
+                  end: { line: 21, column: 4, offset: 557 }
                 }
               },
               {
@@ -8574,14 +15939,14 @@ export default [
                     type: 'text',
                     value: 'Write an item to a DynamoDB Table using DyanmoDB JSON.',
                     position: {
-                      start: { line: 23, column: 1, offset: 489 },
-                      end: { line: 23, column: 55, offset: 543 }
+                      start: { line: 23, column: 1, offset: 559 },
+                      end: { line: 23, column: 55, offset: 613 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 23, column: 1, offset: 489 },
-                  end: { line: 23, column: 55, offset: 543 }
+                  start: { line: 23, column: 1, offset: 559 },
+                  end: { line: 23, column: 55, offset: 613 }
                 }
               },
               {
@@ -8594,14 +15959,14 @@ export default [
                   '  age: { N: 32 },\n' +
                   '})',
                 position: {
-                  start: { line: 25, column: 1, offset: 545 },
-                  end: { line: 31, column: 4, offset: 650 }
+                  start: { line: 25, column: 1, offset: 615 },
+                  end: { line: 31, column: 4, offset: 720 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 31, column: 4, offset: 650 }
+              end: { line: 31, column: 4, offset: 720 }
             }
           },
           note: {
@@ -8809,11 +16174,11 @@ export default [
           '  [sortKey string]: { S: string }|{ N: number }|{ B: Buffer },\n' +
           '}\n' +
           'type DynamoDBJSONObject = Object<\n' +
-          '  { S: string }\n' +
-          '  |{ N: number }\n' +
-          '  |{ B: Buffer }\n' +
-          '  |{ L: Array<DynamoDBJSONObject> }\n' +
-          '  |{ M: Object<DynamoDBJSONObject> }\n' +
+          '  [key string]: { S: string }\n' +
+          '                |{ N: number }\n' +
+          '                |{ B: Buffer }\n' +
+          '                |{ L: Array<DynamoDBJSONObject> }\n' +
+          '                |{ M: Object<DynamoDBJSONObject> }\n' +
           '>\n' +
           '\n' +
           'getItem(key DynamoDBJSONKey) ->\n' +
@@ -8866,18 +16231,18 @@ export default [
                   '  [sortKey string]: { S: string }|{ N: number }|{ B: Buffer },\n' +
                   '}\n' +
                   'type DynamoDBJSONObject = Object<\n' +
-                  '  { S: string }\n' +
-                  '  |{ N: number }\n' +
-                  '  |{ B: Buffer }\n' +
-                  '  |{ L: Array<DynamoDBJSONObject> }\n' +
-                  '  |{ M: Object<DynamoDBJSONObject> }\n' +
+                  '  [key string]: { S: string }\n' +
+                  '                |{ N: number }\n' +
+                  '                |{ B: Buffer }\n' +
+                  '                |{ L: Array<DynamoDBJSONObject> }\n' +
+                  '                |{ M: Object<DynamoDBJSONObject> }\n' +
                   '>\n' +
                   '\n' +
                   'getItem(key DynamoDBJSONKey) ->\n' +
                   '  data Promise<{ Item: DynamoDBJSONObject }>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 16, column: 4, offset: 422 }
+                  end: { line: 16, column: 4, offset: 492 }
                 }
               },
               {
@@ -8887,14 +16252,14 @@ export default [
                     type: 'text',
                     value: 'Retrieve an item from a DynamoDB Table using DynamoDB JSON format.',
                     position: {
-                      start: { line: 18, column: 1, offset: 424 },
-                      end: { line: 18, column: 67, offset: 490 }
+                      start: { line: 18, column: 1, offset: 494 },
+                      end: { line: 18, column: 67, offset: 560 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 18, column: 1, offset: 424 },
-                  end: { line: 18, column: 67, offset: 490 }
+                  start: { line: 18, column: 1, offset: 494 },
+                  end: { line: 18, column: 67, offset: 560 }
                 }
               },
               {
@@ -8904,14 +16269,14 @@ export default [
                 value: "const res = await userTable.getItem({ id: { S: '1' } })\n" +
                   "console.log(res) // { Item: { id: { S: '1' }, name: { S: 'John' } } }",
                 position: {
-                  start: { line: 20, column: 1, offset: 492 },
-                  end: { line: 23, column: 4, offset: 635 }
+                  start: { line: 20, column: 1, offset: 562 },
+                  end: { line: 23, column: 4, offset: 705 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 23, column: 4, offset: 635 }
+              end: { line: 23, column: 4, offset: 705 }
             }
           },
           note: {
@@ -9102,11 +16467,11 @@ export default [
           '}\n' +
           '\n' +
           'type DynamoDBJSONObject = Object<\n' +
-          '  { S: string }\n' +
-          '  |{ N: number }\n' +
-          '  |{ B: Buffer }\n' +
-          '  |{ L: Array<DynamoDBJSONObject> }\n' +
-          '  |{ M: Object<DynamoDBJSONObject> }\n' +
+          '  [key string]: { S: string }\n' +
+          '                |{ N: number }\n' +
+          '                |{ B: Buffer }\n' +
+          '                |{ L: Array<DynamoDBJSONObject> }\n' +
+          '                |{ M: Object<DynamoDBJSONObject> }\n' +
           '>\n' +
           '\n' +
           'updateItem(\n' +
@@ -9171,11 +16536,11 @@ export default [
                   '}\n' +
                   '\n' +
                   'type DynamoDBJSONObject = Object<\n' +
-                  '  { S: string }\n' +
-                  '  |{ N: number }\n' +
-                  '  |{ B: Buffer }\n' +
-                  '  |{ L: Array<DynamoDBJSONObject> }\n' +
-                  '  |{ M: Object<DynamoDBJSONObject> }\n' +
+                  '  [key string]: { S: string }\n' +
+                  '                |{ N: number }\n' +
+                  '                |{ B: Buffer }\n' +
+                  '                |{ L: Array<DynamoDBJSONObject> }\n' +
+                  '                |{ M: Object<DynamoDBJSONObject> }\n' +
                   '>\n' +
                   '\n' +
                   'updateItem(\n' +
@@ -9190,7 +16555,7 @@ export default [
                   ') -> data Promise<{ Attributes: DynamoDBJSONObject }>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 25, column: 4, offset: 722 }
+                  end: { line: 25, column: 4, offset: 792 }
                 }
               },
               {
@@ -9200,14 +16565,14 @@ export default [
                     type: 'text',
                     value: 'Update an item in a DynamoDB Table using DynamoDB JSON format.',
                     position: {
-                      start: { line: 27, column: 1, offset: 724 },
-                      end: { line: 27, column: 63, offset: 786 }
+                      start: { line: 27, column: 1, offset: 794 },
+                      end: { line: 27, column: 63, offset: 856 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 27, column: 1, offset: 724 },
-                  end: { line: 27, column: 63, offset: 786 }
+                  start: { line: 27, column: 1, offset: 794 },
+                  end: { line: 27, column: 63, offset: 856 }
                 }
               },
               {
@@ -9220,14 +16585,14 @@ export default [
                   "  heightUnits: { S: 'cm' },\n" +
                   '})',
                 position: {
-                  start: { line: 29, column: 1, offset: 788 },
-                  end: { line: 35, column: 4, offset: 931 }
+                  start: { line: 29, column: 1, offset: 858 },
+                  end: { line: 35, column: 4, offset: 1001 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 35, column: 4, offset: 931 }
+              end: { line: 35, column: 4, offset: 1001 }
             }
           },
           note: {
@@ -9446,11 +16811,11 @@ export default [
           'type DynamoDBJSONIncrementObject = Object<{ N: number }>\n' +
           '\n' +
           'type DynamoDBJSONObject = Object<\n' +
-          '  { S: string }\n' +
-          '  |{ N: number }\n' +
-          '  |{ B: Buffer }\n' +
-          '  |{ L: Array<DynamoDBJSONObject> }\n' +
-          '  |{ M: Object<DynamoDBJSONObject> }\n' +
+          '  [key string]: { S: string }\n' +
+          '                |{ N: number }\n' +
+          '                |{ B: Buffer }\n' +
+          '                |{ L: Array<DynamoDBJSONObject> }\n' +
+          '                |{ M: Object<DynamoDBJSONObject> }\n' +
           '>\n' +
           '\n' +
           'incrementItem(\n' +
@@ -9512,11 +16877,11 @@ export default [
                   'type DynamoDBJSONIncrementObject = Object<{ N: number }>\n' +
                   '\n' +
                   'type DynamoDBJSONObject = Object<\n' +
-                  '  { S: string }\n' +
-                  '  |{ N: number }\n' +
-                  '  |{ B: Buffer }\n' +
-                  '  |{ L: Array<DynamoDBJSONObject> }\n' +
-                  '  |{ M: Object<DynamoDBJSONObject> }\n' +
+                  '  [key string]: { S: string }\n' +
+                  '                |{ N: number }\n' +
+                  '                |{ B: Buffer }\n' +
+                  '                |{ L: Array<DynamoDBJSONObject> }\n' +
+                  '                |{ M: Object<DynamoDBJSONObject> }\n' +
                   '>\n' +
                   '\n' +
                   'incrementItem(\n' +
@@ -9531,7 +16896,7 @@ export default [
                   ') -> data Promise<{ Attributes: DynamoDBJSONObject }>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 27, column: 4, offset: 801 }
+                  end: { line: 27, column: 4, offset: 871 }
                 }
               },
               {
@@ -9541,14 +16906,14 @@ export default [
                     type: 'text',
                     value: 'Increment the attributes of an item in a DynamoDB Table. Negative numbers will decrement the attribute of the item. Accepts DynamoDB JSON and JSON formats.',
                     position: {
-                      start: { line: 29, column: 1, offset: 803 },
-                      end: { line: 29, column: 156, offset: 958 }
+                      start: { line: 29, column: 1, offset: 873 },
+                      end: { line: 29, column: 156, offset: 1028 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 29, column: 1, offset: 803 },
-                  end: { line: 29, column: 156, offset: 958 }
+                  start: { line: 29, column: 1, offset: 873 },
+                  end: { line: 29, column: 156, offset: 1028 }
                 }
               },
               {
@@ -9557,14 +16922,14 @@ export default [
                 meta: null,
                 value: "await userTable.incrementItem({ id: { S: '1' } }, { age: { N: 1 } })",
                 position: {
-                  start: { line: 31, column: 1, offset: 960 },
-                  end: { line: 33, column: 4, offset: 1046 }
+                  start: { line: 31, column: 1, offset: 1030 },
+                  end: { line: 33, column: 4, offset: 1116 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 33, column: 4, offset: 1046 }
+              end: { line: 33, column: 4, offset: 1116 }
             }
           }
         }
@@ -9702,11 +17067,11 @@ export default [
           '}\n' +
           '\n' +
           'type DynamoDBJSONObject = Object<\n' +
-          '  { S: string }\n' +
-          '  |{ N: number }\n' +
-          '  |{ B: Buffer }\n' +
-          '  |{ L: Array<DynamoDBJSONObject> }\n' +
-          '  |{ M: Object<DynamoDBJSONObject> }\n' +
+          '  [key string]: { S: string }\n' +
+          '                |{ N: number }\n' +
+          '                |{ B: Buffer }\n' +
+          '                |{ L: Array<DynamoDBJSONObject> }\n' +
+          '                |{ M: Object<DynamoDBJSONObject> }\n' +
           '>\n' +
           '\n' +
           'deleteItem(\n' +
@@ -9764,11 +17129,11 @@ export default [
                   '}\n' +
                   '\n' +
                   'type DynamoDBJSONObject = Object<\n' +
-                  '  { S: string }\n' +
-                  '  |{ N: number }\n' +
-                  '  |{ B: Buffer }\n' +
-                  '  |{ L: Array<DynamoDBJSONObject> }\n' +
-                  '  |{ M: Object<DynamoDBJSONObject> }\n' +
+                  '  [key string]: { S: string }\n' +
+                  '                |{ N: number }\n' +
+                  '                |{ B: Buffer }\n' +
+                  '                |{ L: Array<DynamoDBJSONObject> }\n' +
+                  '                |{ M: Object<DynamoDBJSONObject> }\n' +
                   '>\n' +
                   '\n' +
                   'deleteItem(\n' +
@@ -9781,7 +17146,7 @@ export default [
                   ') -> data Promise<{ Attributes: DynamoDBJSONObject }>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 23, column: 4, offset: 589 }
+                  end: { line: 23, column: 4, offset: 659 }
                 }
               },
               {
@@ -9791,14 +17156,14 @@ export default [
                     type: 'text',
                     value: 'Delete an item from a DynamoDB Table using DynamoDB JSON.',
                     position: {
-                      start: { line: 25, column: 1, offset: 591 },
-                      end: { line: 25, column: 58, offset: 648 }
+                      start: { line: 25, column: 1, offset: 661 },
+                      end: { line: 25, column: 58, offset: 718 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 25, column: 1, offset: 591 },
-                  end: { line: 25, column: 58, offset: 648 }
+                  start: { line: 25, column: 1, offset: 661 },
+                  end: { line: 25, column: 58, offset: 718 }
                 }
               },
               {
@@ -9807,14 +17172,14 @@ export default [
                 meta: null,
                 value: "await userTable.deleteItem({ id: { S: '1' } })",
                 position: {
-                  start: { line: 27, column: 1, offset: 650 },
-                  end: { line: 29, column: 4, offset: 714 }
+                  start: { line: 27, column: 1, offset: 720 },
+                  end: { line: 29, column: 4, offset: 784 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 29, column: 4, offset: 714 }
+              end: { line: 29, column: 4, offset: 784 }
             }
           }
         }
@@ -9939,11 +17304,11 @@ export default [
         name: 'scan',
         docs: '```coffeescript [specscript]\n' +
           'type DynamoDBJSONObject = Object<\n' +
-          '  { S: string }\n' +
-          '  |{ N: number }\n' +
-          '  |{ B: Buffer }\n' +
-          '  |{ L: Array<DynamoDBJSONObject> }\n' +
-          '  |{ M: Object<DynamoDBJSONObject> }\n' +
+          '  [key string]: { S: string }\n' +
+          '                |{ N: number }\n' +
+          '                |{ B: Buffer }\n' +
+          '                |{ L: Array<DynamoDBJSONObject> }\n' +
+          '                |{ M: Object<DynamoDBJSONObject> }\n' +
           '>\n' +
           'type DynamoDBJSONKey = {\n' +
           '  [hashKey string]: { S: string }|{ N: number }|{ B: Buffer },\n' +
@@ -10002,11 +17367,11 @@ export default [
                 lang: 'coffeescript',
                 meta: '[specscript]',
                 value: 'type DynamoDBJSONObject = Object<\n' +
-                  '  { S: string }\n' +
-                  '  |{ N: number }\n' +
-                  '  |{ B: Buffer }\n' +
-                  '  |{ L: Array<DynamoDBJSONObject> }\n' +
-                  '  |{ M: Object<DynamoDBJSONObject> }\n' +
+                  '  [key string]: { S: string }\n' +
+                  '                |{ N: number }\n' +
+                  '                |{ B: Buffer }\n' +
+                  '                |{ L: Array<DynamoDBJSONObject> }\n' +
+                  '                |{ M: Object<DynamoDBJSONObject> }\n' +
                   '>\n' +
                   'type DynamoDBJSONKey = {\n' +
                   '  [hashKey string]: { S: string }|{ N: number }|{ B: Buffer },\n' +
@@ -10024,7 +17389,7 @@ export default [
                   '}>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 23, column: 4, offset: 551 }
+                  end: { line: 23, column: 4, offset: 621 }
                 }
               },
               {
@@ -10034,14 +17399,14 @@ export default [
                     type: 'text',
                     value: 'Get an unordered, paginated list of items from a DynamoDB Table.',
                     position: {
-                      start: { line: 25, column: 1, offset: 553 },
-                      end: { line: 25, column: 65, offset: 617 }
+                      start: { line: 25, column: 1, offset: 623 },
+                      end: { line: 25, column: 65, offset: 687 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 25, column: 1, offset: 553 },
-                  end: { line: 25, column: 65, offset: 617 }
+                  start: { line: 25, column: 1, offset: 623 },
+                  end: { line: 25, column: 65, offset: 687 }
                 }
               },
               {
@@ -10051,14 +17416,14 @@ export default [
                 value: 'const scanResponse = await userTable.scan()\n' +
                   "console.log(userItems) // [{ id: { S: '1' }, name: { S: 'John' } }, ...]",
                 position: {
-                  start: { line: 27, column: 1, offset: 619 },
-                  end: { line: 30, column: 4, offset: 753 }
+                  start: { line: 27, column: 1, offset: 689 },
+                  end: { line: 30, column: 4, offset: 823 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 30, column: 4, offset: 753 }
+              end: { line: 30, column: 4, offset: 823 }
             }
           }
         }
@@ -10067,11 +17432,11 @@ export default [
         name: 'scanItemsIterator',
         docs: '```coffeescript [specscript]\n' +
           'type DynamoDBJSONObject = Object<\n' +
-          '  { S: string }\n' +
-          '  |{ N: number }\n' +
-          '  |{ B: Buffer }\n' +
-          '  |{ L: Array<DynamoDBJSONObject> }\n' +
-          '  |{ M: Object<DynamoDBJSONObject> }\n' +
+          '  [key string]: { S: string }\n' +
+          '                |{ N: number }\n' +
+          '                |{ B: Buffer }\n' +
+          '                |{ L: Array<DynamoDBJSONObject> }\n' +
+          '                |{ M: Object<DynamoDBJSONObject> }\n' +
           '>\n' +
           '\n' +
           'scanItemsIterator(options {\n' +
@@ -10115,11 +17480,11 @@ export default [
                 lang: 'coffeescript',
                 meta: '[specscript]',
                 value: 'type DynamoDBJSONObject = Object<\n' +
-                  '  { S: string }\n' +
-                  '  |{ N: number }\n' +
-                  '  |{ B: Buffer }\n' +
-                  '  |{ L: Array<DynamoDBJSONObject> }\n' +
-                  '  |{ M: Object<DynamoDBJSONObject> }\n' +
+                  '  [key string]: { S: string }\n' +
+                  '                |{ N: number }\n' +
+                  '                |{ B: Buffer }\n' +
+                  '                |{ L: Array<DynamoDBJSONObject> }\n' +
+                  '                |{ M: Object<DynamoDBJSONObject> }\n' +
                   '>\n' +
                   '\n' +
                   'scanItemsIterator(options {\n' +
@@ -10127,7 +17492,7 @@ export default [
                   '}) -> iter AsyncIterator<DynamoDBJSONObject>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 13, column: 4, offset: 287 }
+                  end: { line: 13, column: 4, offset: 357 }
                 }
               },
               {
@@ -10137,20 +17502,20 @@ export default [
                     type: 'text',
                     value: 'Get an async iterator of all items from a DynamoDB Table.',
                     position: {
-                      start: { line: 15, column: 1, offset: 289 },
-                      end: { line: 15, column: 58, offset: 346 }
+                      start: { line: 15, column: 1, offset: 359 },
+                      end: { line: 15, column: 58, offset: 416 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 15, column: 1, offset: 289 },
-                  end: { line: 15, column: 58, offset: 346 }
+                  start: { line: 15, column: 1, offset: 359 },
+                  end: { line: 15, column: 58, offset: 416 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 15, column: 58, offset: 346 }
+              end: { line: 15, column: 58, offset: 416 }
             }
           }
         }
@@ -10246,11 +17611,11 @@ export default [
           '}\n' +
           '\n' +
           'type DynamoDBJSONObject = Object<\n' +
-          '  { S: string }\n' +
-          '  |{ N: number }\n' +
-          '  |{ B: Buffer }\n' +
-          '  |{ L: Array<DynamoDBJSONObject> }\n' +
-          '  |{ M: Object<DynamoDBJSONObject> }\n' +
+          '  [key string]: { S: string }\n' +
+          '                |{ N: number }\n' +
+          '                |{ B: Buffer }\n' +
+          '                |{ L: Array<DynamoDBJSONObject> }\n' +
+          '                |{ M: Object<DynamoDBJSONObject> }\n' +
           '>\n' +
           '\n' +
           'query(\n' +
@@ -10337,11 +17702,11 @@ export default [
                   '}\n' +
                   '\n' +
                   'type DynamoDBJSONObject = Object<\n' +
-                  '  { S: string }\n' +
-                  '  |{ N: number }\n' +
-                  '  |{ B: Buffer }\n' +
-                  '  |{ L: Array<DynamoDBJSONObject> }\n' +
-                  '  |{ M: Object<DynamoDBJSONObject> }\n' +
+                  '  [key string]: { S: string }\n' +
+                  '                |{ N: number }\n' +
+                  '                |{ B: Buffer }\n' +
+                  '                |{ L: Array<DynamoDBJSONObject> }\n' +
+                  '                |{ M: Object<DynamoDBJSONObject> }\n' +
                   '>\n' +
                   '\n' +
                   'query(\n' +
@@ -10358,7 +17723,7 @@ export default [
                   ') -> data Promise<{ Items: Array<DynamoDBJSONObject> }>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 27, column: 4, offset: 860 }
+                  end: { line: 27, column: 4, offset: 930 }
                 }
               },
               {
@@ -10368,14 +17733,14 @@ export default [
                     type: 'text',
                     value: 'Query a DynamoDB Table using DynamoDB JSON format.',
                     position: {
-                      start: { line: 29, column: 1, offset: 862 },
-                      end: { line: 29, column: 51, offset: 912 }
+                      start: { line: 29, column: 1, offset: 932 },
+                      end: { line: 29, column: 51, offset: 982 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 29, column: 1, offset: 862 },
-                  end: { line: 29, column: 51, offset: 912 }
+                  start: { line: 29, column: 1, offset: 932 },
+                  end: { line: 29, column: 51, offset: 982 }
                 }
               },
               {
@@ -10385,24 +17750,24 @@ export default [
                     type: 'text',
                     value: "Use the hash and sort keys as query parameters and to construct the key condition expression. The key condition expression is a SQL-like query language comprised of the table's hashKey and sortKey, e.g. ",
                     position: {
-                      start: { line: 31, column: 1, offset: 914 },
-                      end: { line: 31, column: 204, offset: 1117 }
+                      start: { line: 31, column: 1, offset: 984 },
+                      end: { line: 31, column: 204, offset: 1187 }
                     }
                   },
                   {
                     type: 'inlineCode',
                     value: 'myHashKey = :a AND mySortKey < :b',
                     position: {
-                      start: { line: 31, column: 204, offset: 1117 },
-                      end: { line: 31, column: 239, offset: 1152 }
+                      start: { line: 31, column: 204, offset: 1187 },
+                      end: { line: 31, column: 239, offset: 1222 }
                     }
                   },
                   {
                     type: 'text',
                     value: '. Read more about ',
                     position: {
-                      start: { line: 31, column: 239, offset: 1152 },
-                      end: { line: 31, column: 257, offset: 1170 }
+                      start: { line: 31, column: 239, offset: 1222 },
+                      end: { line: 31, column: 257, offset: 1240 }
                     }
                   },
                   {
@@ -10414,28 +17779,28 @@ export default [
                         type: 'text',
                         value: 'key condition expressions',
                         position: {
-                          start: { line: 31, column: 258, offset: 1171 },
-                          end: { line: 31, column: 283, offset: 1196 }
+                          start: { line: 31, column: 258, offset: 1241 },
+                          end: { line: 31, column: 283, offset: 1266 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 31, column: 257, offset: 1170 },
-                      end: { line: 31, column: 385, offset: 1298 }
+                      start: { line: 31, column: 257, offset: 1240 },
+                      end: { line: 31, column: 385, offset: 1368 }
                     }
                   },
                   {
                     type: 'text',
                     value: '.',
                     position: {
-                      start: { line: 31, column: 385, offset: 1298 },
-                      end: { line: 31, column: 386, offset: 1299 }
+                      start: { line: 31, column: 385, offset: 1368 },
+                      end: { line: 31, column: 386, offset: 1369 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 31, column: 1, offset: 914 },
-                  end: { line: 31, column: 386, offset: 1299 }
+                  start: { line: 31, column: 1, offset: 984 },
+                  end: { line: 31, column: 386, offset: 1369 }
                 }
               },
               {
@@ -10459,8 +17824,8 @@ export default [
                   '//   ]\n' +
                   '// }',
                 position: {
-                  start: { line: 33, column: 1, offset: 1301 },
-                  end: { line: 50, column: 4, offset: 1694 }
+                  start: { line: 33, column: 1, offset: 1371 },
+                  end: { line: 50, column: 4, offset: 1764 }
                 }
               },
               {
@@ -10470,14 +17835,14 @@ export default [
                     type: 'text',
                     value: 'Options:',
                     position: {
-                      start: { line: 52, column: 1, offset: 1696 },
-                      end: { line: 52, column: 9, offset: 1704 }
+                      start: { line: 52, column: 1, offset: 1766 },
+                      end: { line: 52, column: 9, offset: 1774 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 52, column: 1, offset: 1696 },
-                  end: { line: 52, column: 9, offset: 1704 }
+                  start: { line: 52, column: 1, offset: 1766 },
+                  end: { line: 52, column: 9, offset: 1774 }
                 }
               },
               {
@@ -10498,28 +17863,28 @@ export default [
                             type: 'inlineCode',
                             value: 'Limit',
                             position: {
-                              start: { line: 53, column: 5, offset: 1709 },
-                              end: { line: 53, column: 12, offset: 1716 }
+                              start: { line: 53, column: 5, offset: 1779 },
+                              end: { line: 53, column: 12, offset: 1786 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - Maximum number of items (hard limited by the total size of the response).',
                             position: {
-                              start: { line: 53, column: 12, offset: 1716 },
-                              end: { line: 53, column: 88, offset: 1792 }
+                              start: { line: 53, column: 12, offset: 1786 },
+                              end: { line: 53, column: 88, offset: 1862 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 53, column: 5, offset: 1709 },
-                          end: { line: 53, column: 88, offset: 1792 }
+                          start: { line: 53, column: 5, offset: 1779 },
+                          end: { line: 53, column: 88, offset: 1862 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 53, column: 3, offset: 1707 },
-                      end: { line: 53, column: 88, offset: 1792 }
+                      start: { line: 53, column: 3, offset: 1777 },
+                      end: { line: 53, column: 88, offset: 1862 }
                     }
                   },
                   {
@@ -10534,28 +17899,28 @@ export default [
                             type: 'inlineCode',
                             value: 'ExclusiveStartKey',
                             position: {
-                              start: { line: 54, column: 5, offset: 1797 },
-                              end: { line: 54, column: 24, offset: 1816 }
+                              start: { line: 54, column: 5, offset: 1867 },
+                              end: { line: 54, column: 24, offset: 1886 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - Key after which to start reading',
                             position: {
-                              start: { line: 54, column: 24, offset: 1816 },
-                              end: { line: 54, column: 59, offset: 1851 }
+                              start: { line: 54, column: 24, offset: 1886 },
+                              end: { line: 54, column: 59, offset: 1921 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 54, column: 5, offset: 1797 },
-                          end: { line: 54, column: 59, offset: 1851 }
+                          start: { line: 54, column: 5, offset: 1867 },
+                          end: { line: 54, column: 59, offset: 1921 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 54, column: 3, offset: 1795 },
-                      end: { line: 54, column: 59, offset: 1851 }
+                      start: { line: 54, column: 3, offset: 1865 },
+                      end: { line: 54, column: 59, offset: 1921 }
                     }
                   },
                   {
@@ -10570,76 +17935,76 @@ export default [
                             type: 'inlineCode',
                             value: 'ScanIndexForward',
                             position: {
-                              start: { line: 55, column: 5, offset: 1856 },
-                              end: { line: 55, column: 23, offset: 1874 }
+                              start: { line: 55, column: 5, offset: 1926 },
+                              end: { line: 55, column: 23, offset: 1944 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - if ',
                             position: {
-                              start: { line: 55, column: 23, offset: 1874 },
-                              end: { line: 55, column: 29, offset: 1880 }
+                              start: { line: 55, column: 23, offset: 1944 },
+                              end: { line: 55, column: 29, offset: 1950 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'true',
                             position: {
-                              start: { line: 55, column: 29, offset: 1880 },
-                              end: { line: 55, column: 35, offset: 1886 }
+                              start: { line: 55, column: 29, offset: 1950 },
+                              end: { line: 55, column: 35, offset: 1956 }
                             }
                           },
                           {
                             type: 'text',
                             value: ', returned items are sorted in ascending order. If ',
                             position: {
-                              start: { line: 55, column: 35, offset: 1886 },
-                              end: { line: 55, column: 86, offset: 1937 }
+                              start: { line: 55, column: 35, offset: 1956 },
+                              end: { line: 55, column: 86, offset: 2007 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'false',
                             position: {
-                              start: { line: 55, column: 86, offset: 1937 },
-                              end: { line: 55, column: 93, offset: 1944 }
+                              start: { line: 55, column: 86, offset: 2007 },
+                              end: { line: 55, column: 93, offset: 2014 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' returned items are sorted in descending order. Defaults to ',
                             position: {
-                              start: { line: 55, column: 93, offset: 1944 },
-                              end: { line: 55, column: 153, offset: 2004 }
+                              start: { line: 55, column: 93, offset: 2014 },
+                              end: { line: 55, column: 153, offset: 2074 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'true',
                             position: {
-                              start: { line: 55, column: 153, offset: 2004 },
-                              end: { line: 55, column: 159, offset: 2010 }
+                              start: { line: 55, column: 153, offset: 2074 },
+                              end: { line: 55, column: 159, offset: 2080 }
                             }
                           },
                           {
                             type: 'text',
                             value: '.',
                             position: {
-                              start: { line: 55, column: 159, offset: 2010 },
-                              end: { line: 55, column: 160, offset: 2011 }
+                              start: { line: 55, column: 159, offset: 2080 },
+                              end: { line: 55, column: 160, offset: 2081 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 55, column: 5, offset: 1856 },
-                          end: { line: 55, column: 160, offset: 2011 }
+                          start: { line: 55, column: 5, offset: 1926 },
+                          end: { line: 55, column: 160, offset: 2081 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 55, column: 3, offset: 1854 },
-                      end: { line: 55, column: 160, offset: 2011 }
+                      start: { line: 55, column: 3, offset: 1924 },
+                      end: { line: 55, column: 160, offset: 2081 }
                     }
                   },
                   {
@@ -10654,44 +18019,44 @@ export default [
                             type: 'inlineCode',
                             value: 'ProjectionExpression',
                             position: {
-                              start: { line: 56, column: 5, offset: 2016 },
-                              end: { line: 56, column: 27, offset: 2038 }
+                              start: { line: 56, column: 5, offset: 2086 },
+                              end: { line: 56, column: 27, offset: 2108 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - list of attributes to be returned for each item in query result, e.g. ',
                             position: {
-                              start: { line: 56, column: 27, offset: 2038 },
-                              end: { line: 56, column: 100, offset: 2111 }
+                              start: { line: 56, column: 27, offset: 2108 },
+                              end: { line: 56, column: 100, offset: 2181 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'fieldA,fieldB,fieldC',
                             position: {
-                              start: { line: 56, column: 100, offset: 2111 },
-                              end: { line: 56, column: 122, offset: 2133 }
+                              start: { line: 56, column: 100, offset: 2181 },
+                              end: { line: 56, column: 122, offset: 2203 }
                             }
                           },
                           {
                             type: 'text',
                             value: '.',
                             position: {
-                              start: { line: 56, column: 122, offset: 2133 },
-                              end: { line: 56, column: 123, offset: 2134 }
+                              start: { line: 56, column: 122, offset: 2203 },
+                              end: { line: 56, column: 123, offset: 2204 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 56, column: 5, offset: 2016 },
-                          end: { line: 56, column: 123, offset: 2134 }
+                          start: { line: 56, column: 5, offset: 2086 },
+                          end: { line: 56, column: 123, offset: 2204 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 56, column: 3, offset: 2014 },
-                      end: { line: 56, column: 123, offset: 2134 }
+                      start: { line: 56, column: 3, offset: 2084 },
+                      end: { line: 56, column: 123, offset: 2204 }
                     }
                   },
                   {
@@ -10706,44 +18071,44 @@ export default [
                             type: 'inlineCode',
                             value: 'FilterExpression',
                             position: {
-                              start: { line: 57, column: 5, offset: 2139 },
-                              end: { line: 57, column: 23, offset: 2157 }
+                              start: { line: 57, column: 5, offset: 2209 },
+                              end: { line: 57, column: 23, offset: 2227 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - filter queried results by this expression, e.g. ',
                             position: {
-                              start: { line: 57, column: 23, offset: 2157 },
-                              end: { line: 57, column: 74, offset: 2208 }
+                              start: { line: 57, column: 23, offset: 2227 },
+                              end: { line: 57, column: 74, offset: 2278 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'fieldA >= :someValue',
                             position: {
-                              start: { line: 57, column: 74, offset: 2208 },
-                              end: { line: 57, column: 96, offset: 2230 }
+                              start: { line: 57, column: 74, offset: 2278 },
+                              end: { line: 57, column: 96, offset: 2300 }
                             }
                           },
                           {
                             type: 'text',
                             value: '.',
                             position: {
-                              start: { line: 57, column: 96, offset: 2230 },
-                              end: { line: 57, column: 97, offset: 2231 }
+                              start: { line: 57, column: 96, offset: 2300 },
+                              end: { line: 57, column: 97, offset: 2301 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 57, column: 5, offset: 2139 },
-                          end: { line: 57, column: 97, offset: 2231 }
+                          start: { line: 57, column: 5, offset: 2209 },
+                          end: { line: 57, column: 97, offset: 2301 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 57, column: 3, offset: 2137 },
-                      end: { line: 57, column: 97, offset: 2231 }
+                      start: { line: 57, column: 3, offset: 2207 },
+                      end: { line: 57, column: 97, offset: 2301 }
                     }
                   },
                   {
@@ -10758,40 +18123,40 @@ export default [
                             type: 'inlineCode',
                             value: 'ConsistentRead',
                             position: {
-                              start: { line: 58, column: 5, offset: 2236 },
-                              end: { line: 58, column: 21, offset: 2252 }
+                              start: { line: 58, column: 5, offset: 2306 },
+                              end: { line: 58, column: 21, offset: 2322 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - true to perform a strongly consistent read (eventually consistent by default). Consumes more RCUs.',
                             position: {
-                              start: { line: 58, column: 21, offset: 2252 },
-                              end: { line: 58, column: 122, offset: 2353 }
+                              start: { line: 58, column: 21, offset: 2322 },
+                              end: { line: 58, column: 122, offset: 2423 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 58, column: 5, offset: 2236 },
-                          end: { line: 58, column: 122, offset: 2353 }
+                          start: { line: 58, column: 5, offset: 2306 },
+                          end: { line: 58, column: 122, offset: 2423 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 58, column: 3, offset: 2234 },
-                      end: { line: 58, column: 122, offset: 2353 }
+                      start: { line: 58, column: 3, offset: 2304 },
+                      end: { line: 58, column: 122, offset: 2423 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 53, column: 3, offset: 1707 },
-                  end: { line: 58, column: 122, offset: 2353 }
+                  start: { line: 53, column: 3, offset: 1777 },
+                  end: { line: 58, column: 122, offset: 2423 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 58, column: 122, offset: 2353 }
+              end: { line: 58, column: 122, offset: 2423 }
             }
           }
         }
@@ -11352,11 +18717,11 @@ export default [
           'type JSONObject = Object<string|number|Buffer|JSONArray|JSONObject>\n' +
           '\n' +
           'type DynamoDBJSONObject = Object<\n' +
-          '  { S: string }\n' +
-          '  |{ N: number }\n' +
-          '  |{ B: Buffer }\n' +
-          '  |{ L: Array<DynamoDBJSONObject> }\n' +
-          '  |{ M: Object<DynamoDBJSONObject> }\n' +
+          '  [key string]: { S: string }\n' +
+          '                |{ N: number }\n' +
+          '                |{ B: Buffer }\n' +
+          '                |{ L: Array<DynamoDBJSONObject> }\n' +
+          '                |{ M: Object<DynamoDBJSONObject> }\n' +
           '>\n' +
           '\n' +
           'queryItemsIterator(\n' +
@@ -11439,11 +18804,11 @@ export default [
                   'type JSONObject = Object<string|number|Buffer|JSONArray|JSONObject>\n' +
                   '\n' +
                   'type DynamoDBJSONObject = Object<\n' +
-                  '  { S: string }\n' +
-                  '  |{ N: number }\n' +
-                  '  |{ B: Buffer }\n' +
-                  '  |{ L: Array<DynamoDBJSONObject> }\n' +
-                  '  |{ M: Object<DynamoDBJSONObject> }\n' +
+                  '  [key string]: { S: string }\n' +
+                  '                |{ N: number }\n' +
+                  '                |{ B: Buffer }\n' +
+                  '                |{ L: Array<DynamoDBJSONObject> }\n' +
+                  '                |{ M: Object<DynamoDBJSONObject> }\n' +
                   '>\n' +
                   '\n' +
                   'queryItemsIterator(\n' +
@@ -11459,7 +18824,7 @@ export default [
                   ') -> AsyncIterator<DynamoDBJSONObject>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 24, column: 4, offset: 678 }
+                  end: { line: 24, column: 4, offset: 748 }
                 }
               },
               {
@@ -11469,30 +18834,30 @@ export default [
                     type: 'text',
                     value: 'Get an ',
                     position: {
-                      start: { line: 26, column: 1, offset: 680 },
-                      end: { line: 26, column: 8, offset: 687 }
+                      start: { line: 26, column: 1, offset: 750 },
+                      end: { line: 26, column: 8, offset: 757 }
                     }
                   },
                   {
                     type: 'inlineCode',
                     value: 'AsyncIterator',
                     position: {
-                      start: { line: 26, column: 8, offset: 687 },
-                      end: { line: 26, column: 23, offset: 702 }
+                      start: { line: 26, column: 8, offset: 757 },
+                      end: { line: 26, column: 23, offset: 772 }
                     }
                   },
                   {
                     type: 'text',
                     value: ' of all items represented by a query on a DynamoDB Table in DynamoDB JSON format.',
                     position: {
-                      start: { line: 26, column: 23, offset: 702 },
-                      end: { line: 26, column: 104, offset: 783 }
+                      start: { line: 26, column: 23, offset: 772 },
+                      end: { line: 26, column: 104, offset: 853 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 26, column: 1, offset: 680 },
-                  end: { line: 26, column: 104, offset: 783 }
+                  start: { line: 26, column: 1, offset: 750 },
+                  end: { line: 26, column: 104, offset: 853 }
                 }
               },
               {
@@ -11502,24 +18867,24 @@ export default [
                     type: 'text',
                     value: "The key condition expression is a SQL-like query language comprised of the table's hashKey and sortKey, e.g. ",
                     position: {
-                      start: { line: 28, column: 1, offset: 785 },
-                      end: { line: 28, column: 110, offset: 894 }
+                      start: { line: 28, column: 1, offset: 855 },
+                      end: { line: 28, column: 110, offset: 964 }
                     }
                   },
                   {
                     type: 'inlineCode',
                     value: 'myHashKey = :a AND mySortKey < :b',
                     position: {
-                      start: { line: 28, column: 110, offset: 894 },
-                      end: { line: 28, column: 145, offset: 929 }
+                      start: { line: 28, column: 110, offset: 964 },
+                      end: { line: 28, column: 145, offset: 999 }
                     }
                   },
                   {
                     type: 'text',
                     value: '. Read more about ',
                     position: {
-                      start: { line: 28, column: 145, offset: 929 },
-                      end: { line: 28, column: 163, offset: 947 }
+                      start: { line: 28, column: 145, offset: 999 },
+                      end: { line: 28, column: 163, offset: 1017 }
                     }
                   },
                   {
@@ -11531,28 +18896,28 @@ export default [
                         type: 'text',
                         value: 'key condition expressions',
                         position: {
-                          start: { line: 28, column: 164, offset: 948 },
-                          end: { line: 28, column: 189, offset: 973 }
+                          start: { line: 28, column: 164, offset: 1018 },
+                          end: { line: 28, column: 189, offset: 1043 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 28, column: 163, offset: 947 },
-                      end: { line: 28, column: 291, offset: 1075 }
+                      start: { line: 28, column: 163, offset: 1017 },
+                      end: { line: 28, column: 291, offset: 1145 }
                     }
                   },
                   {
                     type: 'text',
                     value: '.',
                     position: {
-                      start: { line: 28, column: 291, offset: 1075 },
-                      end: { line: 28, column: 292, offset: 1076 }
+                      start: { line: 28, column: 291, offset: 1145 },
+                      end: { line: 28, column: 292, offset: 1146 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 28, column: 1, offset: 785 },
-                  end: { line: 28, column: 292, offset: 1076 }
+                  start: { line: 28, column: 1, offset: 855 },
+                  end: { line: 28, column: 292, offset: 1146 }
                 }
               },
               {
@@ -11575,8 +18940,8 @@ export default [
                   '  // ...\n' +
                   '}',
                 position: {
-                  start: { line: 30, column: 1, offset: 1078 },
-                  end: { line: 46, column: 4, offset: 1501 }
+                  start: { line: 30, column: 1, offset: 1148 },
+                  end: { line: 46, column: 4, offset: 1571 }
                 }
               },
               {
@@ -11586,14 +18951,14 @@ export default [
                     type: 'text',
                     value: 'Options:',
                     position: {
-                      start: { line: 48, column: 1, offset: 1503 },
-                      end: { line: 48, column: 9, offset: 1511 }
+                      start: { line: 48, column: 1, offset: 1573 },
+                      end: { line: 48, column: 9, offset: 1581 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 48, column: 1, offset: 1503 },
-                  end: { line: 48, column: 9, offset: 1511 }
+                  start: { line: 48, column: 1, offset: 1573 },
+                  end: { line: 48, column: 9, offset: 1581 }
                 }
               },
               {
@@ -11614,44 +18979,44 @@ export default [
                             type: 'inlineCode',
                             value: 'BatchLimit',
                             position: {
-                              start: { line: 49, column: 5, offset: 1516 },
-                              end: { line: 49, column: 17, offset: 1528 }
+                              start: { line: 49, column: 5, offset: 1586 },
+                              end: { line: 49, column: 17, offset: 1598 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - Max number of items to retrieve per ',
                             position: {
-                              start: { line: 49, column: 17, offset: 1528 },
-                              end: { line: 49, column: 56, offset: 1567 }
+                              start: { line: 49, column: 17, offset: 1598 },
+                              end: { line: 49, column: 56, offset: 1637 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'query',
                             position: {
-                              start: { line: 49, column: 56, offset: 1567 },
-                              end: { line: 49, column: 63, offset: 1574 }
+                              start: { line: 49, column: 56, offset: 1637 },
+                              end: { line: 49, column: 63, offset: 1644 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' call.',
                             position: {
-                              start: { line: 49, column: 63, offset: 1574 },
-                              end: { line: 49, column: 69, offset: 1580 }
+                              start: { line: 49, column: 63, offset: 1644 },
+                              end: { line: 49, column: 69, offset: 1650 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 49, column: 5, offset: 1516 },
-                          end: { line: 49, column: 69, offset: 1580 }
+                          start: { line: 49, column: 5, offset: 1586 },
+                          end: { line: 49, column: 69, offset: 1650 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 49, column: 3, offset: 1514 },
-                      end: { line: 49, column: 69, offset: 1580 }
+                      start: { line: 49, column: 3, offset: 1584 },
+                      end: { line: 49, column: 69, offset: 1650 }
                     }
                   },
                   {
@@ -11666,28 +19031,28 @@ export default [
                             type: 'inlineCode',
                             value: 'Limit',
                             position: {
-                              start: { line: 50, column: 5, offset: 1585 },
-                              end: { line: 50, column: 12, offset: 1592 }
+                              start: { line: 50, column: 5, offset: 1655 },
+                              end: { line: 50, column: 12, offset: 1662 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - Maximum number of items (hard limited by the total size of the response).',
                             position: {
-                              start: { line: 50, column: 12, offset: 1592 },
-                              end: { line: 50, column: 88, offset: 1668 }
+                              start: { line: 50, column: 12, offset: 1662 },
+                              end: { line: 50, column: 88, offset: 1738 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 50, column: 5, offset: 1585 },
-                          end: { line: 50, column: 88, offset: 1668 }
+                          start: { line: 50, column: 5, offset: 1655 },
+                          end: { line: 50, column: 88, offset: 1738 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 50, column: 3, offset: 1583 },
-                      end: { line: 50, column: 88, offset: 1668 }
+                      start: { line: 50, column: 3, offset: 1653 },
+                      end: { line: 50, column: 88, offset: 1738 }
                     }
                   },
                   {
@@ -11702,76 +19067,76 @@ export default [
                             type: 'inlineCode',
                             value: 'ScanIndexForward',
                             position: {
-                              start: { line: 51, column: 5, offset: 1673 },
-                              end: { line: 51, column: 23, offset: 1691 }
+                              start: { line: 51, column: 5, offset: 1743 },
+                              end: { line: 51, column: 23, offset: 1761 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - if ',
                             position: {
-                              start: { line: 51, column: 23, offset: 1691 },
-                              end: { line: 51, column: 29, offset: 1697 }
+                              start: { line: 51, column: 23, offset: 1761 },
+                              end: { line: 51, column: 29, offset: 1767 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'true',
                             position: {
-                              start: { line: 51, column: 29, offset: 1697 },
-                              end: { line: 51, column: 35, offset: 1703 }
+                              start: { line: 51, column: 29, offset: 1767 },
+                              end: { line: 51, column: 35, offset: 1773 }
                             }
                           },
                           {
                             type: 'text',
                             value: ', returned items are sorted in ascending order. If ',
                             position: {
-                              start: { line: 51, column: 35, offset: 1703 },
-                              end: { line: 51, column: 86, offset: 1754 }
+                              start: { line: 51, column: 35, offset: 1773 },
+                              end: { line: 51, column: 86, offset: 1824 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'false',
                             position: {
-                              start: { line: 51, column: 86, offset: 1754 },
-                              end: { line: 51, column: 93, offset: 1761 }
+                              start: { line: 51, column: 86, offset: 1824 },
+                              end: { line: 51, column: 93, offset: 1831 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' returned items are sorted in descending order. Defaults to ',
                             position: {
-                              start: { line: 51, column: 93, offset: 1761 },
-                              end: { line: 51, column: 153, offset: 1821 }
+                              start: { line: 51, column: 93, offset: 1831 },
+                              end: { line: 51, column: 153, offset: 1891 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'true',
                             position: {
-                              start: { line: 51, column: 153, offset: 1821 },
-                              end: { line: 51, column: 159, offset: 1827 }
+                              start: { line: 51, column: 153, offset: 1891 },
+                              end: { line: 51, column: 159, offset: 1897 }
                             }
                           },
                           {
                             type: 'text',
                             value: '.',
                             position: {
-                              start: { line: 51, column: 159, offset: 1827 },
-                              end: { line: 51, column: 160, offset: 1828 }
+                              start: { line: 51, column: 159, offset: 1897 },
+                              end: { line: 51, column: 160, offset: 1898 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 51, column: 5, offset: 1673 },
-                          end: { line: 51, column: 160, offset: 1828 }
+                          start: { line: 51, column: 5, offset: 1743 },
+                          end: { line: 51, column: 160, offset: 1898 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 51, column: 3, offset: 1671 },
-                      end: { line: 51, column: 160, offset: 1828 }
+                      start: { line: 51, column: 3, offset: 1741 },
+                      end: { line: 51, column: 160, offset: 1898 }
                     }
                   },
                   {
@@ -11786,44 +19151,44 @@ export default [
                             type: 'inlineCode',
                             value: 'ProjectionExpression',
                             position: {
-                              start: { line: 52, column: 5, offset: 1833 },
-                              end: { line: 52, column: 27, offset: 1855 }
+                              start: { line: 52, column: 5, offset: 1903 },
+                              end: { line: 52, column: 27, offset: 1925 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - list of attributes to be returned for each item in query result, e.g. ',
                             position: {
-                              start: { line: 52, column: 27, offset: 1855 },
-                              end: { line: 52, column: 100, offset: 1928 }
+                              start: { line: 52, column: 27, offset: 1925 },
+                              end: { line: 52, column: 100, offset: 1998 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'fieldA,fieldB,fieldC',
                             position: {
-                              start: { line: 52, column: 100, offset: 1928 },
-                              end: { line: 52, column: 122, offset: 1950 }
+                              start: { line: 52, column: 100, offset: 1998 },
+                              end: { line: 52, column: 122, offset: 2020 }
                             }
                           },
                           {
                             type: 'text',
                             value: '.',
                             position: {
-                              start: { line: 52, column: 122, offset: 1950 },
-                              end: { line: 52, column: 123, offset: 1951 }
+                              start: { line: 52, column: 122, offset: 2020 },
+                              end: { line: 52, column: 123, offset: 2021 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 52, column: 5, offset: 1833 },
-                          end: { line: 52, column: 123, offset: 1951 }
+                          start: { line: 52, column: 5, offset: 1903 },
+                          end: { line: 52, column: 123, offset: 2021 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 52, column: 3, offset: 1831 },
-                      end: { line: 52, column: 123, offset: 1951 }
+                      start: { line: 52, column: 3, offset: 1901 },
+                      end: { line: 52, column: 123, offset: 2021 }
                     }
                   },
                   {
@@ -11838,44 +19203,44 @@ export default [
                             type: 'inlineCode',
                             value: 'FilterExpression',
                             position: {
-                              start: { line: 53, column: 5, offset: 1956 },
-                              end: { line: 53, column: 23, offset: 1974 }
+                              start: { line: 53, column: 5, offset: 2026 },
+                              end: { line: 53, column: 23, offset: 2044 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - filter queried results by this expression, e.g. ',
                             position: {
-                              start: { line: 53, column: 23, offset: 1974 },
-                              end: { line: 53, column: 74, offset: 2025 }
+                              start: { line: 53, column: 23, offset: 2044 },
+                              end: { line: 53, column: 74, offset: 2095 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'fieldA >= :someValue',
                             position: {
-                              start: { line: 53, column: 74, offset: 2025 },
-                              end: { line: 53, column: 96, offset: 2047 }
+                              start: { line: 53, column: 74, offset: 2095 },
+                              end: { line: 53, column: 96, offset: 2117 }
                             }
                           },
                           {
                             type: 'text',
                             value: '.',
                             position: {
-                              start: { line: 53, column: 96, offset: 2047 },
-                              end: { line: 53, column: 97, offset: 2048 }
+                              start: { line: 53, column: 96, offset: 2117 },
+                              end: { line: 53, column: 97, offset: 2118 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 53, column: 5, offset: 1956 },
-                          end: { line: 53, column: 97, offset: 2048 }
+                          start: { line: 53, column: 5, offset: 2026 },
+                          end: { line: 53, column: 97, offset: 2118 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 53, column: 3, offset: 1954 },
-                      end: { line: 53, column: 97, offset: 2048 }
+                      start: { line: 53, column: 3, offset: 2024 },
+                      end: { line: 53, column: 97, offset: 2118 }
                     }
                   },
                   {
@@ -11890,40 +19255,40 @@ export default [
                             type: 'inlineCode',
                             value: 'ConsistentRead',
                             position: {
-                              start: { line: 54, column: 5, offset: 2053 },
-                              end: { line: 54, column: 21, offset: 2069 }
+                              start: { line: 54, column: 5, offset: 2123 },
+                              end: { line: 54, column: 21, offset: 2139 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - true to perform a strongly consistent read (eventually consistent by default). Consumes more RCUs.',
                             position: {
-                              start: { line: 54, column: 21, offset: 2069 },
-                              end: { line: 54, column: 122, offset: 2170 }
+                              start: { line: 54, column: 21, offset: 2139 },
+                              end: { line: 54, column: 122, offset: 2240 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 54, column: 5, offset: 2053 },
-                          end: { line: 54, column: 122, offset: 2170 }
+                          start: { line: 54, column: 5, offset: 2123 },
+                          end: { line: 54, column: 122, offset: 2240 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 54, column: 3, offset: 2051 },
-                      end: { line: 54, column: 122, offset: 2170 }
+                      start: { line: 54, column: 3, offset: 2121 },
+                      end: { line: 54, column: 122, offset: 2240 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 49, column: 3, offset: 1514 },
-                  end: { line: 54, column: 122, offset: 2170 }
+                  start: { line: 49, column: 3, offset: 1584 },
+                  end: { line: 54, column: 122, offset: 2240 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 54, column: 122, offset: 2170 }
+              end: { line: 54, column: 122, offset: 2240 }
             }
           }
         }
@@ -11949,7 +19314,7 @@ export default [
           '\n' +
           'Get an `AsyncIterator` of all items represented by a query on a DynamoDB Table in JSON format.\n' +
           '\n' +
-          "The key condition expression is a SQL-like query language comprised of the table's hashKey and sortKey, e.g. `myHashKey = :a AND mySortKey <!-- < :b`. Read more about [key condition expressions](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.KeyConditionExpressions.html).\n" +
+          "The key condition expression is a SQL-like query language comprised of the table's hashKey and sortKey, e.g. `myHashKey = :a AND mySortKey < :b`. Read more about [key condition expressions](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.KeyConditionExpressions.html).\n" +
           '\n' +
           '```javascript\n' +
           '// userVersionTable has hashKey `id` and sortKey `version`\n' +
@@ -12075,18 +19440,18 @@ export default [
                   },
                   {
                     type: 'inlineCode',
-                    value: 'myHashKey = :a AND mySortKey <!-- < :b',
+                    value: 'myHashKey = :a AND mySortKey < :b',
                     position: {
                       start: { line: 20, column: 110, offset: 712 },
-                      end: { line: 20, column: 150, offset: 752 }
+                      end: { line: 20, column: 145, offset: 747 }
                     }
                   },
                   {
                     type: 'text',
                     value: '. Read more about ',
                     position: {
-                      start: { line: 20, column: 150, offset: 752 },
-                      end: { line: 20, column: 168, offset: 770 }
+                      start: { line: 20, column: 145, offset: 747 },
+                      end: { line: 20, column: 163, offset: 765 }
                     }
                   },
                   {
@@ -12098,28 +19463,28 @@ export default [
                         type: 'text',
                         value: 'key condition expressions',
                         position: {
-                          start: { line: 20, column: 169, offset: 771 },
-                          end: { line: 20, column: 194, offset: 796 }
+                          start: { line: 20, column: 164, offset: 766 },
+                          end: { line: 20, column: 189, offset: 791 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 20, column: 168, offset: 770 },
-                      end: { line: 20, column: 296, offset: 898 }
+                      start: { line: 20, column: 163, offset: 765 },
+                      end: { line: 20, column: 291, offset: 893 }
                     }
                   },
                   {
                     type: 'text',
                     value: '.',
                     position: {
-                      start: { line: 20, column: 296, offset: 898 },
-                      end: { line: 20, column: 297, offset: 899 }
+                      start: { line: 20, column: 291, offset: 893 },
+                      end: { line: 20, column: 292, offset: 894 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 20, column: 1, offset: 603 },
-                  end: { line: 20, column: 297, offset: 899 }
+                  end: { line: 20, column: 292, offset: 894 }
                 }
               },
               {
@@ -12142,8 +19507,8 @@ export default [
                   '  // ...\n' +
                   '}',
                 position: {
-                  start: { line: 22, column: 1, offset: 901 },
-                  end: { line: 38, column: 4, offset: 1284 }
+                  start: { line: 22, column: 1, offset: 896 },
+                  end: { line: 38, column: 4, offset: 1279 }
                 }
               },
               {
@@ -12153,14 +19518,14 @@ export default [
                     type: 'text',
                     value: 'Options:',
                     position: {
-                      start: { line: 40, column: 1, offset: 1286 },
-                      end: { line: 40, column: 9, offset: 1294 }
+                      start: { line: 40, column: 1, offset: 1281 },
+                      end: { line: 40, column: 9, offset: 1289 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 40, column: 1, offset: 1286 },
-                  end: { line: 40, column: 9, offset: 1294 }
+                  start: { line: 40, column: 1, offset: 1281 },
+                  end: { line: 40, column: 9, offset: 1289 }
                 }
               },
               {
@@ -12181,44 +19546,44 @@ export default [
                             type: 'inlineCode',
                             value: 'BatchLimit',
                             position: {
-                              start: { line: 41, column: 5, offset: 1299 },
-                              end: { line: 41, column: 17, offset: 1311 }
+                              start: { line: 41, column: 5, offset: 1294 },
+                              end: { line: 41, column: 17, offset: 1306 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - Max number of items to retrieve per ',
                             position: {
-                              start: { line: 41, column: 17, offset: 1311 },
-                              end: { line: 41, column: 56, offset: 1350 }
+                              start: { line: 41, column: 17, offset: 1306 },
+                              end: { line: 41, column: 56, offset: 1345 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'query',
                             position: {
-                              start: { line: 41, column: 56, offset: 1350 },
-                              end: { line: 41, column: 63, offset: 1357 }
+                              start: { line: 41, column: 56, offset: 1345 },
+                              end: { line: 41, column: 63, offset: 1352 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' call.',
                             position: {
-                              start: { line: 41, column: 63, offset: 1357 },
-                              end: { line: 41, column: 69, offset: 1363 }
+                              start: { line: 41, column: 63, offset: 1352 },
+                              end: { line: 41, column: 69, offset: 1358 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 41, column: 5, offset: 1299 },
-                          end: { line: 41, column: 69, offset: 1363 }
+                          start: { line: 41, column: 5, offset: 1294 },
+                          end: { line: 41, column: 69, offset: 1358 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 41, column: 3, offset: 1297 },
-                      end: { line: 41, column: 69, offset: 1363 }
+                      start: { line: 41, column: 3, offset: 1292 },
+                      end: { line: 41, column: 69, offset: 1358 }
                     }
                   },
                   {
@@ -12233,28 +19598,28 @@ export default [
                             type: 'inlineCode',
                             value: 'Limit',
                             position: {
-                              start: { line: 42, column: 5, offset: 1368 },
-                              end: { line: 42, column: 12, offset: 1375 }
+                              start: { line: 42, column: 5, offset: 1363 },
+                              end: { line: 42, column: 12, offset: 1370 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - Maximum number of items (hard limited by the total size of the response).',
                             position: {
-                              start: { line: 42, column: 12, offset: 1375 },
-                              end: { line: 42, column: 88, offset: 1451 }
+                              start: { line: 42, column: 12, offset: 1370 },
+                              end: { line: 42, column: 88, offset: 1446 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 42, column: 5, offset: 1368 },
-                          end: { line: 42, column: 88, offset: 1451 }
+                          start: { line: 42, column: 5, offset: 1363 },
+                          end: { line: 42, column: 88, offset: 1446 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 42, column: 3, offset: 1366 },
-                      end: { line: 42, column: 88, offset: 1451 }
+                      start: { line: 42, column: 3, offset: 1361 },
+                      end: { line: 42, column: 88, offset: 1446 }
                     }
                   },
                   {
@@ -12269,76 +19634,76 @@ export default [
                             type: 'inlineCode',
                             value: 'ScanIndexForward',
                             position: {
-                              start: { line: 43, column: 5, offset: 1456 },
-                              end: { line: 43, column: 23, offset: 1474 }
+                              start: { line: 43, column: 5, offset: 1451 },
+                              end: { line: 43, column: 23, offset: 1469 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - if ',
                             position: {
-                              start: { line: 43, column: 23, offset: 1474 },
-                              end: { line: 43, column: 29, offset: 1480 }
+                              start: { line: 43, column: 23, offset: 1469 },
+                              end: { line: 43, column: 29, offset: 1475 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'true',
                             position: {
-                              start: { line: 43, column: 29, offset: 1480 },
-                              end: { line: 43, column: 35, offset: 1486 }
+                              start: { line: 43, column: 29, offset: 1475 },
+                              end: { line: 43, column: 35, offset: 1481 }
                             }
                           },
                           {
                             type: 'text',
                             value: ', returned items are sorted in ascending order. If ',
                             position: {
-                              start: { line: 43, column: 35, offset: 1486 },
-                              end: { line: 43, column: 86, offset: 1537 }
+                              start: { line: 43, column: 35, offset: 1481 },
+                              end: { line: 43, column: 86, offset: 1532 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'false',
                             position: {
-                              start: { line: 43, column: 86, offset: 1537 },
-                              end: { line: 43, column: 93, offset: 1544 }
+                              start: { line: 43, column: 86, offset: 1532 },
+                              end: { line: 43, column: 93, offset: 1539 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' returned items are sorted in descending order. Defaults to ',
                             position: {
-                              start: { line: 43, column: 93, offset: 1544 },
-                              end: { line: 43, column: 153, offset: 1604 }
+                              start: { line: 43, column: 93, offset: 1539 },
+                              end: { line: 43, column: 153, offset: 1599 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'true',
                             position: {
-                              start: { line: 43, column: 153, offset: 1604 },
-                              end: { line: 43, column: 159, offset: 1610 }
+                              start: { line: 43, column: 153, offset: 1599 },
+                              end: { line: 43, column: 159, offset: 1605 }
                             }
                           },
                           {
                             type: 'text',
                             value: '.',
                             position: {
-                              start: { line: 43, column: 159, offset: 1610 },
-                              end: { line: 43, column: 160, offset: 1611 }
+                              start: { line: 43, column: 159, offset: 1605 },
+                              end: { line: 43, column: 160, offset: 1606 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 43, column: 5, offset: 1456 },
-                          end: { line: 43, column: 160, offset: 1611 }
+                          start: { line: 43, column: 5, offset: 1451 },
+                          end: { line: 43, column: 160, offset: 1606 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 43, column: 3, offset: 1454 },
-                      end: { line: 43, column: 160, offset: 1611 }
+                      start: { line: 43, column: 3, offset: 1449 },
+                      end: { line: 43, column: 160, offset: 1606 }
                     }
                   },
                   {
@@ -12353,44 +19718,44 @@ export default [
                             type: 'inlineCode',
                             value: 'ProjectionExpression',
                             position: {
-                              start: { line: 44, column: 5, offset: 1616 },
-                              end: { line: 44, column: 27, offset: 1638 }
+                              start: { line: 44, column: 5, offset: 1611 },
+                              end: { line: 44, column: 27, offset: 1633 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - list of attributes to be returned for each item in query result, e.g. ',
                             position: {
-                              start: { line: 44, column: 27, offset: 1638 },
-                              end: { line: 44, column: 100, offset: 1711 }
+                              start: { line: 44, column: 27, offset: 1633 },
+                              end: { line: 44, column: 100, offset: 1706 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'fieldA,fieldB,fieldC',
                             position: {
-                              start: { line: 44, column: 100, offset: 1711 },
-                              end: { line: 44, column: 122, offset: 1733 }
+                              start: { line: 44, column: 100, offset: 1706 },
+                              end: { line: 44, column: 122, offset: 1728 }
                             }
                           },
                           {
                             type: 'text',
                             value: '.',
                             position: {
-                              start: { line: 44, column: 122, offset: 1733 },
-                              end: { line: 44, column: 123, offset: 1734 }
+                              start: { line: 44, column: 122, offset: 1728 },
+                              end: { line: 44, column: 123, offset: 1729 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 44, column: 5, offset: 1616 },
-                          end: { line: 44, column: 123, offset: 1734 }
+                          start: { line: 44, column: 5, offset: 1611 },
+                          end: { line: 44, column: 123, offset: 1729 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 44, column: 3, offset: 1614 },
-                      end: { line: 44, column: 123, offset: 1734 }
+                      start: { line: 44, column: 3, offset: 1609 },
+                      end: { line: 44, column: 123, offset: 1729 }
                     }
                   },
                   {
@@ -12405,44 +19770,44 @@ export default [
                             type: 'inlineCode',
                             value: 'FilterExpression',
                             position: {
-                              start: { line: 45, column: 5, offset: 1739 },
-                              end: { line: 45, column: 23, offset: 1757 }
+                              start: { line: 45, column: 5, offset: 1734 },
+                              end: { line: 45, column: 23, offset: 1752 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - filter queried results by this expression, e.g. ',
                             position: {
-                              start: { line: 45, column: 23, offset: 1757 },
-                              end: { line: 45, column: 74, offset: 1808 }
+                              start: { line: 45, column: 23, offset: 1752 },
+                              end: { line: 45, column: 74, offset: 1803 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'fieldA >= :someValue',
                             position: {
-                              start: { line: 45, column: 74, offset: 1808 },
-                              end: { line: 45, column: 96, offset: 1830 }
+                              start: { line: 45, column: 74, offset: 1803 },
+                              end: { line: 45, column: 96, offset: 1825 }
                             }
                           },
                           {
                             type: 'text',
                             value: '.',
                             position: {
-                              start: { line: 45, column: 96, offset: 1830 },
-                              end: { line: 45, column: 97, offset: 1831 }
+                              start: { line: 45, column: 96, offset: 1825 },
+                              end: { line: 45, column: 97, offset: 1826 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 45, column: 5, offset: 1739 },
-                          end: { line: 45, column: 97, offset: 1831 }
+                          start: { line: 45, column: 5, offset: 1734 },
+                          end: { line: 45, column: 97, offset: 1826 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 45, column: 3, offset: 1737 },
-                      end: { line: 45, column: 97, offset: 1831 }
+                      start: { line: 45, column: 3, offset: 1732 },
+                      end: { line: 45, column: 97, offset: 1826 }
                     }
                   },
                   {
@@ -12457,40 +19822,40 @@ export default [
                             type: 'inlineCode',
                             value: 'ConsistentRead',
                             position: {
-                              start: { line: 46, column: 5, offset: 1836 },
-                              end: { line: 46, column: 21, offset: 1852 }
+                              start: { line: 46, column: 5, offset: 1831 },
+                              end: { line: 46, column: 21, offset: 1847 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - true to perform a strongly consistent read (eventually consistent by default). Consumes more RCUs.',
                             position: {
-                              start: { line: 46, column: 21, offset: 1852 },
-                              end: { line: 46, column: 122, offset: 1953 }
+                              start: { line: 46, column: 21, offset: 1847 },
+                              end: { line: 46, column: 122, offset: 1948 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 46, column: 5, offset: 1836 },
-                          end: { line: 46, column: 122, offset: 1953 }
+                          start: { line: 46, column: 5, offset: 1831 },
+                          end: { line: 46, column: 122, offset: 1948 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 46, column: 3, offset: 1834 },
-                      end: { line: 46, column: 122, offset: 1953 }
+                      start: { line: 46, column: 3, offset: 1829 },
+                      end: { line: 46, column: 122, offset: 1948 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 41, column: 3, offset: 1297 },
-                  end: { line: 46, column: 122, offset: 1953 }
+                  start: { line: 41, column: 3, offset: 1292 },
+                  end: { line: 46, column: 122, offset: 1948 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 46, column: 122, offset: 1953 }
+              end: { line: 46, column: 122, offset: 1948 }
             }
           }
         }
@@ -12877,7 +20242,9 @@ export default [
   {
     name: 'HTTP',
     docs: '```coffeescript [specscript]\n' +
-      'requestOptions {\n' +
+      "module http 'https://nodejs.org/api/http.html'\n" +
+      '\n' +
+      'type RequestOptions = {\n' +
       '  agent: http.Agent,\n' +
       '  auth: string,\n' +
       '  createConnection: function,\n' +
@@ -12942,7 +20309,9 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'requestOptions {\n' +
+            value: "module http 'https://nodejs.org/api/http.html'\n" +
+              '\n' +
+              'type RequestOptions = {\n' +
               '  agent: http.Agent,\n' +
               '  auth: string,\n' +
               '  createConnection: function,\n' +
@@ -12974,13 +20343,13 @@ export default [
               'new HTTP(requestOptions) -> http HTTP',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 32, column: 4, offset: 694 }
+              end: { line: 34, column: 4, offset: 749 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 32, column: 4, offset: 694 }
+          end: { line: 34, column: 4, offset: 749 }
         }
       }
     },
@@ -40814,69 +48183,6 @@ export default [
     },
     methods: [],
     fileName: '/home/richard/code/presidium.services/../presidium/internal/AwsAuthorization.js'
-  },
-  {
-    name: 'AwsCredentials',
-    docs: '```coffeescript [specscript]\n' +
-      'AwsCredentials(profile string) -> Promise<{\n' +
-      '  accessKeyId: string,\n' +
-      '  secretAccessKey: string,\n' +
-      '  region: string,\n' +
-      '}>\n' +
-      '```',
-    mdast: {
-      name: {
-        type: 'root',
-        children: [
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'AwsCredentials',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 15, offset: 14 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 15, offset: 14 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 15, offset: 14 }
-        }
-      },
-      docs: {
-        type: 'root',
-        children: [
-          {
-            type: 'code',
-            lang: 'coffeescript',
-            meta: '[specscript]',
-            value: 'AwsCredentials(profile string) -> Promise<{\n' +
-              '  accessKeyId: string,\n' +
-              '  secretAccessKey: string,\n' +
-              '  region: string,\n' +
-              '}>',
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 7, column: 4, offset: 147 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 147 }
-        }
-      }
-    },
-    methods: [],
-    fileName: '/home/richard/code/presidium.services/../presidium/internal/AwsCredentials.js'
   },
   {
     name: 'AwsError',
