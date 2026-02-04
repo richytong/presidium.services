@@ -35,6 +35,10 @@ body {
   background-color: #fff;
 }
 
+a > code {
+  color: blue;
+}
+
 code {
   background-color: #f6f8fa;
   font-family: -apple-system, system-ui, BlinkMacSystemFont,
@@ -360,6 +364,11 @@ article a {
   font-weight: 600;
   display: block;
   width: fit-content;
+}
+
+.docs article a {
+  text-decoration: none;
+  font-weight: 600;
 }
 
 .docs .method a {

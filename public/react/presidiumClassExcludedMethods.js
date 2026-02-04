@@ -7,4 +7,8 @@ m.set('S3Bucket', [
   'putVersioning',
 ])
 
+m.set('HTTP', [
+  'request',
+])
+
 export default m
