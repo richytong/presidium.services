@@ -25,7 +25,7 @@ export default {
         {
           type: 'image',
           title: null,
-          url: 'https://rubico.land/assets/presidium-logo-2-w200.jpg',
+          url: 'https://rubico.land/assets/presidium-logo-3-w200.jpg',
           alt: 'presidium',
           position: {
             start: { line: 2, column: 1, offset: 12 },

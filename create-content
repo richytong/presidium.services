@@ -31,6 +31,7 @@ const createCronistFile = async function (source, dest, options = {}) {
     flatMap(async fileName => pipe(fileName, [
       readFileUtf8,
       cronist,
+      filter(data => data.name && data.docs && Object.keys(data.mdast).length > 1),
       switchCase([
         data => data.length > 0,
         ([classDocsData, ...methodsDocsData]) => [{
@@ -54,20 +55,33 @@ export default ${inspect(data, {
 
 // createMdast() -> Promise<>
 const createMdast = async function () {
-  console.log('Creating mdast/readme.js')
-  await createMdastFile(
-    `${__dirname}/../presidium/README.md`,
-    `${__dirname}/public/mdast/readme.js`,
-  )
-
   const presidiumVersion = require('../presidium/package').version
   const presidiumMajorVersion = presidiumVersion.split('.')[0]
+  const presidiumWebSocketVersion = require('../presidium-websocket/package').version
+  const presidiumWebSocketMajorVersion = presidiumWebSocketVersion.split('.')[0]
+
+  console.log(`Creating mdast/presidium-v${presidiumMajorVersion}-readme.js`)
+  await createMdastFile(
+    `${__dirname}/../presidium/README.md`,
+    `${__dirname}/public/mdast/presidium-v${presidiumMajorVersion}-readme.js`,
+  )
+
   console.log(`Creating cronist/presidium-v${presidiumMajorVersion}.js`)
   await createCronistFile(
     `${__dirname}/../presidium`,
     `${__dirname}/public/cronist/presidium-v${presidiumMajorVersion}.js`,
     {
-      requiredKeys: ['name', 'docs', 'description'],
+      requiredKeys: ['name', 'docs'],
+      ignoreDirs: ['node_modules', 'archive'],
+    },
+  )
+
+  console.log(`Creating cronist/presidium-websocket-v${presidiumWebSocketMajorVersion}.js`)
+  await createCronistFile(
+    `${__dirname}/../presidium-websocket`,
+    `${__dirname}/public/cronist/presidium-websocket-v${presidiumWebSocketMajorVersion}.js`,
+    {
+      requiredKeys: ['name', 'docs'],
       ignoreDirs: ['node_modules', 'archive'],
     },
   )
