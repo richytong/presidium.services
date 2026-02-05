@@ -7,6 +7,7 @@ const presidiumV1ClassNames =
     && filename != 'userAgent.js'
     && filename != 'Archive.js'
     && filename != 'internal'
+    && filename != 'LICENSE'
   )
   .map(filename => filename.replace('.js', ''))
 

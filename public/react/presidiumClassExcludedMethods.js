@@ -20,4 +20,8 @@ m.set('TranscribeStream', [
   'unmarshalHeaders',
 ])
 
+m.set('ServerWebSocket', [
+  'connect',
+])
+
 export default m
