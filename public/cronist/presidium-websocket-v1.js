@@ -1,9 +1,3382 @@
 export default [
   {
-    name: 'WebSocket',
-    docs: 'Creates a Presidium WebSocket client.\n' +
+    name: 'ServerWebSocket',
+    docs: '```coffeescript [specscript]\n' +
+      "module net 'https://nodejs.org/api/net.html'\n" +
       '\n' +
-      '```coffeescript [specscript]\n' +
+      'new ServerWebSocket(socket net.Socket, options {\n' +
+      '  maxMessageLength: number\n' +
+      '  socketBufferLength: number,\n' +
+      '}) -> websocket ServerWebSocket\n' +
+      '```\n' +
+      '\n' +
+      'Presidium ServerWebSocket class. Used by Presidium [WebSocketServer](/docs/WebSocketServer) and [WebSocketSecureServer](/docs/WebSocketSecureServer) classes.\n' +
+      '\n' +
+      'Arguments:\n' +
+      "  * `socket` - an instance of a [Node.js net.Socket](https://nodejs.org/docs/latest-v24.x/api/net.html#class-netsocket). Represents the server's underlying TCP connection to the client.\n" +
+      '  * `options`\n' +
+      '    * `maxMessageLength` - the maximum length in bytes of sent messages. If a message is longer than `maxMessageLength`, it is split into fragmented messages that are reassembled by the receiver.\n' +
+      '    * `socketBufferLength` - length in bytes of the internal buffer of the underlying [socket](https://nodejs.org/api/net.html#class-netsocket).\n' +
+      '\n' +
+      'Return:\n' +
+      "  * `websocket` - a ServerWebSocket instance. Represents the server's WebSocket connection to the client.",
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'ServerWebSocket',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 16, offset: 15 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 16, offset: 15 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 16, offset: 15 }
+        }
+      },
+      docs: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: "module net 'https://nodejs.org/api/net.html'\n" +
+              '\n' +
+              'new ServerWebSocket(socket net.Socket, options {\n' +
+              '  maxMessageLength: number\n' +
+              '  socketBufferLength: number,\n' +
+              '}) -> websocket ServerWebSocket',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 8, column: 4, offset: 216 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Presidium ServerWebSocket class. Used by Presidium ',
+                position: {
+                  start: { line: 10, column: 1, offset: 218 },
+                  end: { line: 10, column: 52, offset: 269 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: '/docs/WebSocketServer',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'WebSocketServer',
+                    position: {
+                      start: { line: 10, column: 53, offset: 270 },
+                      end: { line: 10, column: 68, offset: 285 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 10, column: 52, offset: 269 },
+                  end: { line: 10, column: 92, offset: 309 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' and ',
+                position: {
+                  start: { line: 10, column: 92, offset: 309 },
+                  end: { line: 10, column: 97, offset: 314 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: '/docs/WebSocketSecureServer',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'WebSocketSecureServer',
+                    position: {
+                      start: { line: 10, column: 98, offset: 315 },
+                      end: { line: 10, column: 119, offset: 336 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 10, column: 97, offset: 314 },
+                  end: { line: 10, column: 149, offset: 366 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' classes.',
+                position: {
+                  start: { line: 10, column: 149, offset: 366 },
+                  end: { line: 10, column: 158, offset: 375 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 10, column: 1, offset: 218 },
+              end: { line: 10, column: 158, offset: 375 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Arguments:',
+                position: {
+                  start: { line: 12, column: 1, offset: 377 },
+                  end: { line: 12, column: 11, offset: 387 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 12, column: 1, offset: 377 },
+              end: { line: 12, column: 11, offset: 387 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'socket',
+                        position: {
+                          start: { line: 13, column: 5, offset: 392 },
+                          end: { line: 13, column: 13, offset: 400 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ' - an instance of a ',
+                        position: {
+                          start: { line: 13, column: 13, offset: 400 },
+                          end: { line: 13, column: 33, offset: 420 }
+                        }
+                      },
+                      {
+                        type: 'link',
+                        title: null,
+                        url: 'https://nodejs.org/docs/latest-v24.x/api/net.html#class-netsocket',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Node.js net.Socket',
+                            position: {
+                              start: { line: 13, column: 34, offset: 421 },
+                              end: { line: 13, column: 52, offset: 439 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 13, column: 33, offset: 420 },
+                          end: { line: 13, column: 120, offset: 507 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ". Represents the server's underlying TCP connection to the client.",
+                        position: {
+                          start: { line: 13, column: 120, offset: 507 },
+                          end: { line: 13, column: 186, offset: 573 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 13, column: 5, offset: 392 },
+                      end: { line: 13, column: 186, offset: 573 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 13, column: 3, offset: 390 },
+                  end: { line: 13, column: 186, offset: 573 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'options',
+                        position: {
+                          start: { line: 14, column: 5, offset: 578 },
+                          end: { line: 14, column: 14, offset: 587 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 14, column: 5, offset: 578 },
+                      end: { line: 14, column: 14, offset: 587 }
+                    }
+                  },
+                  {
+                    type: 'list',
+                    ordered: false,
+                    start: null,
+                    spread: false,
+                    children: [
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'maxMessageLength',
+                                position: {
+                                  start: { line: 15, column: 7, offset: 594 },
+                                  end: { line: 15, column: 25, offset: 612 }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - the maximum length in bytes of sent messages. If a message is longer than ',
+                                position: {
+                                  start: { line: 15, column: 25, offset: 612 },
+                                  end: {
+                                    line: 15,
+                                    column: 102,
+                                    offset: 689
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'maxMessageLength',
+                                position: {
+                                  start: {
+                                    line: 15,
+                                    column: 102,
+                                    offset: 689
+                                  },
+                                  end: {
+                                    line: 15,
+                                    column: 120,
+                                    offset: 707
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ', it is split into fragmented messages that are reassembled by the receiver.',
+                                position: {
+                                  start: {
+                                    line: 15,
+                                    column: 120,
+                                    offset: 707
+                                  },
+                                  end: {
+                                    line: 15,
+                                    column: 196,
+                                    offset: 783
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 15, column: 7, offset: 594 },
+                              end: { line: 15, column: 196, offset: 783 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 15, column: 5, offset: 592 },
+                          end: { line: 15, column: 196, offset: 783 }
+                        }
+                      },
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'socketBufferLength',
+                                position: {
+                                  start: { line: 16, column: 7, offset: 790 },
+                                  end: { line: 16, column: 27, offset: 810 }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - length in bytes of the internal buffer of the underlying ',
+                                position: {
+                                  start: { line: 16, column: 27, offset: 810 },
+                                  end: { line: 16, column: 87, offset: 870 }
+                                }
+                              },
+                              {
+                                type: 'link',
+                                title: null,
+                                url: 'https://nodejs.org/api/net.html#class-netsocket',
+                                children: [
+                                  {
+                                    type: 'text',
+                                    value: 'socket',
+                                    position: {
+                                      start: {
+                                        line: 16,
+                                        column: 88,
+                                        offset: 871
+                                      },
+                                      end: {
+                                        line: 16,
+                                        column: 94,
+                                        offset: 877
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 16, column: 87, offset: 870 },
+                                  end: {
+                                    line: 16,
+                                    column: 144,
+                                    offset: 927
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: '.',
+                                position: {
+                                  start: {
+                                    line: 16,
+                                    column: 144,
+                                    offset: 927
+                                  },
+                                  end: {
+                                    line: 16,
+                                    column: 145,
+                                    offset: 928
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 16, column: 7, offset: 790 },
+                              end: { line: 16, column: 145, offset: 928 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 16, column: 5, offset: 788 },
+                          end: { line: 16, column: 145, offset: 928 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 15, column: 5, offset: 592 },
+                      end: { line: 16, column: 145, offset: 928 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 14, column: 3, offset: 576 },
+                  end: { line: 16, column: 145, offset: 928 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 13, column: 3, offset: 390 },
+              end: { line: 16, column: 145, offset: 928 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Return:',
+                position: {
+                  start: { line: 18, column: 1, offset: 930 },
+                  end: { line: 18, column: 8, offset: 937 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 18, column: 1, offset: 930 },
+              end: { line: 18, column: 8, offset: 937 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'websocket',
+                        position: {
+                          start: { line: 19, column: 5, offset: 942 },
+                          end: { line: 19, column: 16, offset: 953 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: " - a ServerWebSocket instance. Represents the server's WebSocket connection to the client.",
+                        position: {
+                          start: { line: 19, column: 16, offset: 953 },
+                          end: { line: 19, column: 106, offset: 1043 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 19, column: 5, offset: 942 },
+                      end: { line: 19, column: 106, offset: 1043 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 19, column: 3, offset: 940 },
+                  end: { line: 19, column: 106, offset: 1043 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 19, column: 3, offset: 940 },
+              end: { line: 19, column: 106, offset: 1043 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 19, column: 106, offset: 1043 }
+        }
+      }
+    },
+    methods: [
+      {
+        name: 'Event: open',
+        docs: '```coffeescript [specscript]\n' +
+          "emit('open')\n" +
+          '```\n' +
+          '\n' +
+          'The `open` event. Emitted when the WebSocket connection is open.\n' +
+          '\n' +
+          'Event Data:\n' +
+          '  * (none)\n' +
+          '\n' +
+          '```javascript\n' +
+          "websocket.on('open', () => {\n" +
+          "  console.log('Connection is open.')\n" +
+          '})\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event: open',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 12, offset: 11 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 12, offset: 11 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 12, offset: 11 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: "emit('open')",
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 4, offset: 45 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'The ',
+                    position: {
+                      start: { line: 5, column: 1, offset: 47 },
+                      end: { line: 5, column: 5, offset: 51 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'open',
+                    position: {
+                      start: { line: 5, column: 5, offset: 51 },
+                      end: { line: 5, column: 11, offset: 57 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' event. Emitted when the WebSocket connection is open.',
+                    position: {
+                      start: { line: 5, column: 11, offset: 57 },
+                      end: { line: 5, column: 65, offset: 111 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 5, column: 1, offset: 47 },
+                  end: { line: 5, column: 65, offset: 111 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event Data:',
+                    position: {
+                      start: { line: 7, column: 1, offset: 113 },
+                      end: { line: 7, column: 12, offset: 124 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 7, column: 1, offset: 113 },
+                  end: { line: 7, column: 12, offset: 124 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'text',
+                            value: '(none)',
+                            position: {
+                              start: { line: 8, column: 5, offset: 129 },
+                              end: { line: 8, column: 11, offset: 135 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 8, column: 5, offset: 129 },
+                          end: { line: 8, column: 11, offset: 135 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 8, column: 3, offset: 127 },
+                      end: { line: 8, column: 11, offset: 135 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 3, offset: 127 },
+                  end: { line: 8, column: 11, offset: 135 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: "websocket.on('open', () => {\n" +
+                  "  console.log('Connection is open.')\n" +
+                  '})',
+                position: {
+                  start: { line: 10, column: 1, offset: 137 },
+                  end: { line: 14, column: 4, offset: 223 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 14, column: 4, offset: 223 }
+            }
+          }
+        }
+      },
+      {
+        name: 'Event: message',
+        docs: '```coffeescript [specscript]\n' +
+          "emit('message', message Buffer)\n" +
+          '```\n' +
+          '\n' +
+          'The `message` event. Emitted upon receipt and successful decoding (and reassembly, if applicable) of an incoming message.\n' +
+          '\n' +
+          'Event Data:\n' +
+          '  * `message` - a [Node.js buffer](https://nodejs.org/docs/latest-v24.x/api/buffer.html) of the received message.\n' +
+          '\n' +
+          '```javascript\n' +
+          "websocket.on('message', message => {\n" +
+          "  console.log('Message:', message.toString('utf8'))\n" +
+          '})\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event: message',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 15, offset: 14 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 15, offset: 14 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 15, offset: 14 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: "emit('message', message Buffer)",
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 4, offset: 64 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'The ',
+                    position: {
+                      start: { line: 5, column: 1, offset: 66 },
+                      end: { line: 5, column: 5, offset: 70 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'message',
+                    position: {
+                      start: { line: 5, column: 5, offset: 70 },
+                      end: { line: 5, column: 14, offset: 79 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' event. Emitted upon receipt and successful decoding (and reassembly, if applicable) of an incoming message.',
+                    position: {
+                      start: { line: 5, column: 14, offset: 79 },
+                      end: { line: 5, column: 122, offset: 187 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 5, column: 1, offset: 66 },
+                  end: { line: 5, column: 122, offset: 187 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event Data:',
+                    position: {
+                      start: { line: 7, column: 1, offset: 189 },
+                      end: { line: 7, column: 12, offset: 200 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 7, column: 1, offset: 189 },
+                  end: { line: 7, column: 12, offset: 200 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'message',
+                            position: {
+                              start: { line: 8, column: 5, offset: 205 },
+                              end: { line: 8, column: 14, offset: 214 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - a ',
+                            position: {
+                              start: { line: 8, column: 14, offset: 214 },
+                              end: { line: 8, column: 19, offset: 219 }
+                            }
+                          },
+                          {
+                            type: 'link',
+                            title: null,
+                            url: 'https://nodejs.org/docs/latest-v24.x/api/buffer.html',
+                            children: [
+                              {
+                                type: 'text',
+                                value: 'Node.js buffer',
+                                position: {
+                                  start: { line: 8, column: 20, offset: 220 },
+                                  end: { line: 8, column: 34, offset: 234 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 8, column: 19, offset: 219 },
+                              end: { line: 8, column: 89, offset: 289 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' of the received message.',
+                            position: {
+                              start: { line: 8, column: 89, offset: 289 },
+                              end: { line: 8, column: 114, offset: 314 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 8, column: 5, offset: 205 },
+                          end: { line: 8, column: 114, offset: 314 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 8, column: 3, offset: 203 },
+                      end: { line: 8, column: 114, offset: 314 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 3, offset: 203 },
+                  end: { line: 8, column: 114, offset: 314 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: "websocket.on('message', message => {\n" +
+                  "  console.log('Message:', message.toString('utf8'))\n" +
+                  '})',
+                position: {
+                  start: { line: 10, column: 1, offset: 316 },
+                  end: { line: 14, column: 4, offset: 425 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 14, column: 4, offset: 425 }
+            }
+          }
+        }
+      },
+      {
+        name: 'Event: ping',
+        docs: '```coffeescript [specscript]\n' +
+          "emit('ping', payload Buffer)\n" +
+          '```\n' +
+          '\n' +
+          'The `ping` event. Emitted upon receipt and successful decoding of an incoming "ping" message.\n' +
+          '\n' +
+          'Event Data:\n' +
+          '  * `payload` - a [Node.js buffer](https://nodejs.org/docs/latest-v24.x/api/buffer.html) of the received payload.\n' +
+          '\n' +
+          '```javascript\n' +
+          "websocket.on('ping', () => {\n" +
+          "  console.log('Ping')\n" +
+          '})\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event: ping',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 12, offset: 11 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 12, offset: 11 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 12, offset: 11 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: "emit('ping', payload Buffer)",
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 4, offset: 61 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'The ',
+                    position: {
+                      start: { line: 5, column: 1, offset: 63 },
+                      end: { line: 5, column: 5, offset: 67 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'ping',
+                    position: {
+                      start: { line: 5, column: 5, offset: 67 },
+                      end: { line: 5, column: 11, offset: 73 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' event. Emitted upon receipt and successful decoding of an incoming "ping" message.',
+                    position: {
+                      start: { line: 5, column: 11, offset: 73 },
+                      end: { line: 5, column: 94, offset: 156 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 5, column: 1, offset: 63 },
+                  end: { line: 5, column: 94, offset: 156 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event Data:',
+                    position: {
+                      start: { line: 7, column: 1, offset: 158 },
+                      end: { line: 7, column: 12, offset: 169 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 7, column: 1, offset: 158 },
+                  end: { line: 7, column: 12, offset: 169 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'payload',
+                            position: {
+                              start: { line: 8, column: 5, offset: 174 },
+                              end: { line: 8, column: 14, offset: 183 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - a ',
+                            position: {
+                              start: { line: 8, column: 14, offset: 183 },
+                              end: { line: 8, column: 19, offset: 188 }
+                            }
+                          },
+                          {
+                            type: 'link',
+                            title: null,
+                            url: 'https://nodejs.org/docs/latest-v24.x/api/buffer.html',
+                            children: [
+                              {
+                                type: 'text',
+                                value: 'Node.js buffer',
+                                position: {
+                                  start: { line: 8, column: 20, offset: 189 },
+                                  end: { line: 8, column: 34, offset: 203 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 8, column: 19, offset: 188 },
+                              end: { line: 8, column: 89, offset: 258 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' of the received payload.',
+                            position: {
+                              start: { line: 8, column: 89, offset: 258 },
+                              end: { line: 8, column: 114, offset: 283 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 8, column: 5, offset: 174 },
+                          end: { line: 8, column: 114, offset: 283 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 8, column: 3, offset: 172 },
+                      end: { line: 8, column: 114, offset: 283 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 3, offset: 172 },
+                  end: { line: 8, column: 114, offset: 283 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: "websocket.on('ping', () => {\n  console.log('Ping')\n})",
+                position: {
+                  start: { line: 10, column: 1, offset: 285 },
+                  end: { line: 14, column: 4, offset: 356 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 14, column: 4, offset: 356 }
+            }
+          }
+        }
+      },
+      {
+        name: 'Event: pong',
+        docs: '```coffeescript [specscript]\n' +
+          "emit('pong', payload Buffer)\n" +
+          '```\n' +
+          '\n' +
+          'The `pong` event. Emitted upon receipt and successful decoding of an incoming "pong" message.\n' +
+          '\n' +
+          'Event Data:\n' +
+          '  * `payload` - a [Node.js buffer](https://nodejs.org/docs/latest-v24.x/api/buffer.html) of the received payload.\n' +
+          '\n' +
+          '```javascript\n' +
+          "websocket.on('pong', () => {\n" +
+          "  console.log('Pong')\n" +
+          '})\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event: pong',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 12, offset: 11 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 12, offset: 11 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 12, offset: 11 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: "emit('pong', payload Buffer)",
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 4, offset: 61 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'The ',
+                    position: {
+                      start: { line: 5, column: 1, offset: 63 },
+                      end: { line: 5, column: 5, offset: 67 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'pong',
+                    position: {
+                      start: { line: 5, column: 5, offset: 67 },
+                      end: { line: 5, column: 11, offset: 73 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' event. Emitted upon receipt and successful decoding of an incoming "pong" message.',
+                    position: {
+                      start: { line: 5, column: 11, offset: 73 },
+                      end: { line: 5, column: 94, offset: 156 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 5, column: 1, offset: 63 },
+                  end: { line: 5, column: 94, offset: 156 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event Data:',
+                    position: {
+                      start: { line: 7, column: 1, offset: 158 },
+                      end: { line: 7, column: 12, offset: 169 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 7, column: 1, offset: 158 },
+                  end: { line: 7, column: 12, offset: 169 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'payload',
+                            position: {
+                              start: { line: 8, column: 5, offset: 174 },
+                              end: { line: 8, column: 14, offset: 183 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - a ',
+                            position: {
+                              start: { line: 8, column: 14, offset: 183 },
+                              end: { line: 8, column: 19, offset: 188 }
+                            }
+                          },
+                          {
+                            type: 'link',
+                            title: null,
+                            url: 'https://nodejs.org/docs/latest-v24.x/api/buffer.html',
+                            children: [
+                              {
+                                type: 'text',
+                                value: 'Node.js buffer',
+                                position: {
+                                  start: { line: 8, column: 20, offset: 189 },
+                                  end: { line: 8, column: 34, offset: 203 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 8, column: 19, offset: 188 },
+                              end: { line: 8, column: 89, offset: 258 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' of the received payload.',
+                            position: {
+                              start: { line: 8, column: 89, offset: 258 },
+                              end: { line: 8, column: 114, offset: 283 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 8, column: 5, offset: 174 },
+                          end: { line: 8, column: 114, offset: 283 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 8, column: 3, offset: 172 },
+                      end: { line: 8, column: 114, offset: 283 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 3, offset: 172 },
+                  end: { line: 8, column: 114, offset: 283 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: "websocket.on('pong', () => {\n  console.log('Pong')\n})",
+                position: {
+                  start: { line: 10, column: 1, offset: 285 },
+                  end: { line: 14, column: 4, offset: 356 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 14, column: 4, offset: 356 }
+            }
+          }
+        }
+      },
+      {
+        name: 'Event: error',
+        docs: '```coffeescript [specscript]\n' +
+          "emit('error', error Error)\n" +
+          '```\n' +
+          '\n' +
+          'The `error` event. Emitted if an error occurs on the ServerWebSocket instance or on its underlying [socket](https://nodejs.org/api/net.html#class-netsocket).\n' +
+          '\n' +
+          'Event Data:\n' +
+          '  * `error` - an instance of a JavaScript [Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error).\n' +
+          '\n' +
+          '```javascript\n' +
+          "websocket.on('error', error => {\n" +
+          "  console.error('Error:', error)\n" +
+          '})\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event: error',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 13, offset: 12 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 13, offset: 12 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 13, offset: 12 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: "emit('error', error Error)",
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 4, offset: 59 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'The ',
+                    position: {
+                      start: { line: 5, column: 1, offset: 61 },
+                      end: { line: 5, column: 5, offset: 65 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'error',
+                    position: {
+                      start: { line: 5, column: 5, offset: 65 },
+                      end: { line: 5, column: 12, offset: 72 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' event. Emitted if an error occurs on the ServerWebSocket instance or on its underlying ',
+                    position: {
+                      start: { line: 5, column: 12, offset: 72 },
+                      end: { line: 5, column: 100, offset: 160 }
+                    }
+                  },
+                  {
+                    type: 'link',
+                    title: null,
+                    url: 'https://nodejs.org/api/net.html#class-netsocket',
+                    children: [
+                      {
+                        type: 'text',
+                        value: 'socket',
+                        position: {
+                          start: { line: 5, column: 101, offset: 161 },
+                          end: { line: 5, column: 107, offset: 167 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 5, column: 100, offset: 160 },
+                      end: { line: 5, column: 157, offset: 217 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: '.',
+                    position: {
+                      start: { line: 5, column: 157, offset: 217 },
+                      end: { line: 5, column: 158, offset: 218 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 5, column: 1, offset: 61 },
+                  end: { line: 5, column: 158, offset: 218 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event Data:',
+                    position: {
+                      start: { line: 7, column: 1, offset: 220 },
+                      end: { line: 7, column: 12, offset: 231 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 7, column: 1, offset: 220 },
+                  end: { line: 7, column: 12, offset: 231 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'error',
+                            position: {
+                              start: { line: 8, column: 5, offset: 236 },
+                              end: { line: 8, column: 12, offset: 243 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - an instance of a JavaScript ',
+                            position: {
+                              start: { line: 8, column: 12, offset: 243 },
+                              end: { line: 8, column: 43, offset: 274 }
+                            }
+                          },
+                          {
+                            type: 'link',
+                            title: null,
+                            url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error',
+                            children: [
+                              {
+                                type: 'text',
+                                value: 'Error',
+                                position: {
+                                  start: { line: 8, column: 44, offset: 275 },
+                                  end: { line: 8, column: 49, offset: 280 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 8, column: 43, offset: 274 },
+                              end: { line: 8, column: 138, offset: 369 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: '.',
+                            position: {
+                              start: { line: 8, column: 138, offset: 369 },
+                              end: { line: 8, column: 139, offset: 370 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 8, column: 5, offset: 236 },
+                          end: { line: 8, column: 139, offset: 370 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 8, column: 3, offset: 234 },
+                      end: { line: 8, column: 139, offset: 370 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 3, offset: 234 },
+                  end: { line: 8, column: 139, offset: 370 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: "websocket.on('error', error => {\n" +
+                  "  console.error('Error:', error)\n" +
+                  '})',
+                position: {
+                  start: { line: 10, column: 1, offset: 372 },
+                  end: { line: 14, column: 4, offset: 458 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 14, column: 4, offset: 458 }
+            }
+          }
+        }
+      },
+      {
+        name: 'Event: close',
+        docs: '```coffeescript [specscript]\n' +
+          "emit('close')\n" +
+          '```\n' +
+          '\n' +
+          'The `close` event. Emitted when the underlying [socket](https://nodejs.org/api/net.html#class-netsocket) is destroyed.\n' +
+          '\n' +
+          'Event Data:\n' +
+          '  * (none)\n' +
+          '\n' +
+          '```javascript\n' +
+          "websocket.on('close', () => {\n" +
+          "  console.log('Connection is closed.')\n" +
+          '})\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event: close',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 13, offset: 12 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 13, offset: 12 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 13, offset: 12 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: "emit('close')",
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 4, offset: 46 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'The ',
+                    position: {
+                      start: { line: 5, column: 1, offset: 48 },
+                      end: { line: 5, column: 5, offset: 52 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'close',
+                    position: {
+                      start: { line: 5, column: 5, offset: 52 },
+                      end: { line: 5, column: 12, offset: 59 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' event. Emitted when the underlying ',
+                    position: {
+                      start: { line: 5, column: 12, offset: 59 },
+                      end: { line: 5, column: 48, offset: 95 }
+                    }
+                  },
+                  {
+                    type: 'link',
+                    title: null,
+                    url: 'https://nodejs.org/api/net.html#class-netsocket',
+                    children: [
+                      {
+                        type: 'text',
+                        value: 'socket',
+                        position: {
+                          start: { line: 5, column: 49, offset: 96 },
+                          end: { line: 5, column: 55, offset: 102 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 5, column: 48, offset: 95 },
+                      end: { line: 5, column: 105, offset: 152 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' is destroyed.',
+                    position: {
+                      start: { line: 5, column: 105, offset: 152 },
+                      end: { line: 5, column: 119, offset: 166 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 5, column: 1, offset: 48 },
+                  end: { line: 5, column: 119, offset: 166 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event Data:',
+                    position: {
+                      start: { line: 7, column: 1, offset: 168 },
+                      end: { line: 7, column: 12, offset: 179 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 7, column: 1, offset: 168 },
+                  end: { line: 7, column: 12, offset: 179 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'text',
+                            value: '(none)',
+                            position: {
+                              start: { line: 8, column: 5, offset: 184 },
+                              end: { line: 8, column: 11, offset: 190 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 8, column: 5, offset: 184 },
+                          end: { line: 8, column: 11, offset: 190 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 8, column: 3, offset: 182 },
+                      end: { line: 8, column: 11, offset: 190 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 3, offset: 182 },
+                  end: { line: 8, column: 11, offset: 190 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: "websocket.on('close', () => {\n" +
+                  "  console.log('Connection is closed.')\n" +
+                  '})',
+                position: {
+                  start: { line: 10, column: 1, offset: 192 },
+                  end: { line: 14, column: 4, offset: 281 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 14, column: 4, offset: 281 }
+            }
+          }
+        }
+      },
+      {
+        name: 'connect',
+        docs: '```coffeescript [specscript]\n' +
+          'websocket.connect() -> undefined\n' +
+          '```\n' +
+          '\n' +
+          'Throws an error.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * (none)\n' +
+          '\n' +
+          'Return:\n' +
+          '  * undefined\n' +
+          '\n' +
+          '```javascript\n' +
+          'websocket.connect()\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'connect',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 8, offset: 7 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 8, offset: 7 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 8, offset: 7 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: 'websocket.connect() -> undefined',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 4, offset: 65 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Throws an error.',
+                    position: {
+                      start: { line: 5, column: 1, offset: 67 },
+                      end: { line: 5, column: 17, offset: 83 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 5, column: 1, offset: 67 },
+                  end: { line: 5, column: 17, offset: 83 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 7, column: 1, offset: 85 },
+                      end: { line: 7, column: 11, offset: 95 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 7, column: 1, offset: 85 },
+                  end: { line: 7, column: 11, offset: 95 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'text',
+                            value: '(none)',
+                            position: {
+                              start: { line: 8, column: 5, offset: 100 },
+                              end: { line: 8, column: 11, offset: 106 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 8, column: 5, offset: 100 },
+                          end: { line: 8, column: 11, offset: 106 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 8, column: 3, offset: 98 },
+                      end: { line: 8, column: 11, offset: 106 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 3, offset: 98 },
+                  end: { line: 8, column: 11, offset: 106 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 10, column: 1, offset: 108 },
+                      end: { line: 10, column: 8, offset: 115 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 10, column: 1, offset: 108 },
+                  end: { line: 10, column: 8, offset: 115 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'undefined',
+                            position: {
+                              start: { line: 11, column: 5, offset: 120 },
+                              end: { line: 11, column: 14, offset: 129 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 11, column: 5, offset: 120 },
+                          end: { line: 11, column: 14, offset: 129 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 11, column: 3, offset: 118 },
+                      end: { line: 11, column: 14, offset: 129 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 3, offset: 118 },
+                  end: { line: 11, column: 14, offset: 129 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'websocket.connect()',
+                position: {
+                  start: { line: 13, column: 1, offset: 131 },
+                  end: { line: 15, column: 4, offset: 168 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 15, column: 4, offset: 168 }
+            }
+          }
+        }
+      },
+      {
+        name: 'send',
+        docs: '```coffeescript [specscript]\n' +
+          'websocket.send(payload Buffer|string) -> ()\n' +
+          '```\n' +
+          '\n' +
+          'Sends a message to the client.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * `message` - a [Node.js buffer](https://nodejs.org/docs/latest-v24.x/api/buffer.html) or string of the message to send.\n' +
+          '\n' +
+          'Return:\n' +
+          '  * undefined\n' +
+          '\n' +
+          '```javascript\n' +
+          "websocket.send('Example')\n" +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'send',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 5, offset: 4 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 5, offset: 4 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 5, offset: 4 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: 'websocket.send(payload Buffer|string) -> ()',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 4, offset: 76 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Sends a message to the client.',
+                    position: {
+                      start: { line: 5, column: 1, offset: 78 },
+                      end: { line: 5, column: 31, offset: 108 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 5, column: 1, offset: 78 },
+                  end: { line: 5, column: 31, offset: 108 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 7, column: 1, offset: 110 },
+                      end: { line: 7, column: 11, offset: 120 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 7, column: 1, offset: 110 },
+                  end: { line: 7, column: 11, offset: 120 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'message',
+                            position: {
+                              start: { line: 8, column: 5, offset: 125 },
+                              end: { line: 8, column: 14, offset: 134 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - a ',
+                            position: {
+                              start: { line: 8, column: 14, offset: 134 },
+                              end: { line: 8, column: 19, offset: 139 }
+                            }
+                          },
+                          {
+                            type: 'link',
+                            title: null,
+                            url: 'https://nodejs.org/docs/latest-v24.x/api/buffer.html',
+                            children: [
+                              {
+                                type: 'text',
+                                value: 'Node.js buffer',
+                                position: {
+                                  start: { line: 8, column: 20, offset: 140 },
+                                  end: { line: 8, column: 34, offset: 154 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 8, column: 19, offset: 139 },
+                              end: { line: 8, column: 89, offset: 209 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' or string of the message to send.',
+                            position: {
+                              start: { line: 8, column: 89, offset: 209 },
+                              end: { line: 8, column: 123, offset: 243 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 8, column: 5, offset: 125 },
+                          end: { line: 8, column: 123, offset: 243 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 8, column: 3, offset: 123 },
+                      end: { line: 8, column: 123, offset: 243 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 3, offset: 123 },
+                  end: { line: 8, column: 123, offset: 243 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 10, column: 1, offset: 245 },
+                      end: { line: 10, column: 8, offset: 252 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 10, column: 1, offset: 245 },
+                  end: { line: 10, column: 8, offset: 252 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'undefined',
+                            position: {
+                              start: { line: 11, column: 5, offset: 257 },
+                              end: { line: 11, column: 14, offset: 266 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 11, column: 5, offset: 257 },
+                          end: { line: 11, column: 14, offset: 266 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 11, column: 3, offset: 255 },
+                      end: { line: 11, column: 14, offset: 266 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 3, offset: 255 },
+                  end: { line: 11, column: 14, offset: 266 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: "websocket.send('Example')",
+                position: {
+                  start: { line: 13, column: 1, offset: 268 },
+                  end: { line: 15, column: 4, offset: 311 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 15, column: 4, offset: 311 }
+            }
+          }
+        }
+      },
+      {
+        name: 'sendClose',
+        docs: '```coffeescript [specscript]\n' +
+          'websocket.sendClose() -> undefined\n' +
+          'websocket.sendClose(payload Buffer|string) -> undefined\n' +
+          '```\n' +
+          '\n' +
+          'Sends a close frame to the client.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * `payload` - a [Node.js buffer](https://nodejs.org/docs/latest-v24.x/api/buffer.html) or string of the payload to send.\n' +
+          '\n' +
+          'Return:\n' +
+          '  * undefined\n' +
+          '\n' +
+          '```javascript\n' +
+          'websocket.sendClose()\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'sendClose',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 10, offset: 9 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 10, offset: 9 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 10, offset: 9 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: 'websocket.sendClose() -> undefined\n' +
+                  'websocket.sendClose(payload Buffer|string) -> undefined',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 4, column: 4, offset: 123 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Sends a close frame to the client.',
+                    position: {
+                      start: { line: 6, column: 1, offset: 125 },
+                      end: { line: 6, column: 35, offset: 159 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 6, column: 1, offset: 125 },
+                  end: { line: 6, column: 35, offset: 159 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 8, column: 1, offset: 161 },
+                      end: { line: 8, column: 11, offset: 171 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 1, offset: 161 },
+                  end: { line: 8, column: 11, offset: 171 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'payload',
+                            position: {
+                              start: { line: 9, column: 5, offset: 176 },
+                              end: { line: 9, column: 14, offset: 185 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - a ',
+                            position: {
+                              start: { line: 9, column: 14, offset: 185 },
+                              end: { line: 9, column: 19, offset: 190 }
+                            }
+                          },
+                          {
+                            type: 'link',
+                            title: null,
+                            url: 'https://nodejs.org/docs/latest-v24.x/api/buffer.html',
+                            children: [
+                              {
+                                type: 'text',
+                                value: 'Node.js buffer',
+                                position: {
+                                  start: { line: 9, column: 20, offset: 191 },
+                                  end: { line: 9, column: 34, offset: 205 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 9, column: 19, offset: 190 },
+                              end: { line: 9, column: 89, offset: 260 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' or string of the payload to send.',
+                            position: {
+                              start: { line: 9, column: 89, offset: 260 },
+                              end: { line: 9, column: 123, offset: 294 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 9, column: 5, offset: 176 },
+                          end: { line: 9, column: 123, offset: 294 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 9, column: 3, offset: 174 },
+                      end: { line: 9, column: 123, offset: 294 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 9, column: 3, offset: 174 },
+                  end: { line: 9, column: 123, offset: 294 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 11, column: 1, offset: 296 },
+                      end: { line: 11, column: 8, offset: 303 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 1, offset: 296 },
+                  end: { line: 11, column: 8, offset: 303 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'undefined',
+                            position: {
+                              start: { line: 12, column: 5, offset: 308 },
+                              end: { line: 12, column: 14, offset: 317 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 12, column: 5, offset: 308 },
+                          end: { line: 12, column: 14, offset: 317 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 12, column: 3, offset: 306 },
+                      end: { line: 12, column: 14, offset: 317 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 12, column: 3, offset: 306 },
+                  end: { line: 12, column: 14, offset: 317 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'websocket.sendClose()',
+                position: {
+                  start: { line: 14, column: 1, offset: 319 },
+                  end: { line: 16, column: 4, offset: 358 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 16, column: 4, offset: 358 }
+            }
+          }
+        }
+      },
+      {
+        name: 'sendPing',
+        docs: '```coffeescript [specscript]\n' +
+          'websocket.sendPing() -> undefined\n' +
+          'websocket.sendPing(payload Buffer|string) -> undefined\n' +
+          '```\n' +
+          '\n' +
+          'Sends a ping frame to the client.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * `payload` - a [Node.js buffer](https://nodejs.org/docs/latest-v24.x/api/buffer.html) or string of the payload to send.\n' +
+          '\n' +
+          'Return:\n' +
+          '  * undefined\n' +
+          '\n' +
+          '```javascript\n' +
+          'websocket.sendPing()\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'sendPing',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 9, offset: 8 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 9, offset: 8 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 9, offset: 8 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: 'websocket.sendPing() -> undefined\n' +
+                  'websocket.sendPing(payload Buffer|string) -> undefined',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 4, column: 4, offset: 121 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Sends a ping frame to the client.',
+                    position: {
+                      start: { line: 6, column: 1, offset: 123 },
+                      end: { line: 6, column: 34, offset: 156 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 6, column: 1, offset: 123 },
+                  end: { line: 6, column: 34, offset: 156 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 8, column: 1, offset: 158 },
+                      end: { line: 8, column: 11, offset: 168 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 1, offset: 158 },
+                  end: { line: 8, column: 11, offset: 168 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'payload',
+                            position: {
+                              start: { line: 9, column: 5, offset: 173 },
+                              end: { line: 9, column: 14, offset: 182 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - a ',
+                            position: {
+                              start: { line: 9, column: 14, offset: 182 },
+                              end: { line: 9, column: 19, offset: 187 }
+                            }
+                          },
+                          {
+                            type: 'link',
+                            title: null,
+                            url: 'https://nodejs.org/docs/latest-v24.x/api/buffer.html',
+                            children: [
+                              {
+                                type: 'text',
+                                value: 'Node.js buffer',
+                                position: {
+                                  start: { line: 9, column: 20, offset: 188 },
+                                  end: { line: 9, column: 34, offset: 202 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 9, column: 19, offset: 187 },
+                              end: { line: 9, column: 89, offset: 257 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' or string of the payload to send.',
+                            position: {
+                              start: { line: 9, column: 89, offset: 257 },
+                              end: { line: 9, column: 123, offset: 291 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 9, column: 5, offset: 173 },
+                          end: { line: 9, column: 123, offset: 291 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 9, column: 3, offset: 171 },
+                      end: { line: 9, column: 123, offset: 291 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 9, column: 3, offset: 171 },
+                  end: { line: 9, column: 123, offset: 291 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 11, column: 1, offset: 293 },
+                      end: { line: 11, column: 8, offset: 300 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 1, offset: 293 },
+                  end: { line: 11, column: 8, offset: 300 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'undefined',
+                            position: {
+                              start: { line: 12, column: 5, offset: 305 },
+                              end: { line: 12, column: 14, offset: 314 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 12, column: 5, offset: 305 },
+                          end: { line: 12, column: 14, offset: 314 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 12, column: 3, offset: 303 },
+                      end: { line: 12, column: 14, offset: 314 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 12, column: 3, offset: 303 },
+                  end: { line: 12, column: 14, offset: 314 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'websocket.sendPing()',
+                position: {
+                  start: { line: 14, column: 1, offset: 316 },
+                  end: { line: 16, column: 4, offset: 354 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 16, column: 4, offset: 354 }
+            }
+          }
+        }
+      },
+      {
+        name: 'sendPong',
+        docs: '```coffeescript [specscript]\n' +
+          'websocket.sendPong() -> undefined\n' +
+          'websocket.sendPong(payload Buffer|string) -> undefined\n' +
+          '```\n' +
+          '\n' +
+          'Sends a pong frame to the client.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * `payload` - a [Node.js buffer](https://nodejs.org/docs/latest-v24.x/api/buffer.html) or string of the payload to send.\n' +
+          '\n' +
+          'Return:\n' +
+          '  * undefined\n' +
+          '\n' +
+          '```javascript\n' +
+          'websocket.sendPong()\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'sendPong',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 9, offset: 8 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 9, offset: 8 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 9, offset: 8 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: 'websocket.sendPong() -> undefined\n' +
+                  'websocket.sendPong(payload Buffer|string) -> undefined',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 4, column: 4, offset: 121 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Sends a pong frame to the client.',
+                    position: {
+                      start: { line: 6, column: 1, offset: 123 },
+                      end: { line: 6, column: 34, offset: 156 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 6, column: 1, offset: 123 },
+                  end: { line: 6, column: 34, offset: 156 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 8, column: 1, offset: 158 },
+                      end: { line: 8, column: 11, offset: 168 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 1, offset: 158 },
+                  end: { line: 8, column: 11, offset: 168 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'payload',
+                            position: {
+                              start: { line: 9, column: 5, offset: 173 },
+                              end: { line: 9, column: 14, offset: 182 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - a ',
+                            position: {
+                              start: { line: 9, column: 14, offset: 182 },
+                              end: { line: 9, column: 19, offset: 187 }
+                            }
+                          },
+                          {
+                            type: 'link',
+                            title: null,
+                            url: 'https://nodejs.org/docs/latest-v24.x/api/buffer.html',
+                            children: [
+                              {
+                                type: 'text',
+                                value: 'Node.js buffer',
+                                position: {
+                                  start: { line: 9, column: 20, offset: 188 },
+                                  end: { line: 9, column: 34, offset: 202 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 9, column: 19, offset: 187 },
+                              end: { line: 9, column: 89, offset: 257 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' or string of the payload to send.',
+                            position: {
+                              start: { line: 9, column: 89, offset: 257 },
+                              end: { line: 9, column: 123, offset: 291 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 9, column: 5, offset: 173 },
+                          end: { line: 9, column: 123, offset: 291 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 9, column: 3, offset: 171 },
+                      end: { line: 9, column: 123, offset: 291 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 9, column: 3, offset: 171 },
+                  end: { line: 9, column: 123, offset: 291 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 11, column: 1, offset: 293 },
+                      end: { line: 11, column: 8, offset: 300 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 1, offset: 293 },
+                  end: { line: 11, column: 8, offset: 300 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'undefined',
+                            position: {
+                              start: { line: 12, column: 5, offset: 305 },
+                              end: { line: 12, column: 14, offset: 314 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 12, column: 5, offset: 305 },
+                          end: { line: 12, column: 14, offset: 314 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 12, column: 3, offset: 303 },
+                      end: { line: 12, column: 14, offset: 314 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 12, column: 3, offset: 303 },
+                  end: { line: 12, column: 14, offset: 314 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'websocket.sendPong()',
+                position: {
+                  start: { line: 14, column: 1, offset: 316 },
+                  end: { line: 16, column: 4, offset: 354 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 16, column: 4, offset: 354 }
+            }
+          }
+        }
+      },
+      {
+        name: 'close',
+        docs: '```coffeescript [specscript]\n' +
+          'websocket.close() -> undefined\n' +
+          'websocket.close(payload Buffer|string) -> undefined\n' +
+          '```\n' +
+          '\n' +
+          'Closes the connection to the client.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * `payload` - a [Node.js buffer](https://nodejs.org/docs/latest-v24.x/api/buffer.html) or string of the payload to send.\n' +
+          '\n' +
+          'Return:\n' +
+          '  * undefined\n' +
+          '\n' +
+          '```javascript\n' +
+          'websocket.close()\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'close',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 6, offset: 5 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 6, offset: 5 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 6, offset: 5 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: 'websocket.close() -> undefined\n' +
+                  'websocket.close(payload Buffer|string) -> undefined',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 4, column: 4, offset: 115 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Closes the connection to the client.',
+                    position: {
+                      start: { line: 6, column: 1, offset: 117 },
+                      end: { line: 6, column: 37, offset: 153 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 6, column: 1, offset: 117 },
+                  end: { line: 6, column: 37, offset: 153 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 8, column: 1, offset: 155 },
+                      end: { line: 8, column: 11, offset: 165 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 1, offset: 155 },
+                  end: { line: 8, column: 11, offset: 165 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'payload',
+                            position: {
+                              start: { line: 9, column: 5, offset: 170 },
+                              end: { line: 9, column: 14, offset: 179 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - a ',
+                            position: {
+                              start: { line: 9, column: 14, offset: 179 },
+                              end: { line: 9, column: 19, offset: 184 }
+                            }
+                          },
+                          {
+                            type: 'link',
+                            title: null,
+                            url: 'https://nodejs.org/docs/latest-v24.x/api/buffer.html',
+                            children: [
+                              {
+                                type: 'text',
+                                value: 'Node.js buffer',
+                                position: {
+                                  start: { line: 9, column: 20, offset: 185 },
+                                  end: { line: 9, column: 34, offset: 199 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 9, column: 19, offset: 184 },
+                              end: { line: 9, column: 89, offset: 254 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' or string of the payload to send.',
+                            position: {
+                              start: { line: 9, column: 89, offset: 254 },
+                              end: { line: 9, column: 123, offset: 288 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 9, column: 5, offset: 170 },
+                          end: { line: 9, column: 123, offset: 288 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 9, column: 3, offset: 168 },
+                      end: { line: 9, column: 123, offset: 288 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 9, column: 3, offset: 168 },
+                  end: { line: 9, column: 123, offset: 288 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 11, column: 1, offset: 290 },
+                      end: { line: 11, column: 8, offset: 297 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 1, offset: 290 },
+                  end: { line: 11, column: 8, offset: 297 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'undefined',
+                            position: {
+                              start: { line: 12, column: 5, offset: 302 },
+                              end: { line: 12, column: 14, offset: 311 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 12, column: 5, offset: 302 },
+                          end: { line: 12, column: 14, offset: 311 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 12, column: 3, offset: 300 },
+                      end: { line: 12, column: 14, offset: 311 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 12, column: 3, offset: 300 },
+                  end: { line: 12, column: 14, offset: 311 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'websocket.close()',
+                position: {
+                  start: { line: 14, column: 1, offset: 313 },
+                  end: { line: 16, column: 4, offset: 348 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 16, column: 4, offset: 348 }
+            }
+          }
+        }
+      },
+      {
+        name: 'destroy',
+        docs: '```coffeescript [specscript]\n' +
+          'websocket.destroy() -> undefined\n' +
+          'websocket.destroy(payload Buffer|string) -> undefined\n' +
+          '```\n' +
+          '\n' +
+          'Destroys the underlying [socket](https://nodejs.org/api/net.html#class-netsocket).\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * `payload` - a [Node.js buffer](https://nodejs.org/docs/latest-v24.x/api/buffer.html) or string of the payload to send.\n' +
+          '\n' +
+          'Return:\n' +
+          '  * undefined\n' +
+          '\n' +
+          '```javascript\n' +
+          'websocket.destroy()\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'destroy',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 8, offset: 7 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 8, offset: 7 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 8, offset: 7 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: 'websocket.destroy() -> undefined\n' +
+                  'websocket.destroy(payload Buffer|string) -> undefined',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 4, column: 4, offset: 119 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Destroys the underlying ',
+                    position: {
+                      start: { line: 6, column: 1, offset: 121 },
+                      end: { line: 6, column: 25, offset: 145 }
+                    }
+                  },
+                  {
+                    type: 'link',
+                    title: null,
+                    url: 'https://nodejs.org/api/net.html#class-netsocket',
+                    children: [
+                      {
+                        type: 'text',
+                        value: 'socket',
+                        position: {
+                          start: { line: 6, column: 26, offset: 146 },
+                          end: { line: 6, column: 32, offset: 152 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 6, column: 25, offset: 145 },
+                      end: { line: 6, column: 82, offset: 202 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: '.',
+                    position: {
+                      start: { line: 6, column: 82, offset: 202 },
+                      end: { line: 6, column: 83, offset: 203 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 6, column: 1, offset: 121 },
+                  end: { line: 6, column: 83, offset: 203 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 8, column: 1, offset: 205 },
+                      end: { line: 8, column: 11, offset: 215 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 1, offset: 205 },
+                  end: { line: 8, column: 11, offset: 215 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'payload',
+                            position: {
+                              start: { line: 9, column: 5, offset: 220 },
+                              end: { line: 9, column: 14, offset: 229 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - a ',
+                            position: {
+                              start: { line: 9, column: 14, offset: 229 },
+                              end: { line: 9, column: 19, offset: 234 }
+                            }
+                          },
+                          {
+                            type: 'link',
+                            title: null,
+                            url: 'https://nodejs.org/docs/latest-v24.x/api/buffer.html',
+                            children: [
+                              {
+                                type: 'text',
+                                value: 'Node.js buffer',
+                                position: {
+                                  start: { line: 9, column: 20, offset: 235 },
+                                  end: { line: 9, column: 34, offset: 249 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 9, column: 19, offset: 234 },
+                              end: { line: 9, column: 89, offset: 304 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' or string of the payload to send.',
+                            position: {
+                              start: { line: 9, column: 89, offset: 304 },
+                              end: { line: 9, column: 123, offset: 338 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 9, column: 5, offset: 220 },
+                          end: { line: 9, column: 123, offset: 338 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 9, column: 3, offset: 218 },
+                      end: { line: 9, column: 123, offset: 338 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 9, column: 3, offset: 218 },
+                  end: { line: 9, column: 123, offset: 338 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 11, column: 1, offset: 340 },
+                      end: { line: 11, column: 8, offset: 347 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 1, offset: 340 },
+                  end: { line: 11, column: 8, offset: 347 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'undefined',
+                            position: {
+                              start: { line: 12, column: 5, offset: 352 },
+                              end: { line: 12, column: 14, offset: 361 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 12, column: 5, offset: 352 },
+                          end: { line: 12, column: 14, offset: 361 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 12, column: 3, offset: 350 },
+                      end: { line: 12, column: 14, offset: 361 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 12, column: 3, offset: 350 },
+                  end: { line: 12, column: 14, offset: 361 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'websocket.destroy()',
+                position: {
+                  start: { line: 14, column: 1, offset: 363 },
+                  end: { line: 16, column: 4, offset: 400 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 16, column: 4, offset: 400 }
+            }
+          }
+        }
+      }
+    ],
+    fileName: '/Users/richard/code/presidium.services/../presidium-websocket/ServerWebSocket.js'
+  },
+  {
+    name: 'WebSocket',
+    docs: '```coffeescript [specscript]\n' +
       'new WebSocket(url string) -> websocket WebSocket\n' +
       '\n' +
       'new WebSocket(url string, options {\n' +
@@ -15,7 +3388,7 @@ export default [
       '}) -> websocket WebSocket\n' +
       '```\n' +
       '\n' +
-      'Presidium WebSocket client.\n' +
+      'Presidium WebSocket class.\n' +
       '\n' +
       'Arguments:\n' +
       '  * `options`\n' +
@@ -62,23 +3435,6 @@ export default [
         type: 'root',
         children: [
           {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'Creates a Presidium WebSocket client.',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 38, offset: 37 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 38, offset: 37 }
-            }
-          },
-          {
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
@@ -92,8 +3448,8 @@ export default [
               '  offerPerMessageDeflate: boolean\n' +
               '}) -> websocket WebSocket',
             position: {
-              start: { line: 3, column: 1, offset: 39 },
-              end: { line: 13, column: 4, offset: 330 }
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 11, column: 4, offset: 291 }
             }
           },
           {
@@ -101,16 +3457,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Presidium WebSocket client.',
+                value: 'Presidium WebSocket class.',
                 position: {
-                  start: { line: 15, column: 1, offset: 332 },
-                  end: { line: 15, column: 28, offset: 359 }
+                  start: { line: 13, column: 1, offset: 293 },
+                  end: { line: 13, column: 27, offset: 319 }
                 }
               }
             ],
             position: {
-              start: { line: 15, column: 1, offset: 332 },
-              end: { line: 15, column: 28, offset: 359 }
+              start: { line: 13, column: 1, offset: 293 },
+              end: { line: 13, column: 27, offset: 319 }
             }
           },
           {
@@ -120,14 +3476,14 @@ export default [
                 type: 'text',
                 value: 'Arguments:',
                 position: {
-                  start: { line: 17, column: 1, offset: 361 },
-                  end: { line: 17, column: 11, offset: 371 }
+                  start: { line: 15, column: 1, offset: 321 },
+                  end: { line: 15, column: 11, offset: 331 }
                 }
               }
             ],
             position: {
-              start: { line: 17, column: 1, offset: 361 },
-              end: { line: 17, column: 11, offset: 371 }
+              start: { line: 15, column: 1, offset: 321 },
+              end: { line: 15, column: 11, offset: 331 }
             }
           },
           {
@@ -148,14 +3504,14 @@ export default [
                         type: 'inlineCode',
                         value: 'options',
                         position: {
-                          start: { line: 18, column: 5, offset: 376 },
-                          end: { line: 18, column: 14, offset: 385 }
+                          start: { line: 16, column: 5, offset: 336 },
+                          end: { line: 16, column: 14, offset: 345 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 18, column: 5, offset: 376 },
-                      end: { line: 18, column: 14, offset: 385 }
+                      start: { line: 16, column: 5, offset: 336 },
+                      end: { line: 16, column: 14, offset: 345 }
                     }
                   },
                   {
@@ -176,35 +3532,35 @@ export default [
                                 type: 'inlineCode',
                                 value: 'rejectUnauthorized',
                                 position: {
-                                  start: { line: 19, column: 7, offset: 392 },
-                                  end: { line: 19, column: 27, offset: 412 }
+                                  start: { line: 17, column: 7, offset: 352 },
+                                  end: { line: 17, column: 27, offset: 372 }
                                 }
                               },
                               {
                                 type: 'text',
                                 value: ' - if ',
                                 position: {
-                                  start: { line: 19, column: 27, offset: 412 },
-                                  end: { line: 19, column: 33, offset: 418 }
+                                  start: { line: 17, column: 27, offset: 372 },
+                                  end: { line: 17, column: 33, offset: 378 }
                                 }
                               },
                               {
                                 type: 'inlineCode',
                                 value: 'true',
                                 position: {
-                                  start: { line: 19, column: 33, offset: 418 },
-                                  end: { line: 19, column: 39, offset: 424 }
+                                  start: { line: 17, column: 33, offset: 378 },
+                                  end: { line: 17, column: 39, offset: 384 }
                                 }
                               },
                               {
                                 type: 'text',
                                 value: ", the client verifies the server's certificate against a list of pre-approved certificate authorities (CAs). An ",
                                 position: {
-                                  start: { line: 19, column: 39, offset: 424 },
+                                  start: { line: 17, column: 39, offset: 384 },
                                   end: {
-                                    line: 19,
+                                    line: 17,
                                     column: 151,
-                                    offset: 536
+                                    offset: 496
                                   }
                                 }
                               },
@@ -218,28 +3574,28 @@ export default [
                                     value: 'error',
                                     position: {
                                       start: {
-                                        line: 19,
+                                        line: 17,
                                         column: 152,
-                                        offset: 537
+                                        offset: 497
                                       },
                                       end: {
-                                        line: 19,
+                                        line: 17,
                                         column: 157,
-                                        offset: 542
+                                        offset: 502
                                       }
                                     }
                                   }
                                 ],
                                 position: {
                                   start: {
-                                    line: 19,
+                                    line: 17,
                                     column: 151,
-                                    offset: 536
+                                    offset: 496
                                   },
                                   end: {
-                                    line: 19,
+                                    line: 17,
                                     column: 182,
-                                    offset: 567
+                                    offset: 527
                                   }
                                 }
                               },
@@ -248,14 +3604,14 @@ export default [
                                 value: ' event is emitted if verification fails; ',
                                 position: {
                                   start: {
-                                    line: 19,
+                                    line: 17,
                                     column: 182,
-                                    offset: 567
+                                    offset: 527
                                   },
                                   end: {
-                                    line: 19,
+                                    line: 17,
                                     column: 223,
-                                    offset: 608
+                                    offset: 568
                                   }
                                 }
                               },
@@ -264,14 +3620,14 @@ export default [
                                 value: 'err.code',
                                 position: {
                                   start: {
-                                    line: 19,
+                                    line: 17,
                                     column: 223,
-                                    offset: 608
+                                    offset: 568
                                   },
                                   end: {
-                                    line: 19,
+                                    line: 17,
                                     column: 233,
-                                    offset: 618
+                                    offset: 578
                                   }
                                 }
                               },
@@ -280,14 +3636,14 @@ export default [
                                 value: ' contains the OpenSSL error code. Defaults to ',
                                 position: {
                                   start: {
-                                    line: 19,
+                                    line: 17,
                                     column: 233,
-                                    offset: 618
+                                    offset: 578
                                   },
                                   end: {
-                                    line: 19,
+                                    line: 17,
                                     column: 279,
-                                    offset: 664
+                                    offset: 624
                                   }
                                 }
                               },
@@ -296,14 +3652,14 @@ export default [
                                 value: 'true',
                                 position: {
                                   start: {
-                                    line: 19,
+                                    line: 17,
                                     column: 279,
-                                    offset: 664
+                                    offset: 624
                                   },
                                   end: {
-                                    line: 19,
+                                    line: 17,
                                     column: 285,
-                                    offset: 670
+                                    offset: 630
                                   }
                                 }
                               },
@@ -312,27 +3668,27 @@ export default [
                                 value: '.',
                                 position: {
                                   start: {
-                                    line: 19,
+                                    line: 17,
                                     column: 285,
-                                    offset: 670
+                                    offset: 630
                                   },
                                   end: {
-                                    line: 19,
+                                    line: 17,
                                     column: 286,
-                                    offset: 671
+                                    offset: 631
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 19, column: 7, offset: 392 },
-                              end: { line: 19, column: 286, offset: 671 }
+                              start: { line: 17, column: 7, offset: 352 },
+                              end: { line: 17, column: 286, offset: 631 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 19, column: 5, offset: 390 },
-                          end: { line: 19, column: 286, offset: 671 }
+                          start: { line: 17, column: 5, offset: 350 },
+                          end: { line: 17, column: 286, offset: 631 }
                         }
                       },
                       {
@@ -347,35 +3703,35 @@ export default [
                                 type: 'inlineCode',
                                 value: 'autoConnect',
                                 position: {
-                                  start: { line: 20, column: 7, offset: 678 },
-                                  end: { line: 20, column: 20, offset: 691 }
+                                  start: { line: 18, column: 7, offset: 638 },
+                                  end: { line: 18, column: 20, offset: 651 }
                                 }
                               },
                               {
                                 type: 'text',
                                 value: ' - if ',
                                 position: {
-                                  start: { line: 20, column: 20, offset: 691 },
-                                  end: { line: 20, column: 26, offset: 697 }
+                                  start: { line: 18, column: 20, offset: 651 },
+                                  end: { line: 18, column: 26, offset: 657 }
                                 }
                               },
                               {
                                 type: 'inlineCode',
                                 value: 'true',
                                 position: {
-                                  start: { line: 20, column: 26, offset: 697 },
-                                  end: { line: 20, column: 32, offset: 703 }
+                                  start: { line: 18, column: 26, offset: 657 },
+                                  end: { line: 18, column: 32, offset: 663 }
                                 }
                               },
                               {
                                 type: 'text',
                                 value: ', establishes the underlying TCP connection automatically upon construction. Defaults to ',
                                 position: {
-                                  start: { line: 20, column: 32, offset: 703 },
+                                  start: { line: 18, column: 32, offset: 663 },
                                   end: {
-                                    line: 20,
+                                    line: 18,
                                     column: 121,
-                                    offset: 792
+                                    offset: 752
                                   }
                                 }
                               },
@@ -384,14 +3740,14 @@ export default [
                                 value: 'true',
                                 position: {
                                   start: {
-                                    line: 20,
+                                    line: 18,
                                     column: 121,
-                                    offset: 792
+                                    offset: 752
                                   },
                                   end: {
-                                    line: 20,
+                                    line: 18,
                                     column: 127,
-                                    offset: 798
+                                    offset: 758
                                   }
                                 }
                               },
@@ -400,27 +3756,27 @@ export default [
                                 value: '.',
                                 position: {
                                   start: {
-                                    line: 20,
+                                    line: 18,
                                     column: 127,
-                                    offset: 798
+                                    offset: 758
                                   },
                                   end: {
-                                    line: 20,
+                                    line: 18,
                                     column: 128,
-                                    offset: 799
+                                    offset: 759
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 20, column: 7, offset: 678 },
-                              end: { line: 20, column: 128, offset: 799 }
+                              start: { line: 18, column: 7, offset: 638 },
+                              end: { line: 18, column: 128, offset: 759 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 20, column: 5, offset: 676 },
-                          end: { line: 20, column: 128, offset: 799 }
+                          start: { line: 18, column: 5, offset: 636 },
+                          end: { line: 18, column: 128, offset: 759 }
                         }
                       },
                       {
@@ -435,19 +3791,19 @@ export default [
                                 type: 'inlineCode',
                                 value: 'maxMessageLength',
                                 position: {
-                                  start: { line: 21, column: 7, offset: 806 },
-                                  end: { line: 21, column: 25, offset: 824 }
+                                  start: { line: 19, column: 7, offset: 766 },
+                                  end: { line: 19, column: 25, offset: 784 }
                                 }
                               },
                               {
                                 type: 'text',
                                 value: ' - the maximum length in bytes of sent messages. If a message is longer than ',
                                 position: {
-                                  start: { line: 21, column: 25, offset: 824 },
+                                  start: { line: 19, column: 25, offset: 784 },
                                   end: {
-                                    line: 21,
+                                    line: 19,
                                     column: 102,
-                                    offset: 901
+                                    offset: 861
                                   }
                                 }
                               },
@@ -456,14 +3812,14 @@ export default [
                                 value: 'maxMessageLength',
                                 position: {
                                   start: {
-                                    line: 21,
+                                    line: 19,
                                     column: 102,
-                                    offset: 901
+                                    offset: 861
                                   },
                                   end: {
-                                    line: 21,
+                                    line: 19,
                                     column: 120,
-                                    offset: 919
+                                    offset: 879
                                   }
                                 }
                               },
@@ -472,27 +3828,27 @@ export default [
                                 value: ', it is split into fragmented messages that are reassembled by the receiver.',
                                 position: {
                                   start: {
-                                    line: 21,
+                                    line: 19,
                                     column: 120,
-                                    offset: 919
+                                    offset: 879
                                   },
                                   end: {
-                                    line: 21,
+                                    line: 19,
                                     column: 196,
-                                    offset: 995
+                                    offset: 955
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 21, column: 7, offset: 806 },
-                              end: { line: 21, column: 196, offset: 995 }
+                              start: { line: 19, column: 7, offset: 766 },
+                              end: { line: 19, column: 196, offset: 955 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 21, column: 5, offset: 804 },
-                          end: { line: 21, column: 196, offset: 995 }
+                          start: { line: 19, column: 5, offset: 764 },
+                          end: { line: 19, column: 196, offset: 955 }
                         }
                       },
                       {
@@ -507,27 +3863,19 @@ export default [
                                 type: 'inlineCode',
                                 value: 'socketBufferLength',
                                 position: {
-                                  start: { line: 22, column: 7, offset: 1002 },
-                                  end: {
-                                    line: 22,
-                                    column: 27,
-                                    offset: 1022
-                                  }
+                                  start: { line: 20, column: 7, offset: 962 },
+                                  end: { line: 20, column: 27, offset: 982 }
                                 }
                               },
                               {
                                 type: 'text',
                                 value: ' - length in bytes of the internal buffer of the underlying ',
                                 position: {
-                                  start: {
-                                    line: 22,
-                                    column: 27,
-                                    offset: 1022
-                                  },
+                                  start: { line: 20, column: 27, offset: 982 },
                                   end: {
-                                    line: 22,
+                                    line: 20,
                                     column: 87,
-                                    offset: 1082
+                                    offset: 1042
                                   }
                                 }
                               },
@@ -541,28 +3889,28 @@ export default [
                                     value: 'socket',
                                     position: {
                                       start: {
-                                        line: 22,
+                                        line: 20,
                                         column: 88,
-                                        offset: 1083
+                                        offset: 1043
                                       },
                                       end: {
-                                        line: 22,
+                                        line: 20,
                                         column: 94,
-                                        offset: 1089
+                                        offset: 1049
                                       }
                                     }
                                   }
                                 ],
                                 position: {
                                   start: {
-                                    line: 22,
+                                    line: 20,
                                     column: 87,
-                                    offset: 1082
+                                    offset: 1042
                                   },
                                   end: {
-                                    line: 22,
+                                    line: 20,
                                     column: 144,
-                                    offset: 1139
+                                    offset: 1099
                                   }
                                 }
                               },
@@ -571,27 +3919,27 @@ export default [
                                 value: '.',
                                 position: {
                                   start: {
-                                    line: 22,
+                                    line: 20,
                                     column: 144,
-                                    offset: 1139
+                                    offset: 1099
                                   },
                                   end: {
-                                    line: 22,
+                                    line: 20,
                                     column: 145,
-                                    offset: 1140
+                                    offset: 1100
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 22, column: 7, offset: 1002 },
-                              end: { line: 22, column: 145, offset: 1140 }
+                              start: { line: 20, column: 7, offset: 962 },
+                              end: { line: 20, column: 145, offset: 1100 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 22, column: 5, offset: 1000 },
-                          end: { line: 22, column: 145, offset: 1140 }
+                          start: { line: 20, column: 5, offset: 960 },
+                          end: { line: 20, column: 145, offset: 1100 }
                         }
                       },
                       {
@@ -606,11 +3954,11 @@ export default [
                                 type: 'inlineCode',
                                 value: 'offerPerMessageDeflate',
                                 position: {
-                                  start: { line: 23, column: 7, offset: 1147 },
+                                  start: { line: 21, column: 7, offset: 1107 },
                                   end: {
-                                    line: 23,
+                                    line: 21,
                                     column: 31,
-                                    offset: 1171
+                                    offset: 1131
                                   }
                                 }
                               },
@@ -619,14 +3967,14 @@ export default [
                                 value: ' - if ',
                                 position: {
                                   start: {
-                                    line: 23,
+                                    line: 21,
                                     column: 31,
-                                    offset: 1171
+                                    offset: 1131
                                   },
                                   end: {
-                                    line: 23,
+                                    line: 21,
                                     column: 37,
-                                    offset: 1177
+                                    offset: 1137
                                   }
                                 }
                               },
@@ -635,14 +3983,14 @@ export default [
                                 value: 'true',
                                 position: {
                                   start: {
-                                    line: 23,
+                                    line: 21,
                                     column: 37,
-                                    offset: 1177
+                                    offset: 1137
                                   },
                                   end: {
-                                    line: 23,
+                                    line: 21,
                                     column: 43,
-                                    offset: 1183
+                                    offset: 1143
                                   }
                                 }
                               },
@@ -651,14 +3999,14 @@ export default [
                                 value: ', offers to the server ',
                                 position: {
                                   start: {
-                                    line: 23,
+                                    line: 21,
                                     column: 43,
-                                    offset: 1183
+                                    offset: 1143
                                   },
                                   end: {
-                                    line: 23,
+                                    line: 21,
                                     column: 66,
-                                    offset: 1206
+                                    offset: 1166
                                   }
                                 }
                               },
@@ -672,28 +4020,28 @@ export default [
                                     value: 'Per-Message Compression Extensions',
                                     position: {
                                       start: {
-                                        line: 23,
+                                        line: 21,
                                         column: 67,
-                                        offset: 1207
+                                        offset: 1167
                                       },
                                       end: {
-                                        line: 23,
+                                        line: 21,
                                         column: 101,
-                                        offset: 1241
+                                        offset: 1201
                                       }
                                     }
                                   }
                                 ],
                                 position: {
                                   start: {
-                                    line: 23,
+                                    line: 21,
                                     column: 66,
-                                    offset: 1206
+                                    offset: 1166
                                   },
                                   end: {
-                                    line: 23,
+                                    line: 21,
                                     column: 159,
-                                    offset: 1299
+                                    offset: 1259
                                   }
                                 }
                               },
@@ -702,14 +4050,14 @@ export default [
                                 value: ' by including the ',
                                 position: {
                                   start: {
-                                    line: 23,
+                                    line: 21,
                                     column: 159,
-                                    offset: 1299
+                                    offset: 1259
                                   },
                                   end: {
-                                    line: 23,
+                                    line: 21,
                                     column: 177,
-                                    offset: 1317
+                                    offset: 1277
                                   }
                                 }
                               },
@@ -718,14 +4066,14 @@ export default [
                                 value: 'Sec-WebSocket-Extensions: permessage-deflate',
                                 position: {
                                   start: {
-                                    line: 23,
+                                    line: 21,
                                     column: 177,
-                                    offset: 1317
+                                    offset: 1277
                                   },
                                   end: {
-                                    line: 23,
+                                    line: 21,
                                     column: 223,
-                                    offset: 1363
+                                    offset: 1323
                                   }
                                 }
                               },
@@ -734,14 +4082,14 @@ export default [
                                 value: ' header in the initial WebSocket handshake. If the server supports compression extensions, all messages exchanged in the WebSocket connection will be compressed with ',
                                 position: {
                                   start: {
-                                    line: 23,
+                                    line: 21,
                                     column: 223,
-                                    offset: 1363
+                                    offset: 1323
                                   },
                                   end: {
-                                    line: 23,
+                                    line: 21,
                                     column: 389,
-                                    offset: 1529
+                                    offset: 1489
                                   }
                                 }
                               },
@@ -755,28 +4103,28 @@ export default [
                                     value: 'zlib',
                                     position: {
                                       start: {
-                                        line: 23,
+                                        line: 21,
                                         column: 390,
-                                        offset: 1530
+                                        offset: 1490
                                       },
                                       end: {
-                                        line: 23,
+                                        line: 21,
                                         column: 394,
-                                        offset: 1534
+                                        offset: 1494
                                       }
                                     }
                                   }
                                 ],
                                 position: {
                                   start: {
-                                    line: 23,
+                                    line: 21,
                                     column: 389,
-                                    offset: 1529
+                                    offset: 1489
                                   },
                                   end: {
-                                    line: 23,
+                                    line: 21,
                                     column: 429,
-                                    offset: 1569
+                                    offset: 1529
                                   }
                                 }
                               },
@@ -785,14 +4133,14 @@ export default [
                                 value: ' default options. Defaults to ',
                                 position: {
                                   start: {
-                                    line: 23,
+                                    line: 21,
                                     column: 429,
-                                    offset: 1569
+                                    offset: 1529
                                   },
                                   end: {
-                                    line: 23,
+                                    line: 21,
                                     column: 459,
-                                    offset: 1599
+                                    offset: 1559
                                   }
                                 }
                               },
@@ -801,14 +4149,14 @@ export default [
                                 value: 'true',
                                 position: {
                                   start: {
-                                    line: 23,
+                                    line: 21,
                                     column: 459,
-                                    offset: 1599
+                                    offset: 1559
                                   },
                                   end: {
-                                    line: 23,
+                                    line: 21,
                                     column: 465,
-                                    offset: 1605
+                                    offset: 1565
                                   }
                                 }
                               },
@@ -817,45 +4165,45 @@ export default [
                                 value: '.',
                                 position: {
                                   start: {
-                                    line: 23,
+                                    line: 21,
                                     column: 465,
-                                    offset: 1605
+                                    offset: 1565
                                   },
                                   end: {
-                                    line: 23,
+                                    line: 21,
                                     column: 466,
-                                    offset: 1606
+                                    offset: 1566
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 23, column: 7, offset: 1147 },
-                              end: { line: 23, column: 466, offset: 1606 }
+                              start: { line: 21, column: 7, offset: 1107 },
+                              end: { line: 21, column: 466, offset: 1566 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 23, column: 5, offset: 1145 },
-                          end: { line: 23, column: 466, offset: 1606 }
+                          start: { line: 21, column: 5, offset: 1105 },
+                          end: { line: 21, column: 466, offset: 1566 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 19, column: 5, offset: 390 },
-                      end: { line: 23, column: 466, offset: 1606 }
+                      start: { line: 17, column: 5, offset: 350 },
+                      end: { line: 21, column: 466, offset: 1566 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 18, column: 3, offset: 374 },
-                  end: { line: 23, column: 466, offset: 1606 }
+                  start: { line: 16, column: 3, offset: 334 },
+                  end: { line: 21, column: 466, offset: 1566 }
                 }
               }
             ],
             position: {
-              start: { line: 18, column: 3, offset: 374 },
-              end: { line: 23, column: 466, offset: 1606 }
+              start: { line: 16, column: 3, offset: 334 },
+              end: { line: 21, column: 466, offset: 1566 }
             }
           },
           {
@@ -865,14 +4213,14 @@ export default [
                 type: 'text',
                 value: 'Return:',
                 position: {
-                  start: { line: 25, column: 1, offset: 1608 },
-                  end: { line: 25, column: 8, offset: 1615 }
+                  start: { line: 23, column: 1, offset: 1568 },
+                  end: { line: 23, column: 8, offset: 1575 }
                 }
               }
             ],
             position: {
-              start: { line: 25, column: 1, offset: 1608 },
-              end: { line: 25, column: 8, offset: 1615 }
+              start: { line: 23, column: 1, offset: 1568 },
+              end: { line: 23, column: 8, offset: 1575 }
             }
           },
           {
@@ -893,34 +4241,34 @@ export default [
                         type: 'inlineCode',
                         value: 'websocket',
                         position: {
-                          start: { line: 26, column: 5, offset: 1620 },
-                          end: { line: 26, column: 16, offset: 1631 }
+                          start: { line: 24, column: 5, offset: 1580 },
+                          end: { line: 24, column: 16, offset: 1591 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - a Presidium WebSocket instance.',
                         position: {
-                          start: { line: 26, column: 16, offset: 1631 },
-                          end: { line: 26, column: 50, offset: 1665 }
+                          start: { line: 24, column: 16, offset: 1591 },
+                          end: { line: 24, column: 50, offset: 1625 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 26, column: 5, offset: 1620 },
-                      end: { line: 26, column: 50, offset: 1665 }
+                      start: { line: 24, column: 5, offset: 1580 },
+                      end: { line: 24, column: 50, offset: 1625 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 26, column: 3, offset: 1618 },
-                  end: { line: 26, column: 50, offset: 1665 }
+                  start: { line: 24, column: 3, offset: 1578 },
+                  end: { line: 24, column: 50, offset: 1625 }
                 }
               }
             ],
             position: {
-              start: { line: 26, column: 3, offset: 1618 },
-              end: { line: 26, column: 50, offset: 1665 }
+              start: { line: 24, column: 3, offset: 1578 },
+              end: { line: 24, column: 50, offset: 1625 }
             }
           },
           {
@@ -929,14 +4277,14 @@ export default [
             meta: null,
             value: "const websocket = new WebSocket('ws://localhost:1337/')",
             position: {
-              start: { line: 28, column: 1, offset: 1667 },
-              end: { line: 30, column: 4, offset: 1740 }
+              start: { line: 26, column: 1, offset: 1627 },
+              end: { line: 28, column: 4, offset: 1700 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 30, column: 4, offset: 1740 }
+          end: { line: 28, column: 4, offset: 1700 }
         }
       }
     },
@@ -946,6 +4294,8 @@ export default [
         docs: '```coffeescript [specscript]\n' +
           "emit('open')\n" +
           '```\n' +
+          '\n' +
+          'The `open` event. Emitted when the WebSocket connection is open.\n' +
           '\n' +
           'Event Data:\n' +
           '  * (none)\n' +
@@ -1002,16 +4352,49 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'Event Data:',
+                    value: 'The ',
                     position: {
                       start: { line: 5, column: 1, offset: 47 },
-                      end: { line: 5, column: 12, offset: 58 }
+                      end: { line: 5, column: 5, offset: 51 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'open',
+                    position: {
+                      start: { line: 5, column: 5, offset: 51 },
+                      end: { line: 5, column: 11, offset: 57 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' event. Emitted when the WebSocket connection is open.',
+                    position: {
+                      start: { line: 5, column: 11, offset: 57 },
+                      end: { line: 5, column: 65, offset: 111 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 5, column: 1, offset: 47 },
-                  end: { line: 5, column: 12, offset: 58 }
+                  end: { line: 5, column: 65, offset: 111 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event Data:',
+                    position: {
+                      start: { line: 7, column: 1, offset: 113 },
+                      end: { line: 7, column: 12, offset: 124 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 7, column: 1, offset: 113 },
+                  end: { line: 7, column: 12, offset: 124 }
                 }
               },
               {
@@ -1032,26 +4415,26 @@ export default [
                             type: 'text',
                             value: '(none)',
                             position: {
-                              start: { line: 6, column: 5, offset: 63 },
-                              end: { line: 6, column: 11, offset: 69 }
+                              start: { line: 8, column: 5, offset: 129 },
+                              end: { line: 8, column: 11, offset: 135 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 6, column: 5, offset: 63 },
-                          end: { line: 6, column: 11, offset: 69 }
+                          start: { line: 8, column: 5, offset: 129 },
+                          end: { line: 8, column: 11, offset: 135 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 6, column: 3, offset: 61 },
-                      end: { line: 6, column: 11, offset: 69 }
+                      start: { line: 8, column: 3, offset: 127 },
+                      end: { line: 8, column: 11, offset: 135 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 6, column: 3, offset: 61 },
-                  end: { line: 6, column: 11, offset: 69 }
+                  start: { line: 8, column: 3, offset: 127 },
+                  end: { line: 8, column: 11, offset: 135 }
                 }
               },
               {
@@ -1064,14 +4447,14 @@ export default [
                   "  console.log('Connection is open.')\n" +
                   '})',
                 position: {
-                  start: { line: 8, column: 1, offset: 71 },
-                  end: { line: 14, column: 4, offset: 214 }
+                  start: { line: 10, column: 1, offset: 137 },
+                  end: { line: 16, column: 4, offset: 280 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 14, column: 4, offset: 214 }
+              end: { line: 16, column: 4, offset: 280 }
             }
           }
         }
@@ -1081,6 +4464,8 @@ export default [
         docs: '```coffeescript [specscript]\n' +
           "emit('message', message Buffer)\n" +
           '```\n' +
+          '\n' +
+          'The `message` event. Emitted upon receipt and successful decoding (and reassembly, if applicable) of an incoming message.\n' +
           '\n' +
           'Event Data:\n' +
           '  * `message` - a [Node.js buffer](https://nodejs.org/docs/latest-v24.x/api/buffer.html) of the received message.\n' +
@@ -1137,16 +4522,49 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'Event Data:',
+                    value: 'The ',
                     position: {
                       start: { line: 5, column: 1, offset: 66 },
-                      end: { line: 5, column: 12, offset: 77 }
+                      end: { line: 5, column: 5, offset: 70 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'message',
+                    position: {
+                      start: { line: 5, column: 5, offset: 70 },
+                      end: { line: 5, column: 14, offset: 79 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' event. Emitted upon receipt and successful decoding (and reassembly, if applicable) of an incoming message.',
+                    position: {
+                      start: { line: 5, column: 14, offset: 79 },
+                      end: { line: 5, column: 122, offset: 187 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 5, column: 1, offset: 66 },
-                  end: { line: 5, column: 12, offset: 77 }
+                  end: { line: 5, column: 122, offset: 187 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event Data:',
+                    position: {
+                      start: { line: 7, column: 1, offset: 189 },
+                      end: { line: 7, column: 12, offset: 200 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 7, column: 1, offset: 189 },
+                  end: { line: 7, column: 12, offset: 200 }
                 }
               },
               {
@@ -1167,16 +4585,16 @@ export default [
                             type: 'inlineCode',
                             value: 'message',
                             position: {
-                              start: { line: 6, column: 5, offset: 82 },
-                              end: { line: 6, column: 14, offset: 91 }
+                              start: { line: 8, column: 5, offset: 205 },
+                              end: { line: 8, column: 14, offset: 214 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - a ',
                             position: {
-                              start: { line: 6, column: 14, offset: 91 },
-                              end: { line: 6, column: 19, offset: 96 }
+                              start: { line: 8, column: 14, offset: 214 },
+                              end: { line: 8, column: 19, offset: 219 }
                             }
                           },
                           {
@@ -1188,40 +4606,40 @@ export default [
                                 type: 'text',
                                 value: 'Node.js buffer',
                                 position: {
-                                  start: { line: 6, column: 20, offset: 97 },
-                                  end: { line: 6, column: 34, offset: 111 }
+                                  start: { line: 8, column: 20, offset: 220 },
+                                  end: { line: 8, column: 34, offset: 234 }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 6, column: 19, offset: 96 },
-                              end: { line: 6, column: 89, offset: 166 }
+                              start: { line: 8, column: 19, offset: 219 },
+                              end: { line: 8, column: 89, offset: 289 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' of the received message.',
                             position: {
-                              start: { line: 6, column: 89, offset: 166 },
-                              end: { line: 6, column: 114, offset: 191 }
+                              start: { line: 8, column: 89, offset: 289 },
+                              end: { line: 8, column: 114, offset: 314 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 6, column: 5, offset: 82 },
-                          end: { line: 6, column: 114, offset: 191 }
+                          start: { line: 8, column: 5, offset: 205 },
+                          end: { line: 8, column: 114, offset: 314 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 6, column: 3, offset: 80 },
-                      end: { line: 6, column: 114, offset: 191 }
+                      start: { line: 8, column: 3, offset: 203 },
+                      end: { line: 8, column: 114, offset: 314 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 6, column: 3, offset: 80 },
-                  end: { line: 6, column: 114, offset: 191 }
+                  start: { line: 8, column: 3, offset: 203 },
+                  end: { line: 8, column: 114, offset: 314 }
                 }
               },
               {
@@ -1234,14 +4652,14 @@ export default [
                   "  console.log('Message:', message.toString('utf8'))\n" +
                   '})',
                 position: {
-                  start: { line: 8, column: 1, offset: 193 },
-                  end: { line: 14, column: 4, offset: 359 }
+                  start: { line: 10, column: 1, offset: 316 },
+                  end: { line: 16, column: 4, offset: 482 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 14, column: 4, offset: 359 }
+              end: { line: 16, column: 4, offset: 482 }
             }
           }
         }
@@ -1252,8 +4670,10 @@ export default [
           "emit('ping', payload Buffer)\n" +
           '```\n' +
           '\n' +
+          'The `ping` event. Emitted upon receipt and successful decoding of an incoming "ping" message.\n' +
+          '\n' +
           'Event Data:\n' +
-          '  * payload - a [Node.js buffer](https://nodejs.org/docs/latest-v24.x/api/buffer.html) of the received payload.\n' +
+          '  * `payload` - a [Node.js buffer](https://nodejs.org/docs/latest-v24.x/api/buffer.html) of the received payload.\n' +
           '\n' +
           '```javascript\n' +
           "const websocket = new WebSocket('ws://localhost:1337/')\n" +
@@ -1307,16 +4727,49 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'Event Data:',
+                    value: 'The ',
                     position: {
                       start: { line: 5, column: 1, offset: 63 },
-                      end: { line: 5, column: 12, offset: 74 }
+                      end: { line: 5, column: 5, offset: 67 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'ping',
+                    position: {
+                      start: { line: 5, column: 5, offset: 67 },
+                      end: { line: 5, column: 11, offset: 73 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' event. Emitted upon receipt and successful decoding of an incoming "ping" message.',
+                    position: {
+                      start: { line: 5, column: 11, offset: 73 },
+                      end: { line: 5, column: 94, offset: 156 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 5, column: 1, offset: 63 },
-                  end: { line: 5, column: 12, offset: 74 }
+                  end: { line: 5, column: 94, offset: 156 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event Data:',
+                    position: {
+                      start: { line: 7, column: 1, offset: 158 },
+                      end: { line: 7, column: 12, offset: 169 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 7, column: 1, offset: 158 },
+                  end: { line: 7, column: 12, offset: 169 }
                 }
               },
               {
@@ -1334,11 +4787,19 @@ export default [
                         type: 'paragraph',
                         children: [
                           {
-                            type: 'text',
-                            value: 'payload - a ',
+                            type: 'inlineCode',
+                            value: 'payload',
                             position: {
-                              start: { line: 6, column: 5, offset: 79 },
-                              end: { line: 6, column: 17, offset: 91 }
+                              start: { line: 8, column: 5, offset: 174 },
+                              end: { line: 8, column: 14, offset: 183 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - a ',
+                            position: {
+                              start: { line: 8, column: 14, offset: 183 },
+                              end: { line: 8, column: 19, offset: 188 }
                             }
                           },
                           {
@@ -1350,40 +4811,40 @@ export default [
                                 type: 'text',
                                 value: 'Node.js buffer',
                                 position: {
-                                  start: { line: 6, column: 18, offset: 92 },
-                                  end: { line: 6, column: 32, offset: 106 }
+                                  start: { line: 8, column: 20, offset: 189 },
+                                  end: { line: 8, column: 34, offset: 203 }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 6, column: 17, offset: 91 },
-                              end: { line: 6, column: 87, offset: 161 }
+                              start: { line: 8, column: 19, offset: 188 },
+                              end: { line: 8, column: 89, offset: 258 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' of the received payload.',
                             position: {
-                              start: { line: 6, column: 87, offset: 161 },
-                              end: { line: 6, column: 112, offset: 186 }
+                              start: { line: 8, column: 89, offset: 258 },
+                              end: { line: 8, column: 114, offset: 283 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 6, column: 5, offset: 79 },
-                          end: { line: 6, column: 112, offset: 186 }
+                          start: { line: 8, column: 5, offset: 174 },
+                          end: { line: 8, column: 114, offset: 283 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 6, column: 3, offset: 77 },
-                      end: { line: 6, column: 112, offset: 186 }
+                      start: { line: 8, column: 3, offset: 172 },
+                      end: { line: 8, column: 114, offset: 283 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 6, column: 3, offset: 77 },
-                  end: { line: 6, column: 112, offset: 186 }
+                  start: { line: 8, column: 3, offset: 172 },
+                  end: { line: 8, column: 114, offset: 283 }
                 }
               },
               {
@@ -1396,14 +4857,14 @@ export default [
                   "  console.log('Ping')\n" +
                   '})',
                 position: {
-                  start: { line: 8, column: 1, offset: 188 },
-                  end: { line: 14, column: 4, offset: 316 }
+                  start: { line: 10, column: 1, offset: 285 },
+                  end: { line: 16, column: 4, offset: 413 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 14, column: 4, offset: 316 }
+              end: { line: 16, column: 4, offset: 413 }
             }
           }
         }
@@ -1414,8 +4875,10 @@ export default [
           "emit('pong', payload Buffer)\n" +
           '```\n' +
           '\n' +
+          'The `pong` event. Emitted upon receipt and successful decoding of an incoming "pong" message.\n' +
+          '\n' +
           'Event Data:\n' +
-          '  * payload - a [Node.js buffer](https://nodejs.org/docs/latest-v24.x/api/buffer.html) of the received payload.\n' +
+          '  * `payload` - a [Node.js buffer](https://nodejs.org/docs/latest-v24.x/api/buffer.html) of the received payload.\n' +
           '\n' +
           '```javascript\n' +
           "const websocket = new WebSocket('ws://localhost:1337/')\n" +
@@ -1469,16 +4932,49 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'Event Data:',
+                    value: 'The ',
                     position: {
                       start: { line: 5, column: 1, offset: 63 },
-                      end: { line: 5, column: 12, offset: 74 }
+                      end: { line: 5, column: 5, offset: 67 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'pong',
+                    position: {
+                      start: { line: 5, column: 5, offset: 67 },
+                      end: { line: 5, column: 11, offset: 73 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' event. Emitted upon receipt and successful decoding of an incoming "pong" message.',
+                    position: {
+                      start: { line: 5, column: 11, offset: 73 },
+                      end: { line: 5, column: 94, offset: 156 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 5, column: 1, offset: 63 },
-                  end: { line: 5, column: 12, offset: 74 }
+                  end: { line: 5, column: 94, offset: 156 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event Data:',
+                    position: {
+                      start: { line: 7, column: 1, offset: 158 },
+                      end: { line: 7, column: 12, offset: 169 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 7, column: 1, offset: 158 },
+                  end: { line: 7, column: 12, offset: 169 }
                 }
               },
               {
@@ -1496,11 +4992,19 @@ export default [
                         type: 'paragraph',
                         children: [
                           {
-                            type: 'text',
-                            value: 'payload - a ',
+                            type: 'inlineCode',
+                            value: 'payload',
                             position: {
-                              start: { line: 6, column: 5, offset: 79 },
-                              end: { line: 6, column: 17, offset: 91 }
+                              start: { line: 8, column: 5, offset: 174 },
+                              end: { line: 8, column: 14, offset: 183 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - a ',
+                            position: {
+                              start: { line: 8, column: 14, offset: 183 },
+                              end: { line: 8, column: 19, offset: 188 }
                             }
                           },
                           {
@@ -1512,40 +5016,40 @@ export default [
                                 type: 'text',
                                 value: 'Node.js buffer',
                                 position: {
-                                  start: { line: 6, column: 18, offset: 92 },
-                                  end: { line: 6, column: 32, offset: 106 }
+                                  start: { line: 8, column: 20, offset: 189 },
+                                  end: { line: 8, column: 34, offset: 203 }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 6, column: 17, offset: 91 },
-                              end: { line: 6, column: 87, offset: 161 }
+                              start: { line: 8, column: 19, offset: 188 },
+                              end: { line: 8, column: 89, offset: 258 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' of the received payload.',
                             position: {
-                              start: { line: 6, column: 87, offset: 161 },
-                              end: { line: 6, column: 112, offset: 186 }
+                              start: { line: 8, column: 89, offset: 258 },
+                              end: { line: 8, column: 114, offset: 283 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 6, column: 5, offset: 79 },
-                          end: { line: 6, column: 112, offset: 186 }
+                          start: { line: 8, column: 5, offset: 174 },
+                          end: { line: 8, column: 114, offset: 283 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 6, column: 3, offset: 77 },
-                      end: { line: 6, column: 112, offset: 186 }
+                      start: { line: 8, column: 3, offset: 172 },
+                      end: { line: 8, column: 114, offset: 283 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 6, column: 3, offset: 77 },
-                  end: { line: 6, column: 112, offset: 186 }
+                  start: { line: 8, column: 3, offset: 172 },
+                  end: { line: 8, column: 114, offset: 283 }
                 }
               },
               {
@@ -1558,14 +5062,14 @@ export default [
                   "  console.log('Pong')\n" +
                   '})',
                 position: {
-                  start: { line: 8, column: 1, offset: 188 },
-                  end: { line: 14, column: 4, offset: 316 }
+                  start: { line: 10, column: 1, offset: 285 },
+                  end: { line: 16, column: 4, offset: 413 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 14, column: 4, offset: 316 }
+              end: { line: 16, column: 4, offset: 413 }
             }
           }
         }
@@ -1576,8 +5080,10 @@ export default [
           "emit('error', error Error)\n" +
           '```\n' +
           '\n' +
+          'The `error` event. Emitted if an error occurs on the WebSocket instance or on its underlying [socket](https://nodejs.org/api/net.html#class-netsocket).\n' +
+          '\n' +
           'Event Data:\n' +
-          '  * error - an instance of a JavaScript [Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error).\n' +
+          '  * `error` - an instance of a JavaScript [Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error).\n' +
           '\n' +
           '```javascript\n' +
           "const websocket = new WebSocket('ws://localhost:1337/')\n" +
@@ -1631,16 +5137,76 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'Event Data:',
+                    value: 'The ',
                     position: {
                       start: { line: 5, column: 1, offset: 61 },
+                      end: { line: 5, column: 5, offset: 65 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'error',
+                    position: {
+                      start: { line: 5, column: 5, offset: 65 },
                       end: { line: 5, column: 12, offset: 72 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' event. Emitted if an error occurs on the WebSocket instance or on its underlying ',
+                    position: {
+                      start: { line: 5, column: 12, offset: 72 },
+                      end: { line: 5, column: 94, offset: 154 }
+                    }
+                  },
+                  {
+                    type: 'link',
+                    title: null,
+                    url: 'https://nodejs.org/api/net.html#class-netsocket',
+                    children: [
+                      {
+                        type: 'text',
+                        value: 'socket',
+                        position: {
+                          start: { line: 5, column: 95, offset: 155 },
+                          end: { line: 5, column: 101, offset: 161 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 5, column: 94, offset: 154 },
+                      end: { line: 5, column: 151, offset: 211 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: '.',
+                    position: {
+                      start: { line: 5, column: 151, offset: 211 },
+                      end: { line: 5, column: 152, offset: 212 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 5, column: 1, offset: 61 },
-                  end: { line: 5, column: 12, offset: 72 }
+                  end: { line: 5, column: 152, offset: 212 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event Data:',
+                    position: {
+                      start: { line: 7, column: 1, offset: 214 },
+                      end: { line: 7, column: 12, offset: 225 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 7, column: 1, offset: 214 },
+                  end: { line: 7, column: 12, offset: 225 }
                 }
               },
               {
@@ -1658,11 +5224,19 @@ export default [
                         type: 'paragraph',
                         children: [
                           {
-                            type: 'text',
-                            value: 'error - an instance of a JavaScript ',
+                            type: 'inlineCode',
+                            value: 'error',
                             position: {
-                              start: { line: 6, column: 5, offset: 77 },
-                              end: { line: 6, column: 41, offset: 113 }
+                              start: { line: 8, column: 5, offset: 230 },
+                              end: { line: 8, column: 12, offset: 237 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - an instance of a JavaScript ',
+                            position: {
+                              start: { line: 8, column: 12, offset: 237 },
+                              end: { line: 8, column: 43, offset: 268 }
                             }
                           },
                           {
@@ -1674,40 +5248,40 @@ export default [
                                 type: 'text',
                                 value: 'Error',
                                 position: {
-                                  start: { line: 6, column: 42, offset: 114 },
-                                  end: { line: 6, column: 47, offset: 119 }
+                                  start: { line: 8, column: 44, offset: 269 },
+                                  end: { line: 8, column: 49, offset: 274 }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 6, column: 41, offset: 113 },
-                              end: { line: 6, column: 136, offset: 208 }
+                              start: { line: 8, column: 43, offset: 268 },
+                              end: { line: 8, column: 138, offset: 363 }
                             }
                           },
                           {
                             type: 'text',
                             value: '.',
                             position: {
-                              start: { line: 6, column: 136, offset: 208 },
-                              end: { line: 6, column: 137, offset: 209 }
+                              start: { line: 8, column: 138, offset: 363 },
+                              end: { line: 8, column: 139, offset: 364 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 6, column: 5, offset: 77 },
-                          end: { line: 6, column: 137, offset: 209 }
+                          start: { line: 8, column: 5, offset: 230 },
+                          end: { line: 8, column: 139, offset: 364 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 6, column: 3, offset: 75 },
-                      end: { line: 6, column: 137, offset: 209 }
+                      start: { line: 8, column: 3, offset: 228 },
+                      end: { line: 8, column: 139, offset: 364 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 6, column: 3, offset: 75 },
-                  end: { line: 6, column: 137, offset: 209 }
+                  start: { line: 8, column: 3, offset: 228 },
+                  end: { line: 8, column: 139, offset: 364 }
                 }
               },
               {
@@ -1720,14 +5294,14 @@ export default [
                   "  console.error('Error:', error)\n" +
                   '})',
                 position: {
-                  start: { line: 8, column: 1, offset: 211 },
-                  end: { line: 14, column: 4, offset: 354 }
+                  start: { line: 10, column: 1, offset: 366 },
+                  end: { line: 16, column: 4, offset: 509 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 14, column: 4, offset: 354 }
+              end: { line: 16, column: 4, offset: 509 }
             }
           }
         }
@@ -1737,6 +5311,8 @@ export default [
         docs: '```coffeescript [specscript]\n' +
           "emit('close')\n" +
           '```\n' +
+          '\n' +
+          'The `close` event. Emitted when the underlying [socket](https://nodejs.org/api/net.html#class-netsocket) is destroyed.\n' +
           '\n' +
           'Event Data:\n' +
           '  * (none)\n' +
@@ -1793,16 +5369,76 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'Event Data:',
+                    value: 'The ',
                     position: {
                       start: { line: 5, column: 1, offset: 48 },
+                      end: { line: 5, column: 5, offset: 52 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'close',
+                    position: {
+                      start: { line: 5, column: 5, offset: 52 },
                       end: { line: 5, column: 12, offset: 59 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' event. Emitted when the underlying ',
+                    position: {
+                      start: { line: 5, column: 12, offset: 59 },
+                      end: { line: 5, column: 48, offset: 95 }
+                    }
+                  },
+                  {
+                    type: 'link',
+                    title: null,
+                    url: 'https://nodejs.org/api/net.html#class-netsocket',
+                    children: [
+                      {
+                        type: 'text',
+                        value: 'socket',
+                        position: {
+                          start: { line: 5, column: 49, offset: 96 },
+                          end: { line: 5, column: 55, offset: 102 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 5, column: 48, offset: 95 },
+                      end: { line: 5, column: 105, offset: 152 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' is destroyed.',
+                    position: {
+                      start: { line: 5, column: 105, offset: 152 },
+                      end: { line: 5, column: 119, offset: 166 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 5, column: 1, offset: 48 },
-                  end: { line: 5, column: 12, offset: 59 }
+                  end: { line: 5, column: 119, offset: 166 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event Data:',
+                    position: {
+                      start: { line: 7, column: 1, offset: 168 },
+                      end: { line: 7, column: 12, offset: 179 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 7, column: 1, offset: 168 },
+                  end: { line: 7, column: 12, offset: 179 }
                 }
               },
               {
@@ -1823,26 +5459,26 @@ export default [
                             type: 'text',
                             value: '(none)',
                             position: {
-                              start: { line: 6, column: 5, offset: 64 },
-                              end: { line: 6, column: 11, offset: 70 }
+                              start: { line: 8, column: 5, offset: 184 },
+                              end: { line: 8, column: 11, offset: 190 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 6, column: 5, offset: 64 },
-                          end: { line: 6, column: 11, offset: 70 }
+                          start: { line: 8, column: 5, offset: 184 },
+                          end: { line: 8, column: 11, offset: 190 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 6, column: 3, offset: 62 },
-                      end: { line: 6, column: 11, offset: 70 }
+                      start: { line: 8, column: 3, offset: 182 },
+                      end: { line: 8, column: 11, offset: 190 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 6, column: 3, offset: 62 },
-                  end: { line: 6, column: 11, offset: 70 }
+                  start: { line: 8, column: 3, offset: 182 },
+                  end: { line: 8, column: 11, offset: 190 }
                 }
               },
               {
@@ -1855,14 +5491,14 @@ export default [
                   "  console.log('Connection is closed.')\n" +
                   '})',
                 position: {
-                  start: { line: 8, column: 1, offset: 72 },
-                  end: { line: 14, column: 4, offset: 218 }
+                  start: { line: 10, column: 1, offset: 192 },
+                  end: { line: 16, column: 4, offset: 338 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 14, column: 4, offset: 218 }
+              end: { line: 16, column: 4, offset: 338 }
             }
           }
         }
@@ -2583,12 +6219,12 @@ export default [
       },
       {
         name: 'sendClose',
-        docs: 'Sends a close frame to the WebSocket server.\n' +
-          '\n' +
-          '```coffeescript [specscript]\n' +
+        docs: '```coffeescript [specscript]\n' +
           'websocket.sendClose() -> undefined\n' +
           'websocket.sendClose(payload Buffer|string) -> undefined\n' +
           '```\n' +
+          '\n' +
+          'Sends a close frame to the WebSocket server.\n' +
           '\n' +
           'Arguments:\n' +
           '  * `payload` - a [Node.js buffer](https://nodejs.org/docs/latest-v24.x/api/buffer.html) or string of the payload to send.\n' +
@@ -2632,31 +6268,31 @@ export default [
             type: 'root',
             children: [
               {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'Sends a close frame to the WebSocket server.',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 45, offset: 44 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 45, offset: 44 }
-                }
-              },
-              {
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
                 value: 'websocket.sendClose() -> undefined\n' +
                   'websocket.sendClose(payload Buffer|string) -> undefined',
                 position: {
-                  start: { line: 3, column: 1, offset: 46 },
-                  end: { line: 6, column: 4, offset: 169 }
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 4, column: 4, offset: 123 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Sends a close frame to the WebSocket server.',
+                    position: {
+                      start: { line: 6, column: 1, offset: 125 },
+                      end: { line: 6, column: 45, offset: 169 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 6, column: 1, offset: 125 },
+                  end: { line: 6, column: 45, offset: 169 }
                 }
               },
               {
@@ -3985,15 +7621,13 @@ export default [
   },
   {
     name: 'WebSocketServer',
-    docs: 'Presidium WebSocket server.\n' +
-      '\n' +
-      '```coffeescript [specscript]\n' +
+    docs: '```coffeescript [specscript]\n' +
       "module http 'https://nodejs.org/api/http.html'\n" +
       "module net 'https://nodejs.org/api/net.html'\n" +
       '\n' +
-      'websocketHandler (websocket WebSocket)=>()\n' +
-      'httpHandler (request http.ClientRequest, response http.ServerResponse)=>()\n' +
-      'upgradeHandler (request http.ClientRequest, socket net.Socket, head Buffer)=>()\n' +
+      'websocketHandler (websocket WebSocket)=>undefined\n' +
+      'httpHandler (request http.ClientRequest, response http.ServerResponse)=>undefined\n' +
+      'upgradeHandler (request http.ClientRequest, socket net.Socket, head Buffer)=>undefined\n' +
       '\n' +
       'new WebSocketServer() -> server WebSocketServer\n' +
       'new WebSocketServer(websocketHandler) -> server WebSocketServer\n' +
@@ -4014,20 +7648,30 @@ export default [
       '  cert: string,\n' +
       '  passphrase: string\n' +
       '}) -> server WebSocketServer\n' +
+      '```\n' +
       '\n' +
-      "server.on('connection', websocketHandler) -> ()\n" +
-      "server.on('request', httpHandler) -> ()\n" +
-      "server.on('upgrade', upgradeHandler) -> ()\n" +
-      "server.on('error', (error Error)=>()) -> ()\n" +
-      "server.on('close', ()=>()) -> ()\n" +
+      'Presidium WebSocketServer class.\n' +
       '\n' +
-      "server.on('connection', (websocket WebSocket) => {\n" +
-      "  websocket.on('open', ()=>()) -> ()\n" +
-      "  websocket.on('message', (message Buffer)=>()) -> ()\n" +
-      "  websocket.on('ping', ()=>()) -> ()\n" +
-      "  websocket.on('pong', ()=>()) -> ()\n" +
-      "  websocket.on('error', (error Error)=>()) -> ()\n" +
-      "  websocket.on('close', ()=>()) -> ()\n" +
+      'Arguments:\n' +
+      "  * `websocketHandler` - a handler function that expects an instance of a [`ServerWebSocket`](/docs/ServerWebSocket). Represents the server's WebSocket connection to the client.\n" +
+      '  * `options`\n' +
+      '    * `httpHandler` - function that processes incoming HTTP requests from clients. Defaults to an HTTP handler that responds with `200 OK`.\n' +
+      '    * `secure` - if `true`, starts an HTTPS server instead of an HTTP server. Clients must connect to the server using the `wss` protocol instead of the `ws` protocol. Requires `key` and `cert` options.\n' +
+      '    * `key` - private key(s) in PEM format. Encrypted keys will be decrypted using the `passphrase` option. Multiple keys using different algorithms can be provided as an array of unencrypted key strings or buffers, or an array of objects in the form `{ pem: string|Buffer, passphrase: string }`.\n' +
+      '    * `cert` - cert chain(s) in PEM format. One cert chain should be provided per private key.\n' +
+      '    * `passphrase` - used to decrypt the private key(s).\n' +
+      '    * `supportPerMessageDeflate` - if `true`, indicates to WebSocket clients that the server supports [Compression Extensions for WebSocket](https://datatracker.ietf.org/doc/html/rfc7692). If an incoming WebSocket connection has requested compression extensions via the `Sec-WebSocket-Extensions: permessage-deflate` header, all messages exchanged in the WebSocket connection will be compressed using [zlib](https://nodejs.org/api/zlib.html) default options. Defaults to `false`.\n' +
+      '    * `maxMessageLength` - the maximum length in bytes of sent messages. If a message is longer than `maxMessageLength`, it is split into fragmented messages that are reassembled by the receiver.\n' +
+      '    * `socketBufferLength` - length in bytes of the internal buffer of the underlying [socket](https://nodejs.org/api/net.html#class-netsocket) for all connections to the server.\n' +
+      '\n' +
+      'Return:\n' +
+      '  * `server` - an instance of the WebSocketServer.\n' +
+      '\n' +
+      '```javascript\n' +
+      'const server = new WebSocketServer()\n' +
+      '\n' +
+      'server.listen(1337, () => {\n' +
+      "  console.log('WebSocket server listening on port 1337')\n" +
       '})\n' +
       '```',
     mdast: {
@@ -4061,32 +7705,15 @@ export default [
         type: 'root',
         children: [
           {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'Presidium WebSocket server.',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 28, offset: 27 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 28, offset: 27 }
-            }
-          },
-          {
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
             value: "module http 'https://nodejs.org/api/http.html'\n" +
               "module net 'https://nodejs.org/api/net.html'\n" +
               '\n' +
-              'websocketHandler (websocket WebSocket)=>()\n' +
-              'httpHandler (request http.ClientRequest, response http.ServerResponse)=>()\n' +
-              'upgradeHandler (request http.ClientRequest, socket net.Socket, head Buffer)=>()\n' +
+              'websocketHandler (websocket WebSocket)=>undefined\n' +
+              'httpHandler (request http.ClientRequest, response http.ServerResponse)=>undefined\n' +
+              'upgradeHandler (request http.ClientRequest, socket net.Socket, head Buffer)=>undefined\n' +
               '\n' +
               'new WebSocketServer() -> server WebSocketServer\n' +
               'new WebSocketServer(websocketHandler) -> server WebSocketServer\n' +
@@ -4106,35 +7733,2016 @@ export default [
               '  key: string,\n' +
               '  cert: string,\n' +
               '  passphrase: string\n' +
-              '}) -> server WebSocketServer\n' +
+              '}) -> server WebSocketServer',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 28, column: 4, offset: 831 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Presidium WebSocketServer class.',
+                position: {
+                  start: { line: 30, column: 1, offset: 833 },
+                  end: { line: 30, column: 33, offset: 865 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 30, column: 1, offset: 833 },
+              end: { line: 30, column: 33, offset: 865 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Arguments:',
+                position: {
+                  start: { line: 32, column: 1, offset: 867 },
+                  end: { line: 32, column: 11, offset: 877 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 32, column: 1, offset: 867 },
+              end: { line: 32, column: 11, offset: 877 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'websocketHandler',
+                        position: {
+                          start: { line: 33, column: 5, offset: 882 },
+                          end: { line: 33, column: 23, offset: 900 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ' - a handler function that expects an instance of a ',
+                        position: {
+                          start: { line: 33, column: 23, offset: 900 },
+                          end: { line: 33, column: 75, offset: 952 }
+                        }
+                      },
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/ServerWebSocket',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'ServerWebSocket',
+                            position: {
+                              start: { line: 33, column: 76, offset: 953 },
+                              end: { line: 33, column: 93, offset: 970 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 33, column: 75, offset: 952 },
+                          end: { line: 33, column: 117, offset: 994 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ". Represents the server's WebSocket connection to the client.",
+                        position: {
+                          start: { line: 33, column: 117, offset: 994 },
+                          end: { line: 33, column: 178, offset: 1055 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 33, column: 5, offset: 882 },
+                      end: { line: 33, column: 178, offset: 1055 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 33, column: 3, offset: 880 },
+                  end: { line: 33, column: 178, offset: 1055 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'options',
+                        position: {
+                          start: { line: 34, column: 5, offset: 1060 },
+                          end: { line: 34, column: 14, offset: 1069 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 34, column: 5, offset: 1060 },
+                      end: { line: 34, column: 14, offset: 1069 }
+                    }
+                  },
+                  {
+                    type: 'list',
+                    ordered: false,
+                    start: null,
+                    spread: false,
+                    children: [
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'httpHandler',
+                                position: {
+                                  start: { line: 35, column: 7, offset: 1076 },
+                                  end: {
+                                    line: 35,
+                                    column: 20,
+                                    offset: 1089
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - function that processes incoming HTTP requests from clients. Defaults to an HTTP handler that responds with ',
+                                position: {
+                                  start: {
+                                    line: 35,
+                                    column: 20,
+                                    offset: 1089
+                                  },
+                                  end: {
+                                    line: 35,
+                                    column: 131,
+                                    offset: 1200
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: '200 OK',
+                                position: {
+                                  start: {
+                                    line: 35,
+                                    column: 131,
+                                    offset: 1200
+                                  },
+                                  end: {
+                                    line: 35,
+                                    column: 139,
+                                    offset: 1208
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: '.',
+                                position: {
+                                  start: {
+                                    line: 35,
+                                    column: 139,
+                                    offset: 1208
+                                  },
+                                  end: {
+                                    line: 35,
+                                    column: 140,
+                                    offset: 1209
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 35, column: 7, offset: 1076 },
+                              end: { line: 35, column: 140, offset: 1209 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 35, column: 5, offset: 1074 },
+                          end: { line: 35, column: 140, offset: 1209 }
+                        }
+                      },
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'secure',
+                                position: {
+                                  start: { line: 36, column: 7, offset: 1216 },
+                                  end: {
+                                    line: 36,
+                                    column: 15,
+                                    offset: 1224
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - if ',
+                                position: {
+                                  start: {
+                                    line: 36,
+                                    column: 15,
+                                    offset: 1224
+                                  },
+                                  end: {
+                                    line: 36,
+                                    column: 21,
+                                    offset: 1230
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'true',
+                                position: {
+                                  start: {
+                                    line: 36,
+                                    column: 21,
+                                    offset: 1230
+                                  },
+                                  end: {
+                                    line: 36,
+                                    column: 27,
+                                    offset: 1236
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ', starts an HTTPS server instead of an HTTP server. Clients must connect to the server using the ',
+                                position: {
+                                  start: {
+                                    line: 36,
+                                    column: 27,
+                                    offset: 1236
+                                  },
+                                  end: {
+                                    line: 36,
+                                    column: 124,
+                                    offset: 1333
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'wss',
+                                position: {
+                                  start: {
+                                    line: 36,
+                                    column: 124,
+                                    offset: 1333
+                                  },
+                                  end: {
+                                    line: 36,
+                                    column: 129,
+                                    offset: 1338
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' protocol instead of the ',
+                                position: {
+                                  start: {
+                                    line: 36,
+                                    column: 129,
+                                    offset: 1338
+                                  },
+                                  end: {
+                                    line: 36,
+                                    column: 154,
+                                    offset: 1363
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'ws',
+                                position: {
+                                  start: {
+                                    line: 36,
+                                    column: 154,
+                                    offset: 1363
+                                  },
+                                  end: {
+                                    line: 36,
+                                    column: 158,
+                                    offset: 1367
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' protocol. Requires ',
+                                position: {
+                                  start: {
+                                    line: 36,
+                                    column: 158,
+                                    offset: 1367
+                                  },
+                                  end: {
+                                    line: 36,
+                                    column: 178,
+                                    offset: 1387
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'key',
+                                position: {
+                                  start: {
+                                    line: 36,
+                                    column: 178,
+                                    offset: 1387
+                                  },
+                                  end: {
+                                    line: 36,
+                                    column: 183,
+                                    offset: 1392
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' and ',
+                                position: {
+                                  start: {
+                                    line: 36,
+                                    column: 183,
+                                    offset: 1392
+                                  },
+                                  end: {
+                                    line: 36,
+                                    column: 188,
+                                    offset: 1397
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'cert',
+                                position: {
+                                  start: {
+                                    line: 36,
+                                    column: 188,
+                                    offset: 1397
+                                  },
+                                  end: {
+                                    line: 36,
+                                    column: 194,
+                                    offset: 1403
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' options.',
+                                position: {
+                                  start: {
+                                    line: 36,
+                                    column: 194,
+                                    offset: 1403
+                                  },
+                                  end: {
+                                    line: 36,
+                                    column: 203,
+                                    offset: 1412
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 36, column: 7, offset: 1216 },
+                              end: { line: 36, column: 203, offset: 1412 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 36, column: 5, offset: 1214 },
+                          end: { line: 36, column: 203, offset: 1412 }
+                        }
+                      },
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'key',
+                                position: {
+                                  start: { line: 37, column: 7, offset: 1419 },
+                                  end: {
+                                    line: 37,
+                                    column: 12,
+                                    offset: 1424
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - private key(s) in PEM format. Encrypted keys will be decrypted using the ',
+                                position: {
+                                  start: {
+                                    line: 37,
+                                    column: 12,
+                                    offset: 1424
+                                  },
+                                  end: {
+                                    line: 37,
+                                    column: 88,
+                                    offset: 1500
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'passphrase',
+                                position: {
+                                  start: {
+                                    line: 37,
+                                    column: 88,
+                                    offset: 1500
+                                  },
+                                  end: {
+                                    line: 37,
+                                    column: 100,
+                                    offset: 1512
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' option. Multiple keys using different algorithms can be provided as an array of unencrypted key strings or buffers, or an array of objects in the form ',
+                                position: {
+                                  start: {
+                                    line: 37,
+                                    column: 100,
+                                    offset: 1512
+                                  },
+                                  end: {
+                                    line: 37,
+                                    column: 252,
+                                    offset: 1664
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: '{ pem: string|Buffer, passphrase: string }',
+                                position: {
+                                  start: {
+                                    line: 37,
+                                    column: 252,
+                                    offset: 1664
+                                  },
+                                  end: {
+                                    line: 37,
+                                    column: 296,
+                                    offset: 1708
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: '.',
+                                position: {
+                                  start: {
+                                    line: 37,
+                                    column: 296,
+                                    offset: 1708
+                                  },
+                                  end: {
+                                    line: 37,
+                                    column: 297,
+                                    offset: 1709
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 37, column: 7, offset: 1419 },
+                              end: { line: 37, column: 297, offset: 1709 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 37, column: 5, offset: 1417 },
+                          end: { line: 37, column: 297, offset: 1709 }
+                        }
+                      },
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'cert',
+                                position: {
+                                  start: { line: 38, column: 7, offset: 1716 },
+                                  end: {
+                                    line: 38,
+                                    column: 13,
+                                    offset: 1722
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - cert chain(s) in PEM format. One cert chain should be provided per private key.',
+                                position: {
+                                  start: {
+                                    line: 38,
+                                    column: 13,
+                                    offset: 1722
+                                  },
+                                  end: {
+                                    line: 38,
+                                    column: 95,
+                                    offset: 1804
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 38, column: 7, offset: 1716 },
+                              end: { line: 38, column: 95, offset: 1804 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 38, column: 5, offset: 1714 },
+                          end: { line: 38, column: 95, offset: 1804 }
+                        }
+                      },
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'passphrase',
+                                position: {
+                                  start: { line: 39, column: 7, offset: 1811 },
+                                  end: {
+                                    line: 39,
+                                    column: 19,
+                                    offset: 1823
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - used to decrypt the private key(s).',
+                                position: {
+                                  start: {
+                                    line: 39,
+                                    column: 19,
+                                    offset: 1823
+                                  },
+                                  end: {
+                                    line: 39,
+                                    column: 57,
+                                    offset: 1861
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 39, column: 7, offset: 1811 },
+                              end: { line: 39, column: 57, offset: 1861 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 39, column: 5, offset: 1809 },
+                          end: { line: 39, column: 57, offset: 1861 }
+                        }
+                      },
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'supportPerMessageDeflate',
+                                position: {
+                                  start: { line: 40, column: 7, offset: 1868 },
+                                  end: {
+                                    line: 40,
+                                    column: 33,
+                                    offset: 1894
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - if ',
+                                position: {
+                                  start: {
+                                    line: 40,
+                                    column: 33,
+                                    offset: 1894
+                                  },
+                                  end: {
+                                    line: 40,
+                                    column: 39,
+                                    offset: 1900
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'true',
+                                position: {
+                                  start: {
+                                    line: 40,
+                                    column: 39,
+                                    offset: 1900
+                                  },
+                                  end: {
+                                    line: 40,
+                                    column: 45,
+                                    offset: 1906
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ', indicates to WebSocket clients that the server supports ',
+                                position: {
+                                  start: {
+                                    line: 40,
+                                    column: 45,
+                                    offset: 1906
+                                  },
+                                  end: {
+                                    line: 40,
+                                    column: 103,
+                                    offset: 1964
+                                  }
+                                }
+                              },
+                              {
+                                type: 'link',
+                                title: null,
+                                url: 'https://datatracker.ietf.org/doc/html/rfc7692',
+                                children: [
+                                  {
+                                    type: 'text',
+                                    value: 'Compression Extensions for WebSocket',
+                                    position: {
+                                      start: {
+                                        line: 40,
+                                        column: 104,
+                                        offset: 1965
+                                      },
+                                      end: {
+                                        line: 40,
+                                        column: 140,
+                                        offset: 2001
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: {
+                                    line: 40,
+                                    column: 103,
+                                    offset: 1964
+                                  },
+                                  end: {
+                                    line: 40,
+                                    column: 188,
+                                    offset: 2049
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: '. If an incoming WebSocket connection has requested compression extensions via the ',
+                                position: {
+                                  start: {
+                                    line: 40,
+                                    column: 188,
+                                    offset: 2049
+                                  },
+                                  end: {
+                                    line: 40,
+                                    column: 271,
+                                    offset: 2132
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'Sec-WebSocket-Extensions: permessage-deflate',
+                                position: {
+                                  start: {
+                                    line: 40,
+                                    column: 271,
+                                    offset: 2132
+                                  },
+                                  end: {
+                                    line: 40,
+                                    column: 317,
+                                    offset: 2178
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' header, all messages exchanged in the WebSocket connection will be compressed using ',
+                                position: {
+                                  start: {
+                                    line: 40,
+                                    column: 317,
+                                    offset: 2178
+                                  },
+                                  end: {
+                                    line: 40,
+                                    column: 402,
+                                    offset: 2263
+                                  }
+                                }
+                              },
+                              {
+                                type: 'link',
+                                title: null,
+                                url: 'https://nodejs.org/api/zlib.html',
+                                children: [
+                                  {
+                                    type: 'text',
+                                    value: 'zlib',
+                                    position: {
+                                      start: {
+                                        line: 40,
+                                        column: 403,
+                                        offset: 2264
+                                      },
+                                      end: {
+                                        line: 40,
+                                        column: 407,
+                                        offset: 2268
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: {
+                                    line: 40,
+                                    column: 402,
+                                    offset: 2263
+                                  },
+                                  end: {
+                                    line: 40,
+                                    column: 442,
+                                    offset: 2303
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' default options. Defaults to ',
+                                position: {
+                                  start: {
+                                    line: 40,
+                                    column: 442,
+                                    offset: 2303
+                                  },
+                                  end: {
+                                    line: 40,
+                                    column: 472,
+                                    offset: 2333
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'false',
+                                position: {
+                                  start: {
+                                    line: 40,
+                                    column: 472,
+                                    offset: 2333
+                                  },
+                                  end: {
+                                    line: 40,
+                                    column: 479,
+                                    offset: 2340
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: '.',
+                                position: {
+                                  start: {
+                                    line: 40,
+                                    column: 479,
+                                    offset: 2340
+                                  },
+                                  end: {
+                                    line: 40,
+                                    column: 480,
+                                    offset: 2341
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 40, column: 7, offset: 1868 },
+                              end: { line: 40, column: 480, offset: 2341 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 40, column: 5, offset: 1866 },
+                          end: { line: 40, column: 480, offset: 2341 }
+                        }
+                      },
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'maxMessageLength',
+                                position: {
+                                  start: { line: 41, column: 7, offset: 2348 },
+                                  end: {
+                                    line: 41,
+                                    column: 25,
+                                    offset: 2366
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - the maximum length in bytes of sent messages. If a message is longer than ',
+                                position: {
+                                  start: {
+                                    line: 41,
+                                    column: 25,
+                                    offset: 2366
+                                  },
+                                  end: {
+                                    line: 41,
+                                    column: 102,
+                                    offset: 2443
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'maxMessageLength',
+                                position: {
+                                  start: {
+                                    line: 41,
+                                    column: 102,
+                                    offset: 2443
+                                  },
+                                  end: {
+                                    line: 41,
+                                    column: 120,
+                                    offset: 2461
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ', it is split into fragmented messages that are reassembled by the receiver.',
+                                position: {
+                                  start: {
+                                    line: 41,
+                                    column: 120,
+                                    offset: 2461
+                                  },
+                                  end: {
+                                    line: 41,
+                                    column: 196,
+                                    offset: 2537
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 41, column: 7, offset: 2348 },
+                              end: { line: 41, column: 196, offset: 2537 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 41, column: 5, offset: 2346 },
+                          end: { line: 41, column: 196, offset: 2537 }
+                        }
+                      },
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'socketBufferLength',
+                                position: {
+                                  start: { line: 42, column: 7, offset: 2544 },
+                                  end: {
+                                    line: 42,
+                                    column: 27,
+                                    offset: 2564
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - length in bytes of the internal buffer of the underlying ',
+                                position: {
+                                  start: {
+                                    line: 42,
+                                    column: 27,
+                                    offset: 2564
+                                  },
+                                  end: {
+                                    line: 42,
+                                    column: 87,
+                                    offset: 2624
+                                  }
+                                }
+                              },
+                              {
+                                type: 'link',
+                                title: null,
+                                url: 'https://nodejs.org/api/net.html#class-netsocket',
+                                children: [
+                                  {
+                                    type: 'text',
+                                    value: 'socket',
+                                    position: {
+                                      start: {
+                                        line: 42,
+                                        column: 88,
+                                        offset: 2625
+                                      },
+                                      end: {
+                                        line: 42,
+                                        column: 94,
+                                        offset: 2631
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: {
+                                    line: 42,
+                                    column: 87,
+                                    offset: 2624
+                                  },
+                                  end: {
+                                    line: 42,
+                                    column: 144,
+                                    offset: 2681
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' for all connections to the server.',
+                                position: {
+                                  start: {
+                                    line: 42,
+                                    column: 144,
+                                    offset: 2681
+                                  },
+                                  end: {
+                                    line: 42,
+                                    column: 179,
+                                    offset: 2716
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 42, column: 7, offset: 2544 },
+                              end: { line: 42, column: 179, offset: 2716 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 42, column: 5, offset: 2542 },
+                          end: { line: 42, column: 179, offset: 2716 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 35, column: 5, offset: 1074 },
+                      end: { line: 42, column: 179, offset: 2716 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 34, column: 3, offset: 1058 },
+                  end: { line: 42, column: 179, offset: 2716 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 33, column: 3, offset: 880 },
+              end: { line: 42, column: 179, offset: 2716 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Return:',
+                position: {
+                  start: { line: 44, column: 1, offset: 2718 },
+                  end: { line: 44, column: 8, offset: 2725 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 44, column: 1, offset: 2718 },
+              end: { line: 44, column: 8, offset: 2725 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'server',
+                        position: {
+                          start: { line: 45, column: 5, offset: 2730 },
+                          end: { line: 45, column: 13, offset: 2738 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ' - an instance of the WebSocketServer.',
+                        position: {
+                          start: { line: 45, column: 13, offset: 2738 },
+                          end: { line: 45, column: 51, offset: 2776 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 45, column: 5, offset: 2730 },
+                      end: { line: 45, column: 51, offset: 2776 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 45, column: 3, offset: 2728 },
+                  end: { line: 45, column: 51, offset: 2776 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 45, column: 3, offset: 2728 },
+              end: { line: 45, column: 51, offset: 2776 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: null,
+            value: 'const server = new WebSocketServer()\n' +
               '\n' +
-              "server.on('connection', websocketHandler) -> ()\n" +
-              "server.on('request', httpHandler) -> ()\n" +
-              "server.on('upgrade', upgradeHandler) -> ()\n" +
-              "server.on('error', (error Error)=>()) -> ()\n" +
-              "server.on('close', ()=>()) -> ()\n" +
-              '\n' +
-              "server.on('connection', (websocket WebSocket) => {\n" +
-              "  websocket.on('open', ()=>()) -> ()\n" +
-              "  websocket.on('message', (message Buffer)=>()) -> ()\n" +
-              "  websocket.on('ping', ()=>()) -> ()\n" +
-              "  websocket.on('pong', ()=>()) -> ()\n" +
-              "  websocket.on('error', (error Error)=>()) -> ()\n" +
-              "  websocket.on('close', ()=>()) -> ()\n" +
+              'server.listen(1337, () => {\n' +
+              "  console.log('WebSocket server listening on port 1337')\n" +
               '})',
             position: {
-              start: { line: 3, column: 1, offset: 29 },
-              end: { line: 45, column: 4, offset: 1355 }
+              start: { line: 47, column: 1, offset: 2778 },
+              end: { line: 53, column: 4, offset: 2921 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 45, column: 4, offset: 1355 }
+          end: { line: 53, column: 4, offset: 2921 }
         }
       }
     },
     methods: [
+      {
+        name: 'Event: connection',
+        docs: '```coffeescript [specscript]\n' +
+          "emit('connection', websocket ServerWebSocket)\n" +
+          '```\n' +
+          '\n' +
+          'Event Data:\n' +
+          "  * `websocket` - an instance of a [ServerWebSocket](/docs/ServerWebSocket). Represents the server's WebSocket connection to the client.\n" +
+          '\n' +
+          '```javascript\n' +
+          'const server = new WebSocketServer()\n' +
+          '\n' +
+          "server.on('connection', websocket => {\n" +
+          "  console.log('New WebSocket connection.')\n" +
+          '})\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event: connection',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 18, offset: 17 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 18, offset: 17 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 18, offset: 17 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: "emit('connection', websocket ServerWebSocket)",
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 4, offset: 78 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event Data:',
+                    position: {
+                      start: { line: 5, column: 1, offset: 80 },
+                      end: { line: 5, column: 12, offset: 91 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 5, column: 1, offset: 80 },
+                  end: { line: 5, column: 12, offset: 91 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'websocket',
+                            position: {
+                              start: { line: 6, column: 5, offset: 96 },
+                              end: { line: 6, column: 16, offset: 107 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - an instance of a ',
+                            position: {
+                              start: { line: 6, column: 16, offset: 107 },
+                              end: { line: 6, column: 36, offset: 127 }
+                            }
+                          },
+                          {
+                            type: 'link',
+                            title: null,
+                            url: '/docs/ServerWebSocket',
+                            children: [
+                              {
+                                type: 'text',
+                                value: 'ServerWebSocket',
+                                position: {
+                                  start: { line: 6, column: 37, offset: 128 },
+                                  end: { line: 6, column: 52, offset: 143 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 6, column: 36, offset: 127 },
+                              end: { line: 6, column: 76, offset: 167 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ". Represents the server's WebSocket connection to the client.",
+                            position: {
+                              start: { line: 6, column: 76, offset: 167 },
+                              end: { line: 6, column: 137, offset: 228 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 6, column: 5, offset: 96 },
+                          end: { line: 6, column: 137, offset: 228 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 6, column: 3, offset: 94 },
+                      end: { line: 6, column: 137, offset: 228 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 6, column: 3, offset: 94 },
+                  end: { line: 6, column: 137, offset: 228 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'const server = new WebSocketServer()\n' +
+                  '\n' +
+                  "server.on('connection', websocket => {\n" +
+                  "  console.log('New WebSocket connection.')\n" +
+                  '})',
+                position: {
+                  start: { line: 8, column: 1, offset: 230 },
+                  end: { line: 14, column: 4, offset: 370 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 14, column: 4, offset: 370 }
+            }
+          }
+        }
+      },
+      {
+        name: 'Event: request',
+        docs: '```coffeescript [specscript]\n' +
+          "module http 'https://nodejs.org/api/http.html'\n" +
+          '\n' +
+          "emit('request', request http.ClientRequest, response http.ServerResponse)\n" +
+          '```\n' +
+          '\n' +
+          'Event Data:\n' +
+          "  * `request` - an instance of a [Node.js http.ClientRequest](https://nodejs.org/docs/latest-v24.x/api/http.html#class-httpclientrequest). Represents a client's HTTP request to the server.\n" +
+          "  * `response` - an instance of a [Node.js http.ServerResponse](https://nodejs.org/docs/latest-v24.x/api/http.html#class-httpserverresponse). Represents the server's HTTP response to the client.\n" +
+          '\n' +
+          '```javascript\n' +
+          'const server = new WebSocketServer()\n' +
+          '\n' +
+          "server.on('request', (request, response) => {\n" +
+          "  console.log('New HTTP request.')\n" +
+          '})\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event: request',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 15, offset: 14 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 15, offset: 14 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 15, offset: 14 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: "module http 'https://nodejs.org/api/http.html'\n" +
+                  '\n' +
+                  "emit('request', request http.ClientRequest, response http.ServerResponse)",
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 5, column: 4, offset: 154 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event Data:',
+                    position: {
+                      start: { line: 7, column: 1, offset: 156 },
+                      end: { line: 7, column: 12, offset: 167 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 7, column: 1, offset: 156 },
+                  end: { line: 7, column: 12, offset: 167 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'request',
+                            position: {
+                              start: { line: 8, column: 5, offset: 172 },
+                              end: { line: 8, column: 14, offset: 181 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - an instance of a ',
+                            position: {
+                              start: { line: 8, column: 14, offset: 181 },
+                              end: { line: 8, column: 34, offset: 201 }
+                            }
+                          },
+                          {
+                            type: 'link',
+                            title: null,
+                            url: 'https://nodejs.org/docs/latest-v24.x/api/http.html#class-httpclientrequest',
+                            children: [
+                              {
+                                type: 'text',
+                                value: 'Node.js http.ClientRequest',
+                                position: {
+                                  start: { line: 8, column: 35, offset: 202 },
+                                  end: { line: 8, column: 61, offset: 228 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 8, column: 34, offset: 201 },
+                              end: { line: 8, column: 138, offset: 305 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ". Represents a client's HTTP request to the server.",
+                            position: {
+                              start: { line: 8, column: 138, offset: 305 },
+                              end: { line: 8, column: 189, offset: 356 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 8, column: 5, offset: 172 },
+                          end: { line: 8, column: 189, offset: 356 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 8, column: 3, offset: 170 },
+                      end: { line: 8, column: 189, offset: 356 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'response',
+                            position: {
+                              start: { line: 9, column: 5, offset: 361 },
+                              end: { line: 9, column: 15, offset: 371 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - an instance of a ',
+                            position: {
+                              start: { line: 9, column: 15, offset: 371 },
+                              end: { line: 9, column: 35, offset: 391 }
+                            }
+                          },
+                          {
+                            type: 'link',
+                            title: null,
+                            url: 'https://nodejs.org/docs/latest-v24.x/api/http.html#class-httpserverresponse',
+                            children: [
+                              {
+                                type: 'text',
+                                value: 'Node.js http.ServerResponse',
+                                position: {
+                                  start: { line: 9, column: 36, offset: 392 },
+                                  end: { line: 9, column: 63, offset: 419 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 9, column: 35, offset: 391 },
+                              end: { line: 9, column: 141, offset: 497 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ". Represents the server's HTTP response to the client.",
+                            position: {
+                              start: { line: 9, column: 141, offset: 497 },
+                              end: { line: 9, column: 195, offset: 551 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 9, column: 5, offset: 361 },
+                          end: { line: 9, column: 195, offset: 551 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 9, column: 3, offset: 359 },
+                      end: { line: 9, column: 195, offset: 551 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 3, offset: 170 },
+                  end: { line: 9, column: 195, offset: 551 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'const server = new WebSocketServer()\n' +
+                  '\n' +
+                  "server.on('request', (request, response) => {\n" +
+                  "  console.log('New HTTP request.')\n" +
+                  '})',
+                position: {
+                  start: { line: 11, column: 1, offset: 553 },
+                  end: { line: 17, column: 4, offset: 692 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 17, column: 4, offset: 692 }
+            }
+          }
+        }
+      },
+      {
+        name: 'Event: upgrade',
+        docs: '```coffeescript [specscript]\n' +
+          "module http 'https://nodejs.org/api/http.html'\n" +
+          "module net 'https://nodejs.org/api/net.html'\n" +
+          '\n' +
+          "emit('upgrade', request http.ClientRequest, socket net.Socket, head Buffer)\n" +
+          '```\n' +
+          '\n' +
+          'Event Data:\n' +
+          "  * `request` - an instance of a [Node.js http.ClientRequest](https://nodejs.org/docs/latest-v24.x/api/http.html#class-httpclientrequest). Represents a client's HTTP request to the server.\n" +
+          "  * `socket` - an instance of a [Node.js net.Socket](https://nodejs.org/docs/latest-v24.x/api/net.html#class-netsocket). Represents the server's underlying TCP connection to the client.\n" +
+          '  * `head` - a [Node.js buffer](https://nodejs.org/api/buffer.html) containing the first packet of the upgraded data stream.\n' +
+          '\n' +
+          '```javascript\n' +
+          'const server = new WebSocketServer()\n' +
+          '\n' +
+          "server.on('upgrade', (request, socket, heaad) => {\n" +
+          "  console.log('Upgrade')\n" +
+          '})\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event: upgrade',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 15, offset: 14 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 15, offset: 14 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 15, offset: 14 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: "module http 'https://nodejs.org/api/http.html'\n" +
+                  "module net 'https://nodejs.org/api/net.html'\n" +
+                  '\n' +
+                  "emit('upgrade', request http.ClientRequest, socket net.Socket, head Buffer)",
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 6, column: 4, offset: 201 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event Data:',
+                    position: {
+                      start: { line: 8, column: 1, offset: 203 },
+                      end: { line: 8, column: 12, offset: 214 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 1, offset: 203 },
+                  end: { line: 8, column: 12, offset: 214 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'request',
+                            position: {
+                              start: { line: 9, column: 5, offset: 219 },
+                              end: { line: 9, column: 14, offset: 228 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - an instance of a ',
+                            position: {
+                              start: { line: 9, column: 14, offset: 228 },
+                              end: { line: 9, column: 34, offset: 248 }
+                            }
+                          },
+                          {
+                            type: 'link',
+                            title: null,
+                            url: 'https://nodejs.org/docs/latest-v24.x/api/http.html#class-httpclientrequest',
+                            children: [
+                              {
+                                type: 'text',
+                                value: 'Node.js http.ClientRequest',
+                                position: {
+                                  start: { line: 9, column: 35, offset: 249 },
+                                  end: { line: 9, column: 61, offset: 275 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 9, column: 34, offset: 248 },
+                              end: { line: 9, column: 138, offset: 352 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ". Represents a client's HTTP request to the server.",
+                            position: {
+                              start: { line: 9, column: 138, offset: 352 },
+                              end: { line: 9, column: 189, offset: 403 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 9, column: 5, offset: 219 },
+                          end: { line: 9, column: 189, offset: 403 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 9, column: 3, offset: 217 },
+                      end: { line: 9, column: 189, offset: 403 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'socket',
+                            position: {
+                              start: { line: 10, column: 5, offset: 408 },
+                              end: { line: 10, column: 13, offset: 416 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - an instance of a ',
+                            position: {
+                              start: { line: 10, column: 13, offset: 416 },
+                              end: { line: 10, column: 33, offset: 436 }
+                            }
+                          },
+                          {
+                            type: 'link',
+                            title: null,
+                            url: 'https://nodejs.org/docs/latest-v24.x/api/net.html#class-netsocket',
+                            children: [
+                              {
+                                type: 'text',
+                                value: 'Node.js net.Socket',
+                                position: {
+                                  start: { line: 10, column: 34, offset: 437 },
+                                  end: { line: 10, column: 52, offset: 455 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 10, column: 33, offset: 436 },
+                              end: { line: 10, column: 120, offset: 523 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ". Represents the server's underlying TCP connection to the client.",
+                            position: {
+                              start: { line: 10, column: 120, offset: 523 },
+                              end: { line: 10, column: 186, offset: 589 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 10, column: 5, offset: 408 },
+                          end: { line: 10, column: 186, offset: 589 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 10, column: 3, offset: 406 },
+                      end: { line: 10, column: 186, offset: 589 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'head',
+                            position: {
+                              start: { line: 11, column: 5, offset: 594 },
+                              end: { line: 11, column: 11, offset: 600 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - a ',
+                            position: {
+                              start: { line: 11, column: 11, offset: 600 },
+                              end: { line: 11, column: 16, offset: 605 }
+                            }
+                          },
+                          {
+                            type: 'link',
+                            title: null,
+                            url: 'https://nodejs.org/api/buffer.html',
+                            children: [
+                              {
+                                type: 'text',
+                                value: 'Node.js buffer',
+                                position: {
+                                  start: { line: 11, column: 17, offset: 606 },
+                                  end: { line: 11, column: 31, offset: 620 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 11, column: 16, offset: 605 },
+                              end: { line: 11, column: 68, offset: 657 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' containing the first packet of the upgraded data stream.',
+                            position: {
+                              start: { line: 11, column: 68, offset: 657 },
+                              end: { line: 11, column: 125, offset: 714 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 11, column: 5, offset: 594 },
+                          end: { line: 11, column: 125, offset: 714 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 11, column: 3, offset: 592 },
+                      end: { line: 11, column: 125, offset: 714 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 9, column: 3, offset: 217 },
+                  end: { line: 11, column: 125, offset: 714 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'const server = new WebSocketServer()\n' +
+                  '\n' +
+                  "server.on('upgrade', (request, socket, heaad) => {\n" +
+                  "  console.log('Upgrade')\n" +
+                  '})',
+                position: {
+                  start: { line: 13, column: 1, offset: 716 },
+                  end: { line: 19, column: 4, offset: 850 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 19, column: 4, offset: 850 }
+            }
+          }
+        }
+      },
+      {
+        name: 'Event: close',
+        docs: '```coffeescript [specscript]\n' +
+          "emit('close')\n" +
+          '```\n' +
+          '\n' +
+          'Event Data:\n' +
+          '  * (none)\n' +
+          '\n' +
+          '```javascript\n' +
+          'const server = new WebSocketServer()\n' +
+          '\n' +
+          "server.on('close', websocket => {\n" +
+          "  console.log('WebSocket server closed.')\n" +
+          '})\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event: close',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 13, offset: 12 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 13, offset: 12 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 13, offset: 12 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: "emit('close')",
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 4, offset: 46 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event Data:',
+                    position: {
+                      start: { line: 5, column: 1, offset: 48 },
+                      end: { line: 5, column: 12, offset: 59 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 5, column: 1, offset: 48 },
+                  end: { line: 5, column: 12, offset: 59 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'text',
+                            value: '(none)',
+                            position: {
+                              start: { line: 6, column: 5, offset: 64 },
+                              end: { line: 6, column: 11, offset: 70 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 6, column: 5, offset: 64 },
+                          end: { line: 6, column: 11, offset: 70 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 6, column: 3, offset: 62 },
+                      end: { line: 6, column: 11, offset: 70 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 6, column: 3, offset: 62 },
+                  end: { line: 6, column: 11, offset: 70 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'const server = new WebSocketServer()\n' +
+                  '\n' +
+                  "server.on('close', websocket => {\n" +
+                  "  console.log('WebSocket server closed.')\n" +
+                  '})',
+                position: {
+                  start: { line: 8, column: 1, offset: 72 },
+                  end: { line: 14, column: 4, offset: 206 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 14, column: 4, offset: 206 }
+            }
+          }
+        }
+      },
       {
         name: '_handleRequest',
         docs: '```coffeescript [specscript]\n' +
@@ -4547,7 +10155,30 @@ export default [
       {
         name: 'listen',
         docs: '```coffeescript [specscript]\n' +
-          'server.listen(port number, callback? function) -> ()\n' +
+          'server.listen(port number) -> undefined\n' +
+          'server.listen(port number, callback ()=>()) -> undefined\n' +
+          'server.listen(port number, host string, callback ()=>()) -> undefined\n' +
+          'server.listen(port number, backlog number, callback ()=>()) -> undefined\n' +
+          'server.listen(port number, host string, backlog number, callback ()=>()) -> undefined\n' +
+          '```\n' +
+          '\n' +
+          'Starts the WebSocket server listening for connections.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * `port` - the network port on which the server is listening.\n' +
+          '  * `host` - the ip address of the network device on which the server is running. Defaults to the [0.0.0.0](https://en.wikipedia.org/wiki/0.0.0.0).\n' +
+          '  * `backlog` - a number that specifies the maximum length of the queue of pending connections. Defaults to 511.\n' +
+          '  * `callback` - a function that is called when the server has started listening.\n' +
+          '\n' +
+          'Return:\n' +
+          '  * undefined\n' +
+          '\n' +
+          '```javascript\n' +
+          'const server = new WebSocketServer()\n' +
+          '\n' +
+          'server.listen(1337, () => {\n' +
+          "  console.log('WebSocket server listening on port 1337')\n" +
+          '})\n' +
           '```',
         mdast: {
           name: {
@@ -4583,23 +10214,342 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: 'server.listen(port number, callback? function) -> ()',
+                value: 'server.listen(port number) -> undefined\n' +
+                  'server.listen(port number, callback ()=>()) -> undefined\n' +
+                  'server.listen(port number, host string, callback ()=>()) -> undefined\n' +
+                  'server.listen(port number, backlog number, callback ()=>()) -> undefined\n' +
+                  'server.listen(port number, host string, backlog number, callback ()=>()) -> undefined',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 3, column: 4, offset: 85 }
+                  end: { line: 7, column: 4, offset: 358 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Starts the WebSocket server listening for connections.',
+                    position: {
+                      start: { line: 9, column: 1, offset: 360 },
+                      end: { line: 9, column: 55, offset: 414 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 9, column: 1, offset: 360 },
+                  end: { line: 9, column: 55, offset: 414 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 11, column: 1, offset: 416 },
+                      end: { line: 11, column: 11, offset: 426 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 1, offset: 416 },
+                  end: { line: 11, column: 11, offset: 426 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'port',
+                            position: {
+                              start: { line: 12, column: 5, offset: 431 },
+                              end: { line: 12, column: 11, offset: 437 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - the network port on which the server is listening.',
+                            position: {
+                              start: { line: 12, column: 11, offset: 437 },
+                              end: { line: 12, column: 64, offset: 490 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 12, column: 5, offset: 431 },
+                          end: { line: 12, column: 64, offset: 490 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 12, column: 3, offset: 429 },
+                      end: { line: 12, column: 64, offset: 490 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'host',
+                            position: {
+                              start: { line: 13, column: 5, offset: 495 },
+                              end: { line: 13, column: 11, offset: 501 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - the ip address of the network device on which the server is running. Defaults to the ',
+                            position: {
+                              start: { line: 13, column: 11, offset: 501 },
+                              end: { line: 13, column: 99, offset: 589 }
+                            }
+                          },
+                          {
+                            type: 'link',
+                            title: null,
+                            url: 'https://en.wikipedia.org/wiki/0.0.0.0',
+                            children: [
+                              {
+                                type: 'text',
+                                value: '0.0.0.0',
+                                position: {
+                                  start: {
+                                    line: 13,
+                                    column: 100,
+                                    offset: 590
+                                  },
+                                  end: {
+                                    line: 13,
+                                    column: 107,
+                                    offset: 597
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 13, column: 99, offset: 589 },
+                              end: { line: 13, column: 147, offset: 637 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: '.',
+                            position: {
+                              start: { line: 13, column: 147, offset: 637 },
+                              end: { line: 13, column: 148, offset: 638 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 13, column: 5, offset: 495 },
+                          end: { line: 13, column: 148, offset: 638 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 13, column: 3, offset: 493 },
+                      end: { line: 13, column: 148, offset: 638 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'backlog',
+                            position: {
+                              start: { line: 14, column: 5, offset: 643 },
+                              end: { line: 14, column: 14, offset: 652 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - a number that specifies the maximum length of the queue of pending connections. Defaults to 511.',
+                            position: {
+                              start: { line: 14, column: 14, offset: 652 },
+                              end: { line: 14, column: 113, offset: 751 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 14, column: 5, offset: 643 },
+                          end: { line: 14, column: 113, offset: 751 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 14, column: 3, offset: 641 },
+                      end: { line: 14, column: 113, offset: 751 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'callback',
+                            position: {
+                              start: { line: 15, column: 5, offset: 756 },
+                              end: { line: 15, column: 15, offset: 766 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - a function that is called when the server has started listening.',
+                            position: {
+                              start: { line: 15, column: 15, offset: 766 },
+                              end: { line: 15, column: 82, offset: 833 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 15, column: 5, offset: 756 },
+                          end: { line: 15, column: 82, offset: 833 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 15, column: 3, offset: 754 },
+                      end: { line: 15, column: 82, offset: 833 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 12, column: 3, offset: 429 },
+                  end: { line: 15, column: 82, offset: 833 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 17, column: 1, offset: 835 },
+                      end: { line: 17, column: 8, offset: 842 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 17, column: 1, offset: 835 },
+                  end: { line: 17, column: 8, offset: 842 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'undefined',
+                            position: {
+                              start: { line: 18, column: 5, offset: 847 },
+                              end: { line: 18, column: 14, offset: 856 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 18, column: 5, offset: 847 },
+                          end: { line: 18, column: 14, offset: 856 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 18, column: 3, offset: 845 },
+                      end: { line: 18, column: 14, offset: 856 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 18, column: 3, offset: 845 },
+                  end: { line: 18, column: 14, offset: 856 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'const server = new WebSocketServer()\n' +
+                  '\n' +
+                  'server.listen(1337, () => {\n' +
+                  "  console.log('WebSocket server listening on port 1337')\n" +
+                  '})',
+                position: {
+                  start: { line: 20, column: 1, offset: 858 },
+                  end: { line: 26, column: 4, offset: 1001 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 3, column: 4, offset: 85 }
+              end: { line: 26, column: 4, offset: 1001 }
             }
           }
         }
       },
       {
         name: 'close',
-        docs: '```coffeescript [specscript]\nserver.close() -> ()\n```',
+        docs: '```coffeescript [specscript]\n' +
+          'server.close() -> undefined\n' +
+          'server.close(callback function) -> undefined\n' +
+          '```\n' +
+          '\n' +
+          'Stops the server from accepting new connections and closes all current connections.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * `callback` - a function that is called once the server has closed.\n' +
+          '\n' +
+          'Return:\n' +
+          '  * undefined\n' +
+          '\n' +
+          '```javascript\n' +
+          'const server = new WebSocketServer()\n' +
+          '\n' +
+          'server.listen(1337, () => {\n' +
+          "  console.log('WebSocket server listening on port 1337')\n" +
+          '})\n' +
+          '```',
         mdast: {
           name: {
             type: 'root',
@@ -4634,706 +10584,176 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: 'server.close() -> ()',
+                value: 'server.close() -> undefined\n' +
+                  'server.close(callback function) -> undefined',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 3, column: 4, offset: 53 }
+                  end: { line: 4, column: 4, offset: 105 }
                 }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 3, column: 4, offset: 53 }
-            }
-          }
-        }
-      },
-      {
-        name: 'noop',
-        docs: "Function that doesn't do anything\n" +
-          '\n' +
-          '```coffeescript [specscript]\n' +
-          'noop() -> ()\n' +
-          '```',
-        mdast: {
-          name: {
-            type: 'root',
-            children: [
+              },
               {
                 type: 'paragraph',
                 children: [
                   {
                     type: 'text',
-                    value: 'noop',
+                    value: 'Stops the server from accepting new connections and closes all current connections.',
                     position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 5, offset: 4 }
+                      start: { line: 6, column: 1, offset: 107 },
+                      end: { line: 6, column: 84, offset: 190 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 5, offset: 4 }
+                  start: { line: 6, column: 1, offset: 107 },
+                  end: { line: 6, column: 84, offset: 190 }
                 }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 5, offset: 4 }
-            }
-          },
-          docs: {
-            type: 'root',
-            children: [
+              },
               {
                 type: 'paragraph',
                 children: [
                   {
                     type: 'text',
-                    value: "Function that doesn't do anything",
+                    value: 'Arguments:',
                     position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 34, offset: 33 }
+                      start: { line: 8, column: 1, offset: 192 },
+                      end: { line: 8, column: 11, offset: 202 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 34, offset: 33 }
+                  start: { line: 8, column: 1, offset: 192 },
+                  end: { line: 8, column: 11, offset: 202 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'callback',
+                            position: {
+                              start: { line: 9, column: 5, offset: 207 },
+                              end: { line: 9, column: 15, offset: 217 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - a function that is called once the server has closed.',
+                            position: {
+                              start: { line: 9, column: 15, offset: 217 },
+                              end: { line: 9, column: 71, offset: 273 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 9, column: 5, offset: 207 },
+                          end: { line: 9, column: 71, offset: 273 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 9, column: 3, offset: 205 },
+                      end: { line: 9, column: 71, offset: 273 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 9, column: 3, offset: 205 },
+                  end: { line: 9, column: 71, offset: 273 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 11, column: 1, offset: 275 },
+                      end: { line: 11, column: 8, offset: 282 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 1, offset: 275 },
+                  end: { line: 11, column: 8, offset: 282 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'undefined',
+                            position: {
+                              start: { line: 12, column: 5, offset: 287 },
+                              end: { line: 12, column: 14, offset: 296 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 12, column: 5, offset: 287 },
+                          end: { line: 12, column: 14, offset: 296 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 12, column: 3, offset: 285 },
+                      end: { line: 12, column: 14, offset: 296 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 12, column: 3, offset: 285 },
+                  end: { line: 12, column: 14, offset: 296 }
                 }
               },
               {
                 type: 'code',
-                lang: 'coffeescript',
-                meta: '[specscript]',
-                value: 'noop() -> ()',
+                lang: 'javascript',
+                meta: null,
+                value: 'const server = new WebSocketServer()\n' +
+                  '\n' +
+                  'server.listen(1337, () => {\n' +
+                  "  console.log('WebSocket server listening on port 1337')\n" +
+                  '})',
                 position: {
-                  start: { line: 3, column: 1, offset: 35 },
-                  end: { line: 5, column: 4, offset: 80 }
+                  start: { line: 14, column: 1, offset: 298 },
+                  end: { line: 20, column: 4, offset: 441 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 80 }
-            }
-          }
-        }
-      },
-      {
-        name: 'defaultHttpHandler',
-        docs: 'Default HTTP handler. Responds with `200 OK`.\n' +
-          '\n' +
-          '```coffeescript [specscript]\n' +
-          'defaultHttpHandler(request http.ClientRequest, response http.ServerResponse) -> ()\n' +
-          '```',
-        mdast: {
-          name: {
-            type: 'root',
-            children: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'defaultHttpHandler',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 19, offset: 18 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 19, offset: 18 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 19, offset: 18 }
-            }
-          },
-          docs: {
-            type: 'root',
-            children: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'Default HTTP handler. Responds with ',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 37, offset: 36 }
-                    }
-                  },
-                  {
-                    type: 'inlineCode',
-                    value: '200 OK',
-                    position: {
-                      start: { line: 1, column: 37, offset: 36 },
-                      end: { line: 1, column: 45, offset: 44 }
-                    }
-                  },
-                  {
-                    type: 'text',
-                    value: '.',
-                    position: {
-                      start: { line: 1, column: 45, offset: 44 },
-                      end: { line: 1, column: 46, offset: 45 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 46, offset: 45 }
-                }
-              },
-              {
-                type: 'code',
-                lang: 'coffeescript',
-                meta: '[specscript]',
-                value: 'defaultHttpHandler(request http.ClientRequest, response http.ServerResponse) -> ()',
-                position: {
-                  start: { line: 3, column: 1, offset: 47 },
-                  end: { line: 5, column: 4, offset: 162 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 162 }
+              end: { line: 20, column: 4, offset: 441 }
             }
           }
         }
       }
     ],
     fileName: '/Users/richard/code/presidium.services/../presidium-websocket/WebSocketServer.js'
-  },
-  {
-    name: 'ServerWebsocket',
-    docs: '```coffeescript [specscript]\n' +
-      'new ServerWebsocket(socket net.Socket, options {\n' +
-      '  maxMessageLength: number\n' +
-      '}) -> websocket ServerWebsocket\n' +
-      '```',
-    mdast: {
-      name: {
-        type: 'root',
-        children: [
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'ServerWebsocket',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 16, offset: 15 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 16, offset: 15 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 16, offset: 15 }
-        }
-      },
-      docs: {
-        type: 'root',
-        children: [
-          {
-            type: 'code',
-            lang: 'coffeescript',
-            meta: '[specscript]',
-            value: 'new ServerWebsocket(socket net.Socket, options {\n' +
-              '  maxMessageLength: number\n' +
-              '}) -> websocket ServerWebsocket',
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 140 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 5, column: 4, offset: 140 }
-        }
-      }
-    },
-    methods: [
-      {
-        name: 'connect',
-        docs: '```coffeescript [specscript]\nwebsocket.connect() -> ()\n```',
-        mdast: {
-          name: {
-            type: 'root',
-            children: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'connect',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 8, offset: 7 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 8, offset: 7 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 8, offset: 7 }
-            }
-          },
-          docs: {
-            type: 'root',
-            children: [
-              {
-                type: 'code',
-                lang: 'coffeescript',
-                meta: '[specscript]',
-                value: 'websocket.connect() -> ()',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 3, column: 4, offset: 58 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 3, column: 4, offset: 58 }
-            }
-          }
-        }
-      },
-      {
-        name: 'send',
-        docs: '```coffeescript [specscript]\n' +
-          'websocket.send(payload Buffer|string) -> ()\n' +
-          '```',
-        mdast: {
-          name: {
-            type: 'root',
-            children: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'send',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 5, offset: 4 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 5, offset: 4 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 5, offset: 4 }
-            }
-          },
-          docs: {
-            type: 'root',
-            children: [
-              {
-                type: 'code',
-                lang: 'coffeescript',
-                meta: '[specscript]',
-                value: 'websocket.send(payload Buffer|string) -> ()',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 3, column: 4, offset: 76 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 3, column: 4, offset: 76 }
-            }
-          }
-        }
-      },
-      {
-        name: 'sendClose',
-        docs: 'Sends close frame to client\n' +
-          '\n' +
-          '```coffeescript [specscript]\n' +
-          'websocket.sendClose(payload Buffer|string) -> ()\n' +
-          '```',
-        mdast: {
-          name: {
-            type: 'root',
-            children: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'sendClose',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 10, offset: 9 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 10, offset: 9 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 10, offset: 9 }
-            }
-          },
-          docs: {
-            type: 'root',
-            children: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'Sends close frame to client',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 28, offset: 27 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 28, offset: 27 }
-                }
-              },
-              {
-                type: 'code',
-                lang: 'coffeescript',
-                meta: '[specscript]',
-                value: 'websocket.sendClose(payload Buffer|string) -> ()',
-                position: {
-                  start: { line: 3, column: 1, offset: 29 },
-                  end: { line: 5, column: 4, offset: 110 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 110 }
-            }
-          }
-        }
-      },
-      {
-        name: 'sendPing',
-        docs: 'Sends "ping" to client\n' +
-          '\n' +
-          '```coffeescript [specscript]\n' +
-          'websocket.sendPing(payload Buffer|string) -> ()\n' +
-          '```',
-        mdast: {
-          name: {
-            type: 'root',
-            children: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'sendPing',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 9, offset: 8 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 9, offset: 8 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 9, offset: 8 }
-            }
-          },
-          docs: {
-            type: 'root',
-            children: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'Sends "ping" to client',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 23, offset: 22 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 23, offset: 22 }
-                }
-              },
-              {
-                type: 'code',
-                lang: 'coffeescript',
-                meta: '[specscript]',
-                value: 'websocket.sendPing(payload Buffer|string) -> ()',
-                position: {
-                  start: { line: 3, column: 1, offset: 24 },
-                  end: { line: 5, column: 4, offset: 104 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 104 }
-            }
-          }
-        }
-      },
-      {
-        name: 'sendPong',
-        docs: 'Sends "pong" back to client\n' +
-          '\n' +
-          '```coffeescript [specscript]\n' +
-          'websocket.sendPong(payload Buffer|string) -> ()\n' +
-          '```',
-        mdast: {
-          name: {
-            type: 'root',
-            children: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'sendPong',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 9, offset: 8 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 9, offset: 8 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 9, offset: 8 }
-            }
-          },
-          docs: {
-            type: 'root',
-            children: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'Sends "pong" back to client',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 28, offset: 27 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 28, offset: 27 }
-                }
-              },
-              {
-                type: 'code',
-                lang: 'coffeescript',
-                meta: '[specscript]',
-                value: 'websocket.sendPong(payload Buffer|string) -> ()',
-                position: {
-                  start: { line: 3, column: 1, offset: 29 },
-                  end: { line: 5, column: 4, offset: 109 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 109 }
-            }
-          }
-        }
-      },
-      {
-        name: 'close',
-        docs: 'Closes the websocket\n' +
-          '\n' +
-          '```coffeescript [specscript]\n' +
-          'websocket.close() -> ()\n' +
-          '```',
-        mdast: {
-          name: {
-            type: 'root',
-            children: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'close',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 6, offset: 5 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 6, offset: 5 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 6, offset: 5 }
-            }
-          },
-          docs: {
-            type: 'root',
-            children: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'Closes the websocket',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 21, offset: 20 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 21, offset: 20 }
-                }
-              },
-              {
-                type: 'code',
-                lang: 'coffeescript',
-                meta: '[specscript]',
-                value: 'websocket.close() -> ()',
-                position: {
-                  start: { line: 3, column: 1, offset: 22 },
-                  end: { line: 5, column: 4, offset: 78 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 78 }
-            }
-          }
-        }
-      },
-      {
-        name: 'destroy',
-        docs: 'Closes the websocket\n' +
-          '\n' +
-          '```coffeescript [specscript]\n' +
-          'websocket.destroy(payload Buffer|string) -> ()\n' +
-          '```',
-        mdast: {
-          name: {
-            type: 'root',
-            children: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'destroy',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 8, offset: 7 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 8, offset: 7 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 8, offset: 7 }
-            }
-          },
-          docs: {
-            type: 'root',
-            children: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'Closes the websocket',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 21, offset: 20 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 21, offset: 20 }
-                }
-              },
-              {
-                type: 'code',
-                lang: 'coffeescript',
-                meta: '[specscript]',
-                value: 'websocket.destroy(payload Buffer|string) -> ()',
-                position: {
-                  start: { line: 3, column: 1, offset: 22 },
-                  end: { line: 5, column: 4, offset: 101 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 101 }
-            }
-          }
-        }
-      }
-    ],
-    fileName: '/Users/richard/code/presidium.services/../presidium-websocket/_internal/ServerWebSocket.js'
   },
   {
     name: '_onread',
@@ -5709,6 +11129,96 @@ export default [
     },
     methods: [],
     fileName: '/Users/richard/code/presidium.services/../presidium-websocket/_internal/decodeWebSocketHandshakeResponse.js'
+  },
+  {
+    name: 'defaultHttpHandler',
+    docs: 'Default HTTP handler. Responds with `200 OK`.\n' +
+      '\n' +
+      '```coffeescript [specscript]\n' +
+      'defaultHttpHandler(request http.ClientRequest, response http.ServerResponse) -> ()\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'defaultHttpHandler',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 19, offset: 18 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 19, offset: 18 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 19, offset: 18 }
+        }
+      },
+      docs: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Default HTTP handler. Responds with ',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 37, offset: 36 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: '200 OK',
+                position: {
+                  start: { line: 1, column: 37, offset: 36 },
+                  end: { line: 1, column: 45, offset: 44 }
+                }
+              },
+              {
+                type: 'text',
+                value: '.',
+                position: {
+                  start: { line: 1, column: 45, offset: 44 },
+                  end: { line: 1, column: 46, offset: 45 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 46, offset: 45 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'defaultHttpHandler(request http.ClientRequest, response http.ServerResponse) -> ()',
+            position: {
+              start: { line: 3, column: 1, offset: 47 },
+              end: { line: 5, column: 4, offset: 162 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 4, offset: 162 }
+        }
+      }
+    },
+    methods: [],
+    fileName: '/Users/richard/code/presidium.services/../presidium-websocket/_internal/defaultHttpHandler.js'
   },
   {
     name: 'deflateRawWithFlush',

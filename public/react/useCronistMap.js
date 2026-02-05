@@ -3,14 +3,39 @@ import usePresidiumVersion from './usePresidiumVersion.js'
 import defaultCronistPresidium from '../cronist/presidium-v1.js'
 import defaultCronistPresidiumWebSocket from '../cronist/presidium-websocket-v1.js'
 
-const initial = new Map()
-defaultCronistPresidium.forEach(item => {
-  initial.set(item.name, item)
-})
-defaultCronistPresidiumWebSocket.forEach(item => {
-  initial.set(item.name, item)
-})
-initial.version = defaultPresidiumVersion.toLowerCase()
+function createCronistMap(cronistObject, version) {
+  const {
+    cronistPresidium,
+    cronistPresidiumWebSocket,
+  } = cronistObject
+
+  const result = new Map()
+
+  cronistPresidium.forEach(item => {
+    result.set(item.name, item)
+  })
+  cronistPresidiumWebSocket.forEach(item => {
+    result.set(item.name, item)
+  })
+  result.version = version
+
+  const cronistWebSocketSecureServer =
+    cronistPresidiumWebSocket.find(item => item.name == 'WebSocketSecureServer')
+  const cronistWebSocketServer =
+    cronistPresidiumWebSocket.find(item => item.name == 'WebSocketServer')
+
+  if (cronistWebSocketSecureServer && cronistWebSocketServer) {
+    console.log('x')
+    cronistWebSocketSecureServer.methods = omit(cronistWebSocketServer.methods, [])
+  }
+
+  return result
+}
+
+const initial = createCronistMap({
+  cronistPresidium: defaultCronistPresidium,
+  cronistPresidiumWebSocket: defaultCronistPresidiumWebSocket,
+}, defaultPresidiumVersion.toLowerCase())
 
 /**
  * @name useCronistMap
@@ -26,22 +51,14 @@ function useCronistMap() {
 
   useEffect(function updateMdastMap() {
     if (presidiumVersion != cronistMap.version) {
-      Promise.all([
-        import(`../cronist/presidium-${presidiumVersion.toLowerCase()}.js`),
-        import(`../cronist/presidium-websocket-${presidiumVersion.toLowerCase()}.js`),
-      ]).then(modules => {
-        const cronistPresidium = modules[0].default
-        const cronistPresidiumWebSocket = modules[1].default
-        const cronistMap1 = new Map()
-        cronistPresidium.forEach(item => {
-          cronistMap1.set(item.name, item)
-        })
-        cronistPresidiumWebSocket.forEach(item => {
-          cronistMap1.set(item.name, item)
-        })
-        cronistMap1.version = presidiumVersion
-        setCronistMap(cronistMap1)
-      })
+      all({
+        cronistPresidium: import(`../cronist/presidium-${presidiumVersion.toLowerCase()}.js`),
+        cronistPresidiumWebSocket: import(`../cronist/presidium-websocket-${presidiumVersion.toLowerCase()}.js`),
+      }).then(pipe([
+        map(get('default')),
+        curry.arity(2, createCronistMap, __, presidiumVersion),
+        cronistMap1 => setCronistMap(cronistMap1),
+      ]))
     }
   }, [presidiumVersion])
 

@@ -19,5 +19,9 @@ export default [
   'TranscribeStream.js',
   'userAgent.js',
   'WebSocket.js',
+  'WebSocketServer.js',
+  'WebSocketSecureServer.js',
+  'ServerWebSocket.js',
   'XML.js',
+  'LICENSE',
 ]
