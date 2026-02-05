@@ -25,8 +25,18 @@ function createCronistMap(cronistObject, version) {
     cronistPresidiumWebSocket.find(item => item.name == 'WebSocketServer')
 
   if (cronistWebSocketSecureServer && cronistWebSocketServer) {
-    console.log('x')
     cronistWebSocketSecureServer.methods = omit(cronistWebSocketServer.methods, [])
+    for (const method of cronistWebSocketSecureServer.methods) {
+      for (const child of method.mdast.docs.children) {
+        if (child.type == 'code' && child.lang == 'javascript') {
+          child.value = child.value.replace(
+            'new WebSocketServer()',
+            'new WebSocketSecureServer({\n  key: fs.readFileSync(\'/path/to/my-key\'),\n  cert: fs.readFileSync(\'/path/to/my-cert\'),\n})'
+          )
+        }
+      }
+      console.log(method)
+    }
   }
 
   return result

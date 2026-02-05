@@ -7488,44 +7488,61 @@ export default [
       "module http 'https://nodejs.org/api/http.html'\n" +
       "module net 'https://nodejs.org/api/net.html'\n" +
       '\n' +
-      'websocketHandler (websocket WebSocket)=>()\n' +
-      'httpHandler (request http.ClientRequest, response http.ServerResponse)=>()\n' +
-      'upgradeHandler (request http.ClientRequest, socket net.Socket, head Buffer)=>()\n' +
+      'type WebSocketHandler = (websocket WebSocket)=>undefined\n' +
+      'type HTTPHandler = (request http.ClientRequest, response http.ServerResponse)=>undefined\n' +
+      '\n' +
+      'new WebSocketSecureServer(websocketHandler WebSocketHandler, options \n' +
+      '  httpHandler: HTTPHandler,\n' +
+      '  key: string|Array<string>|Buffer|Array<Buffer>|Array<{\n' +
+      '    pem: string|Buffer,\n' +
+      '    passphrase: string\n' +
+      '  }>,\n' +
+      '  cert: string|Array<string>|Buffer|Array<Buffer>,\n' +
+      '  passphrase: string,\n' +
+      '  supportPerMessageDeflate: boolean,\n' +
+      '  maxMessageLength: number\n' +
+      '  socketBufferLength: number\n' +
+      '}) -> server WebSocketSecureServer\n' +
       '\n' +
       'new WebSocketSecureServer(options {\n' +
-      '  key: string,\n' +
-      '  cert: string,\n' +
-      '  passphrase: string\n' +
+      '  websocketHandler: WebSocketHandler,\n' +
+      '  httpHandler: HTTPHandler,\n' +
+      '  key: string|Array<string>|Buffer|Array<Buffer>|Array<{\n' +
+      '    pem: string|Buffer,\n' +
+      '    passphrase: string\n' +
+      '  }>,\n' +
+      '  cert: string|Array<string>|Buffer|Array<Buffer>,\n' +
+      '  passphrase: string,\n' +
+      '  supportPerMessageDeflate: boolean,\n' +
+      '  maxMessageLength: number\n' +
+      '  socketBufferLength: number\n' +
       '}) -> server WebSocketSecureServer\n' +
+      '```\n' +
       '\n' +
-      'new WebSocketSecureServer(websocketHandler, options {\n' +
-      '  httpHandler: httpHandler,\n' +
-      '  key: string,\n' +
-      '  cert: string,\n' +
-      '  passphrase: string\n' +
-      '}) -> server WebSocketSecureServer\n' +
+      'Presidium WebSocketSecureServer class.\n' +
       '\n' +
-      'new WebSocketSecureServer(options {\n' +
-      '  websocketHandler: websocketHandler,\n' +
-      '  httpHandler: httpHandler,\n' +
-      '  key: string,\n' +
-      '  cert: string,\n' +
-      '  passphrase: string\n' +
-      '}) -> server WebSocketSecureServer\n' +
+      'Arguments:\n' +
+      "  * `websocketHandler` - a handler function that expects an instance of a [`ServerWebSocket`](/docs/ServerWebSocket). Represents the server's WebSocket connection to the client.\n" +
+      '  * `options`\n' +
+      '    * `httpHandler` - function that processes incoming HTTP requests from clients. Defaults to an HTTP handler that responds with `200 OK`.\n' +
+      '    * `key` - private key(s) in PEM format. Encrypted keys will be decrypted using the `passphrase` option. Multiple keys using different algorithms can be provided as an array of unencrypted key strings or buffers, or an array of objects in the form `{ pem: string|Buffer, passphrase: string }`.\n' +
+      '    * `cert` - cert chain(s) in PEM format. One cert chain should be provided per private key.\n' +
+      '    * `passphrase` - used to decrypt the private key(s).\n' +
+      '    * `supportPerMessageDeflate` - if `true`, indicates to WebSocket clients that the server supports [Compression Extensions for WebSocket](https://datatracker.ietf.org/doc/html/rfc7692). If an incoming WebSocket connection has requested compression extensions via the `Sec-WebSocket-Extensions: permessage-deflate` header, all messages exchanged in the WebSocket connection will be compressed using [zlib](https://nodejs.org/api/zlib.html) default options. Defaults to `false`.\n' +
+      '    * `maxMessageLength` - the maximum length in bytes of sent messages. If a message is longer than `maxMessageLength`, it is split into fragmented messages that are reassembled by the receiver.\n' +
+      '    * `socketBufferLength` - length in bytes of the internal buffer of the underlying [socket](https://nodejs.org/api/net.html#class-netsocket) for all connections to the server.\n' +
       '\n' +
-      "server.on('connection', websocketHandler) -> ()\n" +
-      "server.on('request', httpHandler) -> ()\n" +
-      "server.on('upgrade', upgradeHandler) -> ()\n" +
-      "server.on('error', (error Error)=>()) -> ()\n" +
-      "server.on('close', ()=>()) -> ()\n" +
+      'Return:\n' +
+      '  * `server` - an instance of the WebSocketSecureServer.\n' +
       '\n' +
-      "server.on('connection', (websocket WebSocket) => {\n" +
-      "  websocket.on('open', ()=>()) -> ()\n" +
-      "  websocket.on('message', (message Buffer)=>()) -> ()\n" +
-      "  websocket.on('ping', ()=>()) -> ()\n" +
-      "  websocket.on('pong', ()=>()) -> ()\n" +
-      "  websocket.on('error', (error Error)=>()) -> ()\n" +
-      "  websocket.on('close', ()=>()) -> ()\n" +
+      '```javascript\n' +
+      'const server = new WebSocketSecureServer({\n' +
+      "  key: fs.readFileSync('/path/to/my-key'),\n" +
+      "  cert: fs.readFileSync('/path/to/my-cert'),\n" +
+      '})\n' +
+      '\n' +
+      'server.listen(4443, () => {\n' +
+      "  console.log('WebSocket secure server listening on port 4443')\n" +
       '})\n' +
       '```',
     mdast: {
@@ -7565,54 +7582,988 @@ export default [
             value: "module http 'https://nodejs.org/api/http.html'\n" +
               "module net 'https://nodejs.org/api/net.html'\n" +
               '\n' +
-              'websocketHandler (websocket WebSocket)=>()\n' +
-              'httpHandler (request http.ClientRequest, response http.ServerResponse)=>()\n' +
-              'upgradeHandler (request http.ClientRequest, socket net.Socket, head Buffer)=>()\n' +
+              'type WebSocketHandler = (websocket WebSocket)=>undefined\n' +
+              'type HTTPHandler = (request http.ClientRequest, response http.ServerResponse)=>undefined\n' +
+              '\n' +
+              'new WebSocketSecureServer(websocketHandler WebSocketHandler, options \n' +
+              '  httpHandler: HTTPHandler,\n' +
+              '  key: string|Array<string>|Buffer|Array<Buffer>|Array<{\n' +
+              '    pem: string|Buffer,\n' +
+              '    passphrase: string\n' +
+              '  }>,\n' +
+              '  cert: string|Array<string>|Buffer|Array<Buffer>,\n' +
+              '  passphrase: string,\n' +
+              '  supportPerMessageDeflate: boolean,\n' +
+              '  maxMessageLength: number\n' +
+              '  socketBufferLength: number\n' +
+              '}) -> server WebSocketSecureServer\n' +
               '\n' +
               'new WebSocketSecureServer(options {\n' +
-              '  key: string,\n' +
-              '  cert: string,\n' +
-              '  passphrase: string\n' +
-              '}) -> server WebSocketSecureServer\n' +
-              '\n' +
-              'new WebSocketSecureServer(websocketHandler, options {\n' +
-              '  httpHandler: httpHandler,\n' +
-              '  key: string,\n' +
-              '  cert: string,\n' +
-              '  passphrase: string\n' +
-              '}) -> server WebSocketSecureServer\n' +
-              '\n' +
-              'new WebSocketSecureServer(options {\n' +
-              '  websocketHandler: websocketHandler,\n' +
-              '  httpHandler: httpHandler,\n' +
-              '  key: string,\n' +
-              '  cert: string,\n' +
-              '  passphrase: string\n' +
-              '}) -> server WebSocketSecureServer\n' +
-              '\n' +
-              "server.on('connection', websocketHandler) -> ()\n" +
-              "server.on('request', httpHandler) -> ()\n" +
-              "server.on('upgrade', upgradeHandler) -> ()\n" +
-              "server.on('error', (error Error)=>()) -> ()\n" +
-              "server.on('close', ()=>()) -> ()\n" +
-              '\n' +
-              "server.on('connection', (websocket WebSocket) => {\n" +
-              "  websocket.on('open', ()=>()) -> ()\n" +
-              "  websocket.on('message', (message Buffer)=>()) -> ()\n" +
-              "  websocket.on('ping', ()=>()) -> ()\n" +
-              "  websocket.on('pong', ()=>()) -> ()\n" +
-              "  websocket.on('error', (error Error)=>()) -> ()\n" +
-              "  websocket.on('close', ()=>()) -> ()\n" +
-              '})',
+              '  websocketHandler: WebSocketHandler,\n' +
+              '  httpHandler: HTTPHandler,\n' +
+              '  key: string|Array<string>|Buffer|Array<Buffer>|Array<{\n' +
+              '    pem: string|Buffer,\n' +
+              '    passphrase: string\n' +
+              '  }>,\n' +
+              '  cert: string|Array<string>|Buffer|Array<Buffer>,\n' +
+              '  passphrase: string,\n' +
+              '  supportPerMessageDeflate: boolean,\n' +
+              '  maxMessageLength: number\n' +
+              '  socketBufferLength: number\n' +
+              '}) -> server WebSocketSecureServer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 44, column: 4, offset: 1323 }
+              end: { line: 34, column: 4, offset: 1095 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Presidium WebSocketSecureServer class.',
+                position: {
+                  start: { line: 36, column: 1, offset: 1097 },
+                  end: { line: 36, column: 39, offset: 1135 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 36, column: 1, offset: 1097 },
+              end: { line: 36, column: 39, offset: 1135 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Arguments:',
+                position: {
+                  start: { line: 38, column: 1, offset: 1137 },
+                  end: { line: 38, column: 11, offset: 1147 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 38, column: 1, offset: 1137 },
+              end: { line: 38, column: 11, offset: 1147 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'websocketHandler',
+                        position: {
+                          start: { line: 39, column: 5, offset: 1152 },
+                          end: { line: 39, column: 23, offset: 1170 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ' - a handler function that expects an instance of a ',
+                        position: {
+                          start: { line: 39, column: 23, offset: 1170 },
+                          end: { line: 39, column: 75, offset: 1222 }
+                        }
+                      },
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/ServerWebSocket',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'ServerWebSocket',
+                            position: {
+                              start: { line: 39, column: 76, offset: 1223 },
+                              end: { line: 39, column: 93, offset: 1240 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 39, column: 75, offset: 1222 },
+                          end: { line: 39, column: 117, offset: 1264 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ". Represents the server's WebSocket connection to the client.",
+                        position: {
+                          start: { line: 39, column: 117, offset: 1264 },
+                          end: { line: 39, column: 178, offset: 1325 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 39, column: 5, offset: 1152 },
+                      end: { line: 39, column: 178, offset: 1325 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 39, column: 3, offset: 1150 },
+                  end: { line: 39, column: 178, offset: 1325 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'options',
+                        position: {
+                          start: { line: 40, column: 5, offset: 1330 },
+                          end: { line: 40, column: 14, offset: 1339 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 40, column: 5, offset: 1330 },
+                      end: { line: 40, column: 14, offset: 1339 }
+                    }
+                  },
+                  {
+                    type: 'list',
+                    ordered: false,
+                    start: null,
+                    spread: false,
+                    children: [
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'httpHandler',
+                                position: {
+                                  start: { line: 41, column: 7, offset: 1346 },
+                                  end: {
+                                    line: 41,
+                                    column: 20,
+                                    offset: 1359
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - function that processes incoming HTTP requests from clients. Defaults to an HTTP handler that responds with ',
+                                position: {
+                                  start: {
+                                    line: 41,
+                                    column: 20,
+                                    offset: 1359
+                                  },
+                                  end: {
+                                    line: 41,
+                                    column: 131,
+                                    offset: 1470
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: '200 OK',
+                                position: {
+                                  start: {
+                                    line: 41,
+                                    column: 131,
+                                    offset: 1470
+                                  },
+                                  end: {
+                                    line: 41,
+                                    column: 139,
+                                    offset: 1478
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: '.',
+                                position: {
+                                  start: {
+                                    line: 41,
+                                    column: 139,
+                                    offset: 1478
+                                  },
+                                  end: {
+                                    line: 41,
+                                    column: 140,
+                                    offset: 1479
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 41, column: 7, offset: 1346 },
+                              end: { line: 41, column: 140, offset: 1479 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 41, column: 5, offset: 1344 },
+                          end: { line: 41, column: 140, offset: 1479 }
+                        }
+                      },
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'key',
+                                position: {
+                                  start: { line: 42, column: 7, offset: 1486 },
+                                  end: {
+                                    line: 42,
+                                    column: 12,
+                                    offset: 1491
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - private key(s) in PEM format. Encrypted keys will be decrypted using the ',
+                                position: {
+                                  start: {
+                                    line: 42,
+                                    column: 12,
+                                    offset: 1491
+                                  },
+                                  end: {
+                                    line: 42,
+                                    column: 88,
+                                    offset: 1567
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'passphrase',
+                                position: {
+                                  start: {
+                                    line: 42,
+                                    column: 88,
+                                    offset: 1567
+                                  },
+                                  end: {
+                                    line: 42,
+                                    column: 100,
+                                    offset: 1579
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' option. Multiple keys using different algorithms can be provided as an array of unencrypted key strings or buffers, or an array of objects in the form ',
+                                position: {
+                                  start: {
+                                    line: 42,
+                                    column: 100,
+                                    offset: 1579
+                                  },
+                                  end: {
+                                    line: 42,
+                                    column: 252,
+                                    offset: 1731
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: '{ pem: string|Buffer, passphrase: string }',
+                                position: {
+                                  start: {
+                                    line: 42,
+                                    column: 252,
+                                    offset: 1731
+                                  },
+                                  end: {
+                                    line: 42,
+                                    column: 296,
+                                    offset: 1775
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: '.',
+                                position: {
+                                  start: {
+                                    line: 42,
+                                    column: 296,
+                                    offset: 1775
+                                  },
+                                  end: {
+                                    line: 42,
+                                    column: 297,
+                                    offset: 1776
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 42, column: 7, offset: 1486 },
+                              end: { line: 42, column: 297, offset: 1776 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 42, column: 5, offset: 1484 },
+                          end: { line: 42, column: 297, offset: 1776 }
+                        }
+                      },
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'cert',
+                                position: {
+                                  start: { line: 43, column: 7, offset: 1783 },
+                                  end: {
+                                    line: 43,
+                                    column: 13,
+                                    offset: 1789
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - cert chain(s) in PEM format. One cert chain should be provided per private key.',
+                                position: {
+                                  start: {
+                                    line: 43,
+                                    column: 13,
+                                    offset: 1789
+                                  },
+                                  end: {
+                                    line: 43,
+                                    column: 95,
+                                    offset: 1871
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 43, column: 7, offset: 1783 },
+                              end: { line: 43, column: 95, offset: 1871 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 43, column: 5, offset: 1781 },
+                          end: { line: 43, column: 95, offset: 1871 }
+                        }
+                      },
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'passphrase',
+                                position: {
+                                  start: { line: 44, column: 7, offset: 1878 },
+                                  end: {
+                                    line: 44,
+                                    column: 19,
+                                    offset: 1890
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - used to decrypt the private key(s).',
+                                position: {
+                                  start: {
+                                    line: 44,
+                                    column: 19,
+                                    offset: 1890
+                                  },
+                                  end: {
+                                    line: 44,
+                                    column: 57,
+                                    offset: 1928
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 44, column: 7, offset: 1878 },
+                              end: { line: 44, column: 57, offset: 1928 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 44, column: 5, offset: 1876 },
+                          end: { line: 44, column: 57, offset: 1928 }
+                        }
+                      },
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'supportPerMessageDeflate',
+                                position: {
+                                  start: { line: 45, column: 7, offset: 1935 },
+                                  end: {
+                                    line: 45,
+                                    column: 33,
+                                    offset: 1961
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - if ',
+                                position: {
+                                  start: {
+                                    line: 45,
+                                    column: 33,
+                                    offset: 1961
+                                  },
+                                  end: {
+                                    line: 45,
+                                    column: 39,
+                                    offset: 1967
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'true',
+                                position: {
+                                  start: {
+                                    line: 45,
+                                    column: 39,
+                                    offset: 1967
+                                  },
+                                  end: {
+                                    line: 45,
+                                    column: 45,
+                                    offset: 1973
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ', indicates to WebSocket clients that the server supports ',
+                                position: {
+                                  start: {
+                                    line: 45,
+                                    column: 45,
+                                    offset: 1973
+                                  },
+                                  end: {
+                                    line: 45,
+                                    column: 103,
+                                    offset: 2031
+                                  }
+                                }
+                              },
+                              {
+                                type: 'link',
+                                title: null,
+                                url: 'https://datatracker.ietf.org/doc/html/rfc7692',
+                                children: [
+                                  {
+                                    type: 'text',
+                                    value: 'Compression Extensions for WebSocket',
+                                    position: {
+                                      start: {
+                                        line: 45,
+                                        column: 104,
+                                        offset: 2032
+                                      },
+                                      end: {
+                                        line: 45,
+                                        column: 140,
+                                        offset: 2068
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: {
+                                    line: 45,
+                                    column: 103,
+                                    offset: 2031
+                                  },
+                                  end: {
+                                    line: 45,
+                                    column: 188,
+                                    offset: 2116
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: '. If an incoming WebSocket connection has requested compression extensions via the ',
+                                position: {
+                                  start: {
+                                    line: 45,
+                                    column: 188,
+                                    offset: 2116
+                                  },
+                                  end: {
+                                    line: 45,
+                                    column: 271,
+                                    offset: 2199
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'Sec-WebSocket-Extensions: permessage-deflate',
+                                position: {
+                                  start: {
+                                    line: 45,
+                                    column: 271,
+                                    offset: 2199
+                                  },
+                                  end: {
+                                    line: 45,
+                                    column: 317,
+                                    offset: 2245
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' header, all messages exchanged in the WebSocket connection will be compressed using ',
+                                position: {
+                                  start: {
+                                    line: 45,
+                                    column: 317,
+                                    offset: 2245
+                                  },
+                                  end: {
+                                    line: 45,
+                                    column: 402,
+                                    offset: 2330
+                                  }
+                                }
+                              },
+                              {
+                                type: 'link',
+                                title: null,
+                                url: 'https://nodejs.org/api/zlib.html',
+                                children: [
+                                  {
+                                    type: 'text',
+                                    value: 'zlib',
+                                    position: {
+                                      start: {
+                                        line: 45,
+                                        column: 403,
+                                        offset: 2331
+                                      },
+                                      end: {
+                                        line: 45,
+                                        column: 407,
+                                        offset: 2335
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: {
+                                    line: 45,
+                                    column: 402,
+                                    offset: 2330
+                                  },
+                                  end: {
+                                    line: 45,
+                                    column: 442,
+                                    offset: 2370
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' default options. Defaults to ',
+                                position: {
+                                  start: {
+                                    line: 45,
+                                    column: 442,
+                                    offset: 2370
+                                  },
+                                  end: {
+                                    line: 45,
+                                    column: 472,
+                                    offset: 2400
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'false',
+                                position: {
+                                  start: {
+                                    line: 45,
+                                    column: 472,
+                                    offset: 2400
+                                  },
+                                  end: {
+                                    line: 45,
+                                    column: 479,
+                                    offset: 2407
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: '.',
+                                position: {
+                                  start: {
+                                    line: 45,
+                                    column: 479,
+                                    offset: 2407
+                                  },
+                                  end: {
+                                    line: 45,
+                                    column: 480,
+                                    offset: 2408
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 45, column: 7, offset: 1935 },
+                              end: { line: 45, column: 480, offset: 2408 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 45, column: 5, offset: 1933 },
+                          end: { line: 45, column: 480, offset: 2408 }
+                        }
+                      },
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'maxMessageLength',
+                                position: {
+                                  start: { line: 46, column: 7, offset: 2415 },
+                                  end: {
+                                    line: 46,
+                                    column: 25,
+                                    offset: 2433
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - the maximum length in bytes of sent messages. If a message is longer than ',
+                                position: {
+                                  start: {
+                                    line: 46,
+                                    column: 25,
+                                    offset: 2433
+                                  },
+                                  end: {
+                                    line: 46,
+                                    column: 102,
+                                    offset: 2510
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'maxMessageLength',
+                                position: {
+                                  start: {
+                                    line: 46,
+                                    column: 102,
+                                    offset: 2510
+                                  },
+                                  end: {
+                                    line: 46,
+                                    column: 120,
+                                    offset: 2528
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ', it is split into fragmented messages that are reassembled by the receiver.',
+                                position: {
+                                  start: {
+                                    line: 46,
+                                    column: 120,
+                                    offset: 2528
+                                  },
+                                  end: {
+                                    line: 46,
+                                    column: 196,
+                                    offset: 2604
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 46, column: 7, offset: 2415 },
+                              end: { line: 46, column: 196, offset: 2604 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 46, column: 5, offset: 2413 },
+                          end: { line: 46, column: 196, offset: 2604 }
+                        }
+                      },
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'socketBufferLength',
+                                position: {
+                                  start: { line: 47, column: 7, offset: 2611 },
+                                  end: {
+                                    line: 47,
+                                    column: 27,
+                                    offset: 2631
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - length in bytes of the internal buffer of the underlying ',
+                                position: {
+                                  start: {
+                                    line: 47,
+                                    column: 27,
+                                    offset: 2631
+                                  },
+                                  end: {
+                                    line: 47,
+                                    column: 87,
+                                    offset: 2691
+                                  }
+                                }
+                              },
+                              {
+                                type: 'link',
+                                title: null,
+                                url: 'https://nodejs.org/api/net.html#class-netsocket',
+                                children: [
+                                  {
+                                    type: 'text',
+                                    value: 'socket',
+                                    position: {
+                                      start: {
+                                        line: 47,
+                                        column: 88,
+                                        offset: 2692
+                                      },
+                                      end: {
+                                        line: 47,
+                                        column: 94,
+                                        offset: 2698
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: {
+                                    line: 47,
+                                    column: 87,
+                                    offset: 2691
+                                  },
+                                  end: {
+                                    line: 47,
+                                    column: 144,
+                                    offset: 2748
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' for all connections to the server.',
+                                position: {
+                                  start: {
+                                    line: 47,
+                                    column: 144,
+                                    offset: 2748
+                                  },
+                                  end: {
+                                    line: 47,
+                                    column: 179,
+                                    offset: 2783
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 47, column: 7, offset: 2611 },
+                              end: { line: 47, column: 179, offset: 2783 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 47, column: 5, offset: 2609 },
+                          end: { line: 47, column: 179, offset: 2783 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 41, column: 5, offset: 1344 },
+                      end: { line: 47, column: 179, offset: 2783 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 40, column: 3, offset: 1328 },
+                  end: { line: 47, column: 179, offset: 2783 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 39, column: 3, offset: 1150 },
+              end: { line: 47, column: 179, offset: 2783 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Return:',
+                position: {
+                  start: { line: 49, column: 1, offset: 2785 },
+                  end: { line: 49, column: 8, offset: 2792 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 49, column: 1, offset: 2785 },
+              end: { line: 49, column: 8, offset: 2792 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'server',
+                        position: {
+                          start: { line: 50, column: 5, offset: 2797 },
+                          end: { line: 50, column: 13, offset: 2805 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ' - an instance of the WebSocketSecureServer.',
+                        position: {
+                          start: { line: 50, column: 13, offset: 2805 },
+                          end: { line: 50, column: 57, offset: 2849 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 50, column: 5, offset: 2797 },
+                      end: { line: 50, column: 57, offset: 2849 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 50, column: 3, offset: 2795 },
+                  end: { line: 50, column: 57, offset: 2849 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 50, column: 3, offset: 2795 },
+              end: { line: 50, column: 57, offset: 2849 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: null,
+            value: 'const server = new WebSocketSecureServer({\n' +
+              "  key: fs.readFileSync('/path/to/my-key'),\n" +
+              "  cert: fs.readFileSync('/path/to/my-cert'),\n" +
+              '})\n' +
+              '\n' +
+              'server.listen(4443, () => {\n' +
+              "  console.log('WebSocket secure server listening on port 4443')\n" +
+              '})',
+            position: {
+              start: { line: 52, column: 1, offset: 2851 },
+              end: { line: 61, column: 4, offset: 3098 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 44, column: 4, offset: 1323 }
+          end: { line: 61, column: 4, offset: 3098 }
         }
       }
     },
