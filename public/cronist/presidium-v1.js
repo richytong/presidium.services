@@ -135797,7 +135797,7 @@ export default [
   },
   {
     name: 'XML',
-    docs: '```coffeescript [specscript]\nXML object\n```',
+    docs: 'Presidium XML class.',
     mdast: {
       name: {
         type: 'root',
@@ -135829,19 +135829,26 @@ export default [
         type: 'root',
         children: [
           {
-            type: 'code',
-            lang: 'coffeescript',
-            meta: '[specscript]',
-            value: 'XML object',
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Presidium XML class.',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 21, offset: 20 }
+                }
+              }
+            ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 3, column: 4, offset: 43 }
+              end: { line: 1, column: 21, offset: 20 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 3, column: 4, offset: 43 }
+          end: { line: 1, column: 21, offset: 20 }
         }
       }
     },
@@ -136061,6 +136068,26 @@ export default [
           '\n' +
           'XML.parse(xml string) -> data NestedObject\n' +
           'XML.parse(xml string, options { ast: true }) -> ast RootAST\n' +
+          '```\n' +
+          '\n' +
+          'Parses [XML](https://en.wikipedia.org/wiki/XML) into JSON data.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * `xml` - an XML string.\n' +
+          '  * `options`\n' +
+          '    * `ast` - whether to return an AST (Abstract Syntax Tree) of the XML string.\n' +
+          '\n' +
+          'Return:\n' +
+          '  * `data` - the JSON data parsed from the `xml` string, or if `ast` is true, the AST (Abstract Syntax Tree) of the XML string.\n' +
+          '\n' +
+          '```javascript\n' +
+          'const data = XML.parse(`\n' +
+          '<Example a="1">\n' +
+          '  <Attr>Content</Attr>\n' +
+          '</Example>\n' +
+          '`)\n' +
+          '\n' +
+          "console.log(data) // { Example: { Attr: 'Content', a: '1' } }\n" +
           '```',
         mdast: {
           name: {
@@ -136123,11 +136150,325 @@ export default [
                   start: { line: 1, column: 1, offset: 0 },
                   end: { line: 25, column: 4, offset: 509 }
                 }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Parses ',
+                    position: {
+                      start: { line: 27, column: 1, offset: 511 },
+                      end: { line: 27, column: 8, offset: 518 }
+                    }
+                  },
+                  {
+                    type: 'link',
+                    title: null,
+                    url: 'https://en.wikipedia.org/wiki/XML',
+                    children: [
+                      {
+                        type: 'text',
+                        value: 'XML',
+                        position: {
+                          start: { line: 27, column: 9, offset: 519 },
+                          end: { line: 27, column: 12, offset: 522 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 27, column: 8, offset: 518 },
+                      end: { line: 27, column: 48, offset: 558 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' into JSON data.',
+                    position: {
+                      start: { line: 27, column: 48, offset: 558 },
+                      end: { line: 27, column: 64, offset: 574 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 27, column: 1, offset: 511 },
+                  end: { line: 27, column: 64, offset: 574 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 29, column: 1, offset: 576 },
+                      end: { line: 29, column: 11, offset: 586 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 29, column: 1, offset: 576 },
+                  end: { line: 29, column: 11, offset: 586 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'xml',
+                            position: {
+                              start: { line: 30, column: 5, offset: 591 },
+                              end: { line: 30, column: 10, offset: 596 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - an XML string.',
+                            position: {
+                              start: { line: 30, column: 10, offset: 596 },
+                              end: { line: 30, column: 27, offset: 613 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 30, column: 5, offset: 591 },
+                          end: { line: 30, column: 27, offset: 613 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 30, column: 3, offset: 589 },
+                      end: { line: 30, column: 27, offset: 613 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'options',
+                            position: {
+                              start: { line: 31, column: 5, offset: 618 },
+                              end: { line: 31, column: 14, offset: 627 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 31, column: 5, offset: 618 },
+                          end: { line: 31, column: 14, offset: 627 }
+                        }
+                      },
+                      {
+                        type: 'list',
+                        ordered: false,
+                        start: null,
+                        spread: false,
+                        children: [
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'ast',
+                                    position: {
+                                      start: {
+                                        line: 32,
+                                        column: 7,
+                                        offset: 634
+                                      },
+                                      end: {
+                                        line: 32,
+                                        column: 12,
+                                        offset: 639
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - whether to return an AST (Abstract Syntax Tree) of the XML string.',
+                                    position: {
+                                      start: {
+                                        line: 32,
+                                        column: 12,
+                                        offset: 639
+                                      },
+                                      end: {
+                                        line: 32,
+                                        column: 81,
+                                        offset: 708
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 32, column: 7, offset: 634 },
+                                  end: { line: 32, column: 81, offset: 708 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 32, column: 5, offset: 632 },
+                              end: { line: 32, column: 81, offset: 708 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 32, column: 5, offset: 632 },
+                          end: { line: 32, column: 81, offset: 708 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 31, column: 3, offset: 616 },
+                      end: { line: 32, column: 81, offset: 708 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 30, column: 3, offset: 589 },
+                  end: { line: 32, column: 81, offset: 708 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 34, column: 1, offset: 710 },
+                      end: { line: 34, column: 8, offset: 717 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 34, column: 1, offset: 710 },
+                  end: { line: 34, column: 8, offset: 717 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'data',
+                            position: {
+                              start: { line: 35, column: 5, offset: 722 },
+                              end: { line: 35, column: 11, offset: 728 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - the JSON data parsed from the ',
+                            position: {
+                              start: { line: 35, column: 11, offset: 728 },
+                              end: { line: 35, column: 44, offset: 761 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'xml',
+                            position: {
+                              start: { line: 35, column: 44, offset: 761 },
+                              end: { line: 35, column: 49, offset: 766 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' string, or if ',
+                            position: {
+                              start: { line: 35, column: 49, offset: 766 },
+                              end: { line: 35, column: 64, offset: 781 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'ast',
+                            position: {
+                              start: { line: 35, column: 64, offset: 781 },
+                              end: { line: 35, column: 69, offset: 786 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' is true, the AST (Abstract Syntax Tree) of the XML string.',
+                            position: {
+                              start: { line: 35, column: 69, offset: 786 },
+                              end: { line: 35, column: 128, offset: 845 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 35, column: 5, offset: 722 },
+                          end: { line: 35, column: 128, offset: 845 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 35, column: 3, offset: 720 },
+                      end: { line: 35, column: 128, offset: 845 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 35, column: 3, offset: 720 },
+                  end: { line: 35, column: 128, offset: 845 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'const data = XML.parse(`\n' +
+                  '<Example a="1">\n' +
+                  '  <Attr>Content</Attr>\n' +
+                  '</Example>\n' +
+                  '`)\n' +
+                  '\n' +
+                  "console.log(data) // { Example: { Attr: 'Content', a: '1' } }",
+                position: {
+                  start: { line: 37, column: 1, offset: 847 },
+                  end: { line: 45, column: 4, offset: 1005 }
+                }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 25, column: 4, offset: 509 }
+              end: { line: 45, column: 4, offset: 1005 }
             }
           }
         }
