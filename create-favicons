@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+
+const createFavicon = require('./internal/createFavicon')
+
+// ./create-favicons
+setImmediate(async function () {
+  const widthPx = Number(process.argv[2])
+  const pattern = process.argv[3]
+
+  const sizes = [16, 32]
+
+  for (const size of sizes) {
+    await createFavicon(`${__dirname}/public/assets/favicon.png`, size)
+  }
+})
