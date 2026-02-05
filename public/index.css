@@ -56,7 +56,7 @@ code {
 #layout {
   width: 100%;
   margin: 0 auto;
-  margin-top: 60px;
+  margin-top: 70px;
 }
 #layout main {
   border-radius: 10px;
@@ -85,6 +85,8 @@ code {
   border-bottom: 1px solid #e4e4e4;
 }
 #layout > nav > .right-links {
+  display: flex;
+  align-items: center;
   position: relative;
   padding-right: 2%;
   padding-top: 5px;
@@ -190,15 +192,11 @@ code {
   border: none;
   outline: none;
   padding: 0;
-  position: absolute;
-  left: -50px;
   background-color: transparent;
 }
 #hamburger-menu-icon svg {
   transition: opacity 0.25s;
   opacity: 1;
-  position: absolute;
-  top: -55px;
   left: 0;
 }
 #hamburger-menu-icon.active svg {
