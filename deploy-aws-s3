@@ -34,7 +34,6 @@ async function main() {
     RestrictPublicBuckets: false,
     ...awsCreds,
   })
-  await bucket.ready
 
   try {
     await bucket.getPolicy()
@@ -46,9 +45,7 @@ async function main() {
         {
           "Sid": "Stmt1380877761162",
           "Effect": "Allow",
-          "Principal": {
-            "AWS": "*"
-          },
+          "Principal": "*",
           "Action": "s3:GetObject",
           "Resource": `arn:aws:s3:::${domain}/*`,
         }
@@ -66,7 +63,7 @@ async function main() {
     const content = contentBuffer.toString('utf8')
     const contentType = ContentType(key, content)
     console.log(`Uploading ${path.replace(process.env.HOME, '~')} as ${key} [${contentType}]`)
-    await bucket.putObject(key, content, {
+    await bucket.putObject(key, contentBuffer, {
       ContentType: contentType,
       Expires: new Date(),
     })

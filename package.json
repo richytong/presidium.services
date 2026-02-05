@@ -9,9 +9,6 @@
     "url": "github:richytong/presidium.services"
   },
   "homepage": "https://github.com/richytong/presidium.services",
-  "scripts": {
-    "start": "serve -p 4507 public"
-  },
   "devDependencies": {
     "serve": "^14.2.4"
   },
@@ -20,7 +17,7 @@
     "jquery": "^3.7.1",
     "jsdom": "^26.1.0",
     "minimatch": "^10.0.3",
-    "presidium": ">=1.2.1",
+    "presidium": "latest",
     "sharp": "^0.34.5"
   }
 }
