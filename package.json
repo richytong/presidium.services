@@ -20,6 +20,6 @@
     "jquery": "^3.7.1",
     "jsdom": "^26.1.0",
     "minimatch": "^10.0.3",
-    "presidium": ">=1.0.3"
+    "presidium": ">=1.2.1"
   }
 }

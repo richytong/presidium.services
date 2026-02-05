@@ -37,7 +37,7 @@ async function main() {
   await bucket.ready
 
   try {
-    await testBucket3.getPolicy()
+    await bucket.getPolicy()
   } catch (_error) {
     const policy = {
       "Version": "2008-10-17",
@@ -50,11 +50,11 @@ async function main() {
             "AWS": "*"
           },
           "Action": "s3:GetObject",
-          "Resource": `arn:aws:s3:::${bucketName}/*`,
+          "Resource": `arn:aws:s3:::${domain}/*`,
         }
       ]
     }
-    await testBucket3.putPolicy({ policy })
+    await bucket.putPolicy({ policy })
   }
 
   const dir = path.join(__dirname, publicDir)
