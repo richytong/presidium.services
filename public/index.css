@@ -26,8 +26,14 @@ html {
 
 @font-face {
   font-family: Inter;
-  src: url(./assets/fonts/Inter/Inter_24pt-Bold.ttf);
+  src: url(/assets/fonts/Inter/Inter_24pt-Bold.ttf);
   font-weight: 700;
+}
+
+@font-face {
+  font-family: SourceCodePro;
+  src: url(/assets/fonts/SourceCodePro/static/SourceCodePro-Medium.ttf);
+  font-weight: 500;
 }
 
 body {
@@ -41,16 +47,14 @@ a > code {
 
 code {
   background-color: #f6f8fa;
-  font-family: -apple-system, system-ui, BlinkMacSystemFont,
-             'Segoe UI', Roboto, 'Helvetica Neue',
-             Ubuntu, Arial, sans-serif;
+  font-family: SourceCodePro;
+  font-weight: 500;
   padding: 3px 6px;
 }
 
 .code-viewer * {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont,
-             'Segoe UI', Roboto, 'Helvetica Neue',
-             Ubuntu, Arial, sans-serif;
+  font-family: SourceCodePro;
+  font-weight: 500;
 }
 
 #layout {
