@@ -81933,7 +81933,7 @@ export default [
       {
         name: 'getAuthorizationToken',
         docs: '```coffeescript [specscript]\n' +
-          'ecr.getAuthorizationToken() -> authToken Promise<string>\n' +
+          'getAuthorizationToken() -> authToken Promise<string>\n' +
           '```\n' +
           '\n' +
           'Gets an authorization token from Amazon ECR.\n' +
@@ -81986,10 +81986,10 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: 'ecr.getAuthorizationToken() -> authToken Promise<string>',
+                value: 'getAuthorizationToken() -> authToken Promise<string>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 3, column: 4, offset: 89 }
+                  end: { line: 3, column: 4, offset: 85 }
                 }
               },
               {
@@ -81999,14 +81999,14 @@ export default [
                     type: 'text',
                     value: 'Gets an authorization token from Amazon ECR.',
                     position: {
-                      start: { line: 5, column: 1, offset: 91 },
-                      end: { line: 5, column: 45, offset: 135 }
+                      start: { line: 5, column: 1, offset: 87 },
+                      end: { line: 5, column: 45, offset: 131 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 5, column: 1, offset: 91 },
-                  end: { line: 5, column: 45, offset: 135 }
+                  start: { line: 5, column: 1, offset: 87 },
+                  end: { line: 5, column: 45, offset: 131 }
                 }
               },
               {
@@ -82016,14 +82016,14 @@ export default [
                     type: 'text',
                     value: 'Arguments:',
                     position: {
-                      start: { line: 7, column: 1, offset: 137 },
-                      end: { line: 7, column: 11, offset: 147 }
+                      start: { line: 7, column: 1, offset: 133 },
+                      end: { line: 7, column: 11, offset: 143 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 7, column: 1, offset: 137 },
-                  end: { line: 7, column: 11, offset: 147 }
+                  start: { line: 7, column: 1, offset: 133 },
+                  end: { line: 7, column: 11, offset: 143 }
                 }
               },
               {
@@ -82044,26 +82044,26 @@ export default [
                             type: 'text',
                             value: '(none)',
                             position: {
-                              start: { line: 8, column: 5, offset: 152 },
-                              end: { line: 8, column: 11, offset: 158 }
+                              start: { line: 8, column: 5, offset: 148 },
+                              end: { line: 8, column: 11, offset: 154 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 8, column: 5, offset: 152 },
-                          end: { line: 8, column: 11, offset: 158 }
+                          start: { line: 8, column: 5, offset: 148 },
+                          end: { line: 8, column: 11, offset: 154 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 8, column: 3, offset: 150 },
-                      end: { line: 8, column: 11, offset: 158 }
+                      start: { line: 8, column: 3, offset: 146 },
+                      end: { line: 8, column: 11, offset: 154 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 8, column: 3, offset: 150 },
-                  end: { line: 8, column: 11, offset: 158 }
+                  start: { line: 8, column: 3, offset: 146 },
+                  end: { line: 8, column: 11, offset: 154 }
                 }
               },
               {
@@ -82073,14 +82073,14 @@ export default [
                     type: 'text',
                     value: 'Return:',
                     position: {
-                      start: { line: 10, column: 1, offset: 160 },
-                      end: { line: 10, column: 8, offset: 167 }
+                      start: { line: 10, column: 1, offset: 156 },
+                      end: { line: 10, column: 8, offset: 163 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 10, column: 1, offset: 160 },
-                  end: { line: 10, column: 8, offset: 167 }
+                  start: { line: 10, column: 1, offset: 156 },
+                  end: { line: 10, column: 8, offset: 163 }
                 }
               },
               {
@@ -82101,34 +82101,34 @@ export default [
                             type: 'inlineCode',
                             value: 'authToken',
                             position: {
-                              start: { line: 11, column: 5, offset: 172 },
-                              end: { line: 11, column: 16, offset: 183 }
+                              start: { line: 11, column: 5, offset: 168 },
+                              end: { line: 11, column: 16, offset: 179 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - the ECR authorization token',
                             position: {
-                              start: { line: 11, column: 16, offset: 183 },
-                              end: { line: 11, column: 46, offset: 213 }
+                              start: { line: 11, column: 16, offset: 179 },
+                              end: { line: 11, column: 46, offset: 209 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 11, column: 5, offset: 172 },
-                          end: { line: 11, column: 46, offset: 213 }
+                          start: { line: 11, column: 5, offset: 168 },
+                          end: { line: 11, column: 46, offset: 209 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 11, column: 3, offset: 170 },
-                      end: { line: 11, column: 46, offset: 213 }
+                      start: { line: 11, column: 3, offset: 166 },
+                      end: { line: 11, column: 46, offset: 209 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 11, column: 3, offset: 170 },
-                  end: { line: 11, column: 46, offset: 213 }
+                  start: { line: 11, column: 3, offset: 166 },
+                  end: { line: 11, column: 46, offset: 209 }
                 }
               },
               {
@@ -82142,14 +82142,14 @@ export default [
                   '\n' +
                   'const authToken = await ecr.getAuthorizationToken()',
                 position: {
-                  start: { line: 13, column: 1, offset: 215 },
-                  end: { line: 20, column: 4, offset: 399 }
+                  start: { line: 13, column: 1, offset: 211 },
+                  end: { line: 20, column: 4, offset: 395 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 20, column: 4, offset: 399 }
+              end: { line: 20, column: 4, offset: 395 }
             }
           }
         }
