@@ -129721,6 +129721,240 @@ export default [
     fileName: '/Users/richard/code/presidium.services/../presidium/S3Bucket.js'
   },
   {
+    name: 'Secrets',
+    docs: '```coffeescript [specscript]\n' +
+      'Secrets() -> secrets Promise<Object>\n' +
+      '```\n' +
+      '\n' +
+      'Presidium Secrets class. Consumes the `.secrets` file in the current directory.\n' +
+      '\n' +
+      'Arguments:\n' +
+      '  * (none)\n' +
+      '\n' +
+      'Return:\n' +
+      '  * `secrets` - a promise of an object of secret key-value pairs.\n' +
+      '\n' +
+      '```javascript\n' +
+      'const secrets = await Secrets()\n' +
+      'console.log(secrets.mySecret) // ********\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Secrets',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 8, offset: 7 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 8, offset: 7 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 8, offset: 7 }
+        }
+      },
+      docs: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'Secrets() -> secrets Promise<Object>',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 69 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Presidium Secrets class. Consumes the ',
+                position: {
+                  start: { line: 5, column: 1, offset: 71 },
+                  end: { line: 5, column: 39, offset: 109 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: '.secrets',
+                position: {
+                  start: { line: 5, column: 39, offset: 109 },
+                  end: { line: 5, column: 49, offset: 119 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' file in the current directory.',
+                position: {
+                  start: { line: 5, column: 49, offset: 119 },
+                  end: { line: 5, column: 80, offset: 150 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 5, column: 1, offset: 71 },
+              end: { line: 5, column: 80, offset: 150 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Arguments:',
+                position: {
+                  start: { line: 7, column: 1, offset: 152 },
+                  end: { line: 7, column: 11, offset: 162 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 7, column: 1, offset: 152 },
+              end: { line: 7, column: 11, offset: 162 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'text',
+                        value: '(none)',
+                        position: {
+                          start: { line: 8, column: 5, offset: 167 },
+                          end: { line: 8, column: 11, offset: 173 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 8, column: 5, offset: 167 },
+                      end: { line: 8, column: 11, offset: 173 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 3, offset: 165 },
+                  end: { line: 8, column: 11, offset: 173 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 8, column: 3, offset: 165 },
+              end: { line: 8, column: 11, offset: 173 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Return:',
+                position: {
+                  start: { line: 10, column: 1, offset: 175 },
+                  end: { line: 10, column: 8, offset: 182 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 10, column: 1, offset: 175 },
+              end: { line: 10, column: 8, offset: 182 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'secrets',
+                        position: {
+                          start: { line: 11, column: 5, offset: 187 },
+                          end: { line: 11, column: 14, offset: 196 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ' - a promise of an object of secret key-value pairs.',
+                        position: {
+                          start: { line: 11, column: 14, offset: 196 },
+                          end: { line: 11, column: 66, offset: 248 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 11, column: 5, offset: 187 },
+                      end: { line: 11, column: 66, offset: 248 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 3, offset: 185 },
+                  end: { line: 11, column: 66, offset: 248 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 11, column: 3, offset: 185 },
+              end: { line: 11, column: 66, offset: 248 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: null,
+            value: 'const secrets = await Secrets()\n' +
+              'console.log(secrets.mySecret) // ********',
+            position: {
+              start: { line: 13, column: 1, offset: 250 },
+              end: { line: 16, column: 4, offset: 341 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 16, column: 4, offset: 341 }
+        }
+      }
+    },
+    methods: [],
+    fileName: '/Users/richard/code/presidium.services/../presidium/Secrets.js'
+  },
+  {
     name: 'SecretsManager',
     docs: '```coffeescript [specscript]\n' +
       'new SecretsManager(options {\n' +

@@ -14,6 +14,7 @@ export default [
   'Password.js',
   'Readable.js',
   'S3Bucket.js',
+  'Secrets.js',
   'SecretsManager.js',
   'StrictValidator.js',
   'TranscribeStream.js',
