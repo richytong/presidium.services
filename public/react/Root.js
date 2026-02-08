@@ -44,7 +44,7 @@ const Root = ReactElement(() => {
     })
 
     return () => {
-      removeEventListener(listener)
+      document.body.removeEventListener('click', listener)
     }
   }, [])
 
