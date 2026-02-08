@@ -50,14 +50,14 @@ module.exports = {
       title: 'Presidium Docs',
       description: 'Documentation for Presidium',
       url: '/docs',
-      filepath: '/docs.html',
+      filepath: '/docs/index.html',
     },
 
     ...ClassNames(presidium).map(className => ({
       title: `${className} | Presidium Docs`,
       description: `Documentation for Presidium ${className}`,
       url: `/docs/${className}`,
-      filepath: `/docs/${className}.html`,
+      filepath: `/docs/${className}`,
     }))
   ],
 }
