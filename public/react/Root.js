@@ -20,7 +20,7 @@ const Root = ReactElement(() => {
     })
 
     return () => {
-      removeEventListener(listener)
+      removeEventListener('popstate', listener)
     }
   }, [])
 
