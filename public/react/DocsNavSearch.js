@@ -17,7 +17,7 @@ import presidiumClassExludedMethods from './presidiumClassExcludedMethods.js'
  * ```
  */
 const DocsNavSearch = ReactElement(() => {
-  const [docsSearchQuery] = useDocsSearchQuery()
+  const [docsSearchQuery, setDocsSearchQuery] = useDocsSearchQuery()
   const [docsViewerClassName, setDocsViewerClassName] = useDocsViewerClassName()
   const [path, setPath] = usePath()
   const [
@@ -77,6 +77,7 @@ const DocsNavSearch = ReactElement(() => {
         setDocsViewerClassName,
         setPath,
         setIsHamburgerMenuActive,
+        setDocsSearchQuery,
       }),
 
       candidate.methodNames.map(methodName => Div({
@@ -87,6 +88,7 @@ const DocsNavSearch = ReactElement(() => {
           name: candidate.name,
           method: methodName,
           setIsHamburgerMenuActive,
+          setDocsSearchQuery,
         }),
       ]))
     ]))

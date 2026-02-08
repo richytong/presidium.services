@@ -8,6 +8,7 @@
  *   setDocsViewerClassName: function,
  *   setPath: function,
  *   setIsHamburgerMenuActive: function,
+ *   setDocsSearchQuery: function,
  * }) -> ReactElement
  * ```
  */
@@ -17,6 +18,7 @@ const DocsNavClassItem = ReactElement(props => {
     setPath,
     setDocsViewerClassName,
     setIsHamburgerMenuActive,
+    setDocsSearchQuery,
   } = props
   const href = `/docs/${name}`
   return Div({ class: 'docs-nav-item' }, [
@@ -27,6 +29,7 @@ const DocsNavClassItem = ReactElement(props => {
         setDocsViewerClassName(name)
         setPath(href)
         setIsHamburgerMenuActive(false)
+        setDocsSearchQuery('')
         scrollTo(0, 0)
       },
     }, name)

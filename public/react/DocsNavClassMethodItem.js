@@ -7,6 +7,7 @@
  *   name: string,
  *   method: string,
  *   setIsHamburgerMenuActive: function,
+ *   setDocsSearchQuery: function,
  * }) -> ReactElement
  * ```
  */
@@ -15,6 +16,7 @@ const DocsNavClassMethodItem = ReactElement(props => {
     name,
     method,
     setIsHamburgerMenuActive,
+    setDocsSearchQuery,
   } = props
 
   const href = `/docs/${name}#${method}`
@@ -24,6 +26,7 @@ const DocsNavClassMethodItem = ReactElement(props => {
       href,
       onClick() {
         setIsHamburgerMenuActive(false)
+        setDocsSearchQuery('')
       }
     }, method)
   ])
