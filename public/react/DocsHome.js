@@ -40,7 +40,13 @@ const DocsHome = ReactElement(props => {
     const anchor = new URL(location.href).hash
     if (anchor.length > 0) {
       setTimeout(() => {
-        window.scrollTo(0, document.getElementById(anchor.slice(1)).offsetTop + 0)
+        const scrollToElement = document.getElementById(anchor.slice(1))
+        console.log(anchor.slice(1), scrollToElement, scrollToElement.offsetTop)
+        if (scrollToElement) {
+          const desiredScrollY = scrollToElement.offsetTop
+          console.log('scrollTo', desiredScrollY)
+          window.scrollTo(0, desiredScrollY)
+        }
       }, 10)
     }
   }, [])
