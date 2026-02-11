@@ -1193,12 +1193,18 @@ export default [
   {
     name: 'Docker',
     docs: '```coffeescript [specscript]\n' +
-      'new Docker() -> docker Docker\n' +
+      'new Docker(options {\n' +
+      '  apiVersion: string,\n' +
+      '}) -> docker Docker\n' +
       '```\n' +
       '\n' +
       'Presidium Docker client for [Docker](https://docs.docker.com/reference/).\n' +
       '\n' +
-      'Note: the Presidium Docker client connects to the Docker socket. Please use caution when creating production services using the Presidium Docker client, see [How would an attacker gain access to the host machine from within a Docker container?](https://www.google.com/search?hl=en&q=how%20would%20an%20attacker%20gain%20access%20to%20the%20host%20machine%20from%20within%20a%20docker%20container).',
+      'Note: the Presidium Docker client connects to the Docker socket. Please use caution when creating production services using the Presidium Docker client, see [How would an attacker gain access to the host machine from within a Docker container?](https://www.google.com/search?hl=en&q=how%20would%20an%20attacker%20gain%20access%20to%20the%20host%20machine%20from%20within%20a%20docker%20container).\n' +
+      '\n' +
+      'Arguments:\n' +
+      '  * `options`\n' +
+      "    * `apiVersion` - the version of the Docker API. Defaults to `'1.48'`.",
     mdast: {
       name: {
         type: 'root',
@@ -1233,10 +1239,10 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'new Docker() -> docker Docker',
+            value: 'new Docker(options {\n  apiVersion: string,\n}) -> docker Docker',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 3, column: 4, offset: 62 }
+              end: { line: 5, column: 4, offset: 95 }
             }
           },
           {
@@ -1246,8 +1252,8 @@ export default [
                 type: 'text',
                 value: 'Presidium Docker client for ',
                 position: {
-                  start: { line: 5, column: 1, offset: 64 },
-                  end: { line: 5, column: 29, offset: 92 }
+                  start: { line: 7, column: 1, offset: 97 },
+                  end: { line: 7, column: 29, offset: 125 }
                 }
               },
               {
@@ -1259,28 +1265,28 @@ export default [
                     type: 'text',
                     value: 'Docker',
                     position: {
-                      start: { line: 5, column: 30, offset: 93 },
-                      end: { line: 5, column: 36, offset: 99 }
+                      start: { line: 7, column: 30, offset: 126 },
+                      end: { line: 7, column: 36, offset: 132 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 5, column: 29, offset: 92 },
-                  end: { line: 5, column: 73, offset: 136 }
+                  start: { line: 7, column: 29, offset: 125 },
+                  end: { line: 7, column: 73, offset: 169 }
                 }
               },
               {
                 type: 'text',
                 value: '.',
                 position: {
-                  start: { line: 5, column: 73, offset: 136 },
-                  end: { line: 5, column: 74, offset: 137 }
+                  start: { line: 7, column: 73, offset: 169 },
+                  end: { line: 7, column: 74, offset: 170 }
                 }
               }
             ],
             position: {
-              start: { line: 5, column: 1, offset: 64 },
-              end: { line: 5, column: 74, offset: 137 }
+              start: { line: 7, column: 1, offset: 97 },
+              end: { line: 7, column: 74, offset: 170 }
             }
           },
           {
@@ -1290,8 +1296,8 @@ export default [
                 type: 'text',
                 value: 'Note: the Presidium Docker client connects to the Docker socket. Please use caution when creating production services using the Presidium Docker client, see ',
                 position: {
-                  start: { line: 7, column: 1, offset: 139 },
-                  end: { line: 7, column: 158, offset: 296 }
+                  start: { line: 9, column: 1, offset: 172 },
+                  end: { line: 9, column: 158, offset: 329 }
                 }
               },
               {
@@ -1303,34 +1309,155 @@ export default [
                     type: 'text',
                     value: 'How would an attacker gain access to the host machine from within a Docker container?',
                     position: {
-                      start: { line: 7, column: 159, offset: 297 },
-                      end: { line: 7, column: 244, offset: 382 }
+                      start: { line: 9, column: 159, offset: 330 },
+                      end: { line: 9, column: 244, offset: 415 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 7, column: 158, offset: 296 },
-                  end: { line: 7, column: 397, offset: 535 }
+                  start: { line: 9, column: 158, offset: 329 },
+                  end: { line: 9, column: 397, offset: 568 }
                 }
               },
               {
                 type: 'text',
                 value: '.',
                 position: {
-                  start: { line: 7, column: 397, offset: 535 },
-                  end: { line: 7, column: 398, offset: 536 }
+                  start: { line: 9, column: 397, offset: 568 },
+                  end: { line: 9, column: 398, offset: 569 }
                 }
               }
             ],
             position: {
-              start: { line: 7, column: 1, offset: 139 },
-              end: { line: 7, column: 398, offset: 536 }
+              start: { line: 9, column: 1, offset: 172 },
+              end: { line: 9, column: 398, offset: 569 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Arguments:',
+                position: {
+                  start: { line: 11, column: 1, offset: 571 },
+                  end: { line: 11, column: 11, offset: 581 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 11, column: 1, offset: 571 },
+              end: { line: 11, column: 11, offset: 581 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'options',
+                        position: {
+                          start: { line: 12, column: 5, offset: 586 },
+                          end: { line: 12, column: 14, offset: 595 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 12, column: 5, offset: 586 },
+                      end: { line: 12, column: 14, offset: 595 }
+                    }
+                  },
+                  {
+                    type: 'list',
+                    ordered: false,
+                    start: null,
+                    spread: false,
+                    children: [
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'apiVersion',
+                                position: {
+                                  start: { line: 13, column: 7, offset: 602 },
+                                  end: { line: 13, column: 19, offset: 614 }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - the version of the Docker API. Defaults to ',
+                                position: {
+                                  start: { line: 13, column: 19, offset: 614 },
+                                  end: { line: 13, column: 65, offset: 660 }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: "'1.48'",
+                                position: {
+                                  start: { line: 13, column: 65, offset: 660 },
+                                  end: { line: 13, column: 73, offset: 668 }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: '.',
+                                position: {
+                                  start: { line: 13, column: 73, offset: 668 },
+                                  end: { line: 13, column: 74, offset: 669 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 13, column: 7, offset: 602 },
+                              end: { line: 13, column: 74, offset: 669 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 13, column: 5, offset: 600 },
+                          end: { line: 13, column: 74, offset: 669 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 13, column: 5, offset: 600 },
+                      end: { line: 13, column: 74, offset: 669 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 12, column: 3, offset: 584 },
+                  end: { line: 13, column: 74, offset: 669 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 12, column: 3, offset: 584 },
+              end: { line: 13, column: 74, offset: 669 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 398, offset: 536 }
+          end: { line: 13, column: 74, offset: 669 }
         }
       }
     },
@@ -82490,6 +82617,127 @@ export default [
     },
     methods: [
       {
+        name: '_requestMethod',
+        docs: '```coffeescript [specscript]\n' +
+          "module http 'https://nodejs.org/docs/latest-v24.x/api/http.html'\n" +
+          '\n' +
+          'type RequestOptions = {\n' +
+          '  agent: http.Agent,\n' +
+          '  auth: string,\n' +
+          '  createConnection: function,\n' +
+          '  defaultPort: number,\n' +
+          '  family: number,\n' +
+          '  headers: object,\n' +
+          '  hints: number,\n' +
+          '  host: string,\n' +
+          '  hostname: string,\n' +
+          '  insecureHTTPParser: boolean,\n' +
+          '  joinDuplicateHeaders: boolean,\n' +
+          '  localAddress: string,\n' +
+          '  localPort: number,\n' +
+          '  lookup: function,\n' +
+          '  maxHeaderSize: number,\n' +
+          '  method: string,\n' +
+          '  path: string,\n' +
+          '  port: number,\n' +
+          '  protocol: string,\n' +
+          '  setDefaultHeaders: boolean,\n' +
+          '  setHost: boolean,\n' +
+          '  signal: AbortSignal,\n' +
+          '  socketPath: string,\n' +
+          '  timeout: number,\n' +
+          '  uniqueHeaders: Array<string>,\n' +
+          '}\n' +
+          '\n' +
+          '_requestMethod(\n' +
+          '  method string,\n' +
+          '  relativeUrl string,\n' +
+          '  options RequestOptions\n' +
+          ') -> response http.ServerResponse\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: '_requestMethod',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 15, offset: 14 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 15, offset: 14 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 15, offset: 14 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: "module http 'https://nodejs.org/docs/latest-v24.x/api/http.html'\n" +
+                  '\n' +
+                  'type RequestOptions = {\n' +
+                  '  agent: http.Agent,\n' +
+                  '  auth: string,\n' +
+                  '  createConnection: function,\n' +
+                  '  defaultPort: number,\n' +
+                  '  family: number,\n' +
+                  '  headers: object,\n' +
+                  '  hints: number,\n' +
+                  '  host: string,\n' +
+                  '  hostname: string,\n' +
+                  '  insecureHTTPParser: boolean,\n' +
+                  '  joinDuplicateHeaders: boolean,\n' +
+                  '  localAddress: string,\n' +
+                  '  localPort: number,\n' +
+                  '  lookup: function,\n' +
+                  '  maxHeaderSize: number,\n' +
+                  '  method: string,\n' +
+                  '  path: string,\n' +
+                  '  port: number,\n' +
+                  '  protocol: string,\n' +
+                  '  setDefaultHeaders: boolean,\n' +
+                  '  setHost: boolean,\n' +
+                  '  signal: AbortSignal,\n' +
+                  '  socketPath: string,\n' +
+                  '  timeout: number,\n' +
+                  '  uniqueHeaders: Array<string>,\n' +
+                  '}\n' +
+                  '\n' +
+                  '_requestMethod(\n' +
+                  '  method string,\n' +
+                  '  relativeUrl string,\n' +
+                  '  options RequestOptions\n' +
+                  ') -> response http.ServerResponse',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 37, column: 4, offset: 789 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 37, column: 4, offset: 789 }
+            }
+          }
+        }
+      },
+      {
         name: 'get',
         docs: '```coffeescript [specscript]\n' +
           "module http 'https://nodejs.org/docs/latest-v24.x/api/http.html'\n" +
@@ -90485,7 +90733,7 @@ export default [
       {
         name: 'Password.hash',
         docs: '```coffeescript [specscript]\n' +
-          'Password.hash(plaintext string) -> hash string\n' +
+          'Password.hash(plaintext string) -> hash Promise<string>\n' +
           '```\n' +
           '\n' +
           'Creates a hash of the plaintext password.\n' +
@@ -90535,10 +90783,10 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: 'Password.hash(plaintext string) -> hash string',
+                value: 'Password.hash(plaintext string) -> hash Promise<string>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 3, column: 4, offset: 79 }
+                  end: { line: 3, column: 4, offset: 88 }
                 }
               },
               {
@@ -90548,14 +90796,14 @@ export default [
                     type: 'text',
                     value: 'Creates a hash of the plaintext password.',
                     position: {
-                      start: { line: 5, column: 1, offset: 81 },
-                      end: { line: 5, column: 42, offset: 122 }
+                      start: { line: 5, column: 1, offset: 90 },
+                      end: { line: 5, column: 42, offset: 131 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 5, column: 1, offset: 81 },
-                  end: { line: 5, column: 42, offset: 122 }
+                  start: { line: 5, column: 1, offset: 90 },
+                  end: { line: 5, column: 42, offset: 131 }
                 }
               },
               {
@@ -90565,14 +90813,14 @@ export default [
                     type: 'text',
                     value: 'Arguments:',
                     position: {
-                      start: { line: 7, column: 1, offset: 124 },
-                      end: { line: 7, column: 11, offset: 134 }
+                      start: { line: 7, column: 1, offset: 133 },
+                      end: { line: 7, column: 11, offset: 143 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 7, column: 1, offset: 124 },
-                  end: { line: 7, column: 11, offset: 134 }
+                  start: { line: 7, column: 1, offset: 133 },
+                  end: { line: 7, column: 11, offset: 143 }
                 }
               },
               {
@@ -90593,34 +90841,34 @@ export default [
                             type: 'inlineCode',
                             value: 'plaintext',
                             position: {
-                              start: { line: 8, column: 5, offset: 139 },
-                              end: { line: 8, column: 16, offset: 150 }
+                              start: { line: 8, column: 5, offset: 148 },
+                              end: { line: 8, column: 16, offset: 159 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - the plaintext password.',
                             position: {
-                              start: { line: 8, column: 16, offset: 150 },
-                              end: { line: 8, column: 42, offset: 176 }
+                              start: { line: 8, column: 16, offset: 159 },
+                              end: { line: 8, column: 42, offset: 185 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 8, column: 5, offset: 139 },
-                          end: { line: 8, column: 42, offset: 176 }
+                          start: { line: 8, column: 5, offset: 148 },
+                          end: { line: 8, column: 42, offset: 185 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 8, column: 3, offset: 137 },
-                      end: { line: 8, column: 42, offset: 176 }
+                      start: { line: 8, column: 3, offset: 146 },
+                      end: { line: 8, column: 42, offset: 185 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 8, column: 3, offset: 137 },
-                  end: { line: 8, column: 42, offset: 176 }
+                  start: { line: 8, column: 3, offset: 146 },
+                  end: { line: 8, column: 42, offset: 185 }
                 }
               },
               {
@@ -90630,14 +90878,14 @@ export default [
                     type: 'text',
                     value: 'Return:',
                     position: {
-                      start: { line: 10, column: 1, offset: 178 },
-                      end: { line: 10, column: 8, offset: 185 }
+                      start: { line: 10, column: 1, offset: 187 },
+                      end: { line: 10, column: 8, offset: 194 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 10, column: 1, offset: 178 },
-                  end: { line: 10, column: 8, offset: 185 }
+                  start: { line: 10, column: 1, offset: 187 },
+                  end: { line: 10, column: 8, offset: 194 }
                 }
               },
               {
@@ -90658,34 +90906,34 @@ export default [
                             type: 'inlineCode',
                             value: 'hash',
                             position: {
-                              start: { line: 11, column: 5, offset: 190 },
-                              end: { line: 11, column: 11, offset: 196 }
+                              start: { line: 11, column: 5, offset: 199 },
+                              end: { line: 11, column: 11, offset: 205 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' a promise of the hash of the plaintext password.',
                             position: {
-                              start: { line: 11, column: 11, offset: 196 },
-                              end: { line: 11, column: 60, offset: 245 }
+                              start: { line: 11, column: 11, offset: 205 },
+                              end: { line: 11, column: 60, offset: 254 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 11, column: 5, offset: 190 },
-                          end: { line: 11, column: 60, offset: 245 }
+                          start: { line: 11, column: 5, offset: 199 },
+                          end: { line: 11, column: 60, offset: 254 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 11, column: 3, offset: 188 },
-                      end: { line: 11, column: 60, offset: 245 }
+                      start: { line: 11, column: 3, offset: 197 },
+                      end: { line: 11, column: 60, offset: 254 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 11, column: 3, offset: 188 },
-                  end: { line: 11, column: 60, offset: 245 }
+                  start: { line: 11, column: 3, offset: 197 },
+                  end: { line: 11, column: 60, offset: 254 }
                 }
               },
               {
@@ -90696,14 +90944,14 @@ export default [
                   '\n' +
                   'const myPasswordHash = await Password.hash(myPassword)',
                 position: {
-                  start: { line: 13, column: 1, offset: 247 },
-                  end: { line: 17, column: 4, offset: 350 }
+                  start: { line: 13, column: 1, offset: 256 },
+                  end: { line: 17, column: 4, offset: 359 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 17, column: 4, offset: 350 }
+              end: { line: 17, column: 4, offset: 359 }
             }
           }
         }
@@ -129723,13 +129971,13 @@ export default [
   {
     name: 'Secrets',
     docs: '```coffeescript [specscript]\n' +
-      'Secrets() -> secrets Promise<Object>\n' +
+      'Secrets(filepath string) -> secrets Promise<Object>\n' +
       '```\n' +
       '\n' +
       'Presidium Secrets class. Consumes the `.secrets` file in the current directory.\n' +
       '\n' +
       'Arguments:\n' +
-      '  * (none)\n' +
+      "  * `filepath` - optional path to the secrets file. Defaults to `'.secrets'`.\n" +
       '\n' +
       'Return:\n' +
       '  * `secrets` - a promise of an object of secret key-value pairs.\n' +
@@ -129772,10 +130020,10 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'Secrets() -> secrets Promise<Object>',
+            value: 'Secrets(filepath string) -> secrets Promise<Object>',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 3, column: 4, offset: 69 }
+              end: { line: 3, column: 4, offset: 84 }
             }
           },
           {
@@ -129785,30 +130033,30 @@ export default [
                 type: 'text',
                 value: 'Presidium Secrets class. Consumes the ',
                 position: {
-                  start: { line: 5, column: 1, offset: 71 },
-                  end: { line: 5, column: 39, offset: 109 }
+                  start: { line: 5, column: 1, offset: 86 },
+                  end: { line: 5, column: 39, offset: 124 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: '.secrets',
                 position: {
-                  start: { line: 5, column: 39, offset: 109 },
-                  end: { line: 5, column: 49, offset: 119 }
+                  start: { line: 5, column: 39, offset: 124 },
+                  end: { line: 5, column: 49, offset: 134 }
                 }
               },
               {
                 type: 'text',
                 value: ' file in the current directory.',
                 position: {
-                  start: { line: 5, column: 49, offset: 119 },
-                  end: { line: 5, column: 80, offset: 150 }
+                  start: { line: 5, column: 49, offset: 134 },
+                  end: { line: 5, column: 80, offset: 165 }
                 }
               }
             ],
             position: {
-              start: { line: 5, column: 1, offset: 71 },
-              end: { line: 5, column: 80, offset: 150 }
+              start: { line: 5, column: 1, offset: 86 },
+              end: { line: 5, column: 80, offset: 165 }
             }
           },
           {
@@ -129818,14 +130066,14 @@ export default [
                 type: 'text',
                 value: 'Arguments:',
                 position: {
-                  start: { line: 7, column: 1, offset: 152 },
-                  end: { line: 7, column: 11, offset: 162 }
+                  start: { line: 7, column: 1, offset: 167 },
+                  end: { line: 7, column: 11, offset: 177 }
                 }
               }
             ],
             position: {
-              start: { line: 7, column: 1, offset: 152 },
-              end: { line: 7, column: 11, offset: 162 }
+              start: { line: 7, column: 1, offset: 167 },
+              end: { line: 7, column: 11, offset: 177 }
             }
           },
           {
@@ -129843,29 +130091,53 @@ export default [
                     type: 'paragraph',
                     children: [
                       {
-                        type: 'text',
-                        value: '(none)',
+                        type: 'inlineCode',
+                        value: 'filepath',
                         position: {
-                          start: { line: 8, column: 5, offset: 167 },
-                          end: { line: 8, column: 11, offset: 173 }
+                          start: { line: 8, column: 5, offset: 182 },
+                          end: { line: 8, column: 15, offset: 192 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ' - optional path to the secrets file. Defaults to ',
+                        position: {
+                          start: { line: 8, column: 15, offset: 192 },
+                          end: { line: 8, column: 65, offset: 242 }
+                        }
+                      },
+                      {
+                        type: 'inlineCode',
+                        value: "'.secrets'",
+                        position: {
+                          start: { line: 8, column: 65, offset: 242 },
+                          end: { line: 8, column: 77, offset: 254 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: '.',
+                        position: {
+                          start: { line: 8, column: 77, offset: 254 },
+                          end: { line: 8, column: 78, offset: 255 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 8, column: 5, offset: 167 },
-                      end: { line: 8, column: 11, offset: 173 }
+                      start: { line: 8, column: 5, offset: 182 },
+                      end: { line: 8, column: 78, offset: 255 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 8, column: 3, offset: 165 },
-                  end: { line: 8, column: 11, offset: 173 }
+                  start: { line: 8, column: 3, offset: 180 },
+                  end: { line: 8, column: 78, offset: 255 }
                 }
               }
             ],
             position: {
-              start: { line: 8, column: 3, offset: 165 },
-              end: { line: 8, column: 11, offset: 173 }
+              start: { line: 8, column: 3, offset: 180 },
+              end: { line: 8, column: 78, offset: 255 }
             }
           },
           {
@@ -129875,14 +130147,14 @@ export default [
                 type: 'text',
                 value: 'Return:',
                 position: {
-                  start: { line: 10, column: 1, offset: 175 },
-                  end: { line: 10, column: 8, offset: 182 }
+                  start: { line: 10, column: 1, offset: 257 },
+                  end: { line: 10, column: 8, offset: 264 }
                 }
               }
             ],
             position: {
-              start: { line: 10, column: 1, offset: 175 },
-              end: { line: 10, column: 8, offset: 182 }
+              start: { line: 10, column: 1, offset: 257 },
+              end: { line: 10, column: 8, offset: 264 }
             }
           },
           {
@@ -129903,34 +130175,34 @@ export default [
                         type: 'inlineCode',
                         value: 'secrets',
                         position: {
-                          start: { line: 11, column: 5, offset: 187 },
-                          end: { line: 11, column: 14, offset: 196 }
+                          start: { line: 11, column: 5, offset: 269 },
+                          end: { line: 11, column: 14, offset: 278 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - a promise of an object of secret key-value pairs.',
                         position: {
-                          start: { line: 11, column: 14, offset: 196 },
-                          end: { line: 11, column: 66, offset: 248 }
+                          start: { line: 11, column: 14, offset: 278 },
+                          end: { line: 11, column: 66, offset: 330 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 11, column: 5, offset: 187 },
-                      end: { line: 11, column: 66, offset: 248 }
+                      start: { line: 11, column: 5, offset: 269 },
+                      end: { line: 11, column: 66, offset: 330 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 11, column: 3, offset: 185 },
-                  end: { line: 11, column: 66, offset: 248 }
+                  start: { line: 11, column: 3, offset: 267 },
+                  end: { line: 11, column: 66, offset: 330 }
                 }
               }
             ],
             position: {
-              start: { line: 11, column: 3, offset: 185 },
-              end: { line: 11, column: 66, offset: 248 }
+              start: { line: 11, column: 3, offset: 267 },
+              end: { line: 11, column: 66, offset: 330 }
             }
           },
           {
@@ -129940,14 +130212,14 @@ export default [
             value: 'const secrets = await Secrets()\n' +
               'console.log(secrets.mySecret) // ********',
             position: {
-              start: { line: 13, column: 1, offset: 250 },
-              end: { line: 16, column: 4, offset: 341 }
+              start: { line: 13, column: 1, offset: 332 },
+              end: { line: 16, column: 4, offset: 423 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 16, column: 4, offset: 341 }
+          end: { line: 16, column: 4, offset: 423 }
         }
       }
     },
@@ -139752,6 +140024,117 @@ export default [
     },
     methods: [],
     fileName: '/Users/richard/code/presidium.services/../presidium/internal/handleDynamoDBStreamGetRecordsError.js'
+  },
+  {
+    name: 'httpConfigure',
+    docs: '```coffeescript [specscript]\n' +
+      'type RequestOptions = {\n' +
+      '  agent: http.Agent,\n' +
+      '  auth: string,\n' +
+      '  createConnection: function,\n' +
+      '  defaultPort: number,\n' +
+      '  family: number,\n' +
+      '  headers: object,\n' +
+      '  hints: number,\n' +
+      '  host: string,\n' +
+      '  hostname: string,\n' +
+      '  insecureHTTPParser: boolean,\n' +
+      '  joinDuplicateHeaders: boolean,\n' +
+      '  localAddress: string,\n' +
+      '  localPort: number,\n' +
+      '  lookup: function,\n' +
+      '  maxHeaderSize: number,\n' +
+      '  method: string,\n' +
+      '  path: string,\n' +
+      '  port: number,\n' +
+      '  protocol: string,\n' +
+      '  setDefaultHeaders: boolean,\n' +
+      '  setHost: boolean,\n' +
+      '  signal: AbortSignal,\n' +
+      '  socketPath: string,\n' +
+      '  timeout: number,\n' +
+      '  uniqueHeaders: Array<string>,\n' +
+      '}\n' +
+      '\n' +
+      'httpConfigure(baseUrl string|URL, requestOptions RequestOptions) -> undefined\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'httpConfigure',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 14, offset: 13 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 14, offset: 13 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 14, offset: 13 }
+        }
+      },
+      docs: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'type RequestOptions = {\n' +
+              '  agent: http.Agent,\n' +
+              '  auth: string,\n' +
+              '  createConnection: function,\n' +
+              '  defaultPort: number,\n' +
+              '  family: number,\n' +
+              '  headers: object,\n' +
+              '  hints: number,\n' +
+              '  host: string,\n' +
+              '  hostname: string,\n' +
+              '  insecureHTTPParser: boolean,\n' +
+              '  joinDuplicateHeaders: boolean,\n' +
+              '  localAddress: string,\n' +
+              '  localPort: number,\n' +
+              '  lookup: function,\n' +
+              '  maxHeaderSize: number,\n' +
+              '  method: string,\n' +
+              '  path: string,\n' +
+              '  port: number,\n' +
+              '  protocol: string,\n' +
+              '  setDefaultHeaders: boolean,\n' +
+              '  setHost: boolean,\n' +
+              '  signal: AbortSignal,\n' +
+              '  socketPath: string,\n' +
+              '  timeout: number,\n' +
+              '  uniqueHeaders: Array<string>,\n' +
+              '}\n' +
+              '\n' +
+              'httpConfigure(baseUrl string|URL, requestOptions RequestOptions) -> undefined',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 31, column: 4, offset: 687 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 31, column: 4, offset: 687 }
+        }
+      }
+    },
+    methods: [],
+    fileName: '/Users/richard/code/presidium.services/../presidium/internal/httpConfigure.js'
   },
   {
     name: 'isArray',
