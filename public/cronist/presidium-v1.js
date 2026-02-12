@@ -46619,7 +46619,7 @@ export default [
       '    * `GetRecordsInterval` - number of milliseconds to wait between DynamoDB Streams GetRecords calls. Defaults to `1000`.\n' +
       '    * `ShardUpdatePeriod` - number of milliseconds to wait between shard updates. Defaults to `15000`.\n' +
       '    * `ListStreamsLimit` - number of streams to list per DynamoDB Streams ListStreams calls. Defaults to `100`.\n' +
-      '    * `JSON` - replaces `NewImage` in DynamoDB JSON format with `NewImageJSON` in JSON format and `OldImage` in DynamoDB JSON format with `OldImageJSON` in JSON format for all stream records.\n' +
+      '    * `JSON` - replaces `NewImage` in DynamoDB JSON format with `NewImageJSON` in JSON format and `OldImage` in DynamoDB JSON format with `OldImageJSON` in JSON format for all stream records. Defaults to `false`.\n' +
       '\n' +
       '`StreamViewType` values:\n' +
       '  * `KEYS_ONLY` - only the key attributes of the modified item are written to the DynamoDB Stream.\n' +
@@ -47650,7 +47650,7 @@ export default [
                               },
                               {
                                 type: 'text',
-                                value: ' in JSON format for all stream records.',
+                                value: ' in JSON format for all stream records. Defaults to ',
                                 position: {
                                   start: {
                                     line: 35,
@@ -47659,39 +47659,71 @@ export default [
                                   },
                                   end: {
                                     line: 35,
-                                    column: 192,
-                                    offset: 1994
+                                    column: 205,
+                                    offset: 2007
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'false',
+                                position: {
+                                  start: {
+                                    line: 35,
+                                    column: 205,
+                                    offset: 2007
+                                  },
+                                  end: {
+                                    line: 35,
+                                    column: 212,
+                                    offset: 2014
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: '.',
+                                position: {
+                                  start: {
+                                    line: 35,
+                                    column: 212,
+                                    offset: 2014
+                                  },
+                                  end: {
+                                    line: 35,
+                                    column: 213,
+                                    offset: 2015
                                   }
                                 }
                               }
                             ],
                             position: {
                               start: { line: 35, column: 7, offset: 1809 },
-                              end: { line: 35, column: 192, offset: 1994 }
+                              end: { line: 35, column: 213, offset: 2015 }
                             }
                           }
                         ],
                         position: {
                           start: { line: 35, column: 5, offset: 1807 },
-                          end: { line: 35, column: 192, offset: 1994 }
+                          end: { line: 35, column: 213, offset: 2015 }
                         }
                       }
                     ],
                     position: {
                       start: { line: 24, column: 5, offset: 715 },
-                      end: { line: 35, column: 192, offset: 1994 }
+                      end: { line: 35, column: 213, offset: 2015 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 23, column: 3, offset: 699 },
-                  end: { line: 35, column: 192, offset: 1994 }
+                  end: { line: 35, column: 213, offset: 2015 }
                 }
               }
             ],
             position: {
               start: { line: 23, column: 3, offset: 699 },
-              end: { line: 35, column: 192, offset: 1994 }
+              end: { line: 35, column: 213, offset: 2015 }
             }
           },
           {
@@ -47701,22 +47733,22 @@ export default [
                 type: 'inlineCode',
                 value: 'StreamViewType',
                 position: {
-                  start: { line: 37, column: 1, offset: 1996 },
-                  end: { line: 37, column: 17, offset: 2012 }
+                  start: { line: 37, column: 1, offset: 2017 },
+                  end: { line: 37, column: 17, offset: 2033 }
                 }
               },
               {
                 type: 'text',
                 value: ' values:',
                 position: {
-                  start: { line: 37, column: 17, offset: 2012 },
-                  end: { line: 37, column: 25, offset: 2020 }
+                  start: { line: 37, column: 17, offset: 2033 },
+                  end: { line: 37, column: 25, offset: 2041 }
                 }
               }
             ],
             position: {
-              start: { line: 37, column: 1, offset: 1996 },
-              end: { line: 37, column: 25, offset: 2020 }
+              start: { line: 37, column: 1, offset: 2017 },
+              end: { line: 37, column: 25, offset: 2041 }
             }
           },
           {
@@ -47737,28 +47769,28 @@ export default [
                         type: 'inlineCode',
                         value: 'KEYS_ONLY',
                         position: {
-                          start: { line: 38, column: 5, offset: 2025 },
-                          end: { line: 38, column: 16, offset: 2036 }
+                          start: { line: 38, column: 5, offset: 2046 },
+                          end: { line: 38, column: 16, offset: 2057 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - only the key attributes of the modified item are written to the DynamoDB Stream.',
                         position: {
-                          start: { line: 38, column: 16, offset: 2036 },
-                          end: { line: 38, column: 99, offset: 2119 }
+                          start: { line: 38, column: 16, offset: 2057 },
+                          end: { line: 38, column: 99, offset: 2140 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 38, column: 5, offset: 2025 },
-                      end: { line: 38, column: 99, offset: 2119 }
+                      start: { line: 38, column: 5, offset: 2046 },
+                      end: { line: 38, column: 99, offset: 2140 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 38, column: 3, offset: 2023 },
-                  end: { line: 38, column: 99, offset: 2119 }
+                  start: { line: 38, column: 3, offset: 2044 },
+                  end: { line: 38, column: 99, offset: 2140 }
                 }
               },
               {
@@ -47773,28 +47805,28 @@ export default [
                         type: 'inlineCode',
                         value: 'NEW_IMAGE',
                         position: {
-                          start: { line: 39, column: 5, offset: 2124 },
-                          end: { line: 39, column: 16, offset: 2135 }
+                          start: { line: 39, column: 5, offset: 2145 },
+                          end: { line: 39, column: 16, offset: 2156 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - the entire item after it was modified is written to the DynamoDB Stream.',
                         position: {
-                          start: { line: 39, column: 16, offset: 2135 },
-                          end: { line: 39, column: 91, offset: 2210 }
+                          start: { line: 39, column: 16, offset: 2156 },
+                          end: { line: 39, column: 91, offset: 2231 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 39, column: 5, offset: 2124 },
-                      end: { line: 39, column: 91, offset: 2210 }
+                      start: { line: 39, column: 5, offset: 2145 },
+                      end: { line: 39, column: 91, offset: 2231 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 39, column: 3, offset: 2122 },
-                  end: { line: 39, column: 91, offset: 2210 }
+                  start: { line: 39, column: 3, offset: 2143 },
+                  end: { line: 39, column: 91, offset: 2231 }
                 }
               },
               {
@@ -47809,28 +47841,28 @@ export default [
                         type: 'inlineCode',
                         value: 'OLD_IMAGE',
                         position: {
-                          start: { line: 40, column: 5, offset: 2215 },
-                          end: { line: 40, column: 16, offset: 2226 }
+                          start: { line: 40, column: 5, offset: 2236 },
+                          end: { line: 40, column: 16, offset: 2247 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - the entire item before it was modified is written to the DynamoDB Stream.',
                         position: {
-                          start: { line: 40, column: 16, offset: 2226 },
-                          end: { line: 40, column: 92, offset: 2302 }
+                          start: { line: 40, column: 16, offset: 2247 },
+                          end: { line: 40, column: 92, offset: 2323 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 40, column: 5, offset: 2215 },
-                      end: { line: 40, column: 92, offset: 2302 }
+                      start: { line: 40, column: 5, offset: 2236 },
+                      end: { line: 40, column: 92, offset: 2323 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 40, column: 3, offset: 2213 },
-                  end: { line: 40, column: 92, offset: 2302 }
+                  start: { line: 40, column: 3, offset: 2234 },
+                  end: { line: 40, column: 92, offset: 2323 }
                 }
               },
               {
@@ -47845,34 +47877,34 @@ export default [
                         type: 'inlineCode',
                         value: 'NEW_AND_OLD_IMAGES',
                         position: {
-                          start: { line: 41, column: 5, offset: 2307 },
-                          end: { line: 41, column: 25, offset: 2327 }
+                          start: { line: 41, column: 5, offset: 2328 },
+                          end: { line: 41, column: 25, offset: 2348 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - both the entire item before it was modified and the entire item after it was modified is written to the DynamoDB Stream.',
                         position: {
-                          start: { line: 41, column: 25, offset: 2327 },
-                          end: { line: 41, column: 148, offset: 2450 }
+                          start: { line: 41, column: 25, offset: 2348 },
+                          end: { line: 41, column: 148, offset: 2471 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 41, column: 5, offset: 2307 },
-                      end: { line: 41, column: 148, offset: 2450 }
+                      start: { line: 41, column: 5, offset: 2328 },
+                      end: { line: 41, column: 148, offset: 2471 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 41, column: 3, offset: 2305 },
-                  end: { line: 41, column: 148, offset: 2450 }
+                  start: { line: 41, column: 3, offset: 2326 },
+                  end: { line: 41, column: 148, offset: 2471 }
                 }
               }
             ],
             position: {
-              start: { line: 38, column: 3, offset: 2023 },
-              end: { line: 41, column: 148, offset: 2450 }
+              start: { line: 38, column: 3, offset: 2044 },
+              end: { line: 41, column: 148, offset: 2471 }
             }
           },
           {
@@ -47882,22 +47914,22 @@ export default [
                 type: 'inlineCode',
                 value: 'ShardIteratorType',
                 position: {
-                  start: { line: 43, column: 1, offset: 2452 },
-                  end: { line: 43, column: 20, offset: 2471 }
+                  start: { line: 43, column: 1, offset: 2473 },
+                  end: { line: 43, column: 20, offset: 2492 }
                 }
               },
               {
                 type: 'text',
                 value: ' values:',
                 position: {
-                  start: { line: 43, column: 20, offset: 2471 },
-                  end: { line: 43, column: 28, offset: 2479 }
+                  start: { line: 43, column: 20, offset: 2492 },
+                  end: { line: 43, column: 28, offset: 2500 }
                 }
               }
             ],
             position: {
-              start: { line: 43, column: 1, offset: 2452 },
-              end: { line: 43, column: 28, offset: 2479 }
+              start: { line: 43, column: 1, offset: 2473 },
+              end: { line: 43, column: 28, offset: 2500 }
             }
           },
           {
@@ -47918,28 +47950,28 @@ export default [
                         type: 'inlineCode',
                         value: 'TRIM_HORIZON',
                         position: {
-                          start: { line: 44, column: 5, offset: 2484 },
-                          end: { line: 44, column: 19, offset: 2498 }
+                          start: { line: 44, column: 5, offset: 2505 },
+                          end: { line: 44, column: 19, offset: 2519 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - start reading at the last (untrimmed) stream record, which is the oldest record in the stream shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records older than this limit are subject to removal (trimming) from the DynamoDB Stream.',
                         position: {
-                          start: { line: 44, column: 19, offset: 2498 },
-                          end: { line: 44, column: 284, offset: 2763 }
+                          start: { line: 44, column: 19, offset: 2519 },
+                          end: { line: 44, column: 284, offset: 2784 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 44, column: 5, offset: 2484 },
-                      end: { line: 44, column: 284, offset: 2763 }
+                      start: { line: 44, column: 5, offset: 2505 },
+                      end: { line: 44, column: 284, offset: 2784 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 44, column: 3, offset: 2482 },
-                  end: { line: 44, column: 284, offset: 2763 }
+                  start: { line: 44, column: 3, offset: 2503 },
+                  end: { line: 44, column: 284, offset: 2784 }
                 }
               },
               {
@@ -47954,34 +47986,34 @@ export default [
                         type: 'inlineCode',
                         value: 'LATEST',
                         position: {
-                          start: { line: 45, column: 5, offset: 2768 },
-                          end: { line: 45, column: 13, offset: 2776 }
+                          start: { line: 45, column: 5, offset: 2789 },
+                          end: { line: 45, column: 13, offset: 2797 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - start reading just after the most recent stream record in the stream shard, so that the most recent data in the shard is always read.',
                         position: {
-                          start: { line: 45, column: 13, offset: 2776 },
-                          end: { line: 45, column: 149, offset: 2912 }
+                          start: { line: 45, column: 13, offset: 2797 },
+                          end: { line: 45, column: 149, offset: 2933 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 45, column: 5, offset: 2768 },
-                      end: { line: 45, column: 149, offset: 2912 }
+                      start: { line: 45, column: 5, offset: 2789 },
+                      end: { line: 45, column: 149, offset: 2933 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 45, column: 3, offset: 2766 },
-                  end: { line: 45, column: 149, offset: 2912 }
+                  start: { line: 45, column: 3, offset: 2787 },
+                  end: { line: 45, column: 149, offset: 2933 }
                 }
               }
             ],
             position: {
-              start: { line: 44, column: 3, offset: 2482 },
-              end: { line: 45, column: 149, offset: 2912 }
+              start: { line: 44, column: 3, offset: 2503 },
+              end: { line: 45, column: 149, offset: 2933 }
             }
           },
           {
@@ -47991,14 +48023,14 @@ export default [
                 type: 'text',
                 value: 'Return:',
                 position: {
-                  start: { line: 47, column: 1, offset: 2914 },
-                  end: { line: 47, column: 8, offset: 2921 }
+                  start: { line: 47, column: 1, offset: 2935 },
+                  end: { line: 47, column: 8, offset: 2942 }
                 }
               }
             ],
             position: {
-              start: { line: 47, column: 1, offset: 2914 },
-              end: { line: 47, column: 8, offset: 2921 }
+              start: { line: 47, column: 1, offset: 2935 },
+              end: { line: 47, column: 8, offset: 2942 }
             }
           },
           {
@@ -48019,34 +48051,34 @@ export default [
                         type: 'inlineCode',
                         value: 'stream',
                         position: {
-                          start: { line: 48, column: 5, offset: 2926 },
-                          end: { line: 48, column: 13, offset: 2934 }
+                          start: { line: 48, column: 5, offset: 2947 },
+                          end: { line: 48, column: 13, offset: 2955 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - a DynamoDBStream instance.',
                         position: {
-                          start: { line: 48, column: 13, offset: 2934 },
-                          end: { line: 48, column: 42, offset: 2963 }
+                          start: { line: 48, column: 13, offset: 2955 },
+                          end: { line: 48, column: 42, offset: 2984 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 48, column: 5, offset: 2926 },
-                      end: { line: 48, column: 42, offset: 2963 }
+                      start: { line: 48, column: 5, offset: 2947 },
+                      end: { line: 48, column: 42, offset: 2984 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 48, column: 3, offset: 2924 },
-                  end: { line: 48, column: 42, offset: 2963 }
+                  start: { line: 48, column: 3, offset: 2945 },
+                  end: { line: 48, column: 42, offset: 2984 }
                 }
               }
             ],
             position: {
-              start: { line: 48, column: 3, offset: 2924 },
-              end: { line: 48, column: 42, offset: 2963 }
+              start: { line: 48, column: 3, offset: 2945 },
+              end: { line: 48, column: 42, offset: 2984 }
             }
           },
           {
@@ -48070,8 +48102,8 @@ export default [
               '  ...awsCreds,\n' +
               '})',
             position: {
-              start: { line: 50, column: 1, offset: 2965 },
-              end: { line: 67, column: 4, offset: 3310 }
+              start: { line: 50, column: 1, offset: 2986 },
+              end: { line: 67, column: 4, offset: 3331 }
             }
           },
           {
@@ -48081,14 +48113,14 @@ export default [
                 type: 'text',
                 value: 'References:',
                 position: {
-                  start: { line: 69, column: 1, offset: 3312 },
-                  end: { line: 69, column: 12, offset: 3323 }
+                  start: { line: 69, column: 1, offset: 3333 },
+                  end: { line: 69, column: 12, offset: 3344 }
                 }
               }
             ],
             position: {
-              start: { line: 69, column: 1, offset: 3312 },
-              end: { line: 69, column: 12, offset: 3323 }
+              start: { line: 69, column: 1, offset: 3333 },
+              end: { line: 69, column: 12, offset: 3344 }
             }
           },
           {
@@ -48114,38 +48146,38 @@ export default [
                             type: 'text',
                             value: 'DynamoDB Streams',
                             position: {
-                              start: { line: 70, column: 6, offset: 3329 },
-                              end: { line: 70, column: 22, offset: 3345 }
+                              start: { line: 70, column: 6, offset: 3350 },
+                              end: { line: 70, column: 22, offset: 3366 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 70, column: 5, offset: 3328 },
-                          end: { line: 70, column: 102, offset: 3425 }
+                          start: { line: 70, column: 5, offset: 3349 },
+                          end: { line: 70, column: 102, offset: 3446 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 70, column: 5, offset: 3328 },
-                      end: { line: 70, column: 102, offset: 3425 }
+                      start: { line: 70, column: 5, offset: 3349 },
+                      end: { line: 70, column: 102, offset: 3446 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 70, column: 3, offset: 3326 },
-                  end: { line: 70, column: 102, offset: 3425 }
+                  start: { line: 70, column: 3, offset: 3347 },
+                  end: { line: 70, column: 102, offset: 3446 }
                 }
               }
             ],
             position: {
-              start: { line: 70, column: 3, offset: 3326 },
-              end: { line: 70, column: 102, offset: 3425 }
+              start: { line: 70, column: 3, offset: 3347 },
+              end: { line: 70, column: 102, offset: 3446 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 70, column: 102, offset: 3425 }
+          end: { line: 70, column: 102, offset: 3446 }
         }
       }
     },
