@@ -33,5 +33,5 @@ window.useRef = React.useRef
 window.useState = React.useState
 
 // config
-window.defaultPresidiumVersion = 'V1'
+window.defaultPresidiumVersion = 'V2'
 window.defaultDocsViewerClassName = 'AwsCredentials'
