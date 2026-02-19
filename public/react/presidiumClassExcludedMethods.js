@@ -24,4 +24,8 @@ m.set('ServerWebSocket', [
   'connect',
 ])
 
+m.set('GoogleChromeDevTools', [
+  'sendRequestJSON',
+])
+
 export default m

@@ -31,8 +31,25 @@ const createCronistFile = async function (source, dest, options = {}) {
     flatMap(async fileName => pipe(fileName, [
       readFileUtf8,
       cronist,
+
       filter(data => data.name && data.docs && Object.keys(data.mdast).length > 1),
+
       switchCase([
+        data => data.length > 0 && data.some(item => item.name == 'GoogleChromeDevTools'),
+        docsData => [{
+          ...docsData.find(item => item.hasOwnProperty('constructor')),
+          methods: [
+            ...docsData.filter(and([
+              not(item => item.name.includes('.')),
+              not(item => item.hasOwnProperty('constructor')),
+            ])).sort(),
+            ...docsData.filter(and([
+              item => item.name.includes('.'),
+              not(item => item.hasOwnProperty('constructor')),
+            ])),
+          ],
+        }],
+
         data => data.length > 0,
         ([classDocsData, ...methodsDocsData]) => [{
           ...classDocsData,
@@ -40,6 +57,7 @@ const createCronistFile = async function (source, dest, options = {}) {
         }],
         data => data,
       ]),
+
       map(assign({ fileName })),
     ])),
 

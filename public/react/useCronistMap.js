@@ -1,7 +1,7 @@
 import useGlobalState from './useGlobalState.js'
 import usePresidiumVersion from './usePresidiumVersion.js'
-import defaultCronistPresidium from '../cronist/presidium-v1.js'
-import defaultCronistPresidiumWebSocket from '../cronist/presidium-websocket-v1.js'
+import defaultCronistPresidium from '../cronist/presidium-v3.js'
+import defaultCronistPresidiumWebSocket from '../cronist/presidium-websocket-v3.js'
 
 function createCronistMap(cronistObject, version) {
   const {

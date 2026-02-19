@@ -2,9 +2,8 @@ import DocsSearchBar from './DocsSearchBar.js'
 import usePresidiumVersion from './usePresidiumVersion.js'
 import useDocsViewerClassName from './useDocsViewerClassName.js'
 import useDocsSearchQuery from './useDocsSearchQuery.js'
-import ClassNames from './ClassNames.js'
 import usePath from './usePath.js'
-import presidiumV1ClassNames from './presidiumV1ClassNames.js'
+import usePresidiumClassNames from './usePresidiumClassNames.js'
 import useIsHamburgerMenuActive from './useIsHamburgerMenuActive.js'
 import useCronistMap from './useCronistMap.js'
 import presidiumClassExcludedMethods from './presidiumClassExcludedMethods.js'
@@ -23,6 +22,7 @@ import DocsNavSearch from './DocsNavSearch.js'
 const DocsNav = ReactElement(props => {
   const [path, setPath] = usePath()
   const [presidiumVersion] = usePresidiumVersion()
+  const [presidiumClassNames, setPresidiumClassNames] = usePresidiumClassNames()
   const [docsViewerClassName, setDocsViewerClassName] = useDocsViewerClassName()
   const [docsSearchQuery, setDocsSearchQuery] = useDocsSearchQuery()
   const [cronistMap, setCronistMap] = useCronistMap()
@@ -67,7 +67,7 @@ const DocsNav = ReactElement(props => {
 
     docsSearchQuery == '' ? [
       Section([
-        presidiumV1ClassNames.map(className => Div({ key: className }, [
+        presidiumClassNames.map(className => Div({ key: className }, [
           DocsNavClassItem({
             name: className,
             setDocsViewerClassName,
