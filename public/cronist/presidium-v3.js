@@ -82306,10 +82306,6 @@ export default [
       '### Install headless dependencies for Ubuntu / Debian\n' +
       '```sh\n' +
       'sudo apt-get update && sudo apt-get install -y libcairo2 libpango-1.0-0 libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libatspi2.0-0 libcups2 libdrm-dev libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm-dev libasound2-dev\n' +
-      '\n' +
-      '# disable AppArmor unprivileged security restriction\n' +
-      'echo "kernel.apparmor_restrict_unprivileged_userns=0" | sudo tee /etc/sysctl.d/60-apparmor-namespace.conf\n' +
-      'sudo sysctl -p /etc/sysctl.d/60-apparmor-namespace.conf\n' +
       '```',
     mdast: {
       name: {
@@ -83596,20 +83592,16 @@ export default [
             type: 'code',
             lang: 'sh',
             meta: null,
-            value: 'sudo apt-get update && sudo apt-get install -y libcairo2 libpango-1.0-0 libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libatspi2.0-0 libcups2 libdrm-dev libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm-dev libasound2-dev\n' +
-              '\n' +
-              '# disable AppArmor unprivileged security restriction\n' +
-              'echo "kernel.apparmor_restrict_unprivileged_userns=0" | sudo tee /etc/sysctl.d/60-apparmor-namespace.conf\n' +
-              'sudo sysctl -p /etc/sysctl.d/60-apparmor-namespace.conf',
+            value: 'sudo apt-get update && sudo apt-get install -y libcairo2 libpango-1.0-0 libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libatspi2.0-0 libcups2 libdrm-dev libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm-dev libasound2-dev',
             position: {
               start: { line: 119, column: 1, offset: 5210 },
-              end: { line: 125, column: 4, offset: 5678 }
+              end: { line: 121, column: 4, offset: 5462 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 125, column: 4, offset: 5678 }
+          end: { line: 121, column: 4, offset: 5462 }
         }
       }
     },
@@ -92030,10 +92022,6 @@ export default [
       '### Install headless dependencies for Ubuntu / Debian\n' +
       '```sh\n' +
       'sudo apt-get update && sudo apt-get install -y libcairo2 libpango-1.0-0 libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libatspi2.0-0 libcups2 libdrm-dev libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm-dev libasound2-dev\n' +
-      '\n' +
-      '# disable AppArmor unprivileged security restriction\n' +
-      'echo "kernel.apparmor_restrict_unprivileged_userns=0" | sudo tee /etc/sysctl.d/60-apparmor-namespace.conf\n' +
-      'sudo sysctl -p /etc/sysctl.d/60-apparmor-namespace.conf\n' +
       '```',
     mdast: {
       name: {
@@ -92881,20 +92869,16 @@ export default [
             type: 'code',
             lang: 'sh',
             meta: null,
-            value: 'sudo apt-get update && sudo apt-get install -y libcairo2 libpango-1.0-0 libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libatspi2.0-0 libcups2 libdrm-dev libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm-dev libasound2-dev\n' +
-              '\n' +
-              '# disable AppArmor unprivileged security restriction\n' +
-              'echo "kernel.apparmor_restrict_unprivileged_userns=0" | sudo tee /etc/sysctl.d/60-apparmor-namespace.conf\n' +
-              'sudo sysctl -p /etc/sysctl.d/60-apparmor-namespace.conf',
+            value: 'sudo apt-get update && sudo apt-get install -y libcairo2 libpango-1.0-0 libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libatspi2.0-0 libcups2 libdrm-dev libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm-dev libasound2-dev',
             position: {
               start: { line: 47, column: 1, offset: 1877 },
-              end: { line: 53, column: 4, offset: 2345 }
+              end: { line: 49, column: 4, offset: 2129 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 53, column: 4, offset: 2345 }
+          end: { line: 49, column: 4, offset: 2129 }
         }
       }
     },
