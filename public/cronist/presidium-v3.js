@@ -82275,10 +82275,21 @@ export default [
       '})\n' +
       '```\n' +
       '\n' +
-      'Install dependencies for Amazon Linux 2023:\n' +
+      'Install headless dependencies for Amazon Linux 2023:\n' +
       '```sh\n' +
       'sudo dnf install -y cairo pango nss nspr atk at-spi2-atk cups-libs libdrm libxkbcommon libXcomposite libXdamage libXfixes libXrandr mesa-libgbm alsa-lib\n' +
       '```\n' +
+      '\n' +
+      'Install headless dependencies for Ubuntu:\n' +
+      '```sh\n' +
+      'sudo apt-get update && sudo apt-get install -y libcairo2 libpango-1.0-0 libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libatspi2.0-0 libcups2 libdrm-dev libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm-dev libasound2-dev\n' +
+      '\n' +
+      '# disable AppArmor unprivileged security restriction\n' +
+      'echo "kernel.apparmor_restrict_unprivileged_userns=0" | sudo tee /etc/sysctl.d/60-apparmor-namespace.conf\n' +
+      'sudo sysctl -p /etc/sysctl.d/60-apparmor-namespace.conf\n' +
+      '```\n' +
+      '\n' +
+      'apt-get install -y unzip xvfb libxi6 libgconf-2-4 jq libjq1 libonig5 libxkbcommon0 libxss1 libglib2.0-0 libnss3 libfontconfig1 libatk-bridge2.0-0 libatspi2.0-0 libgtk-3-0 libpango-1.0-0 libgdk-pixbuf2.0-0 libxcomposite1 libxcursor1 libxdamage1 libxtst6 libappindicator3-1 libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libxfixes3 libdbus-1-3 libexpat1 libgcc1 libnspr4 libgbm1 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxext6 libxrandr2 libxrender1 libappindicator1 lsb-release xdg-utils\n' +
       '\n' +
       'Supported platforms:\n' +
       '  * `mac-arm64`\n' +
@@ -83179,16 +83190,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Install dependencies for Amazon Linux 2023:',
+                value: 'Install headless dependencies for Amazon Linux 2023:',
                 position: {
                   start: { line: 90, column: 1, offset: 4046 },
-                  end: { line: 90, column: 44, offset: 4089 }
+                  end: { line: 90, column: 53, offset: 4098 }
                 }
               }
             ],
             position: {
               start: { line: 90, column: 1, offset: 4046 },
-              end: { line: 90, column: 44, offset: 4089 }
+              end: { line: 90, column: 53, offset: 4098 }
             }
           },
           {
@@ -83197,8 +83208,56 @@ export default [
             meta: null,
             value: 'sudo dnf install -y cairo pango nss nspr atk at-spi2-atk cups-libs libdrm libxkbcommon libXcomposite libXdamage libXfixes libXrandr mesa-libgbm alsa-lib',
             position: {
-              start: { line: 91, column: 1, offset: 4090 },
-              end: { line: 93, column: 4, offset: 4252 }
+              start: { line: 91, column: 1, offset: 4099 },
+              end: { line: 93, column: 4, offset: 4261 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Install headless dependencies for Ubuntu:',
+                position: {
+                  start: { line: 95, column: 1, offset: 4263 },
+                  end: { line: 95, column: 42, offset: 4304 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 95, column: 1, offset: 4263 },
+              end: { line: 95, column: 42, offset: 4304 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'sh',
+            meta: null,
+            value: 'sudo apt-get update && sudo apt-get install -y libcairo2 libpango-1.0-0 libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libatspi2.0-0 libcups2 libdrm-dev libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm-dev libasound2-dev\n' +
+              '\n' +
+              '# disable AppArmor unprivileged security restriction\n' +
+              'echo "kernel.apparmor_restrict_unprivileged_userns=0" | sudo tee /etc/sysctl.d/60-apparmor-namespace.conf\n' +
+              'sudo sysctl -p /etc/sysctl.d/60-apparmor-namespace.conf',
+            position: {
+              start: { line: 96, column: 1, offset: 4305 },
+              end: { line: 102, column: 4, offset: 4773 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'apt-get install -y unzip xvfb libxi6 libgconf-2-4 jq libjq1 libonig5 libxkbcommon0 libxss1 libglib2.0-0 libnss3 libfontconfig1 libatk-bridge2.0-0 libatspi2.0-0 libgtk-3-0 libpango-1.0-0 libgdk-pixbuf2.0-0 libxcomposite1 libxcursor1 libxdamage1 libxtst6 libappindicator3-1 libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libxfixes3 libdbus-1-3 libexpat1 libgcc1 libnspr4 libgbm1 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxext6 libxrandr2 libxrender1 libappindicator1 lsb-release xdg-utils',
+                position: {
+                  start: { line: 104, column: 1, offset: 4775 },
+                  end: { line: 104, column: 509, offset: 5283 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 104, column: 1, offset: 4775 },
+              end: { line: 104, column: 509, offset: 5283 }
             }
           },
           {
@@ -83208,14 +83267,14 @@ export default [
                 type: 'text',
                 value: 'Supported platforms:',
                 position: {
-                  start: { line: 95, column: 1, offset: 4254 },
-                  end: { line: 95, column: 21, offset: 4274 }
+                  start: { line: 106, column: 1, offset: 5285 },
+                  end: { line: 106, column: 21, offset: 5305 }
                 }
               }
             ],
             position: {
-              start: { line: 95, column: 1, offset: 4254 },
-              end: { line: 95, column: 21, offset: 4274 }
+              start: { line: 106, column: 1, offset: 5285 },
+              end: { line: 106, column: 21, offset: 5305 }
             }
           },
           {
@@ -83236,20 +83295,20 @@ export default [
                         type: 'inlineCode',
                         value: 'mac-arm64',
                         position: {
-                          start: { line: 96, column: 5, offset: 4279 },
-                          end: { line: 96, column: 16, offset: 4290 }
+                          start: { line: 107, column: 5, offset: 5310 },
+                          end: { line: 107, column: 16, offset: 5321 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 96, column: 5, offset: 4279 },
-                      end: { line: 96, column: 16, offset: 4290 }
+                      start: { line: 107, column: 5, offset: 5310 },
+                      end: { line: 107, column: 16, offset: 5321 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 96, column: 3, offset: 4277 },
-                  end: { line: 96, column: 16, offset: 4290 }
+                  start: { line: 107, column: 3, offset: 5308 },
+                  end: { line: 107, column: 16, offset: 5321 }
                 }
               },
               {
@@ -83264,26 +83323,26 @@ export default [
                         type: 'inlineCode',
                         value: 'linux64',
                         position: {
-                          start: { line: 97, column: 5, offset: 4295 },
-                          end: { line: 97, column: 14, offset: 4304 }
+                          start: { line: 108, column: 5, offset: 5326 },
+                          end: { line: 108, column: 14, offset: 5335 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 97, column: 5, offset: 4295 },
-                      end: { line: 97, column: 14, offset: 4304 }
+                      start: { line: 108, column: 5, offset: 5326 },
+                      end: { line: 108, column: 14, offset: 5335 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 97, column: 3, offset: 4293 },
-                  end: { line: 97, column: 14, offset: 4304 }
+                  start: { line: 108, column: 3, offset: 5324 },
+                  end: { line: 108, column: 14, offset: 5335 }
                 }
               }
             ],
             position: {
-              start: { line: 96, column: 3, offset: 4277 },
-              end: { line: 97, column: 14, offset: 4304 }
+              start: { line: 107, column: 3, offset: 5308 },
+              end: { line: 108, column: 14, offset: 5335 }
             }
           },
           {
@@ -83293,14 +83352,14 @@ export default [
                 type: 'text',
                 value: 'References:',
                 position: {
-                  start: { line: 99, column: 1, offset: 4306 },
-                  end: { line: 99, column: 12, offset: 4317 }
+                  start: { line: 110, column: 1, offset: 5337 },
+                  end: { line: 110, column: 12, offset: 5348 }
                 }
               }
             ],
             position: {
-              start: { line: 99, column: 1, offset: 4306 },
-              end: { line: 99, column: 12, offset: 4317 }
+              start: { line: 110, column: 1, offset: 5337 },
+              end: { line: 110, column: 12, offset: 5348 }
             }
           },
           {
@@ -83326,26 +83385,26 @@ export default [
                             type: 'text',
                             value: 'Getting Started with the Chrome Devtools Protocol',
                             position: {
-                              start: { line: 100, column: 6, offset: 4323 },
-                              end: { line: 100, column: 55, offset: 4372 }
+                              start: { line: 111, column: 6, offset: 5354 },
+                              end: { line: 111, column: 55, offset: 5403 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 100, column: 5, offset: 4322 },
-                          end: { line: 100, column: 135, offset: 4452 }
+                          start: { line: 111, column: 5, offset: 5353 },
+                          end: { line: 111, column: 135, offset: 5483 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 100, column: 5, offset: 4322 },
-                      end: { line: 100, column: 135, offset: 4452 }
+                      start: { line: 111, column: 5, offset: 5353 },
+                      end: { line: 111, column: 135, offset: 5483 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 100, column: 3, offset: 4320 },
-                  end: { line: 100, column: 135, offset: 4452 }
+                  start: { line: 111, column: 3, offset: 5351 },
+                  end: { line: 111, column: 135, offset: 5483 }
                 }
               },
               {
@@ -83365,38 +83424,38 @@ export default [
                             type: 'text',
                             value: 'Chrome Devtools Protocol',
                             position: {
-                              start: { line: 101, column: 6, offset: 4458 },
-                              end: { line: 101, column: 30, offset: 4482 }
+                              start: { line: 112, column: 6, offset: 5489 },
+                              end: { line: 112, column: 30, offset: 5513 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 101, column: 5, offset: 4457 },
-                          end: { line: 101, column: 84, offset: 4536 }
+                          start: { line: 112, column: 5, offset: 5488 },
+                          end: { line: 112, column: 84, offset: 5567 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 101, column: 5, offset: 4457 },
-                      end: { line: 101, column: 84, offset: 4536 }
+                      start: { line: 112, column: 5, offset: 5488 },
+                      end: { line: 112, column: 84, offset: 5567 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 101, column: 3, offset: 4455 },
-                  end: { line: 101, column: 84, offset: 4536 }
+                  start: { line: 112, column: 3, offset: 5486 },
+                  end: { line: 112, column: 84, offset: 5567 }
                 }
               }
             ],
             position: {
-              start: { line: 100, column: 3, offset: 4320 },
-              end: { line: 101, column: 84, offset: 4536 }
+              start: { line: 111, column: 3, offset: 5351 },
+              end: { line: 112, column: 84, offset: 5567 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 101, column: 84, offset: 4536 }
+          end: { line: 112, column: 84, offset: 5567 }
         }
       }
     },
