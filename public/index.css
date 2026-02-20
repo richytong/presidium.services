@@ -280,6 +280,18 @@ article .image {
   display: inline
 }
 
+article h2 > a::after {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background-image: url(/assets/internal-link.svg);
+  background-size: contain;
+  margin-left: 10px;
+  position: relative;
+  top: 2px;
+}
+
 article a {
   text-decoration: none;
 }

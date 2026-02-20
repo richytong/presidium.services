@@ -273,17 +273,28 @@ export default {
       depth: 2,
       children: [
         {
-          type: 'text',
-          value: 'Handle HTTP',
+          type: 'link',
+          title: null,
+          url: 'https://presidium.services/docs/HTTP',
+          children: [
+            {
+              type: 'text',
+              value: 'Handle HTTP',
+              position: {
+                start: { line: 31, column: 5, offset: 1048 },
+                end: { line: 31, column: 16, offset: 1059 }
+              }
+            }
+          ],
           position: {
             start: { line: 31, column: 4, offset: 1047 },
-            end: { line: 31, column: 15, offset: 1058 }
+            end: { line: 31, column: 55, offset: 1098 }
           }
         }
       ],
       position: {
         start: { line: 31, column: 1, offset: 1044 },
-        end: { line: 31, column: 15, offset: 1058 }
+        end: { line: 31, column: 55, offset: 1098 }
       }
     },
     {
@@ -306,8 +317,8 @@ export default {
         '  .then(response => response.json())\n' +
         "  .then(console.log) // { greeting: 'Hello World' }",
       position: {
-        start: { line: 32, column: 1, offset: 1059 },
-        end: { line: 48, column: 4, offset: 1490 }
+        start: { line: 32, column: 1, offset: 1099 },
+        end: { line: 48, column: 4, offset: 1530 }
       }
     },
     {
@@ -315,17 +326,28 @@ export default {
       depth: 2,
       children: [
         {
-          type: 'text',
-          value: 'Handle WebSocket',
+          type: 'link',
+          title: null,
+          url: 'https://presidium.services/docs/WebSocket',
+          children: [
+            {
+              type: 'text',
+              value: 'Send messages with WebSocket',
+              position: {
+                start: { line: 50, column: 5, offset: 1536 },
+                end: { line: 50, column: 33, offset: 1564 }
+              }
+            }
+          ],
           position: {
-            start: { line: 50, column: 4, offset: 1495 },
-            end: { line: 50, column: 20, offset: 1511 }
+            start: { line: 50, column: 4, offset: 1535 },
+            end: { line: 50, column: 77, offset: 1608 }
           }
         }
       ],
       position: {
-        start: { line: 50, column: 1, offset: 1492 },
-        end: { line: 50, column: 20, offset: 1511 }
+        start: { line: 50, column: 1, offset: 1532 },
+        end: { line: 50, column: 77, offset: 1608 }
       }
     },
     {
@@ -353,8 +375,8 @@ export default {
         "  console.log('Message from server:', message)\n" +
         '})',
       position: {
-        start: { line: 51, column: 1, offset: 1512 },
-        end: { line: 72, column: 4, offset: 2065 }
+        start: { line: 51, column: 1, offset: 1609 },
+        end: { line: 72, column: 4, offset: 2162 }
       }
     },
     {
@@ -362,17 +384,28 @@ export default {
       depth: 2,
       children: [
         {
-          type: 'text',
-          value: 'CRUD and Query DynamoDB',
+          type: 'link',
+          title: null,
+          url: 'https://presidium.services/docs/DynamoDBTable',
+          children: [
+            {
+              type: 'text',
+              value: 'Create, read, update, delete, and query with AWS DynamoDB',
+              position: {
+                start: { line: 74, column: 5, offset: 2168 },
+                end: { line: 74, column: 62, offset: 2225 }
+              }
+            }
+          ],
           position: {
-            start: { line: 74, column: 4, offset: 2070 },
-            end: { line: 74, column: 27, offset: 2093 }
+            start: { line: 74, column: 4, offset: 2167 },
+            end: { line: 74, column: 110, offset: 2273 }
           }
         }
       ],
       position: {
-        start: { line: 74, column: 1, offset: 2067 },
-        end: { line: 74, column: 27, offset: 2093 }
+        start: { line: 74, column: 1, offset: 2164 },
+        end: { line: 74, column: 110, offset: 2273 }
       }
     },
     {
@@ -480,8 +513,8 @@ export default {
         '  }\n' +
         '}',
       position: {
-        start: { line: 75, column: 1, offset: 2094 },
-        end: { line: 176, column: 4, offset: 5073 }
+        start: { line: 75, column: 1, offset: 2274 },
+        end: { line: 176, column: 4, offset: 5253 }
       }
     },
     {
@@ -489,17 +522,28 @@ export default {
       depth: 2,
       children: [
         {
-          type: 'text',
-          value: 'Consume DynamoDB Streams',
+          type: 'link',
+          title: null,
+          url: 'https://presidium.services/docs/DynamoDBStream',
+          children: [
+            {
+              type: 'text',
+              value: 'Consume AWS DynamoDB Streams',
+              position: {
+                start: { line: 178, column: 5, offset: 5259 },
+                end: { line: 178, column: 33, offset: 5287 }
+              }
+            }
+          ],
           position: {
-            start: { line: 178, column: 4, offset: 5078 },
-            end: { line: 178, column: 28, offset: 5102 }
+            start: { line: 178, column: 4, offset: 5258 },
+            end: { line: 178, column: 82, offset: 5336 }
           }
         }
       ],
       position: {
-        start: { line: 178, column: 1, offset: 5075 },
-        end: { line: 178, column: 28, offset: 5102 }
+        start: { line: 178, column: 1, offset: 5255 },
+        end: { line: 178, column: 82, offset: 5336 }
       }
     },
     {
@@ -547,8 +591,8 @@ export default {
         '  // { dynamodb: { KeysJSON: {...}, NewImageJSON: {...}, OldImageJSON: {...} }  }\n' +
         '}',
       position: {
-        start: { line: 179, column: 1, offset: 5103 },
-        end: { line: 220, column: 4, offset: 6301 }
+        start: { line: 179, column: 1, offset: 5337 },
+        end: { line: 220, column: 4, offset: 6535 }
       }
     },
     {
@@ -556,17 +600,28 @@ export default {
       depth: 2,
       children: [
         {
-          type: 'text',
-          value: 'Upload to S3',
+          type: 'link',
+          title: null,
+          url: 'https://presidium.services/docs/S3Bucket',
+          children: [
+            {
+              type: 'text',
+              value: 'Download and upload with AWS S3',
+              position: {
+                start: { line: 222, column: 5, offset: 6541 },
+                end: { line: 222, column: 36, offset: 6572 }
+              }
+            }
+          ],
           position: {
-            start: { line: 222, column: 4, offset: 6306 },
-            end: { line: 222, column: 16, offset: 6318 }
+            start: { line: 222, column: 4, offset: 6540 },
+            end: { line: 222, column: 79, offset: 6615 }
           }
         }
       ],
       position: {
-        start: { line: 222, column: 1, offset: 6303 },
-        end: { line: 222, column: 16, offset: 6318 }
+        start: { line: 222, column: 1, offset: 6537 },
+        end: { line: 222, column: 79, offset: 6615 }
       }
     },
     {
@@ -596,8 +651,8 @@ export default {
         'await myBucket.deleteAllObjects()\n' +
         'await myBucket.delete()',
       position: {
-        start: { line: 223, column: 1, offset: 6319 },
-        end: { line: 246, column: 4, offset: 6923 }
+        start: { line: 223, column: 1, offset: 6616 },
+        end: { line: 246, column: 4, offset: 7220 }
       }
     },
     {
@@ -605,43 +660,28 @@ export default {
       depth: 2,
       children: [
         {
-          type: 'text',
-          value: 'Build and Push Docker Images',
-          position: {
-            start: { line: 248, column: 4, offset: 6928 },
-            end: { line: 248, column: 32, offset: 6956 }
-          }
-        }
-      ],
-      position: {
-        start: { line: 248, column: 1, offset: 6925 },
-        end: { line: 248, column: 32, offset: 6956 }
-      }
-    },
-    {
-      type: 'blockquote',
-      children: [
-        {
-          type: 'paragraph',
+          type: 'link',
+          title: null,
+          url: 'https://presidium.services/docs/Docker',
           children: [
             {
               type: 'text',
-              value: 'No more --build-arg for npm tokens!',
+              value: 'Build and push Docker images',
               position: {
-                start: { line: 249, column: 3, offset: 6959 },
-                end: { line: 249, column: 38, offset: 6994 }
+                start: { line: 248, column: 5, offset: 7226 },
+                end: { line: 248, column: 33, offset: 7254 }
               }
             }
           ],
           position: {
-            start: { line: 249, column: 3, offset: 6959 },
-            end: { line: 249, column: 38, offset: 6994 }
+            start: { line: 248, column: 4, offset: 7225 },
+            end: { line: 248, column: 74, offset: 7295 }
           }
         }
       ],
       position: {
-        start: { line: 249, column: 1, offset: 6957 },
-        end: { line: 249, column: 38, offset: 6994 }
+        start: { line: 248, column: 1, offset: 7222 },
+        end: { line: 248, column: 74, offset: 7295 }
       }
     },
     {
@@ -676,16 +716,17 @@ export default {
         '})\n' +
         '\n' +
         'buildStream.pipe(process.stdout)\n' +
-        "await new Promise(resolve => buildStream.on('end', resolve))\n" +
         '\n' +
-        'const pushStream = await docker.pushImage({\n' +
-        '  image: myImage,\n' +
-        "  repository: 'my-registry.io',\n" +
-        '})\n' +
-        'pushStream.pipe(process.stdout)',
+        "buildStream.on('end', () => {\n" +
+        '  const pushStream = await docker.pushImage({\n' +
+        '    image: myImage,\n' +
+        "    repository: 'my-registry.io',\n" +
+        '  })\n' +
+        '  pushStream.pipe(process.stdout)\n' +
+        '})\n',
       position: {
-        start: { line: 250, column: 1, offset: 6995 },
-        end: { line: 286, column: 4, offset: 7794 }
+        start: { line: 249, column: 1, offset: 7296 },
+        end: { line: 287, column: 4, offset: 8078 }
       }
     },
     {
@@ -693,17 +734,28 @@ export default {
       depth: 2,
       children: [
         {
-          type: 'text',
-          value: 'Run Docker Containers',
+          type: 'link',
+          title: null,
+          url: 'https://presidium.services/docs/Docker',
+          children: [
+            {
+              type: 'text',
+              value: 'Run Docker containers',
+              position: {
+                start: { line: 289, column: 5, offset: 8084 },
+                end: { line: 289, column: 26, offset: 8105 }
+              }
+            }
+          ],
           position: {
-            start: { line: 288, column: 4, offset: 7799 },
-            end: { line: 288, column: 25, offset: 7820 }
+            start: { line: 289, column: 4, offset: 8083 },
+            end: { line: 289, column: 67, offset: 8146 }
           }
         }
       ],
       position: {
-        start: { line: 288, column: 1, offset: 7796 },
-        end: { line: 288, column: 25, offset: 7820 }
+        start: { line: 289, column: 1, offset: 8080 },
+        end: { line: 289, column: 67, offset: 8146 }
       }
     },
     {
@@ -723,8 +775,8 @@ export default {
         '\n' +
         'runStream.pipe(process.stdout) // Example',
       position: {
-        start: { line: 289, column: 1, offset: 7821 },
-        end: { line: 302, column: 4, offset: 8124 }
+        start: { line: 290, column: 1, offset: 8147 },
+        end: { line: 303, column: 4, offset: 8450 }
       }
     },
     {
@@ -732,17 +784,28 @@ export default {
       depth: 2,
       children: [
         {
-          type: 'text',
-          value: 'Deploy Docker Swarm Services',
+          type: 'link',
+          title: null,
+          url: 'https://presidium.services/docs/Docker',
+          children: [
+            {
+              type: 'text',
+              value: 'Deploy Docker Swarm services',
+              position: {
+                start: { line: 305, column: 5, offset: 8456 },
+                end: { line: 305, column: 33, offset: 8484 }
+              }
+            }
+          ],
           position: {
-            start: { line: 304, column: 4, offset: 8129 },
-            end: { line: 304, column: 32, offset: 8157 }
+            start: { line: 305, column: 4, offset: 8455 },
+            end: { line: 305, column: 74, offset: 8525 }
           }
         }
       ],
       position: {
-        start: { line: 304, column: 1, offset: 8126 },
-        end: { line: 304, column: 32, offset: 8157 }
+        start: { line: 305, column: 1, offset: 8452 },
+        end: { line: 305, column: 74, offset: 8525 }
       }
     },
     {
@@ -765,8 +828,67 @@ export default {
         '})\n' +
         '// new nginx service is deploying to the docker swarm',
       position: {
-        start: { line: 305, column: 1, offset: 8158 },
-        end: { line: 321, column: 4, offset: 8515 }
+        start: { line: 306, column: 1, offset: 8526 },
+        end: { line: 322, column: 4, offset: 8883 }
+      }
+    },
+    {
+      type: 'heading',
+      depth: 2,
+      children: [
+        {
+          type: 'link',
+          title: null,
+          url: 'https://presidium.services/docs/GoogleChromeDevTools',
+          children: [
+            {
+              type: 'text',
+              value: 'Automate tests with Google Chrome for Testing',
+              position: {
+                start: { line: 324, column: 5, offset: 8889 },
+                end: { line: 324, column: 50, offset: 8934 }
+              }
+            }
+          ],
+          position: {
+            start: { line: 324, column: 4, offset: 8888 },
+            end: { line: 324, column: 105, offset: 8989 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 324, column: 1, offset: 8885 },
+        end: { line: 324, column: 105, offset: 8989 }
+      }
+    },
+    {
+      type: 'code',
+      lang: 'javascript',
+      meta: null,
+      value: "const GoogleChromeDevTools = require('presidium/GoogleChromeDevTools')\n" +
+        '\n' +
+        'const googleChromeDevTools = new GoogleChromeDevTools()\n' +
+        'await googleChromeDevTools.init() // downloads Google Chrome for Testing\n' +
+        '\n' +
+        '// get targets\n' +
+        'const targetsData = await googleChromeDevTools.Target.getTargets()\n' +
+        "const pageTarget = targetsData.result.targetInfos.find(info => info.type == 'page')\n" +
+        '\n' +
+        '// attach to target\n' +
+        'const attachToTargetData = await googleChromeDevTools.Target.attachToTarget({\n' +
+        '  targetId: this.pageTarget.targetId,\n' +
+        '  flatten: true,\n' +
+        '})\n' +
+        'const sessionId = attachToTargetData.result.sessionId\n' +
+        '\n' +
+        '// navigate to the home page\n' +
+        'const data = await googleChromeDevTools.Page.navigate({\n' +
+        '  sessionId: this.sessionId,\n' +
+        '  url: `http://localhost:3000/`,\n' +
+        '})',
+      position: {
+        start: { line: 325, column: 1, offset: 8990 },
+        end: { line: 347, column: 4, offset: 9737 }
       }
     },
     {
@@ -777,14 +899,14 @@ export default {
           type: 'text',
           value: 'Support',
           position: {
-            start: { line: 323, column: 3, offset: 8519 },
-            end: { line: 323, column: 10, offset: 8526 }
+            start: { line: 349, column: 3, offset: 9741 },
+            end: { line: 349, column: 10, offset: 9748 }
           }
         }
       ],
       position: {
-        start: { line: 323, column: 1, offset: 8517 },
-        end: { line: 323, column: 10, offset: 8526 }
+        start: { line: 349, column: 1, offset: 9739 },
+        end: { line: 349, column: 10, offset: 9748 }
       }
     },
     {
@@ -805,31 +927,31 @@ export default {
                   type: 'text',
                   value: 'minimum Node.js version: 16',
                   position: {
-                    start: { line: 324, column: 4, offset: 8530 },
-                    end: { line: 324, column: 31, offset: 8557 }
+                    start: { line: 350, column: 4, offset: 9752 },
+                    end: { line: 350, column: 31, offset: 9779 }
                   }
                 }
               ],
               position: {
-                start: { line: 324, column: 4, offset: 8530 },
-                end: { line: 324, column: 31, offset: 8557 }
+                start: { line: 350, column: 4, offset: 9752 },
+                end: { line: 350, column: 31, offset: 9779 }
               }
             }
           ],
           position: {
-            start: { line: 324, column: 2, offset: 8528 },
-            end: { line: 324, column: 31, offset: 8557 }
+            start: { line: 350, column: 2, offset: 9750 },
+            end: { line: 350, column: 31, offset: 9779 }
           }
         }
       ],
       position: {
-        start: { line: 324, column: 2, offset: 8528 },
-        end: { line: 324, column: 31, offset: 8557 }
+        start: { line: 350, column: 2, offset: 9750 },
+        end: { line: 350, column: 31, offset: 9779 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 325, column: 1, offset: 8558 }
+    end: { line: 351, column: 1, offset: 9780 }
   }
 }
