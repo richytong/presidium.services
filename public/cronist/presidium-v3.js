@@ -82256,6 +82256,9 @@ export default [
       '})\n' +
       '```\n' +
       '\n' +
+      'Supported platforms:\n' +
+      '  * `mac-arm64`\n' +
+      '\n' +
       'References:\n' +
       '  * [Getting Started with the Chrome Devtools Protocol](https://github.com/aslushnikov/getting-started-with-cdp/blob/master/README.md)\n' +
       '  * [Chrome Devtools Protocol](https://chromedevtools.github.io/devtools-protocol/)',
@@ -82638,16 +82641,73 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'References:',
+                value: 'Supported platforms:',
                 position: {
                   start: { line: 71, column: 1, offset: 3052 },
-                  end: { line: 71, column: 12, offset: 3063 }
+                  end: { line: 71, column: 21, offset: 3072 }
                 }
               }
             ],
             position: {
               start: { line: 71, column: 1, offset: 3052 },
-              end: { line: 71, column: 12, offset: 3063 }
+              end: { line: 71, column: 21, offset: 3072 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'mac-arm64',
+                        position: {
+                          start: { line: 72, column: 5, offset: 3077 },
+                          end: { line: 72, column: 16, offset: 3088 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 72, column: 5, offset: 3077 },
+                      end: { line: 72, column: 16, offset: 3088 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 72, column: 3, offset: 3075 },
+                  end: { line: 72, column: 16, offset: 3088 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 72, column: 3, offset: 3075 },
+              end: { line: 72, column: 16, offset: 3088 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'References:',
+                position: {
+                  start: { line: 74, column: 1, offset: 3090 },
+                  end: { line: 74, column: 12, offset: 3101 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 74, column: 1, offset: 3090 },
+              end: { line: 74, column: 12, offset: 3101 }
             }
           },
           {
@@ -82673,26 +82733,26 @@ export default [
                             type: 'text',
                             value: 'Getting Started with the Chrome Devtools Protocol',
                             position: {
-                              start: { line: 72, column: 6, offset: 3069 },
-                              end: { line: 72, column: 55, offset: 3118 }
+                              start: { line: 75, column: 6, offset: 3107 },
+                              end: { line: 75, column: 55, offset: 3156 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 72, column: 5, offset: 3068 },
-                          end: { line: 72, column: 135, offset: 3198 }
+                          start: { line: 75, column: 5, offset: 3106 },
+                          end: { line: 75, column: 135, offset: 3236 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 72, column: 5, offset: 3068 },
-                      end: { line: 72, column: 135, offset: 3198 }
+                      start: { line: 75, column: 5, offset: 3106 },
+                      end: { line: 75, column: 135, offset: 3236 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 72, column: 3, offset: 3066 },
-                  end: { line: 72, column: 135, offset: 3198 }
+                  start: { line: 75, column: 3, offset: 3104 },
+                  end: { line: 75, column: 135, offset: 3236 }
                 }
               },
               {
@@ -82712,38 +82772,38 @@ export default [
                             type: 'text',
                             value: 'Chrome Devtools Protocol',
                             position: {
-                              start: { line: 73, column: 6, offset: 3204 },
-                              end: { line: 73, column: 30, offset: 3228 }
+                              start: { line: 76, column: 6, offset: 3242 },
+                              end: { line: 76, column: 30, offset: 3266 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 73, column: 5, offset: 3203 },
-                          end: { line: 73, column: 84, offset: 3282 }
+                          start: { line: 76, column: 5, offset: 3241 },
+                          end: { line: 76, column: 84, offset: 3320 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 73, column: 5, offset: 3203 },
-                      end: { line: 73, column: 84, offset: 3282 }
+                      start: { line: 76, column: 5, offset: 3241 },
+                      end: { line: 76, column: 84, offset: 3320 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 73, column: 3, offset: 3201 },
-                  end: { line: 73, column: 84, offset: 3282 }
+                  start: { line: 76, column: 3, offset: 3239 },
+                  end: { line: 76, column: 84, offset: 3320 }
                 }
               }
             ],
             position: {
-              start: { line: 72, column: 3, offset: 3066 },
-              end: { line: 73, column: 84, offset: 3282 }
+              start: { line: 75, column: 3, offset: 3104 },
+              end: { line: 76, column: 84, offset: 3320 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 73, column: 84, offset: 3282 }
+          end: { line: 76, column: 84, offset: 3320 }
         }
       }
     },
