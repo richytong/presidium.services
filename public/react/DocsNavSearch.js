@@ -1,5 +1,5 @@
 import useDocsSearchQuery from './useDocsSearchQuery.js'
-import presidiumV1ClassNames from './presidiumV1ClassNames.js'
+import usePresidiumClassNames from './usePresidiumClassNames.js'
 import useCronistMap from './useCronistMap.js'
 import usePath from './usePath.js'
 import useIsHamburgerMenuActive from './useIsHamburgerMenuActive.js'
@@ -24,11 +24,12 @@ const DocsNavSearch = ReactElement(() => {
     isHamburgerMenuActive, setIsHamburgerMenuActive,
   ] = useIsHamburgerMenuActive()
 
+  const [presidiumClassNames] = usePresidiumClassNames()
   const [cronistMap, setCronistMap] = useCronistMap()
 
   const lowerSearchQuery = docsSearchQuery.toLowerCase()
   const docsSearchCandidates = []
-  for (const className of presidiumV1ClassNames) {
+  for (const className of presidiumClassNames) {
     const lowerClassName = className.toLowerCase()
 
     let candidate = undefined
