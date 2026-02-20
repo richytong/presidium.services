@@ -7,6 +7,7 @@ export default [
   'DynamoDBTable.js',
   'ECR.js',
   'GoogleChromeDevTools.js',
+  'GoogleChromeForTesting.js',
   'HTTP.js',
   'index.js',
   'NpmToken.js',

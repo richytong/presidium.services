@@ -865,10 +865,14 @@ export default {
       type: 'code',
       lang: 'javascript',
       meta: null,
-      value: "const GoogleChromeDevTools = require('presidium/GoogleChromeDevTools')\n" +
+      value: "const GoogleChromeForTesting = require('presidium/GoogleChromeForTesting')\n" +
+        "const GoogleChromeDevTools = require('presidium/GoogleChromeDevTools')\n" +
         '\n' +
-        'const googleChromeDevTools = new GoogleChromeDevTools()\n' +
-        'await googleChromeDevTools.init() // downloads Google Chrome for Testing\n' +
+        'const googleChromeForTesting = new GoogleChromeForTesting()\n' +
+        'await googleChromeForTesting.init() // downloads Google Chrome for Testing\n' +
+        '\n' +
+        'const googleChromeDevTools = new GoogleChromeDevTools(googleChromeForTesting)\n' +
+        'await googleChromeDevTools.init() // connects to the DevTools server\n' +
         '\n' +
         '// get targets\n' +
         'const targetsData = await googleChromeDevTools.Target.getTargets()\n' +
@@ -888,7 +892,7 @@ export default {
         '})',
       position: {
         start: { line: 325, column: 1, offset: 8990 },
-        end: { line: 347, column: 4, offset: 9737 }
+        end: { line: 351, column: 4, offset: 9966 }
       }
     },
     {
@@ -899,14 +903,14 @@ export default {
           type: 'text',
           value: 'Support',
           position: {
-            start: { line: 349, column: 3, offset: 9741 },
-            end: { line: 349, column: 10, offset: 9748 }
+            start: { line: 353, column: 3, offset: 9970 },
+            end: { line: 353, column: 10, offset: 9977 }
           }
         }
       ],
       position: {
-        start: { line: 349, column: 1, offset: 9739 },
-        end: { line: 349, column: 10, offset: 9748 }
+        start: { line: 353, column: 1, offset: 9968 },
+        end: { line: 353, column: 10, offset: 9977 }
       }
     },
     {
@@ -927,31 +931,31 @@ export default {
                   type: 'text',
                   value: 'minimum Node.js version: 16',
                   position: {
-                    start: { line: 350, column: 4, offset: 9752 },
-                    end: { line: 350, column: 31, offset: 9779 }
+                    start: { line: 354, column: 4, offset: 9981 },
+                    end: { line: 354, column: 31, offset: 10008 }
                   }
                 }
               ],
               position: {
-                start: { line: 350, column: 4, offset: 9752 },
-                end: { line: 350, column: 31, offset: 9779 }
+                start: { line: 354, column: 4, offset: 9981 },
+                end: { line: 354, column: 31, offset: 10008 }
               }
             }
           ],
           position: {
-            start: { line: 350, column: 2, offset: 9750 },
-            end: { line: 350, column: 31, offset: 9779 }
+            start: { line: 354, column: 2, offset: 9979 },
+            end: { line: 354, column: 31, offset: 10008 }
           }
         }
       ],
       position: {
-        start: { line: 350, column: 2, offset: 9750 },
-        end: { line: 350, column: 31, offset: 9779 }
+        start: { line: 354, column: 2, offset: 9979 },
+        end: { line: 354, column: 31, offset: 10008 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 351, column: 1, offset: 9780 }
+    end: { line: 355, column: 1, offset: 10009 }
   }
 }

@@ -39,10 +39,14 @@ const createCronistFile = async function (source, dest, options = {}) {
         docsData => [{
           ...docsData.find(item => item.hasOwnProperty('constructor')),
           methods: [
+            docsData.find(item => item.name == 'init'),
+            docsData.find(item => item.name == 'setSessionId'),
+            docsData.find(item => item.name == 'close'),
             ...docsData.filter(and([
+              item => !['init', 'setSessionId', 'close'].includes(item.name),
               not(item => item.name.includes('.')),
               not(item => item.hasOwnProperty('constructor')),
-            ])).sort(),
+            ])),
             ...docsData.filter(and([
               item => item.name.includes('.'),
               not(item => item.hasOwnProperty('constructor')),
