@@ -5,7 +5,6 @@ import useReadmeContent from './useReadmeContent.js'
 // () -> Home ReactElement
 const Home = ReactElement(props => {
   const [readmeContent] = useReadmeContent()
-  console.log(readmeContent)
   return Layout(props, [
     Div({ id: 'home' }, [
       readmeContent,

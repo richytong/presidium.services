@@ -3,11 +3,17 @@ import usePresidiumVersion from './usePresidiumVersion.js'
 import ReactElementFromMdast from './ReactElementFromMdast.js'
 import defaultPresidiumReadme from '../mdast/presidium-v3-readme.js'
 
-// removes the link heading and duplicate logo
-defaultPresidiumReadme.children.splice(0, 1)
+function createPresidiumReadmeContent(presidiumReadmeMdast) {
+  const mdastCopy = omit(presidiumReadmeMdast, [])
+  mdastCopy.children.splice(0, 1)
+  const readmeContent = ReactElementFromMdast({ mdast: mdastCopy })
+  return readmeContent
+}
 
 // readmeContent ReactElement
-const initial = ReactElementFromMdast({ mdast: defaultPresidiumReadme })
+const initial = ReactElementFromMdast({
+  mdast: createPresidiumReadmeContent(defaultPresidiumReadme)
+})
 
 /**
  * @name useReadmeContent
@@ -23,14 +29,8 @@ function useReadmeContent() {
 
   useEffect(() => {
     setTimeout(async () => {
-      const readmeMdast = await import(`../mdast/presidium-${presidiumVersion.toLowerCase()}-readme.js`)
-
-      // removes the link heading and duplicate logo
-      readmeMdast.children.splice(0, 1)
-
-      // readmeContent ReactElement
-      const readmeContent1 = ReactElementFromMdast({ mdast: readmeMdast })
-
+      const readmeMdast = await import(`../mdast/presidium-${presidiumVersion.toLowerCase()}-readme.js`).then(get('default'))
+      const readmeContent1 = createPresidiumReadmeContent(readmeMdast)
       setReadmeContent(readmeContent1)
     }, 0)
   }, [presidiumVersion])

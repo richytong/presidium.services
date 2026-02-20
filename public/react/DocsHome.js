@@ -19,7 +19,7 @@ const DocsHome = ReactElement(props => {
 
   const [presidiumVersion] = usePresidiumVersion()
   const [cronistMap, setCronistMap] = useCronistMap()
-  const [docsViewerClassName, setDocsViewerClassName] = useDocsViewerClassName('')
+  const [docsViewerClassName, setDocsViewerClassName] = useDocsViewerClassName()
   const [path, setPath] = usePath()
 
   useEffect(function updatePathToDefaultViewerFunc() {
