@@ -82189,7 +82189,11 @@ export default [
     docs: '```coffeescript [specscript]\n' +
       'new GoogleChromeDevTools(options {\n' +
       "  chromeVersion: 'stable'|'beta'|'dev'|'canary'|string,\n" +
+      '  chromeDir: string,\n' +
+      '  remoteDebuggingPort: number,\n' +
       '  headless: boolean,\n' +
+      '  userDataDir: string,\n' +
+      '  useMockKeychain: boolean,\n' +
       '}) -> googleChromeDevTools GoogleChromeDevTools\n' +
       '```\n' +
       '\n' +
@@ -82197,8 +82201,12 @@ export default [
       '\n' +
       'Arguments:\n' +
       '  * `options`\n' +
-      '    * `chromeVersion` - the version of Google Chrome for Testing to download.\n' +
-      '    * `headless` - whether to run Google Chrome for Testing in headless mode.\n' +
+      "    * `chromeVersion` - the version of Google Chrome for Testing to download. Defaults to `'stable'`.\n" +
+      "    * `chromeDir` - the directory that Google Chrome for Testing will install to. Defaults to ``google-chrome-for-testing'`.\n" +
+      '    * `remoteDebuggingPort` - the port that the Chrome DevTools Protocol server will listen on. Defaults to `9222`\n' +
+      '    * `headless` - whether to run Google Chrome for Testing in headless mode. Defaults to `true`.\n' +
+      '    * `userDataDir` - directory for storing user profile data such as history, bookmarks, cookies, and settings. Defaults to `tmp`.\n' +
+      "    * `useMockKeychain` - whether to use a mock keychain instead of the system's real security keychain. Defaults to `false`.\n" +
       '\n' +
       'Returns:\n' +
       '  * `googleChromeDevTools` - an instance of the `GoogleChromeDevTools` client.\n' +
@@ -82323,11 +82331,15 @@ export default [
             meta: '[specscript]',
             value: 'new GoogleChromeDevTools(options {\n' +
               "  chromeVersion: 'stable'|'beta'|'dev'|'canary'|string,\n" +
+              '  chromeDir: string,\n' +
+              '  remoteDebuggingPort: number,\n' +
               '  headless: boolean,\n' +
+              '  userDataDir: string,\n' +
+              '  useMockKeychain: boolean,\n' +
               '}) -> googleChromeDevTools GoogleChromeDevTools',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 6, column: 4, offset: 192 }
+              end: { line: 10, column: 4, offset: 295 }
             }
           },
           {
@@ -82337,14 +82349,14 @@ export default [
                 type: 'text',
                 value: 'Presidium GoogleChromeDevTools client for test automation.',
                 position: {
-                  start: { line: 8, column: 1, offset: 194 },
-                  end: { line: 8, column: 59, offset: 252 }
+                  start: { line: 12, column: 1, offset: 297 },
+                  end: { line: 12, column: 59, offset: 355 }
                 }
               }
             ],
             position: {
-              start: { line: 8, column: 1, offset: 194 },
-              end: { line: 8, column: 59, offset: 252 }
+              start: { line: 12, column: 1, offset: 297 },
+              end: { line: 12, column: 59, offset: 355 }
             }
           },
           {
@@ -82354,14 +82366,14 @@ export default [
                 type: 'text',
                 value: 'Arguments:',
                 position: {
-                  start: { line: 10, column: 1, offset: 254 },
-                  end: { line: 10, column: 11, offset: 264 }
+                  start: { line: 14, column: 1, offset: 357 },
+                  end: { line: 14, column: 11, offset: 367 }
                 }
               }
             ],
             position: {
-              start: { line: 10, column: 1, offset: 254 },
-              end: { line: 10, column: 11, offset: 264 }
+              start: { line: 14, column: 1, offset: 357 },
+              end: { line: 14, column: 11, offset: 367 }
             }
           },
           {
@@ -82382,14 +82394,14 @@ export default [
                         type: 'inlineCode',
                         value: 'options',
                         position: {
-                          start: { line: 11, column: 5, offset: 269 },
-                          end: { line: 11, column: 14, offset: 278 }
+                          start: { line: 15, column: 5, offset: 372 },
+                          end: { line: 15, column: 14, offset: 381 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 11, column: 5, offset: 269 },
-                      end: { line: 11, column: 14, offset: 278 }
+                      start: { line: 15, column: 5, offset: 372 },
+                      end: { line: 15, column: 14, offset: 381 }
                     }
                   },
                   {
@@ -82410,28 +82422,152 @@ export default [
                                 type: 'inlineCode',
                                 value: 'chromeVersion',
                                 position: {
-                                  start: { line: 12, column: 7, offset: 285 },
-                                  end: { line: 12, column: 22, offset: 300 }
+                                  start: { line: 16, column: 7, offset: 388 },
+                                  end: { line: 16, column: 22, offset: 403 }
                                 }
                               },
                               {
                                 type: 'text',
-                                value: ' - the version of Google Chrome for Testing to download.',
+                                value: ' - the version of Google Chrome for Testing to download. Defaults to ',
                                 position: {
-                                  start: { line: 12, column: 22, offset: 300 },
-                                  end: { line: 12, column: 78, offset: 356 }
+                                  start: { line: 16, column: 22, offset: 403 },
+                                  end: { line: 16, column: 91, offset: 472 }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: "'stable'",
+                                position: {
+                                  start: { line: 16, column: 91, offset: 472 },
+                                  end: {
+                                    line: 16,
+                                    column: 101,
+                                    offset: 482
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: '.',
+                                position: {
+                                  start: {
+                                    line: 16,
+                                    column: 101,
+                                    offset: 482
+                                  },
+                                  end: {
+                                    line: 16,
+                                    column: 102,
+                                    offset: 483
+                                  }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 12, column: 7, offset: 285 },
-                              end: { line: 12, column: 78, offset: 356 }
+                              start: { line: 16, column: 7, offset: 388 },
+                              end: { line: 16, column: 102, offset: 483 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 12, column: 5, offset: 283 },
-                          end: { line: 12, column: 78, offset: 356 }
+                          start: { line: 16, column: 5, offset: 386 },
+                          end: { line: 16, column: 102, offset: 483 }
+                        }
+                      },
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'chromeDir',
+                                position: {
+                                  start: { line: 17, column: 7, offset: 490 },
+                                  end: { line: 17, column: 18, offset: 501 }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: " - the directory that Google Chrome for Testing will install to. Defaults to ``google-chrome-for-testing'`.",
+                                position: {
+                                  start: { line: 17, column: 18, offset: 501 },
+                                  end: {
+                                    line: 17,
+                                    column: 125,
+                                    offset: 608
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 17, column: 7, offset: 490 },
+                              end: { line: 17, column: 125, offset: 608 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 17, column: 5, offset: 488 },
+                          end: { line: 17, column: 125, offset: 608 }
+                        }
+                      },
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'remoteDebuggingPort',
+                                position: {
+                                  start: { line: 18, column: 7, offset: 615 },
+                                  end: { line: 18, column: 28, offset: 636 }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - the port that the Chrome DevTools Protocol server will listen on. Defaults to ',
+                                position: {
+                                  start: { line: 18, column: 28, offset: 636 },
+                                  end: {
+                                    line: 18,
+                                    column: 109,
+                                    offset: 717
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: '9222',
+                                position: {
+                                  start: {
+                                    line: 18,
+                                    column: 109,
+                                    offset: 717
+                                  },
+                                  end: {
+                                    line: 18,
+                                    column: 115,
+                                    offset: 723
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 18, column: 7, offset: 615 },
+                              end: { line: 18, column: 115, offset: 723 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 18, column: 5, offset: 613 },
+                          end: { line: 18, column: 115, offset: 723 }
                         }
                       },
                       {
@@ -82446,46 +82582,206 @@ export default [
                                 type: 'inlineCode',
                                 value: 'headless',
                                 position: {
-                                  start: { line: 13, column: 7, offset: 363 },
-                                  end: { line: 13, column: 17, offset: 373 }
+                                  start: { line: 19, column: 7, offset: 730 },
+                                  end: { line: 19, column: 17, offset: 740 }
                                 }
                               },
                               {
                                 type: 'text',
-                                value: ' - whether to run Google Chrome for Testing in headless mode.',
+                                value: ' - whether to run Google Chrome for Testing in headless mode. Defaults to ',
                                 position: {
-                                  start: { line: 13, column: 17, offset: 373 },
-                                  end: { line: 13, column: 78, offset: 434 }
+                                  start: { line: 19, column: 17, offset: 740 },
+                                  end: { line: 19, column: 91, offset: 814 }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'true',
+                                position: {
+                                  start: { line: 19, column: 91, offset: 814 },
+                                  end: { line: 19, column: 97, offset: 820 }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: '.',
+                                position: {
+                                  start: { line: 19, column: 97, offset: 820 },
+                                  end: { line: 19, column: 98, offset: 821 }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 13, column: 7, offset: 363 },
-                              end: { line: 13, column: 78, offset: 434 }
+                              start: { line: 19, column: 7, offset: 730 },
+                              end: { line: 19, column: 98, offset: 821 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 13, column: 5, offset: 361 },
-                          end: { line: 13, column: 78, offset: 434 }
+                          start: { line: 19, column: 5, offset: 728 },
+                          end: { line: 19, column: 98, offset: 821 }
+                        }
+                      },
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'userDataDir',
+                                position: {
+                                  start: { line: 20, column: 7, offset: 828 },
+                                  end: { line: 20, column: 20, offset: 841 }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - directory for storing user profile data such as history, bookmarks, cookies, and settings. Defaults to ',
+                                position: {
+                                  start: { line: 20, column: 20, offset: 841 },
+                                  end: {
+                                    line: 20,
+                                    column: 126,
+                                    offset: 947
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'tmp',
+                                position: {
+                                  start: {
+                                    line: 20,
+                                    column: 126,
+                                    offset: 947
+                                  },
+                                  end: {
+                                    line: 20,
+                                    column: 131,
+                                    offset: 952
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: '.',
+                                position: {
+                                  start: {
+                                    line: 20,
+                                    column: 131,
+                                    offset: 952
+                                  },
+                                  end: {
+                                    line: 20,
+                                    column: 132,
+                                    offset: 953
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 20, column: 7, offset: 828 },
+                              end: { line: 20, column: 132, offset: 953 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 20, column: 5, offset: 826 },
+                          end: { line: 20, column: 132, offset: 953 }
+                        }
+                      },
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'useMockKeychain',
+                                position: {
+                                  start: { line: 21, column: 7, offset: 960 },
+                                  end: { line: 21, column: 24, offset: 977 }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: " - whether to use a mock keychain instead of the system's real security keychain. Defaults to ",
+                                position: {
+                                  start: { line: 21, column: 24, offset: 977 },
+                                  end: {
+                                    line: 21,
+                                    column: 118,
+                                    offset: 1071
+                                  }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'false',
+                                position: {
+                                  start: {
+                                    line: 21,
+                                    column: 118,
+                                    offset: 1071
+                                  },
+                                  end: {
+                                    line: 21,
+                                    column: 125,
+                                    offset: 1078
+                                  }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: '.',
+                                position: {
+                                  start: {
+                                    line: 21,
+                                    column: 125,
+                                    offset: 1078
+                                  },
+                                  end: {
+                                    line: 21,
+                                    column: 126,
+                                    offset: 1079
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 21, column: 7, offset: 960 },
+                              end: { line: 21, column: 126, offset: 1079 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 21, column: 5, offset: 958 },
+                          end: { line: 21, column: 126, offset: 1079 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 12, column: 5, offset: 283 },
-                      end: { line: 13, column: 78, offset: 434 }
+                      start: { line: 16, column: 5, offset: 386 },
+                      end: { line: 21, column: 126, offset: 1079 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 11, column: 3, offset: 267 },
-                  end: { line: 13, column: 78, offset: 434 }
+                  start: { line: 15, column: 3, offset: 370 },
+                  end: { line: 21, column: 126, offset: 1079 }
                 }
               }
             ],
             position: {
-              start: { line: 11, column: 3, offset: 267 },
-              end: { line: 13, column: 78, offset: 434 }
+              start: { line: 15, column: 3, offset: 370 },
+              end: { line: 21, column: 126, offset: 1079 }
             }
           },
           {
@@ -82495,14 +82791,14 @@ export default [
                 type: 'text',
                 value: 'Returns:',
                 position: {
-                  start: { line: 15, column: 1, offset: 436 },
-                  end: { line: 15, column: 9, offset: 444 }
+                  start: { line: 23, column: 1, offset: 1081 },
+                  end: { line: 23, column: 9, offset: 1089 }
                 }
               }
             ],
             position: {
-              start: { line: 15, column: 1, offset: 436 },
-              end: { line: 15, column: 9, offset: 444 }
+              start: { line: 23, column: 1, offset: 1081 },
+              end: { line: 23, column: 9, offset: 1089 }
             }
           },
           {
@@ -82523,50 +82819,50 @@ export default [
                         type: 'inlineCode',
                         value: 'googleChromeDevTools',
                         position: {
-                          start: { line: 16, column: 5, offset: 449 },
-                          end: { line: 16, column: 27, offset: 471 }
+                          start: { line: 24, column: 5, offset: 1094 },
+                          end: { line: 24, column: 27, offset: 1116 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - an instance of the ',
                         position: {
-                          start: { line: 16, column: 27, offset: 471 },
-                          end: { line: 16, column: 49, offset: 493 }
+                          start: { line: 24, column: 27, offset: 1116 },
+                          end: { line: 24, column: 49, offset: 1138 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: 'GoogleChromeDevTools',
                         position: {
-                          start: { line: 16, column: 49, offset: 493 },
-                          end: { line: 16, column: 71, offset: 515 }
+                          start: { line: 24, column: 49, offset: 1138 },
+                          end: { line: 24, column: 71, offset: 1160 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' client.',
                         position: {
-                          start: { line: 16, column: 71, offset: 515 },
-                          end: { line: 16, column: 79, offset: 523 }
+                          start: { line: 24, column: 71, offset: 1160 },
+                          end: { line: 24, column: 79, offset: 1168 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 16, column: 5, offset: 449 },
-                      end: { line: 16, column: 79, offset: 523 }
+                      start: { line: 24, column: 5, offset: 1094 },
+                      end: { line: 24, column: 79, offset: 1168 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 16, column: 3, offset: 447 },
-                  end: { line: 16, column: 79, offset: 523 }
+                  start: { line: 24, column: 3, offset: 1092 },
+                  end: { line: 24, column: 79, offset: 1168 }
                 }
               }
             ],
             position: {
-              start: { line: 16, column: 3, offset: 447 },
-              end: { line: 16, column: 79, offset: 523 }
+              start: { line: 24, column: 3, offset: 1092 },
+              end: { line: 24, column: 79, offset: 1168 }
             }
           },
           {
@@ -82609,8 +82905,8 @@ export default [
               "await googleChromeDevTools.Input.dispatchKeyEvent({ type: 'keyDown', text: 't' })\n" +
               "await googleChromeDevTools.Input.dispatchKeyEvent({ type: 'keyUp', text: 't' })",
             position: {
-              start: { line: 18, column: 1, offset: 525 },
-              end: { line: 54, column: 4, offset: 1994 }
+              start: { line: 26, column: 1, offset: 1170 },
+              end: { line: 62, column: 4, offset: 2639 }
             }
           },
           {
@@ -82620,126 +82916,126 @@ export default [
                 type: 'text',
                 value: 'The Chrome DevTools Protocol has various APIs to interact with the different parts of the browser. These parts are separated into different domains. The Presidium GoogleChromeDevTools client covers the ',
                 position: {
-                  start: { line: 56, column: 1, offset: 1996 },
-                  end: { line: 56, column: 203, offset: 2198 }
+                  start: { line: 64, column: 1, offset: 2641 },
+                  end: { line: 64, column: 203, offset: 2843 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'Target',
                 position: {
-                  start: { line: 56, column: 203, offset: 2198 },
-                  end: { line: 56, column: 211, offset: 2206 }
+                  start: { line: 64, column: 203, offset: 2843 },
+                  end: { line: 64, column: 211, offset: 2851 }
                 }
               },
               {
                 type: 'text',
                 value: ', ',
                 position: {
-                  start: { line: 56, column: 211, offset: 2206 },
-                  end: { line: 56, column: 213, offset: 2208 }
+                  start: { line: 64, column: 211, offset: 2851 },
+                  end: { line: 64, column: 213, offset: 2853 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'Page',
                 position: {
-                  start: { line: 56, column: 213, offset: 2208 },
-                  end: { line: 56, column: 219, offset: 2214 }
+                  start: { line: 64, column: 213, offset: 2853 },
+                  end: { line: 64, column: 219, offset: 2859 }
                 }
               },
               {
                 type: 'text',
                 value: ', ',
                 position: {
-                  start: { line: 56, column: 219, offset: 2214 },
-                  end: { line: 56, column: 221, offset: 2216 }
+                  start: { line: 64, column: 219, offset: 2859 },
+                  end: { line: 64, column: 221, offset: 2861 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'DOM',
                 position: {
-                  start: { line: 56, column: 221, offset: 2216 },
-                  end: { line: 56, column: 226, offset: 2221 }
+                  start: { line: 64, column: 221, offset: 2861 },
+                  end: { line: 64, column: 226, offset: 2866 }
                 }
               },
               {
                 type: 'text',
                 value: ', ',
                 position: {
-                  start: { line: 56, column: 226, offset: 2221 },
-                  end: { line: 56, column: 228, offset: 2223 }
+                  start: { line: 64, column: 226, offset: 2866 },
+                  end: { line: 64, column: 228, offset: 2868 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'Input',
                 position: {
-                  start: { line: 56, column: 228, offset: 2223 },
-                  end: { line: 56, column: 235, offset: 2230 }
+                  start: { line: 64, column: 228, offset: 2868 },
+                  end: { line: 64, column: 235, offset: 2875 }
                 }
               },
               {
                 type: 'text',
                 value: ', ',
                 position: {
-                  start: { line: 56, column: 235, offset: 2230 },
-                  end: { line: 56, column: 237, offset: 2232 }
+                  start: { line: 64, column: 235, offset: 2875 },
+                  end: { line: 64, column: 237, offset: 2877 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'Storage',
                 position: {
-                  start: { line: 56, column: 237, offset: 2232 },
-                  end: { line: 56, column: 246, offset: 2241 }
+                  start: { line: 64, column: 237, offset: 2877 },
+                  end: { line: 64, column: 246, offset: 2886 }
                 }
               },
               {
                 type: 'text',
                 value: ', and ',
                 position: {
-                  start: { line: 56, column: 246, offset: 2241 },
-                  end: { line: 56, column: 252, offset: 2247 }
+                  start: { line: 64, column: 246, offset: 2886 },
+                  end: { line: 64, column: 252, offset: 2892 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'Runtime',
                 position: {
-                  start: { line: 56, column: 252, offset: 2247 },
-                  end: { line: 56, column: 261, offset: 2256 }
+                  start: { line: 64, column: 252, offset: 2892 },
+                  end: { line: 64, column: 261, offset: 2901 }
                 }
               },
               {
                 type: 'text',
                 value: ' domains. Pages, serviceworkers, and extensions are called "Targets" and can be fetched and tracked using the ',
                 position: {
-                  start: { line: 56, column: 261, offset: 2256 },
-                  end: { line: 56, column: 371, offset: 2366 }
+                  start: { line: 64, column: 261, offset: 2901 },
+                  end: { line: 64, column: 371, offset: 3011 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'Target',
                 position: {
-                  start: { line: 56, column: 371, offset: 2366 },
-                  end: { line: 56, column: 379, offset: 2374 }
+                  start: { line: 64, column: 371, offset: 3011 },
+                  end: { line: 64, column: 379, offset: 3019 }
                 }
               },
               {
                 type: 'text',
                 value: ' domain.',
                 position: {
-                  start: { line: 56, column: 379, offset: 2374 },
-                  end: { line: 56, column: 387, offset: 2382 }
+                  start: { line: 64, column: 379, offset: 3019 },
+                  end: { line: 64, column: 387, offset: 3027 }
                 }
               }
             ],
             position: {
-              start: { line: 56, column: 1, offset: 1996 },
-              end: { line: 56, column: 387, offset: 2382 }
+              start: { line: 64, column: 1, offset: 2641 },
+              end: { line: 64, column: 387, offset: 3027 }
             }
           },
           {
@@ -82749,72 +83045,72 @@ export default [
                 type: 'text',
                 value: 'Every Chrome DevTools Protocol client needs to first attach to the target using the ',
                 position: {
-                  start: { line: 58, column: 1, offset: 2384 },
-                  end: { line: 58, column: 85, offset: 2468 }
+                  start: { line: 66, column: 1, offset: 3029 },
+                  end: { line: 66, column: 85, offset: 3113 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'Target.attachToTarget',
                 position: {
-                  start: { line: 58, column: 85, offset: 2468 },
-                  end: { line: 58, column: 108, offset: 2491 }
+                  start: { line: 66, column: 85, offset: 3113 },
+                  end: { line: 66, column: 108, offset: 3136 }
                 }
               },
               {
                 type: 'text',
                 value: ' command. The command will establish a protocol session with the given target and return a ',
                 position: {
-                  start: { line: 58, column: 108, offset: 2491 },
-                  end: { line: 58, column: 199, offset: 2582 }
+                  start: { line: 66, column: 108, offset: 3136 },
+                  end: { line: 66, column: 199, offset: 3227 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'sessionId',
                 position: {
-                  start: { line: 58, column: 199, offset: 2582 },
-                  end: { line: 58, column: 210, offset: 2593 }
+                  start: { line: 66, column: 199, offset: 3227 },
+                  end: { line: 66, column: 210, offset: 3238 }
                 }
               },
               {
                 type: 'text',
                 value: '. The returned ',
                 position: {
-                  start: { line: 58, column: 210, offset: 2593 },
-                  end: { line: 58, column: 225, offset: 2608 }
+                  start: { line: 66, column: 210, offset: 3238 },
+                  end: { line: 66, column: 225, offset: 3253 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'sessionId',
                 position: {
-                  start: { line: 58, column: 225, offset: 2608 },
-                  end: { line: 58, column: 236, offset: 2619 }
+                  start: { line: 66, column: 225, offset: 3253 },
+                  end: { line: 66, column: 236, offset: 3264 }
                 }
               },
               {
                 type: 'text',
                 value: ' should be set on the ',
                 position: {
-                  start: { line: 58, column: 236, offset: 2619 },
-                  end: { line: 58, column: 258, offset: 2641 }
+                  start: { line: 66, column: 236, offset: 3264 },
+                  end: { line: 66, column: 258, offset: 3286 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'GoogleChromeDevTools',
                 position: {
-                  start: { line: 58, column: 258, offset: 2641 },
-                  end: { line: 58, column: 280, offset: 2663 }
+                  start: { line: 66, column: 258, offset: 3286 },
+                  end: { line: 66, column: 280, offset: 3308 }
                 }
               },
               {
                 type: 'text',
                 value: ' client using ',
                 position: {
-                  start: { line: 58, column: 280, offset: 2663 },
-                  end: { line: 58, column: 294, offset: 2677 }
+                  start: { line: 66, column: 280, offset: 3308 },
+                  end: { line: 66, column: 294, offset: 3322 }
                 }
               },
               {
@@ -82826,28 +83122,28 @@ export default [
                     type: 'inlineCode',
                     value: 'setSessionId',
                     position: {
-                      start: { line: 58, column: 295, offset: 2678 },
-                      end: { line: 58, column: 309, offset: 2692 }
+                      start: { line: 66, column: 295, offset: 3323 },
+                      end: { line: 66, column: 309, offset: 3337 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 58, column: 294, offset: 2677 },
-                  end: { line: 58, column: 325, offset: 2708 }
+                  start: { line: 66, column: 294, offset: 3322 },
+                  end: { line: 66, column: 325, offset: 3353 }
                 }
               },
               {
                 type: 'text',
                 value: ' or included in every message to the DevTools server.',
                 position: {
-                  start: { line: 58, column: 325, offset: 2708 },
-                  end: { line: 58, column: 378, offset: 2761 }
+                  start: { line: 66, column: 325, offset: 3353 },
+                  end: { line: 66, column: 378, offset: 3406 }
                 }
               }
             ],
             position: {
-              start: { line: 58, column: 1, offset: 2384 },
-              end: { line: 58, column: 378, offset: 2761 }
+              start: { line: 66, column: 1, offset: 3029 },
+              end: { line: 66, column: 378, offset: 3406 }
             }
           },
           {
@@ -82874,8 +83170,8 @@ export default [
               '  url: `http://localhost:3000/`,\n' +
               '})',
             position: {
-              start: { line: 60, column: 1, offset: 2763 },
-              end: { line: 80, column: 4, offset: 3399 }
+              start: { line: 68, column: 1, offset: 3408 },
+              end: { line: 88, column: 4, offset: 4044 }
             }
           },
           {
@@ -82885,14 +83181,14 @@ export default [
                 type: 'text',
                 value: 'Install dependencies for Amazon Linux 2023:',
                 position: {
-                  start: { line: 82, column: 1, offset: 3401 },
-                  end: { line: 82, column: 44, offset: 3444 }
+                  start: { line: 90, column: 1, offset: 4046 },
+                  end: { line: 90, column: 44, offset: 4089 }
                 }
               }
             ],
             position: {
-              start: { line: 82, column: 1, offset: 3401 },
-              end: { line: 82, column: 44, offset: 3444 }
+              start: { line: 90, column: 1, offset: 4046 },
+              end: { line: 90, column: 44, offset: 4089 }
             }
           },
           {
@@ -82901,8 +83197,8 @@ export default [
             meta: null,
             value: 'sudo dnf install -y cairo pango nss nspr atk at-spi2-atk cups-libs libdrm libxkbcommon libXcomposite libXdamage libXfixes libXrandr mesa-libgbm alsa-lib',
             position: {
-              start: { line: 83, column: 1, offset: 3445 },
-              end: { line: 85, column: 4, offset: 3607 }
+              start: { line: 91, column: 1, offset: 4090 },
+              end: { line: 93, column: 4, offset: 4252 }
             }
           },
           {
@@ -82912,14 +83208,14 @@ export default [
                 type: 'text',
                 value: 'Supported platforms:',
                 position: {
-                  start: { line: 87, column: 1, offset: 3609 },
-                  end: { line: 87, column: 21, offset: 3629 }
+                  start: { line: 95, column: 1, offset: 4254 },
+                  end: { line: 95, column: 21, offset: 4274 }
                 }
               }
             ],
             position: {
-              start: { line: 87, column: 1, offset: 3609 },
-              end: { line: 87, column: 21, offset: 3629 }
+              start: { line: 95, column: 1, offset: 4254 },
+              end: { line: 95, column: 21, offset: 4274 }
             }
           },
           {
@@ -82940,20 +83236,20 @@ export default [
                         type: 'inlineCode',
                         value: 'mac-arm64',
                         position: {
-                          start: { line: 88, column: 5, offset: 3634 },
-                          end: { line: 88, column: 16, offset: 3645 }
+                          start: { line: 96, column: 5, offset: 4279 },
+                          end: { line: 96, column: 16, offset: 4290 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 88, column: 5, offset: 3634 },
-                      end: { line: 88, column: 16, offset: 3645 }
+                      start: { line: 96, column: 5, offset: 4279 },
+                      end: { line: 96, column: 16, offset: 4290 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 88, column: 3, offset: 3632 },
-                  end: { line: 88, column: 16, offset: 3645 }
+                  start: { line: 96, column: 3, offset: 4277 },
+                  end: { line: 96, column: 16, offset: 4290 }
                 }
               },
               {
@@ -82968,26 +83264,26 @@ export default [
                         type: 'inlineCode',
                         value: 'linux64',
                         position: {
-                          start: { line: 89, column: 5, offset: 3650 },
-                          end: { line: 89, column: 14, offset: 3659 }
+                          start: { line: 97, column: 5, offset: 4295 },
+                          end: { line: 97, column: 14, offset: 4304 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 89, column: 5, offset: 3650 },
-                      end: { line: 89, column: 14, offset: 3659 }
+                      start: { line: 97, column: 5, offset: 4295 },
+                      end: { line: 97, column: 14, offset: 4304 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 89, column: 3, offset: 3648 },
-                  end: { line: 89, column: 14, offset: 3659 }
+                  start: { line: 97, column: 3, offset: 4293 },
+                  end: { line: 97, column: 14, offset: 4304 }
                 }
               }
             ],
             position: {
-              start: { line: 88, column: 3, offset: 3632 },
-              end: { line: 89, column: 14, offset: 3659 }
+              start: { line: 96, column: 3, offset: 4277 },
+              end: { line: 97, column: 14, offset: 4304 }
             }
           },
           {
@@ -82997,14 +83293,14 @@ export default [
                 type: 'text',
                 value: 'References:',
                 position: {
-                  start: { line: 91, column: 1, offset: 3661 },
-                  end: { line: 91, column: 12, offset: 3672 }
+                  start: { line: 99, column: 1, offset: 4306 },
+                  end: { line: 99, column: 12, offset: 4317 }
                 }
               }
             ],
             position: {
-              start: { line: 91, column: 1, offset: 3661 },
-              end: { line: 91, column: 12, offset: 3672 }
+              start: { line: 99, column: 1, offset: 4306 },
+              end: { line: 99, column: 12, offset: 4317 }
             }
           },
           {
@@ -83030,26 +83326,26 @@ export default [
                             type: 'text',
                             value: 'Getting Started with the Chrome Devtools Protocol',
                             position: {
-                              start: { line: 92, column: 6, offset: 3678 },
-                              end: { line: 92, column: 55, offset: 3727 }
+                              start: { line: 100, column: 6, offset: 4323 },
+                              end: { line: 100, column: 55, offset: 4372 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 92, column: 5, offset: 3677 },
-                          end: { line: 92, column: 135, offset: 3807 }
+                          start: { line: 100, column: 5, offset: 4322 },
+                          end: { line: 100, column: 135, offset: 4452 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 92, column: 5, offset: 3677 },
-                      end: { line: 92, column: 135, offset: 3807 }
+                      start: { line: 100, column: 5, offset: 4322 },
+                      end: { line: 100, column: 135, offset: 4452 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 92, column: 3, offset: 3675 },
-                  end: { line: 92, column: 135, offset: 3807 }
+                  start: { line: 100, column: 3, offset: 4320 },
+                  end: { line: 100, column: 135, offset: 4452 }
                 }
               },
               {
@@ -83069,38 +83365,38 @@ export default [
                             type: 'text',
                             value: 'Chrome Devtools Protocol',
                             position: {
-                              start: { line: 93, column: 6, offset: 3813 },
-                              end: { line: 93, column: 30, offset: 3837 }
+                              start: { line: 101, column: 6, offset: 4458 },
+                              end: { line: 101, column: 30, offset: 4482 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 93, column: 5, offset: 3812 },
-                          end: { line: 93, column: 84, offset: 3891 }
+                          start: { line: 101, column: 5, offset: 4457 },
+                          end: { line: 101, column: 84, offset: 4536 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 93, column: 5, offset: 3812 },
-                      end: { line: 93, column: 84, offset: 3891 }
+                      start: { line: 101, column: 5, offset: 4457 },
+                      end: { line: 101, column: 84, offset: 4536 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 93, column: 3, offset: 3810 },
-                  end: { line: 93, column: 84, offset: 3891 }
+                  start: { line: 101, column: 3, offset: 4455 },
+                  end: { line: 101, column: 84, offset: 4536 }
                 }
               }
             ],
             position: {
-              start: { line: 92, column: 3, offset: 3675 },
-              end: { line: 93, column: 84, offset: 3891 }
+              start: { line: 100, column: 3, offset: 4320 },
+              end: { line: 101, column: 84, offset: 4536 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 93, column: 84, offset: 3891 }
+          end: { line: 101, column: 84, offset: 4536 }
         }
       }
     },
