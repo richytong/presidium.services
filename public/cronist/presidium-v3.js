@@ -82187,10 +82187,21 @@ export default [
     name: 'GoogleChromeDevTools',
     constructor: '',
     docs: '```coffeescript [specscript]\n' +
-      'new GoogleChromeDevTools(url string) -> googleChromeDevTools GoogleChromeDevTools\n' +
+      'new GoogleChromeDevTools(options {\n' +
+      "  chromeVersion: 'stable'|'beta'|'dev'|'canary'|string,\n" +
+      '  headless: boolean,\n' +
+      '}) -> googleChromeDevTools GoogleChromeDevTools\n' +
       '```\n' +
       '\n' +
       'Presidium GoogleChromeDevTools client for test automation.\n' +
+      '\n' +
+      'Arguments:\n' +
+      '  * `options`\n' +
+      '    * `chromeVersion` - the version of Google Chrome for Testing to download.\n' +
+      '    * `headless` - whether to run Google Chrome for Testing in headless mode.\n' +
+      '\n' +
+      'Returns:\n' +
+      '  * `googleChromeDevTools` - an instance of the `GoogleChromeDevTools` client.\n' +
       '\n' +
       '```javascript\n' +
       'const googleChromeDevTools = new GoogleChromeDevTools()\n' +
@@ -82256,8 +82267,14 @@ export default [
       '})\n' +
       '```\n' +
       '\n' +
+      'Install dependencies for Amazon Linux 2023:\n' +
+      '```sh\n' +
+      'sudo dnf install -y cairo pango nss nspr atk at-spi2-atk cups-libs libdrm libxkbcommon libXcomposite libXdamage libXfixes libXrandr mesa-libgbm alsa-lib\n' +
+      '```\n' +
+      '\n' +
       'Supported platforms:\n' +
       '  * `mac-arm64`\n' +
+      '  * `linux64`\n' +
       '\n' +
       'References:\n' +
       '  * [Getting Started with the Chrome Devtools Protocol](https://github.com/aslushnikov/getting-started-with-cdp/blob/master/README.md)\n' +
@@ -82304,10 +82321,13 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'new GoogleChromeDevTools(url string) -> googleChromeDevTools GoogleChromeDevTools',
+            value: 'new GoogleChromeDevTools(options {\n' +
+              "  chromeVersion: 'stable'|'beta'|'dev'|'canary'|string,\n" +
+              '  headless: boolean,\n' +
+              '}) -> googleChromeDevTools GoogleChromeDevTools',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 3, column: 4, offset: 114 }
+              end: { line: 6, column: 4, offset: 192 }
             }
           },
           {
@@ -82317,14 +82337,236 @@ export default [
                 type: 'text',
                 value: 'Presidium GoogleChromeDevTools client for test automation.',
                 position: {
-                  start: { line: 5, column: 1, offset: 116 },
-                  end: { line: 5, column: 59, offset: 174 }
+                  start: { line: 8, column: 1, offset: 194 },
+                  end: { line: 8, column: 59, offset: 252 }
                 }
               }
             ],
             position: {
-              start: { line: 5, column: 1, offset: 116 },
-              end: { line: 5, column: 59, offset: 174 }
+              start: { line: 8, column: 1, offset: 194 },
+              end: { line: 8, column: 59, offset: 252 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Arguments:',
+                position: {
+                  start: { line: 10, column: 1, offset: 254 },
+                  end: { line: 10, column: 11, offset: 264 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 10, column: 1, offset: 254 },
+              end: { line: 10, column: 11, offset: 264 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'options',
+                        position: {
+                          start: { line: 11, column: 5, offset: 269 },
+                          end: { line: 11, column: 14, offset: 278 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 11, column: 5, offset: 269 },
+                      end: { line: 11, column: 14, offset: 278 }
+                    }
+                  },
+                  {
+                    type: 'list',
+                    ordered: false,
+                    start: null,
+                    spread: false,
+                    children: [
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'chromeVersion',
+                                position: {
+                                  start: { line: 12, column: 7, offset: 285 },
+                                  end: { line: 12, column: 22, offset: 300 }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - the version of Google Chrome for Testing to download.',
+                                position: {
+                                  start: { line: 12, column: 22, offset: 300 },
+                                  end: { line: 12, column: 78, offset: 356 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 12, column: 7, offset: 285 },
+                              end: { line: 12, column: 78, offset: 356 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 12, column: 5, offset: 283 },
+                          end: { line: 12, column: 78, offset: 356 }
+                        }
+                      },
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'headless',
+                                position: {
+                                  start: { line: 13, column: 7, offset: 363 },
+                                  end: { line: 13, column: 17, offset: 373 }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - whether to run Google Chrome for Testing in headless mode.',
+                                position: {
+                                  start: { line: 13, column: 17, offset: 373 },
+                                  end: { line: 13, column: 78, offset: 434 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 13, column: 7, offset: 363 },
+                              end: { line: 13, column: 78, offset: 434 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 13, column: 5, offset: 361 },
+                          end: { line: 13, column: 78, offset: 434 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 12, column: 5, offset: 283 },
+                      end: { line: 13, column: 78, offset: 434 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 3, offset: 267 },
+                  end: { line: 13, column: 78, offset: 434 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 11, column: 3, offset: 267 },
+              end: { line: 13, column: 78, offset: 434 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Returns:',
+                position: {
+                  start: { line: 15, column: 1, offset: 436 },
+                  end: { line: 15, column: 9, offset: 444 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 15, column: 1, offset: 436 },
+              end: { line: 15, column: 9, offset: 444 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'googleChromeDevTools',
+                        position: {
+                          start: { line: 16, column: 5, offset: 449 },
+                          end: { line: 16, column: 27, offset: 471 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ' - an instance of the ',
+                        position: {
+                          start: { line: 16, column: 27, offset: 471 },
+                          end: { line: 16, column: 49, offset: 493 }
+                        }
+                      },
+                      {
+                        type: 'inlineCode',
+                        value: 'GoogleChromeDevTools',
+                        position: {
+                          start: { line: 16, column: 49, offset: 493 },
+                          end: { line: 16, column: 71, offset: 515 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ' client.',
+                        position: {
+                          start: { line: 16, column: 71, offset: 515 },
+                          end: { line: 16, column: 79, offset: 523 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 16, column: 5, offset: 449 },
+                      end: { line: 16, column: 79, offset: 523 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 16, column: 3, offset: 447 },
+                  end: { line: 16, column: 79, offset: 523 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 16, column: 3, offset: 447 },
+              end: { line: 16, column: 79, offset: 523 }
             }
           },
           {
@@ -82367,8 +82609,8 @@ export default [
               "await googleChromeDevTools.Input.dispatchKeyEvent({ type: 'keyDown', text: 't' })\n" +
               "await googleChromeDevTools.Input.dispatchKeyEvent({ type: 'keyUp', text: 't' })",
             position: {
-              start: { line: 7, column: 1, offset: 176 },
-              end: { line: 43, column: 4, offset: 1645 }
+              start: { line: 18, column: 1, offset: 525 },
+              end: { line: 54, column: 4, offset: 1994 }
             }
           },
           {
@@ -82378,126 +82620,126 @@ export default [
                 type: 'text',
                 value: 'The Chrome DevTools Protocol has various APIs to interact with the different parts of the browser. These parts are separated into different domains. The Presidium GoogleChromeDevTools client covers the ',
                 position: {
-                  start: { line: 45, column: 1, offset: 1647 },
-                  end: { line: 45, column: 203, offset: 1849 }
+                  start: { line: 56, column: 1, offset: 1996 },
+                  end: { line: 56, column: 203, offset: 2198 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'Target',
                 position: {
-                  start: { line: 45, column: 203, offset: 1849 },
-                  end: { line: 45, column: 211, offset: 1857 }
+                  start: { line: 56, column: 203, offset: 2198 },
+                  end: { line: 56, column: 211, offset: 2206 }
                 }
               },
               {
                 type: 'text',
                 value: ', ',
                 position: {
-                  start: { line: 45, column: 211, offset: 1857 },
-                  end: { line: 45, column: 213, offset: 1859 }
+                  start: { line: 56, column: 211, offset: 2206 },
+                  end: { line: 56, column: 213, offset: 2208 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'Page',
                 position: {
-                  start: { line: 45, column: 213, offset: 1859 },
-                  end: { line: 45, column: 219, offset: 1865 }
+                  start: { line: 56, column: 213, offset: 2208 },
+                  end: { line: 56, column: 219, offset: 2214 }
                 }
               },
               {
                 type: 'text',
                 value: ', ',
                 position: {
-                  start: { line: 45, column: 219, offset: 1865 },
-                  end: { line: 45, column: 221, offset: 1867 }
+                  start: { line: 56, column: 219, offset: 2214 },
+                  end: { line: 56, column: 221, offset: 2216 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'DOM',
                 position: {
-                  start: { line: 45, column: 221, offset: 1867 },
-                  end: { line: 45, column: 226, offset: 1872 }
+                  start: { line: 56, column: 221, offset: 2216 },
+                  end: { line: 56, column: 226, offset: 2221 }
                 }
               },
               {
                 type: 'text',
                 value: ', ',
                 position: {
-                  start: { line: 45, column: 226, offset: 1872 },
-                  end: { line: 45, column: 228, offset: 1874 }
+                  start: { line: 56, column: 226, offset: 2221 },
+                  end: { line: 56, column: 228, offset: 2223 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'Input',
                 position: {
-                  start: { line: 45, column: 228, offset: 1874 },
-                  end: { line: 45, column: 235, offset: 1881 }
+                  start: { line: 56, column: 228, offset: 2223 },
+                  end: { line: 56, column: 235, offset: 2230 }
                 }
               },
               {
                 type: 'text',
                 value: ', ',
                 position: {
-                  start: { line: 45, column: 235, offset: 1881 },
-                  end: { line: 45, column: 237, offset: 1883 }
+                  start: { line: 56, column: 235, offset: 2230 },
+                  end: { line: 56, column: 237, offset: 2232 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'Storage',
                 position: {
-                  start: { line: 45, column: 237, offset: 1883 },
-                  end: { line: 45, column: 246, offset: 1892 }
+                  start: { line: 56, column: 237, offset: 2232 },
+                  end: { line: 56, column: 246, offset: 2241 }
                 }
               },
               {
                 type: 'text',
                 value: ', and ',
                 position: {
-                  start: { line: 45, column: 246, offset: 1892 },
-                  end: { line: 45, column: 252, offset: 1898 }
+                  start: { line: 56, column: 246, offset: 2241 },
+                  end: { line: 56, column: 252, offset: 2247 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'Runtime',
                 position: {
-                  start: { line: 45, column: 252, offset: 1898 },
-                  end: { line: 45, column: 261, offset: 1907 }
+                  start: { line: 56, column: 252, offset: 2247 },
+                  end: { line: 56, column: 261, offset: 2256 }
                 }
               },
               {
                 type: 'text',
                 value: ' domains. Pages, serviceworkers, and extensions are called "Targets" and can be fetched and tracked using the ',
                 position: {
-                  start: { line: 45, column: 261, offset: 1907 },
-                  end: { line: 45, column: 371, offset: 2017 }
+                  start: { line: 56, column: 261, offset: 2256 },
+                  end: { line: 56, column: 371, offset: 2366 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'Target',
                 position: {
-                  start: { line: 45, column: 371, offset: 2017 },
-                  end: { line: 45, column: 379, offset: 2025 }
+                  start: { line: 56, column: 371, offset: 2366 },
+                  end: { line: 56, column: 379, offset: 2374 }
                 }
               },
               {
                 type: 'text',
                 value: ' domain.',
                 position: {
-                  start: { line: 45, column: 379, offset: 2025 },
-                  end: { line: 45, column: 387, offset: 2033 }
+                  start: { line: 56, column: 379, offset: 2374 },
+                  end: { line: 56, column: 387, offset: 2382 }
                 }
               }
             ],
             position: {
-              start: { line: 45, column: 1, offset: 1647 },
-              end: { line: 45, column: 387, offset: 2033 }
+              start: { line: 56, column: 1, offset: 1996 },
+              end: { line: 56, column: 387, offset: 2382 }
             }
           },
           {
@@ -82507,72 +82749,72 @@ export default [
                 type: 'text',
                 value: 'Every Chrome DevTools Protocol client needs to first attach to the target using the ',
                 position: {
-                  start: { line: 47, column: 1, offset: 2035 },
-                  end: { line: 47, column: 85, offset: 2119 }
+                  start: { line: 58, column: 1, offset: 2384 },
+                  end: { line: 58, column: 85, offset: 2468 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'Target.attachToTarget',
                 position: {
-                  start: { line: 47, column: 85, offset: 2119 },
-                  end: { line: 47, column: 108, offset: 2142 }
+                  start: { line: 58, column: 85, offset: 2468 },
+                  end: { line: 58, column: 108, offset: 2491 }
                 }
               },
               {
                 type: 'text',
                 value: ' command. The command will establish a protocol session with the given target and return a ',
                 position: {
-                  start: { line: 47, column: 108, offset: 2142 },
-                  end: { line: 47, column: 199, offset: 2233 }
+                  start: { line: 58, column: 108, offset: 2491 },
+                  end: { line: 58, column: 199, offset: 2582 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'sessionId',
                 position: {
-                  start: { line: 47, column: 199, offset: 2233 },
-                  end: { line: 47, column: 210, offset: 2244 }
+                  start: { line: 58, column: 199, offset: 2582 },
+                  end: { line: 58, column: 210, offset: 2593 }
                 }
               },
               {
                 type: 'text',
                 value: '. The returned ',
                 position: {
-                  start: { line: 47, column: 210, offset: 2244 },
-                  end: { line: 47, column: 225, offset: 2259 }
+                  start: { line: 58, column: 210, offset: 2593 },
+                  end: { line: 58, column: 225, offset: 2608 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'sessionId',
                 position: {
-                  start: { line: 47, column: 225, offset: 2259 },
-                  end: { line: 47, column: 236, offset: 2270 }
+                  start: { line: 58, column: 225, offset: 2608 },
+                  end: { line: 58, column: 236, offset: 2619 }
                 }
               },
               {
                 type: 'text',
                 value: ' should be set on the ',
                 position: {
-                  start: { line: 47, column: 236, offset: 2270 },
-                  end: { line: 47, column: 258, offset: 2292 }
+                  start: { line: 58, column: 236, offset: 2619 },
+                  end: { line: 58, column: 258, offset: 2641 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'GoogleChromeDevTools',
                 position: {
-                  start: { line: 47, column: 258, offset: 2292 },
-                  end: { line: 47, column: 280, offset: 2314 }
+                  start: { line: 58, column: 258, offset: 2641 },
+                  end: { line: 58, column: 280, offset: 2663 }
                 }
               },
               {
                 type: 'text',
                 value: ' client using ',
                 position: {
-                  start: { line: 47, column: 280, offset: 2314 },
-                  end: { line: 47, column: 294, offset: 2328 }
+                  start: { line: 58, column: 280, offset: 2663 },
+                  end: { line: 58, column: 294, offset: 2677 }
                 }
               },
               {
@@ -82584,28 +82826,28 @@ export default [
                     type: 'inlineCode',
                     value: 'setSessionId',
                     position: {
-                      start: { line: 47, column: 295, offset: 2329 },
-                      end: { line: 47, column: 309, offset: 2343 }
+                      start: { line: 58, column: 295, offset: 2678 },
+                      end: { line: 58, column: 309, offset: 2692 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 47, column: 294, offset: 2328 },
-                  end: { line: 47, column: 325, offset: 2359 }
+                  start: { line: 58, column: 294, offset: 2677 },
+                  end: { line: 58, column: 325, offset: 2708 }
                 }
               },
               {
                 type: 'text',
                 value: ' or included in every message to the DevTools server.',
                 position: {
-                  start: { line: 47, column: 325, offset: 2359 },
-                  end: { line: 47, column: 378, offset: 2412 }
+                  start: { line: 58, column: 325, offset: 2708 },
+                  end: { line: 58, column: 378, offset: 2761 }
                 }
               }
             ],
             position: {
-              start: { line: 47, column: 1, offset: 2035 },
-              end: { line: 47, column: 378, offset: 2412 }
+              start: { line: 58, column: 1, offset: 2384 },
+              end: { line: 58, column: 378, offset: 2761 }
             }
           },
           {
@@ -82632,8 +82874,35 @@ export default [
               '  url: `http://localhost:3000/`,\n' +
               '})',
             position: {
-              start: { line: 49, column: 1, offset: 2414 },
-              end: { line: 69, column: 4, offset: 3050 }
+              start: { line: 60, column: 1, offset: 2763 },
+              end: { line: 80, column: 4, offset: 3399 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Install dependencies for Amazon Linux 2023:',
+                position: {
+                  start: { line: 82, column: 1, offset: 3401 },
+                  end: { line: 82, column: 44, offset: 3444 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 82, column: 1, offset: 3401 },
+              end: { line: 82, column: 44, offset: 3444 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'sh',
+            meta: null,
+            value: 'sudo dnf install -y cairo pango nss nspr atk at-spi2-atk cups-libs libdrm libxkbcommon libXcomposite libXdamage libXfixes libXrandr mesa-libgbm alsa-lib',
+            position: {
+              start: { line: 83, column: 1, offset: 3445 },
+              end: { line: 85, column: 4, offset: 3607 }
             }
           },
           {
@@ -82643,14 +82912,14 @@ export default [
                 type: 'text',
                 value: 'Supported platforms:',
                 position: {
-                  start: { line: 71, column: 1, offset: 3052 },
-                  end: { line: 71, column: 21, offset: 3072 }
+                  start: { line: 87, column: 1, offset: 3609 },
+                  end: { line: 87, column: 21, offset: 3629 }
                 }
               }
             ],
             position: {
-              start: { line: 71, column: 1, offset: 3052 },
-              end: { line: 71, column: 21, offset: 3072 }
+              start: { line: 87, column: 1, offset: 3609 },
+              end: { line: 87, column: 21, offset: 3629 }
             }
           },
           {
@@ -82671,26 +82940,54 @@ export default [
                         type: 'inlineCode',
                         value: 'mac-arm64',
                         position: {
-                          start: { line: 72, column: 5, offset: 3077 },
-                          end: { line: 72, column: 16, offset: 3088 }
+                          start: { line: 88, column: 5, offset: 3634 },
+                          end: { line: 88, column: 16, offset: 3645 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 72, column: 5, offset: 3077 },
-                      end: { line: 72, column: 16, offset: 3088 }
+                      start: { line: 88, column: 5, offset: 3634 },
+                      end: { line: 88, column: 16, offset: 3645 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 72, column: 3, offset: 3075 },
-                  end: { line: 72, column: 16, offset: 3088 }
+                  start: { line: 88, column: 3, offset: 3632 },
+                  end: { line: 88, column: 16, offset: 3645 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'linux64',
+                        position: {
+                          start: { line: 89, column: 5, offset: 3650 },
+                          end: { line: 89, column: 14, offset: 3659 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 89, column: 5, offset: 3650 },
+                      end: { line: 89, column: 14, offset: 3659 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 89, column: 3, offset: 3648 },
+                  end: { line: 89, column: 14, offset: 3659 }
                 }
               }
             ],
             position: {
-              start: { line: 72, column: 3, offset: 3075 },
-              end: { line: 72, column: 16, offset: 3088 }
+              start: { line: 88, column: 3, offset: 3632 },
+              end: { line: 89, column: 14, offset: 3659 }
             }
           },
           {
@@ -82700,14 +82997,14 @@ export default [
                 type: 'text',
                 value: 'References:',
                 position: {
-                  start: { line: 74, column: 1, offset: 3090 },
-                  end: { line: 74, column: 12, offset: 3101 }
+                  start: { line: 91, column: 1, offset: 3661 },
+                  end: { line: 91, column: 12, offset: 3672 }
                 }
               }
             ],
             position: {
-              start: { line: 74, column: 1, offset: 3090 },
-              end: { line: 74, column: 12, offset: 3101 }
+              start: { line: 91, column: 1, offset: 3661 },
+              end: { line: 91, column: 12, offset: 3672 }
             }
           },
           {
@@ -82733,26 +83030,26 @@ export default [
                             type: 'text',
                             value: 'Getting Started with the Chrome Devtools Protocol',
                             position: {
-                              start: { line: 75, column: 6, offset: 3107 },
-                              end: { line: 75, column: 55, offset: 3156 }
+                              start: { line: 92, column: 6, offset: 3678 },
+                              end: { line: 92, column: 55, offset: 3727 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 75, column: 5, offset: 3106 },
-                          end: { line: 75, column: 135, offset: 3236 }
+                          start: { line: 92, column: 5, offset: 3677 },
+                          end: { line: 92, column: 135, offset: 3807 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 75, column: 5, offset: 3106 },
-                      end: { line: 75, column: 135, offset: 3236 }
+                      start: { line: 92, column: 5, offset: 3677 },
+                      end: { line: 92, column: 135, offset: 3807 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 75, column: 3, offset: 3104 },
-                  end: { line: 75, column: 135, offset: 3236 }
+                  start: { line: 92, column: 3, offset: 3675 },
+                  end: { line: 92, column: 135, offset: 3807 }
                 }
               },
               {
@@ -82772,38 +83069,38 @@ export default [
                             type: 'text',
                             value: 'Chrome Devtools Protocol',
                             position: {
-                              start: { line: 76, column: 6, offset: 3242 },
-                              end: { line: 76, column: 30, offset: 3266 }
+                              start: { line: 93, column: 6, offset: 3813 },
+                              end: { line: 93, column: 30, offset: 3837 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 76, column: 5, offset: 3241 },
-                          end: { line: 76, column: 84, offset: 3320 }
+                          start: { line: 93, column: 5, offset: 3812 },
+                          end: { line: 93, column: 84, offset: 3891 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 76, column: 5, offset: 3241 },
-                      end: { line: 76, column: 84, offset: 3320 }
+                      start: { line: 93, column: 5, offset: 3812 },
+                      end: { line: 93, column: 84, offset: 3891 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 76, column: 3, offset: 3239 },
-                  end: { line: 76, column: 84, offset: 3320 }
+                  start: { line: 93, column: 3, offset: 3810 },
+                  end: { line: 93, column: 84, offset: 3891 }
                 }
               }
             ],
             position: {
-              start: { line: 75, column: 3, offset: 3104 },
-              end: { line: 76, column: 84, offset: 3320 }
+              start: { line: 92, column: 3, offset: 3675 },
+              end: { line: 93, column: 84, offset: 3891 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 76, column: 84, offset: 3320 }
+          end: { line: 93, column: 84, offset: 3891 }
         }
       }
     },
