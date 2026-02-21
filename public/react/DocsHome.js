@@ -41,10 +41,8 @@ const DocsHome = ReactElement(props => {
     if (anchor.length > 0) {
       setTimeout(() => {
         const scrollToElement = document.getElementById(anchor.slice(1))
-        console.log(anchor.slice(1), scrollToElement, scrollToElement.offsetTop)
         if (scrollToElement) {
           const desiredScrollY = scrollToElement.offsetTop
-          console.log('scrollTo', desiredScrollY)
           window.scrollTo(0, desiredScrollY)
         }
       }, 10)
