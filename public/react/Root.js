@@ -32,7 +32,7 @@ const Root = ReactElement(() => {
       }
       if (anchorTarget?.tagName == 'A') {
         const anchor = new URL(anchorTarget.href).hash
-        const scrollToElement = document.getElementById(anchor.slice(1))
+        const scrollToElement = document.getElementById(decodeURIComponent(anchor.slice(1)))
         if (scrollToElement) {
           const desiredScrollY = scrollToElement.offsetTop
           if (window.scrollY == desiredScrollY) {
