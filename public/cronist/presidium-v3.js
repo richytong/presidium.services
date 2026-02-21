@@ -84375,172 +84375,6 @@ export default [
         }
       },
       {
-        name: 'Event: close',
-        docs: '```coffeescript [specscript]\n' +
-          "emit('close')\n" +
-          '```\n' +
-          '\n' +
-          'The `close` event. Emitted when the websocket connection to the DevTools server is closed and the Google Chrome for Testing process is terminated.\n' +
-          '\n' +
-          'Event Data:\n' +
-          '  * (none)\n' +
-          '\n' +
-          '```javascript\n' +
-          "googleChromeForTesting.on('close', () => {\n" +
-          "  console.log('WebSocket connection closed and Google Chrome for Testing process terminated.')\n" +
-          '})\n' +
-          '```',
-        mdast: {
-          name: {
-            type: 'root',
-            children: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'Event: close',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 13, offset: 12 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 13, offset: 12 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 13, offset: 12 }
-            }
-          },
-          docs: {
-            type: 'root',
-            children: [
-              {
-                type: 'code',
-                lang: 'coffeescript',
-                meta: '[specscript]',
-                value: "emit('close')",
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 3, column: 4, offset: 46 }
-                }
-              },
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'The ',
-                    position: {
-                      start: { line: 5, column: 1, offset: 48 },
-                      end: { line: 5, column: 5, offset: 52 }
-                    }
-                  },
-                  {
-                    type: 'inlineCode',
-                    value: 'close',
-                    position: {
-                      start: { line: 5, column: 5, offset: 52 },
-                      end: { line: 5, column: 12, offset: 59 }
-                    }
-                  },
-                  {
-                    type: 'text',
-                    value: ' event. Emitted when the websocket connection to the DevTools server is closed and the Google Chrome for Testing process is terminated.',
-                    position: {
-                      start: { line: 5, column: 12, offset: 59 },
-                      end: { line: 5, column: 147, offset: 194 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 5, column: 1, offset: 48 },
-                  end: { line: 5, column: 147, offset: 194 }
-                }
-              },
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'Event Data:',
-                    position: {
-                      start: { line: 7, column: 1, offset: 196 },
-                      end: { line: 7, column: 12, offset: 207 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 7, column: 1, offset: 196 },
-                  end: { line: 7, column: 12, offset: 207 }
-                }
-              },
-              {
-                type: 'list',
-                ordered: false,
-                start: null,
-                spread: false,
-                children: [
-                  {
-                    type: 'listItem',
-                    spread: false,
-                    checked: null,
-                    children: [
-                      {
-                        type: 'paragraph',
-                        children: [
-                          {
-                            type: 'text',
-                            value: '(none)',
-                            position: {
-                              start: { line: 8, column: 5, offset: 212 },
-                              end: { line: 8, column: 11, offset: 218 }
-                            }
-                          }
-                        ],
-                        position: {
-                          start: { line: 8, column: 5, offset: 212 },
-                          end: { line: 8, column: 11, offset: 218 }
-                        }
-                      }
-                    ],
-                    position: {
-                      start: { line: 8, column: 3, offset: 210 },
-                      end: { line: 8, column: 11, offset: 218 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 8, column: 3, offset: 210 },
-                  end: { line: 8, column: 11, offset: 218 }
-                }
-              },
-              {
-                type: 'code',
-                lang: 'javascript',
-                meta: null,
-                value: "googleChromeForTesting.on('close', () => {\n" +
-                  "  console.log('WebSocket connection closed and Google Chrome for Testing process terminated.')\n" +
-                  '})',
-                position: {
-                  start: { line: 10, column: 1, offset: 220 },
-                  end: { line: 14, column: 4, offset: 378 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 14, column: 4, offset: 378 }
-            }
-          }
-        }
-      },
-      {
         name: 'Target.getTargets',
         docs: '```coffeescript [specscript]\n' +
           "module CDPTarget 'https://chromedevtools.github.io/devtools-protocol/tot/Target/'\n" +
@@ -91965,6 +91799,2101 @@ export default [
             position: {
               start: { line: 1, column: 1, offset: 0 },
               end: { line: 28, column: 4, offset: 1021 }
+            }
+          }
+        }
+      },
+      {
+        name: 'Event: DOM.attributeModified',
+        docs: '```coffeescript [specscript]\n' +
+          "emit('DOM.attributeModified', data {\n" +
+          '  nodeId: string,\n' +
+          '  name: string,\n' +
+          '  value: string,\n' +
+          '})\n' +
+          '```\n' +
+          '\n' +
+          'The `DOM.attributeModified` event. Emitted when an attribute of an element is modified.\n' +
+          '\n' +
+          'Event Data:\n' +
+          '  `data`\n' +
+          '    * `nodeId` - the ID of the element or node.\n' +
+          '    * `name` - the name of the modified attribute.\n' +
+          '    * `value` - the value of the modified attribute.\n' +
+          '\n' +
+          '```javascript\n' +
+          "googleChromeDevTools.on('DOM.attributeModified', data => {\n" +
+          "  console.log('attribute modified:', data)\n" +
+          '})\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event: DOM.attributeModified',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 29, offset: 28 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 29, offset: 28 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 29, offset: 28 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: "emit('DOM.attributeModified', data {\n" +
+                  '  nodeId: string,\n' +
+                  '  name: string,\n' +
+                  '  value: string,\n' +
+                  '})',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 7, column: 4, offset: 123 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'The ',
+                    position: {
+                      start: { line: 9, column: 1, offset: 125 },
+                      end: { line: 9, column: 5, offset: 129 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'DOM.attributeModified',
+                    position: {
+                      start: { line: 9, column: 5, offset: 129 },
+                      end: { line: 9, column: 28, offset: 152 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' event. Emitted when an attribute of an element is modified.',
+                    position: {
+                      start: { line: 9, column: 28, offset: 152 },
+                      end: { line: 9, column: 88, offset: 212 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 9, column: 1, offset: 125 },
+                  end: { line: 9, column: 88, offset: 212 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event Data:\n',
+                    position: {
+                      start: { line: 11, column: 1, offset: 214 },
+                      end: { line: 12, column: 1, offset: 226 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'data',
+                    position: {
+                      start: { line: 12, column: 3, offset: 228 },
+                      end: { line: 12, column: 9, offset: 234 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: '\n* ',
+                    position: {
+                      start: { line: 12, column: 9, offset: 234 },
+                      end: { line: 13, column: 7, offset: 241 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'nodeId',
+                    position: {
+                      start: { line: 13, column: 7, offset: 241 },
+                      end: { line: 13, column: 15, offset: 249 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' - the ID of the element or node.\n* ',
+                    position: {
+                      start: { line: 13, column: 15, offset: 249 },
+                      end: { line: 14, column: 7, offset: 289 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'name',
+                    position: {
+                      start: { line: 14, column: 7, offset: 289 },
+                      end: { line: 14, column: 13, offset: 295 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' - the name of the modified attribute.\n* ',
+                    position: {
+                      start: { line: 14, column: 13, offset: 295 },
+                      end: { line: 15, column: 7, offset: 340 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'value',
+                    position: {
+                      start: { line: 15, column: 7, offset: 340 },
+                      end: { line: 15, column: 14, offset: 347 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' - the value of the modified attribute.',
+                    position: {
+                      start: { line: 15, column: 14, offset: 347 },
+                      end: { line: 15, column: 53, offset: 386 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 1, offset: 214 },
+                  end: { line: 15, column: 53, offset: 386 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: "googleChromeDevTools.on('DOM.attributeModified', data => {\n" +
+                  "  console.log('attribute modified:', data)\n" +
+                  '})',
+                position: {
+                  start: { line: 17, column: 1, offset: 388 },
+                  end: { line: 21, column: 4, offset: 510 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 21, column: 4, offset: 510 }
+            }
+          }
+        }
+      },
+      {
+        name: 'Event: DOM.attributeRemoved',
+        docs: '```coffeescript [specscript]\n' +
+          "emit('DOM.attributeRemoved', data {\n" +
+          '  nodeId: string,\n' +
+          '  name: string,\n' +
+          '})\n' +
+          '```\n' +
+          '\n' +
+          'The `DOM.attributeRemoved` event. Emitted when an attribute of an element is removed.\n' +
+          '\n' +
+          'Event Data:\n' +
+          '  * `data`\n' +
+          '    * `nodeId` - the ID of the element or node.\n' +
+          '    * `name` - the name of the removed attribute.\n' +
+          '\n' +
+          '```javascript\n' +
+          "googleChromeDevTools.on('DOM.attributeModified', data => {\n" +
+          "  console.log('attribute removed:', data)\n" +
+          '})\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event: DOM.attributeRemoved',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 28, offset: 27 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 28, offset: 27 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 28, offset: 27 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: "emit('DOM.attributeRemoved', data {\n" +
+                  '  nodeId: string,\n' +
+                  '  name: string,\n' +
+                  '})',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 6, column: 4, offset: 105 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'The ',
+                    position: {
+                      start: { line: 8, column: 1, offset: 107 },
+                      end: { line: 8, column: 5, offset: 111 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'DOM.attributeRemoved',
+                    position: {
+                      start: { line: 8, column: 5, offset: 111 },
+                      end: { line: 8, column: 27, offset: 133 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' event. Emitted when an attribute of an element is removed.',
+                    position: {
+                      start: { line: 8, column: 27, offset: 133 },
+                      end: { line: 8, column: 86, offset: 192 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 1, offset: 107 },
+                  end: { line: 8, column: 86, offset: 192 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event Data:',
+                    position: {
+                      start: { line: 10, column: 1, offset: 194 },
+                      end: { line: 10, column: 12, offset: 205 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 10, column: 1, offset: 194 },
+                  end: { line: 10, column: 12, offset: 205 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'data',
+                            position: {
+                              start: { line: 11, column: 5, offset: 210 },
+                              end: { line: 11, column: 11, offset: 216 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 11, column: 5, offset: 210 },
+                          end: { line: 11, column: 11, offset: 216 }
+                        }
+                      },
+                      {
+                        type: 'list',
+                        ordered: false,
+                        start: null,
+                        spread: false,
+                        children: [
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'nodeId',
+                                    position: {
+                                      start: {
+                                        line: 12,
+                                        column: 7,
+                                        offset: 223
+                                      },
+                                      end: {
+                                        line: 12,
+                                        column: 15,
+                                        offset: 231
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the ID of the element or node.',
+                                    position: {
+                                      start: {
+                                        line: 12,
+                                        column: 15,
+                                        offset: 231
+                                      },
+                                      end: {
+                                        line: 12,
+                                        column: 48,
+                                        offset: 264
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 12, column: 7, offset: 223 },
+                                  end: { line: 12, column: 48, offset: 264 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 12, column: 5, offset: 221 },
+                              end: { line: 12, column: 48, offset: 264 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'name',
+                                    position: {
+                                      start: {
+                                        line: 13,
+                                        column: 7,
+                                        offset: 271
+                                      },
+                                      end: {
+                                        line: 13,
+                                        column: 13,
+                                        offset: 277
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the name of the removed attribute.',
+                                    position: {
+                                      start: {
+                                        line: 13,
+                                        column: 13,
+                                        offset: 277
+                                      },
+                                      end: {
+                                        line: 13,
+                                        column: 50,
+                                        offset: 314
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 13, column: 7, offset: 271 },
+                                  end: { line: 13, column: 50, offset: 314 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 13, column: 5, offset: 269 },
+                              end: { line: 13, column: 50, offset: 314 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 12, column: 5, offset: 221 },
+                          end: { line: 13, column: 50, offset: 314 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 11, column: 3, offset: 208 },
+                      end: { line: 13, column: 50, offset: 314 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 3, offset: 208 },
+                  end: { line: 13, column: 50, offset: 314 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: "googleChromeDevTools.on('DOM.attributeModified', data => {\n" +
+                  "  console.log('attribute removed:', data)\n" +
+                  '})',
+                position: {
+                  start: { line: 15, column: 1, offset: 316 },
+                  end: { line: 19, column: 4, offset: 437 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 19, column: 4, offset: 437 }
+            }
+          }
+        }
+      },
+      {
+        name: 'Event: DOM.characterDataModified',
+        docs: '```coffeescript [specscript]\n' +
+          "emit('DOM.characterDataModified', data {\n" +
+          '  nodeId: string,\n' +
+          '  childNodeCount: number,\n' +
+          '})\n' +
+          '```\n' +
+          '\n' +
+          'The `DOM.characterDataModified` event. Emitted when a text node is modified.\n' +
+          '\n' +
+          'Event Data:\n' +
+          '  * `data`\n' +
+          '    * `nodeId` - the ID of the element or node.\n' +
+          '    * `characterData` - the new text value.\n' +
+          '\n' +
+          '```javascript\n' +
+          "googleChromeDevTools.on('DOM.characterDataModified', data => {\n" +
+          "  console.log('text modified:', data)\n" +
+          '})\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event: DOM.characterDataModified',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 33, offset: 32 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 33, offset: 32 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 33, offset: 32 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: "emit('DOM.characterDataModified', data {\n" +
+                  '  nodeId: string,\n' +
+                  '  childNodeCount: number,\n' +
+                  '})',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 6, column: 4, offset: 120 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'The ',
+                    position: {
+                      start: { line: 8, column: 1, offset: 122 },
+                      end: { line: 8, column: 5, offset: 126 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'DOM.characterDataModified',
+                    position: {
+                      start: { line: 8, column: 5, offset: 126 },
+                      end: { line: 8, column: 32, offset: 153 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' event. Emitted when a text node is modified.',
+                    position: {
+                      start: { line: 8, column: 32, offset: 153 },
+                      end: { line: 8, column: 77, offset: 198 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 1, offset: 122 },
+                  end: { line: 8, column: 77, offset: 198 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event Data:',
+                    position: {
+                      start: { line: 10, column: 1, offset: 200 },
+                      end: { line: 10, column: 12, offset: 211 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 10, column: 1, offset: 200 },
+                  end: { line: 10, column: 12, offset: 211 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'data',
+                            position: {
+                              start: { line: 11, column: 5, offset: 216 },
+                              end: { line: 11, column: 11, offset: 222 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 11, column: 5, offset: 216 },
+                          end: { line: 11, column: 11, offset: 222 }
+                        }
+                      },
+                      {
+                        type: 'list',
+                        ordered: false,
+                        start: null,
+                        spread: false,
+                        children: [
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'nodeId',
+                                    position: {
+                                      start: {
+                                        line: 12,
+                                        column: 7,
+                                        offset: 229
+                                      },
+                                      end: {
+                                        line: 12,
+                                        column: 15,
+                                        offset: 237
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the ID of the element or node.',
+                                    position: {
+                                      start: {
+                                        line: 12,
+                                        column: 15,
+                                        offset: 237
+                                      },
+                                      end: {
+                                        line: 12,
+                                        column: 48,
+                                        offset: 270
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 12, column: 7, offset: 229 },
+                                  end: { line: 12, column: 48, offset: 270 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 12, column: 5, offset: 227 },
+                              end: { line: 12, column: 48, offset: 270 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'characterData',
+                                    position: {
+                                      start: {
+                                        line: 13,
+                                        column: 7,
+                                        offset: 277
+                                      },
+                                      end: {
+                                        line: 13,
+                                        column: 22,
+                                        offset: 292
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the new text value.',
+                                    position: {
+                                      start: {
+                                        line: 13,
+                                        column: 22,
+                                        offset: 292
+                                      },
+                                      end: {
+                                        line: 13,
+                                        column: 44,
+                                        offset: 314
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 13, column: 7, offset: 277 },
+                                  end: { line: 13, column: 44, offset: 314 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 13, column: 5, offset: 275 },
+                              end: { line: 13, column: 44, offset: 314 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 12, column: 5, offset: 227 },
+                          end: { line: 13, column: 44, offset: 314 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 11, column: 3, offset: 214 },
+                      end: { line: 13, column: 44, offset: 314 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 3, offset: 214 },
+                  end: { line: 13, column: 44, offset: 314 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: "googleChromeDevTools.on('DOM.characterDataModified', data => {\n" +
+                  "  console.log('text modified:', data)\n" +
+                  '})',
+                position: {
+                  start: { line: 15, column: 1, offset: 316 },
+                  end: { line: 19, column: 4, offset: 437 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 19, column: 4, offset: 437 }
+            }
+          }
+        }
+      },
+      {
+        name: 'Event: DOM.childNodeCountUpdated',
+        docs: '```coffeescript [specscript]\n' +
+          "emit('DOM.childNodeCountUpdated', data {\n" +
+          '  nodeId: string,\n' +
+          '  childNodeCount: number,\n' +
+          '})\n' +
+          '```\n' +
+          '\n' +
+          'The `DOM.childNodeCountUpdated` event. Emitted when the child node count of a node is updated.\n' +
+          '\n' +
+          'Event Data:\n' +
+          '  * `data`\n' +
+          '    * `nodeId` - the ID of the element or node.\n' +
+          '    * `childNodeCount` - the updated count of child nodes.\n' +
+          '\n' +
+          '```javascript\n' +
+          "googleChromeDevTools.on('DOM.childNodeCountUpdated', data => {\n" +
+          "  console.log('child node count updated:', data)\n" +
+          '})\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event: DOM.childNodeCountUpdated',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 33, offset: 32 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 33, offset: 32 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 33, offset: 32 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: "emit('DOM.childNodeCountUpdated', data {\n" +
+                  '  nodeId: string,\n' +
+                  '  childNodeCount: number,\n' +
+                  '})',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 6, column: 4, offset: 120 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'The ',
+                    position: {
+                      start: { line: 8, column: 1, offset: 122 },
+                      end: { line: 8, column: 5, offset: 126 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'DOM.childNodeCountUpdated',
+                    position: {
+                      start: { line: 8, column: 5, offset: 126 },
+                      end: { line: 8, column: 32, offset: 153 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' event. Emitted when the child node count of a node is updated.',
+                    position: {
+                      start: { line: 8, column: 32, offset: 153 },
+                      end: { line: 8, column: 95, offset: 216 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 1, offset: 122 },
+                  end: { line: 8, column: 95, offset: 216 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event Data:',
+                    position: {
+                      start: { line: 10, column: 1, offset: 218 },
+                      end: { line: 10, column: 12, offset: 229 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 10, column: 1, offset: 218 },
+                  end: { line: 10, column: 12, offset: 229 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'data',
+                            position: {
+                              start: { line: 11, column: 5, offset: 234 },
+                              end: { line: 11, column: 11, offset: 240 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 11, column: 5, offset: 234 },
+                          end: { line: 11, column: 11, offset: 240 }
+                        }
+                      },
+                      {
+                        type: 'list',
+                        ordered: false,
+                        start: null,
+                        spread: false,
+                        children: [
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'nodeId',
+                                    position: {
+                                      start: {
+                                        line: 12,
+                                        column: 7,
+                                        offset: 247
+                                      },
+                                      end: {
+                                        line: 12,
+                                        column: 15,
+                                        offset: 255
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the ID of the element or node.',
+                                    position: {
+                                      start: {
+                                        line: 12,
+                                        column: 15,
+                                        offset: 255
+                                      },
+                                      end: {
+                                        line: 12,
+                                        column: 48,
+                                        offset: 288
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 12, column: 7, offset: 247 },
+                                  end: { line: 12, column: 48, offset: 288 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 12, column: 5, offset: 245 },
+                              end: { line: 12, column: 48, offset: 288 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'childNodeCount',
+                                    position: {
+                                      start: {
+                                        line: 13,
+                                        column: 7,
+                                        offset: 295
+                                      },
+                                      end: {
+                                        line: 13,
+                                        column: 23,
+                                        offset: 311
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the updated count of child nodes.',
+                                    position: {
+                                      start: {
+                                        line: 13,
+                                        column: 23,
+                                        offset: 311
+                                      },
+                                      end: {
+                                        line: 13,
+                                        column: 59,
+                                        offset: 347
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 13, column: 7, offset: 295 },
+                                  end: { line: 13, column: 59, offset: 347 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 13, column: 5, offset: 293 },
+                              end: { line: 13, column: 59, offset: 347 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 12, column: 5, offset: 245 },
+                          end: { line: 13, column: 59, offset: 347 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 11, column: 3, offset: 232 },
+                      end: { line: 13, column: 59, offset: 347 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 3, offset: 232 },
+                  end: { line: 13, column: 59, offset: 347 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: "googleChromeDevTools.on('DOM.childNodeCountUpdated', data => {\n" +
+                  "  console.log('child node count updated:', data)\n" +
+                  '})',
+                position: {
+                  start: { line: 15, column: 1, offset: 349 },
+                  end: { line: 19, column: 4, offset: 481 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 19, column: 4, offset: 481 }
+            }
+          }
+        }
+      },
+      {
+        name: 'Event: DOM.childNodeInserted',
+        docs: '```javascript\n' +
+          "module CDPDOM 'https://chromedevtools.github.io/devtools-protocol/tot/DOM/'\n" +
+          '\n' +
+          "emit('DOM.childNodeInserted', data {\n" +
+          '  parentNodeId: string,\n' +
+          '  previousNodeId: string,\n' +
+          '  node: CDPDOM.Node,\n' +
+          '})\n' +
+          '```\n' +
+          '\n' +
+          'The `DOM.childNodeInserted` event. Emitted when a node is inserted into the DOM as a child of another node.\n' +
+          '\n' +
+          'Event Data:\n' +
+          '  * `data`\n' +
+          '    * `parentNodeId` - the id of the parent node.\n' +
+          '    * `previousNodeId` - the id of the node immediately preceding the inserted node.\n' +
+          '    * `node` - [`CDPDOM.Node`](https://chromedevtools.github.io/devtools-protocol/tot/DOM/#type-Node) - data about the inserted node.',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event: DOM.childNodeInserted',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 29, offset: 28 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 29, offset: 28 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 29, offset: 28 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: "module CDPDOM 'https://chromedevtools.github.io/devtools-protocol/tot/DOM/'\n" +
+                  '\n' +
+                  "emit('DOM.childNodeInserted', data {\n" +
+                  '  parentNodeId: string,\n' +
+                  '  previousNodeId: string,\n' +
+                  '  node: CDPDOM.Node,\n' +
+                  '})',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 9, column: 4, offset: 205 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'The ',
+                    position: {
+                      start: { line: 11, column: 1, offset: 207 },
+                      end: { line: 11, column: 5, offset: 211 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'DOM.childNodeInserted',
+                    position: {
+                      start: { line: 11, column: 5, offset: 211 },
+                      end: { line: 11, column: 28, offset: 234 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' event. Emitted when a node is inserted into the DOM as a child of another node.',
+                    position: {
+                      start: { line: 11, column: 28, offset: 234 },
+                      end: { line: 11, column: 108, offset: 314 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 1, offset: 207 },
+                  end: { line: 11, column: 108, offset: 314 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event Data:',
+                    position: {
+                      start: { line: 13, column: 1, offset: 316 },
+                      end: { line: 13, column: 12, offset: 327 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 13, column: 1, offset: 316 },
+                  end: { line: 13, column: 12, offset: 327 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'data',
+                            position: {
+                              start: { line: 14, column: 5, offset: 332 },
+                              end: { line: 14, column: 11, offset: 338 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 14, column: 5, offset: 332 },
+                          end: { line: 14, column: 11, offset: 338 }
+                        }
+                      },
+                      {
+                        type: 'list',
+                        ordered: false,
+                        start: null,
+                        spread: false,
+                        children: [
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'parentNodeId',
+                                    position: {
+                                      start: {
+                                        line: 15,
+                                        column: 7,
+                                        offset: 345
+                                      },
+                                      end: {
+                                        line: 15,
+                                        column: 21,
+                                        offset: 359
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the id of the parent node.',
+                                    position: {
+                                      start: {
+                                        line: 15,
+                                        column: 21,
+                                        offset: 359
+                                      },
+                                      end: {
+                                        line: 15,
+                                        column: 50,
+                                        offset: 388
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 15, column: 7, offset: 345 },
+                                  end: { line: 15, column: 50, offset: 388 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 15, column: 5, offset: 343 },
+                              end: { line: 15, column: 50, offset: 388 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'previousNodeId',
+                                    position: {
+                                      start: {
+                                        line: 16,
+                                        column: 7,
+                                        offset: 395
+                                      },
+                                      end: {
+                                        line: 16,
+                                        column: 23,
+                                        offset: 411
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the id of the node immediately preceding the inserted node.',
+                                    position: {
+                                      start: {
+                                        line: 16,
+                                        column: 23,
+                                        offset: 411
+                                      },
+                                      end: {
+                                        line: 16,
+                                        column: 85,
+                                        offset: 473
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 16, column: 7, offset: 395 },
+                                  end: { line: 16, column: 85, offset: 473 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 16, column: 5, offset: 393 },
+                              end: { line: 16, column: 85, offset: 473 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'node',
+                                    position: {
+                                      start: {
+                                        line: 17,
+                                        column: 7,
+                                        offset: 480
+                                      },
+                                      end: {
+                                        line: 17,
+                                        column: 13,
+                                        offset: 486
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - ',
+                                    position: {
+                                      start: {
+                                        line: 17,
+                                        column: 13,
+                                        offset: 486
+                                      },
+                                      end: {
+                                        line: 17,
+                                        column: 16,
+                                        offset: 489
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'link',
+                                    title: null,
+                                    url: 'https://chromedevtools.github.io/devtools-protocol/tot/DOM/#type-Node',
+                                    children: [
+                                      {
+                                        type: 'inlineCode',
+                                        value: 'CDPDOM.Node',
+                                        position: {
+                                          start: {
+                                            line: 17,
+                                            column: 17,
+                                            offset: 490
+                                          },
+                                          end: {
+                                            line: 17,
+                                            column: 30,
+                                            offset: 503
+                                          }
+                                        }
+                                      }
+                                    ],
+                                    position: {
+                                      start: {
+                                        line: 17,
+                                        column: 16,
+                                        offset: 489
+                                      },
+                                      end: {
+                                        line: 17,
+                                        column: 102,
+                                        offset: 575
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - data about the inserted node.',
+                                    position: {
+                                      start: {
+                                        line: 17,
+                                        column: 102,
+                                        offset: 575
+                                      },
+                                      end: {
+                                        line: 17,
+                                        column: 134,
+                                        offset: 607
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 17, column: 7, offset: 480 },
+                                  end: {
+                                    line: 17,
+                                    column: 134,
+                                    offset: 607
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 17, column: 5, offset: 478 },
+                              end: { line: 17, column: 134, offset: 607 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 15, column: 5, offset: 343 },
+                          end: { line: 17, column: 134, offset: 607 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 14, column: 3, offset: 330 },
+                      end: { line: 17, column: 134, offset: 607 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 14, column: 3, offset: 330 },
+                  end: { line: 17, column: 134, offset: 607 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 17, column: 134, offset: 607 }
+            }
+          }
+        }
+      },
+      {
+        name: 'Event: DOM.childNodeRemoved',
+        docs: '```javascript\n' +
+          "emit('DOM.childNodeRemoved', data {\n" +
+          '  parentNodeId: string,\n' +
+          '  nodeId: string,\n' +
+          '})\n' +
+          '```\n' +
+          '\n' +
+          'The `DOM.childNodeRemoved` event. Emitted when a node is removed from the DOM as a child of another node.\n' +
+          '\n' +
+          'Event Data:\n' +
+          '  * `data`\n' +
+          '    * `parentNodeId` - the id of the parent node.\n' +
+          '    * `nodeId` - the id of the removed node.\n' +
+          '\n' +
+          '```javascript\n' +
+          "googleChromeDevTools.on('DOM.childNodeRemoved', data => {\n" +
+          "  console.log('child node removed:', data.nodeId)\n" +
+          '})\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event: DOM.childNodeRemoved',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 28, offset: 27 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 28, offset: 27 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 28, offset: 27 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: "emit('DOM.childNodeRemoved', data {\n" +
+                  '  parentNodeId: string,\n' +
+                  '  nodeId: string,\n' +
+                  '})',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 6, column: 4, offset: 98 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'The ',
+                    position: {
+                      start: { line: 8, column: 1, offset: 100 },
+                      end: { line: 8, column: 5, offset: 104 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'DOM.childNodeRemoved',
+                    position: {
+                      start: { line: 8, column: 5, offset: 104 },
+                      end: { line: 8, column: 27, offset: 126 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' event. Emitted when a node is removed from the DOM as a child of another node.',
+                    position: {
+                      start: { line: 8, column: 27, offset: 126 },
+                      end: { line: 8, column: 106, offset: 205 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 1, offset: 100 },
+                  end: { line: 8, column: 106, offset: 205 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event Data:',
+                    position: {
+                      start: { line: 10, column: 1, offset: 207 },
+                      end: { line: 10, column: 12, offset: 218 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 10, column: 1, offset: 207 },
+                  end: { line: 10, column: 12, offset: 218 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'data',
+                            position: {
+                              start: { line: 11, column: 5, offset: 223 },
+                              end: { line: 11, column: 11, offset: 229 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 11, column: 5, offset: 223 },
+                          end: { line: 11, column: 11, offset: 229 }
+                        }
+                      },
+                      {
+                        type: 'list',
+                        ordered: false,
+                        start: null,
+                        spread: false,
+                        children: [
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'parentNodeId',
+                                    position: {
+                                      start: {
+                                        line: 12,
+                                        column: 7,
+                                        offset: 236
+                                      },
+                                      end: {
+                                        line: 12,
+                                        column: 21,
+                                        offset: 250
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the id of the parent node.',
+                                    position: {
+                                      start: {
+                                        line: 12,
+                                        column: 21,
+                                        offset: 250
+                                      },
+                                      end: {
+                                        line: 12,
+                                        column: 50,
+                                        offset: 279
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 12, column: 7, offset: 236 },
+                                  end: { line: 12, column: 50, offset: 279 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 12, column: 5, offset: 234 },
+                              end: { line: 12, column: 50, offset: 279 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'nodeId',
+                                    position: {
+                                      start: {
+                                        line: 13,
+                                        column: 7,
+                                        offset: 286
+                                      },
+                                      end: {
+                                        line: 13,
+                                        column: 15,
+                                        offset: 294
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the id of the removed node.',
+                                    position: {
+                                      start: {
+                                        line: 13,
+                                        column: 15,
+                                        offset: 294
+                                      },
+                                      end: {
+                                        line: 13,
+                                        column: 45,
+                                        offset: 324
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 13, column: 7, offset: 286 },
+                                  end: { line: 13, column: 45, offset: 324 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 13, column: 5, offset: 284 },
+                              end: { line: 13, column: 45, offset: 324 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 12, column: 5, offset: 234 },
+                          end: { line: 13, column: 45, offset: 324 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 11, column: 3, offset: 221 },
+                      end: { line: 13, column: 45, offset: 324 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 3, offset: 221 },
+                  end: { line: 13, column: 45, offset: 324 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: "googleChromeDevTools.on('DOM.childNodeRemoved', data => {\n" +
+                  "  console.log('child node removed:', data.nodeId)\n" +
+                  '})',
+                position: {
+                  start: { line: 15, column: 1, offset: 326 },
+                  end: { line: 19, column: 4, offset: 454 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 19, column: 4, offset: 454 }
+            }
+          }
+        }
+      },
+      {
+        name: 'Event: DOM.documentUpdated',
+        docs: '```coffeescript [specscript]\n' +
+          "emit('DOM.documentUpdated')\n" +
+          '```\n' +
+          '\n' +
+          'The `DOM.documentUpdated` event. Emitted when the `Document` object has been totally updated and node IDs are no longer valid.\n' +
+          '\n' +
+          'Event Data:\n' +
+          '  * (none)\n' +
+          '\n' +
+          '```javascript\n' +
+          "googleChromeDevTools.on('DOM.documentUpdated', () => {\n" +
+          "  console.log('Document updated')\n" +
+          '})\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event: DOM.documentUpdated',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 27, offset: 26 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 27, offset: 26 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 27, offset: 26 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: "emit('DOM.documentUpdated')",
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 4, offset: 60 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'The ',
+                    position: {
+                      start: { line: 5, column: 1, offset: 62 },
+                      end: { line: 5, column: 5, offset: 66 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'DOM.documentUpdated',
+                    position: {
+                      start: { line: 5, column: 5, offset: 66 },
+                      end: { line: 5, column: 26, offset: 87 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' event. Emitted when the ',
+                    position: {
+                      start: { line: 5, column: 26, offset: 87 },
+                      end: { line: 5, column: 51, offset: 112 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'Document',
+                    position: {
+                      start: { line: 5, column: 51, offset: 112 },
+                      end: { line: 5, column: 61, offset: 122 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' object has been totally updated and node IDs are no longer valid.',
+                    position: {
+                      start: { line: 5, column: 61, offset: 122 },
+                      end: { line: 5, column: 127, offset: 188 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 5, column: 1, offset: 62 },
+                  end: { line: 5, column: 127, offset: 188 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event Data:',
+                    position: {
+                      start: { line: 7, column: 1, offset: 190 },
+                      end: { line: 7, column: 12, offset: 201 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 7, column: 1, offset: 190 },
+                  end: { line: 7, column: 12, offset: 201 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'text',
+                            value: '(none)',
+                            position: {
+                              start: { line: 8, column: 5, offset: 206 },
+                              end: { line: 8, column: 11, offset: 212 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 8, column: 5, offset: 206 },
+                          end: { line: 8, column: 11, offset: 212 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 8, column: 3, offset: 204 },
+                      end: { line: 8, column: 11, offset: 212 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 3, offset: 204 },
+                  end: { line: 8, column: 11, offset: 212 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: "googleChromeDevTools.on('DOM.documentUpdated', () => {\n" +
+                  "  console.log('Document updated')\n" +
+                  '})',
+                position: {
+                  start: { line: 10, column: 1, offset: 214 },
+                  end: { line: 14, column: 4, offset: 323 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 14, column: 4, offset: 323 }
+            }
+          }
+        }
+      },
+      {
+        name: 'Event: close',
+        docs: '```coffeescript [specscript]\n' +
+          "emit('close')\n" +
+          '```\n' +
+          '\n' +
+          'The `close` event. Emitted when the websocket connection to the DevTools server is closed and the Google Chrome for Testing process is terminated.\n' +
+          '\n' +
+          'Event Data:\n' +
+          '  * (none)\n' +
+          '\n' +
+          '```javascript\n' +
+          "googleChromeForTesting.on('close', () => {\n" +
+          "  console.log('WebSocket connection closed and Google Chrome for Testing process terminated.')\n" +
+          '})\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event: close',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 13, offset: 12 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 13, offset: 12 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 13, offset: 12 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: "emit('close')",
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 4, offset: 46 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'The ',
+                    position: {
+                      start: { line: 5, column: 1, offset: 48 },
+                      end: { line: 5, column: 5, offset: 52 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'close',
+                    position: {
+                      start: { line: 5, column: 5, offset: 52 },
+                      end: { line: 5, column: 12, offset: 59 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' event. Emitted when the websocket connection to the DevTools server is closed and the Google Chrome for Testing process is terminated.',
+                    position: {
+                      start: { line: 5, column: 12, offset: 59 },
+                      end: { line: 5, column: 147, offset: 194 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 5, column: 1, offset: 48 },
+                  end: { line: 5, column: 147, offset: 194 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event Data:',
+                    position: {
+                      start: { line: 7, column: 1, offset: 196 },
+                      end: { line: 7, column: 12, offset: 207 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 7, column: 1, offset: 196 },
+                  end: { line: 7, column: 12, offset: 207 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'text',
+                            value: '(none)',
+                            position: {
+                              start: { line: 8, column: 5, offset: 212 },
+                              end: { line: 8, column: 11, offset: 218 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 8, column: 5, offset: 212 },
+                          end: { line: 8, column: 11, offset: 218 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 8, column: 3, offset: 210 },
+                      end: { line: 8, column: 11, offset: 218 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 3, offset: 210 },
+                  end: { line: 8, column: 11, offset: 218 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: "googleChromeForTesting.on('close', () => {\n" +
+                  "  console.log('WebSocket connection closed and Google Chrome for Testing process terminated.')\n" +
+                  '})',
+                position: {
+                  start: { line: 10, column: 1, offset: 220 },
+                  end: { line: 14, column: 4, offset: 378 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 14, column: 4, offset: 378 }
             }
           }
         }
