@@ -22,9 +22,9 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="canonical" href="https://presidium.services/docs/NpmToken">
 <script src="https://cdn.jsdelivr.net/npm/rubico@2.7.7/dist/rubico.min.js" crossorigin></script>
-<script src="https://unpkg.com/react@18.3.0/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@18.3.0/umd/react-dom.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/arche@0.3.11/index.js" crossorigin></script>
+<script src="https://cdn.jsdelivr.net/npm/react@18.3.0/umd/react.production.min.js" crossorigin></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.0/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://cdn.jsdelivr.net/npm/arche@0.3.11/index.js" crossorigin></script>
 <script src="/global.js" ></script>
 <script src="/vendor/codemirror/index.js" ></script>
 <script src="/vendor/codemirror/syntax/javascript.js" async></script>
