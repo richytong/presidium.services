@@ -37,11 +37,14 @@ async function main() {
     const { title, description, url, filepath } = page
     const fullFilepath = `${__dirname}/${publicDir}${filepath}`
     try {
+      /* TODO
       const content = await fs.promises.readFile(fullFilepath)
         .then(buf => buf.toString('utf8'))
       const $ = parseHTML(content)
       const bodyHTML = $('body').html().trim()
+      */
 
+      const bodyHTML = '<div id="react-root"></div>'
       console.log('Updating page', fullFilepath.replace(process.env.HOME, '~'))
 
       await fs.promises.writeFile(fullFilepath, PageHTML({
