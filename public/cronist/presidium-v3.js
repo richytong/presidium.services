@@ -699,7 +699,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/AwsCredentials.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/AwsCredentials.js'
   },
   {
     name: 'Docker',
@@ -34300,7 +34300,7 @@ export default [
         }
       }
     ],
-    fileName: '/Users/richard/code/presidium.services/../presidium/Docker.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/Docker.js'
   },
   {
     name: 'DynamoDBGlobalSecondaryIndex',
@@ -46092,7 +46092,7 @@ export default [
         }
       }
     ],
-    fileName: '/Users/richard/code/presidium.services/../presidium/DynamoDBGlobalSecondaryIndex.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/DynamoDBGlobalSecondaryIndex.js'
   },
   {
     name: 'DynamoDBStream',
@@ -51267,7 +51267,7 @@ export default [
         }
       }
     ],
-    fileName: '/Users/richard/code/presidium.services/../presidium/DynamoDBStream.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/DynamoDBStream.js'
   },
   {
     name: 'DynamoDBTable',
@@ -80184,7 +80184,7 @@ export default [
         }
       }
     ],
-    fileName: '/Users/richard/code/presidium.services/../presidium/DynamoDBTable.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/DynamoDBTable.js'
   },
   {
     name: 'ECR',
@@ -82181,7 +82181,7 @@ export default [
         }
       }
     ],
-    fileName: '/Users/richard/code/presidium.services/../presidium/ECR.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/ECR.js'
   },
   {
     name: 'GoogleChromeDevTools',
@@ -87903,6 +87903,7 @@ export default [
           'DOM.describeNode(options {\n' +
           '  sessionId: string,\n' +
           '  nodeId: string,\n' +
+          '  depth: number,\n' +
           '}) -> data Promise<{\n' +
           '  node: CDPDOM.Node,\n' +
           '}>\n' +
@@ -87914,6 +87915,7 @@ export default [
           '  * `options`\n' +
           '    * `sessionId` - the session ID.\n' +
           '    * `nodeId` - the ID of the node to describe.\n' +
+          '    * `depth` - the maximum depth of the subtree. Defaults to `1`. Use `-1` for the entire subtree.\n' +
           '\n' +
           'Return:\n' +
           '  * `data`\n' +
@@ -87961,12 +87963,13 @@ export default [
                   'DOM.describeNode(options {\n' +
                   '  sessionId: string,\n' +
                   '  nodeId: string,\n' +
+                  '  depth: number,\n' +
                   '}) -> data Promise<{\n' +
                   '  node: CDPDOM.Node,\n' +
                   '}>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 10, column: 4, offset: 220 }
+                  end: { line: 11, column: 4, offset: 237 }
                 }
               },
               {
@@ -87976,14 +87979,14 @@ export default [
                     type: 'text',
                     value: 'Describes a node.',
                     position: {
-                      start: { line: 12, column: 1, offset: 222 },
-                      end: { line: 12, column: 18, offset: 239 }
+                      start: { line: 13, column: 1, offset: 239 },
+                      end: { line: 13, column: 18, offset: 256 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 12, column: 1, offset: 222 },
-                  end: { line: 12, column: 18, offset: 239 }
+                  start: { line: 13, column: 1, offset: 239 },
+                  end: { line: 13, column: 18, offset: 256 }
                 }
               },
               {
@@ -87993,14 +87996,14 @@ export default [
                     type: 'text',
                     value: 'Arguments:',
                     position: {
-                      start: { line: 14, column: 1, offset: 241 },
-                      end: { line: 14, column: 11, offset: 251 }
+                      start: { line: 15, column: 1, offset: 258 },
+                      end: { line: 15, column: 11, offset: 268 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 14, column: 1, offset: 241 },
-                  end: { line: 14, column: 11, offset: 251 }
+                  start: { line: 15, column: 1, offset: 258 },
+                  end: { line: 15, column: 11, offset: 268 }
                 }
               },
               {
@@ -88021,14 +88024,14 @@ export default [
                             type: 'inlineCode',
                             value: 'options',
                             position: {
-                              start: { line: 15, column: 5, offset: 256 },
-                              end: { line: 15, column: 14, offset: 265 }
+                              start: { line: 16, column: 5, offset: 273 },
+                              end: { line: 16, column: 14, offset: 282 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 15, column: 5, offset: 256 },
-                          end: { line: 15, column: 14, offset: 265 }
+                          start: { line: 16, column: 5, offset: 273 },
+                          end: { line: 16, column: 14, offset: 282 }
                         }
                       },
                       {
@@ -88050,14 +88053,14 @@ export default [
                                     value: 'sessionId',
                                     position: {
                                       start: {
-                                        line: 16,
+                                        line: 17,
                                         column: 7,
-                                        offset: 272
+                                        offset: 289
                                       },
                                       end: {
-                                        line: 16,
+                                        line: 17,
                                         column: 18,
-                                        offset: 283
+                                        offset: 300
                                       }
                                     }
                                   },
@@ -88066,27 +88069,27 @@ export default [
                                     value: ' - the session ID.',
                                     position: {
                                       start: {
-                                        line: 16,
+                                        line: 17,
                                         column: 18,
-                                        offset: 283
+                                        offset: 300
                                       },
                                       end: {
-                                        line: 16,
+                                        line: 17,
                                         column: 36,
-                                        offset: 301
+                                        offset: 318
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 16, column: 7, offset: 272 },
-                                  end: { line: 16, column: 36, offset: 301 }
+                                  start: { line: 17, column: 7, offset: 289 },
+                                  end: { line: 17, column: 36, offset: 318 }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 16, column: 5, offset: 270 },
-                              end: { line: 16, column: 36, offset: 301 }
+                              start: { line: 17, column: 5, offset: 287 },
+                              end: { line: 17, column: 36, offset: 318 }
                             }
                           },
                           {
@@ -88102,14 +88105,14 @@ export default [
                                     value: 'nodeId',
                                     position: {
                                       start: {
-                                        line: 17,
+                                        line: 18,
                                         column: 7,
-                                        offset: 308
+                                        offset: 325
                                       },
                                       end: {
-                                        line: 17,
+                                        line: 18,
                                         column: 15,
-                                        offset: 316
+                                        offset: 333
                                       }
                                     }
                                   },
@@ -88118,45 +88121,165 @@ export default [
                                     value: ' - the ID of the node to describe.',
                                     position: {
                                       start: {
-                                        line: 17,
+                                        line: 18,
                                         column: 15,
-                                        offset: 316
+                                        offset: 333
                                       },
                                       end: {
-                                        line: 17,
+                                        line: 18,
                                         column: 49,
-                                        offset: 350
+                                        offset: 367
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 17, column: 7, offset: 308 },
-                                  end: { line: 17, column: 49, offset: 350 }
+                                  start: { line: 18, column: 7, offset: 325 },
+                                  end: { line: 18, column: 49, offset: 367 }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 17, column: 5, offset: 306 },
-                              end: { line: 17, column: 49, offset: 350 }
+                              start: { line: 18, column: 5, offset: 323 },
+                              end: { line: 18, column: 49, offset: 367 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'depth',
+                                    position: {
+                                      start: {
+                                        line: 19,
+                                        column: 7,
+                                        offset: 374
+                                      },
+                                      end: {
+                                        line: 19,
+                                        column: 14,
+                                        offset: 381
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the maximum depth of the subtree. Defaults to ',
+                                    position: {
+                                      start: {
+                                        line: 19,
+                                        column: 14,
+                                        offset: 381
+                                      },
+                                      end: {
+                                        line: 19,
+                                        column: 63,
+                                        offset: 430
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: '1',
+                                    position: {
+                                      start: {
+                                        line: 19,
+                                        column: 63,
+                                        offset: 430
+                                      },
+                                      end: {
+                                        line: 19,
+                                        column: 66,
+                                        offset: 433
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: '. Use ',
+                                    position: {
+                                      start: {
+                                        line: 19,
+                                        column: 66,
+                                        offset: 433
+                                      },
+                                      end: {
+                                        line: 19,
+                                        column: 72,
+                                        offset: 439
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: '-1',
+                                    position: {
+                                      start: {
+                                        line: 19,
+                                        column: 72,
+                                        offset: 439
+                                      },
+                                      end: {
+                                        line: 19,
+                                        column: 76,
+                                        offset: 443
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' for the entire subtree.',
+                                    position: {
+                                      start: {
+                                        line: 19,
+                                        column: 76,
+                                        offset: 443
+                                      },
+                                      end: {
+                                        line: 19,
+                                        column: 100,
+                                        offset: 467
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 19, column: 7, offset: 374 },
+                                  end: {
+                                    line: 19,
+                                    column: 100,
+                                    offset: 467
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 19, column: 5, offset: 372 },
+                              end: { line: 19, column: 100, offset: 467 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 16, column: 5, offset: 270 },
-                          end: { line: 17, column: 49, offset: 350 }
+                          start: { line: 17, column: 5, offset: 287 },
+                          end: { line: 19, column: 100, offset: 467 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 15, column: 3, offset: 254 },
-                      end: { line: 17, column: 49, offset: 350 }
+                      start: { line: 16, column: 3, offset: 271 },
+                      end: { line: 19, column: 100, offset: 467 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 15, column: 3, offset: 254 },
-                  end: { line: 17, column: 49, offset: 350 }
+                  start: { line: 16, column: 3, offset: 271 },
+                  end: { line: 19, column: 100, offset: 467 }
                 }
               },
               {
@@ -88166,14 +88289,14 @@ export default [
                     type: 'text',
                     value: 'Return:',
                     position: {
-                      start: { line: 19, column: 1, offset: 352 },
-                      end: { line: 19, column: 8, offset: 359 }
+                      start: { line: 21, column: 1, offset: 469 },
+                      end: { line: 21, column: 8, offset: 476 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 19, column: 1, offset: 352 },
-                  end: { line: 19, column: 8, offset: 359 }
+                  start: { line: 21, column: 1, offset: 469 },
+                  end: { line: 21, column: 8, offset: 476 }
                 }
               },
               {
@@ -88194,14 +88317,14 @@ export default [
                             type: 'inlineCode',
                             value: 'data',
                             position: {
-                              start: { line: 20, column: 5, offset: 364 },
-                              end: { line: 20, column: 11, offset: 370 }
+                              start: { line: 22, column: 5, offset: 481 },
+                              end: { line: 22, column: 11, offset: 487 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 20, column: 5, offset: 364 },
-                          end: { line: 20, column: 11, offset: 370 }
+                          start: { line: 22, column: 5, offset: 481 },
+                          end: { line: 22, column: 11, offset: 487 }
                         }
                       },
                       {
@@ -88223,14 +88346,14 @@ export default [
                                     value: 'node',
                                     position: {
                                       start: {
-                                        line: 21,
+                                        line: 23,
                                         column: 7,
-                                        offset: 377
+                                        offset: 494
                                       },
                                       end: {
-                                        line: 21,
+                                        line: 23,
                                         column: 13,
-                                        offset: 383
+                                        offset: 500
                                       }
                                     }
                                   },
@@ -88239,14 +88362,14 @@ export default [
                                     value: ' - ',
                                     position: {
                                       start: {
-                                        line: 21,
+                                        line: 23,
                                         column: 13,
-                                        offset: 383
+                                        offset: 500
                                       },
                                       end: {
-                                        line: 21,
+                                        line: 23,
                                         column: 16,
-                                        offset: 386
+                                        offset: 503
                                       }
                                     }
                                   },
@@ -88260,28 +88383,28 @@ export default [
                                         value: 'CDPDOM.Node',
                                         position: {
                                           start: {
-                                            line: 21,
+                                            line: 23,
                                             column: 17,
-                                            offset: 387
+                                            offset: 504
                                           },
                                           end: {
-                                            line: 21,
+                                            line: 23,
                                             column: 30,
-                                            offset: 400
+                                            offset: 517
                                           }
                                         }
                                       }
                                     ],
                                     position: {
                                       start: {
-                                        line: 21,
+                                        line: 23,
                                         column: 16,
-                                        offset: 386
+                                        offset: 503
                                       },
                                       end: {
-                                        line: 21,
+                                        line: 23,
                                         column: 102,
-                                        offset: 472
+                                        offset: 589
                                       }
                                     }
                                   },
@@ -88290,49 +88413,49 @@ export default [
                                     value: ' - the node description.',
                                     position: {
                                       start: {
-                                        line: 21,
+                                        line: 23,
                                         column: 102,
-                                        offset: 472
+                                        offset: 589
                                       },
                                       end: {
-                                        line: 21,
+                                        line: 23,
                                         column: 126,
-                                        offset: 496
+                                        offset: 613
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 21, column: 7, offset: 377 },
+                                  start: { line: 23, column: 7, offset: 494 },
                                   end: {
-                                    line: 21,
+                                    line: 23,
                                     column: 126,
-                                    offset: 496
+                                    offset: 613
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 21, column: 5, offset: 375 },
-                              end: { line: 21, column: 126, offset: 496 }
+                              start: { line: 23, column: 5, offset: 492 },
+                              end: { line: 23, column: 126, offset: 613 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 21, column: 5, offset: 375 },
-                          end: { line: 21, column: 126, offset: 496 }
+                          start: { line: 23, column: 5, offset: 492 },
+                          end: { line: 23, column: 126, offset: 613 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 20, column: 3, offset: 362 },
-                      end: { line: 21, column: 126, offset: 496 }
+                      start: { line: 22, column: 3, offset: 479 },
+                      end: { line: 23, column: 126, offset: 613 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 20, column: 3, offset: 362 },
-                  end: { line: 21, column: 126, offset: 496 }
+                  start: { line: 22, column: 3, offset: 479 },
+                  end: { line: 23, column: 126, offset: 613 }
                 }
               },
               {
@@ -88341,14 +88464,14 @@ export default [
                 meta: null,
                 value: 'const data = await googleChromeDevTools.DOM.describeNode({ nodeId: 1 })',
                 position: {
-                  start: { line: 23, column: 1, offset: 498 },
-                  end: { line: 25, column: 4, offset: 587 }
+                  start: { line: 25, column: 1, offset: 615 },
+                  end: { line: 27, column: 4, offset: 704 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 25, column: 4, offset: 587 }
+              end: { line: 27, column: 4, offset: 704 }
             }
           }
         }
@@ -93899,7 +94022,7 @@ export default [
         }
       }
     ],
-    fileName: '/Users/richard/code/presidium.services/../presidium/GoogleChromeDevTools.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/GoogleChromeDevTools.js'
   },
   {
     name: 'GoogleChromeForTesting',
@@ -95253,7 +95376,7 @@ export default [
         }
       }
     ],
-    fileName: '/Users/richard/code/presidium.services/../presidium/GoogleChromeForTesting.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/GoogleChromeForTesting.js'
   },
   {
     name: 'HTTP',
@@ -102852,7 +102975,7 @@ export default [
         }
       }
     ],
-    fileName: '/Users/richard/code/presidium.services/../presidium/HTTP.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/HTTP.js'
   },
   {
     name: 'NpmToken',
@@ -103216,7 +103339,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/NpmToken.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/NpmToken.js'
   },
   {
     name: 'OptionalValidator',
@@ -103641,7 +103764,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/OptionalValidator.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/OptionalValidator.js'
   },
   {
     name: 'Password',
@@ -104267,7 +104390,7 @@ export default [
         }
       }
     ],
-    fileName: '/Users/richard/code/presidium.services/../presidium/Password.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/Password.js'
   },
   {
     name: 'Readable',
@@ -105236,7 +105359,7 @@ export default [
         }
       }
     ],
-    fileName: '/Users/richard/code/presidium.services/../presidium/Readable.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/Readable.js'
   },
   {
     name: 'S3Bucket',
@@ -142937,7 +143060,7 @@ export default [
         }
       }
     ],
-    fileName: '/Users/richard/code/presidium.services/../presidium/S3Bucket.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/S3Bucket.js'
   },
   {
     name: 'Secrets',
@@ -143195,7 +143318,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/Secrets.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/Secrets.js'
   },
   {
     name: 'SecretsManager',
@@ -145290,7 +145413,7 @@ export default [
         }
       }
     ],
-    fileName: '/Users/richard/code/presidium.services/../presidium/SecretsManager.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/SecretsManager.js'
   },
   {
     name: 'StrictValidator',
@@ -145713,7 +145836,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/StrictValidator.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/StrictValidator.js'
   },
   {
     name: 'TranscribeStream',
@@ -149270,7 +149393,7 @@ export default [
         }
       }
     ],
-    fileName: '/Users/richard/code/presidium.services/../presidium/TranscribeStream.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/TranscribeStream.js'
   },
   {
     name: 'XML',
@@ -149951,7 +150074,7 @@ export default [
         }
       }
     ],
-    fileName: '/Users/richard/code/presidium.services/../presidium/XML.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/XML.js'
   },
   {
     name: 'AWSAutoScalingDescribeAutoScalingGroupsFilters',
@@ -150016,7 +150139,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/AWSAutoScalingDescribeAutoScalingGroupsFilters.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/AWSAutoScalingDescribeAutoScalingGroupsFilters.js'
   },
   {
     name: 'AmzCanonicalHeaders',
@@ -150071,7 +150194,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/AmzCanonicalHeaders.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/AmzCanonicalHeaders.js'
   },
   {
     name: 'AmzDate',
@@ -150126,7 +150249,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/AmzDate.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/AmzDate.js'
   },
   {
     name: 'AmzSignedHeaders',
@@ -150181,7 +150304,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/AmzSignedHeaders.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/AmzSignedHeaders.js'
   },
   {
     name: 'Archive.tar',
@@ -150603,7 +150726,7 @@ export default [
         }
       }
     ],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/Archive.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/Archive.js'
   },
   {
     name: 'AwsAuthorization',
@@ -150684,7 +150807,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/AwsAuthorization.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/AwsAuthorization.js'
   },
   {
     name: 'AwsError',
@@ -150737,7 +150860,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/AwsError.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/AwsError.js'
   },
   {
     name: 'AwsPresignedUrlV4',
@@ -150818,7 +150941,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/AwsPresignedUrlV4.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/AwsPresignedUrlV4.js'
   },
   {
     name: 'CRC32',
@@ -150976,7 +151099,7 @@ export default [
         }
       }
     ],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/CRC32.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/CRC32.js'
   },
   {
     name: 'DynamoDBAttributeDefinitions',
@@ -151048,7 +151171,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/DynamoDBAttributeDefinitions.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/DynamoDBAttributeDefinitions.js'
   },
   {
     name: 'DynamoDBAttributeType',
@@ -151107,7 +151230,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/DynamoDBAttributeType.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/DynamoDBAttributeType.js'
   },
   {
     name: 'DynamoDBAttributeValue',
@@ -151180,7 +151303,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/DynamoDBAttributeValue.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/DynamoDBAttributeValue.js'
   },
   {
     name: 'DynamoDBAttributeValueJSON',
@@ -151255,7 +151378,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/DynamoDBAttributeValueJSON.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/DynamoDBAttributeValueJSON.js'
   },
   {
     name: 'DynamoDBIndexname',
@@ -151366,7 +151489,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/DynamoDBIndexname.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/DynamoDBIndexname.js'
   },
   {
     name: 'DynamoDBKeySchema',
@@ -151449,7 +151572,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/DynamoDBKeySchema.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/DynamoDBKeySchema.js'
   },
   {
     name: 'RetryAwsErrors',
@@ -151504,7 +151627,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/RetryAwsErrors.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/RetryAwsErrors.js'
   },
   {
     name: 'StatusCodeMessage',
@@ -151559,7 +151682,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/StatusCodeMessage.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/StatusCodeMessage.js'
   },
   {
     name: 'StringStream',
@@ -151612,7 +151735,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/StringStream.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/StringStream.js'
   },
   {
     name: '_Buffer',
@@ -151700,7 +151823,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/_Buffer.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/_Buffer.js'
   },
   {
     name: 'arrayPush',
@@ -151755,7 +151878,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/arrayPush.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/arrayPush.js'
   },
   {
     name: '_astToObject',
@@ -151878,7 +152001,7 @@ export default [
         }
       }
     ],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/awsXMLToObject.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/awsXMLToObject.js'
   },
   {
     name: 'callPropBinary',
@@ -151962,7 +152085,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/callPropBinary.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/callPropBinary.js'
   },
   {
     name: 'callPropUnary',
@@ -152044,7 +152167,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/callPropUnary.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/callPropUnary.js'
   },
   {
     name: 'convertUint32ToBase64',
@@ -152099,7 +152222,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/convertUint32ToBase64.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/convertUint32ToBase64.js'
   },
   {
     name: 'createEC2DescribeInstancesFilters',
@@ -152162,7 +152285,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/createEC2DescribeInstancesFilters.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/createEC2DescribeInstancesFilters.js'
   },
   {
     name: 'createExpressionAttributeNames',
@@ -152225,7 +152348,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/createExpressionAttributeNames.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/createExpressionAttributeNames.js'
   },
   {
     name: 'createExpressionAttributeValues',
@@ -152284,7 +152407,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/createExpressionAttributeValues.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/createExpressionAttributeValues.js'
   },
   {
     name: 'createFilterExpression',
@@ -152343,7 +152466,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/createFilterExpression.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/createFilterExpression.js'
   },
   {
     name: 'createKeyConditionExpression',
@@ -152402,7 +152525,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/createKeyConditionExpression.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/createKeyConditionExpression.js'
   },
   {
     name: 'createS3DeleteObjectError',
@@ -152473,7 +152596,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/createS3DeleteObjectError.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/createS3DeleteObjectError.js'
   },
   {
     name: 'createUpdateServiceSpec',
@@ -152610,7 +152733,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/createUpdateServiceSpec.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/createUpdateServiceSpec.js'
   },
   {
     name: 'dynamoDBStreamDescribeStream',
@@ -152715,7 +152838,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/dynamoDBStreamDescribeStream.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/dynamoDBStreamDescribeStream.js'
   },
   {
     name: 'dynamoDBStreamGetRecords',
@@ -152826,7 +152949,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/dynamoDBStreamGetRecords.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/dynamoDBStreamGetRecords.js'
   },
   {
     name: 'dynamoDBStreamGetRecordsIterator',
@@ -152923,7 +153046,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/dynamoDBStreamGetRecordsIterator.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/dynamoDBStreamGetRecordsIterator.js'
   },
   {
     name: 'dynamoDBStreamGetShardIterator',
@@ -153002,7 +153125,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/dynamoDBStreamGetShardIterator.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/dynamoDBStreamGetShardIterator.js'
   },
   {
     name: 'dynamoDBStreamGetShardsIterator',
@@ -153077,7 +153200,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/dynamoDBStreamGetShardsIterator.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/dynamoDBStreamGetShardsIterator.js'
   },
   {
     name: 'dynamoDBStreamGetStreamsIterator',
@@ -153134,7 +153257,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/dynamoDBStreamGetStreamsIterator.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/dynamoDBStreamGetStreamsIterator.js'
   },
   {
     name: 'dynamoDBStreamListStreams',
@@ -153227,7 +153350,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/dynamoDBStreamListStreams.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/dynamoDBStreamListStreams.js'
   },
   {
     name: 'encodeURIComponentRFC3986',
@@ -153282,7 +153405,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/encodeURIComponentRFC3986.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/encodeURIComponentRFC3986.js'
   },
   {
     name: 'handleAwsResponse',
@@ -153349,7 +153472,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/handleAwsResponse.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/handleAwsResponse.js'
   },
   {
     name: 'handleDockerHTTPResponse',
@@ -153416,7 +153539,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/handleDockerHTTPResponse.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/handleDockerHTTPResponse.js'
   },
   {
     name: 'handleDynamoDBStreamGetRecordsError',
@@ -153471,7 +153594,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/handleDynamoDBStreamGetRecordsError.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/handleDynamoDBStreamGetRecordsError.js'
   },
   {
     name: 'httpConfigure',
@@ -153582,7 +153705,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/httpConfigure.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/httpConfigure.js'
   },
   {
     name: 'isArray',
@@ -153635,7 +153758,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/isArray.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/isArray.js'
   },
   {
     name: 'isDynamoDBAttributeValue',
@@ -153690,7 +153813,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/isDynamoDBAttributeValue.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/isDynamoDBAttributeValue.js'
   },
   {
     name: 'isDynamoDBJSON',
@@ -153743,7 +153866,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/isDynamoDBJSON.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/isDynamoDBJSON.js'
   },
   {
     name: 'join',
@@ -153798,7 +153921,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/join.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/join.js'
   },
   {
     name: 'objectFilterKeys',
@@ -153880,7 +154003,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/objectFilterKeys.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/objectFilterKeys.js'
   },
   {
     name: 'parsePath',
@@ -153947,7 +154070,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/parsePath.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/parsePath.js'
   },
   {
     name: 'parseURL',
@@ -154000,7 +154123,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/parseURL.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/parseURL.js'
   },
   {
     name: 'pathJoin',
@@ -154053,7 +154176,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/pathJoin.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/pathJoin.js'
   },
   {
     name: 'resolvePath',
@@ -154108,7 +154231,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/resolvePath.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/resolvePath.js'
   },
   {
     name: 'sleep',
@@ -154163,7 +154286,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/sleep.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/sleep.js'
   },
   {
     name: 'toArray',
@@ -154218,7 +154341,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/internal/toArray.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/internal/toArray.js'
   },
   {
     name: 'main',
@@ -154278,6 +154401,6 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium/test/externalTest.js'
+    fileName: '/home/richard/code/presidium.services/../presidium/test/externalTest.js'
   }
 ]

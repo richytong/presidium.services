@@ -3372,7 +3372,7 @@ export default [
         }
       }
     ],
-    fileName: '/Users/richard/code/presidium.services/../presidium-websocket/ServerWebSocket.js'
+    fileName: '/home/richard/code/presidium.services/../presidium-websocket/ServerWebSocket.js'
   },
   {
     name: 'WebSocket',
@@ -7480,7 +7480,7 @@ export default [
         }
       }
     ],
-    fileName: '/Users/richard/code/presidium.services/../presidium-websocket/WebSocket.js'
+    fileName: '/home/richard/code/presidium.services/../presidium-websocket/WebSocket.js'
   },
   {
     name: 'WebSocketSecureServer',
@@ -8568,7 +8568,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium-websocket/WebSocketSecureServer.js'
+    fileName: '/home/richard/code/presidium.services/../presidium-websocket/WebSocketSecureServer.js'
   },
   {
     name: 'WebSocketServer',
@@ -11704,7 +11704,7 @@ export default [
         }
       }
     ],
-    fileName: '/Users/richard/code/presidium.services/../presidium-websocket/WebSocketServer.js'
+    fileName: '/home/richard/code/presidium.services/../presidium-websocket/WebSocketServer.js'
   },
   {
     name: '_onread',
@@ -11759,7 +11759,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium-websocket/_internal/_onread.js'
+    fileName: '/home/richard/code/presidium.services/../presidium-websocket/_internal/_onread.js'
   },
   {
     name: 'append',
@@ -11814,7 +11814,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium-websocket/_internal/append.js'
+    fileName: '/home/richard/code/presidium.services/../presidium-websocket/_internal/append.js'
   },
   {
     name: 'call',
@@ -11871,7 +11871,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium-websocket/_internal/call.js'
+    fileName: '/home/richard/code/presidium.services/../presidium-websocket/_internal/call.js'
   },
   {
     name: 'decimalToBinaryNumberString',
@@ -11945,7 +11945,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium-websocket/_internal/decimalToBinaryNumberString.js'
+    fileName: '/home/richard/code/presidium.services/../presidium-websocket/_internal/decimalToBinaryNumberString.js'
   },
   {
     name: 'decodeWebSocketFrame',
@@ -12018,7 +12018,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium-websocket/_internal/decodeWebSocketFrame.js'
+    fileName: '/home/richard/code/presidium.services/../presidium-websocket/_internal/decodeWebSocketFrame.js'
   },
   {
     name: 'decodeWebSocketHandshakeResponse',
@@ -12079,7 +12079,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium-websocket/_internal/decodeWebSocketHandshakeResponse.js'
+    fileName: '/home/richard/code/presidium.services/../presidium-websocket/_internal/decodeWebSocketHandshakeResponse.js'
   },
   {
     name: 'defaultHttpHandler',
@@ -12169,7 +12169,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium-websocket/_internal/defaultHttpHandler.js'
+    fileName: '/home/richard/code/presidium.services/../presidium-websocket/_internal/defaultHttpHandler.js'
   },
   {
     name: 'deflateRawWithFlush',
@@ -12224,7 +12224,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium-websocket/_internal/deflateRawWithFlush.js'
+    fileName: '/home/richard/code/presidium.services/../presidium-websocket/_internal/deflateRawWithFlush.js'
   },
   {
     name: 'inflateRawWithFlush',
@@ -12279,7 +12279,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium-websocket/_internal/inflateRawWithFlush.js'
+    fileName: '/home/richard/code/presidium.services/../presidium-websocket/_internal/inflateRawWithFlush.js'
   },
   {
     name: 'remove',
@@ -12332,7 +12332,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium-websocket/_internal/remove.js'
+    fileName: '/home/richard/code/presidium.services/../presidium-websocket/_internal/remove.js'
   },
   {
     name: 'unhandledErrorListener',
@@ -12406,7 +12406,7 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium-websocket/_internal/unhandledErrorListener.js'
+    fileName: '/home/richard/code/presidium.services/../presidium-websocket/_internal/unhandledErrorListener.js'
   },
   {
     name: 'main',
@@ -12466,6 +12466,6 @@ export default [
       }
     },
     methods: [],
-    fileName: '/Users/richard/code/presidium.services/../presidium-websocket/test/externalTest.js'
+    fileName: '/home/richard/code/presidium.services/../presidium-websocket/test/externalTest.js'
   }
 ]
