@@ -22,7 +22,7 @@ const { domain, publicDir } = config
  * ```
  */
 async function main() {
-  const awsCreds = await AwsCredentials('presidium')
+  const awsCreds = await AwsCredentials('solum')
   awsCreds.region = 'us-east-1'
 
   const bucket = new S3Bucket({
