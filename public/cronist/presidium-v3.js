@@ -84265,7 +84265,7 @@ export default [
       {
         name: 'sendRequestJSON',
         docs: '```coffeescript [specscript]\n' +
-          'sendRequestJSON(payload string) -> data Promise<Object>\n' +
+          'sendRequestJSON(payload object) -> data Promise<Object>\n' +
           '```',
         mdast: {
           name: {
@@ -84301,7 +84301,7 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: 'sendRequestJSON(payload string) -> data Promise<Object>',
+                value: 'sendRequestJSON(payload object) -> data Promise<Object>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
                   end: { line: 3, column: 4, offset: 88 }
@@ -85057,6 +85057,289 @@ export default [
         }
       },
       {
+        name: 'Page.enable',
+        docs: '```coffeescript [specscript]\n' +
+          'Page.enable(options {\n' +
+          '  sessionId: string,\n' +
+          '}) -> data Promise<{}>\n' +
+          '```\n' +
+          '\n' +
+          'Enables Page events for the current target.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * `options`\n' +
+          '    * `sessionId` - the session ID.\n' +
+          '\n' +
+          'Return:\n' +
+          '  * `data` - promise of an empty object.\n' +
+          '\n' +
+          '```javascript\n' +
+          'await googleChromeDevTools.Page.enable()\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Page.enable',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 12, offset: 11 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 12, offset: 11 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 12, offset: 11 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: 'Page.enable(options {\n' +
+                  '  sessionId: string,\n' +
+                  '}) -> data Promise<{}>',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 5, column: 4, offset: 98 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Enables Page events for the current target.',
+                    position: {
+                      start: { line: 7, column: 1, offset: 100 },
+                      end: { line: 7, column: 44, offset: 143 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 7, column: 1, offset: 100 },
+                  end: { line: 7, column: 44, offset: 143 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 9, column: 1, offset: 145 },
+                      end: { line: 9, column: 11, offset: 155 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 9, column: 1, offset: 145 },
+                  end: { line: 9, column: 11, offset: 155 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'options',
+                            position: {
+                              start: { line: 10, column: 5, offset: 160 },
+                              end: { line: 10, column: 14, offset: 169 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 10, column: 5, offset: 160 },
+                          end: { line: 10, column: 14, offset: 169 }
+                        }
+                      },
+                      {
+                        type: 'list',
+                        ordered: false,
+                        start: null,
+                        spread: false,
+                        children: [
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'sessionId',
+                                    position: {
+                                      start: {
+                                        line: 11,
+                                        column: 7,
+                                        offset: 176
+                                      },
+                                      end: {
+                                        line: 11,
+                                        column: 18,
+                                        offset: 187
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the session ID.',
+                                    position: {
+                                      start: {
+                                        line: 11,
+                                        column: 18,
+                                        offset: 187
+                                      },
+                                      end: {
+                                        line: 11,
+                                        column: 36,
+                                        offset: 205
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 11, column: 7, offset: 176 },
+                                  end: { line: 11, column: 36, offset: 205 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 11, column: 5, offset: 174 },
+                              end: { line: 11, column: 36, offset: 205 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 11, column: 5, offset: 174 },
+                          end: { line: 11, column: 36, offset: 205 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 10, column: 3, offset: 158 },
+                      end: { line: 11, column: 36, offset: 205 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 10, column: 3, offset: 158 },
+                  end: { line: 11, column: 36, offset: 205 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 13, column: 1, offset: 207 },
+                      end: { line: 13, column: 8, offset: 214 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 13, column: 1, offset: 207 },
+                  end: { line: 13, column: 8, offset: 214 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'data',
+                            position: {
+                              start: { line: 14, column: 5, offset: 219 },
+                              end: { line: 14, column: 11, offset: 225 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - promise of an empty object.',
+                            position: {
+                              start: { line: 14, column: 11, offset: 225 },
+                              end: { line: 14, column: 41, offset: 255 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 14, column: 5, offset: 219 },
+                          end: { line: 14, column: 41, offset: 255 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 14, column: 3, offset: 217 },
+                      end: { line: 14, column: 41, offset: 255 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 14, column: 3, offset: 217 },
+                  end: { line: 14, column: 41, offset: 255 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'await googleChromeDevTools.Page.enable()',
+                position: {
+                  start: { line: 16, column: 1, offset: 257 },
+                  end: { line: 18, column: 4, offset: 315 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 18, column: 4, offset: 315 }
+            }
+          }
+        }
+      },
+      {
         name: 'Page.navigate',
         docs: '```coffeescript [specscript]\n' +
           "module CDPPage 'https://chromedevtools.github.io/devtools-protocol/tot/Page/'\n" +
@@ -85546,6 +85829,403 @@ export default [
             position: {
               start: { line: 1, column: 1, offset: 0 },
               end: { line: 27, column: 4, offset: 654 }
+            }
+          }
+        }
+      },
+      {
+        name: 'Page.handleJavaScriptDialog',
+        docs: '```coffeescript [specscript]\n' +
+          'Page.handleJavaScriptDialog(options {\n' +
+          '  sessionId: string,\n' +
+          '  accept: boolean,\n' +
+          '  promptText: string,\n' +
+          '}) -> data Promise<{}>\n' +
+          '```\n' +
+          '\n' +
+          'Handles (accepts or dismisses) a JavaScript initiated dialog (alert, confirm, prompt, or onbeforeunload).\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * `options`\n' +
+          '    * `sessionId` - the session ID.\n' +
+          '    * `accept` - whether to accept or dismiss the dialog.\n' +
+          '    * `promptText` - the text to enter into the dialog prompt before accepting.\n' +
+          '\n' +
+          'Return:\n' +
+          '  * `data` - promise of an empty object.\n' +
+          '\n' +
+          '```javascript\n' +
+          'await googleChromeDevTools.Page.handleJavaScriptDialog({\n' +
+          "  url: 'http://localhost:3000/',\n" +
+          '})\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Page.handleJavaScriptDialog',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 28, offset: 27 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 28, offset: 27 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 28, offset: 27 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: 'Page.handleJavaScriptDialog(options {\n' +
+                  '  sessionId: string,\n' +
+                  '  accept: boolean,\n' +
+                  '  promptText: string,\n' +
+                  '}) -> data Promise<{}>',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 7, column: 4, offset: 155 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Handles (accepts or dismisses) a JavaScript initiated dialog (alert, confirm, prompt, or onbeforeunload).',
+                    position: {
+                      start: { line: 9, column: 1, offset: 157 },
+                      end: { line: 9, column: 106, offset: 262 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 9, column: 1, offset: 157 },
+                  end: { line: 9, column: 106, offset: 262 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 11, column: 1, offset: 264 },
+                      end: { line: 11, column: 11, offset: 274 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 1, offset: 264 },
+                  end: { line: 11, column: 11, offset: 274 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'options',
+                            position: {
+                              start: { line: 12, column: 5, offset: 279 },
+                              end: { line: 12, column: 14, offset: 288 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 12, column: 5, offset: 279 },
+                          end: { line: 12, column: 14, offset: 288 }
+                        }
+                      },
+                      {
+                        type: 'list',
+                        ordered: false,
+                        start: null,
+                        spread: false,
+                        children: [
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'sessionId',
+                                    position: {
+                                      start: {
+                                        line: 13,
+                                        column: 7,
+                                        offset: 295
+                                      },
+                                      end: {
+                                        line: 13,
+                                        column: 18,
+                                        offset: 306
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the session ID.',
+                                    position: {
+                                      start: {
+                                        line: 13,
+                                        column: 18,
+                                        offset: 306
+                                      },
+                                      end: {
+                                        line: 13,
+                                        column: 36,
+                                        offset: 324
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 13, column: 7, offset: 295 },
+                                  end: { line: 13, column: 36, offset: 324 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 13, column: 5, offset: 293 },
+                              end: { line: 13, column: 36, offset: 324 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'accept',
+                                    position: {
+                                      start: {
+                                        line: 14,
+                                        column: 7,
+                                        offset: 331
+                                      },
+                                      end: {
+                                        line: 14,
+                                        column: 15,
+                                        offset: 339
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - whether to accept or dismiss the dialog.',
+                                    position: {
+                                      start: {
+                                        line: 14,
+                                        column: 15,
+                                        offset: 339
+                                      },
+                                      end: {
+                                        line: 14,
+                                        column: 58,
+                                        offset: 382
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 14, column: 7, offset: 331 },
+                                  end: { line: 14, column: 58, offset: 382 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 14, column: 5, offset: 329 },
+                              end: { line: 14, column: 58, offset: 382 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'promptText',
+                                    position: {
+                                      start: {
+                                        line: 15,
+                                        column: 7,
+                                        offset: 389
+                                      },
+                                      end: {
+                                        line: 15,
+                                        column: 19,
+                                        offset: 401
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the text to enter into the dialog prompt before accepting.',
+                                    position: {
+                                      start: {
+                                        line: 15,
+                                        column: 19,
+                                        offset: 401
+                                      },
+                                      end: {
+                                        line: 15,
+                                        column: 80,
+                                        offset: 462
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 15, column: 7, offset: 389 },
+                                  end: { line: 15, column: 80, offset: 462 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 15, column: 5, offset: 387 },
+                              end: { line: 15, column: 80, offset: 462 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 13, column: 5, offset: 293 },
+                          end: { line: 15, column: 80, offset: 462 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 12, column: 3, offset: 277 },
+                      end: { line: 15, column: 80, offset: 462 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 12, column: 3, offset: 277 },
+                  end: { line: 15, column: 80, offset: 462 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 17, column: 1, offset: 464 },
+                      end: { line: 17, column: 8, offset: 471 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 17, column: 1, offset: 464 },
+                  end: { line: 17, column: 8, offset: 471 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'data',
+                            position: {
+                              start: { line: 18, column: 5, offset: 476 },
+                              end: { line: 18, column: 11, offset: 482 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - promise of an empty object.',
+                            position: {
+                              start: { line: 18, column: 11, offset: 482 },
+                              end: { line: 18, column: 41, offset: 512 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 18, column: 5, offset: 476 },
+                          end: { line: 18, column: 41, offset: 512 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 18, column: 3, offset: 474 },
+                      end: { line: 18, column: 41, offset: 512 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 18, column: 3, offset: 474 },
+                  end: { line: 18, column: 41, offset: 512 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'await googleChromeDevTools.Page.handleJavaScriptDialog({\n' +
+                  "  url: 'http://localhost:3000/',\n" +
+                  '})',
+                position: {
+                  start: { line: 20, column: 1, offset: 514 },
+                  end: { line: 24, column: 4, offset: 624 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 24, column: 4, offset: 624 }
             }
           }
         }
@@ -91922,6 +92602,446 @@ export default [
             position: {
               start: { line: 1, column: 1, offset: 0 },
               end: { line: 28, column: 4, offset: 1021 }
+            }
+          }
+        }
+      },
+      {
+        name: 'Event: Page.javascriptDialogOpening',
+        docs: '```coffeescript [specscript]\n' +
+          "emit('Page.javascriptDialogOpening', data {\n" +
+          '  url: string,\n' +
+          '  frameId: string,\n' +
+          '  message: string,\n' +
+          "  type: 'alert'|'confirm'|'prompt'|'beforeunload',\n" +
+          '  hasBrowserHandler: boolean,\n' +
+          '})\n' +
+          '```\n' +
+          '\n' +
+          'The `DOM.attributeModified` event. Emitted when an attribute of an element is modified.\n' +
+          '\n' +
+          'Event Data:\n' +
+          '  `data`\n' +
+          '    * `url` - the frame URL.\n' +
+          '    * `frameId` - the frame ID.\n' +
+          '    * `message` - message displayed by the dialog.\n' +
+          '    * `type` - the dialog type.\n' +
+          '    * `hasBrowserHandler` - whether the browser is capable of acting on the given dialog.\n' +
+          '\n' +
+          '```javascript\n' +
+          "googleChromeDevTools.on('Page.javascriptDialogOpening', data => {\n" +
+          "  console.log('dialog opening', data)\n" +
+          '})\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event: Page.javascriptDialogOpening',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 36, offset: 35 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 36, offset: 35 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 36, offset: 35 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: "emit('Page.javascriptDialogOpening', data {\n" +
+                  '  url: string,\n' +
+                  '  frameId: string,\n' +
+                  '  message: string,\n' +
+                  "  type: 'alert'|'confirm'|'prompt'|'beforeunload',\n" +
+                  '  hasBrowserHandler: boolean,\n' +
+                  '})',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 9, column: 4, offset: 213 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'The ',
+                    position: {
+                      start: { line: 11, column: 1, offset: 215 },
+                      end: { line: 11, column: 5, offset: 219 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'DOM.attributeModified',
+                    position: {
+                      start: { line: 11, column: 5, offset: 219 },
+                      end: { line: 11, column: 28, offset: 242 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' event. Emitted when an attribute of an element is modified.',
+                    position: {
+                      start: { line: 11, column: 28, offset: 242 },
+                      end: { line: 11, column: 88, offset: 302 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 1, offset: 215 },
+                  end: { line: 11, column: 88, offset: 302 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event Data:\n',
+                    position: {
+                      start: { line: 13, column: 1, offset: 304 },
+                      end: { line: 14, column: 1, offset: 316 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'data',
+                    position: {
+                      start: { line: 14, column: 3, offset: 318 },
+                      end: { line: 14, column: 9, offset: 324 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: '\n* ',
+                    position: {
+                      start: { line: 14, column: 9, offset: 324 },
+                      end: { line: 15, column: 7, offset: 331 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'url',
+                    position: {
+                      start: { line: 15, column: 7, offset: 331 },
+                      end: { line: 15, column: 12, offset: 336 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' - the frame URL.\n* ',
+                    position: {
+                      start: { line: 15, column: 12, offset: 336 },
+                      end: { line: 16, column: 7, offset: 360 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'frameId',
+                    position: {
+                      start: { line: 16, column: 7, offset: 360 },
+                      end: { line: 16, column: 16, offset: 369 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' - the frame ID.\n* ',
+                    position: {
+                      start: { line: 16, column: 16, offset: 369 },
+                      end: { line: 17, column: 7, offset: 392 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'message',
+                    position: {
+                      start: { line: 17, column: 7, offset: 392 },
+                      end: { line: 17, column: 16, offset: 401 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' - message displayed by the dialog.\n* ',
+                    position: {
+                      start: { line: 17, column: 16, offset: 401 },
+                      end: { line: 18, column: 7, offset: 443 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'type',
+                    position: {
+                      start: { line: 18, column: 7, offset: 443 },
+                      end: { line: 18, column: 13, offset: 449 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' - the dialog type.\n* ',
+                    position: {
+                      start: { line: 18, column: 13, offset: 449 },
+                      end: { line: 19, column: 7, offset: 475 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'hasBrowserHandler',
+                    position: {
+                      start: { line: 19, column: 7, offset: 475 },
+                      end: { line: 19, column: 26, offset: 494 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' - whether the browser is capable of acting on the given dialog.',
+                    position: {
+                      start: { line: 19, column: 26, offset: 494 },
+                      end: { line: 19, column: 90, offset: 558 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 13, column: 1, offset: 304 },
+                  end: { line: 19, column: 90, offset: 558 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: "googleChromeDevTools.on('Page.javascriptDialogOpening', data => {\n" +
+                  "  console.log('dialog opening', data)\n" +
+                  '})',
+                position: {
+                  start: { line: 21, column: 1, offset: 560 },
+                  end: { line: 25, column: 4, offset: 684 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 25, column: 4, offset: 684 }
+            }
+          }
+        }
+      },
+      {
+        name: 'Event: Page.javascriptDialogClosed',
+        docs: '```coffeescript [specscript]\n' +
+          "emit('Page.javascriptDialogClosed', data {\n" +
+          '  frameId: string,\n' +
+          '  result: boolean,\n' +
+          '  userInput: string,\n' +
+          '})\n' +
+          '```\n' +
+          '\n' +
+          'The `DOM.attributeModified` event. Emitted when an attribute of an element is modified.\n' +
+          '\n' +
+          'Event Data:\n' +
+          '  `data`\n' +
+          '    * `frameId` - the frame ID.\n' +
+          '    * `result` - whether the dialog was confirmed.\n' +
+          '    * `userInput` - the user input if the dialog was a prompt.\n' +
+          '\n' +
+          '```javascript\n' +
+          "googleChromeDevTools.on('Page.javascriptDialogClosed', data => {\n" +
+          "  console.log('dialog closed', data)\n" +
+          '})\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event: Page.javascriptDialogClosed',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 35, offset: 34 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 35, offset: 34 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 35, offset: 34 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: "emit('Page.javascriptDialogClosed', data {\n" +
+                  '  frameId: string,\n' +
+                  '  result: boolean,\n' +
+                  '  userInput: string,\n' +
+                  '})',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 7, column: 4, offset: 137 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'The ',
+                    position: {
+                      start: { line: 9, column: 1, offset: 139 },
+                      end: { line: 9, column: 5, offset: 143 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'DOM.attributeModified',
+                    position: {
+                      start: { line: 9, column: 5, offset: 143 },
+                      end: { line: 9, column: 28, offset: 166 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' event. Emitted when an attribute of an element is modified.',
+                    position: {
+                      start: { line: 9, column: 28, offset: 166 },
+                      end: { line: 9, column: 88, offset: 226 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 9, column: 1, offset: 139 },
+                  end: { line: 9, column: 88, offset: 226 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Event Data:\n',
+                    position: {
+                      start: { line: 11, column: 1, offset: 228 },
+                      end: { line: 12, column: 1, offset: 240 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'data',
+                    position: {
+                      start: { line: 12, column: 3, offset: 242 },
+                      end: { line: 12, column: 9, offset: 248 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: '\n* ',
+                    position: {
+                      start: { line: 12, column: 9, offset: 248 },
+                      end: { line: 13, column: 7, offset: 255 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'frameId',
+                    position: {
+                      start: { line: 13, column: 7, offset: 255 },
+                      end: { line: 13, column: 16, offset: 264 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' - the frame ID.\n* ',
+                    position: {
+                      start: { line: 13, column: 16, offset: 264 },
+                      end: { line: 14, column: 7, offset: 287 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'result',
+                    position: {
+                      start: { line: 14, column: 7, offset: 287 },
+                      end: { line: 14, column: 15, offset: 295 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' - whether the dialog was confirmed.\n* ',
+                    position: {
+                      start: { line: 14, column: 15, offset: 295 },
+                      end: { line: 15, column: 7, offset: 338 }
+                    }
+                  },
+                  {
+                    type: 'inlineCode',
+                    value: 'userInput',
+                    position: {
+                      start: { line: 15, column: 7, offset: 338 },
+                      end: { line: 15, column: 18, offset: 349 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' - the user input if the dialog was a prompt.',
+                    position: {
+                      start: { line: 15, column: 18, offset: 349 },
+                      end: { line: 15, column: 63, offset: 394 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 1, offset: 228 },
+                  end: { line: 15, column: 63, offset: 394 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: "googleChromeDevTools.on('Page.javascriptDialogClosed', data => {\n" +
+                  "  console.log('dialog closed', data)\n" +
+                  '})',
+                position: {
+                  start: { line: 17, column: 1, offset: 396 },
+                  end: { line: 21, column: 4, offset: 518 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 21, column: 4, offset: 518 }
             }
           }
         }
