@@ -7,7 +7,7 @@ const CodeViewer = ReactElement(({
   code,
   mode = 'javascript',
   theme = 'default',
-  lineWrapping = true,
+  lineWrapping = false,
   lineNumbers = false,
 }) => {
   const codeAreaRef = useRef(null)
