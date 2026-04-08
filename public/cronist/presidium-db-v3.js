@@ -4206,67 +4206,6 @@ export default [
       {
         name: 'set',
         docs: '```coffeescript [specscript]\n' +
-          'set(\n' +
-          '  key string,\n' +
-          '  value string,\n' +
-          '  sortValue string|number\n' +
-          ') -> Promise<>\n' +
-          '```',
-        mdast: {
-          name: {
-            type: 'root',
-            children: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'set',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 4, offset: 3 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 4, offset: 3 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 4, offset: 3 }
-            }
-          },
-          docs: {
-            type: 'root',
-            children: [
-              {
-                type: 'code',
-                lang: 'coffeescript',
-                meta: '[specscript]',
-                value: 'set(\n' +
-                  '  key string,\n' +
-                  '  value string,\n' +
-                  '  sortValue string|number\n' +
-                  ') -> Promise<>',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 7, column: 4, offset: 108 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 7, column: 4, offset: 108 }
-            }
-          }
-        }
-      },
-      {
-        name: 'set',
-        docs: '```coffeescript [specscript]\n' +
           'set(key string, value string, sortValue string|number) -> Promise<>\n' +
           '```\n' +
           '\n' +
