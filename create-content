@@ -87,6 +87,8 @@ const createMdast = async function () {
   const presidiumMajorVersion = presidiumVersion.split('.')[0]
   const presidiumWebSocketVersion = require('../presidium-websocket/package').version
   const presidiumWebSocketMajorVersion = presidiumWebSocketVersion.split('.')[0]
+  const presidiumDBVersion = require('../presidium-db/package').version
+  const presidiumDBMajorVersion = presidiumDBVersion.split('.')[0]
 
   console.log(`Creating mdast/presidium-v${presidiumMajorVersion}-readme.js`)
   await createMdastFile(
@@ -108,6 +110,16 @@ const createMdast = async function () {
   await createCronistFile(
     `${__dirname}/../presidium-websocket`,
     `${__dirname}/public/cronist/presidium-websocket-v${presidiumWebSocketMajorVersion}.js`,
+    {
+      requiredKeys: ['name', 'docs'],
+      ignoreDirs: ['node_modules', 'archive'],
+    },
+  )
+
+  console.log(`Creating cronist/presidium-db-v${presidiumDBMajorVersion}.js`)
+  await createCronistFile(
+    `${__dirname}/../presidium-db`,
+    `${__dirname}/public/cronist/presidium-db-v${presidiumDBMajorVersion}.js`,
     {
       requiredKeys: ['name', 'docs'],
       ignoreDirs: ['node_modules', 'archive'],

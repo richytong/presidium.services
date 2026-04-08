@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>DiskHashTable | Presidium Docs</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="Documentation for Presidium DiskHashTable" />
+<meta name="image" content="/assets/presidium-logo-3.jpg">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="DiskHashTable | Presidium Docs" />
+<meta name="twitter:description" content="Documentation for Presidium DiskHashTable" />
+<meta property="twitter:image" content="/assets/presidium-logo-3.jpg">
+<meta property="og:title" content="DiskHashTable | Presidium Docs" />
+<meta property="og:type" content="object" />
+<meta property="og:url" content="https://presidium.services/docs/DiskHashTable" />
+<meta property="og:description" content="Documentation for Presidium DiskHashTable" />
+<meta property="og:image" content="/assets/presidium-logo-3.jpg">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="canonical" href="https://presidium.services/docs/DiskHashTable">
+<script src="https://cdn.jsdelivr.net/npm/rubico@2.7.7/dist/rubico.min.js" crossorigin></script>
+<script src="https://cdn.jsdelivr.net/npm/react@18.3.0/umd/react.production.min.js" crossorigin></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.0/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://cdn.jsdelivr.net/npm/arche@0.3.11/index.js" crossorigin></script>
+<script src="/global.js" ></script>
+<script src="/vendor/codemirror/index.js" ></script>
+<script src="/vendor/codemirror/syntax/javascript.js" async></script>
+<script src="/vendor/codemirror/syntax/coffeescript.js" async></script>
+<script src="/vendor/codemirror/syntax/htmlmixed.js" async></script>
+<script src="/vendor/codemirror/syntax/xml.js" async></script>
+<script src="/vendor/codemirror/syntax/css.js" async></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="/index.css" />
+<link rel="stylesheet" href="/vendor/codemirror/styles.css" />
+<link rel="stylesheet" href="/vendor/codemirror/theme/rubico.css" />
+<link rel="stylesheet" href="/vendor/codemirror/theme/coffeescript.css" />
+</head>
+
+<body>
+<div id="react-root"></div>
+</body>
+
+<script type="module" src="/index.js"></script>
+
+</html>

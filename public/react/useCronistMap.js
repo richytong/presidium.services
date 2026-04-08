@@ -1,20 +1,22 @@
 import useGlobalState from './useGlobalState.js'
 import usePresidiumVersion from './usePresidiumVersion.js'
-import defaultCronistPresidium from '../cronist/presidium-v3.js'
-import defaultCronistPresidiumWebSocket from '../cronist/presidium-websocket-v3.js'
 
 function createCronistMap(cronistObject, version) {
   const {
     cronistPresidium,
     cronistPresidiumWebSocket,
+    cronistPresidiumDB,
   } = cronistObject
 
   const result = new Map()
 
-  cronistPresidium.forEach(item => {
+  cronistPresidium?.forEach(item => {
     result.set(item.name, item)
   })
-  cronistPresidiumWebSocket.forEach(item => {
+  cronistPresidiumWebSocket?.forEach(item => {
+    result.set(item.name, item)
+  })
+  cronistPresidiumDB?.forEach(item => {
     result.set(item.name, item)
   })
   result.version = version
@@ -41,10 +43,7 @@ function createCronistMap(cronistObject, version) {
   return result
 }
 
-const initial = createCronistMap({
-  cronistPresidium: defaultCronistPresidium,
-  cronistPresidiumWebSocket: defaultCronistPresidiumWebSocket,
-}, defaultPresidiumVersion.toLowerCase())
+const initial = new Map()
 
 /**
  * @name useCronistMap
@@ -60,9 +59,11 @@ function useCronistMap() {
 
   useEffect(function updateMdastMap() {
     if (presidiumVersion != cronistMap.version) {
+      setCronistMap(new Map())
       all({
-        cronistPresidium: import(`../cronist/presidium-${presidiumVersion.toLowerCase()}.js`),
-        cronistPresidiumWebSocket: import(`../cronist/presidium-websocket-${presidiumVersion.toLowerCase()}.js`),
+        cronistPresidium: import(`../cronist/presidium-${presidiumVersion.toLowerCase()}.js`).catch(() => {}),
+        cronistPresidiumWebSocket: import(`../cronist/presidium-websocket-${presidiumVersion.toLowerCase()}.js`).catch(() => {}),
+        cronistPresidiumDB: import(`../cronist/presidium-db-${presidiumVersion.toLowerCase()}.js`).catch(() => {}),
       }).then(pipe([
         map(get('default')),
         curry.arity(2, createCronistMap, __, presidiumVersion),

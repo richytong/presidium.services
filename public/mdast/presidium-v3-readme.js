@@ -960,20 +960,82 @@ export default {
     },
     {
       type: 'heading',
+      depth: 2,
+      children: [
+        {
+          type: 'text',
+          value: 'License',
+          position: {
+            start: { line: 356, column: 4, offset: 10104 },
+            end: { line: 356, column: 11, offset: 10111 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 356, column: 1, offset: 10101 },
+        end: { line: 356, column: 11, offset: 10111 }
+      }
+    },
+    {
+      type: 'paragraph',
+      children: [
+        {
+          type: 'text',
+          value: 'Presidium is distributed under the ',
+          position: {
+            start: { line: 357, column: 1, offset: 10112 },
+            end: { line: 357, column: 36, offset: 10147 }
+          }
+        },
+        {
+          type: 'link',
+          title: null,
+          url: 'https://cloutsworld.com/en-us/legal/license/cfoss',
+          children: [
+            {
+              type: 'text',
+              value: 'CFOSS License',
+              position: {
+                start: { line: 357, column: 37, offset: 10148 },
+                end: { line: 357, column: 50, offset: 10161 }
+              }
+            }
+          ],
+          position: {
+            start: { line: 357, column: 36, offset: 10147 },
+            end: { line: 357, column: 102, offset: 10213 }
+          }
+        },
+        {
+          type: 'text',
+          value: '.',
+          position: {
+            start: { line: 357, column: 102, offset: 10213 },
+            end: { line: 357, column: 103, offset: 10214 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 357, column: 1, offset: 10112 },
+        end: { line: 357, column: 103, offset: 10214 }
+      }
+    },
+    {
+      type: 'heading',
       depth: 1,
       children: [
         {
           type: 'text',
           value: 'Support',
           position: {
-            start: { line: 356, column: 3, offset: 10103 },
-            end: { line: 356, column: 10, offset: 10110 }
+            start: { line: 359, column: 3, offset: 10218 },
+            end: { line: 359, column: 10, offset: 10225 }
           }
         }
       ],
       position: {
-        start: { line: 356, column: 1, offset: 10101 },
-        end: { line: 356, column: 10, offset: 10110 }
+        start: { line: 359, column: 1, offset: 10216 },
+        end: { line: 359, column: 10, offset: 10225 }
       }
     },
     {
@@ -994,31 +1056,31 @@ export default {
                   type: 'text',
                   value: 'minimum Node.js version: 16',
                   position: {
-                    start: { line: 357, column: 4, offset: 10114 },
-                    end: { line: 357, column: 31, offset: 10141 }
+                    start: { line: 360, column: 4, offset: 10229 },
+                    end: { line: 360, column: 31, offset: 10256 }
                   }
                 }
               ],
               position: {
-                start: { line: 357, column: 4, offset: 10114 },
-                end: { line: 357, column: 31, offset: 10141 }
+                start: { line: 360, column: 4, offset: 10229 },
+                end: { line: 360, column: 31, offset: 10256 }
               }
             }
           ],
           position: {
-            start: { line: 357, column: 2, offset: 10112 },
-            end: { line: 357, column: 31, offset: 10141 }
+            start: { line: 360, column: 2, offset: 10227 },
+            end: { line: 360, column: 31, offset: 10256 }
           }
         }
       ],
       position: {
-        start: { line: 357, column: 2, offset: 10112 },
-        end: { line: 357, column: 31, offset: 10141 }
+        start: { line: 360, column: 2, offset: 10227 },
+        end: { line: 360, column: 31, offset: 10256 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 358, column: 1, offset: 10142 }
+    end: { line: 361, column: 1, offset: 10257 }
   }
 }
