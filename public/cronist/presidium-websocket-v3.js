@@ -12282,6 +12282,61 @@ export default [
     fileName: '/home/richard/code/presidium.services/../presidium-websocket/_internal/inflateRawWithFlush.js'
   },
   {
+    name: 'push',
+    docs: '```coffeescript [specscript]\n' +
+      'push(col { push: function }, element any) -> ()\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'push',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 5, offset: 4 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 5, offset: 4 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 5, offset: 4 }
+        }
+      },
+      docs: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'push(col { push: function }, element any) -> ()',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 80 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 80 }
+        }
+      }
+    },
+    methods: [],
+    fileName: '/home/richard/code/presidium.services/../presidium-websocket/_internal/push.js'
+  },
+  {
     name: 'remove',
     docs: '```coffeescript [specscript]\nremove(array Array, element any) -> ()\n```',
     mdast: {

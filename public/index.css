@@ -52,6 +52,30 @@ code {
   padding: 3px 6px;
 }
 
+h1 {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+h1::-webkit-scrollbar {
+  display: none;
+}
+
+.docs-nav-item {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.docs-nav-item::-webkit-scrollbar {
+  display: none;
+}
+
+.CodeMirror-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.CodeMirror-scroll::-webkit-scrollbar {
+  display: none;
+}
+
 .code-viewer * {
   font-family: SourceCodePro;
   font-weight: 500;
@@ -73,7 +97,7 @@ code {
   padding-bottom: 25px;
   width: 94%;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  margin: 5px auto;
+  margin: 15px auto;
   min-height: 100vh;
 }
 @media only screen and (max-width: 768px) {
@@ -90,7 +114,6 @@ code {
   z-index: 1;
   width: 100%;
   background-color: #fff;
-  border-bottom: 1px solid #e4e4e4;
   height: 50px;
 }
 #layout > nav > .right-links {
@@ -294,6 +317,14 @@ article h2 > a::after {
 
 article a {
   text-decoration: none;
+  font-weight: 600;
+  color: blue;
+}
+article a > span {
+  color: blue;
+}
+article h2 > a > span {
+  color: black;
 }
 
 #docs {

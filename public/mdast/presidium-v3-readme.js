@@ -42,21 +42,57 @@ export default {
       type: 'paragraph',
       children: [
         {
+          type: 'text',
+          value: 'License: ',
+          position: {
+            start: { line: 4, column: 1, offset: 80 },
+            end: { line: 4, column: 10, offset: 89 }
+          }
+        },
+        {
+          type: 'link',
+          title: null,
+          url: 'https://cloutsworld.com/en-us/legal/license/cfoss',
+          children: [
+            {
+              type: 'text',
+              value: 'CFOSS',
+              position: {
+                start: { line: 4, column: 11, offset: 90 },
+                end: { line: 4, column: 16, offset: 95 }
+              }
+            }
+          ],
+          position: {
+            start: { line: 4, column: 10, offset: 89 },
+            end: { line: 4, column: 68, offset: 147 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 4, column: 1, offset: 80 },
+        end: { line: 4, column: 68, offset: 147 }
+      }
+    },
+    {
+      type: 'paragraph',
+      children: [
+        {
           type: 'image',
           title: null,
           url: 'https://github.com/richytong/presidium/workflows/Node.js%20CI/badge.svg',
           alt: 'Node.js CI',
           position: {
-            start: { line: 4, column: 1, offset: 80 },
-            end: { line: 4, column: 87, offset: 166 }
+            start: { line: 6, column: 1, offset: 149 },
+            end: { line: 6, column: 87, offset: 235 }
           }
         },
         {
           type: 'text',
           value: '\n',
           position: {
-            start: { line: 4, column: 87, offset: 166 },
-            end: { line: 5, column: 1, offset: 167 }
+            start: { line: 6, column: 87, offset: 235 },
+            end: { line: 7, column: 1, offset: 236 }
           }
         },
         {
@@ -70,22 +106,22 @@ export default {
               url: 'https://codecov.io/gh/richytong/presidium/branch/master/graph/badge.svg',
               alt: 'codecov',
               position: {
-                start: { line: 5, column: 2, offset: 168 },
-                end: { line: 5, column: 85, offset: 251 }
+                start: { line: 7, column: 2, offset: 237 },
+                end: { line: 7, column: 85, offset: 320 }
               }
             }
           ],
           position: {
-            start: { line: 5, column: 1, offset: 167 },
-            end: { line: 5, column: 129, offset: 295 }
+            start: { line: 7, column: 1, offset: 236 },
+            end: { line: 7, column: 129, offset: 364 }
           }
         },
         {
           type: 'text',
           value: '\n',
           position: {
-            start: { line: 5, column: 129, offset: 295 },
-            end: { line: 6, column: 1, offset: 296 }
+            start: { line: 7, column: 129, offset: 364 },
+            end: { line: 8, column: 1, offset: 365 }
           }
         },
         {
@@ -99,20 +135,20 @@ export default {
               url: 'https://img.shields.io/npm/v/presidium.svg?style=flat',
               alt: 'npm version',
               position: {
-                start: { line: 6, column: 2, offset: 297 },
-                end: { line: 6, column: 71, offset: 366 }
+                start: { line: 8, column: 2, offset: 366 },
+                end: { line: 8, column: 71, offset: 435 }
               }
             }
           ],
           position: {
-            start: { line: 6, column: 1, offset: 296 },
-            end: { line: 6, column: 113, offset: 408 }
+            start: { line: 8, column: 1, offset: 365 },
+            end: { line: 8, column: 113, offset: 477 }
           }
         }
       ],
       position: {
-        start: { line: 4, column: 1, offset: 80 },
-        end: { line: 6, column: 113, offset: 408 }
+        start: { line: 6, column: 1, offset: 149 },
+        end: { line: 8, column: 113, offset: 477 }
       }
     },
     {
@@ -122,14 +158,14 @@ export default {
           type: 'text',
           value: 'A library for creating web services.',
           position: {
-            start: { line: 8, column: 1, offset: 410 },
-            end: { line: 8, column: 37, offset: 446 }
+            start: { line: 10, column: 1, offset: 479 },
+            end: { line: 10, column: 37, offset: 515 }
           }
         }
       ],
       position: {
-        start: { line: 8, column: 1, offset: 410 },
-        end: { line: 8, column: 37, offset: 446 }
+        start: { line: 10, column: 1, offset: 479 },
+        end: { line: 10, column: 37, offset: 515 }
       }
     },
     {
@@ -140,14 +176,14 @@ export default {
           type: 'text',
           value: 'Installation',
           position: {
-            start: { line: 10, column: 4, offset: 451 },
-            end: { line: 10, column: 16, offset: 463 }
+            start: { line: 12, column: 4, offset: 520 },
+            end: { line: 12, column: 16, offset: 532 }
           }
         }
       ],
       position: {
-        start: { line: 10, column: 1, offset: 448 },
-        end: { line: 10, column: 16, offset: 463 }
+        start: { line: 12, column: 1, offset: 517 },
+        end: { line: 12, column: 16, offset: 532 }
       }
     },
     {
@@ -157,8 +193,8 @@ export default {
           type: 'text',
           value: 'with ',
           position: {
-            start: { line: 11, column: 1, offset: 464 },
-            end: { line: 11, column: 6, offset: 469 }
+            start: { line: 13, column: 1, offset: 533 },
+            end: { line: 13, column: 6, offset: 538 }
           }
         },
         {
@@ -170,28 +206,28 @@ export default {
               type: 'text',
               value: 'npm',
               position: {
-                start: { line: 11, column: 7, offset: 470 },
-                end: { line: 11, column: 10, offset: 473 }
+                start: { line: 13, column: 7, offset: 539 },
+                end: { line: 13, column: 10, offset: 542 }
               }
             }
           ],
           position: {
-            start: { line: 11, column: 6, offset: 469 },
-            end: { line: 11, column: 78, offset: 541 }
+            start: { line: 13, column: 6, offset: 538 },
+            end: { line: 13, column: 78, offset: 610 }
           }
         },
         {
           type: 'text',
           value: ':',
           position: {
-            start: { line: 11, column: 78, offset: 541 },
-            end: { line: 11, column: 79, offset: 542 }
+            start: { line: 13, column: 78, offset: 610 },
+            end: { line: 13, column: 79, offset: 611 }
           }
         }
       ],
       position: {
-        start: { line: 11, column: 1, offset: 464 },
-        end: { line: 11, column: 79, offset: 542 }
+        start: { line: 13, column: 1, offset: 533 },
+        end: { line: 13, column: 79, offset: 611 }
       }
     },
     {
@@ -200,8 +236,8 @@ export default {
       meta: null,
       value: 'npm i presidium',
       position: {
-        start: { line: 12, column: 1, offset: 543 },
-        end: { line: 14, column: 4, offset: 570 }
+        start: { line: 14, column: 1, offset: 612 },
+        end: { line: 16, column: 4, offset: 639 }
       }
     },
     {
@@ -211,8 +247,8 @@ export default {
           type: 'text',
           value: 'require Presidium in ',
           position: {
-            start: { line: 16, column: 1, offset: 572 },
-            end: { line: 16, column: 22, offset: 593 }
+            start: { line: 18, column: 1, offset: 641 },
+            end: { line: 18, column: 22, offset: 662 }
           }
         },
         {
@@ -224,28 +260,28 @@ export default {
               type: 'text',
               value: 'CommonJS',
               position: {
-                start: { line: 16, column: 23, offset: 594 },
-                end: { line: 16, column: 31, offset: 602 }
+                start: { line: 18, column: 23, offset: 663 },
+                end: { line: 18, column: 31, offset: 671 }
               }
             }
           ],
           position: {
-            start: { line: 16, column: 22, offset: 593 },
-            end: { line: 16, column: 106, offset: 677 }
+            start: { line: 18, column: 22, offset: 662 },
+            end: { line: 18, column: 106, offset: 746 }
           }
         },
         {
           type: 'text',
           value: ':',
           position: {
-            start: { line: 16, column: 106, offset: 677 },
-            end: { line: 16, column: 107, offset: 678 }
+            start: { line: 18, column: 106, offset: 746 },
+            end: { line: 18, column: 107, offset: 747 }
           }
         }
       ],
       position: {
-        start: { line: 16, column: 1, offset: 572 },
-        end: { line: 16, column: 107, offset: 678 }
+        start: { line: 18, column: 1, offset: 641 },
+        end: { line: 18, column: 107, offset: 747 }
       }
     },
     {
@@ -264,8 +300,8 @@ export default {
         "const WebSocket = require('presidium/WebSocket')\n" +
         "const Readable = require('presidium/Readable')",
       position: {
-        start: { line: 17, column: 1, offset: 679 },
-        end: { line: 29, column: 4, offset: 1042 }
+        start: { line: 19, column: 1, offset: 748 },
+        end: { line: 31, column: 4, offset: 1111 }
       }
     },
     {
@@ -281,20 +317,20 @@ export default {
               type: 'text',
               value: 'Handle HTTP',
               position: {
-                start: { line: 31, column: 5, offset: 1048 },
-                end: { line: 31, column: 16, offset: 1059 }
+                start: { line: 33, column: 5, offset: 1117 },
+                end: { line: 33, column: 16, offset: 1128 }
               }
             }
           ],
           position: {
-            start: { line: 31, column: 4, offset: 1047 },
-            end: { line: 31, column: 55, offset: 1098 }
+            start: { line: 33, column: 4, offset: 1116 },
+            end: { line: 33, column: 55, offset: 1167 }
           }
         }
       ],
       position: {
-        start: { line: 31, column: 1, offset: 1044 },
-        end: { line: 31, column: 55, offset: 1098 }
+        start: { line: 33, column: 1, offset: 1113 },
+        end: { line: 33, column: 55, offset: 1167 }
       }
     },
     {
@@ -317,8 +353,8 @@ export default {
         '  .then(response => response.json())\n' +
         "  .then(console.log) // { greeting: 'Hello World' }",
       position: {
-        start: { line: 32, column: 1, offset: 1099 },
-        end: { line: 48, column: 4, offset: 1530 }
+        start: { line: 34, column: 1, offset: 1168 },
+        end: { line: 50, column: 4, offset: 1599 }
       }
     },
     {
@@ -334,20 +370,20 @@ export default {
               type: 'text',
               value: 'Send messages with WebSocket',
               position: {
-                start: { line: 50, column: 5, offset: 1536 },
-                end: { line: 50, column: 33, offset: 1564 }
+                start: { line: 52, column: 5, offset: 1605 },
+                end: { line: 52, column: 33, offset: 1633 }
               }
             }
           ],
           position: {
-            start: { line: 50, column: 4, offset: 1535 },
-            end: { line: 50, column: 77, offset: 1608 }
+            start: { line: 52, column: 4, offset: 1604 },
+            end: { line: 52, column: 77, offset: 1677 }
           }
         }
       ],
       position: {
-        start: { line: 50, column: 1, offset: 1532 },
-        end: { line: 50, column: 77, offset: 1608 }
+        start: { line: 52, column: 1, offset: 1601 },
+        end: { line: 52, column: 77, offset: 1677 }
       }
     },
     {
@@ -375,8 +411,8 @@ export default {
         "  console.log('Message from server:', message)\n" +
         '})',
       position: {
-        start: { line: 51, column: 1, offset: 1609 },
-        end: { line: 72, column: 4, offset: 2162 }
+        start: { line: 53, column: 1, offset: 1678 },
+        end: { line: 74, column: 4, offset: 2231 }
       }
     },
     {
@@ -392,20 +428,20 @@ export default {
               type: 'text',
               value: 'Create, read, update, delete, and query with AWS DynamoDB',
               position: {
-                start: { line: 74, column: 5, offset: 2168 },
-                end: { line: 74, column: 62, offset: 2225 }
+                start: { line: 76, column: 5, offset: 2237 },
+                end: { line: 76, column: 62, offset: 2294 }
               }
             }
           ],
           position: {
-            start: { line: 74, column: 4, offset: 2167 },
-            end: { line: 74, column: 110, offset: 2273 }
+            start: { line: 76, column: 4, offset: 2236 },
+            end: { line: 76, column: 110, offset: 2342 }
           }
         }
       ],
       position: {
-        start: { line: 74, column: 1, offset: 2164 },
-        end: { line: 74, column: 110, offset: 2273 }
+        start: { line: 76, column: 1, offset: 2233 },
+        end: { line: 76, column: 110, offset: 2342 }
       }
     },
     {
@@ -513,8 +549,8 @@ export default {
         '  }\n' +
         '}',
       position: {
-        start: { line: 75, column: 1, offset: 2274 },
-        end: { line: 176, column: 4, offset: 5253 }
+        start: { line: 77, column: 1, offset: 2343 },
+        end: { line: 178, column: 4, offset: 5322 }
       }
     },
     {
@@ -530,20 +566,20 @@ export default {
               type: 'text',
               value: 'Consume AWS DynamoDB Streams',
               position: {
-                start: { line: 178, column: 5, offset: 5259 },
-                end: { line: 178, column: 33, offset: 5287 }
+                start: { line: 180, column: 5, offset: 5328 },
+                end: { line: 180, column: 33, offset: 5356 }
               }
             }
           ],
           position: {
-            start: { line: 178, column: 4, offset: 5258 },
-            end: { line: 178, column: 82, offset: 5336 }
+            start: { line: 180, column: 4, offset: 5327 },
+            end: { line: 180, column: 82, offset: 5405 }
           }
         }
       ],
       position: {
-        start: { line: 178, column: 1, offset: 5255 },
-        end: { line: 178, column: 82, offset: 5336 }
+        start: { line: 180, column: 1, offset: 5324 },
+        end: { line: 180, column: 82, offset: 5405 }
       }
     },
     {
@@ -591,8 +627,8 @@ export default {
         '  // { dynamodb: { KeysJSON: {...}, NewImageJSON: {...}, OldImageJSON: {...} }  }\n' +
         '}',
       position: {
-        start: { line: 179, column: 1, offset: 5337 },
-        end: { line: 220, column: 4, offset: 6535 }
+        start: { line: 181, column: 1, offset: 5406 },
+        end: { line: 222, column: 4, offset: 6604 }
       }
     },
     {
@@ -608,20 +644,20 @@ export default {
               type: 'text',
               value: 'Download and upload with AWS S3',
               position: {
-                start: { line: 222, column: 5, offset: 6541 },
-                end: { line: 222, column: 36, offset: 6572 }
+                start: { line: 224, column: 5, offset: 6610 },
+                end: { line: 224, column: 36, offset: 6641 }
               }
             }
           ],
           position: {
-            start: { line: 222, column: 4, offset: 6540 },
-            end: { line: 222, column: 79, offset: 6615 }
+            start: { line: 224, column: 4, offset: 6609 },
+            end: { line: 224, column: 79, offset: 6684 }
           }
         }
       ],
       position: {
-        start: { line: 222, column: 1, offset: 6537 },
-        end: { line: 222, column: 79, offset: 6615 }
+        start: { line: 224, column: 1, offset: 6606 },
+        end: { line: 224, column: 79, offset: 6684 }
       }
     },
     {
@@ -651,8 +687,8 @@ export default {
         'await myBucket.deleteAllObjects()\n' +
         'await myBucket.delete()',
       position: {
-        start: { line: 223, column: 1, offset: 6616 },
-        end: { line: 246, column: 4, offset: 7220 }
+        start: { line: 225, column: 1, offset: 6685 },
+        end: { line: 248, column: 4, offset: 7289 }
       }
     },
     {
@@ -668,20 +704,20 @@ export default {
               type: 'text',
               value: 'Build and push Docker images',
               position: {
-                start: { line: 248, column: 5, offset: 7226 },
-                end: { line: 248, column: 33, offset: 7254 }
+                start: { line: 250, column: 5, offset: 7295 },
+                end: { line: 250, column: 33, offset: 7323 }
               }
             }
           ],
           position: {
-            start: { line: 248, column: 4, offset: 7225 },
-            end: { line: 248, column: 74, offset: 7295 }
+            start: { line: 250, column: 4, offset: 7294 },
+            end: { line: 250, column: 74, offset: 7364 }
           }
         }
       ],
       position: {
-        start: { line: 248, column: 1, offset: 7222 },
-        end: { line: 248, column: 74, offset: 7295 }
+        start: { line: 250, column: 1, offset: 7291 },
+        end: { line: 250, column: 74, offset: 7364 }
       }
     },
     {
@@ -725,8 +761,8 @@ export default {
         '  pushStream.pipe(process.stdout)\n' +
         '})\n',
       position: {
-        start: { line: 249, column: 1, offset: 7296 },
-        end: { line: 287, column: 4, offset: 8078 }
+        start: { line: 251, column: 1, offset: 7365 },
+        end: { line: 289, column: 4, offset: 8147 }
       }
     },
     {
@@ -742,20 +778,20 @@ export default {
               type: 'text',
               value: 'Run Docker containers',
               position: {
-                start: { line: 289, column: 5, offset: 8084 },
-                end: { line: 289, column: 26, offset: 8105 }
+                start: { line: 291, column: 5, offset: 8153 },
+                end: { line: 291, column: 26, offset: 8174 }
               }
             }
           ],
           position: {
-            start: { line: 289, column: 4, offset: 8083 },
-            end: { line: 289, column: 67, offset: 8146 }
+            start: { line: 291, column: 4, offset: 8152 },
+            end: { line: 291, column: 67, offset: 8215 }
           }
         }
       ],
       position: {
-        start: { line: 289, column: 1, offset: 8080 },
-        end: { line: 289, column: 67, offset: 8146 }
+        start: { line: 291, column: 1, offset: 8149 },
+        end: { line: 291, column: 67, offset: 8215 }
       }
     },
     {
@@ -775,8 +811,8 @@ export default {
         '\n' +
         'runStream.pipe(process.stdout) // Example',
       position: {
-        start: { line: 290, column: 1, offset: 8147 },
-        end: { line: 303, column: 4, offset: 8450 }
+        start: { line: 292, column: 1, offset: 8216 },
+        end: { line: 305, column: 4, offset: 8519 }
       }
     },
     {
@@ -792,20 +828,20 @@ export default {
               type: 'text',
               value: 'Deploy Docker Swarm services',
               position: {
-                start: { line: 305, column: 5, offset: 8456 },
-                end: { line: 305, column: 33, offset: 8484 }
+                start: { line: 307, column: 5, offset: 8525 },
+                end: { line: 307, column: 33, offset: 8553 }
               }
             }
           ],
           position: {
-            start: { line: 305, column: 4, offset: 8455 },
-            end: { line: 305, column: 74, offset: 8525 }
+            start: { line: 307, column: 4, offset: 8524 },
+            end: { line: 307, column: 74, offset: 8594 }
           }
         }
       ],
       position: {
-        start: { line: 305, column: 1, offset: 8452 },
-        end: { line: 305, column: 74, offset: 8525 }
+        start: { line: 307, column: 1, offset: 8521 },
+        end: { line: 307, column: 74, offset: 8594 }
       }
     },
     {
@@ -828,8 +864,8 @@ export default {
         '})\n' +
         '// new nginx service is deploying to the docker swarm',
       position: {
-        start: { line: 306, column: 1, offset: 8526 },
-        end: { line: 322, column: 4, offset: 8883 }
+        start: { line: 308, column: 1, offset: 8595 },
+        end: { line: 324, column: 4, offset: 8952 }
       }
     },
     {
@@ -845,20 +881,20 @@ export default {
               type: 'text',
               value: 'Automate tests with Google Chrome for Testing',
               position: {
-                start: { line: 324, column: 5, offset: 8889 },
-                end: { line: 324, column: 50, offset: 8934 }
+                start: { line: 326, column: 5, offset: 8958 },
+                end: { line: 326, column: 50, offset: 9003 }
               }
             }
           ],
           position: {
-            start: { line: 324, column: 4, offset: 8888 },
-            end: { line: 324, column: 105, offset: 8989 }
+            start: { line: 326, column: 4, offset: 8957 },
+            end: { line: 326, column: 105, offset: 9058 }
           }
         }
       ],
       position: {
-        start: { line: 324, column: 1, offset: 8885 },
-        end: { line: 324, column: 105, offset: 8989 }
+        start: { line: 326, column: 1, offset: 8954 },
+        end: { line: 326, column: 105, offset: 9058 }
       }
     },
     {
@@ -891,8 +927,8 @@ export default {
         '  url: `http://localhost:3000/`,\n' +
         '})',
       position: {
-        start: { line: 325, column: 1, offset: 8990 },
-        end: { line: 351, column: 4, offset: 9966 }
+        start: { line: 327, column: 1, offset: 9059 },
+        end: { line: 353, column: 4, offset: 10035 }
       }
     },
     {
@@ -903,14 +939,14 @@ export default {
           type: 'text',
           value: 'Support',
           position: {
-            start: { line: 353, column: 3, offset: 9970 },
-            end: { line: 353, column: 10, offset: 9977 }
+            start: { line: 355, column: 3, offset: 10039 },
+            end: { line: 355, column: 10, offset: 10046 }
           }
         }
       ],
       position: {
-        start: { line: 353, column: 1, offset: 9968 },
-        end: { line: 353, column: 10, offset: 9977 }
+        start: { line: 355, column: 1, offset: 10037 },
+        end: { line: 355, column: 10, offset: 10046 }
       }
     },
     {
@@ -931,31 +967,31 @@ export default {
                   type: 'text',
                   value: 'minimum Node.js version: 16',
                   position: {
-                    start: { line: 354, column: 4, offset: 9981 },
-                    end: { line: 354, column: 31, offset: 10008 }
+                    start: { line: 356, column: 4, offset: 10050 },
+                    end: { line: 356, column: 31, offset: 10077 }
                   }
                 }
               ],
               position: {
-                start: { line: 354, column: 4, offset: 9981 },
-                end: { line: 354, column: 31, offset: 10008 }
+                start: { line: 356, column: 4, offset: 10050 },
+                end: { line: 356, column: 31, offset: 10077 }
               }
             }
           ],
           position: {
-            start: { line: 354, column: 2, offset: 9979 },
-            end: { line: 354, column: 31, offset: 10008 }
+            start: { line: 356, column: 2, offset: 10048 },
+            end: { line: 356, column: 31, offset: 10077 }
           }
         }
       ],
       position: {
-        start: { line: 354, column: 2, offset: 9979 },
-        end: { line: 354, column: 31, offset: 10008 }
+        start: { line: 356, column: 2, offset: 10048 },
+        end: { line: 356, column: 31, offset: 10077 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 355, column: 1, offset: 10009 }
+    end: { line: 357, column: 1, offset: 10078 }
   }
 }

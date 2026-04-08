@@ -54414,6 +54414,7 @@ export default [
           "  ReturnConsumedCapacity: 'INDEXES'|'TOTAL'|'NONE',\n" +
           "  ReturnItemCollectionMetrics: 'SIZE'|'NONE',\n" +
           "  ReturnValues: 'NONE'|'ALL_OLD',\n" +
+          '  ConditionExpression: string,\n' +
           '}) -> data Promise<{\n' +
           '  Attributes: DynamoDBJSONObject,\n' +
           '  ConsumedCapacity: {\n' +
@@ -54431,6 +54432,7 @@ export default [
           '    * `ReturnConsumedCapacity` - determines the level of detail about provisioned or on-demand throughput consumption that is returned in the response.\n' +
           '    * `ReturnItemCollectionMetrics` - determines whether item collection metrics will be returned in the response.\n' +
           '    * `ReturnValues` - includes the item attributes in DynamoDB JSON format in the response. The values returned are strongly consistent. There is no additional cost or read capacity units consumed when with requesting a return value aside from the incurred network overhead.\n' +
+          '    * `ConditionExpression` - a condition that must be satisfied in order for a conditional update to succeed.\n' +
           '\n' +
           'Return:\n' +
           '  * `data`\n' +
@@ -54470,7 +54472,58 @@ export default [
           '})\n' +
           '```\n' +
           '\n' +
+          '### ConditionExpression Syntax\n' +
+          '```sh [DynamoDB_ConditionExpression_Syntax]\n' +
+          '<attribute_name> = :<variable_name>\n' +
+          '<attribute_name> <> :<variable_name>\n' +
+          '<attribute_name> < :<variable_name>\n' +
+          '<attribute_name> <= :<variable_name>\n' +
+          '<attribute_name> > :<variable_name>\n' +
+          '<attribute_name> >= :<variable_name>\n' +
+          '\n' +
+          '<attribute_name> BETWEEN :<variable_name1> AND :<variable_name2>\n' +
+          '\n' +
+          '<attribute_name> IN (:<variable_name1>[, :<variable_name2>[, ...]])\n' +
+          '\n' +
+          '<function_name>(<attribute_name>[, :<variable_name>])\n' +
+          '\n' +
+          '<function_name>(<attribute_name>[, :<variable_name1>]) = :<variable_name2>\n' +
+          '<function_name>(<attribute_name>[, :<variable_name1>]) <> :<variable_name2>\n' +
+          '<function_name>(<attribute_name>[, :<variable_name1>]) < :<variable_name2>\n' +
+          '<function_name>(<attribute_name>[, :<variable_name1>]) <= :<variable_name2>\n' +
+          '<function_name>(<attribute_name>[, :<variable_name1>]) > :<variable_name2>\n' +
+          '<function_name>(<attribute_name>[, :<variable_name1>]) >= :<variable_name2>\n' +
+          '\n' +
+          '<expression> AND <expression>\n' +
+          '\n' +
+          'NOT <expression>\n' +
+          '\n' +
+          '(<expression>)\n' +
+          '```\n' +
+          '\n' +
+          '`ConditionExpression` Functions:\n' +
+          '  * `attribute_exists(<attribute_name>)` - test if `<attribute_name>` exists.\n' +
+          '  * `attribute_not_exists(<attribute_name>)` - test if `<attribute_name>` does not exist.\n' +
+          '  * `attribute_type(<attribute_name>, <attribute_type>)` - test if the DynamoDB attribute type of the DynamoDB attribute value of `<attribute_name>` equals `attribute_type`.\n' +
+          '  * `contains(<attribute_name>, :<variable_name>)` - test if the DynamoDB attribute value of `<attribute_name>` equals the attribute value provided in `Updates` corresponding to `<variable_name>`.\n' +
+          '  * `begins_with(<attribute_name>, :<variable_name>)` - test if the DynamoDB attribute value of `<attribute_name>` equals the attribute value provided in `Updates` corresponding to `<variable_name>`.\n' +
+          '  * `size(<attribute_name>)` - returns for evaluation a number that represents the size of the attribute value of `<attribute_name>`\n' +
+          '\n' +
+          '`ConditionExpression` Logical Operators:\n' +
+          '  * `=` - equals.\n' +
+          '  * `<>` - does not equal.\n' +
+          '  * `<` - less than.\n' +
+          '  * `>` - greater than.\n' +
+          '  * `<=` - less than or equal to .\n' +
+          '  * `>=` - greater than or equal to.\n' +
+          '  * `BETWEEN` - between.\n' +
+          '  * `IN` - in.\n' +
+          '  * `AND` - and.\n' +
+          '  * `OR` - or.\n' +
+          '  * `NOT` - not.\n' +
+          '\n' +
           'References:\n' +
+          ' * [Condition Expressions](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html)\n' +
           ' * [AWS DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html)',
         mdast: {
           name: {
@@ -54518,6 +54571,7 @@ export default [
                   "  ReturnConsumedCapacity: 'INDEXES'|'TOTAL'|'NONE',\n" +
                   "  ReturnItemCollectionMetrics: 'SIZE'|'NONE',\n" +
                   "  ReturnValues: 'NONE'|'ALL_OLD',\n" +
+                  '  ConditionExpression: string,\n' +
                   '}) -> data Promise<{\n' +
                   '  Attributes: DynamoDBJSONObject,\n' +
                   '  ConsumedCapacity: {\n' +
@@ -54527,7 +54581,7 @@ export default [
                   '}>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 21, column: 4, offset: 572 }
+                  end: { line: 22, column: 4, offset: 603 }
                 }
               },
               {
@@ -54537,14 +54591,14 @@ export default [
                     type: 'text',
                     value: 'Writes an item to a DynamoDB Table using DynamoDB JSON format.',
                     position: {
-                      start: { line: 23, column: 1, offset: 574 },
-                      end: { line: 23, column: 63, offset: 636 }
+                      start: { line: 24, column: 1, offset: 605 },
+                      end: { line: 24, column: 63, offset: 667 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 23, column: 1, offset: 574 },
-                  end: { line: 23, column: 63, offset: 636 }
+                  start: { line: 24, column: 1, offset: 605 },
+                  end: { line: 24, column: 63, offset: 667 }
                 }
               },
               {
@@ -54554,14 +54608,14 @@ export default [
                     type: 'text',
                     value: 'Arguments:',
                     position: {
-                      start: { line: 25, column: 1, offset: 638 },
-                      end: { line: 25, column: 11, offset: 648 }
+                      start: { line: 26, column: 1, offset: 669 },
+                      end: { line: 26, column: 11, offset: 679 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 25, column: 1, offset: 638 },
-                  end: { line: 25, column: 11, offset: 648 }
+                  start: { line: 26, column: 1, offset: 669 },
+                  end: { line: 26, column: 11, offset: 679 }
                 }
               },
               {
@@ -54582,28 +54636,28 @@ export default [
                             type: 'inlineCode',
                             value: 'Item',
                             position: {
-                              start: { line: 26, column: 5, offset: 653 },
-                              end: { line: 26, column: 11, offset: 659 }
+                              start: { line: 27, column: 5, offset: 684 },
+                              end: { line: 27, column: 11, offset: 690 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - the full item in DynamoDB JSON format that will be written to the DynamoDB Table.',
                             position: {
-                              start: { line: 26, column: 11, offset: 659 },
-                              end: { line: 26, column: 95, offset: 743 }
+                              start: { line: 27, column: 11, offset: 690 },
+                              end: { line: 27, column: 95, offset: 774 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 26, column: 5, offset: 653 },
-                          end: { line: 26, column: 95, offset: 743 }
+                          start: { line: 27, column: 5, offset: 684 },
+                          end: { line: 27, column: 95, offset: 774 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 26, column: 3, offset: 651 },
-                      end: { line: 26, column: 95, offset: 743 }
+                      start: { line: 27, column: 3, offset: 682 },
+                      end: { line: 27, column: 95, offset: 774 }
                     }
                   },
                   {
@@ -54618,14 +54672,14 @@ export default [
                             type: 'inlineCode',
                             value: 'options',
                             position: {
-                              start: { line: 27, column: 5, offset: 748 },
-                              end: { line: 27, column: 14, offset: 757 }
+                              start: { line: 28, column: 5, offset: 779 },
+                              end: { line: 28, column: 14, offset: 788 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 27, column: 5, offset: 748 },
-                          end: { line: 27, column: 14, offset: 757 }
+                          start: { line: 28, column: 5, offset: 779 },
+                          end: { line: 28, column: 14, offset: 788 }
                         }
                       },
                       {
@@ -54647,14 +54701,14 @@ export default [
                                     value: 'ReturnConsumedCapacity',
                                     position: {
                                       start: {
-                                        line: 28,
+                                        line: 29,
                                         column: 7,
-                                        offset: 764
+                                        offset: 795
                                       },
                                       end: {
-                                        line: 28,
+                                        line: 29,
                                         column: 31,
-                                        offset: 788
+                                        offset: 819
                                       }
                                     }
                                   },
@@ -54663,31 +54717,31 @@ export default [
                                     value: ' - determines the level of detail about provisioned or on-demand throughput consumption that is returned in the response.',
                                     position: {
                                       start: {
-                                        line: 28,
+                                        line: 29,
                                         column: 31,
-                                        offset: 788
+                                        offset: 819
                                       },
                                       end: {
-                                        line: 28,
+                                        line: 29,
                                         column: 152,
-                                        offset: 909
+                                        offset: 940
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 28, column: 7, offset: 764 },
+                                  start: { line: 29, column: 7, offset: 795 },
                                   end: {
-                                    line: 28,
+                                    line: 29,
                                     column: 152,
-                                    offset: 909
+                                    offset: 940
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 28, column: 5, offset: 762 },
-                              end: { line: 28, column: 152, offset: 909 }
+                              start: { line: 29, column: 5, offset: 793 },
+                              end: { line: 29, column: 152, offset: 940 }
                             }
                           },
                           {
@@ -54703,14 +54757,14 @@ export default [
                                     value: 'ReturnItemCollectionMetrics',
                                     position: {
                                       start: {
-                                        line: 29,
+                                        line: 30,
                                         column: 7,
-                                        offset: 916
+                                        offset: 947
                                       },
                                       end: {
-                                        line: 29,
+                                        line: 30,
                                         column: 36,
-                                        offset: 945
+                                        offset: 976
                                       }
                                     }
                                   },
@@ -54719,31 +54773,31 @@ export default [
                                     value: ' - determines whether item collection metrics will be returned in the response.',
                                     position: {
                                       start: {
-                                        line: 29,
+                                        line: 30,
                                         column: 36,
-                                        offset: 945
+                                        offset: 976
                                       },
                                       end: {
-                                        line: 29,
+                                        line: 30,
                                         column: 115,
-                                        offset: 1024
+                                        offset: 1055
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 29, column: 7, offset: 916 },
+                                  start: { line: 30, column: 7, offset: 947 },
                                   end: {
-                                    line: 29,
+                                    line: 30,
                                     column: 115,
-                                    offset: 1024
+                                    offset: 1055
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 29, column: 5, offset: 914 },
-                              end: { line: 29, column: 115, offset: 1024 }
+                              start: { line: 30, column: 5, offset: 945 },
+                              end: { line: 30, column: 115, offset: 1055 }
                             }
                           },
                           {
@@ -54759,14 +54813,14 @@ export default [
                                     value: 'ReturnValues',
                                     position: {
                                       start: {
-                                        line: 30,
+                                        line: 31,
                                         column: 7,
-                                        offset: 1031
+                                        offset: 1062
                                       },
                                       end: {
-                                        line: 30,
+                                        line: 31,
                                         column: 21,
-                                        offset: 1045
+                                        offset: 1076
                                       }
                                     }
                                   },
@@ -54775,49 +54829,105 @@ export default [
                                     value: ' - includes the item attributes in DynamoDB JSON format in the response. The values returned are strongly consistent. There is no additional cost or read capacity units consumed when with requesting a return value aside from the incurred network overhead.',
                                     position: {
                                       start: {
-                                        line: 30,
+                                        line: 31,
                                         column: 21,
-                                        offset: 1045
+                                        offset: 1076
                                       },
                                       end: {
-                                        line: 30,
+                                        line: 31,
                                         column: 276,
-                                        offset: 1300
+                                        offset: 1331
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 30, column: 7, offset: 1031 },
+                                  start: { line: 31, column: 7, offset: 1062 },
                                   end: {
-                                    line: 30,
+                                    line: 31,
                                     column: 276,
-                                    offset: 1300
+                                    offset: 1331
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 30, column: 5, offset: 1029 },
-                              end: { line: 30, column: 276, offset: 1300 }
+                              start: { line: 31, column: 5, offset: 1060 },
+                              end: { line: 31, column: 276, offset: 1331 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'ConditionExpression',
+                                    position: {
+                                      start: {
+                                        line: 32,
+                                        column: 7,
+                                        offset: 1338
+                                      },
+                                      end: {
+                                        line: 32,
+                                        column: 28,
+                                        offset: 1359
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - a condition that must be satisfied in order for a conditional update to succeed.',
+                                    position: {
+                                      start: {
+                                        line: 32,
+                                        column: 28,
+                                        offset: 1359
+                                      },
+                                      end: {
+                                        line: 32,
+                                        column: 111,
+                                        offset: 1442
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 32, column: 7, offset: 1338 },
+                                  end: {
+                                    line: 32,
+                                    column: 111,
+                                    offset: 1442
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 32, column: 5, offset: 1336 },
+                              end: { line: 32, column: 111, offset: 1442 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 28, column: 5, offset: 762 },
-                          end: { line: 30, column: 276, offset: 1300 }
+                          start: { line: 29, column: 5, offset: 793 },
+                          end: { line: 32, column: 111, offset: 1442 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 27, column: 3, offset: 746 },
-                      end: { line: 30, column: 276, offset: 1300 }
+                      start: { line: 28, column: 3, offset: 777 },
+                      end: { line: 32, column: 111, offset: 1442 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 26, column: 3, offset: 651 },
-                  end: { line: 30, column: 276, offset: 1300 }
+                  start: { line: 27, column: 3, offset: 682 },
+                  end: { line: 32, column: 111, offset: 1442 }
                 }
               },
               {
@@ -54827,14 +54937,14 @@ export default [
                     type: 'text',
                     value: 'Return:',
                     position: {
-                      start: { line: 32, column: 1, offset: 1302 },
-                      end: { line: 32, column: 8, offset: 1309 }
+                      start: { line: 34, column: 1, offset: 1444 },
+                      end: { line: 34, column: 8, offset: 1451 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 32, column: 1, offset: 1302 },
-                  end: { line: 32, column: 8, offset: 1309 }
+                  start: { line: 34, column: 1, offset: 1444 },
+                  end: { line: 34, column: 8, offset: 1451 }
                 }
               },
               {
@@ -54855,14 +54965,14 @@ export default [
                             type: 'inlineCode',
                             value: 'data',
                             position: {
-                              start: { line: 33, column: 5, offset: 1314 },
-                              end: { line: 33, column: 11, offset: 1320 }
+                              start: { line: 35, column: 5, offset: 1456 },
+                              end: { line: 35, column: 11, offset: 1462 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 33, column: 5, offset: 1314 },
-                          end: { line: 33, column: 11, offset: 1320 }
+                          start: { line: 35, column: 5, offset: 1456 },
+                          end: { line: 35, column: 11, offset: 1462 }
                         }
                       },
                       {
@@ -54884,14 +54994,14 @@ export default [
                                     value: 'Attributes',
                                     position: {
                                       start: {
-                                        line: 34,
+                                        line: 36,
                                         column: 7,
-                                        offset: 1327
+                                        offset: 1469
                                       },
                                       end: {
-                                        line: 34,
+                                        line: 36,
                                         column: 19,
-                                        offset: 1339
+                                        offset: 1481
                                       }
                                     }
                                   },
@@ -54900,14 +55010,14 @@ export default [
                                     value: ' - the attribute values of the item in DynamoDB JSON format as they appeared before the ',
                                     position: {
                                       start: {
-                                        line: 34,
+                                        line: 36,
                                         column: 19,
-                                        offset: 1339
+                                        offset: 1481
                                       },
                                       end: {
-                                        line: 34,
+                                        line: 36,
                                         column: 107,
-                                        offset: 1427
+                                        offset: 1569
                                       }
                                     }
                                   },
@@ -54921,28 +55031,28 @@ export default [
                                         value: 'DynamoDB PutItem',
                                         position: {
                                           start: {
-                                            line: 34,
+                                            line: 36,
                                             column: 108,
-                                            offset: 1428
+                                            offset: 1570
                                           },
                                           end: {
-                                            line: 34,
+                                            line: 36,
                                             column: 124,
-                                            offset: 1444
+                                            offset: 1586
                                           }
                                         }
                                       }
                                     ],
                                     position: {
                                       start: {
-                                        line: 34,
+                                        line: 36,
                                         column: 107,
-                                        offset: 1427
+                                        offset: 1569
                                       },
                                       end: {
-                                        line: 34,
+                                        line: 36,
                                         column: 206,
-                                        offset: 1526
+                                        offset: 1668
                                       }
                                     }
                                   },
@@ -54951,14 +55061,14 @@ export default [
                                     value: ' operation. Requires ',
                                     position: {
                                       start: {
-                                        line: 34,
+                                        line: 36,
                                         column: 206,
-                                        offset: 1526
+                                        offset: 1668
                                       },
                                       end: {
-                                        line: 34,
+                                        line: 36,
                                         column: 227,
-                                        offset: 1547
+                                        offset: 1689
                                       }
                                     }
                                   },
@@ -54967,14 +55077,14 @@ export default [
                                     value: 'ReturnValues',
                                     position: {
                                       start: {
-                                        line: 34,
+                                        line: 36,
                                         column: 227,
-                                        offset: 1547
+                                        offset: 1689
                                       },
                                       end: {
-                                        line: 34,
+                                        line: 36,
                                         column: 241,
-                                        offset: 1561
+                                        offset: 1703
                                       }
                                     }
                                   },
@@ -54983,14 +55093,14 @@ export default [
                                     value: ' to be specified as ',
                                     position: {
                                       start: {
-                                        line: 34,
+                                        line: 36,
                                         column: 241,
-                                        offset: 1561
+                                        offset: 1703
                                       },
                                       end: {
-                                        line: 34,
+                                        line: 36,
                                         column: 261,
-                                        offset: 1581
+                                        offset: 1723
                                       }
                                     }
                                   },
@@ -54999,14 +55109,14 @@ export default [
                                     value: 'ALL_OLD',
                                     position: {
                                       start: {
-                                        line: 34,
+                                        line: 36,
                                         column: 261,
-                                        offset: 1581
+                                        offset: 1723
                                       },
                                       end: {
-                                        line: 34,
+                                        line: 36,
                                         column: 270,
-                                        offset: 1590
+                                        offset: 1732
                                       }
                                     }
                                   },
@@ -55015,31 +55125,31 @@ export default [
                                     value: '.',
                                     position: {
                                       start: {
-                                        line: 34,
+                                        line: 36,
                                         column: 270,
-                                        offset: 1590
+                                        offset: 1732
                                       },
                                       end: {
-                                        line: 34,
+                                        line: 36,
                                         column: 271,
-                                        offset: 1591
+                                        offset: 1733
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 34, column: 7, offset: 1327 },
+                                  start: { line: 36, column: 7, offset: 1469 },
                                   end: {
-                                    line: 34,
+                                    line: 36,
                                     column: 271,
-                                    offset: 1591
+                                    offset: 1733
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 34, column: 5, offset: 1325 },
-                              end: { line: 34, column: 271, offset: 1591 }
+                              start: { line: 36, column: 5, offset: 1467 },
+                              end: { line: 36, column: 271, offset: 1733 }
                             }
                           },
                           {
@@ -55055,14 +55165,14 @@ export default [
                                     value: 'ConsumedCapacity',
                                     position: {
                                       start: {
-                                        line: 35,
+                                        line: 37,
                                         column: 7,
-                                        offset: 1598
+                                        offset: 1740
                                       },
                                       end: {
-                                        line: 35,
+                                        line: 37,
                                         column: 25,
-                                        offset: 1616
+                                        offset: 1758
                                       }
                                     }
                                   },
@@ -55071,14 +55181,14 @@ export default [
                                     value: ' - the capacity units consumed by the ',
                                     position: {
                                       start: {
-                                        line: 35,
+                                        line: 37,
                                         column: 25,
-                                        offset: 1616
+                                        offset: 1758
                                       },
                                       end: {
-                                        line: 35,
+                                        line: 37,
                                         column: 63,
-                                        offset: 1654
+                                        offset: 1796
                                       }
                                     }
                                   },
@@ -55092,28 +55202,28 @@ export default [
                                         value: 'DynamoDB PutItem',
                                         position: {
                                           start: {
-                                            line: 35,
+                                            line: 37,
                                             column: 64,
-                                            offset: 1655
+                                            offset: 1797
                                           },
                                           end: {
-                                            line: 35,
+                                            line: 37,
                                             column: 80,
-                                            offset: 1671
+                                            offset: 1813
                                           }
                                         }
                                       }
                                     ],
                                     position: {
                                       start: {
-                                        line: 35,
+                                        line: 37,
                                         column: 63,
-                                        offset: 1654
+                                        offset: 1796
                                       },
                                       end: {
-                                        line: 35,
+                                        line: 37,
                                         column: 162,
-                                        offset: 1753
+                                        offset: 1895
                                       }
                                     }
                                   },
@@ -55122,14 +55232,14 @@ export default [
                                     value: ' operation. ',
                                     position: {
                                       start: {
-                                        line: 35,
+                                        line: 37,
                                         column: 162,
-                                        offset: 1753
+                                        offset: 1895
                                       },
                                       end: {
-                                        line: 35,
+                                        line: 37,
                                         column: 174,
-                                        offset: 1765
+                                        offset: 1907
                                       }
                                     }
                                   },
@@ -55138,14 +55248,14 @@ export default [
                                     value: 'ConsumedCapacity',
                                     position: {
                                       start: {
-                                        line: 35,
+                                        line: 37,
                                         column: 174,
-                                        offset: 1765
+                                        offset: 1907
                                       },
                                       end: {
-                                        line: 35,
+                                        line: 37,
                                         column: 192,
-                                        offset: 1783
+                                        offset: 1925
                                       }
                                     }
                                   },
@@ -55154,14 +55264,14 @@ export default [
                                     value: ' is only returned if the ',
                                     position: {
                                       start: {
-                                        line: 35,
+                                        line: 37,
                                         column: 192,
-                                        offset: 1783
+                                        offset: 1925
                                       },
                                       end: {
-                                        line: 35,
+                                        line: 37,
                                         column: 217,
-                                        offset: 1808
+                                        offset: 1950
                                       }
                                     }
                                   },
@@ -55170,14 +55280,14 @@ export default [
                                     value: 'ReturnConsumedCapacity',
                                     position: {
                                       start: {
-                                        line: 35,
+                                        line: 37,
                                         column: 217,
-                                        offset: 1808
+                                        offset: 1950
                                       },
                                       end: {
-                                        line: 35,
+                                        line: 37,
                                         column: 241,
-                                        offset: 1832
+                                        offset: 1974
                                       }
                                     }
                                   },
@@ -55186,49 +55296,49 @@ export default [
                                     value: ' option is specified.',
                                     position: {
                                       start: {
-                                        line: 35,
+                                        line: 37,
                                         column: 241,
-                                        offset: 1832
+                                        offset: 1974
                                       },
                                       end: {
-                                        line: 35,
+                                        line: 37,
                                         column: 262,
-                                        offset: 1853
+                                        offset: 1995
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 35, column: 7, offset: 1598 },
+                                  start: { line: 37, column: 7, offset: 1740 },
                                   end: {
-                                    line: 35,
+                                    line: 37,
                                     column: 262,
-                                    offset: 1853
+                                    offset: 1995
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 35, column: 5, offset: 1596 },
-                              end: { line: 35, column: 262, offset: 1853 }
+                              start: { line: 37, column: 5, offset: 1738 },
+                              end: { line: 37, column: 262, offset: 1995 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 34, column: 5, offset: 1325 },
-                          end: { line: 35, column: 262, offset: 1853 }
+                          start: { line: 36, column: 5, offset: 1467 },
+                          end: { line: 37, column: 262, offset: 1995 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 33, column: 3, offset: 1312 },
-                      end: { line: 35, column: 262, offset: 1853 }
+                      start: { line: 35, column: 3, offset: 1454 },
+                      end: { line: 37, column: 262, offset: 1995 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 33, column: 3, offset: 1312 },
-                  end: { line: 35, column: 262, offset: 1853 }
+                  start: { line: 35, column: 3, offset: 1454 },
+                  end: { line: 37, column: 262, offset: 1995 }
                 }
               },
               {
@@ -55238,22 +55348,22 @@ export default [
                     type: 'inlineCode',
                     value: 'ReturnConsumedCapacity',
                     position: {
-                      start: { line: 37, column: 1, offset: 1855 },
-                      end: { line: 37, column: 25, offset: 1879 }
+                      start: { line: 39, column: 1, offset: 1997 },
+                      end: { line: 39, column: 25, offset: 2021 }
                     }
                   },
                   {
                     type: 'text',
                     value: ' values:',
                     position: {
-                      start: { line: 37, column: 25, offset: 1879 },
-                      end: { line: 37, column: 33, offset: 1887 }
+                      start: { line: 39, column: 25, offset: 2021 },
+                      end: { line: 39, column: 33, offset: 2029 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 37, column: 1, offset: 1855 },
-                  end: { line: 37, column: 33, offset: 1887 }
+                  start: { line: 39, column: 1, offset: 1997 },
+                  end: { line: 39, column: 33, offset: 2029 }
                 }
               },
               {
@@ -55274,60 +55384,60 @@ export default [
                             type: 'inlineCode',
                             value: 'INDEXES',
                             position: {
-                              start: { line: 38, column: 5, offset: 1892 },
-                              end: { line: 38, column: 14, offset: 1901 }
+                              start: { line: 40, column: 5, offset: 2034 },
+                              end: { line: 40, column: 14, offset: 2043 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - the response will include the aggregate consumed capacity (',
                             position: {
-                              start: { line: 38, column: 14, offset: 1901 },
-                              end: { line: 38, column: 76, offset: 1963 }
+                              start: { line: 40, column: 14, offset: 2043 },
+                              end: { line: 40, column: 76, offset: 2105 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'ConsumedCapacity',
                             position: {
-                              start: { line: 38, column: 76, offset: 1963 },
-                              end: { line: 38, column: 94, offset: 1981 }
+                              start: { line: 40, column: 76, offset: 2105 },
+                              end: { line: 40, column: 94, offset: 2123 }
                             }
                           },
                           {
                             type: 'text',
                             value: ') for the operation, together with the consumed capacity (',
                             position: {
-                              start: { line: 38, column: 94, offset: 1981 },
-                              end: { line: 38, column: 152, offset: 2039 }
+                              start: { line: 40, column: 94, offset: 2123 },
+                              end: { line: 40, column: 152, offset: 2181 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'ConsumedCapacity',
                             position: {
-                              start: { line: 38, column: 152, offset: 2039 },
-                              end: { line: 38, column: 170, offset: 2057 }
+                              start: { line: 40, column: 152, offset: 2181 },
+                              end: { line: 40, column: 170, offset: 2199 }
                             }
                           },
                           {
                             type: 'text',
                             value: ') for each table and secondary index that was accessed.',
                             position: {
-                              start: { line: 38, column: 170, offset: 2057 },
-                              end: { line: 38, column: 225, offset: 2112 }
+                              start: { line: 40, column: 170, offset: 2199 },
+                              end: { line: 40, column: 225, offset: 2254 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 38, column: 5, offset: 1892 },
-                          end: { line: 38, column: 225, offset: 2112 }
+                          start: { line: 40, column: 5, offset: 2034 },
+                          end: { line: 40, column: 225, offset: 2254 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 38, column: 3, offset: 1890 },
-                      end: { line: 38, column: 225, offset: 2112 }
+                      start: { line: 40, column: 3, offset: 2032 },
+                      end: { line: 40, column: 225, offset: 2254 }
                     }
                   },
                   {
@@ -55342,44 +55452,44 @@ export default [
                             type: 'inlineCode',
                             value: 'TOTAL',
                             position: {
-                              start: { line: 39, column: 5, offset: 2117 },
-                              end: { line: 39, column: 12, offset: 2124 }
+                              start: { line: 41, column: 5, offset: 2259 },
+                              end: { line: 41, column: 12, offset: 2266 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - the response will include only the aggregate consumed capacity (',
                             position: {
-                              start: { line: 39, column: 12, offset: 2124 },
-                              end: { line: 39, column: 79, offset: 2191 }
+                              start: { line: 41, column: 12, offset: 2266 },
+                              end: { line: 41, column: 79, offset: 2333 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'ConsumedCapacity',
                             position: {
-                              start: { line: 39, column: 79, offset: 2191 },
-                              end: { line: 39, column: 97, offset: 2209 }
+                              start: { line: 41, column: 79, offset: 2333 },
+                              end: { line: 41, column: 97, offset: 2351 }
                             }
                           },
                           {
                             type: 'text',
                             value: ') for the operation.',
                             position: {
-                              start: { line: 39, column: 97, offset: 2209 },
-                              end: { line: 39, column: 117, offset: 2229 }
+                              start: { line: 41, column: 97, offset: 2351 },
+                              end: { line: 41, column: 117, offset: 2371 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 39, column: 5, offset: 2117 },
-                          end: { line: 39, column: 117, offset: 2229 }
+                          start: { line: 41, column: 5, offset: 2259 },
+                          end: { line: 41, column: 117, offset: 2371 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 39, column: 3, offset: 2115 },
-                      end: { line: 39, column: 117, offset: 2229 }
+                      start: { line: 41, column: 3, offset: 2257 },
+                      end: { line: 41, column: 117, offset: 2371 }
                     }
                   },
                   {
@@ -55394,50 +55504,50 @@ export default [
                             type: 'inlineCode',
                             value: 'NONE',
                             position: {
-                              start: { line: 40, column: 5, offset: 2234 },
-                              end: { line: 40, column: 11, offset: 2240 }
+                              start: { line: 42, column: 5, offset: 2376 },
+                              end: { line: 42, column: 11, offset: 2382 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - no consumed capacity (',
                             position: {
-                              start: { line: 40, column: 11, offset: 2240 },
-                              end: { line: 40, column: 36, offset: 2265 }
+                              start: { line: 42, column: 11, offset: 2382 },
+                              end: { line: 42, column: 36, offset: 2407 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'ConsumedCapacity',
                             position: {
-                              start: { line: 40, column: 36, offset: 2265 },
-                              end: { line: 40, column: 54, offset: 2283 }
+                              start: { line: 42, column: 36, offset: 2407 },
+                              end: { line: 42, column: 54, offset: 2425 }
                             }
                           },
                           {
                             type: 'text',
                             value: ') details will be included in the response.',
                             position: {
-                              start: { line: 40, column: 54, offset: 2283 },
-                              end: { line: 40, column: 97, offset: 2326 }
+                              start: { line: 42, column: 54, offset: 2425 },
+                              end: { line: 42, column: 97, offset: 2468 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 40, column: 5, offset: 2234 },
-                          end: { line: 40, column: 97, offset: 2326 }
+                          start: { line: 42, column: 5, offset: 2376 },
+                          end: { line: 42, column: 97, offset: 2468 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 40, column: 3, offset: 2232 },
-                      end: { line: 40, column: 97, offset: 2326 }
+                      start: { line: 42, column: 3, offset: 2374 },
+                      end: { line: 42, column: 97, offset: 2468 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 38, column: 3, offset: 1890 },
-                  end: { line: 40, column: 97, offset: 2326 }
+                  start: { line: 40, column: 3, offset: 2032 },
+                  end: { line: 42, column: 97, offset: 2468 }
                 }
               },
               {
@@ -55447,22 +55557,22 @@ export default [
                     type: 'inlineCode',
                     value: 'ReturnItemCollectionMetrics',
                     position: {
-                      start: { line: 42, column: 1, offset: 2328 },
-                      end: { line: 42, column: 30, offset: 2357 }
+                      start: { line: 44, column: 1, offset: 2470 },
+                      end: { line: 44, column: 30, offset: 2499 }
                     }
                   },
                   {
                     type: 'text',
                     value: ' values:',
                     position: {
-                      start: { line: 42, column: 30, offset: 2357 },
-                      end: { line: 42, column: 38, offset: 2365 }
+                      start: { line: 44, column: 30, offset: 2499 },
+                      end: { line: 44, column: 38, offset: 2507 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 42, column: 1, offset: 2328 },
-                  end: { line: 42, column: 38, offset: 2365 }
+                  start: { line: 44, column: 1, offset: 2470 },
+                  end: { line: 44, column: 38, offset: 2507 }
                 }
               },
               {
@@ -55483,28 +55593,28 @@ export default [
                             type: 'inlineCode',
                             value: 'SIZE',
                             position: {
-                              start: { line: 43, column: 5, offset: 2370 },
-                              end: { line: 43, column: 11, offset: 2376 }
+                              start: { line: 45, column: 5, offset: 2512 },
+                              end: { line: 45, column: 11, offset: 2518 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - the response will include statistics about item collections, if any.',
                             position: {
-                              start: { line: 43, column: 11, offset: 2376 },
-                              end: { line: 43, column: 82, offset: 2447 }
+                              start: { line: 45, column: 11, offset: 2518 },
+                              end: { line: 45, column: 82, offset: 2589 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 43, column: 5, offset: 2370 },
-                          end: { line: 43, column: 82, offset: 2447 }
+                          start: { line: 45, column: 5, offset: 2512 },
+                          end: { line: 45, column: 82, offset: 2589 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 43, column: 3, offset: 2368 },
-                      end: { line: 43, column: 82, offset: 2447 }
+                      start: { line: 45, column: 3, offset: 2510 },
+                      end: { line: 45, column: 82, offset: 2589 }
                     }
                   },
                   {
@@ -55519,34 +55629,34 @@ export default [
                             type: 'inlineCode',
                             value: 'NONE',
                             position: {
-                              start: { line: 44, column: 5, offset: 2452 },
-                              end: { line: 44, column: 11, offset: 2458 }
+                              start: { line: 46, column: 5, offset: 2594 },
+                              end: { line: 46, column: 11, offset: 2600 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - no statistics will be returned in the response.',
                             position: {
-                              start: { line: 44, column: 11, offset: 2458 },
-                              end: { line: 44, column: 61, offset: 2508 }
+                              start: { line: 46, column: 11, offset: 2600 },
+                              end: { line: 46, column: 61, offset: 2650 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 44, column: 5, offset: 2452 },
-                          end: { line: 44, column: 61, offset: 2508 }
+                          start: { line: 46, column: 5, offset: 2594 },
+                          end: { line: 46, column: 61, offset: 2650 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 44, column: 3, offset: 2450 },
-                      end: { line: 44, column: 61, offset: 2508 }
+                      start: { line: 46, column: 3, offset: 2592 },
+                      end: { line: 46, column: 61, offset: 2650 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 43, column: 3, offset: 2368 },
-                  end: { line: 44, column: 61, offset: 2508 }
+                  start: { line: 45, column: 3, offset: 2510 },
+                  end: { line: 46, column: 61, offset: 2650 }
                 }
               },
               {
@@ -55556,38 +55666,38 @@ export default [
                     type: 'inlineCode',
                     value: 'ReturnValues',
                     position: {
-                      start: { line: 46, column: 1, offset: 2510 },
-                      end: { line: 46, column: 15, offset: 2524 }
+                      start: { line: 48, column: 1, offset: 2652 },
+                      end: { line: 48, column: 15, offset: 2666 }
                     }
                   },
                   {
                     type: 'text',
                     value: ' values for ',
                     position: {
-                      start: { line: 46, column: 15, offset: 2524 },
-                      end: { line: 46, column: 27, offset: 2536 }
+                      start: { line: 48, column: 15, offset: 2666 },
+                      end: { line: 48, column: 27, offset: 2678 }
                     }
                   },
                   {
                     type: 'inlineCode',
                     value: 'putItem',
                     position: {
-                      start: { line: 46, column: 27, offset: 2536 },
-                      end: { line: 46, column: 36, offset: 2545 }
+                      start: { line: 48, column: 27, offset: 2678 },
+                      end: { line: 48, column: 36, offset: 2687 }
                     }
                   },
                   {
                     type: 'text',
                     value: ':',
                     position: {
-                      start: { line: 46, column: 36, offset: 2545 },
-                      end: { line: 46, column: 37, offset: 2546 }
+                      start: { line: 48, column: 36, offset: 2687 },
+                      end: { line: 48, column: 37, offset: 2688 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 46, column: 1, offset: 2510 },
-                  end: { line: 46, column: 37, offset: 2546 }
+                  start: { line: 48, column: 1, offset: 2652 },
+                  end: { line: 48, column: 37, offset: 2688 }
                 }
               },
               {
@@ -55608,28 +55718,28 @@ export default [
                             type: 'inlineCode',
                             value: 'NONE',
                             position: {
-                              start: { line: 47, column: 5, offset: 2551 },
-                              end: { line: 47, column: 11, offset: 2557 }
+                              start: { line: 49, column: 5, offset: 2693 },
+                              end: { line: 49, column: 11, offset: 2699 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - no item attributes will be returned in the response.',
                             position: {
-                              start: { line: 47, column: 11, offset: 2557 },
-                              end: { line: 47, column: 66, offset: 2612 }
+                              start: { line: 49, column: 11, offset: 2699 },
+                              end: { line: 49, column: 66, offset: 2754 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 47, column: 5, offset: 2551 },
-                          end: { line: 47, column: 66, offset: 2612 }
+                          start: { line: 49, column: 5, offset: 2693 },
+                          end: { line: 49, column: 66, offset: 2754 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 47, column: 3, offset: 2549 },
-                      end: { line: 47, column: 66, offset: 2612 }
+                      start: { line: 49, column: 3, offset: 2691 },
+                      end: { line: 49, column: 66, offset: 2754 }
                     }
                   },
                   {
@@ -55644,34 +55754,34 @@ export default [
                             type: 'inlineCode',
                             value: 'ALL_OLD',
                             position: {
-                              start: { line: 48, column: 5, offset: 2617 },
-                              end: { line: 48, column: 14, offset: 2626 }
+                              start: { line: 50, column: 5, offset: 2759 },
+                              end: { line: 50, column: 14, offset: 2768 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - if the operation overwrote an item, then the attributes of the full old item is returned.',
                             position: {
-                              start: { line: 48, column: 14, offset: 2626 },
-                              end: { line: 48, column: 106, offset: 2718 }
+                              start: { line: 50, column: 14, offset: 2768 },
+                              end: { line: 50, column: 106, offset: 2860 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 48, column: 5, offset: 2617 },
-                          end: { line: 48, column: 106, offset: 2718 }
+                          start: { line: 50, column: 5, offset: 2759 },
+                          end: { line: 50, column: 106, offset: 2860 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 48, column: 3, offset: 2615 },
-                      end: { line: 48, column: 106, offset: 2718 }
+                      start: { line: 50, column: 3, offset: 2757 },
+                      end: { line: 50, column: 106, offset: 2860 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 47, column: 3, offset: 2549 },
-                  end: { line: 48, column: 106, offset: 2718 }
+                  start: { line: 49, column: 3, offset: 2691 },
+                  end: { line: 50, column: 106, offset: 2860 }
                 }
               },
               {
@@ -55696,8 +55806,914 @@ export default [
                   '  age: { N: 32 },\n' +
                   '})',
                 position: {
-                  start: { line: 50, column: 1, offset: 2720 },
-                  end: { line: 68, column: 4, offset: 3070 }
+                  start: { line: 52, column: 1, offset: 2862 },
+                  end: { line: 70, column: 4, offset: 3212 }
+                }
+              },
+              {
+                type: 'heading',
+                depth: 3,
+                children: [
+                  {
+                    type: 'text',
+                    value: 'ConditionExpression Syntax',
+                    position: {
+                      start: { line: 72, column: 5, offset: 3218 },
+                      end: { line: 72, column: 31, offset: 3244 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 72, column: 1, offset: 3214 },
+                  end: { line: 72, column: 31, offset: 3244 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'sh',
+                meta: '[DynamoDB_ConditionExpression_Syntax]',
+                value: '<attribute_name> = :<variable_name>\n' +
+                  '<attribute_name> <> :<variable_name>\n' +
+                  '<attribute_name> < :<variable_name>\n' +
+                  '<attribute_name> <= :<variable_name>\n' +
+                  '<attribute_name> > :<variable_name>\n' +
+                  '<attribute_name> >= :<variable_name>\n' +
+                  '\n' +
+                  '<attribute_name> BETWEEN :<variable_name1> AND :<variable_name2>\n' +
+                  '\n' +
+                  '<attribute_name> IN (:<variable_name1>[, :<variable_name2>[, ...]])\n' +
+                  '\n' +
+                  '<function_name>(<attribute_name>[, :<variable_name>])\n' +
+                  '\n' +
+                  '<function_name>(<attribute_name>[, :<variable_name1>]) = :<variable_name2>\n' +
+                  '<function_name>(<attribute_name>[, :<variable_name1>]) <> :<variable_name2>\n' +
+                  '<function_name>(<attribute_name>[, :<variable_name1>]) < :<variable_name2>\n' +
+                  '<function_name>(<attribute_name>[, :<variable_name1>]) <= :<variable_name2>\n' +
+                  '<function_name>(<attribute_name>[, :<variable_name1>]) > :<variable_name2>\n' +
+                  '<function_name>(<attribute_name>[, :<variable_name1>]) >= :<variable_name2>\n' +
+                  '\n' +
+                  '<expression> AND <expression>\n' +
+                  '\n' +
+                  'NOT <expression>\n' +
+                  '\n' +
+                  '(<expression>)',
+                position: {
+                  start: { line: 73, column: 1, offset: 3245 },
+                  end: { line: 99, column: 4, offset: 4220 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'inlineCode',
+                    value: 'ConditionExpression',
+                    position: {
+                      start: { line: 101, column: 1, offset: 4222 },
+                      end: { line: 101, column: 22, offset: 4243 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' Functions:',
+                    position: {
+                      start: { line: 101, column: 22, offset: 4243 },
+                      end: { line: 101, column: 33, offset: 4254 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 101, column: 1, offset: 4222 },
+                  end: { line: 101, column: 33, offset: 4254 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'attribute_exists(<attribute_name>)',
+                            position: {
+                              start: { line: 102, column: 5, offset: 4259 },
+                              end: { line: 102, column: 41, offset: 4295 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - test if ',
+                            position: {
+                              start: { line: 102, column: 41, offset: 4295 },
+                              end: { line: 102, column: 52, offset: 4306 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: '<attribute_name>',
+                            position: {
+                              start: { line: 102, column: 52, offset: 4306 },
+                              end: { line: 102, column: 70, offset: 4324 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' exists.',
+                            position: {
+                              start: { line: 102, column: 70, offset: 4324 },
+                              end: { line: 102, column: 78, offset: 4332 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 102, column: 5, offset: 4259 },
+                          end: { line: 102, column: 78, offset: 4332 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 102, column: 3, offset: 4257 },
+                      end: { line: 102, column: 78, offset: 4332 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'attribute_not_exists(<attribute_name>)',
+                            position: {
+                              start: { line: 103, column: 5, offset: 4337 },
+                              end: { line: 103, column: 45, offset: 4377 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - test if ',
+                            position: {
+                              start: { line: 103, column: 45, offset: 4377 },
+                              end: { line: 103, column: 56, offset: 4388 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: '<attribute_name>',
+                            position: {
+                              start: { line: 103, column: 56, offset: 4388 },
+                              end: { line: 103, column: 74, offset: 4406 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' does not exist.',
+                            position: {
+                              start: { line: 103, column: 74, offset: 4406 },
+                              end: { line: 103, column: 90, offset: 4422 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 103, column: 5, offset: 4337 },
+                          end: { line: 103, column: 90, offset: 4422 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 103, column: 3, offset: 4335 },
+                      end: { line: 103, column: 90, offset: 4422 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'attribute_type(<attribute_name>, <attribute_type>)',
+                            position: {
+                              start: { line: 104, column: 5, offset: 4427 },
+                              end: { line: 104, column: 57, offset: 4479 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - test if the DynamoDB attribute type of the DynamoDB attribute value of ',
+                            position: {
+                              start: { line: 104, column: 57, offset: 4479 },
+                              end: { line: 104, column: 131, offset: 4553 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: '<attribute_name>',
+                            position: {
+                              start: { line: 104, column: 131, offset: 4553 },
+                              end: { line: 104, column: 149, offset: 4571 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' equals ',
+                            position: {
+                              start: { line: 104, column: 149, offset: 4571 },
+                              end: { line: 104, column: 157, offset: 4579 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'attribute_type',
+                            position: {
+                              start: { line: 104, column: 157, offset: 4579 },
+                              end: { line: 104, column: 173, offset: 4595 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: '.',
+                            position: {
+                              start: { line: 104, column: 173, offset: 4595 },
+                              end: { line: 104, column: 174, offset: 4596 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 104, column: 5, offset: 4427 },
+                          end: { line: 104, column: 174, offset: 4596 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 104, column: 3, offset: 4425 },
+                      end: { line: 104, column: 174, offset: 4596 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'contains(<attribute_name>, :<variable_name>)',
+                            position: {
+                              start: { line: 105, column: 5, offset: 4601 },
+                              end: { line: 105, column: 51, offset: 4647 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - test if the DynamoDB attribute value of ',
+                            position: {
+                              start: { line: 105, column: 51, offset: 4647 },
+                              end: { line: 105, column: 94, offset: 4690 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: '<attribute_name>',
+                            position: {
+                              start: { line: 105, column: 94, offset: 4690 },
+                              end: { line: 105, column: 112, offset: 4708 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' equals the attribute value provided in ',
+                            position: {
+                              start: { line: 105, column: 112, offset: 4708 },
+                              end: { line: 105, column: 152, offset: 4748 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'Updates',
+                            position: {
+                              start: { line: 105, column: 152, offset: 4748 },
+                              end: { line: 105, column: 161, offset: 4757 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' corresponding to ',
+                            position: {
+                              start: { line: 105, column: 161, offset: 4757 },
+                              end: { line: 105, column: 179, offset: 4775 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: '<variable_name>',
+                            position: {
+                              start: { line: 105, column: 179, offset: 4775 },
+                              end: { line: 105, column: 196, offset: 4792 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: '.',
+                            position: {
+                              start: { line: 105, column: 196, offset: 4792 },
+                              end: { line: 105, column: 197, offset: 4793 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 105, column: 5, offset: 4601 },
+                          end: { line: 105, column: 197, offset: 4793 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 105, column: 3, offset: 4599 },
+                      end: { line: 105, column: 197, offset: 4793 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'begins_with(<attribute_name>, :<variable_name>)',
+                            position: {
+                              start: { line: 106, column: 5, offset: 4798 },
+                              end: { line: 106, column: 54, offset: 4847 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - test if the DynamoDB attribute value of ',
+                            position: {
+                              start: { line: 106, column: 54, offset: 4847 },
+                              end: { line: 106, column: 97, offset: 4890 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: '<attribute_name>',
+                            position: {
+                              start: { line: 106, column: 97, offset: 4890 },
+                              end: { line: 106, column: 115, offset: 4908 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' equals the attribute value provided in ',
+                            position: {
+                              start: { line: 106, column: 115, offset: 4908 },
+                              end: { line: 106, column: 155, offset: 4948 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'Updates',
+                            position: {
+                              start: { line: 106, column: 155, offset: 4948 },
+                              end: { line: 106, column: 164, offset: 4957 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' corresponding to ',
+                            position: {
+                              start: { line: 106, column: 164, offset: 4957 },
+                              end: { line: 106, column: 182, offset: 4975 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: '<variable_name>',
+                            position: {
+                              start: { line: 106, column: 182, offset: 4975 },
+                              end: { line: 106, column: 199, offset: 4992 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: '.',
+                            position: {
+                              start: { line: 106, column: 199, offset: 4992 },
+                              end: { line: 106, column: 200, offset: 4993 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 106, column: 5, offset: 4798 },
+                          end: { line: 106, column: 200, offset: 4993 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 106, column: 3, offset: 4796 },
+                      end: { line: 106, column: 200, offset: 4993 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'size(<attribute_name>)',
+                            position: {
+                              start: { line: 107, column: 5, offset: 4998 },
+                              end: { line: 107, column: 29, offset: 5022 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - returns for evaluation a number that represents the size of the attribute value of ',
+                            position: {
+                              start: { line: 107, column: 29, offset: 5022 },
+                              end: { line: 107, column: 115, offset: 5108 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: '<attribute_name>',
+                            position: {
+                              start: { line: 107, column: 115, offset: 5108 },
+                              end: { line: 107, column: 133, offset: 5126 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 107, column: 5, offset: 4998 },
+                          end: { line: 107, column: 133, offset: 5126 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 107, column: 3, offset: 4996 },
+                      end: { line: 107, column: 133, offset: 5126 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 102, column: 3, offset: 4257 },
+                  end: { line: 107, column: 133, offset: 5126 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'inlineCode',
+                    value: 'ConditionExpression',
+                    position: {
+                      start: { line: 109, column: 1, offset: 5128 },
+                      end: { line: 109, column: 22, offset: 5149 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' Logical Operators:',
+                    position: {
+                      start: { line: 109, column: 22, offset: 5149 },
+                      end: { line: 109, column: 41, offset: 5168 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 109, column: 1, offset: 5128 },
+                  end: { line: 109, column: 41, offset: 5168 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: '=',
+                            position: {
+                              start: { line: 110, column: 5, offset: 5173 },
+                              end: { line: 110, column: 8, offset: 5176 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - equals.',
+                            position: {
+                              start: { line: 110, column: 8, offset: 5176 },
+                              end: { line: 110, column: 18, offset: 5186 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 110, column: 5, offset: 5173 },
+                          end: { line: 110, column: 18, offset: 5186 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 110, column: 3, offset: 5171 },
+                      end: { line: 110, column: 18, offset: 5186 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: '<>',
+                            position: {
+                              start: { line: 111, column: 5, offset: 5191 },
+                              end: { line: 111, column: 9, offset: 5195 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - does not equal.',
+                            position: {
+                              start: { line: 111, column: 9, offset: 5195 },
+                              end: { line: 111, column: 27, offset: 5213 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 111, column: 5, offset: 5191 },
+                          end: { line: 111, column: 27, offset: 5213 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 111, column: 3, offset: 5189 },
+                      end: { line: 111, column: 27, offset: 5213 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: '<',
+                            position: {
+                              start: { line: 112, column: 5, offset: 5218 },
+                              end: { line: 112, column: 8, offset: 5221 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - less than.',
+                            position: {
+                              start: { line: 112, column: 8, offset: 5221 },
+                              end: { line: 112, column: 21, offset: 5234 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 112, column: 5, offset: 5218 },
+                          end: { line: 112, column: 21, offset: 5234 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 112, column: 3, offset: 5216 },
+                      end: { line: 112, column: 21, offset: 5234 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: '>',
+                            position: {
+                              start: { line: 113, column: 5, offset: 5239 },
+                              end: { line: 113, column: 8, offset: 5242 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - greater than.',
+                            position: {
+                              start: { line: 113, column: 8, offset: 5242 },
+                              end: { line: 113, column: 24, offset: 5258 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 113, column: 5, offset: 5239 },
+                          end: { line: 113, column: 24, offset: 5258 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 113, column: 3, offset: 5237 },
+                      end: { line: 113, column: 24, offset: 5258 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: '<=',
+                            position: {
+                              start: { line: 114, column: 5, offset: 5263 },
+                              end: { line: 114, column: 9, offset: 5267 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - less than or equal to .',
+                            position: {
+                              start: { line: 114, column: 9, offset: 5267 },
+                              end: { line: 114, column: 35, offset: 5293 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 114, column: 5, offset: 5263 },
+                          end: { line: 114, column: 35, offset: 5293 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 114, column: 3, offset: 5261 },
+                      end: { line: 114, column: 35, offset: 5293 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: '>=',
+                            position: {
+                              start: { line: 115, column: 5, offset: 5298 },
+                              end: { line: 115, column: 9, offset: 5302 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - greater than or equal to.',
+                            position: {
+                              start: { line: 115, column: 9, offset: 5302 },
+                              end: { line: 115, column: 37, offset: 5330 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 115, column: 5, offset: 5298 },
+                          end: { line: 115, column: 37, offset: 5330 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 115, column: 3, offset: 5296 },
+                      end: { line: 115, column: 37, offset: 5330 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'BETWEEN',
+                            position: {
+                              start: { line: 116, column: 5, offset: 5335 },
+                              end: { line: 116, column: 14, offset: 5344 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - between.',
+                            position: {
+                              start: { line: 116, column: 14, offset: 5344 },
+                              end: { line: 116, column: 25, offset: 5355 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 116, column: 5, offset: 5335 },
+                          end: { line: 116, column: 25, offset: 5355 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 116, column: 3, offset: 5333 },
+                      end: { line: 116, column: 25, offset: 5355 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'IN',
+                            position: {
+                              start: { line: 117, column: 5, offset: 5360 },
+                              end: { line: 117, column: 9, offset: 5364 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - in.',
+                            position: {
+                              start: { line: 117, column: 9, offset: 5364 },
+                              end: { line: 117, column: 15, offset: 5370 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 117, column: 5, offset: 5360 },
+                          end: { line: 117, column: 15, offset: 5370 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 117, column: 3, offset: 5358 },
+                      end: { line: 117, column: 15, offset: 5370 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'AND',
+                            position: {
+                              start: { line: 118, column: 5, offset: 5375 },
+                              end: { line: 118, column: 10, offset: 5380 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - and.',
+                            position: {
+                              start: { line: 118, column: 10, offset: 5380 },
+                              end: { line: 118, column: 17, offset: 5387 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 118, column: 5, offset: 5375 },
+                          end: { line: 118, column: 17, offset: 5387 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 118, column: 3, offset: 5373 },
+                      end: { line: 118, column: 17, offset: 5387 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'OR',
+                            position: {
+                              start: { line: 119, column: 5, offset: 5392 },
+                              end: { line: 119, column: 9, offset: 5396 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - or.',
+                            position: {
+                              start: { line: 119, column: 9, offset: 5396 },
+                              end: { line: 119, column: 15, offset: 5402 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 119, column: 5, offset: 5392 },
+                          end: { line: 119, column: 15, offset: 5402 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 119, column: 3, offset: 5390 },
+                      end: { line: 119, column: 15, offset: 5402 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'NOT',
+                            position: {
+                              start: { line: 120, column: 5, offset: 5407 },
+                              end: { line: 120, column: 10, offset: 5412 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - not.',
+                            position: {
+                              start: { line: 120, column: 10, offset: 5412 },
+                              end: { line: 120, column: 17, offset: 5419 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 120, column: 5, offset: 5407 },
+                          end: { line: 120, column: 17, offset: 5419 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 120, column: 3, offset: 5405 },
+                      end: { line: 120, column: 17, offset: 5419 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 110, column: 3, offset: 5171 },
+                  end: { line: 120, column: 17, offset: 5419 }
                 }
               },
               {
@@ -55707,14 +56723,14 @@ export default [
                     type: 'text',
                     value: 'References:',
                     position: {
-                      start: { line: 70, column: 1, offset: 3072 },
-                      end: { line: 70, column: 12, offset: 3083 }
+                      start: { line: 122, column: 1, offset: 5421 },
+                      end: { line: 122, column: 12, offset: 5432 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 70, column: 1, offset: 3072 },
-                  end: { line: 70, column: 12, offset: 3083 }
+                  start: { line: 122, column: 1, offset: 5421 },
+                  end: { line: 122, column: 12, offset: 5432 }
                 }
               },
               {
@@ -55734,48 +56750,99 @@ export default [
                           {
                             type: 'link',
                             title: null,
+                            url: 'https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html',
+                            children: [
+                              {
+                                type: 'text',
+                                value: 'Condition Expressions',
+                                position: {
+                                  start: {
+                                    line: 123,
+                                    column: 5,
+                                    offset: 5437
+                                  },
+                                  end: {
+                                    line: 123,
+                                    column: 26,
+                                    offset: 5458
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 123, column: 4, offset: 5436 },
+                              end: { line: 123, column: 131, offset: 5563 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 123, column: 4, offset: 5436 },
+                          end: { line: 123, column: 131, offset: 5563 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 123, column: 2, offset: 5434 },
+                      end: { line: 123, column: 131, offset: 5563 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'link',
+                            title: null,
                             url: 'https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html',
                             children: [
                               {
                                 type: 'text',
                                 value: 'AWS DynamoDB',
                                 position: {
-                                  start: { line: 71, column: 5, offset: 3088 },
+                                  start: {
+                                    line: 124,
+                                    column: 5,
+                                    offset: 5568
+                                  },
                                   end: {
-                                    line: 71,
+                                    line: 124,
                                     column: 17,
-                                    offset: 3100
+                                    offset: 5580
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 71, column: 4, offset: 3087 },
-                              end: { line: 71, column: 102, offset: 3185 }
+                              start: { line: 124, column: 4, offset: 5567 },
+                              end: { line: 124, column: 102, offset: 5665 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 71, column: 4, offset: 3087 },
-                          end: { line: 71, column: 102, offset: 3185 }
+                          start: { line: 124, column: 4, offset: 5567 },
+                          end: { line: 124, column: 102, offset: 5665 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 71, column: 2, offset: 3085 },
-                      end: { line: 71, column: 102, offset: 3185 }
+                      start: { line: 124, column: 2, offset: 5565 },
+                      end: { line: 124, column: 102, offset: 5665 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 71, column: 2, offset: 3085 },
-                  end: { line: 71, column: 102, offset: 3185 }
+                  start: { line: 123, column: 2, offset: 5434 },
+                  end: { line: 124, column: 102, offset: 5665 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 71, column: 102, offset: 3185 }
+              end: { line: 124, column: 102, offset: 5665 }
             }
           }
         }
@@ -55790,6 +56857,7 @@ export default [
           "  ReturnConsumedCapacity: 'INDEXES'|'TOTAL'|'NONE',\n" +
           "  ReturnItemCollectionMetrics: 'SIZE'|'NONE',\n" +
           "  ReturnValues: 'NONE'|'ALL_OLD',\n" +
+          '  ConditionExpression: string,\n' +
           '}) -> data Promise<{\n' +
           '  AttributesJSON: JSONObject,\n' +
           '  ConsumedCapacity: {\n' +
@@ -55807,6 +56875,7 @@ export default [
           '    * `ReturnConsumedCapacity` - determines the level of detail about provisioned or on-demand throughput consumption that is returned in the response.\n' +
           '    * `ReturnItemCollectionMetrics` - determines whether item collection metrics will be returned in the response.\n' +
           '    * `ReturnValues` - includes the item attributes in DynamoDB JSON format in the response. The values returned are strongly consistent. There is no additional cost or read capacity units consumed when with requesting a return value aside from the incurred network overhead.\n' +
+          '    * `ConditionExpression` - a condition that must be satisfied in order for a conditional update to succeed.\n' +
           '\n' +
           'Return:\n' +
           '  * `data`\n' +
@@ -55846,7 +56915,58 @@ export default [
           '})\n' +
           '```\n' +
           '\n' +
+          '### ConditionExpression Syntax\n' +
+          '```sh [DynamoDB_ConditionExpression_Syntax]\n' +
+          '<attribute_name> = :<variable_name>\n' +
+          '<attribute_name> <> :<variable_name>\n' +
+          '<attribute_name> < :<variable_name>\n' +
+          '<attribute_name> <= :<variable_name>\n' +
+          '<attribute_name> > :<variable_name>\n' +
+          '<attribute_name> >= :<variable_name>\n' +
+          '\n' +
+          '<attribute_name> BETWEEN :<variable_name1> AND :<variable_name2>\n' +
+          '\n' +
+          '<attribute_name> IN (:<variable_name1>[, :<variable_name2>[, ...]])\n' +
+          '\n' +
+          '<function_name>(<attribute_name>[, :<variable_name>])\n' +
+          '\n' +
+          '<function_name>(<attribute_name>[, :<variable_name1>]) = :<variable_name2>\n' +
+          '<function_name>(<attribute_name>[, :<variable_name1>]) <> :<variable_name2>\n' +
+          '<function_name>(<attribute_name>[, :<variable_name1>]) < :<variable_name2>\n' +
+          '<function_name>(<attribute_name>[, :<variable_name1>]) <= :<variable_name2>\n' +
+          '<function_name>(<attribute_name>[, :<variable_name1>]) > :<variable_name2>\n' +
+          '<function_name>(<attribute_name>[, :<variable_name1>]) >= :<variable_name2>\n' +
+          '\n' +
+          '<expression> AND <expression>\n' +
+          '\n' +
+          'NOT <expression>\n' +
+          '\n' +
+          '(<expression>)\n' +
+          '```\n' +
+          '\n' +
+          '`ConditionExpression` Functions:\n' +
+          '  * `attribute_exists(<attribute_name>)` - test if `<attribute_name>` exists.\n' +
+          '  * `attribute_not_exists(<attribute_name>)` - test if `<attribute_name>` does not exist.\n' +
+          '  * `attribute_type(<attribute_name>, <attribute_type>)` - test if the DynamoDB attribute type of the DynamoDB attribute value of `<attribute_name>` equals `attribute_type`.\n' +
+          '  * `contains(<attribute_name>, :<variable_name>)` - test if the DynamoDB attribute value of `<attribute_name>` equals the attribute value provided in `Updates` corresponding to `<variable_name>`.\n' +
+          '  * `begins_with(<attribute_name>, :<variable_name>)` - test if the DynamoDB attribute value of `<attribute_name>` equals the attribute value provided in `Updates` corresponding to `<variable_name>`.\n' +
+          '  * `size(<attribute_name>)` - returns for evaluation a number that represents the size of the attribute value of `<attribute_name>`\n' +
+          '\n' +
+          '`ConditionExpression` Logical Operators:\n' +
+          '  * `=` - equals.\n' +
+          '  * `<>` - does not equal.\n' +
+          '  * `<` - less than.\n' +
+          '  * `>` - greater than.\n' +
+          '  * `<=` - less than or equal to .\n' +
+          '  * `>=` - greater than or equal to.\n' +
+          '  * `BETWEEN` - between.\n' +
+          '  * `IN` - in.\n' +
+          '  * `AND` - and.\n' +
+          '  * `OR` - or.\n' +
+          '  * `NOT` - not.\n' +
+          '\n' +
           'References:\n' +
+          ' * [Condition Expressions](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html)\n' +
           ' * [AWS DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html)',
         mdast: {
           name: {
@@ -55889,6 +57009,7 @@ export default [
                   "  ReturnConsumedCapacity: 'INDEXES'|'TOTAL'|'NONE',\n" +
                   "  ReturnItemCollectionMetrics: 'SIZE'|'NONE',\n" +
                   "  ReturnValues: 'NONE'|'ALL_OLD',\n" +
+                  '  ConditionExpression: string,\n' +
                   '}) -> data Promise<{\n' +
                   '  AttributesJSON: JSONObject,\n' +
                   '  ConsumedCapacity: {\n' +
@@ -55898,7 +57019,7 @@ export default [
                   '}>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 16, column: 4, offset: 469 }
+                  end: { line: 17, column: 4, offset: 500 }
                 }
               },
               {
@@ -55908,14 +57029,14 @@ export default [
                     type: 'text',
                     value: 'Writes an item to a DynamoDB Table using JSON format.',
                     position: {
-                      start: { line: 18, column: 1, offset: 471 },
-                      end: { line: 18, column: 54, offset: 524 }
+                      start: { line: 19, column: 1, offset: 502 },
+                      end: { line: 19, column: 54, offset: 555 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 18, column: 1, offset: 471 },
-                  end: { line: 18, column: 54, offset: 524 }
+                  start: { line: 19, column: 1, offset: 502 },
+                  end: { line: 19, column: 54, offset: 555 }
                 }
               },
               {
@@ -55925,14 +57046,14 @@ export default [
                     type: 'text',
                     value: 'Arguments:',
                     position: {
-                      start: { line: 20, column: 1, offset: 526 },
-                      end: { line: 20, column: 11, offset: 536 }
+                      start: { line: 21, column: 1, offset: 557 },
+                      end: { line: 21, column: 11, offset: 567 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 20, column: 1, offset: 526 },
-                  end: { line: 20, column: 11, offset: 536 }
+                  start: { line: 21, column: 1, offset: 557 },
+                  end: { line: 21, column: 11, offset: 567 }
                 }
               },
               {
@@ -55953,28 +57074,28 @@ export default [
                             type: 'inlineCode',
                             value: 'item',
                             position: {
-                              start: { line: 21, column: 5, offset: 541 },
-                              end: { line: 21, column: 11, offset: 547 }
+                              start: { line: 22, column: 5, offset: 572 },
+                              end: { line: 22, column: 11, offset: 578 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - the full item in JSON format that will be written to the DynamoDB Table.',
                             position: {
-                              start: { line: 21, column: 11, offset: 547 },
-                              end: { line: 21, column: 86, offset: 622 }
+                              start: { line: 22, column: 11, offset: 578 },
+                              end: { line: 22, column: 86, offset: 653 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 21, column: 5, offset: 541 },
-                          end: { line: 21, column: 86, offset: 622 }
+                          start: { line: 22, column: 5, offset: 572 },
+                          end: { line: 22, column: 86, offset: 653 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 21, column: 3, offset: 539 },
-                      end: { line: 21, column: 86, offset: 622 }
+                      start: { line: 22, column: 3, offset: 570 },
+                      end: { line: 22, column: 86, offset: 653 }
                     }
                   },
                   {
@@ -55989,14 +57110,14 @@ export default [
                             type: 'inlineCode',
                             value: 'options',
                             position: {
-                              start: { line: 22, column: 5, offset: 627 },
-                              end: { line: 22, column: 14, offset: 636 }
+                              start: { line: 23, column: 5, offset: 658 },
+                              end: { line: 23, column: 14, offset: 667 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 22, column: 5, offset: 627 },
-                          end: { line: 22, column: 14, offset: 636 }
+                          start: { line: 23, column: 5, offset: 658 },
+                          end: { line: 23, column: 14, offset: 667 }
                         }
                       },
                       {
@@ -56018,14 +57139,14 @@ export default [
                                     value: 'ReturnConsumedCapacity',
                                     position: {
                                       start: {
-                                        line: 23,
+                                        line: 24,
                                         column: 7,
-                                        offset: 643
+                                        offset: 674
                                       },
                                       end: {
-                                        line: 23,
+                                        line: 24,
                                         column: 31,
-                                        offset: 667
+                                        offset: 698
                                       }
                                     }
                                   },
@@ -56034,31 +57155,31 @@ export default [
                                     value: ' - determines the level of detail about provisioned or on-demand throughput consumption that is returned in the response.',
                                     position: {
                                       start: {
-                                        line: 23,
+                                        line: 24,
                                         column: 31,
-                                        offset: 667
+                                        offset: 698
                                       },
                                       end: {
-                                        line: 23,
+                                        line: 24,
                                         column: 152,
-                                        offset: 788
+                                        offset: 819
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 23, column: 7, offset: 643 },
+                                  start: { line: 24, column: 7, offset: 674 },
                                   end: {
-                                    line: 23,
+                                    line: 24,
                                     column: 152,
-                                    offset: 788
+                                    offset: 819
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 23, column: 5, offset: 641 },
-                              end: { line: 23, column: 152, offset: 788 }
+                              start: { line: 24, column: 5, offset: 672 },
+                              end: { line: 24, column: 152, offset: 819 }
                             }
                           },
                           {
@@ -56074,14 +57195,14 @@ export default [
                                     value: 'ReturnItemCollectionMetrics',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 25,
                                         column: 7,
-                                        offset: 795
+                                        offset: 826
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 25,
                                         column: 36,
-                                        offset: 824
+                                        offset: 855
                                       }
                                     }
                                   },
@@ -56090,31 +57211,31 @@ export default [
                                     value: ' - determines whether item collection metrics will be returned in the response.',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 25,
                                         column: 36,
-                                        offset: 824
+                                        offset: 855
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 25,
                                         column: 115,
-                                        offset: 903
+                                        offset: 934
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 24, column: 7, offset: 795 },
+                                  start: { line: 25, column: 7, offset: 826 },
                                   end: {
-                                    line: 24,
+                                    line: 25,
                                     column: 115,
-                                    offset: 903
+                                    offset: 934
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 24, column: 5, offset: 793 },
-                              end: { line: 24, column: 115, offset: 903 }
+                              start: { line: 25, column: 5, offset: 824 },
+                              end: { line: 25, column: 115, offset: 934 }
                             }
                           },
                           {
@@ -56130,14 +57251,14 @@ export default [
                                     value: 'ReturnValues',
                                     position: {
                                       start: {
-                                        line: 25,
+                                        line: 26,
                                         column: 7,
-                                        offset: 910
+                                        offset: 941
                                       },
                                       end: {
-                                        line: 25,
+                                        line: 26,
                                         column: 21,
-                                        offset: 924
+                                        offset: 955
                                       }
                                     }
                                   },
@@ -56146,49 +57267,105 @@ export default [
                                     value: ' - includes the item attributes in DynamoDB JSON format in the response. The values returned are strongly consistent. There is no additional cost or read capacity units consumed when with requesting a return value aside from the incurred network overhead.',
                                     position: {
                                       start: {
-                                        line: 25,
+                                        line: 26,
                                         column: 21,
-                                        offset: 924
+                                        offset: 955
                                       },
                                       end: {
-                                        line: 25,
+                                        line: 26,
                                         column: 276,
-                                        offset: 1179
+                                        offset: 1210
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 25, column: 7, offset: 910 },
+                                  start: { line: 26, column: 7, offset: 941 },
                                   end: {
-                                    line: 25,
+                                    line: 26,
                                     column: 276,
-                                    offset: 1179
+                                    offset: 1210
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 25, column: 5, offset: 908 },
-                              end: { line: 25, column: 276, offset: 1179 }
+                              start: { line: 26, column: 5, offset: 939 },
+                              end: { line: 26, column: 276, offset: 1210 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'ConditionExpression',
+                                    position: {
+                                      start: {
+                                        line: 27,
+                                        column: 7,
+                                        offset: 1217
+                                      },
+                                      end: {
+                                        line: 27,
+                                        column: 28,
+                                        offset: 1238
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - a condition that must be satisfied in order for a conditional update to succeed.',
+                                    position: {
+                                      start: {
+                                        line: 27,
+                                        column: 28,
+                                        offset: 1238
+                                      },
+                                      end: {
+                                        line: 27,
+                                        column: 111,
+                                        offset: 1321
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 27, column: 7, offset: 1217 },
+                                  end: {
+                                    line: 27,
+                                    column: 111,
+                                    offset: 1321
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 27, column: 5, offset: 1215 },
+                              end: { line: 27, column: 111, offset: 1321 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 23, column: 5, offset: 641 },
-                          end: { line: 25, column: 276, offset: 1179 }
+                          start: { line: 24, column: 5, offset: 672 },
+                          end: { line: 27, column: 111, offset: 1321 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 22, column: 3, offset: 625 },
-                      end: { line: 25, column: 276, offset: 1179 }
+                      start: { line: 23, column: 3, offset: 656 },
+                      end: { line: 27, column: 111, offset: 1321 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 21, column: 3, offset: 539 },
-                  end: { line: 25, column: 276, offset: 1179 }
+                  start: { line: 22, column: 3, offset: 570 },
+                  end: { line: 27, column: 111, offset: 1321 }
                 }
               },
               {
@@ -56198,14 +57375,14 @@ export default [
                     type: 'text',
                     value: 'Return:',
                     position: {
-                      start: { line: 27, column: 1, offset: 1181 },
-                      end: { line: 27, column: 8, offset: 1188 }
+                      start: { line: 29, column: 1, offset: 1323 },
+                      end: { line: 29, column: 8, offset: 1330 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 27, column: 1, offset: 1181 },
-                  end: { line: 27, column: 8, offset: 1188 }
+                  start: { line: 29, column: 1, offset: 1323 },
+                  end: { line: 29, column: 8, offset: 1330 }
                 }
               },
               {
@@ -56226,14 +57403,14 @@ export default [
                             type: 'inlineCode',
                             value: 'data',
                             position: {
-                              start: { line: 28, column: 5, offset: 1193 },
-                              end: { line: 28, column: 11, offset: 1199 }
+                              start: { line: 30, column: 5, offset: 1335 },
+                              end: { line: 30, column: 11, offset: 1341 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 28, column: 5, offset: 1193 },
-                          end: { line: 28, column: 11, offset: 1199 }
+                          start: { line: 30, column: 5, offset: 1335 },
+                          end: { line: 30, column: 11, offset: 1341 }
                         }
                       },
                       {
@@ -56255,14 +57432,14 @@ export default [
                                     value: 'AttributesJSON',
                                     position: {
                                       start: {
-                                        line: 29,
+                                        line: 31,
                                         column: 7,
-                                        offset: 1206
+                                        offset: 1348
                                       },
                                       end: {
-                                        line: 29,
+                                        line: 31,
                                         column: 23,
-                                        offset: 1222
+                                        offset: 1364
                                       }
                                     }
                                   },
@@ -56271,14 +57448,14 @@ export default [
                                     value: ' - the attribute values of the item in JSON format as they appeared before the ',
                                     position: {
                                       start: {
-                                        line: 29,
+                                        line: 31,
                                         column: 23,
-                                        offset: 1222
+                                        offset: 1364
                                       },
                                       end: {
-                                        line: 29,
+                                        line: 31,
                                         column: 102,
-                                        offset: 1301
+                                        offset: 1443
                                       }
                                     }
                                   },
@@ -56292,28 +57469,28 @@ export default [
                                         value: 'DynamoDB PutItem',
                                         position: {
                                           start: {
-                                            line: 29,
+                                            line: 31,
                                             column: 103,
-                                            offset: 1302
+                                            offset: 1444
                                           },
                                           end: {
-                                            line: 29,
+                                            line: 31,
                                             column: 119,
-                                            offset: 1318
+                                            offset: 1460
                                           }
                                         }
                                       }
                                     ],
                                     position: {
                                       start: {
-                                        line: 29,
+                                        line: 31,
                                         column: 102,
-                                        offset: 1301
+                                        offset: 1443
                                       },
                                       end: {
-                                        line: 29,
+                                        line: 31,
                                         column: 201,
-                                        offset: 1400
+                                        offset: 1542
                                       }
                                     }
                                   },
@@ -56322,14 +57499,14 @@ export default [
                                     value: ' operation. Requires ',
                                     position: {
                                       start: {
-                                        line: 29,
+                                        line: 31,
                                         column: 201,
-                                        offset: 1400
+                                        offset: 1542
                                       },
                                       end: {
-                                        line: 29,
+                                        line: 31,
                                         column: 222,
-                                        offset: 1421
+                                        offset: 1563
                                       }
                                     }
                                   },
@@ -56338,14 +57515,14 @@ export default [
                                     value: 'ReturnValues',
                                     position: {
                                       start: {
-                                        line: 29,
+                                        line: 31,
                                         column: 222,
-                                        offset: 1421
+                                        offset: 1563
                                       },
                                       end: {
-                                        line: 29,
+                                        line: 31,
                                         column: 236,
-                                        offset: 1435
+                                        offset: 1577
                                       }
                                     }
                                   },
@@ -56354,14 +57531,14 @@ export default [
                                     value: ' to be specified as ',
                                     position: {
                                       start: {
-                                        line: 29,
+                                        line: 31,
                                         column: 236,
-                                        offset: 1435
+                                        offset: 1577
                                       },
                                       end: {
-                                        line: 29,
+                                        line: 31,
                                         column: 256,
-                                        offset: 1455
+                                        offset: 1597
                                       }
                                     }
                                   },
@@ -56370,14 +57547,14 @@ export default [
                                     value: 'ALL_OLD',
                                     position: {
                                       start: {
-                                        line: 29,
+                                        line: 31,
                                         column: 256,
-                                        offset: 1455
+                                        offset: 1597
                                       },
                                       end: {
-                                        line: 29,
+                                        line: 31,
                                         column: 265,
-                                        offset: 1464
+                                        offset: 1606
                                       }
                                     }
                                   },
@@ -56386,31 +57563,31 @@ export default [
                                     value: '.',
                                     position: {
                                       start: {
-                                        line: 29,
+                                        line: 31,
                                         column: 265,
-                                        offset: 1464
+                                        offset: 1606
                                       },
                                       end: {
-                                        line: 29,
+                                        line: 31,
                                         column: 266,
-                                        offset: 1465
+                                        offset: 1607
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 29, column: 7, offset: 1206 },
+                                  start: { line: 31, column: 7, offset: 1348 },
                                   end: {
-                                    line: 29,
+                                    line: 31,
                                     column: 266,
-                                    offset: 1465
+                                    offset: 1607
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 29, column: 5, offset: 1204 },
-                              end: { line: 29, column: 266, offset: 1465 }
+                              start: { line: 31, column: 5, offset: 1346 },
+                              end: { line: 31, column: 266, offset: 1607 }
                             }
                           },
                           {
@@ -56426,14 +57603,14 @@ export default [
                                     value: 'ConsumedCapacity',
                                     position: {
                                       start: {
-                                        line: 30,
+                                        line: 32,
                                         column: 7,
-                                        offset: 1472
+                                        offset: 1614
                                       },
                                       end: {
-                                        line: 30,
+                                        line: 32,
                                         column: 25,
-                                        offset: 1490
+                                        offset: 1632
                                       }
                                     }
                                   },
@@ -56442,14 +57619,14 @@ export default [
                                     value: ' - the capacity units consumed by the ',
                                     position: {
                                       start: {
-                                        line: 30,
+                                        line: 32,
                                         column: 25,
-                                        offset: 1490
+                                        offset: 1632
                                       },
                                       end: {
-                                        line: 30,
+                                        line: 32,
                                         column: 63,
-                                        offset: 1528
+                                        offset: 1670
                                       }
                                     }
                                   },
@@ -56463,28 +57640,28 @@ export default [
                                         value: 'DynamoDB PutItem',
                                         position: {
                                           start: {
-                                            line: 30,
+                                            line: 32,
                                             column: 64,
-                                            offset: 1529
+                                            offset: 1671
                                           },
                                           end: {
-                                            line: 30,
+                                            line: 32,
                                             column: 80,
-                                            offset: 1545
+                                            offset: 1687
                                           }
                                         }
                                       }
                                     ],
                                     position: {
                                       start: {
-                                        line: 30,
+                                        line: 32,
                                         column: 63,
-                                        offset: 1528
+                                        offset: 1670
                                       },
                                       end: {
-                                        line: 30,
+                                        line: 32,
                                         column: 162,
-                                        offset: 1627
+                                        offset: 1769
                                       }
                                     }
                                   },
@@ -56493,14 +57670,14 @@ export default [
                                     value: ' operation. ',
                                     position: {
                                       start: {
-                                        line: 30,
+                                        line: 32,
                                         column: 162,
-                                        offset: 1627
+                                        offset: 1769
                                       },
                                       end: {
-                                        line: 30,
+                                        line: 32,
                                         column: 174,
-                                        offset: 1639
+                                        offset: 1781
                                       }
                                     }
                                   },
@@ -56509,14 +57686,14 @@ export default [
                                     value: 'ConsumedCapacity',
                                     position: {
                                       start: {
-                                        line: 30,
+                                        line: 32,
                                         column: 174,
-                                        offset: 1639
+                                        offset: 1781
                                       },
                                       end: {
-                                        line: 30,
+                                        line: 32,
                                         column: 192,
-                                        offset: 1657
+                                        offset: 1799
                                       }
                                     }
                                   },
@@ -56525,14 +57702,14 @@ export default [
                                     value: ' is only returned if the ',
                                     position: {
                                       start: {
-                                        line: 30,
+                                        line: 32,
                                         column: 192,
-                                        offset: 1657
+                                        offset: 1799
                                       },
                                       end: {
-                                        line: 30,
+                                        line: 32,
                                         column: 217,
-                                        offset: 1682
+                                        offset: 1824
                                       }
                                     }
                                   },
@@ -56541,14 +57718,14 @@ export default [
                                     value: 'ReturnConsumedCapacity',
                                     position: {
                                       start: {
-                                        line: 30,
+                                        line: 32,
                                         column: 217,
-                                        offset: 1682
+                                        offset: 1824
                                       },
                                       end: {
-                                        line: 30,
+                                        line: 32,
                                         column: 241,
-                                        offset: 1706
+                                        offset: 1848
                                       }
                                     }
                                   },
@@ -56557,49 +57734,49 @@ export default [
                                     value: ' option is specified.',
                                     position: {
                                       start: {
-                                        line: 30,
+                                        line: 32,
                                         column: 241,
-                                        offset: 1706
+                                        offset: 1848
                                       },
                                       end: {
-                                        line: 30,
+                                        line: 32,
                                         column: 262,
-                                        offset: 1727
+                                        offset: 1869
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 30, column: 7, offset: 1472 },
+                                  start: { line: 32, column: 7, offset: 1614 },
                                   end: {
-                                    line: 30,
+                                    line: 32,
                                     column: 262,
-                                    offset: 1727
+                                    offset: 1869
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 30, column: 5, offset: 1470 },
-                              end: { line: 30, column: 262, offset: 1727 }
+                              start: { line: 32, column: 5, offset: 1612 },
+                              end: { line: 32, column: 262, offset: 1869 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 29, column: 5, offset: 1204 },
-                          end: { line: 30, column: 262, offset: 1727 }
+                          start: { line: 31, column: 5, offset: 1346 },
+                          end: { line: 32, column: 262, offset: 1869 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 28, column: 3, offset: 1191 },
-                      end: { line: 30, column: 262, offset: 1727 }
+                      start: { line: 30, column: 3, offset: 1333 },
+                      end: { line: 32, column: 262, offset: 1869 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 28, column: 3, offset: 1191 },
-                  end: { line: 30, column: 262, offset: 1727 }
+                  start: { line: 30, column: 3, offset: 1333 },
+                  end: { line: 32, column: 262, offset: 1869 }
                 }
               },
               {
@@ -56609,22 +57786,22 @@ export default [
                     type: 'inlineCode',
                     value: 'ReturnConsumedCapacity',
                     position: {
-                      start: { line: 32, column: 1, offset: 1729 },
-                      end: { line: 32, column: 25, offset: 1753 }
+                      start: { line: 34, column: 1, offset: 1871 },
+                      end: { line: 34, column: 25, offset: 1895 }
                     }
                   },
                   {
                     type: 'text',
                     value: ' values:',
                     position: {
-                      start: { line: 32, column: 25, offset: 1753 },
-                      end: { line: 32, column: 33, offset: 1761 }
+                      start: { line: 34, column: 25, offset: 1895 },
+                      end: { line: 34, column: 33, offset: 1903 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 32, column: 1, offset: 1729 },
-                  end: { line: 32, column: 33, offset: 1761 }
+                  start: { line: 34, column: 1, offset: 1871 },
+                  end: { line: 34, column: 33, offset: 1903 }
                 }
               },
               {
@@ -56645,60 +57822,60 @@ export default [
                             type: 'inlineCode',
                             value: 'INDEXES',
                             position: {
-                              start: { line: 33, column: 5, offset: 1766 },
-                              end: { line: 33, column: 14, offset: 1775 }
+                              start: { line: 35, column: 5, offset: 1908 },
+                              end: { line: 35, column: 14, offset: 1917 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - the response will include the aggregate consumed capacity (',
                             position: {
-                              start: { line: 33, column: 14, offset: 1775 },
-                              end: { line: 33, column: 76, offset: 1837 }
+                              start: { line: 35, column: 14, offset: 1917 },
+                              end: { line: 35, column: 76, offset: 1979 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'ConsumedCapacity',
                             position: {
-                              start: { line: 33, column: 76, offset: 1837 },
-                              end: { line: 33, column: 94, offset: 1855 }
+                              start: { line: 35, column: 76, offset: 1979 },
+                              end: { line: 35, column: 94, offset: 1997 }
                             }
                           },
                           {
                             type: 'text',
                             value: ') for the operation, together with the consumed capacity (',
                             position: {
-                              start: { line: 33, column: 94, offset: 1855 },
-                              end: { line: 33, column: 152, offset: 1913 }
+                              start: { line: 35, column: 94, offset: 1997 },
+                              end: { line: 35, column: 152, offset: 2055 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'ConsumedCapacity',
                             position: {
-                              start: { line: 33, column: 152, offset: 1913 },
-                              end: { line: 33, column: 170, offset: 1931 }
+                              start: { line: 35, column: 152, offset: 2055 },
+                              end: { line: 35, column: 170, offset: 2073 }
                             }
                           },
                           {
                             type: 'text',
                             value: ') for each table and secondary index that was accessed.',
                             position: {
-                              start: { line: 33, column: 170, offset: 1931 },
-                              end: { line: 33, column: 225, offset: 1986 }
+                              start: { line: 35, column: 170, offset: 2073 },
+                              end: { line: 35, column: 225, offset: 2128 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 33, column: 5, offset: 1766 },
-                          end: { line: 33, column: 225, offset: 1986 }
+                          start: { line: 35, column: 5, offset: 1908 },
+                          end: { line: 35, column: 225, offset: 2128 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 33, column: 3, offset: 1764 },
-                      end: { line: 33, column: 225, offset: 1986 }
+                      start: { line: 35, column: 3, offset: 1906 },
+                      end: { line: 35, column: 225, offset: 2128 }
                     }
                   },
                   {
@@ -56713,44 +57890,44 @@ export default [
                             type: 'inlineCode',
                             value: 'TOTAL',
                             position: {
-                              start: { line: 34, column: 5, offset: 1991 },
-                              end: { line: 34, column: 12, offset: 1998 }
+                              start: { line: 36, column: 5, offset: 2133 },
+                              end: { line: 36, column: 12, offset: 2140 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - the response will include only the aggregate consumed capacity (',
                             position: {
-                              start: { line: 34, column: 12, offset: 1998 },
-                              end: { line: 34, column: 79, offset: 2065 }
+                              start: { line: 36, column: 12, offset: 2140 },
+                              end: { line: 36, column: 79, offset: 2207 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'ConsumedCapacity',
                             position: {
-                              start: { line: 34, column: 79, offset: 2065 },
-                              end: { line: 34, column: 97, offset: 2083 }
+                              start: { line: 36, column: 79, offset: 2207 },
+                              end: { line: 36, column: 97, offset: 2225 }
                             }
                           },
                           {
                             type: 'text',
                             value: ') for the operation.',
                             position: {
-                              start: { line: 34, column: 97, offset: 2083 },
-                              end: { line: 34, column: 117, offset: 2103 }
+                              start: { line: 36, column: 97, offset: 2225 },
+                              end: { line: 36, column: 117, offset: 2245 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 34, column: 5, offset: 1991 },
-                          end: { line: 34, column: 117, offset: 2103 }
+                          start: { line: 36, column: 5, offset: 2133 },
+                          end: { line: 36, column: 117, offset: 2245 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 34, column: 3, offset: 1989 },
-                      end: { line: 34, column: 117, offset: 2103 }
+                      start: { line: 36, column: 3, offset: 2131 },
+                      end: { line: 36, column: 117, offset: 2245 }
                     }
                   },
                   {
@@ -56765,50 +57942,50 @@ export default [
                             type: 'inlineCode',
                             value: 'NONE',
                             position: {
-                              start: { line: 35, column: 5, offset: 2108 },
-                              end: { line: 35, column: 11, offset: 2114 }
+                              start: { line: 37, column: 5, offset: 2250 },
+                              end: { line: 37, column: 11, offset: 2256 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - no consumed capacity (',
                             position: {
-                              start: { line: 35, column: 11, offset: 2114 },
-                              end: { line: 35, column: 36, offset: 2139 }
+                              start: { line: 37, column: 11, offset: 2256 },
+                              end: { line: 37, column: 36, offset: 2281 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'ConsumedCapacity',
                             position: {
-                              start: { line: 35, column: 36, offset: 2139 },
-                              end: { line: 35, column: 54, offset: 2157 }
+                              start: { line: 37, column: 36, offset: 2281 },
+                              end: { line: 37, column: 54, offset: 2299 }
                             }
                           },
                           {
                             type: 'text',
                             value: ') details will be included in the response.',
                             position: {
-                              start: { line: 35, column: 54, offset: 2157 },
-                              end: { line: 35, column: 97, offset: 2200 }
+                              start: { line: 37, column: 54, offset: 2299 },
+                              end: { line: 37, column: 97, offset: 2342 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 35, column: 5, offset: 2108 },
-                          end: { line: 35, column: 97, offset: 2200 }
+                          start: { line: 37, column: 5, offset: 2250 },
+                          end: { line: 37, column: 97, offset: 2342 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 35, column: 3, offset: 2106 },
-                      end: { line: 35, column: 97, offset: 2200 }
+                      start: { line: 37, column: 3, offset: 2248 },
+                      end: { line: 37, column: 97, offset: 2342 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 33, column: 3, offset: 1764 },
-                  end: { line: 35, column: 97, offset: 2200 }
+                  start: { line: 35, column: 3, offset: 1906 },
+                  end: { line: 37, column: 97, offset: 2342 }
                 }
               },
               {
@@ -56818,38 +57995,38 @@ export default [
                     type: 'inlineCode',
                     value: 'ReturnItemCollectionMetrics',
                     position: {
-                      start: { line: 37, column: 1, offset: 2202 },
-                      end: { line: 37, column: 30, offset: 2231 }
+                      start: { line: 39, column: 1, offset: 2344 },
+                      end: { line: 39, column: 30, offset: 2373 }
                     }
                   },
                   {
                     type: 'text',
                     value: ' values (',
                     position: {
-                      start: { line: 37, column: 30, offset: 2231 },
-                      end: { line: 37, column: 39, offset: 2240 }
+                      start: { line: 39, column: 30, offset: 2373 },
+                      end: { line: 39, column: 39, offset: 2382 }
                     }
                   },
                   {
                     type: 'inlineCode',
                     value: 'putItemJSON',
                     position: {
-                      start: { line: 37, column: 39, offset: 2240 },
-                      end: { line: 37, column: 52, offset: 2253 }
+                      start: { line: 39, column: 39, offset: 2382 },
+                      end: { line: 39, column: 52, offset: 2395 }
                     }
                   },
                   {
                     type: 'text',
                     value: ' only):',
                     position: {
-                      start: { line: 37, column: 52, offset: 2253 },
-                      end: { line: 37, column: 59, offset: 2260 }
+                      start: { line: 39, column: 52, offset: 2395 },
+                      end: { line: 39, column: 59, offset: 2402 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 37, column: 1, offset: 2202 },
-                  end: { line: 37, column: 59, offset: 2260 }
+                  start: { line: 39, column: 1, offset: 2344 },
+                  end: { line: 39, column: 59, offset: 2402 }
                 }
               },
               {
@@ -56870,28 +58047,28 @@ export default [
                             type: 'inlineCode',
                             value: 'SIZE',
                             position: {
-                              start: { line: 38, column: 5, offset: 2265 },
-                              end: { line: 38, column: 11, offset: 2271 }
+                              start: { line: 40, column: 5, offset: 2407 },
+                              end: { line: 40, column: 11, offset: 2413 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - the response will include statistics about item collections, if any.',
                             position: {
-                              start: { line: 38, column: 11, offset: 2271 },
-                              end: { line: 38, column: 82, offset: 2342 }
+                              start: { line: 40, column: 11, offset: 2413 },
+                              end: { line: 40, column: 82, offset: 2484 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 38, column: 5, offset: 2265 },
-                          end: { line: 38, column: 82, offset: 2342 }
+                          start: { line: 40, column: 5, offset: 2407 },
+                          end: { line: 40, column: 82, offset: 2484 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 38, column: 3, offset: 2263 },
-                      end: { line: 38, column: 82, offset: 2342 }
+                      start: { line: 40, column: 3, offset: 2405 },
+                      end: { line: 40, column: 82, offset: 2484 }
                     }
                   },
                   {
@@ -56906,34 +58083,34 @@ export default [
                             type: 'inlineCode',
                             value: 'NONE',
                             position: {
-                              start: { line: 39, column: 5, offset: 2347 },
-                              end: { line: 39, column: 11, offset: 2353 }
+                              start: { line: 41, column: 5, offset: 2489 },
+                              end: { line: 41, column: 11, offset: 2495 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - no statistics will be returned in the response.',
                             position: {
-                              start: { line: 39, column: 11, offset: 2353 },
-                              end: { line: 39, column: 61, offset: 2403 }
+                              start: { line: 41, column: 11, offset: 2495 },
+                              end: { line: 41, column: 61, offset: 2545 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 39, column: 5, offset: 2347 },
-                          end: { line: 39, column: 61, offset: 2403 }
+                          start: { line: 41, column: 5, offset: 2489 },
+                          end: { line: 41, column: 61, offset: 2545 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 39, column: 3, offset: 2345 },
-                      end: { line: 39, column: 61, offset: 2403 }
+                      start: { line: 41, column: 3, offset: 2487 },
+                      end: { line: 41, column: 61, offset: 2545 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 38, column: 3, offset: 2263 },
-                  end: { line: 39, column: 61, offset: 2403 }
+                  start: { line: 40, column: 3, offset: 2405 },
+                  end: { line: 41, column: 61, offset: 2545 }
                 }
               },
               {
@@ -56943,38 +58120,38 @@ export default [
                     type: 'inlineCode',
                     value: 'ReturnValues',
                     position: {
-                      start: { line: 41, column: 1, offset: 2405 },
-                      end: { line: 41, column: 15, offset: 2419 }
+                      start: { line: 43, column: 1, offset: 2547 },
+                      end: { line: 43, column: 15, offset: 2561 }
                     }
                   },
                   {
                     type: 'text',
                     value: ' values for ',
                     position: {
-                      start: { line: 41, column: 15, offset: 2419 },
-                      end: { line: 41, column: 27, offset: 2431 }
+                      start: { line: 43, column: 15, offset: 2561 },
+                      end: { line: 43, column: 27, offset: 2573 }
                     }
                   },
                   {
                     type: 'inlineCode',
                     value: 'putItemJSON',
                     position: {
-                      start: { line: 41, column: 27, offset: 2431 },
-                      end: { line: 41, column: 40, offset: 2444 }
+                      start: { line: 43, column: 27, offset: 2573 },
+                      end: { line: 43, column: 40, offset: 2586 }
                     }
                   },
                   {
                     type: 'text',
                     value: ':',
                     position: {
-                      start: { line: 41, column: 40, offset: 2444 },
-                      end: { line: 41, column: 41, offset: 2445 }
+                      start: { line: 43, column: 40, offset: 2586 },
+                      end: { line: 43, column: 41, offset: 2587 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 41, column: 1, offset: 2405 },
-                  end: { line: 41, column: 41, offset: 2445 }
+                  start: { line: 43, column: 1, offset: 2547 },
+                  end: { line: 43, column: 41, offset: 2587 }
                 }
               },
               {
@@ -56995,28 +58172,28 @@ export default [
                             type: 'inlineCode',
                             value: 'NONE',
                             position: {
-                              start: { line: 42, column: 5, offset: 2450 },
-                              end: { line: 42, column: 11, offset: 2456 }
+                              start: { line: 44, column: 5, offset: 2592 },
+                              end: { line: 44, column: 11, offset: 2598 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - no item attributes will be returned in the response.',
                             position: {
-                              start: { line: 42, column: 11, offset: 2456 },
-                              end: { line: 42, column: 66, offset: 2511 }
+                              start: { line: 44, column: 11, offset: 2598 },
+                              end: { line: 44, column: 66, offset: 2653 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 42, column: 5, offset: 2450 },
-                          end: { line: 42, column: 66, offset: 2511 }
+                          start: { line: 44, column: 5, offset: 2592 },
+                          end: { line: 44, column: 66, offset: 2653 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 42, column: 3, offset: 2448 },
-                      end: { line: 42, column: 66, offset: 2511 }
+                      start: { line: 44, column: 3, offset: 2590 },
+                      end: { line: 44, column: 66, offset: 2653 }
                     }
                   },
                   {
@@ -57031,34 +58208,34 @@ export default [
                             type: 'inlineCode',
                             value: 'ALL_OLD',
                             position: {
-                              start: { line: 43, column: 5, offset: 2516 },
-                              end: { line: 43, column: 14, offset: 2525 }
+                              start: { line: 45, column: 5, offset: 2658 },
+                              end: { line: 45, column: 14, offset: 2667 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - if the operation overwrote an item, then the attributes of the full old item is returned.',
                             position: {
-                              start: { line: 43, column: 14, offset: 2525 },
-                              end: { line: 43, column: 106, offset: 2617 }
+                              start: { line: 45, column: 14, offset: 2667 },
+                              end: { line: 45, column: 106, offset: 2759 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 43, column: 5, offset: 2516 },
-                          end: { line: 43, column: 106, offset: 2617 }
+                          start: { line: 45, column: 5, offset: 2658 },
+                          end: { line: 45, column: 106, offset: 2759 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 43, column: 3, offset: 2514 },
-                      end: { line: 43, column: 106, offset: 2617 }
+                      start: { line: 45, column: 3, offset: 2656 },
+                      end: { line: 45, column: 106, offset: 2759 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 42, column: 3, offset: 2448 },
-                  end: { line: 43, column: 106, offset: 2617 }
+                  start: { line: 44, column: 3, offset: 2590 },
+                  end: { line: 45, column: 106, offset: 2759 }
                 }
               },
               {
@@ -57083,8 +58260,914 @@ export default [
                   '  age: 32,\n' +
                   '})',
                 position: {
-                  start: { line: 45, column: 1, offset: 2619 },
-                  end: { line: 63, column: 4, offset: 2952 }
+                  start: { line: 47, column: 1, offset: 2761 },
+                  end: { line: 65, column: 4, offset: 3094 }
+                }
+              },
+              {
+                type: 'heading',
+                depth: 3,
+                children: [
+                  {
+                    type: 'text',
+                    value: 'ConditionExpression Syntax',
+                    position: {
+                      start: { line: 67, column: 5, offset: 3100 },
+                      end: { line: 67, column: 31, offset: 3126 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 67, column: 1, offset: 3096 },
+                  end: { line: 67, column: 31, offset: 3126 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'sh',
+                meta: '[DynamoDB_ConditionExpression_Syntax]',
+                value: '<attribute_name> = :<variable_name>\n' +
+                  '<attribute_name> <> :<variable_name>\n' +
+                  '<attribute_name> < :<variable_name>\n' +
+                  '<attribute_name> <= :<variable_name>\n' +
+                  '<attribute_name> > :<variable_name>\n' +
+                  '<attribute_name> >= :<variable_name>\n' +
+                  '\n' +
+                  '<attribute_name> BETWEEN :<variable_name1> AND :<variable_name2>\n' +
+                  '\n' +
+                  '<attribute_name> IN (:<variable_name1>[, :<variable_name2>[, ...]])\n' +
+                  '\n' +
+                  '<function_name>(<attribute_name>[, :<variable_name>])\n' +
+                  '\n' +
+                  '<function_name>(<attribute_name>[, :<variable_name1>]) = :<variable_name2>\n' +
+                  '<function_name>(<attribute_name>[, :<variable_name1>]) <> :<variable_name2>\n' +
+                  '<function_name>(<attribute_name>[, :<variable_name1>]) < :<variable_name2>\n' +
+                  '<function_name>(<attribute_name>[, :<variable_name1>]) <= :<variable_name2>\n' +
+                  '<function_name>(<attribute_name>[, :<variable_name1>]) > :<variable_name2>\n' +
+                  '<function_name>(<attribute_name>[, :<variable_name1>]) >= :<variable_name2>\n' +
+                  '\n' +
+                  '<expression> AND <expression>\n' +
+                  '\n' +
+                  'NOT <expression>\n' +
+                  '\n' +
+                  '(<expression>)',
+                position: {
+                  start: { line: 68, column: 1, offset: 3127 },
+                  end: { line: 94, column: 4, offset: 4102 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'inlineCode',
+                    value: 'ConditionExpression',
+                    position: {
+                      start: { line: 96, column: 1, offset: 4104 },
+                      end: { line: 96, column: 22, offset: 4125 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' Functions:',
+                    position: {
+                      start: { line: 96, column: 22, offset: 4125 },
+                      end: { line: 96, column: 33, offset: 4136 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 96, column: 1, offset: 4104 },
+                  end: { line: 96, column: 33, offset: 4136 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'attribute_exists(<attribute_name>)',
+                            position: {
+                              start: { line: 97, column: 5, offset: 4141 },
+                              end: { line: 97, column: 41, offset: 4177 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - test if ',
+                            position: {
+                              start: { line: 97, column: 41, offset: 4177 },
+                              end: { line: 97, column: 52, offset: 4188 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: '<attribute_name>',
+                            position: {
+                              start: { line: 97, column: 52, offset: 4188 },
+                              end: { line: 97, column: 70, offset: 4206 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' exists.',
+                            position: {
+                              start: { line: 97, column: 70, offset: 4206 },
+                              end: { line: 97, column: 78, offset: 4214 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 97, column: 5, offset: 4141 },
+                          end: { line: 97, column: 78, offset: 4214 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 97, column: 3, offset: 4139 },
+                      end: { line: 97, column: 78, offset: 4214 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'attribute_not_exists(<attribute_name>)',
+                            position: {
+                              start: { line: 98, column: 5, offset: 4219 },
+                              end: { line: 98, column: 45, offset: 4259 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - test if ',
+                            position: {
+                              start: { line: 98, column: 45, offset: 4259 },
+                              end: { line: 98, column: 56, offset: 4270 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: '<attribute_name>',
+                            position: {
+                              start: { line: 98, column: 56, offset: 4270 },
+                              end: { line: 98, column: 74, offset: 4288 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' does not exist.',
+                            position: {
+                              start: { line: 98, column: 74, offset: 4288 },
+                              end: { line: 98, column: 90, offset: 4304 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 98, column: 5, offset: 4219 },
+                          end: { line: 98, column: 90, offset: 4304 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 98, column: 3, offset: 4217 },
+                      end: { line: 98, column: 90, offset: 4304 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'attribute_type(<attribute_name>, <attribute_type>)',
+                            position: {
+                              start: { line: 99, column: 5, offset: 4309 },
+                              end: { line: 99, column: 57, offset: 4361 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - test if the DynamoDB attribute type of the DynamoDB attribute value of ',
+                            position: {
+                              start: { line: 99, column: 57, offset: 4361 },
+                              end: { line: 99, column: 131, offset: 4435 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: '<attribute_name>',
+                            position: {
+                              start: { line: 99, column: 131, offset: 4435 },
+                              end: { line: 99, column: 149, offset: 4453 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' equals ',
+                            position: {
+                              start: { line: 99, column: 149, offset: 4453 },
+                              end: { line: 99, column: 157, offset: 4461 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'attribute_type',
+                            position: {
+                              start: { line: 99, column: 157, offset: 4461 },
+                              end: { line: 99, column: 173, offset: 4477 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: '.',
+                            position: {
+                              start: { line: 99, column: 173, offset: 4477 },
+                              end: { line: 99, column: 174, offset: 4478 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 99, column: 5, offset: 4309 },
+                          end: { line: 99, column: 174, offset: 4478 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 99, column: 3, offset: 4307 },
+                      end: { line: 99, column: 174, offset: 4478 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'contains(<attribute_name>, :<variable_name>)',
+                            position: {
+                              start: { line: 100, column: 5, offset: 4483 },
+                              end: { line: 100, column: 51, offset: 4529 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - test if the DynamoDB attribute value of ',
+                            position: {
+                              start: { line: 100, column: 51, offset: 4529 },
+                              end: { line: 100, column: 94, offset: 4572 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: '<attribute_name>',
+                            position: {
+                              start: { line: 100, column: 94, offset: 4572 },
+                              end: { line: 100, column: 112, offset: 4590 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' equals the attribute value provided in ',
+                            position: {
+                              start: { line: 100, column: 112, offset: 4590 },
+                              end: { line: 100, column: 152, offset: 4630 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'Updates',
+                            position: {
+                              start: { line: 100, column: 152, offset: 4630 },
+                              end: { line: 100, column: 161, offset: 4639 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' corresponding to ',
+                            position: {
+                              start: { line: 100, column: 161, offset: 4639 },
+                              end: { line: 100, column: 179, offset: 4657 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: '<variable_name>',
+                            position: {
+                              start: { line: 100, column: 179, offset: 4657 },
+                              end: { line: 100, column: 196, offset: 4674 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: '.',
+                            position: {
+                              start: { line: 100, column: 196, offset: 4674 },
+                              end: { line: 100, column: 197, offset: 4675 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 100, column: 5, offset: 4483 },
+                          end: { line: 100, column: 197, offset: 4675 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 100, column: 3, offset: 4481 },
+                      end: { line: 100, column: 197, offset: 4675 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'begins_with(<attribute_name>, :<variable_name>)',
+                            position: {
+                              start: { line: 101, column: 5, offset: 4680 },
+                              end: { line: 101, column: 54, offset: 4729 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - test if the DynamoDB attribute value of ',
+                            position: {
+                              start: { line: 101, column: 54, offset: 4729 },
+                              end: { line: 101, column: 97, offset: 4772 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: '<attribute_name>',
+                            position: {
+                              start: { line: 101, column: 97, offset: 4772 },
+                              end: { line: 101, column: 115, offset: 4790 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' equals the attribute value provided in ',
+                            position: {
+                              start: { line: 101, column: 115, offset: 4790 },
+                              end: { line: 101, column: 155, offset: 4830 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'Updates',
+                            position: {
+                              start: { line: 101, column: 155, offset: 4830 },
+                              end: { line: 101, column: 164, offset: 4839 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' corresponding to ',
+                            position: {
+                              start: { line: 101, column: 164, offset: 4839 },
+                              end: { line: 101, column: 182, offset: 4857 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: '<variable_name>',
+                            position: {
+                              start: { line: 101, column: 182, offset: 4857 },
+                              end: { line: 101, column: 199, offset: 4874 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: '.',
+                            position: {
+                              start: { line: 101, column: 199, offset: 4874 },
+                              end: { line: 101, column: 200, offset: 4875 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 101, column: 5, offset: 4680 },
+                          end: { line: 101, column: 200, offset: 4875 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 101, column: 3, offset: 4678 },
+                      end: { line: 101, column: 200, offset: 4875 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'size(<attribute_name>)',
+                            position: {
+                              start: { line: 102, column: 5, offset: 4880 },
+                              end: { line: 102, column: 29, offset: 4904 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - returns for evaluation a number that represents the size of the attribute value of ',
+                            position: {
+                              start: { line: 102, column: 29, offset: 4904 },
+                              end: { line: 102, column: 115, offset: 4990 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: '<attribute_name>',
+                            position: {
+                              start: { line: 102, column: 115, offset: 4990 },
+                              end: { line: 102, column: 133, offset: 5008 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 102, column: 5, offset: 4880 },
+                          end: { line: 102, column: 133, offset: 5008 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 102, column: 3, offset: 4878 },
+                      end: { line: 102, column: 133, offset: 5008 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 97, column: 3, offset: 4139 },
+                  end: { line: 102, column: 133, offset: 5008 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'inlineCode',
+                    value: 'ConditionExpression',
+                    position: {
+                      start: { line: 104, column: 1, offset: 5010 },
+                      end: { line: 104, column: 22, offset: 5031 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' Logical Operators:',
+                    position: {
+                      start: { line: 104, column: 22, offset: 5031 },
+                      end: { line: 104, column: 41, offset: 5050 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 104, column: 1, offset: 5010 },
+                  end: { line: 104, column: 41, offset: 5050 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: '=',
+                            position: {
+                              start: { line: 105, column: 5, offset: 5055 },
+                              end: { line: 105, column: 8, offset: 5058 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - equals.',
+                            position: {
+                              start: { line: 105, column: 8, offset: 5058 },
+                              end: { line: 105, column: 18, offset: 5068 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 105, column: 5, offset: 5055 },
+                          end: { line: 105, column: 18, offset: 5068 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 105, column: 3, offset: 5053 },
+                      end: { line: 105, column: 18, offset: 5068 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: '<>',
+                            position: {
+                              start: { line: 106, column: 5, offset: 5073 },
+                              end: { line: 106, column: 9, offset: 5077 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - does not equal.',
+                            position: {
+                              start: { line: 106, column: 9, offset: 5077 },
+                              end: { line: 106, column: 27, offset: 5095 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 106, column: 5, offset: 5073 },
+                          end: { line: 106, column: 27, offset: 5095 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 106, column: 3, offset: 5071 },
+                      end: { line: 106, column: 27, offset: 5095 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: '<',
+                            position: {
+                              start: { line: 107, column: 5, offset: 5100 },
+                              end: { line: 107, column: 8, offset: 5103 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - less than.',
+                            position: {
+                              start: { line: 107, column: 8, offset: 5103 },
+                              end: { line: 107, column: 21, offset: 5116 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 107, column: 5, offset: 5100 },
+                          end: { line: 107, column: 21, offset: 5116 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 107, column: 3, offset: 5098 },
+                      end: { line: 107, column: 21, offset: 5116 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: '>',
+                            position: {
+                              start: { line: 108, column: 5, offset: 5121 },
+                              end: { line: 108, column: 8, offset: 5124 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - greater than.',
+                            position: {
+                              start: { line: 108, column: 8, offset: 5124 },
+                              end: { line: 108, column: 24, offset: 5140 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 108, column: 5, offset: 5121 },
+                          end: { line: 108, column: 24, offset: 5140 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 108, column: 3, offset: 5119 },
+                      end: { line: 108, column: 24, offset: 5140 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: '<=',
+                            position: {
+                              start: { line: 109, column: 5, offset: 5145 },
+                              end: { line: 109, column: 9, offset: 5149 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - less than or equal to .',
+                            position: {
+                              start: { line: 109, column: 9, offset: 5149 },
+                              end: { line: 109, column: 35, offset: 5175 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 109, column: 5, offset: 5145 },
+                          end: { line: 109, column: 35, offset: 5175 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 109, column: 3, offset: 5143 },
+                      end: { line: 109, column: 35, offset: 5175 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: '>=',
+                            position: {
+                              start: { line: 110, column: 5, offset: 5180 },
+                              end: { line: 110, column: 9, offset: 5184 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - greater than or equal to.',
+                            position: {
+                              start: { line: 110, column: 9, offset: 5184 },
+                              end: { line: 110, column: 37, offset: 5212 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 110, column: 5, offset: 5180 },
+                          end: { line: 110, column: 37, offset: 5212 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 110, column: 3, offset: 5178 },
+                      end: { line: 110, column: 37, offset: 5212 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'BETWEEN',
+                            position: {
+                              start: { line: 111, column: 5, offset: 5217 },
+                              end: { line: 111, column: 14, offset: 5226 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - between.',
+                            position: {
+                              start: { line: 111, column: 14, offset: 5226 },
+                              end: { line: 111, column: 25, offset: 5237 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 111, column: 5, offset: 5217 },
+                          end: { line: 111, column: 25, offset: 5237 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 111, column: 3, offset: 5215 },
+                      end: { line: 111, column: 25, offset: 5237 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'IN',
+                            position: {
+                              start: { line: 112, column: 5, offset: 5242 },
+                              end: { line: 112, column: 9, offset: 5246 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - in.',
+                            position: {
+                              start: { line: 112, column: 9, offset: 5246 },
+                              end: { line: 112, column: 15, offset: 5252 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 112, column: 5, offset: 5242 },
+                          end: { line: 112, column: 15, offset: 5252 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 112, column: 3, offset: 5240 },
+                      end: { line: 112, column: 15, offset: 5252 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'AND',
+                            position: {
+                              start: { line: 113, column: 5, offset: 5257 },
+                              end: { line: 113, column: 10, offset: 5262 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - and.',
+                            position: {
+                              start: { line: 113, column: 10, offset: 5262 },
+                              end: { line: 113, column: 17, offset: 5269 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 113, column: 5, offset: 5257 },
+                          end: { line: 113, column: 17, offset: 5269 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 113, column: 3, offset: 5255 },
+                      end: { line: 113, column: 17, offset: 5269 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'OR',
+                            position: {
+                              start: { line: 114, column: 5, offset: 5274 },
+                              end: { line: 114, column: 9, offset: 5278 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - or.',
+                            position: {
+                              start: { line: 114, column: 9, offset: 5278 },
+                              end: { line: 114, column: 15, offset: 5284 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 114, column: 5, offset: 5274 },
+                          end: { line: 114, column: 15, offset: 5284 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 114, column: 3, offset: 5272 },
+                      end: { line: 114, column: 15, offset: 5284 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'NOT',
+                            position: {
+                              start: { line: 115, column: 5, offset: 5289 },
+                              end: { line: 115, column: 10, offset: 5294 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - not.',
+                            position: {
+                              start: { line: 115, column: 10, offset: 5294 },
+                              end: { line: 115, column: 17, offset: 5301 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 115, column: 5, offset: 5289 },
+                          end: { line: 115, column: 17, offset: 5301 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 115, column: 3, offset: 5287 },
+                      end: { line: 115, column: 17, offset: 5301 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 105, column: 3, offset: 5053 },
+                  end: { line: 115, column: 17, offset: 5301 }
                 }
               },
               {
@@ -57094,14 +59177,14 @@ export default [
                     type: 'text',
                     value: 'References:',
                     position: {
-                      start: { line: 65, column: 1, offset: 2954 },
-                      end: { line: 65, column: 12, offset: 2965 }
+                      start: { line: 117, column: 1, offset: 5303 },
+                      end: { line: 117, column: 12, offset: 5314 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 65, column: 1, offset: 2954 },
-                  end: { line: 65, column: 12, offset: 2965 }
+                  start: { line: 117, column: 1, offset: 5303 },
+                  end: { line: 117, column: 12, offset: 5314 }
                 }
               },
               {
@@ -57121,48 +59204,99 @@ export default [
                           {
                             type: 'link',
                             title: null,
+                            url: 'https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html',
+                            children: [
+                              {
+                                type: 'text',
+                                value: 'Condition Expressions',
+                                position: {
+                                  start: {
+                                    line: 118,
+                                    column: 5,
+                                    offset: 5319
+                                  },
+                                  end: {
+                                    line: 118,
+                                    column: 26,
+                                    offset: 5340
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 118, column: 4, offset: 5318 },
+                              end: { line: 118, column: 131, offset: 5445 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 118, column: 4, offset: 5318 },
+                          end: { line: 118, column: 131, offset: 5445 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 118, column: 2, offset: 5316 },
+                      end: { line: 118, column: 131, offset: 5445 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'link',
+                            title: null,
                             url: 'https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html',
                             children: [
                               {
                                 type: 'text',
                                 value: 'AWS DynamoDB',
                                 position: {
-                                  start: { line: 66, column: 5, offset: 2970 },
+                                  start: {
+                                    line: 119,
+                                    column: 5,
+                                    offset: 5450
+                                  },
                                   end: {
-                                    line: 66,
+                                    line: 119,
                                     column: 17,
-                                    offset: 2982
+                                    offset: 5462
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 66, column: 4, offset: 2969 },
-                              end: { line: 66, column: 102, offset: 3067 }
+                              start: { line: 119, column: 4, offset: 5449 },
+                              end: { line: 119, column: 102, offset: 5547 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 66, column: 4, offset: 2969 },
-                          end: { line: 66, column: 102, offset: 3067 }
+                          start: { line: 119, column: 4, offset: 5449 },
+                          end: { line: 119, column: 102, offset: 5547 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 66, column: 2, offset: 2967 },
-                      end: { line: 66, column: 102, offset: 3067 }
+                      start: { line: 119, column: 2, offset: 5447 },
+                      end: { line: 119, column: 102, offset: 5547 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 66, column: 2, offset: 2967 },
-                  end: { line: 66, column: 102, offset: 3067 }
+                  start: { line: 118, column: 2, offset: 5316 },
+                  end: { line: 119, column: 102, offset: 5547 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 66, column: 102, offset: 3067 }
+              end: { line: 119, column: 102, offset: 5547 }
             }
           }
         }
