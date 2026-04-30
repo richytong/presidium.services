@@ -18,7 +18,7 @@ export default [
       '  * `options`\n' +
       '    * `storagePath` - `string` - the path to the file used to store the disk hash table data.\n' +
       '    * `headerPath` - `string` - the path to the file used to store header information about the disk hash table.\n' +
-      '    * `initialLength` - `number` - the initial length of the disk hash table. Minimum value 1024, maximum value 4294967295. Defaults to 1024.\n' +
+      '    * `initialLength` - `number` - the initial length of the disk hash table. Minimum value 1024, maximum value 2147483647. Defaults to 1024.\n' +
       '    * `itemSize` - `number` - the size in bytes of each item stored on disk. Minimum value 1024. Defaults to 524288.\n' +
       '    * `resizeRatio` - `number` - the ratio of number of items to table length at which to resize the disk hash table. Minimum value 0 (no resize), maximum value 1. Defaults to 0.\n' +
       "    * `resizeFactor` - `number` - the factor that is multiplied with the disk hash table's current length to determine the new table length on a resize.\n" +
@@ -310,7 +310,7 @@ export default [
                               },
                               {
                                 type: 'text',
-                                value: ' - the initial length of the disk hash table. Minimum value 1024, maximum value 4294967295. Defaults to 1024.',
+                                value: ' - the initial length of the disk hash table. Minimum value 1024, maximum value 2147483647. Defaults to 1024.',
                                 position: {
                                   start: { line: 18, column: 33, offset: 569 },
                                   end: {
@@ -3662,7 +3662,7 @@ export default [
       '  * `options`\n' +
       '    * `storagePath` - `string` - the path to the file used to store the disk sorted hash table data.\n' +
       '    * `headerPath` - `string` - the path to the file used to store header information about the disk sorted hash table.\n' +
-      '    * `initialLength` - `number` - the initial length of the disk sorted hash table. Minimum value 1024, maximum value 4294967295. Defaults to 1024.\n' +
+      '    * `initialLength` - `number` - the initial length of the disk sorted hash table. Minimum value 1024, maximum value 2147483647. Defaults to 1024.\n' +
       '    * `itemSize` - `number` - the size in bytes of each item stored on disk. Minimum value 1024. Defaults to 524288.\n' +
       "    * `sortValueType` - `'string'|'number'` - the type of the disk sorted hash table sort-values.\n" +
       '    * `resizeRatio` - `number` - the ratio of number of items to table length at which to resize the disk sorted hash table. Minimum value 0 (no resize), maximum value 1. Defaults to 0.\n' +
@@ -3971,7 +3971,7 @@ export default [
                               },
                               {
                                 type: 'text',
-                                value: ' - the initial length of the disk sorted hash table. Minimum value 1024, maximum value 4294967295. Defaults to 1024.',
+                                value: ' - the initial length of the disk sorted hash table. Minimum value 1024, maximum value 2147483647. Defaults to 1024.',
                                 position: {
                                   start: { line: 20, column: 33, offset: 668 },
                                   end: {
