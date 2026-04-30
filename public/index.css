@@ -87,6 +87,10 @@ h1::-webkit-scrollbar {
   font-size: 14px;
 }
 
+pre {
+  font-size: 14px;
+}
+
 #layout {
   width: 100%;
   margin: 0 auto;
