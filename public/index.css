@@ -39,6 +39,7 @@ html {
 body {
   margin: 0;
   background-color: #fff;
+  font-size: 14px;
 }
 
 a > code {
@@ -76,9 +77,14 @@ h1::-webkit-scrollbar {
   display: none;
 }
 
+.CodeMirror-sizer {
+  padding-top: 0px;
+}
+
 .code-viewer * {
   font-family: SourceCodePro;
   font-weight: 500;
+  font-size: 14px;
 }
 
 #layout {

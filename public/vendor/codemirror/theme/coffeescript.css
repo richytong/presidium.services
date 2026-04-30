@@ -7,7 +7,7 @@
 
 .cm-s-coffeescript .CodeMirror-scroll > .CodeMirror-sizer {
   border-radius: .25em;
-  padding: .5em 0em;
+  padding: 0;
 }
 
 .cm-s-coffeescript div.CodeMirror-selected { background: #51D48D; }
