@@ -963,17 +963,142 @@ export default {
       depth: 2,
       children: [
         {
-          type: 'text',
-          value: 'License',
+          type: 'link',
+          title: null,
+          url: 'https://presidium.services/docs/DiskHashTable',
+          children: [
+            {
+              type: 'text',
+              value: 'Store data on disk as a hash table',
+              position: {
+                start: { line: 356, column: 5, offset: 10105 },
+                end: { line: 356, column: 39, offset: 10139 }
+              }
+            }
+          ],
           position: {
             start: { line: 356, column: 4, offset: 10104 },
-            end: { line: 356, column: 11, offset: 10111 }
+            end: { line: 356, column: 87, offset: 10187 }
           }
         }
       ],
       position: {
         start: { line: 356, column: 1, offset: 10101 },
-        end: { line: 356, column: 11, offset: 10111 }
+        end: { line: 356, column: 87, offset: 10187 }
+      }
+    },
+    {
+      type: 'code',
+      lang: 'javascript',
+      meta: null,
+      value: "const DiskHashTable = require('presidium-db/DiskHashTable')\n" +
+        '\n' +
+        'const ht = new DiskHashTable({\n' +
+        "  storageFilepath: '/path/to/storage-file',\n" +
+        "  headerFilepath: '/path/to/header-file',\n" +
+        '  initialLength: 1024,\n' +
+        '})\n' +
+        'await ht.init()\n' +
+        '\n' +
+        "await ht.set('my-key', 'my-value')\n" +
+        '\n' +
+        "const myValue = await ht.get('my-key')\n" +
+        "console.log(myValue) // 'my-value'\n" +
+        '\n' +
+        "await ht.delete('my-key')",
+      position: {
+        start: { line: 357, column: 1, offset: 10188 },
+        end: { line: 373, column: 4, offset: 10563 }
+      }
+    },
+    {
+      type: 'heading',
+      depth: 2,
+      children: [
+        {
+          type: 'link',
+          title: null,
+          url: 'https://presidium.services/docs/DiskSortedHashTable',
+          children: [
+            {
+              type: 'text',
+              value: 'Store data on disk as a sorted hash table',
+              position: {
+                start: { line: 375, column: 5, offset: 10569 },
+                end: { line: 375, column: 46, offset: 10610 }
+              }
+            }
+          ],
+          position: {
+            start: { line: 375, column: 4, offset: 10568 },
+            end: { line: 375, column: 100, offset: 10664 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 375, column: 1, offset: 10565 },
+        end: { line: 375, column: 100, offset: 10664 }
+      }
+    },
+    {
+      type: 'code',
+      lang: 'javascript',
+      meta: null,
+      value: "const DiskSortedHashTable = require('presidium-db/DiskSortedHashTable')\n" +
+        '\n' +
+        'const sortedHt = new DiskSortedHashTable({\n' +
+        "  storageFilepath: '/path/to/storage-file',\n" +
+        "  headerFilepath: '/path/to/header-file',\n" +
+        '  initialLength: 1024,\n' +
+        '})\n' +
+        'await sortedHt.init()\n' +
+        '\n' +
+        "await sortedHt.set('first-key', 'first-value', 1)\n" +
+        "await sortedHt.set('second-key', 'second-value', 2)\n" +
+        "await sortedHt.set('third-key', 'third-value', 3)\n" +
+        '\n' +
+        'for await (const value of sortedHt.forwardIterator()) {\n' +
+        '  console.log(value) // first-value\n' +
+        '                     // second-value\n' +
+        '                     // third-value\n' +
+        '}\n' +
+        '\n' +
+        'for await (const value of sortedHt.reverseIterator()) {\n' +
+        '  console.log(value) // third-value\n' +
+        '                     // second-value\n' +
+        '                     // first-value\n' +
+        '}\n' +
+        '\n' +
+        'for await (const value of sortedHt.forwardIterator({ startingSortValue: 2, endingSortValue: 3 })) {\n' +
+        '  console.log(value) // second-value\n' +
+        '                     // third-value\n' +
+        '}\n' +
+        '\n' +
+        'for await (const value of sortedHt.reverseIterator({ startingSortValue: 2, endingSortValue: 1 })) {\n' +
+        '  console.log(value) // second-value\n' +
+        '                     // first-value\n' +
+        '}',
+      position: {
+        start: { line: 376, column: 1, offset: 10665 },
+        end: { line: 411, column: 4, offset: 11773 }
+      }
+    },
+    {
+      type: 'heading',
+      depth: 2,
+      children: [
+        {
+          type: 'text',
+          value: 'License',
+          position: {
+            start: { line: 413, column: 4, offset: 11778 },
+            end: { line: 413, column: 11, offset: 11785 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 413, column: 1, offset: 11775 },
+        end: { line: 413, column: 11, offset: 11785 }
       }
     },
     {
@@ -983,8 +1108,8 @@ export default {
           type: 'text',
           value: 'Presidium is distributed under the ',
           position: {
-            start: { line: 357, column: 1, offset: 10112 },
-            end: { line: 357, column: 36, offset: 10147 }
+            start: { line: 414, column: 1, offset: 11786 },
+            end: { line: 414, column: 36, offset: 11821 }
           }
         },
         {
@@ -996,28 +1121,28 @@ export default {
               type: 'text',
               value: 'CFOSS License',
               position: {
-                start: { line: 357, column: 37, offset: 10148 },
-                end: { line: 357, column: 50, offset: 10161 }
+                start: { line: 414, column: 37, offset: 11822 },
+                end: { line: 414, column: 50, offset: 11835 }
               }
             }
           ],
           position: {
-            start: { line: 357, column: 36, offset: 10147 },
-            end: { line: 357, column: 102, offset: 10213 }
+            start: { line: 414, column: 36, offset: 11821 },
+            end: { line: 414, column: 102, offset: 11887 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 357, column: 102, offset: 10213 },
-            end: { line: 357, column: 103, offset: 10214 }
+            start: { line: 414, column: 102, offset: 11887 },
+            end: { line: 414, column: 103, offset: 11888 }
           }
         }
       ],
       position: {
-        start: { line: 357, column: 1, offset: 10112 },
-        end: { line: 357, column: 103, offset: 10214 }
+        start: { line: 414, column: 1, offset: 11786 },
+        end: { line: 414, column: 103, offset: 11888 }
       }
     },
     {
@@ -1028,14 +1153,14 @@ export default {
           type: 'text',
           value: 'Support',
           position: {
-            start: { line: 359, column: 3, offset: 10218 },
-            end: { line: 359, column: 10, offset: 10225 }
+            start: { line: 416, column: 3, offset: 11892 },
+            end: { line: 416, column: 10, offset: 11899 }
           }
         }
       ],
       position: {
-        start: { line: 359, column: 1, offset: 10216 },
-        end: { line: 359, column: 10, offset: 10225 }
+        start: { line: 416, column: 1, offset: 11890 },
+        end: { line: 416, column: 10, offset: 11899 }
       }
     },
     {
@@ -1056,31 +1181,31 @@ export default {
                   type: 'text',
                   value: 'minimum Node.js version: 16',
                   position: {
-                    start: { line: 360, column: 4, offset: 10229 },
-                    end: { line: 360, column: 31, offset: 10256 }
+                    start: { line: 417, column: 4, offset: 11903 },
+                    end: { line: 417, column: 31, offset: 11930 }
                   }
                 }
               ],
               position: {
-                start: { line: 360, column: 4, offset: 10229 },
-                end: { line: 360, column: 31, offset: 10256 }
+                start: { line: 417, column: 4, offset: 11903 },
+                end: { line: 417, column: 31, offset: 11930 }
               }
             }
           ],
           position: {
-            start: { line: 360, column: 2, offset: 10227 },
-            end: { line: 360, column: 31, offset: 10256 }
+            start: { line: 417, column: 2, offset: 11901 },
+            end: { line: 417, column: 31, offset: 11930 }
           }
         }
       ],
       position: {
-        start: { line: 360, column: 2, offset: 10227 },
-        end: { line: 360, column: 31, offset: 10256 }
+        start: { line: 417, column: 2, offset: 11901 },
+        end: { line: 417, column: 31, offset: 11930 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 361, column: 1, offset: 10257 }
+    end: { line: 418, column: 1, offset: 11931 }
   }
 }
