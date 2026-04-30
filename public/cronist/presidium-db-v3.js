@@ -1743,7 +1743,7 @@ export default [
           '\n' +
           'Arguments:\n' +
           '  * `key` - `string` - the key to set.\n' +
-          '  * `value` - `string` - the value to set corresponding to the key.\n' +
+          '  * `value` - `string|Buffer|Uint8Array` - the value to set corresponding to the key.\n' +
           '\n' +
           'Return:\n' +
           '  * Empty promise.\n' +
@@ -1911,36 +1911,36 @@ export default [
                           },
                           {
                             type: 'inlineCode',
-                            value: 'string',
+                            value: 'string|Buffer|Uint8Array',
                             position: {
                               start: { line: 9, column: 15, offset: 215 },
-                              end: { line: 9, column: 23, offset: 223 }
+                              end: { line: 9, column: 41, offset: 241 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - the value to set corresponding to the key.',
                             position: {
-                              start: { line: 9, column: 23, offset: 223 },
-                              end: { line: 9, column: 68, offset: 268 }
+                              start: { line: 9, column: 41, offset: 241 },
+                              end: { line: 9, column: 86, offset: 286 }
                             }
                           }
                         ],
                         position: {
                           start: { line: 9, column: 5, offset: 205 },
-                          end: { line: 9, column: 68, offset: 268 }
+                          end: { line: 9, column: 86, offset: 286 }
                         }
                       }
                     ],
                     position: {
                       start: { line: 9, column: 3, offset: 203 },
-                      end: { line: 9, column: 68, offset: 268 }
+                      end: { line: 9, column: 86, offset: 286 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 8, column: 3, offset: 164 },
-                  end: { line: 9, column: 68, offset: 268 }
+                  end: { line: 9, column: 86, offset: 286 }
                 }
               },
               {
@@ -1950,14 +1950,14 @@ export default [
                     type: 'text',
                     value: 'Return:',
                     position: {
-                      start: { line: 11, column: 1, offset: 270 },
-                      end: { line: 11, column: 8, offset: 277 }
+                      start: { line: 11, column: 1, offset: 288 },
+                      end: { line: 11, column: 8, offset: 295 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 11, column: 1, offset: 270 },
-                  end: { line: 11, column: 8, offset: 277 }
+                  start: { line: 11, column: 1, offset: 288 },
+                  end: { line: 11, column: 8, offset: 295 }
                 }
               },
               {
@@ -1978,26 +1978,26 @@ export default [
                             type: 'text',
                             value: 'Empty promise.',
                             position: {
-                              start: { line: 12, column: 5, offset: 282 },
-                              end: { line: 12, column: 19, offset: 296 }
+                              start: { line: 12, column: 5, offset: 300 },
+                              end: { line: 12, column: 19, offset: 314 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 12, column: 5, offset: 282 },
-                          end: { line: 12, column: 19, offset: 296 }
+                          start: { line: 12, column: 5, offset: 300 },
+                          end: { line: 12, column: 19, offset: 314 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 12, column: 3, offset: 280 },
-                      end: { line: 12, column: 19, offset: 296 }
+                      start: { line: 12, column: 3, offset: 298 },
+                      end: { line: 12, column: 19, offset: 314 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 12, column: 3, offset: 280 },
-                  end: { line: 12, column: 19, offset: 296 }
+                  start: { line: 12, column: 3, offset: 298 },
+                  end: { line: 12, column: 19, offset: 314 }
                 }
               },
               {
@@ -2008,14 +2008,14 @@ export default [
                   '\n' +
                   "await ht.set('my-buffer', Buffer.from('binary'))",
                 position: {
-                  start: { line: 14, column: 1, offset: 298 },
-                  end: { line: 18, column: 4, offset: 400 }
+                  start: { line: 14, column: 1, offset: 316 },
+                  end: { line: 18, column: 4, offset: 418 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 18, column: 4, offset: 400 }
+              end: { line: 18, column: 4, offset: 418 }
             }
           }
         }
