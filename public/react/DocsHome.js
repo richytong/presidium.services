@@ -6,6 +6,7 @@ import ReactElementFromMdast from './ReactElementFromMdast.js'
 import usePath from './usePath.js'
 import useCronistMap from './useCronistMap.js'
 import presidiumClassExludedMethods from './presidiumClassExcludedMethods.js'
+import sleep from './sleep.js'
 
 /**
  * @name DocsHome
@@ -39,7 +40,10 @@ const DocsHome = ReactElement(props => {
   useEffect(function scrollToAnchor() {
     const anchor = new URL(location.href).hash
     if (anchor.length > 0) {
-      setTimeout(() => {
+      setTimeout(async () => {
+        while (cronistMap.version == null) {
+          await sleep(10)
+        }
         const scrollToElement = document.getElementById(decodeURIComponent(anchor.slice(1)))
         if (scrollToElement) {
           const desiredScrollY = scrollToElement.offsetTop
@@ -47,7 +51,7 @@ const DocsHome = ReactElement(props => {
         }
       }, 10)
     }
-  }, [])
+  }, [cronistMap])
 
   const docsData = cronistMap.get(docsViewerClassName)
   const excludedMethods = presidiumClassExludedMethods.get(docsViewerClassName) ?? []
