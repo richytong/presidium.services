@@ -3692,7 +3692,7 @@ export default [
       'Once all of the items have been added into the temporary storage file, the temporary storage file is moved to the location of the old storage file to be used as the new storage file.\n' +
       '\n' +
       '## Optimizing the disk sorted hash table b-tree\n' +
-      'The value of `degree` ultimately affects the height of the internal b-tree, which determines the structure of the internal b-tree used by the disk sorted hash table. A higher value for `degree` results in a shorter b-tree and more items per b-tree node, while a lower value results in a taller b-tree and fewer items per b-tree node. The default value of 2 is a safe choice for most use cases.\n' +
+      'The value of `degree` determines the structure of the internal b-tree used by the disk sorted hash table. A higher value for `degree` results in a shorter b-tree and more items per b-tree node, while a lower value results in a taller b-tree and fewer items per b-tree node. The default value of 2 is a safe choice for most use cases.\n' +
       '\n' +
       '## Allocation of disk space\n' +
       'The disk sorted hash table initially preallocates a block of memory on disk of `(512 * initialLength)` KiB for database operations. When the disk sorted hash table is resized, the block of memory on disk is reallocated to a new size of `(512 * initialLength * numberOfResizes * resizeFactor)` KiB.',
@@ -4952,32 +4952,32 @@ export default [
               },
               {
                 type: 'text',
-                value: ' ultimately affects the height of the internal b-tree, which determines the structure of the internal b-tree used by the disk sorted hash table. A higher value for ',
+                value: ' determines the structure of the internal b-tree used by the disk sorted hash table. A higher value for ',
                 position: {
                   start: { line: 62, column: 22, offset: 3011 },
-                  end: { line: 62, column: 186, offset: 3175 }
+                  end: { line: 62, column: 126, offset: 3115 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'degree',
                 position: {
-                  start: { line: 62, column: 186, offset: 3175 },
-                  end: { line: 62, column: 194, offset: 3183 }
+                  start: { line: 62, column: 126, offset: 3115 },
+                  end: { line: 62, column: 134, offset: 3123 }
                 }
               },
               {
                 type: 'text',
                 value: ' results in a shorter b-tree and more items per b-tree node, while a lower value results in a taller b-tree and fewer items per b-tree node. The default value of 2 is a safe choice for most use cases.',
                 position: {
-                  start: { line: 62, column: 194, offset: 3183 },
-                  end: { line: 62, column: 394, offset: 3383 }
+                  start: { line: 62, column: 134, offset: 3123 },
+                  end: { line: 62, column: 334, offset: 3323 }
                 }
               }
             ],
             position: {
               start: { line: 62, column: 1, offset: 2990 },
-              end: { line: 62, column: 394, offset: 3383 }
+              end: { line: 62, column: 334, offset: 3323 }
             }
           },
           {
@@ -4988,14 +4988,14 @@ export default [
                 type: 'text',
                 value: 'Allocation of disk space',
                 position: {
-                  start: { line: 64, column: 4, offset: 3388 },
-                  end: { line: 64, column: 28, offset: 3412 }
+                  start: { line: 64, column: 4, offset: 3328 },
+                  end: { line: 64, column: 28, offset: 3352 }
                 }
               }
             ],
             position: {
-              start: { line: 64, column: 1, offset: 3385 },
-              end: { line: 64, column: 28, offset: 3412 }
+              start: { line: 64, column: 1, offset: 3325 },
+              end: { line: 64, column: 28, offset: 3352 }
             }
           },
           {
@@ -5005,52 +5005,52 @@ export default [
                 type: 'text',
                 value: 'The disk sorted hash table initially preallocates a block of memory on disk of ',
                 position: {
-                  start: { line: 65, column: 1, offset: 3413 },
-                  end: { line: 65, column: 80, offset: 3492 }
+                  start: { line: 65, column: 1, offset: 3353 },
+                  end: { line: 65, column: 80, offset: 3432 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: '(512 * initialLength)',
                 position: {
-                  start: { line: 65, column: 80, offset: 3492 },
-                  end: { line: 65, column: 103, offset: 3515 }
+                  start: { line: 65, column: 80, offset: 3432 },
+                  end: { line: 65, column: 103, offset: 3455 }
                 }
               },
               {
                 type: 'text',
                 value: ' KiB for database operations. When the disk sorted hash table is resized, the block of memory on disk is reallocated to a new size of ',
                 position: {
-                  start: { line: 65, column: 103, offset: 3515 },
-                  end: { line: 65, column: 237, offset: 3649 }
+                  start: { line: 65, column: 103, offset: 3455 },
+                  end: { line: 65, column: 237, offset: 3589 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: '(512 * initialLength * numberOfResizes * resizeFactor)',
                 position: {
-                  start: { line: 65, column: 237, offset: 3649 },
-                  end: { line: 65, column: 293, offset: 3705 }
+                  start: { line: 65, column: 237, offset: 3589 },
+                  end: { line: 65, column: 293, offset: 3645 }
                 }
               },
               {
                 type: 'text',
                 value: ' KiB.',
                 position: {
-                  start: { line: 65, column: 293, offset: 3705 },
-                  end: { line: 65, column: 298, offset: 3710 }
+                  start: { line: 65, column: 293, offset: 3645 },
+                  end: { line: 65, column: 298, offset: 3650 }
                 }
               }
             ],
             position: {
-              start: { line: 65, column: 1, offset: 3413 },
-              end: { line: 65, column: 298, offset: 3710 }
+              start: { line: 65, column: 1, offset: 3353 },
+              end: { line: 65, column: 298, offset: 3650 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 65, column: 298, offset: 3710 }
+          end: { line: 65, column: 298, offset: 3650 }
         }
       }
     },
