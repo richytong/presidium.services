@@ -89,6 +89,7 @@ h1::-webkit-scrollbar {
 
 pre {
   font-size: 14px;
+  -webkit-text-size-adjust: none;
 }
 
 #layout {
