@@ -40,6 +40,9 @@ export default [
       'Supported platforms:\n' +
       '  * `linux64`\n' +
       '\n' +
+      '## Maximum length of the disk hash table\n' +
+      'The maximum length of the disk hash table is 2,147,483,647.\n' +
+      '\n' +
       '## Resizing the disk hash table\n' +
       "When an item is inserted into the disk hash table via [set](/docs/DiskHashTable#set), the current capacity ratio of the table is calculated as the sum of the table's count and deleted count divided by the table's length. If the current capacity ratio exceeds the `resizeRatio` (and the `resizeRatio` is not 0), a resize of the table occurs.\n" +
       '\n' +
@@ -714,16 +717,51 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Resizing the disk hash table',
+                value: 'Maximum length of the disk hash table',
                 position: {
                   start: { line: 40, column: 4, offset: 1474 },
-                  end: { line: 40, column: 32, offset: 1502 }
+                  end: { line: 40, column: 41, offset: 1511 }
                 }
               }
             ],
             position: {
               start: { line: 40, column: 1, offset: 1471 },
-              end: { line: 40, column: 32, offset: 1502 }
+              end: { line: 40, column: 41, offset: 1511 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'The maximum length of the disk hash table is 2,147,483,647.',
+                position: {
+                  start: { line: 41, column: 1, offset: 1512 },
+                  end: { line: 41, column: 60, offset: 1571 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 41, column: 1, offset: 1512 },
+              end: { line: 41, column: 60, offset: 1571 }
+            }
+          },
+          {
+            type: 'heading',
+            depth: 2,
+            children: [
+              {
+                type: 'text',
+                value: 'Resizing the disk hash table',
+                position: {
+                  start: { line: 43, column: 4, offset: 1576 },
+                  end: { line: 43, column: 32, offset: 1604 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 43, column: 1, offset: 1573 },
+              end: { line: 43, column: 32, offset: 1604 }
             }
           },
           {
@@ -733,8 +771,8 @@ export default [
                 type: 'text',
                 value: 'When an item is inserted into the disk hash table via ',
                 position: {
-                  start: { line: 41, column: 1, offset: 1503 },
-                  end: { line: 41, column: 55, offset: 1557 }
+                  start: { line: 44, column: 1, offset: 1605 },
+                  end: { line: 44, column: 55, offset: 1659 }
                 }
               },
               {
@@ -746,60 +784,60 @@ export default [
                     type: 'text',
                     value: 'set',
                     position: {
-                      start: { line: 41, column: 56, offset: 1558 },
-                      end: { line: 41, column: 59, offset: 1561 }
+                      start: { line: 44, column: 56, offset: 1660 },
+                      end: { line: 44, column: 59, offset: 1663 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 41, column: 55, offset: 1557 },
-                  end: { line: 41, column: 85, offset: 1587 }
+                  start: { line: 44, column: 55, offset: 1659 },
+                  end: { line: 44, column: 85, offset: 1689 }
                 }
               },
               {
                 type: 'text',
                 value: ", the current capacity ratio of the table is calculated as the sum of the table's count and deleted count divided by the table's length. If the current capacity ratio exceeds the ",
                 position: {
-                  start: { line: 41, column: 85, offset: 1587 },
-                  end: { line: 41, column: 264, offset: 1766 }
+                  start: { line: 44, column: 85, offset: 1689 },
+                  end: { line: 44, column: 264, offset: 1868 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'resizeRatio',
                 position: {
-                  start: { line: 41, column: 264, offset: 1766 },
-                  end: { line: 41, column: 277, offset: 1779 }
+                  start: { line: 44, column: 264, offset: 1868 },
+                  end: { line: 44, column: 277, offset: 1881 }
                 }
               },
               {
                 type: 'text',
                 value: ' (and the ',
                 position: {
-                  start: { line: 41, column: 277, offset: 1779 },
-                  end: { line: 41, column: 287, offset: 1789 }
+                  start: { line: 44, column: 277, offset: 1881 },
+                  end: { line: 44, column: 287, offset: 1891 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'resizeRatio',
                 position: {
-                  start: { line: 41, column: 287, offset: 1789 },
-                  end: { line: 41, column: 300, offset: 1802 }
+                  start: { line: 44, column: 287, offset: 1891 },
+                  end: { line: 44, column: 300, offset: 1904 }
                 }
               },
               {
                 type: 'text',
                 value: ' is not 0), a resize of the table occurs.',
                 position: {
-                  start: { line: 41, column: 300, offset: 1802 },
-                  end: { line: 41, column: 341, offset: 1843 }
+                  start: { line: 44, column: 300, offset: 1904 },
+                  end: { line: 44, column: 341, offset: 1945 }
                 }
               }
             ],
             position: {
-              start: { line: 41, column: 1, offset: 1503 },
-              end: { line: 41, column: 341, offset: 1843 }
+              start: { line: 44, column: 1, offset: 1605 },
+              end: { line: 44, column: 341, offset: 1945 }
             }
           },
           {
@@ -809,14 +847,14 @@ export default [
                 type: 'text',
                 value: 'During a table resize, each item of the table is added into a temporary storage file using the new table length calculated from the equation below:',
                 position: {
-                  start: { line: 43, column: 1, offset: 1845 },
-                  end: { line: 43, column: 148, offset: 1992 }
+                  start: { line: 46, column: 1, offset: 1947 },
+                  end: { line: 46, column: 148, offset: 2094 }
                 }
               }
             ],
             position: {
-              start: { line: 43, column: 1, offset: 1845 },
-              end: { line: 43, column: 148, offset: 1992 }
+              start: { line: 46, column: 1, offset: 1947 },
+              end: { line: 46, column: 148, offset: 2094 }
             }
           },
           {
@@ -825,8 +863,8 @@ export default [
             meta: null,
             value: 'newTableLength = oldTableLength * resizeFactor',
             position: {
-              start: { line: 45, column: 1, offset: 1994 },
-              end: { line: 47, column: 4, offset: 2048 }
+              start: { line: 48, column: 1, offset: 2096 },
+              end: { line: 50, column: 4, offset: 2150 }
             }
           },
           {
@@ -836,14 +874,14 @@ export default [
                 type: 'text',
                 value: 'Once all of the items have been added into the temporary storage file, the temporary storage file is moved to the location of the old storage file to be used as the new storage file.',
                 position: {
-                  start: { line: 49, column: 1, offset: 2050 },
-                  end: { line: 49, column: 183, offset: 2232 }
+                  start: { line: 52, column: 1, offset: 2152 },
+                  end: { line: 52, column: 183, offset: 2334 }
                 }
               }
             ],
             position: {
-              start: { line: 49, column: 1, offset: 2050 },
-              end: { line: 49, column: 183, offset: 2232 }
+              start: { line: 52, column: 1, offset: 2152 },
+              end: { line: 52, column: 183, offset: 2334 }
             }
           },
           {
@@ -854,14 +892,14 @@ export default [
                 type: 'text',
                 value: 'Allocation of disk space',
                 position: {
-                  start: { line: 51, column: 4, offset: 2237 },
-                  end: { line: 51, column: 28, offset: 2261 }
+                  start: { line: 54, column: 4, offset: 2339 },
+                  end: { line: 54, column: 28, offset: 2363 }
                 }
               }
             ],
             position: {
-              start: { line: 51, column: 1, offset: 2234 },
-              end: { line: 51, column: 28, offset: 2261 }
+              start: { line: 54, column: 1, offset: 2336 },
+              end: { line: 54, column: 28, offset: 2363 }
             }
           },
           {
@@ -871,52 +909,52 @@ export default [
                 type: 'text',
                 value: 'The disk hash table initially preallocates a block of memory on disk of ',
                 position: {
-                  start: { line: 52, column: 1, offset: 2262 },
-                  end: { line: 52, column: 73, offset: 2334 }
+                  start: { line: 55, column: 1, offset: 2364 },
+                  end: { line: 55, column: 73, offset: 2436 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: '(itemSize * initialLength)',
                 position: {
-                  start: { line: 52, column: 73, offset: 2334 },
-                  end: { line: 52, column: 101, offset: 2362 }
+                  start: { line: 55, column: 73, offset: 2436 },
+                  end: { line: 55, column: 101, offset: 2464 }
                 }
               },
               {
                 type: 'text',
                 value: ' bytes for database operations. When the disk hash table is resized, the block of memory on disk is reallocated to a new size of ',
                 position: {
-                  start: { line: 52, column: 101, offset: 2362 },
-                  end: { line: 52, column: 230, offset: 2491 }
+                  start: { line: 55, column: 101, offset: 2464 },
+                  end: { line: 55, column: 230, offset: 2593 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: '(itemSize * initialLength * numberOfResizes * resizeFactor)',
                 position: {
-                  start: { line: 52, column: 230, offset: 2491 },
-                  end: { line: 52, column: 291, offset: 2552 }
+                  start: { line: 55, column: 230, offset: 2593 },
+                  end: { line: 55, column: 291, offset: 2654 }
                 }
               },
               {
                 type: 'text',
                 value: ' bytes.',
                 position: {
-                  start: { line: 52, column: 291, offset: 2552 },
-                  end: { line: 52, column: 298, offset: 2559 }
+                  start: { line: 55, column: 291, offset: 2654 },
+                  end: { line: 55, column: 298, offset: 2661 }
                 }
               }
             ],
             position: {
-              start: { line: 52, column: 1, offset: 2262 },
-              end: { line: 52, column: 298, offset: 2559 }
+              start: { line: 55, column: 1, offset: 2364 },
+              end: { line: 55, column: 298, offset: 2661 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 52, column: 298, offset: 2559 }
+          end: { line: 55, column: 298, offset: 2661 }
         }
       }
     },
@@ -3692,6 +3730,9 @@ export default [
       'Supported platforms:\n' +
       '  * `linux64`\n' +
       '\n' +
+      '## Maximum length of the disk sorted hash table\n' +
+      'The maximum length of the disk sorted hash table is 2,147,483,647.\n' +
+      '\n' +
       '## Resizing the disk sorted hash table\n' +
       "When an item is inserted into the disk sorted hash table via [set](/docs/DiskSortedHashTable#set), the current capacity ratio of the table is calculated as the sum of the table's count and deleted count divided by the table's length. If the current capacity ratio exceeds the `resizeRatio` (and the `resizeRatio` is not 0), a resize of the table occurs.\n" +
       '\n' +
@@ -4817,16 +4858,51 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Resizing the disk sorted hash table',
+                value: 'Maximum length of the disk sorted hash table',
                 position: {
                   start: { line: 50, column: 4, offset: 2208 },
-                  end: { line: 50, column: 39, offset: 2243 }
+                  end: { line: 50, column: 48, offset: 2252 }
                 }
               }
             ],
             position: {
               start: { line: 50, column: 1, offset: 2205 },
-              end: { line: 50, column: 39, offset: 2243 }
+              end: { line: 50, column: 48, offset: 2252 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'The maximum length of the disk sorted hash table is 2,147,483,647.',
+                position: {
+                  start: { line: 51, column: 1, offset: 2253 },
+                  end: { line: 51, column: 67, offset: 2319 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 51, column: 1, offset: 2253 },
+              end: { line: 51, column: 67, offset: 2319 }
+            }
+          },
+          {
+            type: 'heading',
+            depth: 2,
+            children: [
+              {
+                type: 'text',
+                value: 'Resizing the disk sorted hash table',
+                position: {
+                  start: { line: 53, column: 4, offset: 2324 },
+                  end: { line: 53, column: 39, offset: 2359 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 53, column: 1, offset: 2321 },
+              end: { line: 53, column: 39, offset: 2359 }
             }
           },
           {
@@ -4836,8 +4912,8 @@ export default [
                 type: 'text',
                 value: 'When an item is inserted into the disk sorted hash table via ',
                 position: {
-                  start: { line: 51, column: 1, offset: 2244 },
-                  end: { line: 51, column: 62, offset: 2305 }
+                  start: { line: 54, column: 1, offset: 2360 },
+                  end: { line: 54, column: 62, offset: 2421 }
                 }
               },
               {
@@ -4849,60 +4925,60 @@ export default [
                     type: 'text',
                     value: 'set',
                     position: {
-                      start: { line: 51, column: 63, offset: 2306 },
-                      end: { line: 51, column: 66, offset: 2309 }
+                      start: { line: 54, column: 63, offset: 2422 },
+                      end: { line: 54, column: 66, offset: 2425 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 51, column: 62, offset: 2305 },
-                  end: { line: 51, column: 98, offset: 2341 }
+                  start: { line: 54, column: 62, offset: 2421 },
+                  end: { line: 54, column: 98, offset: 2457 }
                 }
               },
               {
                 type: 'text',
                 value: ", the current capacity ratio of the table is calculated as the sum of the table's count and deleted count divided by the table's length. If the current capacity ratio exceeds the ",
                 position: {
-                  start: { line: 51, column: 98, offset: 2341 },
-                  end: { line: 51, column: 277, offset: 2520 }
+                  start: { line: 54, column: 98, offset: 2457 },
+                  end: { line: 54, column: 277, offset: 2636 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'resizeRatio',
                 position: {
-                  start: { line: 51, column: 277, offset: 2520 },
-                  end: { line: 51, column: 290, offset: 2533 }
+                  start: { line: 54, column: 277, offset: 2636 },
+                  end: { line: 54, column: 290, offset: 2649 }
                 }
               },
               {
                 type: 'text',
                 value: ' (and the ',
                 position: {
-                  start: { line: 51, column: 290, offset: 2533 },
-                  end: { line: 51, column: 300, offset: 2543 }
+                  start: { line: 54, column: 290, offset: 2649 },
+                  end: { line: 54, column: 300, offset: 2659 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'resizeRatio',
                 position: {
-                  start: { line: 51, column: 300, offset: 2543 },
-                  end: { line: 51, column: 313, offset: 2556 }
+                  start: { line: 54, column: 300, offset: 2659 },
+                  end: { line: 54, column: 313, offset: 2672 }
                 }
               },
               {
                 type: 'text',
                 value: ' is not 0), a resize of the table occurs.',
                 position: {
-                  start: { line: 51, column: 313, offset: 2556 },
-                  end: { line: 51, column: 354, offset: 2597 }
+                  start: { line: 54, column: 313, offset: 2672 },
+                  end: { line: 54, column: 354, offset: 2713 }
                 }
               }
             ],
             position: {
-              start: { line: 51, column: 1, offset: 2244 },
-              end: { line: 51, column: 354, offset: 2597 }
+              start: { line: 54, column: 1, offset: 2360 },
+              end: { line: 54, column: 354, offset: 2713 }
             }
           },
           {
@@ -4912,14 +4988,14 @@ export default [
                 type: 'text',
                 value: 'During a table resize, each item of the table is added into a temporary storage file using the new table length calculated from the equation below:',
                 position: {
-                  start: { line: 53, column: 1, offset: 2599 },
-                  end: { line: 53, column: 148, offset: 2746 }
+                  start: { line: 56, column: 1, offset: 2715 },
+                  end: { line: 56, column: 148, offset: 2862 }
                 }
               }
             ],
             position: {
-              start: { line: 53, column: 1, offset: 2599 },
-              end: { line: 53, column: 148, offset: 2746 }
+              start: { line: 56, column: 1, offset: 2715 },
+              end: { line: 56, column: 148, offset: 2862 }
             }
           },
           {
@@ -4928,8 +5004,8 @@ export default [
             meta: null,
             value: 'newTableLength = oldTableLength * resizeFactor',
             position: {
-              start: { line: 55, column: 1, offset: 2748 },
-              end: { line: 57, column: 4, offset: 2802 }
+              start: { line: 58, column: 1, offset: 2864 },
+              end: { line: 60, column: 4, offset: 2918 }
             }
           },
           {
@@ -4939,14 +5015,14 @@ export default [
                 type: 'text',
                 value: 'Once all of the items have been added into the temporary storage file, the temporary storage file is moved to the location of the old storage file to be used as the new storage file.',
                 position: {
-                  start: { line: 59, column: 1, offset: 2804 },
-                  end: { line: 59, column: 183, offset: 2986 }
+                  start: { line: 62, column: 1, offset: 2920 },
+                  end: { line: 62, column: 183, offset: 3102 }
                 }
               }
             ],
             position: {
-              start: { line: 59, column: 1, offset: 2804 },
-              end: { line: 59, column: 183, offset: 2986 }
+              start: { line: 62, column: 1, offset: 2920 },
+              end: { line: 62, column: 183, offset: 3102 }
             }
           },
           {
@@ -4957,14 +5033,14 @@ export default [
                 type: 'text',
                 value: 'Optimizing the disk sorted hash table b-tree',
                 position: {
-                  start: { line: 61, column: 4, offset: 2991 },
-                  end: { line: 61, column: 48, offset: 3035 }
+                  start: { line: 64, column: 4, offset: 3107 },
+                  end: { line: 64, column: 48, offset: 3151 }
                 }
               }
             ],
             position: {
-              start: { line: 61, column: 1, offset: 2988 },
-              end: { line: 61, column: 48, offset: 3035 }
+              start: { line: 64, column: 1, offset: 3104 },
+              end: { line: 64, column: 48, offset: 3151 }
             }
           },
           {
@@ -4974,46 +5050,46 @@ export default [
                 type: 'text',
                 value: 'The value of ',
                 position: {
-                  start: { line: 62, column: 1, offset: 3036 },
-                  end: { line: 62, column: 14, offset: 3049 }
+                  start: { line: 65, column: 1, offset: 3152 },
+                  end: { line: 65, column: 14, offset: 3165 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'degree',
                 position: {
-                  start: { line: 62, column: 14, offset: 3049 },
-                  end: { line: 62, column: 22, offset: 3057 }
+                  start: { line: 65, column: 14, offset: 3165 },
+                  end: { line: 65, column: 22, offset: 3173 }
                 }
               },
               {
                 type: 'text',
                 value: ' determines the structure of the internal b-tree used by the disk sorted hash table. A higher value for ',
                 position: {
-                  start: { line: 62, column: 22, offset: 3057 },
-                  end: { line: 62, column: 126, offset: 3161 }
+                  start: { line: 65, column: 22, offset: 3173 },
+                  end: { line: 65, column: 126, offset: 3277 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'degree',
                 position: {
-                  start: { line: 62, column: 126, offset: 3161 },
-                  end: { line: 62, column: 134, offset: 3169 }
+                  start: { line: 65, column: 126, offset: 3277 },
+                  end: { line: 65, column: 134, offset: 3285 }
                 }
               },
               {
                 type: 'text',
                 value: ' results in a shorter b-tree and more items per b-tree node, while a lower value results in a taller b-tree and fewer items per b-tree node. The default value of 2 is a safe choice for most use cases.',
                 position: {
-                  start: { line: 62, column: 134, offset: 3169 },
-                  end: { line: 62, column: 334, offset: 3369 }
+                  start: { line: 65, column: 134, offset: 3285 },
+                  end: { line: 65, column: 334, offset: 3485 }
                 }
               }
             ],
             position: {
-              start: { line: 62, column: 1, offset: 3036 },
-              end: { line: 62, column: 334, offset: 3369 }
+              start: { line: 65, column: 1, offset: 3152 },
+              end: { line: 65, column: 334, offset: 3485 }
             }
           },
           {
@@ -5024,14 +5100,14 @@ export default [
                 type: 'text',
                 value: 'Allocation of disk space',
                 position: {
-                  start: { line: 64, column: 4, offset: 3374 },
-                  end: { line: 64, column: 28, offset: 3398 }
+                  start: { line: 67, column: 4, offset: 3490 },
+                  end: { line: 67, column: 28, offset: 3514 }
                 }
               }
             ],
             position: {
-              start: { line: 64, column: 1, offset: 3371 },
-              end: { line: 64, column: 28, offset: 3398 }
+              start: { line: 67, column: 1, offset: 3487 },
+              end: { line: 67, column: 28, offset: 3514 }
             }
           },
           {
@@ -5041,52 +5117,52 @@ export default [
                 type: 'text',
                 value: 'The disk sorted hash table initially preallocates a block of memory on disk of ',
                 position: {
-                  start: { line: 65, column: 1, offset: 3399 },
-                  end: { line: 65, column: 80, offset: 3478 }
+                  start: { line: 68, column: 1, offset: 3515 },
+                  end: { line: 68, column: 80, offset: 3594 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: '(itemSize * initialLength)',
                 position: {
-                  start: { line: 65, column: 80, offset: 3478 },
-                  end: { line: 65, column: 108, offset: 3506 }
+                  start: { line: 68, column: 80, offset: 3594 },
+                  end: { line: 68, column: 108, offset: 3622 }
                 }
               },
               {
                 type: 'text',
                 value: ' bytes for database operations. When the disk sorted hash table is resized, the block of memory on disk is reallocated to a new size of ',
                 position: {
-                  start: { line: 65, column: 108, offset: 3506 },
-                  end: { line: 65, column: 244, offset: 3642 }
+                  start: { line: 68, column: 108, offset: 3622 },
+                  end: { line: 68, column: 244, offset: 3758 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: '(itemSize * initialLength * numberOfResizes * resizeFactor)',
                 position: {
-                  start: { line: 65, column: 244, offset: 3642 },
-                  end: { line: 65, column: 305, offset: 3703 }
+                  start: { line: 68, column: 244, offset: 3758 },
+                  end: { line: 68, column: 305, offset: 3819 }
                 }
               },
               {
                 type: 'text',
                 value: ' bytes.',
                 position: {
-                  start: { line: 65, column: 305, offset: 3703 },
-                  end: { line: 65, column: 312, offset: 3710 }
+                  start: { line: 68, column: 305, offset: 3819 },
+                  end: { line: 68, column: 312, offset: 3826 }
                 }
               }
             ],
             position: {
-              start: { line: 65, column: 1, offset: 3399 },
-              end: { line: 65, column: 312, offset: 3710 }
+              start: { line: 68, column: 1, offset: 3515 },
+              end: { line: 68, column: 312, offset: 3826 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 65, column: 312, offset: 3710 }
+          end: { line: 68, column: 312, offset: 3826 }
         }
       }
     },
