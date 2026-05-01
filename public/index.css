@@ -556,19 +556,23 @@ article h2 > a > span {
   width: 100%;
 }
 
+.blog-post .description {
+  padding: 0 2%;
+}
+
 .blog-post > a {
   text-decoration: none;
   padding-left: 2%;
 }
 
-.blog-post > h3 {
+.blog-post .description > h3 {
   font-size: 18px;
   font-weight: 500;
   margin: 0;
   margin-bottom: 15px;
 }
 
-.blog-post > button.read-more {
+.blog-post .description > button.read-more {
   border: none;
   background-color: #333;
   color: #fff;
@@ -580,7 +584,7 @@ article h2 > a > span {
   transition: background-color 0.18s ease;
   outline: none;
 }
-.blog-post > button.read-more:hover {
+.blog-post .description > button.read-more:hover {
   background-color: #000;
 }
 .blog-post > p.inactive {

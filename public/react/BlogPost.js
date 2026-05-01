@@ -111,15 +111,17 @@ const BlogPost = ReactElement(props => {
         ]),
       ],
 
-      H3(description),
+      Div({ class: 'description' }, [
+        H3(description),
 
-      Button({
-        class: 'read-more',
-        onClick(event) {
-          event.preventDefault()
-          onLinkClick()
-        },
-      }, 'Read more'),
+        Button({
+          class: 'read-more',
+          onClick(event) {
+            event.preventDefault()
+            onLinkClick()
+          },
+        }, 'Read more'),
+      ]),
     ],
 
     Div({
