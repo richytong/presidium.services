@@ -42,13 +42,13 @@ module.exports = {
   pages: [
     {
       title: 'Presidium',
-      description: 'Documentation for Presidium',
+      description: 'Official website of Presidium',
       url: '/',
       filepath: '/index.html',
     },
     {
-      title: 'Presidium Docs',
-      description: 'Documentation for Presidium',
+      title: 'Presidium Documentation',
+      description: 'Presidium Documentation',
       url: '/docs',
       filepath: '/docs/index.html',
     },
@@ -58,6 +58,20 @@ module.exports = {
       description: `Documentation for Presidium ${className}`,
       url: `/docs/${className}`,
       filepath: `/docs/${className}`,
-    }))
+    })),
+
+    {
+      title: 'Presidium Blog',
+      description: 'Presidium Blog',
+      url: '/blog',
+      filepath: '/blog/index.html',
+    },
+
+    {
+      title: 'Database System Guide | Presidium',
+      description: 'Presidium Blog',
+      url: '/blog/database-system-guide',
+      filepath: '/blog/database-system-guide',
+    },
   ],
 }

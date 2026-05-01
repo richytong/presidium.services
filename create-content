@@ -133,6 +133,13 @@ export default [
   ${presidiumFiles.map(name => `'${name}',`).join('\n  ')}
 ]
   `.trim())
+
+  console.log(`Creating mdast/database-system-guide.js`)
+  await createMdastFile(
+    `${__dirname}/articles/database-system-guide.md`,
+    `${__dirname}/public/mdast/database-system-guide.js`,
+  )
+
 }
 
 if (require.main == module) {

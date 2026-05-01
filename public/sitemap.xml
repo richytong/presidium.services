@@ -1,0 +1,89 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+  <loc>https://presidium.services/</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/AwsCredentials</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/DiskHashTable</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/DiskSortedHashTable</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/Docker</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/DynamoDBGlobalSecondaryIndex</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/DynamoDBStream</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/DynamoDBTable</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/ECR</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/GoogleChromeDevTools</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/GoogleChromeForTesting</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/HTTP</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/NpmToken</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/OptionalValidator</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/Password</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/Readable</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/S3Bucket</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/Secrets</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/SecretsManager</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/StrictValidator</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/TranscribeStream</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/WebSocket</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/WebSocketServer</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/WebSocketSecureServer</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/ServerWebSocket</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/XML</loc>
+</url>
+<url>
+  <loc>https://presidium.services/blog</loc>
+</url>
+<url>
+  <loc>https://presidium.services/blog/database-system-guide</loc>
+</url>
+</urlset>

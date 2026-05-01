@@ -1,0 +1,5 @@
+#!/usr/bin/env node
+
+const resizeWidth = require('./internal/resizeWidth')
+
+resizeWidth(`${__dirname}/public/assets/disk-lights.jpg`, 2000)

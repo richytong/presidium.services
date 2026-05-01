@@ -1,4 +1,5 @@
 import DocsNav from './DocsNav.js'
+import NavLink from './NavLink.js'
 import useIsHamburgerMenuActive from './useIsHamburgerMenuActive.js'
 
 const HamburgerMenu = ReactElement(props => {
@@ -8,13 +9,11 @@ const HamburgerMenu = ReactElement(props => {
     class: isHamburgerMenuActive ? 'active' : '',
   }, [
     Nav([
-      // A({ href: '/' }, 'Home'),
-      // Hr(),
-      // A({ href: '/tour' }, 'Tour'),
-      // Hr(),
-      // A({ href: '/docs' }, 'Docs'),
-      // Hr(),
-      // A({ href: '/blog' }, 'Blog'),
+      NavLink({ href: '/' }, 'Home'),
+      Hr(),
+      NavLink({ href: '/docs' }, 'Docs'),
+      Hr(),
+      NavLink({ href: '/blog' }, 'Blog'),
     ]),
 
     Div({ class: 'docs-nav' }, [

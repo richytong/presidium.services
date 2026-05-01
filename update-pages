@@ -6,6 +6,7 @@ const PageHTML = require('./lib/PageHTML')
 const parseHTML = require('./lib/parseHTML')
 const validateConfig = require('./lib/validateConfig')
 const config = require('./config')
+const SitemapXml = require('./SitemapXml')
 
 validateConfig(config)
 
@@ -32,6 +33,9 @@ async function main() {
     console.log('Creating public directory', publicDir)
     await fs.promises.mkdir(`${__dirname}/${publicDir}`)
   }
+
+  console.log('Updating sitemap.xml')
+  await fs.promises.writeFile(`${__dirname}/${publicDir}/sitemap.xml`, SitemapXml())
 
   for (const page of pages) {
     const { title, description, url, filepath } = page

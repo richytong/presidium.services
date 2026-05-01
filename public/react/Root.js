@@ -1,5 +1,6 @@
 import Home from './Home.js'
 import DocsHome from './DocsHome.js'
+import BlogHome from './BlogHome.js'
 import NotFoundHome from './NotFoundHome.js'
 import usePath from './usePath.js'
 
@@ -56,6 +57,9 @@ const Root = ReactElement(() => {
   }
   if (path == '/docs' || path.startsWith('/docs')) {
     return DocsHome()
+  }
+  if (path == '/blog' || path.startsWith('/blog')) {
+    return BlogHome()
   }
   return NotFoundHome()
 })

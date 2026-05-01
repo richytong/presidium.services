@@ -65,7 +65,7 @@ const Layout = ReactElement(props => {
 
         Div({ class: 'links' }, [
           NavLink({ href: '/docs' }, 'Docs'),
-          // A({ href: '/blog' }, 'Blog'),
+          NavLink({ href: '/blog' }, 'Blog'),
         ]),
       ]),
 
