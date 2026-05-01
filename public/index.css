@@ -523,7 +523,7 @@ article h2 > a > span {
 }
 
 .blog-post > p {
-  padding-left: 2%;
+  padding: 0 20px;
   margin-right: 18px;
   margin-bottom: 15px;
   margin-top: 0px;
@@ -532,6 +532,11 @@ article h2 > a > span {
   transition-property: opacity;
   transition-duration: 0.28s;
   transition-timing-function: ease;
+}
+@media only screen and (max-width: 768px) {
+  .blog-post > p {
+    padding: 0 5%;
+  }
 }
 
 .blog-post .cover {
@@ -562,7 +567,16 @@ article h2 > a > span {
 
 .blog-post > a {
   text-decoration: none;
-  padding-left: 2%;
+  padding: 0px 20px;
+}
+@media only screen and (max-width: 768px) {
+  .blog-post > a {
+    padding: 0px 5%;
+  }
+}
+
+.blog-post > a > h1 {
+  margin: 20px 0;
 }
 
 .blog-post .description > h3 {
