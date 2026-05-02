@@ -1,6 +1,7 @@
 import useActiveBlogPostHref from './useActiveBlogPostHref.js'
 import useGlobalState from './useGlobalState.js'
 import usePath from './usePath.js'
+import DownArrowSvg from './DownArrowSvg.js'
 
 /**
  * @name BlogPost
@@ -84,6 +85,7 @@ const BlogPost = ReactElement(props => {
       },
     }, [
       H1(title),
+      DownArrowSvg(),
     ]),
 
     dateUpdated ? [
