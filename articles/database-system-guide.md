@@ -2,7 +2,7 @@
 title: Database System Guide
 author: Richard Yufei Tong, King of Software at CLOUT
 date: 2026-05-01
-updated: 2026-05-01
+updated: 2026-05-02
 path: /blog/database-system-guide
 description: Database System Guide with Presidium DiskSortedHashTable and DiskHashTable classes.
 image: /assets/disk-lights-w2000.jpg
@@ -14,7 +14,7 @@ Welcome to the Presidium database system guide. This guide will help users of th
 The database system can be hosted on physical servers or virtual servers. The servers should be connected to the internet, and must use the Linux operating system. The servers should be differentiated into storage servers and load-balancer servers, with the load-balancer servers distributing requests to the storage servers. The storage servers must use Node.js and should have the DiskHashTable and DiskSortedHashTable classes installed with the [Presidium](https://github.com/richytong/presidium) library or the [Presidium DB](https://github.com/richytong/presidium-db) library. The load-balancer servers and storage servers should communicate using HTTP or WebSocket.
 
 ### Load-Balancer Server
-The load-balancer server should distribute incoming requests to the storage servers using a hash function. Incoming requests should have the intended table operation (set or delete), the table name, and the key, value, and/or sort-value parameters. The hash function should accept the key and a list of storage server addresses as parameters and return the index of the storage server address to which the request should be routed. The load-balancer server should then make a separate request to the resolved storage server address with the information from the incoming request.
+The load-balancer server should distribute incoming requests to the storage servers using a hash function. Incoming requests should have the intended table operation (set or delete), the table name, and the key, value, and/or sort-value parameters. The hash function should take the request information and a list of storage server addresses as parameters and return the index of the storage server address to which the request should be routed. The load-balancer server should then make a separate request to the resolved storage server address with the information from the incoming request.
 
 ### Storage Server
 The storage server should store the data files created and used by the disk hash tables and the disk sorted hash tables and serve incoming requests from the load-balancer server. The storage server can use local disks, network-attached storage (NAS), or cloud storage. For an incoming request with a set operation, the storage server should call the set method of the disk hash table or disk sorted hash table indicated by the table name of the incoming request. Likewise, for an incoming request with a delete operation, the storage server should call the delete method of the indicated table.
