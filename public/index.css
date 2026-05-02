@@ -317,6 +317,11 @@ pre {
 #home {
   padding: 0 2%;
 }
+@media only screen and (max-width: 768px) {
+  #home {
+    padding: 0 5%;
+  }
+}
 
 article .image {
   display: inline
@@ -373,6 +378,11 @@ article h2 > a > span {
 #docs {
   display: flex;
   padding: 0 2%;
+}
+@media only screen and (max-width: 768px) {
+  #docs {
+    padding: 0 5%;
+  }
 }
 
 #docs .viewer > a {
@@ -563,6 +573,11 @@ article h2 > a > span {
 
 .blog-post .description {
   padding: 0 2%;
+}
+@media only screen and (max-width: 768px) {
+  .blog-post .description {
+    padding: 0 5%;
+  }
 }
 
 .blog-post > a {
