@@ -61,6 +61,7 @@ const Layout = ReactElement(props => {
           Option({ value: 'V1', selected: presidiumVersion == 'V1' }, 'V1'),
           Option({ value: 'V2', selected: presidiumVersion == 'V2' }, 'V2'),
           Option({ value: 'V3', selected: presidiumVersion == 'V3' }, 'V3'),
+          Option({ value: 'V4', selected: presidiumVersion == 'V4' }, 'V4'),
         ]),
 
         Div({ class: 'links' }, [
