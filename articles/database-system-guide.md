@@ -25,7 +25,7 @@ When choosing between the disk hash table and the disk sorted hash table, the fo
   * Time complexity - the disk hash table has O(1) time complexity for the set and delete operations, while the disk sorted hash table has O(log n) time complexity for the set and delete operations.
   * Item order - the disk hash table can iterate through its stored items in reverse insertion order, while the disk sorted hash table can iterate through its stored items in ascending sort-value order or in descending sort-value order. The disk sorted hash table can also start iterating from a starting sort-value, stop iterating at an ending sort-value, or start iterating after an item key in either ascending sort-value order or descending sort-value order.
 
-Both the disk hash table and the disk sorted hash table have configurable item sizes, and both can store up to 2,147,483,647 items per table. Both the disk hash table and the disk sorted hash table use [double hashing](https://en.wikipedia.org/wiki/Double_hashing) to resolve collisions.
+Both the disk hash table and the disk sorted hash table have configurable item sizes and use [double hashing](https://en.wikipedia.org/wiki/Double_hashing) to resolve collisions.
 
 ## High Availability
 High availability is a characteristic of a system that ensures the system is operational and accessible for an agreed upon percentage of time (uptime), usually indicated in a service level agreement (SLA). NoSQL database systems, including the database system described in this guide, can achieve high availability with relative ease compared to SQL database systems. In order to achieve high availability, database systems should implement redundancy, load balancing, auto scaling, and failover mechanisms.
