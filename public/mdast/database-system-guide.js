@@ -353,10 +353,10 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'Both the disk hash table and the disk sorted hash table have configurable item sizes, and both can store up to 2,147,483,647 items per table. Both the disk hash table and the disk sorted hash table use ',
+          value: 'Both the disk hash table and the disk sorted hash table have configurable item sizes and use ',
           position: {
             start: { line: 28, column: 1, offset: 3485 },
-            end: { line: 28, column: 203, offset: 3687 }
+            end: { line: 28, column: 94, offset: 3578 }
           }
         },
         {
@@ -368,28 +368,28 @@ export default {
               type: 'text',
               value: 'double hashing',
               position: {
-                start: { line: 28, column: 204, offset: 3688 },
-                end: { line: 28, column: 218, offset: 3702 }
+                start: { line: 28, column: 95, offset: 3579 },
+                end: { line: 28, column: 109, offset: 3593 }
               }
             }
           ],
           position: {
-            start: { line: 28, column: 203, offset: 3687 },
-            end: { line: 28, column: 265, offset: 3749 }
+            start: { line: 28, column: 94, offset: 3578 },
+            end: { line: 28, column: 156, offset: 3640 }
           }
         },
         {
           type: 'text',
           value: ' to resolve collisions.',
           position: {
-            start: { line: 28, column: 265, offset: 3749 },
-            end: { line: 28, column: 288, offset: 3772 }
+            start: { line: 28, column: 156, offset: 3640 },
+            end: { line: 28, column: 179, offset: 3663 }
           }
         }
       ],
       position: {
         start: { line: 28, column: 1, offset: 3485 },
-        end: { line: 28, column: 288, offset: 3772 }
+        end: { line: 28, column: 179, offset: 3663 }
       }
     },
     {
@@ -400,14 +400,14 @@ export default {
           type: 'text',
           value: 'High Availability',
           position: {
-            start: { line: 30, column: 4, offset: 3777 },
-            end: { line: 30, column: 21, offset: 3794 }
+            start: { line: 30, column: 4, offset: 3668 },
+            end: { line: 30, column: 21, offset: 3685 }
           }
         }
       ],
       position: {
-        start: { line: 30, column: 1, offset: 3774 },
-        end: { line: 30, column: 21, offset: 3794 }
+        start: { line: 30, column: 1, offset: 3665 },
+        end: { line: 30, column: 21, offset: 3685 }
       }
     },
     {
@@ -417,14 +417,14 @@ export default {
           type: 'text',
           value: 'High availability is a characteristic of a system that ensures the system is operational and accessible for an agreed upon percentage of time (uptime), usually indicated in a service level agreement (SLA). NoSQL database systems, including the database system described in this guide, can achieve high availability with relative ease compared to SQL database systems. In order to achieve high availability, database systems should implement redundancy, load balancing, auto scaling, and failover mechanisms.',
           position: {
-            start: { line: 31, column: 1, offset: 3795 },
-            end: { line: 31, column: 508, offset: 4302 }
+            start: { line: 31, column: 1, offset: 3686 },
+            end: { line: 31, column: 508, offset: 4193 }
           }
         }
       ],
       position: {
-        start: { line: 31, column: 1, offset: 3795 },
-        end: { line: 31, column: 508, offset: 4302 }
+        start: { line: 31, column: 1, offset: 3686 },
+        end: { line: 31, column: 508, offset: 4193 }
       }
     },
     {
@@ -435,14 +435,14 @@ export default {
           type: 'text',
           value: 'Redundancy',
           position: {
-            start: { line: 33, column: 5, offset: 4308 },
-            end: { line: 33, column: 15, offset: 4318 }
+            start: { line: 33, column: 5, offset: 4199 },
+            end: { line: 33, column: 15, offset: 4209 }
           }
         }
       ],
       position: {
-        start: { line: 33, column: 1, offset: 4304 },
-        end: { line: 33, column: 15, offset: 4318 }
+        start: { line: 33, column: 1, offset: 4195 },
+        end: { line: 33, column: 15, offset: 4209 }
       }
     },
     {
@@ -452,14 +452,14 @@ export default {
           type: 'text',
           value: "The storage servers' disk hash tables and disk sorted hash tables should be replicated across multiple storage servers. Those storage servers may be spread out across multiple availability zones.",
           position: {
-            start: { line: 34, column: 1, offset: 4319 },
-            end: { line: 34, column: 196, offset: 4514 }
+            start: { line: 34, column: 1, offset: 4210 },
+            end: { line: 34, column: 196, offset: 4405 }
           }
         }
       ],
       position: {
-        start: { line: 34, column: 1, offset: 4319 },
-        end: { line: 34, column: 196, offset: 4514 }
+        start: { line: 34, column: 1, offset: 4210 },
+        end: { line: 34, column: 196, offset: 4405 }
       }
     },
     {
@@ -470,14 +470,14 @@ export default {
           type: 'text',
           value: 'Load Balancing',
           position: {
-            start: { line: 36, column: 5, offset: 4520 },
-            end: { line: 36, column: 19, offset: 4534 }
+            start: { line: 36, column: 5, offset: 4411 },
+            end: { line: 36, column: 19, offset: 4425 }
           }
         }
       ],
       position: {
-        start: { line: 36, column: 1, offset: 4516 },
-        end: { line: 36, column: 19, offset: 4534 }
+        start: { line: 36, column: 1, offset: 4407 },
+        end: { line: 36, column: 19, offset: 4425 }
       }
     },
     {
@@ -487,14 +487,14 @@ export default {
           type: 'text',
           value: 'The load-balancer servers should distribute incoming traffic across multiple storage servers.',
           position: {
-            start: { line: 37, column: 1, offset: 4535 },
-            end: { line: 37, column: 94, offset: 4628 }
+            start: { line: 37, column: 1, offset: 4426 },
+            end: { line: 37, column: 94, offset: 4519 }
           }
         }
       ],
       position: {
-        start: { line: 37, column: 1, offset: 4535 },
-        end: { line: 37, column: 94, offset: 4628 }
+        start: { line: 37, column: 1, offset: 4426 },
+        end: { line: 37, column: 94, offset: 4519 }
       }
     },
     {
@@ -505,14 +505,14 @@ export default {
           type: 'text',
           value: 'Auto Scaling',
           position: {
-            start: { line: 39, column: 5, offset: 4634 },
-            end: { line: 39, column: 17, offset: 4646 }
+            start: { line: 39, column: 5, offset: 4525 },
+            end: { line: 39, column: 17, offset: 4537 }
           }
         }
       ],
       position: {
-        start: { line: 39, column: 1, offset: 4630 },
-        end: { line: 39, column: 17, offset: 4646 }
+        start: { line: 39, column: 1, offset: 4521 },
+        end: { line: 39, column: 17, offset: 4537 }
       }
     },
     {
@@ -522,14 +522,14 @@ export default {
           type: 'text',
           value: 'The database system should add storage servers when a given storage server is at a predetermined level of disk capacity or throughput.',
           position: {
-            start: { line: 40, column: 1, offset: 4647 },
-            end: { line: 40, column: 135, offset: 4781 }
+            start: { line: 40, column: 1, offset: 4538 },
+            end: { line: 40, column: 135, offset: 4672 }
           }
         }
       ],
       position: {
-        start: { line: 40, column: 1, offset: 4647 },
-        end: { line: 40, column: 135, offset: 4781 }
+        start: { line: 40, column: 1, offset: 4538 },
+        end: { line: 40, column: 135, offset: 4672 }
       }
     },
     {
@@ -540,14 +540,14 @@ export default {
           type: 'text',
           value: 'Failover Mechanisms',
           position: {
-            start: { line: 42, column: 5, offset: 4787 },
-            end: { line: 42, column: 24, offset: 4806 }
+            start: { line: 42, column: 5, offset: 4678 },
+            end: { line: 42, column: 24, offset: 4697 }
           }
         }
       ],
       position: {
-        start: { line: 42, column: 1, offset: 4783 },
-        end: { line: 42, column: 24, offset: 4806 }
+        start: { line: 42, column: 1, offset: 4674 },
+        end: { line: 42, column: 24, offset: 4697 }
       }
     },
     {
@@ -557,14 +557,14 @@ export default {
           type: 'text',
           value: 'When a storage server fails, load-balancer servers should switch to a replicated storage server. When a load-balancer server fails, incoming requests should be routed through a replica load balancer server.',
           position: {
-            start: { line: 43, column: 1, offset: 4807 },
-            end: { line: 43, column: 207, offset: 5013 }
+            start: { line: 43, column: 1, offset: 4698 },
+            end: { line: 43, column: 207, offset: 4904 }
           }
         }
       ],
       position: {
-        start: { line: 43, column: 1, offset: 4807 },
-        end: { line: 43, column: 207, offset: 5013 }
+        start: { line: 43, column: 1, offset: 4698 },
+        end: { line: 43, column: 207, offset: 4904 }
       }
     },
     {
@@ -575,14 +575,14 @@ export default {
           type: 'text',
           value: 'Performance',
           position: {
-            start: { line: 45, column: 4, offset: 5018 },
-            end: { line: 45, column: 15, offset: 5029 }
+            start: { line: 45, column: 4, offset: 4909 },
+            end: { line: 45, column: 15, offset: 4920 }
           }
         }
       ],
       position: {
-        start: { line: 45, column: 1, offset: 5015 },
-        end: { line: 45, column: 15, offset: 5029 }
+        start: { line: 45, column: 1, offset: 4906 },
+        end: { line: 45, column: 15, offset: 4920 }
       }
     },
     {
@@ -592,14 +592,14 @@ export default {
           type: 'text',
           value: 'The performance of the database system can be characterized by network throughput and resource utilization.',
           position: {
-            start: { line: 46, column: 1, offset: 5030 },
-            end: { line: 46, column: 108, offset: 5137 }
+            start: { line: 46, column: 1, offset: 4921 },
+            end: { line: 46, column: 108, offset: 5028 }
           }
         }
       ],
       position: {
-        start: { line: 46, column: 1, offset: 5030 },
-        end: { line: 46, column: 108, offset: 5137 }
+        start: { line: 46, column: 1, offset: 4921 },
+        end: { line: 46, column: 108, offset: 5028 }
       }
     },
     {
@@ -610,14 +610,14 @@ export default {
           type: 'text',
           value: 'Network Throughput',
           position: {
-            start: { line: 48, column: 5, offset: 5143 },
-            end: { line: 48, column: 23, offset: 5161 }
+            start: { line: 48, column: 5, offset: 5034 },
+            end: { line: 48, column: 23, offset: 5052 }
           }
         }
       ],
       position: {
-        start: { line: 48, column: 1, offset: 5139 },
-        end: { line: 48, column: 23, offset: 5161 }
+        start: { line: 48, column: 1, offset: 5030 },
+        end: { line: 48, column: 23, offset: 5052 }
       }
     },
     {
@@ -627,30 +627,30 @@ export default {
           type: 'text',
           value: 'Network throughput is the rate at which data is transmitted over a network. For the database system, the network throughput can be measured as ',
           position: {
-            start: { line: 49, column: 1, offset: 5162 },
-            end: { line: 49, column: 144, offset: 5305 }
+            start: { line: 49, column: 1, offset: 5053 },
+            end: { line: 49, column: 144, offset: 5196 }
           }
         },
         {
           type: 'inlineCode',
           value: 'request_size * requests_per_second',
           position: {
-            start: { line: 49, column: 144, offset: 5305 },
-            end: { line: 49, column: 180, offset: 5341 }
+            start: { line: 49, column: 144, offset: 5196 },
+            end: { line: 49, column: 180, offset: 5232 }
           }
         },
         {
           type: 'text',
           value: '. A higher network throughput indicates the database system is processing more operations per second and/or larger amounts of data per second.',
           position: {
-            start: { line: 49, column: 180, offset: 5341 },
-            end: { line: 49, column: 322, offset: 5483 }
+            start: { line: 49, column: 180, offset: 5232 },
+            end: { line: 49, column: 322, offset: 5374 }
           }
         }
       ],
       position: {
-        start: { line: 49, column: 1, offset: 5162 },
-        end: { line: 49, column: 322, offset: 5483 }
+        start: { line: 49, column: 1, offset: 5053 },
+        end: { line: 49, column: 322, offset: 5374 }
       }
     },
     {
@@ -661,14 +661,14 @@ export default {
           type: 'text',
           value: 'Resource Utilization',
           position: {
-            start: { line: 51, column: 5, offset: 5489 },
-            end: { line: 51, column: 25, offset: 5509 }
+            start: { line: 51, column: 5, offset: 5380 },
+            end: { line: 51, column: 25, offset: 5400 }
           }
         }
       ],
       position: {
-        start: { line: 51, column: 1, offset: 5485 },
-        end: { line: 51, column: 25, offset: 5509 }
+        start: { line: 51, column: 1, offset: 5376 },
+        end: { line: 51, column: 25, offset: 5400 }
       }
     },
     {
@@ -678,14 +678,14 @@ export default {
           type: 'text',
           value: 'Resource utilization includes CPU usage, memory usage, and disk I/O.',
           position: {
-            start: { line: 52, column: 1, offset: 5510 },
-            end: { line: 52, column: 69, offset: 5578 }
+            start: { line: 52, column: 1, offset: 5401 },
+            end: { line: 52, column: 69, offset: 5469 }
           }
         }
       ],
       position: {
-        start: { line: 52, column: 1, offset: 5510 },
-        end: { line: 52, column: 69, offset: 5578 }
+        start: { line: 52, column: 1, offset: 5401 },
+        end: { line: 52, column: 69, offset: 5469 }
       }
     },
     {
@@ -696,14 +696,14 @@ export default {
           type: 'text',
           value: 'CPU Usage',
           position: {
-            start: { line: 54, column: 6, offset: 5585 },
-            end: { line: 54, column: 15, offset: 5594 }
+            start: { line: 54, column: 6, offset: 5476 },
+            end: { line: 54, column: 15, offset: 5485 }
           }
         }
       ],
       position: {
-        start: { line: 54, column: 1, offset: 5580 },
-        end: { line: 54, column: 15, offset: 5594 }
+        start: { line: 54, column: 1, offset: 5471 },
+        end: { line: 54, column: 15, offset: 5485 }
       }
     },
     {
@@ -713,14 +713,14 @@ export default {
           type: 'text',
           value: "CPU usage is the percentage of time that a server's CPU is active (not idle). A higher CPU usage for the storage server means the server's CPU is more active in coordinating database operations for incoming requests. A higher CPU usage for the load-balancer server means the server's CPU is more active in routing incoming requests to storage servers.",
           position: {
-            start: { line: 55, column: 1, offset: 5595 },
-            end: { line: 55, column: 352, offset: 5946 }
+            start: { line: 55, column: 1, offset: 5486 },
+            end: { line: 55, column: 352, offset: 5837 }
           }
         }
       ],
       position: {
-        start: { line: 55, column: 1, offset: 5595 },
-        end: { line: 55, column: 352, offset: 5946 }
+        start: { line: 55, column: 1, offset: 5486 },
+        end: { line: 55, column: 352, offset: 5837 }
       }
     },
     {
@@ -731,14 +731,14 @@ export default {
           type: 'text',
           value: 'Memory Usage',
           position: {
-            start: { line: 57, column: 6, offset: 5953 },
-            end: { line: 57, column: 18, offset: 5965 }
+            start: { line: 57, column: 6, offset: 5844 },
+            end: { line: 57, column: 18, offset: 5856 }
           }
         }
       ],
       position: {
-        start: { line: 57, column: 1, offset: 5948 },
-        end: { line: 57, column: 18, offset: 5965 }
+        start: { line: 57, column: 1, offset: 5839 },
+        end: { line: 57, column: 18, offset: 5856 }
       }
     },
     {
@@ -748,14 +748,14 @@ export default {
           type: 'text',
           value: 'Memory usage is the percentage of RAM that the processes on a server are using. A higher memory usage for the storage server usually means the server is using more of the kernel page cache. The load-balancer server should generally not use a lot of RAM.',
           position: {
-            start: { line: 58, column: 1, offset: 5966 },
-            end: { line: 58, column: 254, offset: 6219 }
+            start: { line: 58, column: 1, offset: 5857 },
+            end: { line: 58, column: 254, offset: 6110 }
           }
         }
       ],
       position: {
-        start: { line: 58, column: 1, offset: 5966 },
-        end: { line: 58, column: 254, offset: 6219 }
+        start: { line: 58, column: 1, offset: 5857 },
+        end: { line: 58, column: 254, offset: 6110 }
       }
     },
     {
@@ -766,14 +766,14 @@ export default {
           type: 'text',
           value: 'Disk I/O',
           position: {
-            start: { line: 60, column: 6, offset: 6226 },
-            end: { line: 60, column: 14, offset: 6234 }
+            start: { line: 60, column: 6, offset: 6117 },
+            end: { line: 60, column: 14, offset: 6125 }
           }
         }
       ],
       position: {
-        start: { line: 60, column: 1, offset: 6221 },
-        end: { line: 60, column: 14, offset: 6234 }
+        start: { line: 60, column: 1, offset: 6112 },
+        end: { line: 60, column: 14, offset: 6125 }
       }
     },
     {
@@ -783,14 +783,14 @@ export default {
           type: 'text',
           value: "Disk I/O is the input/output operations between a server's memory and its storage devices. Disk I/O can be measured in IOPS, latency, and storage throughput. IOPS (input / output operations per second) measures the number of read and write operations a storage device performs per second. Latency measures the amount of time it takes for the storage device to complete an I/O operation. Storage throughput measures the amount of data transferred between RAM and the storage device per second. Higher disk I/O for the storage server means more data is being stored and retrieved, and indicates better performance. The load-balancer server should generally not have any disk I/O.",
           position: {
-            start: { line: 61, column: 1, offset: 6235 },
-            end: { line: 61, column: 678, offset: 6912 }
+            start: { line: 61, column: 1, offset: 6126 },
+            end: { line: 61, column: 678, offset: 6803 }
           }
         }
       ],
       position: {
-        start: { line: 61, column: 1, offset: 6235 },
-        end: { line: 61, column: 678, offset: 6912 }
+        start: { line: 61, column: 1, offset: 6126 },
+        end: { line: 61, column: 678, offset: 6803 }
       }
     },
     {
@@ -801,14 +801,14 @@ export default {
           type: 'text',
           value: 'Security',
           position: {
-            start: { line: 63, column: 4, offset: 6917 },
-            end: { line: 63, column: 12, offset: 6925 }
+            start: { line: 63, column: 4, offset: 6808 },
+            end: { line: 63, column: 12, offset: 6816 }
           }
         }
       ],
       position: {
-        start: { line: 63, column: 1, offset: 6914 },
-        end: { line: 63, column: 12, offset: 6925 }
+        start: { line: 63, column: 1, offset: 6805 },
+        end: { line: 63, column: 12, offset: 6816 }
       }
     },
     {
@@ -818,46 +818,46 @@ export default {
           type: 'text',
           value: 'The data of the disk hash tables and disk sorted hash tables should be encrypted at rest to prevent unauthorized access. The data may be encrypted before it is written to disk using the ',
           position: {
-            start: { line: 64, column: 1, offset: 6926 },
-            end: { line: 64, column: 187, offset: 7112 }
+            start: { line: 64, column: 1, offset: 6817 },
+            end: { line: 64, column: 187, offset: 7003 }
           }
         },
         {
           type: 'inlineCode',
           value: 'set',
           position: {
-            start: { line: 64, column: 187, offset: 7112 },
-            end: { line: 64, column: 192, offset: 7117 }
+            start: { line: 64, column: 187, offset: 7003 },
+            end: { line: 64, column: 192, offset: 7008 }
           }
         },
         {
           type: 'text',
           value: ' method of the DiskHashTable or DiskSortedHashTable classes, and may be decrypted after it is retrieved from disk using the ',
           position: {
-            start: { line: 64, column: 192, offset: 7117 },
-            end: { line: 64, column: 316, offset: 7241 }
+            start: { line: 64, column: 192, offset: 7008 },
+            end: { line: 64, column: 316, offset: 7132 }
           }
         },
         {
           type: 'inlineCode',
           value: 'get',
           position: {
-            start: { line: 64, column: 316, offset: 7241 },
-            end: { line: 64, column: 321, offset: 7246 }
+            start: { line: 64, column: 316, offset: 7132 },
+            end: { line: 64, column: 321, offset: 7137 }
           }
         },
         {
           type: 'text',
           value: ' method of the DiskHashTable or DiskSortedHashTable classes.',
           position: {
-            start: { line: 64, column: 321, offset: 7246 },
-            end: { line: 64, column: 381, offset: 7306 }
+            start: { line: 64, column: 321, offset: 7137 },
+            end: { line: 64, column: 381, offset: 7197 }
           }
         }
       ],
       position: {
-        start: { line: 64, column: 1, offset: 6926 },
-        end: { line: 64, column: 381, offset: 7306 }
+        start: { line: 64, column: 1, offset: 6817 },
+        end: { line: 64, column: 381, offset: 7197 }
       }
     },
     {
@@ -868,14 +868,14 @@ export default {
           type: 'text',
           value: 'Conclusion',
           position: {
-            start: { line: 66, column: 4, offset: 7311 },
-            end: { line: 66, column: 14, offset: 7321 }
+            start: { line: 66, column: 4, offset: 7202 },
+            end: { line: 66, column: 14, offset: 7212 }
           }
         }
       ],
       position: {
-        start: { line: 66, column: 1, offset: 7308 },
-        end: { line: 66, column: 14, offset: 7321 }
+        start: { line: 66, column: 1, offset: 7199 },
+        end: { line: 66, column: 14, offset: 7212 }
       }
     },
     {
@@ -885,8 +885,8 @@ export default {
           type: 'text',
           value: 'The Presidium database system takes some time and effort to set up, but is worth the cost savings and flexibility. Get started with ',
           position: {
-            start: { line: 67, column: 1, offset: 7322 },
-            end: { line: 67, column: 133, offset: 7454 }
+            start: { line: 67, column: 1, offset: 7213 },
+            end: { line: 67, column: 133, offset: 7345 }
           }
         },
         {
@@ -898,33 +898,33 @@ export default {
               type: 'text',
               value: 'Presidium',
               position: {
-                start: { line: 67, column: 134, offset: 7455 },
-                end: { line: 67, column: 143, offset: 7464 }
+                start: { line: 67, column: 134, offset: 7346 },
+                end: { line: 67, column: 143, offset: 7355 }
               }
             }
           ],
           position: {
-            start: { line: 67, column: 133, offset: 7454 },
-            end: { line: 67, column: 173, offset: 7494 }
+            start: { line: 67, column: 133, offset: 7345 },
+            end: { line: 67, column: 173, offset: 7385 }
           }
         },
         {
           type: 'text',
           value: ' today.',
           position: {
-            start: { line: 67, column: 173, offset: 7494 },
-            end: { line: 67, column: 180, offset: 7501 }
+            start: { line: 67, column: 173, offset: 7385 },
+            end: { line: 67, column: 180, offset: 7392 }
           }
         }
       ],
       position: {
-        start: { line: 67, column: 1, offset: 7322 },
-        end: { line: 67, column: 180, offset: 7501 }
+        start: { line: 67, column: 1, offset: 7213 },
+        end: { line: 67, column: 180, offset: 7392 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 68, column: 1, offset: 7502 }
+    end: { line: 68, column: 1, offset: 7393 }
   }
 }
