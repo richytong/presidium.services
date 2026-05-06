@@ -2,13 +2,13 @@
 title: Database System Guide
 author: Richard Yufei Tong, King of Software at CLOUT
 date: 2026-05-01
-updated: 2026-05-02
+updated: 2026-05-06
 path: /blog/database-system-guide
 description: Database System Guide with Presidium DiskSortedHashTable and DiskHashTable classes.
 image: /assets/disk-lights-w2000.jpg
 ---
 
-Welcome to the Presidium database system guide. This guide will help users of the Presidium library host their own database systems using the Presidium [DiskHashTable](/docs/DiskHashTable) (disk hash table) and [DiskSortedHashTable](/docs/DiskSortedHashTable) (disk sorted hash table) classes. This guide will cover database system setup as well as practices and strategies for high availability and performance.
+Welcome to the Presidium database system guide. This guide will help users of the Presidium library host their own database systems using the Presidium [DiskHashTable](/docs/DiskHashTable) (disk hash table) and [DiskSortedHashTable](/docs/DiskSortedHashTable) (disk sorted hash table) classes. This guide will cover database system setup as well as practices and strategies for high availability, performance, and security.
 
 ## Database System Setup
 The database system can be hosted on physical servers or virtual servers. The servers should be connected to the internet, and must use the Linux operating system. The servers should be differentiated into storage servers and load-balancer servers, with the load-balancer servers distributing requests to the storage servers. The storage servers must use Node.js and should have the DiskHashTable and DiskSortedHashTable classes installed with the [Presidium](https://github.com/richytong/presidium) library or the [Presidium DB](https://github.com/richytong/presidium-db) library. The load-balancer servers and storage servers should communicate using HTTP or WebSocket.
@@ -59,6 +59,9 @@ Memory usage is the percentage of RAM that the processes on a server are using. 
 
 #### Disk I/O
 Disk I/O is the input/output operations between a server's memory and its storage devices. Disk I/O can be measured in IOPS, latency, and storage throughput. IOPS (input / output operations per second) measures the number of read and write operations a storage device performs per second. Latency measures the amount of time it takes for the storage device to complete an I/O operation. Storage throughput measures the amount of data transferred between RAM and the storage device per second. Higher disk I/O for the storage server means more data is being stored and retrieved, and indicates better performance. The load-balancer server should generally not have any disk I/O.
+
+## Security
+The data of the disk hash tables and disk sorted hash tables should be encrypted at rest to prevent unauthorized access. The data may be encrypted before it is written to disk using the `set` method of the DiskHashTable or DiskSortedHashTable classes, and may be decrypted after it is retrieved from disk using the `get` method of the DiskHashTable or DiskSortedHashTable classes.
 
 ## Conclusion
 The Presidium database system takes some time and effort to set up, but is worth the cost savings and flexibility. Get started with [Presidium](https://presidium.services/) today.
