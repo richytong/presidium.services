@@ -5868,9 +5868,9 @@ export default [
         }
       },
       {
-        name: '_processChunk',
+        name: '_processChunks',
         docs: '```coffeescript [specscript]\n' +
-          'websocket._processChunk(chunks Array<Buffer>) -> ()\n' +
+          'websocket._processChunks(chunks Array<Buffer>) -> ()\n' +
           '```',
         mdast: {
           name: {
@@ -5881,22 +5881,22 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: '_processChunk',
+                    value: '_processChunks',
                     position: {
                       start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 14, offset: 13 }
+                      end: { line: 1, column: 15, offset: 14 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 14, offset: 13 }
+                  end: { line: 1, column: 15, offset: 14 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 14, offset: 13 }
+              end: { line: 1, column: 15, offset: 14 }
             }
           },
           docs: {
@@ -5906,16 +5906,16 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: 'websocket._processChunk(chunks Array<Buffer>) -> ()',
+                value: 'websocket._processChunks(chunks Array<Buffer>) -> ()',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 3, column: 4, offset: 84 }
+                  end: { line: 3, column: 4, offset: 85 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 3, column: 4, offset: 84 }
+              end: { line: 3, column: 4, offset: 85 }
             }
           }
         }
@@ -10982,12 +10982,9 @@ export default [
         }
       },
       {
-        name: '_processChunk',
+        name: '_processChunks',
         docs: '```coffeescript [specscript]\n' +
-          'server._processChunk(\n' +
-          '  chunks Array<Buffer>,\n' +
-          '  websocket ServerWebSocket\n' +
-          ') -> ()\n' +
+          'server._processChunk(websocket ServerWebSocket) -> ()\n' +
           '```',
         mdast: {
           name: {
@@ -10998,22 +10995,22 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: '_processChunk',
+                    value: '_processChunks',
                     position: {
                       start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 14, offset: 13 }
+                      end: { line: 1, column: 15, offset: 14 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 14, offset: 13 }
+                  end: { line: 1, column: 15, offset: 14 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 14, offset: 13 }
+              end: { line: 1, column: 15, offset: 14 }
             }
           },
           docs: {
@@ -11023,19 +11020,16 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: 'server._processChunk(\n' +
-                  '  chunks Array<Buffer>,\n' +
-                  '  websocket ServerWebSocket\n' +
-                  ') -> ()',
+                value: 'server._processChunk(websocket ServerWebSocket) -> ()',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 6, column: 4, offset: 114 }
+                  end: { line: 3, column: 4, offset: 86 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 6, column: 4, offset: 114 }
+              end: { line: 3, column: 4, offset: 86 }
             }
           }
         }
