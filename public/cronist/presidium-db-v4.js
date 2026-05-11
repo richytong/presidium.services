@@ -50,7 +50,7 @@ export default [
       'The disk hash table initially preallocates a block of memory on disk of `(itemSize * initialLength)` bytes as the storage file and a 32-byte block of memory as the header file for database operations. When the disk hash table is resized, the block of memory on disk is reallocated to a new size of `(itemSize * initialLength * numberOfResizes * resizeFactor)` bytes.\n' +
       '\n' +
       '## Byte allocations for an item\n' +
-      'Each item stored on disk is allocated `itemSize` bytes of disk space. The first 17 bytes are reserved for table operations. The remainder is reserved for the key, sort-value, and value of the item.\n' +
+      'Each item stored on disk is allocated `itemSize` bytes of disk space. The first 17 bytes are reserved for table operations. The remainder is reserved for the key and value of the item.\n' +
       '\n' +
       '## Resizing the disk hash table\n' +
       "When an item is inserted into the disk hash table via [set](/docs/DiskHashTable#set), the current capacity ratio of the table is calculated as the sum of the table's count and deleted count divided by the table's length. If the current capacity ratio exceeds the `resizeRatio` (and the `resizeRatio` is not 0), a resize of the table occurs.\n" +
@@ -916,16 +916,16 @@ export default [
               },
               {
                 type: 'text',
-                value: ' bytes of disk space. The first 17 bytes are reserved for table operations. The remainder is reserved for the key, sort-value, and value of the item.',
+                value: ' bytes of disk space. The first 17 bytes are reserved for table operations. The remainder is reserved for the key and value of the item.',
                 position: {
                   start: { line: 50, column: 49, offset: 2206 },
-                  end: { line: 50, column: 198, offset: 2355 }
+                  end: { line: 50, column: 185, offset: 2342 }
                 }
               }
             ],
             position: {
               start: { line: 50, column: 1, offset: 2158 },
-              end: { line: 50, column: 198, offset: 2355 }
+              end: { line: 50, column: 185, offset: 2342 }
             }
           },
           {
@@ -936,14 +936,14 @@ export default [
                 type: 'text',
                 value: 'Resizing the disk hash table',
                 position: {
-                  start: { line: 52, column: 4, offset: 2360 },
-                  end: { line: 52, column: 32, offset: 2388 }
+                  start: { line: 52, column: 4, offset: 2347 },
+                  end: { line: 52, column: 32, offset: 2375 }
                 }
               }
             ],
             position: {
-              start: { line: 52, column: 1, offset: 2357 },
-              end: { line: 52, column: 32, offset: 2388 }
+              start: { line: 52, column: 1, offset: 2344 },
+              end: { line: 52, column: 32, offset: 2375 }
             }
           },
           {
@@ -953,8 +953,8 @@ export default [
                 type: 'text',
                 value: 'When an item is inserted into the disk hash table via ',
                 position: {
-                  start: { line: 53, column: 1, offset: 2389 },
-                  end: { line: 53, column: 55, offset: 2443 }
+                  start: { line: 53, column: 1, offset: 2376 },
+                  end: { line: 53, column: 55, offset: 2430 }
                 }
               },
               {
@@ -966,60 +966,60 @@ export default [
                     type: 'text',
                     value: 'set',
                     position: {
-                      start: { line: 53, column: 56, offset: 2444 },
-                      end: { line: 53, column: 59, offset: 2447 }
+                      start: { line: 53, column: 56, offset: 2431 },
+                      end: { line: 53, column: 59, offset: 2434 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 53, column: 55, offset: 2443 },
-                  end: { line: 53, column: 85, offset: 2473 }
+                  start: { line: 53, column: 55, offset: 2430 },
+                  end: { line: 53, column: 85, offset: 2460 }
                 }
               },
               {
                 type: 'text',
                 value: ", the current capacity ratio of the table is calculated as the sum of the table's count and deleted count divided by the table's length. If the current capacity ratio exceeds the ",
                 position: {
-                  start: { line: 53, column: 85, offset: 2473 },
-                  end: { line: 53, column: 264, offset: 2652 }
+                  start: { line: 53, column: 85, offset: 2460 },
+                  end: { line: 53, column: 264, offset: 2639 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'resizeRatio',
                 position: {
-                  start: { line: 53, column: 264, offset: 2652 },
-                  end: { line: 53, column: 277, offset: 2665 }
+                  start: { line: 53, column: 264, offset: 2639 },
+                  end: { line: 53, column: 277, offset: 2652 }
                 }
               },
               {
                 type: 'text',
                 value: ' (and the ',
                 position: {
-                  start: { line: 53, column: 277, offset: 2665 },
-                  end: { line: 53, column: 287, offset: 2675 }
+                  start: { line: 53, column: 277, offset: 2652 },
+                  end: { line: 53, column: 287, offset: 2662 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'resizeRatio',
                 position: {
-                  start: { line: 53, column: 287, offset: 2675 },
-                  end: { line: 53, column: 300, offset: 2688 }
+                  start: { line: 53, column: 287, offset: 2662 },
+                  end: { line: 53, column: 300, offset: 2675 }
                 }
               },
               {
                 type: 'text',
                 value: ' is not 0), a resize of the table occurs.',
                 position: {
-                  start: { line: 53, column: 300, offset: 2688 },
-                  end: { line: 53, column: 341, offset: 2729 }
+                  start: { line: 53, column: 300, offset: 2675 },
+                  end: { line: 53, column: 341, offset: 2716 }
                 }
               }
             ],
             position: {
-              start: { line: 53, column: 1, offset: 2389 },
-              end: { line: 53, column: 341, offset: 2729 }
+              start: { line: 53, column: 1, offset: 2376 },
+              end: { line: 53, column: 341, offset: 2716 }
             }
           },
           {
@@ -1029,14 +1029,14 @@ export default [
                 type: 'text',
                 value: 'During a table resize, each item of the table is added into a temporary storage file using the new table length calculated from the equation below:',
                 position: {
-                  start: { line: 55, column: 1, offset: 2731 },
-                  end: { line: 55, column: 148, offset: 2878 }
+                  start: { line: 55, column: 1, offset: 2718 },
+                  end: { line: 55, column: 148, offset: 2865 }
                 }
               }
             ],
             position: {
-              start: { line: 55, column: 1, offset: 2731 },
-              end: { line: 55, column: 148, offset: 2878 }
+              start: { line: 55, column: 1, offset: 2718 },
+              end: { line: 55, column: 148, offset: 2865 }
             }
           },
           {
@@ -1045,8 +1045,8 @@ export default [
             meta: null,
             value: 'newTableLength = oldTableLength * resizeFactor',
             position: {
-              start: { line: 57, column: 1, offset: 2880 },
-              end: { line: 59, column: 4, offset: 2934 }
+              start: { line: 57, column: 1, offset: 2867 },
+              end: { line: 59, column: 4, offset: 2921 }
             }
           },
           {
@@ -1056,20 +1056,20 @@ export default [
                 type: 'text',
                 value: 'Once all of the items have been added into the temporary storage file, the temporary storage file is moved to the location of the old storage file to be used as the new storage file.',
                 position: {
-                  start: { line: 61, column: 1, offset: 2936 },
-                  end: { line: 61, column: 183, offset: 3118 }
+                  start: { line: 61, column: 1, offset: 2923 },
+                  end: { line: 61, column: 183, offset: 3105 }
                 }
               }
             ],
             position: {
-              start: { line: 61, column: 1, offset: 2936 },
-              end: { line: 61, column: 183, offset: 3118 }
+              start: { line: 61, column: 1, offset: 2923 },
+              end: { line: 61, column: 183, offset: 3105 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 61, column: 183, offset: 3118 }
+          end: { line: 61, column: 183, offset: 3105 }
         }
       }
     },
