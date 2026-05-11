@@ -18,8 +18,8 @@ export default [
       '  * `options`\n' +
       '    * `storagePath` - `string` - the path to the file used to store the disk hash table data.\n' +
       '    * `headerPath` - `string` - the path to the file used to store header information about the disk hash table.\n' +
-      '    * `initialLength` - `number` - the initial length of the disk hash table. Minimum value 1024, maximum value `Math.floor(9007199254740991 / itemSize)`. Defaults to 1024.\n' +
-      '    * `itemSize` - `number` - the size in bytes of each item (including internal item info, key, and value) stored on disk. Minimum value 1024. Defaults to 524288.\n' +
+      '    * `initialLength` - `number` - the initial length of the disk hash table. Minimum value 1, maximum value `Math.floor(9007199254740991 / itemSize)`. Defaults to 1024.\n' +
+      '    * `itemSize` - `number` - the size in bytes of each item (including internal item info, key, and value) stored on disk. Minimum value 17. Defaults to 524288.\n' +
       '    * `resizeRatio` - `number` - the ratio of number of items to table length at which to resize the disk hash table. Minimum value 0 (no resize), maximum value 1. Defaults to 0.\n' +
       "    * `resizeFactor` - `number` - the factor that is multiplied with the disk hash table's current length to determine the new table length on a resize.\n" +
       '\n' +
@@ -48,6 +48,9 @@ export default [
       '\n' +
       '## Allocation of disk space\n' +
       'The disk hash table initially preallocates a block of memory on disk of `(itemSize * initialLength)` bytes as the storage file and a 32-byte block of memory as the header file for database operations. When the disk hash table is resized, the block of memory on disk is reallocated to a new size of `(itemSize * initialLength * numberOfResizes * resizeFactor)` bytes.\n' +
+      '\n' +
+      '## Byte allocations for an item\n' +
+      'Each item stored on disk is allocated `itemSize` bytes of disk space. The first 17 bytes are reserved for table operations. The remainder is reserved for the key, sort-value, and value of the item.\n' +
       '\n' +
       '## Resizing the disk hash table\n' +
       "When an item is inserted into the disk hash table via [set](/docs/DiskHashTable#set), the current capacity ratio of the table is calculated as the sum of the table's count and deleted count divided by the table's length. If the current capacity ratio exceeds the `resizeRatio` (and the `resizeRatio` is not 0), a resize of the table occurs.\n" +
@@ -316,13 +319,13 @@ export default [
                               },
                               {
                                 type: 'text',
-                                value: ' - the initial length of the disk hash table. Minimum value 1024, maximum value ',
+                                value: ' - the initial length of the disk hash table. Minimum value 1, maximum value ',
                                 position: {
                                   start: { line: 18, column: 33, offset: 569 },
                                   end: {
                                     line: 18,
-                                    column: 113,
-                                    offset: 649
+                                    column: 110,
+                                    offset: 646
                                   }
                                 }
                               },
@@ -332,13 +335,13 @@ export default [
                                 position: {
                                   start: {
                                     line: 18,
-                                    column: 113,
-                                    offset: 649
+                                    column: 110,
+                                    offset: 646
                                   },
                                   end: {
                                     line: 18,
-                                    column: 154,
-                                    offset: 690
+                                    column: 151,
+                                    offset: 687
                                   }
                                 }
                               },
@@ -348,26 +351,26 @@ export default [
                                 position: {
                                   start: {
                                     line: 18,
-                                    column: 154,
-                                    offset: 690
+                                    column: 151,
+                                    offset: 687
                                   },
                                   end: {
                                     line: 18,
-                                    column: 173,
-                                    offset: 709
+                                    column: 170,
+                                    offset: 706
                                   }
                                 }
                               }
                             ],
                             position: {
                               start: { line: 18, column: 7, offset: 543 },
-                              end: { line: 18, column: 173, offset: 709 }
+                              end: { line: 18, column: 170, offset: 706 }
                             }
                           }
                         ],
                         position: {
                           start: { line: 18, column: 5, offset: 541 },
-                          end: { line: 18, column: 173, offset: 709 }
+                          end: { line: 18, column: 170, offset: 706 }
                         }
                       },
                       {
@@ -382,48 +385,48 @@ export default [
                                 type: 'inlineCode',
                                 value: 'itemSize',
                                 position: {
-                                  start: { line: 19, column: 7, offset: 716 },
-                                  end: { line: 19, column: 17, offset: 726 }
+                                  start: { line: 19, column: 7, offset: 713 },
+                                  end: { line: 19, column: 17, offset: 723 }
                                 }
                               },
                               {
                                 type: 'text',
                                 value: ' - ',
                                 position: {
-                                  start: { line: 19, column: 17, offset: 726 },
-                                  end: { line: 19, column: 20, offset: 729 }
+                                  start: { line: 19, column: 17, offset: 723 },
+                                  end: { line: 19, column: 20, offset: 726 }
                                 }
                               },
                               {
                                 type: 'inlineCode',
                                 value: 'number',
                                 position: {
-                                  start: { line: 19, column: 20, offset: 729 },
-                                  end: { line: 19, column: 28, offset: 737 }
+                                  start: { line: 19, column: 20, offset: 726 },
+                                  end: { line: 19, column: 28, offset: 734 }
                                 }
                               },
                               {
                                 type: 'text',
-                                value: ' - the size in bytes of each item (including internal item info, key, and value) stored on disk. Minimum value 1024. Defaults to 524288.',
+                                value: ' - the size in bytes of each item (including internal item info, key, and value) stored on disk. Minimum value 17. Defaults to 524288.',
                                 position: {
-                                  start: { line: 19, column: 28, offset: 737 },
+                                  start: { line: 19, column: 28, offset: 734 },
                                   end: {
                                     line: 19,
-                                    column: 164,
-                                    offset: 873
+                                    column: 162,
+                                    offset: 868
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 19, column: 7, offset: 716 },
-                              end: { line: 19, column: 164, offset: 873 }
+                              start: { line: 19, column: 7, offset: 713 },
+                              end: { line: 19, column: 162, offset: 868 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 19, column: 5, offset: 714 },
-                          end: { line: 19, column: 164, offset: 873 }
+                          start: { line: 19, column: 5, offset: 711 },
+                          end: { line: 19, column: 162, offset: 868 }
                         }
                       },
                       {
@@ -438,48 +441,48 @@ export default [
                                 type: 'inlineCode',
                                 value: 'resizeRatio',
                                 position: {
-                                  start: { line: 20, column: 7, offset: 880 },
-                                  end: { line: 20, column: 20, offset: 893 }
+                                  start: { line: 20, column: 7, offset: 875 },
+                                  end: { line: 20, column: 20, offset: 888 }
                                 }
                               },
                               {
                                 type: 'text',
                                 value: ' - ',
                                 position: {
-                                  start: { line: 20, column: 20, offset: 893 },
-                                  end: { line: 20, column: 23, offset: 896 }
+                                  start: { line: 20, column: 20, offset: 888 },
+                                  end: { line: 20, column: 23, offset: 891 }
                                 }
                               },
                               {
                                 type: 'inlineCode',
                                 value: 'number',
                                 position: {
-                                  start: { line: 20, column: 23, offset: 896 },
-                                  end: { line: 20, column: 31, offset: 904 }
+                                  start: { line: 20, column: 23, offset: 891 },
+                                  end: { line: 20, column: 31, offset: 899 }
                                 }
                               },
                               {
                                 type: 'text',
                                 value: ' - the ratio of number of items to table length at which to resize the disk hash table. Minimum value 0 (no resize), maximum value 1. Defaults to 0.',
                                 position: {
-                                  start: { line: 20, column: 31, offset: 904 },
+                                  start: { line: 20, column: 31, offset: 899 },
                                   end: {
                                     line: 20,
                                     column: 179,
-                                    offset: 1052
+                                    offset: 1047
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 20, column: 7, offset: 880 },
-                              end: { line: 20, column: 179, offset: 1052 }
+                              start: { line: 20, column: 7, offset: 875 },
+                              end: { line: 20, column: 179, offset: 1047 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 20, column: 5, offset: 878 },
-                          end: { line: 20, column: 179, offset: 1052 }
+                          start: { line: 20, column: 5, offset: 873 },
+                          end: { line: 20, column: 179, offset: 1047 }
                         }
                       },
                       {
@@ -494,11 +497,11 @@ export default [
                                 type: 'inlineCode',
                                 value: 'resizeFactor',
                                 position: {
-                                  start: { line: 21, column: 7, offset: 1059 },
+                                  start: { line: 21, column: 7, offset: 1054 },
                                   end: {
                                     line: 21,
                                     column: 21,
-                                    offset: 1073
+                                    offset: 1068
                                   }
                                 }
                               },
@@ -509,12 +512,12 @@ export default [
                                   start: {
                                     line: 21,
                                     column: 21,
-                                    offset: 1073
+                                    offset: 1068
                                   },
                                   end: {
                                     line: 21,
                                     column: 24,
-                                    offset: 1076
+                                    offset: 1071
                                   }
                                 }
                               },
@@ -525,12 +528,12 @@ export default [
                                   start: {
                                     line: 21,
                                     column: 24,
-                                    offset: 1076
+                                    offset: 1071
                                   },
                                   end: {
                                     line: 21,
                                     column: 32,
-                                    offset: 1084
+                                    offset: 1079
                                   }
                                 }
                               },
@@ -541,43 +544,43 @@ export default [
                                   start: {
                                     line: 21,
                                     column: 32,
-                                    offset: 1084
+                                    offset: 1079
                                   },
                                   end: {
                                     line: 21,
                                     column: 153,
-                                    offset: 1205
+                                    offset: 1200
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 21, column: 7, offset: 1059 },
-                              end: { line: 21, column: 153, offset: 1205 }
+                              start: { line: 21, column: 7, offset: 1054 },
+                              end: { line: 21, column: 153, offset: 1200 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 21, column: 5, offset: 1057 },
-                          end: { line: 21, column: 153, offset: 1205 }
+                          start: { line: 21, column: 5, offset: 1052 },
+                          end: { line: 21, column: 153, offset: 1200 }
                         }
                       }
                     ],
                     position: {
                       start: { line: 16, column: 5, offset: 334 },
-                      end: { line: 21, column: 153, offset: 1205 }
+                      end: { line: 21, column: 153, offset: 1200 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 15, column: 3, offset: 318 },
-                  end: { line: 21, column: 153, offset: 1205 }
+                  end: { line: 21, column: 153, offset: 1200 }
                 }
               }
             ],
             position: {
               start: { line: 15, column: 3, offset: 318 },
-              end: { line: 21, column: 153, offset: 1205 }
+              end: { line: 21, column: 153, offset: 1200 }
             }
           },
           {
@@ -587,14 +590,14 @@ export default [
                 type: 'text',
                 value: 'Return:',
                 position: {
-                  start: { line: 23, column: 1, offset: 1207 },
-                  end: { line: 23, column: 8, offset: 1214 }
+                  start: { line: 23, column: 1, offset: 1202 },
+                  end: { line: 23, column: 8, offset: 1209 }
                 }
               }
             ],
             position: {
-              start: { line: 23, column: 1, offset: 1207 },
-              end: { line: 23, column: 8, offset: 1214 }
+              start: { line: 23, column: 1, offset: 1202 },
+              end: { line: 23, column: 8, offset: 1209 }
             }
           },
           {
@@ -615,16 +618,16 @@ export default [
                         type: 'inlineCode',
                         value: 'ht',
                         position: {
-                          start: { line: 24, column: 5, offset: 1219 },
-                          end: { line: 24, column: 9, offset: 1223 }
+                          start: { line: 24, column: 5, offset: 1214 },
+                          end: { line: 24, column: 9, offset: 1218 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - ',
                         position: {
-                          start: { line: 24, column: 9, offset: 1223 },
-                          end: { line: 24, column: 12, offset: 1226 }
+                          start: { line: 24, column: 9, offset: 1218 },
+                          end: { line: 24, column: 12, offset: 1221 }
                         }
                       },
                       {
@@ -636,56 +639,56 @@ export default [
                             type: 'inlineCode',
                             value: 'DiskHashTable',
                             position: {
-                              start: { line: 24, column: 13, offset: 1227 },
-                              end: { line: 24, column: 28, offset: 1242 }
+                              start: { line: 24, column: 13, offset: 1222 },
+                              end: { line: 24, column: 28, offset: 1237 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 24, column: 12, offset: 1226 },
-                          end: { line: 24, column: 50, offset: 1264 }
+                          start: { line: 24, column: 12, offset: 1221 },
+                          end: { line: 24, column: 50, offset: 1259 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - a ',
                         position: {
-                          start: { line: 24, column: 50, offset: 1264 },
-                          end: { line: 24, column: 55, offset: 1269 }
+                          start: { line: 24, column: 50, offset: 1259 },
+                          end: { line: 24, column: 55, offset: 1264 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: 'DiskHashTable',
                         position: {
-                          start: { line: 24, column: 55, offset: 1269 },
-                          end: { line: 24, column: 70, offset: 1284 }
+                          start: { line: 24, column: 55, offset: 1264 },
+                          end: { line: 24, column: 70, offset: 1279 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' instance.',
                         position: {
-                          start: { line: 24, column: 70, offset: 1284 },
-                          end: { line: 24, column: 80, offset: 1294 }
+                          start: { line: 24, column: 70, offset: 1279 },
+                          end: { line: 24, column: 80, offset: 1289 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 24, column: 5, offset: 1219 },
-                      end: { line: 24, column: 80, offset: 1294 }
+                      start: { line: 24, column: 5, offset: 1214 },
+                      end: { line: 24, column: 80, offset: 1289 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 24, column: 3, offset: 1217 },
-                  end: { line: 24, column: 80, offset: 1294 }
+                  start: { line: 24, column: 3, offset: 1212 },
+                  end: { line: 24, column: 80, offset: 1289 }
                 }
               }
             ],
             position: {
-              start: { line: 24, column: 3, offset: 1217 },
-              end: { line: 24, column: 80, offset: 1294 }
+              start: { line: 24, column: 3, offset: 1212 },
+              end: { line: 24, column: 80, offset: 1289 }
             }
           },
           {
@@ -701,8 +704,8 @@ export default [
               '  resizeFactor: 4,\n' +
               '})',
             position: {
-              start: { line: 26, column: 1, offset: 1296 },
-              end: { line: 35, column: 4, offset: 1511 }
+              start: { line: 26, column: 1, offset: 1291 },
+              end: { line: 35, column: 4, offset: 1506 }
             }
           },
           {
@@ -712,14 +715,14 @@ export default [
                 type: 'text',
                 value: 'Supported platforms:',
                 position: {
-                  start: { line: 37, column: 1, offset: 1513 },
-                  end: { line: 37, column: 21, offset: 1533 }
+                  start: { line: 37, column: 1, offset: 1508 },
+                  end: { line: 37, column: 21, offset: 1528 }
                 }
               }
             ],
             position: {
-              start: { line: 37, column: 1, offset: 1513 },
-              end: { line: 37, column: 21, offset: 1533 }
+              start: { line: 37, column: 1, offset: 1508 },
+              end: { line: 37, column: 21, offset: 1528 }
             }
           },
           {
@@ -740,26 +743,26 @@ export default [
                         type: 'inlineCode',
                         value: 'linux64',
                         position: {
-                          start: { line: 38, column: 5, offset: 1538 },
-                          end: { line: 38, column: 14, offset: 1547 }
+                          start: { line: 38, column: 5, offset: 1533 },
+                          end: { line: 38, column: 14, offset: 1542 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 38, column: 5, offset: 1538 },
-                      end: { line: 38, column: 14, offset: 1547 }
+                      start: { line: 38, column: 5, offset: 1533 },
+                      end: { line: 38, column: 14, offset: 1542 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 38, column: 3, offset: 1536 },
-                  end: { line: 38, column: 14, offset: 1547 }
+                  start: { line: 38, column: 3, offset: 1531 },
+                  end: { line: 38, column: 14, offset: 1542 }
                 }
               }
             ],
             position: {
-              start: { line: 38, column: 3, offset: 1536 },
-              end: { line: 38, column: 14, offset: 1547 }
+              start: { line: 38, column: 3, offset: 1531 },
+              end: { line: 38, column: 14, offset: 1542 }
             }
           },
           {
@@ -770,14 +773,14 @@ export default [
                 type: 'text',
                 value: 'Maximum length of the disk hash table',
                 position: {
-                  start: { line: 40, column: 4, offset: 1552 },
-                  end: { line: 40, column: 41, offset: 1589 }
+                  start: { line: 40, column: 4, offset: 1547 },
+                  end: { line: 40, column: 41, offset: 1584 }
                 }
               }
             ],
             position: {
-              start: { line: 40, column: 1, offset: 1549 },
-              end: { line: 40, column: 41, offset: 1589 }
+              start: { line: 40, column: 1, offset: 1544 },
+              end: { line: 40, column: 41, offset: 1584 }
             }
           },
           {
@@ -787,14 +790,14 @@ export default [
                 type: 'text',
                 value: 'The maximum length of the disk sorted hash table is represented by the following equation:',
                 position: {
-                  start: { line: 41, column: 1, offset: 1590 },
-                  end: { line: 41, column: 91, offset: 1680 }
+                  start: { line: 41, column: 1, offset: 1585 },
+                  end: { line: 41, column: 91, offset: 1675 }
                 }
               }
             ],
             position: {
-              start: { line: 41, column: 1, offset: 1590 },
-              end: { line: 41, column: 91, offset: 1680 }
+              start: { line: 41, column: 1, offset: 1585 },
+              end: { line: 41, column: 91, offset: 1675 }
             }
           },
           {
@@ -803,8 +806,8 @@ export default [
             meta: null,
             value: 'Math.floor(9_007_199_254_740_991 / itemSize)',
             position: {
-              start: { line: 42, column: 1, offset: 1681 },
-              end: { line: 44, column: 4, offset: 1733 }
+              start: { line: 42, column: 1, offset: 1676 },
+              end: { line: 44, column: 4, offset: 1728 }
             }
           },
           {
@@ -815,14 +818,14 @@ export default [
                 type: 'text',
                 value: 'Allocation of disk space',
                 position: {
-                  start: { line: 46, column: 4, offset: 1738 },
-                  end: { line: 46, column: 28, offset: 1762 }
+                  start: { line: 46, column: 4, offset: 1733 },
+                  end: { line: 46, column: 28, offset: 1757 }
                 }
               }
             ],
             position: {
-              start: { line: 46, column: 1, offset: 1735 },
-              end: { line: 46, column: 28, offset: 1762 }
+              start: { line: 46, column: 1, offset: 1730 },
+              end: { line: 46, column: 28, offset: 1757 }
             }
           },
           {
@@ -832,46 +835,97 @@ export default [
                 type: 'text',
                 value: 'The disk hash table initially preallocates a block of memory on disk of ',
                 position: {
-                  start: { line: 47, column: 1, offset: 1763 },
-                  end: { line: 47, column: 73, offset: 1835 }
+                  start: { line: 47, column: 1, offset: 1758 },
+                  end: { line: 47, column: 73, offset: 1830 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: '(itemSize * initialLength)',
                 position: {
-                  start: { line: 47, column: 73, offset: 1835 },
-                  end: { line: 47, column: 101, offset: 1863 }
+                  start: { line: 47, column: 73, offset: 1830 },
+                  end: { line: 47, column: 101, offset: 1858 }
                 }
               },
               {
                 type: 'text',
                 value: ' bytes as the storage file and a 32-byte block of memory as the header file for database operations. When the disk hash table is resized, the block of memory on disk is reallocated to a new size of ',
                 position: {
-                  start: { line: 47, column: 101, offset: 1863 },
-                  end: { line: 47, column: 299, offset: 2061 }
+                  start: { line: 47, column: 101, offset: 1858 },
+                  end: { line: 47, column: 299, offset: 2056 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: '(itemSize * initialLength * numberOfResizes * resizeFactor)',
                 position: {
-                  start: { line: 47, column: 299, offset: 2061 },
-                  end: { line: 47, column: 360, offset: 2122 }
+                  start: { line: 47, column: 299, offset: 2056 },
+                  end: { line: 47, column: 360, offset: 2117 }
                 }
               },
               {
                 type: 'text',
                 value: ' bytes.',
                 position: {
-                  start: { line: 47, column: 360, offset: 2122 },
-                  end: { line: 47, column: 367, offset: 2129 }
+                  start: { line: 47, column: 360, offset: 2117 },
+                  end: { line: 47, column: 367, offset: 2124 }
                 }
               }
             ],
             position: {
-              start: { line: 47, column: 1, offset: 1763 },
-              end: { line: 47, column: 367, offset: 2129 }
+              start: { line: 47, column: 1, offset: 1758 },
+              end: { line: 47, column: 367, offset: 2124 }
+            }
+          },
+          {
+            type: 'heading',
+            depth: 2,
+            children: [
+              {
+                type: 'text',
+                value: 'Byte allocations for an item',
+                position: {
+                  start: { line: 49, column: 4, offset: 2129 },
+                  end: { line: 49, column: 32, offset: 2157 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 49, column: 1, offset: 2126 },
+              end: { line: 49, column: 32, offset: 2157 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Each item stored on disk is allocated ',
+                position: {
+                  start: { line: 50, column: 1, offset: 2158 },
+                  end: { line: 50, column: 39, offset: 2196 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'itemSize',
+                position: {
+                  start: { line: 50, column: 39, offset: 2196 },
+                  end: { line: 50, column: 49, offset: 2206 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' bytes of disk space. The first 17 bytes are reserved for table operations. The remainder is reserved for the key, sort-value, and value of the item.',
+                position: {
+                  start: { line: 50, column: 49, offset: 2206 },
+                  end: { line: 50, column: 198, offset: 2355 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 50, column: 1, offset: 2158 },
+              end: { line: 50, column: 198, offset: 2355 }
             }
           },
           {
@@ -882,14 +936,14 @@ export default [
                 type: 'text',
                 value: 'Resizing the disk hash table',
                 position: {
-                  start: { line: 49, column: 4, offset: 2134 },
-                  end: { line: 49, column: 32, offset: 2162 }
+                  start: { line: 52, column: 4, offset: 2360 },
+                  end: { line: 52, column: 32, offset: 2388 }
                 }
               }
             ],
             position: {
-              start: { line: 49, column: 1, offset: 2131 },
-              end: { line: 49, column: 32, offset: 2162 }
+              start: { line: 52, column: 1, offset: 2357 },
+              end: { line: 52, column: 32, offset: 2388 }
             }
           },
           {
@@ -899,8 +953,8 @@ export default [
                 type: 'text',
                 value: 'When an item is inserted into the disk hash table via ',
                 position: {
-                  start: { line: 50, column: 1, offset: 2163 },
-                  end: { line: 50, column: 55, offset: 2217 }
+                  start: { line: 53, column: 1, offset: 2389 },
+                  end: { line: 53, column: 55, offset: 2443 }
                 }
               },
               {
@@ -912,60 +966,60 @@ export default [
                     type: 'text',
                     value: 'set',
                     position: {
-                      start: { line: 50, column: 56, offset: 2218 },
-                      end: { line: 50, column: 59, offset: 2221 }
+                      start: { line: 53, column: 56, offset: 2444 },
+                      end: { line: 53, column: 59, offset: 2447 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 50, column: 55, offset: 2217 },
-                  end: { line: 50, column: 85, offset: 2247 }
+                  start: { line: 53, column: 55, offset: 2443 },
+                  end: { line: 53, column: 85, offset: 2473 }
                 }
               },
               {
                 type: 'text',
                 value: ", the current capacity ratio of the table is calculated as the sum of the table's count and deleted count divided by the table's length. If the current capacity ratio exceeds the ",
                 position: {
-                  start: { line: 50, column: 85, offset: 2247 },
-                  end: { line: 50, column: 264, offset: 2426 }
+                  start: { line: 53, column: 85, offset: 2473 },
+                  end: { line: 53, column: 264, offset: 2652 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'resizeRatio',
                 position: {
-                  start: { line: 50, column: 264, offset: 2426 },
-                  end: { line: 50, column: 277, offset: 2439 }
+                  start: { line: 53, column: 264, offset: 2652 },
+                  end: { line: 53, column: 277, offset: 2665 }
                 }
               },
               {
                 type: 'text',
                 value: ' (and the ',
                 position: {
-                  start: { line: 50, column: 277, offset: 2439 },
-                  end: { line: 50, column: 287, offset: 2449 }
+                  start: { line: 53, column: 277, offset: 2665 },
+                  end: { line: 53, column: 287, offset: 2675 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'resizeRatio',
                 position: {
-                  start: { line: 50, column: 287, offset: 2449 },
-                  end: { line: 50, column: 300, offset: 2462 }
+                  start: { line: 53, column: 287, offset: 2675 },
+                  end: { line: 53, column: 300, offset: 2688 }
                 }
               },
               {
                 type: 'text',
                 value: ' is not 0), a resize of the table occurs.',
                 position: {
-                  start: { line: 50, column: 300, offset: 2462 },
-                  end: { line: 50, column: 341, offset: 2503 }
+                  start: { line: 53, column: 300, offset: 2688 },
+                  end: { line: 53, column: 341, offset: 2729 }
                 }
               }
             ],
             position: {
-              start: { line: 50, column: 1, offset: 2163 },
-              end: { line: 50, column: 341, offset: 2503 }
+              start: { line: 53, column: 1, offset: 2389 },
+              end: { line: 53, column: 341, offset: 2729 }
             }
           },
           {
@@ -975,14 +1029,14 @@ export default [
                 type: 'text',
                 value: 'During a table resize, each item of the table is added into a temporary storage file using the new table length calculated from the equation below:',
                 position: {
-                  start: { line: 52, column: 1, offset: 2505 },
-                  end: { line: 52, column: 148, offset: 2652 }
+                  start: { line: 55, column: 1, offset: 2731 },
+                  end: { line: 55, column: 148, offset: 2878 }
                 }
               }
             ],
             position: {
-              start: { line: 52, column: 1, offset: 2505 },
-              end: { line: 52, column: 148, offset: 2652 }
+              start: { line: 55, column: 1, offset: 2731 },
+              end: { line: 55, column: 148, offset: 2878 }
             }
           },
           {
@@ -991,8 +1045,8 @@ export default [
             meta: null,
             value: 'newTableLength = oldTableLength * resizeFactor',
             position: {
-              start: { line: 54, column: 1, offset: 2654 },
-              end: { line: 56, column: 4, offset: 2708 }
+              start: { line: 57, column: 1, offset: 2880 },
+              end: { line: 59, column: 4, offset: 2934 }
             }
           },
           {
@@ -1002,20 +1056,20 @@ export default [
                 type: 'text',
                 value: 'Once all of the items have been added into the temporary storage file, the temporary storage file is moved to the location of the old storage file to be used as the new storage file.',
                 position: {
-                  start: { line: 58, column: 1, offset: 2710 },
-                  end: { line: 58, column: 183, offset: 2892 }
+                  start: { line: 61, column: 1, offset: 2936 },
+                  end: { line: 61, column: 183, offset: 3118 }
                 }
               }
             ],
             position: {
-              start: { line: 58, column: 1, offset: 2710 },
-              end: { line: 58, column: 183, offset: 2892 }
+              start: { line: 61, column: 1, offset: 2936 },
+              end: { line: 61, column: 183, offset: 3118 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 58, column: 183, offset: 2892 }
+          end: { line: 61, column: 183, offset: 3118 }
         }
       }
     },
@@ -3761,8 +3815,8 @@ export default [
       '  * `options`\n' +
       '    * `storagePath` - `string` - the path to the file used to store the disk sorted hash table data.\n' +
       '    * `headerPath` - `string` - the path to the file used to store header information about the disk sorted hash table.\n' +
-      '    * `initialLength` - `number` - the initial length of the disk sorted hash table. Minimum value 1024, maximum value `Math.floor(9007199254740991 / itemSize)`. Defaults to 1024.\n' +
-      '    * `itemSize` - `number` - the size in bytes of each item (including internal item info, key, value, and sortValue) stored on disk. Minimum value 1024. Defaults to 524288.\n' +
+      '    * `initialLength` - `number` - the initial length of the disk sorted hash table. Minimum value 1, maximum value `Math.floor(9007199254740991 / itemSize)`. Defaults to 1024.\n' +
+      '    * `itemSize` - `number` - the size in bytes of each item (including internal item info, key, value, and sortValue) stored on disk. Minimum value 54. Defaults to 524288.\n' +
       "    * `sortValueType` - `'string'|'number'` - the type of the disk sorted hash table sort-values.\n" +
       '    * `resizeRatio` - `number` - the ratio of number of items to table length at which to resize the disk sorted hash table. Minimum value 0 (no resize), maximum value 1. Defaults to 0.\n' +
       "    * `resizeFactor` - `number` - the factor that is multiplied with the disk sorted hash table's current length to determine the new table length on a resize.\n" +
@@ -3799,6 +3853,9 @@ export default [
       '\n' +
       '## Allocation of disk space\n' +
       'The disk sorted hash table initially preallocates a block of memory on disk of `(itemSize * initialLength)` bytes as the storage file and a 48-byte block of memory as the header file for database operations. When the disk sorted hash table is resized, the block of memory on disk is reallocated to a new size of `(itemSize * initialLength * numberOfResizes * resizeFactor)` bytes.\n' +
+      '\n' +
+      '## Byte allocations for an item\n' +
+      'Each item stored on disk is allocated `itemSize` bytes of disk space. The first 53 bytes are reserved for table operations. The remainder is reserved for the key, sort-value, and value of the item.\n' +
       '\n' +
       '## Resizing the disk sorted hash table\n' +
       "When an item is inserted into the disk sorted hash table via [set](/docs/DiskSortedHashTable#set), the current capacity ratio of the table is calculated as the sum of the table's count and deleted count divided by the table's length. If the current capacity ratio exceeds the `resizeRatio` (and the `resizeRatio` is not 0), a resize of the table occurs.\n" +
@@ -4076,13 +4133,13 @@ export default [
                               },
                               {
                                 type: 'text',
-                                value: ' - the initial length of the disk sorted hash table. Minimum value 1024, maximum value ',
+                                value: ' - the initial length of the disk sorted hash table. Minimum value 1, maximum value ',
                                 position: {
                                   start: { line: 20, column: 33, offset: 668 },
                                   end: {
                                     line: 20,
-                                    column: 120,
-                                    offset: 755
+                                    column: 117,
+                                    offset: 752
                                   }
                                 }
                               },
@@ -4092,13 +4149,13 @@ export default [
                                 position: {
                                   start: {
                                     line: 20,
-                                    column: 120,
-                                    offset: 755
+                                    column: 117,
+                                    offset: 752
                                   },
                                   end: {
                                     line: 20,
-                                    column: 161,
-                                    offset: 796
+                                    column: 158,
+                                    offset: 793
                                   }
                                 }
                               },
@@ -4108,26 +4165,26 @@ export default [
                                 position: {
                                   start: {
                                     line: 20,
-                                    column: 161,
-                                    offset: 796
+                                    column: 158,
+                                    offset: 793
                                   },
                                   end: {
                                     line: 20,
-                                    column: 180,
-                                    offset: 815
+                                    column: 177,
+                                    offset: 812
                                   }
                                 }
                               }
                             ],
                             position: {
                               start: { line: 20, column: 7, offset: 642 },
-                              end: { line: 20, column: 180, offset: 815 }
+                              end: { line: 20, column: 177, offset: 812 }
                             }
                           }
                         ],
                         position: {
                           start: { line: 20, column: 5, offset: 640 },
-                          end: { line: 20, column: 180, offset: 815 }
+                          end: { line: 20, column: 177, offset: 812 }
                         }
                       },
                       {
@@ -4142,48 +4199,48 @@ export default [
                                 type: 'inlineCode',
                                 value: 'itemSize',
                                 position: {
-                                  start: { line: 21, column: 7, offset: 822 },
-                                  end: { line: 21, column: 17, offset: 832 }
+                                  start: { line: 21, column: 7, offset: 819 },
+                                  end: { line: 21, column: 17, offset: 829 }
                                 }
                               },
                               {
                                 type: 'text',
                                 value: ' - ',
                                 position: {
-                                  start: { line: 21, column: 17, offset: 832 },
-                                  end: { line: 21, column: 20, offset: 835 }
+                                  start: { line: 21, column: 17, offset: 829 },
+                                  end: { line: 21, column: 20, offset: 832 }
                                 }
                               },
                               {
                                 type: 'inlineCode',
                                 value: 'number',
                                 position: {
-                                  start: { line: 21, column: 20, offset: 835 },
-                                  end: { line: 21, column: 28, offset: 843 }
+                                  start: { line: 21, column: 20, offset: 832 },
+                                  end: { line: 21, column: 28, offset: 840 }
                                 }
                               },
                               {
                                 type: 'text',
-                                value: ' - the size in bytes of each item (including internal item info, key, value, and sortValue) stored on disk. Minimum value 1024. Defaults to 524288.',
+                                value: ' - the size in bytes of each item (including internal item info, key, value, and sortValue) stored on disk. Minimum value 54. Defaults to 524288.',
                                 position: {
-                                  start: { line: 21, column: 28, offset: 843 },
+                                  start: { line: 21, column: 28, offset: 840 },
                                   end: {
                                     line: 21,
-                                    column: 175,
-                                    offset: 990
+                                    column: 173,
+                                    offset: 985
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 21, column: 7, offset: 822 },
-                              end: { line: 21, column: 175, offset: 990 }
+                              start: { line: 21, column: 7, offset: 819 },
+                              end: { line: 21, column: 173, offset: 985 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 21, column: 5, offset: 820 },
-                          end: { line: 21, column: 175, offset: 990 }
+                          start: { line: 21, column: 5, offset: 817 },
+                          end: { line: 21, column: 173, offset: 985 }
                         }
                       },
                       {
@@ -4198,11 +4255,11 @@ export default [
                                 type: 'inlineCode',
                                 value: 'sortValueType',
                                 position: {
-                                  start: { line: 22, column: 7, offset: 997 },
+                                  start: { line: 22, column: 7, offset: 992 },
                                   end: {
                                     line: 22,
                                     column: 22,
-                                    offset: 1012
+                                    offset: 1007
                                   }
                                 }
                               },
@@ -4213,12 +4270,12 @@ export default [
                                   start: {
                                     line: 22,
                                     column: 22,
-                                    offset: 1012
+                                    offset: 1007
                                   },
                                   end: {
                                     line: 22,
                                     column: 25,
-                                    offset: 1015
+                                    offset: 1010
                                   }
                                 }
                               },
@@ -4229,12 +4286,12 @@ export default [
                                   start: {
                                     line: 22,
                                     column: 25,
-                                    offset: 1015
+                                    offset: 1010
                                   },
                                   end: {
                                     line: 22,
                                     column: 44,
-                                    offset: 1034
+                                    offset: 1029
                                   }
                                 }
                               },
@@ -4245,25 +4302,25 @@ export default [
                                   start: {
                                     line: 22,
                                     column: 44,
-                                    offset: 1034
+                                    offset: 1029
                                   },
                                   end: {
                                     line: 22,
                                     column: 98,
-                                    offset: 1088
+                                    offset: 1083
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 22, column: 7, offset: 997 },
-                              end: { line: 22, column: 98, offset: 1088 }
+                              start: { line: 22, column: 7, offset: 992 },
+                              end: { line: 22, column: 98, offset: 1083 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 22, column: 5, offset: 995 },
-                          end: { line: 22, column: 98, offset: 1088 }
+                          start: { line: 22, column: 5, offset: 990 },
+                          end: { line: 22, column: 98, offset: 1083 }
                         }
                       },
                       {
@@ -4278,11 +4335,11 @@ export default [
                                 type: 'inlineCode',
                                 value: 'resizeRatio',
                                 position: {
-                                  start: { line: 23, column: 7, offset: 1095 },
+                                  start: { line: 23, column: 7, offset: 1090 },
                                   end: {
                                     line: 23,
                                     column: 20,
-                                    offset: 1108
+                                    offset: 1103
                                   }
                                 }
                               },
@@ -4293,12 +4350,12 @@ export default [
                                   start: {
                                     line: 23,
                                     column: 20,
-                                    offset: 1108
+                                    offset: 1103
                                   },
                                   end: {
                                     line: 23,
                                     column: 23,
-                                    offset: 1111
+                                    offset: 1106
                                   }
                                 }
                               },
@@ -4309,12 +4366,12 @@ export default [
                                   start: {
                                     line: 23,
                                     column: 23,
-                                    offset: 1111
+                                    offset: 1106
                                   },
                                   end: {
                                     line: 23,
                                     column: 31,
-                                    offset: 1119
+                                    offset: 1114
                                   }
                                 }
                               },
@@ -4325,25 +4382,25 @@ export default [
                                   start: {
                                     line: 23,
                                     column: 31,
-                                    offset: 1119
+                                    offset: 1114
                                   },
                                   end: {
                                     line: 23,
                                     column: 186,
-                                    offset: 1274
+                                    offset: 1269
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 23, column: 7, offset: 1095 },
-                              end: { line: 23, column: 186, offset: 1274 }
+                              start: { line: 23, column: 7, offset: 1090 },
+                              end: { line: 23, column: 186, offset: 1269 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 23, column: 5, offset: 1093 },
-                          end: { line: 23, column: 186, offset: 1274 }
+                          start: { line: 23, column: 5, offset: 1088 },
+                          end: { line: 23, column: 186, offset: 1269 }
                         }
                       },
                       {
@@ -4358,11 +4415,11 @@ export default [
                                 type: 'inlineCode',
                                 value: 'resizeFactor',
                                 position: {
-                                  start: { line: 24, column: 7, offset: 1281 },
+                                  start: { line: 24, column: 7, offset: 1276 },
                                   end: {
                                     line: 24,
                                     column: 21,
-                                    offset: 1295
+                                    offset: 1290
                                   }
                                 }
                               },
@@ -4373,12 +4430,12 @@ export default [
                                   start: {
                                     line: 24,
                                     column: 21,
-                                    offset: 1295
+                                    offset: 1290
                                   },
                                   end: {
                                     line: 24,
                                     column: 24,
-                                    offset: 1298
+                                    offset: 1293
                                   }
                                 }
                               },
@@ -4389,12 +4446,12 @@ export default [
                                   start: {
                                     line: 24,
                                     column: 24,
-                                    offset: 1298
+                                    offset: 1293
                                   },
                                   end: {
                                     line: 24,
                                     column: 32,
-                                    offset: 1306
+                                    offset: 1301
                                   }
                                 }
                               },
@@ -4405,25 +4462,25 @@ export default [
                                   start: {
                                     line: 24,
                                     column: 32,
-                                    offset: 1306
+                                    offset: 1301
                                   },
                                   end: {
                                     line: 24,
                                     column: 160,
-                                    offset: 1434
+                                    offset: 1429
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 24, column: 7, offset: 1281 },
-                              end: { line: 24, column: 160, offset: 1434 }
+                              start: { line: 24, column: 7, offset: 1276 },
+                              end: { line: 24, column: 160, offset: 1429 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 24, column: 5, offset: 1279 },
-                          end: { line: 24, column: 160, offset: 1434 }
+                          start: { line: 24, column: 5, offset: 1274 },
+                          end: { line: 24, column: 160, offset: 1429 }
                         }
                       },
                       {
@@ -4438,11 +4495,11 @@ export default [
                                 type: 'inlineCode',
                                 value: 'degree',
                                 position: {
-                                  start: { line: 25, column: 7, offset: 1441 },
+                                  start: { line: 25, column: 7, offset: 1436 },
                                   end: {
                                     line: 25,
                                     column: 15,
-                                    offset: 1449
+                                    offset: 1444
                                   }
                                 }
                               },
@@ -4453,12 +4510,12 @@ export default [
                                   start: {
                                     line: 25,
                                     column: 15,
-                                    offset: 1449
+                                    offset: 1444
                                   },
                                   end: {
                                     line: 25,
                                     column: 18,
-                                    offset: 1452
+                                    offset: 1447
                                   }
                                 }
                               },
@@ -4469,12 +4526,12 @@ export default [
                                   start: {
                                     line: 25,
                                     column: 18,
-                                    offset: 1452
+                                    offset: 1447
                                   },
                                   end: {
                                     line: 25,
                                     column: 26,
-                                    offset: 1460
+                                    offset: 1455
                                   }
                                 }
                               },
@@ -4485,19 +4542,19 @@ export default [
                                   start: {
                                     line: 25,
                                     column: 26,
-                                    offset: 1460
+                                    offset: 1455
                                   },
                                   end: {
                                     line: 25,
                                     column: 181,
-                                    offset: 1615
+                                    offset: 1610
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 25, column: 7, offset: 1441 },
-                              end: { line: 25, column: 181, offset: 1615 }
+                              start: { line: 25, column: 7, offset: 1436 },
+                              end: { line: 25, column: 181, offset: 1610 }
                             }
                           },
                           {
@@ -4521,12 +4578,12 @@ export default [
                                           start: {
                                             line: 26,
                                             column: 9,
-                                            offset: 1624
+                                            offset: 1619
                                           },
                                           end: {
                                             line: 26,
                                             column: 50,
-                                            offset: 1665
+                                            offset: 1660
                                           }
                                         }
                                       },
@@ -4537,12 +4594,12 @@ export default [
                                           start: {
                                             line: 26,
                                             column: 50,
-                                            offset: 1665
+                                            offset: 1660
                                           },
                                           end: {
                                             line: 26,
                                             column: 62,
-                                            offset: 1677
+                                            offset: 1672
                                           }
                                         }
                                       }
@@ -4551,22 +4608,22 @@ export default [
                                       start: {
                                         line: 26,
                                         column: 9,
-                                        offset: 1624
+                                        offset: 1619
                                       },
                                       end: {
                                         line: 26,
                                         column: 62,
-                                        offset: 1677
+                                        offset: 1672
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 26, column: 7, offset: 1622 },
+                                  start: { line: 26, column: 7, offset: 1617 },
                                   end: {
                                     line: 26,
                                     column: 62,
-                                    offset: 1677
+                                    offset: 1672
                                   }
                                 }
                               },
@@ -4585,12 +4642,12 @@ export default [
                                           start: {
                                             line: 27,
                                             column: 9,
-                                            offset: 1686
+                                            offset: 1681
                                           },
                                           end: {
                                             line: 27,
                                             column: 50,
-                                            offset: 1727
+                                            offset: 1722
                                           }
                                         }
                                       },
@@ -4601,12 +4658,12 @@ export default [
                                           start: {
                                             line: 27,
                                             column: 50,
-                                            offset: 1727
+                                            offset: 1722
                                           },
                                           end: {
                                             line: 27,
                                             column: 68,
-                                            offset: 1745
+                                            offset: 1740
                                           }
                                         }
                                       }
@@ -4615,22 +4672,22 @@ export default [
                                       start: {
                                         line: 27,
                                         column: 9,
-                                        offset: 1686
+                                        offset: 1681
                                       },
                                       end: {
                                         line: 27,
                                         column: 68,
-                                        offset: 1745
+                                        offset: 1740
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 27, column: 7, offset: 1684 },
+                                  start: { line: 27, column: 7, offset: 1679 },
                                   end: {
                                     line: 27,
                                     column: 68,
-                                    offset: 1745
+                                    offset: 1740
                                   }
                                 }
                               },
@@ -4649,12 +4706,12 @@ export default [
                                           start: {
                                             line: 28,
                                             column: 9,
-                                            offset: 1754
+                                            offset: 1749
                                           },
                                           end: {
                                             line: 28,
                                             column: 53,
-                                            offset: 1798
+                                            offset: 1793
                                           }
                                         }
                                       },
@@ -4665,12 +4722,12 @@ export default [
                                           start: {
                                             line: 28,
                                             column: 53,
-                                            offset: 1798
+                                            offset: 1793
                                           },
                                           end: {
                                             line: 28,
                                             column: 61,
-                                            offset: 1806
+                                            offset: 1801
                                           }
                                         }
                                       }
@@ -4679,22 +4736,22 @@ export default [
                                       start: {
                                         line: 28,
                                         column: 9,
-                                        offset: 1754
+                                        offset: 1749
                                       },
                                       end: {
                                         line: 28,
                                         column: 61,
-                                        offset: 1806
+                                        offset: 1801
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 28, column: 7, offset: 1752 },
+                                  start: { line: 28, column: 7, offset: 1747 },
                                   end: {
                                     line: 28,
                                     column: 61,
-                                    offset: 1806
+                                    offset: 1801
                                   }
                                 }
                               },
@@ -4713,12 +4770,12 @@ export default [
                                           start: {
                                             line: 29,
                                             column: 9,
-                                            offset: 1815
+                                            offset: 1810
                                           },
                                           end: {
                                             line: 29,
                                             column: 53,
-                                            offset: 1859
+                                            offset: 1854
                                           }
                                         }
                                       },
@@ -4729,12 +4786,12 @@ export default [
                                           start: {
                                             line: 29,
                                             column: 53,
-                                            offset: 1859
+                                            offset: 1854
                                           },
                                           end: {
                                             line: 29,
                                             column: 65,
-                                            offset: 1871
+                                            offset: 1866
                                           }
                                         }
                                       }
@@ -4743,53 +4800,53 @@ export default [
                                       start: {
                                         line: 29,
                                         column: 9,
-                                        offset: 1815
+                                        offset: 1810
                                       },
                                       end: {
                                         line: 29,
                                         column: 65,
-                                        offset: 1871
+                                        offset: 1866
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 29, column: 7, offset: 1813 },
+                                  start: { line: 29, column: 7, offset: 1808 },
                                   end: {
                                     line: 29,
                                     column: 65,
-                                    offset: 1871
+                                    offset: 1866
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 26, column: 7, offset: 1622 },
-                              end: { line: 29, column: 65, offset: 1871 }
+                              start: { line: 26, column: 7, offset: 1617 },
+                              end: { line: 29, column: 65, offset: 1866 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 25, column: 5, offset: 1439 },
-                          end: { line: 29, column: 65, offset: 1871 }
+                          start: { line: 25, column: 5, offset: 1434 },
+                          end: { line: 29, column: 65, offset: 1866 }
                         }
                       }
                     ],
                     position: {
                       start: { line: 18, column: 5, offset: 419 },
-                      end: { line: 29, column: 65, offset: 1871 }
+                      end: { line: 29, column: 65, offset: 1866 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 17, column: 3, offset: 403 },
-                  end: { line: 29, column: 65, offset: 1871 }
+                  end: { line: 29, column: 65, offset: 1866 }
                 }
               }
             ],
             position: {
               start: { line: 17, column: 3, offset: 403 },
-              end: { line: 29, column: 65, offset: 1871 }
+              end: { line: 29, column: 65, offset: 1866 }
             }
           },
           {
@@ -4799,14 +4856,14 @@ export default [
                 type: 'text',
                 value: 'Return:',
                 position: {
-                  start: { line: 31, column: 1, offset: 1873 },
-                  end: { line: 31, column: 8, offset: 1880 }
+                  start: { line: 31, column: 1, offset: 1868 },
+                  end: { line: 31, column: 8, offset: 1875 }
                 }
               }
             ],
             position: {
-              start: { line: 31, column: 1, offset: 1873 },
-              end: { line: 31, column: 8, offset: 1880 }
+              start: { line: 31, column: 1, offset: 1868 },
+              end: { line: 31, column: 8, offset: 1875 }
             }
           },
           {
@@ -4827,16 +4884,16 @@ export default [
                         type: 'inlineCode',
                         value: 'sortedHt',
                         position: {
-                          start: { line: 32, column: 5, offset: 1885 },
-                          end: { line: 32, column: 15, offset: 1895 }
+                          start: { line: 32, column: 5, offset: 1880 },
+                          end: { line: 32, column: 15, offset: 1890 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - ',
                         position: {
-                          start: { line: 32, column: 15, offset: 1895 },
-                          end: { line: 32, column: 18, offset: 1898 }
+                          start: { line: 32, column: 15, offset: 1890 },
+                          end: { line: 32, column: 18, offset: 1893 }
                         }
                       },
                       {
@@ -4848,56 +4905,56 @@ export default [
                             type: 'inlineCode',
                             value: 'DiskSortedHashTable',
                             position: {
-                              start: { line: 32, column: 19, offset: 1899 },
-                              end: { line: 32, column: 40, offset: 1920 }
+                              start: { line: 32, column: 19, offset: 1894 },
+                              end: { line: 32, column: 40, offset: 1915 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 32, column: 18, offset: 1898 },
-                          end: { line: 32, column: 68, offset: 1948 }
+                          start: { line: 32, column: 18, offset: 1893 },
+                          end: { line: 32, column: 68, offset: 1943 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - a ',
                         position: {
-                          start: { line: 32, column: 68, offset: 1948 },
-                          end: { line: 32, column: 73, offset: 1953 }
+                          start: { line: 32, column: 68, offset: 1943 },
+                          end: { line: 32, column: 73, offset: 1948 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: 'DiskSortedHashTable',
                         position: {
-                          start: { line: 32, column: 73, offset: 1953 },
-                          end: { line: 32, column: 94, offset: 1974 }
+                          start: { line: 32, column: 73, offset: 1948 },
+                          end: { line: 32, column: 94, offset: 1969 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' instance.',
                         position: {
-                          start: { line: 32, column: 94, offset: 1974 },
-                          end: { line: 32, column: 104, offset: 1984 }
+                          start: { line: 32, column: 94, offset: 1969 },
+                          end: { line: 32, column: 104, offset: 1979 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 32, column: 5, offset: 1885 },
-                      end: { line: 32, column: 104, offset: 1984 }
+                      start: { line: 32, column: 5, offset: 1880 },
+                      end: { line: 32, column: 104, offset: 1979 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 32, column: 3, offset: 1883 },
-                  end: { line: 32, column: 104, offset: 1984 }
+                  start: { line: 32, column: 3, offset: 1878 },
+                  end: { line: 32, column: 104, offset: 1979 }
                 }
               }
             ],
             position: {
-              start: { line: 32, column: 3, offset: 1883 },
-              end: { line: 32, column: 104, offset: 1984 }
+              start: { line: 32, column: 3, offset: 1878 },
+              end: { line: 32, column: 104, offset: 1979 }
             }
           },
           {
@@ -4915,8 +4972,8 @@ export default [
               '  degree: 2,\n' +
               '})',
             position: {
-              start: { line: 34, column: 1, offset: 1986 },
-              end: { line: 45, column: 4, offset: 2256 }
+              start: { line: 34, column: 1, offset: 1981 },
+              end: { line: 45, column: 4, offset: 2251 }
             }
           },
           {
@@ -4926,14 +4983,14 @@ export default [
                 type: 'text',
                 value: 'Supported platforms:',
                 position: {
-                  start: { line: 47, column: 1, offset: 2258 },
-                  end: { line: 47, column: 21, offset: 2278 }
+                  start: { line: 47, column: 1, offset: 2253 },
+                  end: { line: 47, column: 21, offset: 2273 }
                 }
               }
             ],
             position: {
-              start: { line: 47, column: 1, offset: 2258 },
-              end: { line: 47, column: 21, offset: 2278 }
+              start: { line: 47, column: 1, offset: 2253 },
+              end: { line: 47, column: 21, offset: 2273 }
             }
           },
           {
@@ -4954,26 +5011,26 @@ export default [
                         type: 'inlineCode',
                         value: 'linux64',
                         position: {
-                          start: { line: 48, column: 5, offset: 2283 },
-                          end: { line: 48, column: 14, offset: 2292 }
+                          start: { line: 48, column: 5, offset: 2278 },
+                          end: { line: 48, column: 14, offset: 2287 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 48, column: 5, offset: 2283 },
-                      end: { line: 48, column: 14, offset: 2292 }
+                      start: { line: 48, column: 5, offset: 2278 },
+                      end: { line: 48, column: 14, offset: 2287 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 48, column: 3, offset: 2281 },
-                  end: { line: 48, column: 14, offset: 2292 }
+                  start: { line: 48, column: 3, offset: 2276 },
+                  end: { line: 48, column: 14, offset: 2287 }
                 }
               }
             ],
             position: {
-              start: { line: 48, column: 3, offset: 2281 },
-              end: { line: 48, column: 14, offset: 2292 }
+              start: { line: 48, column: 3, offset: 2276 },
+              end: { line: 48, column: 14, offset: 2287 }
             }
           },
           {
@@ -4984,14 +5041,14 @@ export default [
                 type: 'text',
                 value: 'Maximum length of the disk sorted hash table',
                 position: {
-                  start: { line: 50, column: 4, offset: 2297 },
-                  end: { line: 50, column: 48, offset: 2341 }
+                  start: { line: 50, column: 4, offset: 2292 },
+                  end: { line: 50, column: 48, offset: 2336 }
                 }
               }
             ],
             position: {
-              start: { line: 50, column: 1, offset: 2294 },
-              end: { line: 50, column: 48, offset: 2341 }
+              start: { line: 50, column: 1, offset: 2289 },
+              end: { line: 50, column: 48, offset: 2336 }
             }
           },
           {
@@ -5001,14 +5058,14 @@ export default [
                 type: 'text',
                 value: 'The maximum length of the disk sorted hash table is represented by the following equation:',
                 position: {
-                  start: { line: 51, column: 1, offset: 2342 },
-                  end: { line: 51, column: 91, offset: 2432 }
+                  start: { line: 51, column: 1, offset: 2337 },
+                  end: { line: 51, column: 91, offset: 2427 }
                 }
               }
             ],
             position: {
-              start: { line: 51, column: 1, offset: 2342 },
-              end: { line: 51, column: 91, offset: 2432 }
+              start: { line: 51, column: 1, offset: 2337 },
+              end: { line: 51, column: 91, offset: 2427 }
             }
           },
           {
@@ -5017,8 +5074,8 @@ export default [
             meta: null,
             value: 'Math.floor(9_007_199_254_740_991 / itemSize)',
             position: {
-              start: { line: 52, column: 1, offset: 2433 },
-              end: { line: 54, column: 4, offset: 2485 }
+              start: { line: 52, column: 1, offset: 2428 },
+              end: { line: 54, column: 4, offset: 2480 }
             }
           },
           {
@@ -5029,14 +5086,14 @@ export default [
                 type: 'text',
                 value: 'Allocation of disk space',
                 position: {
-                  start: { line: 56, column: 4, offset: 2490 },
-                  end: { line: 56, column: 28, offset: 2514 }
+                  start: { line: 56, column: 4, offset: 2485 },
+                  end: { line: 56, column: 28, offset: 2509 }
                 }
               }
             ],
             position: {
-              start: { line: 56, column: 1, offset: 2487 },
-              end: { line: 56, column: 28, offset: 2514 }
+              start: { line: 56, column: 1, offset: 2482 },
+              end: { line: 56, column: 28, offset: 2509 }
             }
           },
           {
@@ -5046,46 +5103,97 @@ export default [
                 type: 'text',
                 value: 'The disk sorted hash table initially preallocates a block of memory on disk of ',
                 position: {
-                  start: { line: 57, column: 1, offset: 2515 },
-                  end: { line: 57, column: 80, offset: 2594 }
+                  start: { line: 57, column: 1, offset: 2510 },
+                  end: { line: 57, column: 80, offset: 2589 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: '(itemSize * initialLength)',
                 position: {
-                  start: { line: 57, column: 80, offset: 2594 },
-                  end: { line: 57, column: 108, offset: 2622 }
+                  start: { line: 57, column: 80, offset: 2589 },
+                  end: { line: 57, column: 108, offset: 2617 }
                 }
               },
               {
                 type: 'text',
                 value: ' bytes as the storage file and a 48-byte block of memory as the header file for database operations. When the disk sorted hash table is resized, the block of memory on disk is reallocated to a new size of ',
                 position: {
-                  start: { line: 57, column: 108, offset: 2622 },
-                  end: { line: 57, column: 313, offset: 2827 }
+                  start: { line: 57, column: 108, offset: 2617 },
+                  end: { line: 57, column: 313, offset: 2822 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: '(itemSize * initialLength * numberOfResizes * resizeFactor)',
                 position: {
-                  start: { line: 57, column: 313, offset: 2827 },
-                  end: { line: 57, column: 374, offset: 2888 }
+                  start: { line: 57, column: 313, offset: 2822 },
+                  end: { line: 57, column: 374, offset: 2883 }
                 }
               },
               {
                 type: 'text',
                 value: ' bytes.',
                 position: {
-                  start: { line: 57, column: 374, offset: 2888 },
-                  end: { line: 57, column: 381, offset: 2895 }
+                  start: { line: 57, column: 374, offset: 2883 },
+                  end: { line: 57, column: 381, offset: 2890 }
                 }
               }
             ],
             position: {
-              start: { line: 57, column: 1, offset: 2515 },
-              end: { line: 57, column: 381, offset: 2895 }
+              start: { line: 57, column: 1, offset: 2510 },
+              end: { line: 57, column: 381, offset: 2890 }
+            }
+          },
+          {
+            type: 'heading',
+            depth: 2,
+            children: [
+              {
+                type: 'text',
+                value: 'Byte allocations for an item',
+                position: {
+                  start: { line: 59, column: 4, offset: 2895 },
+                  end: { line: 59, column: 32, offset: 2923 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 59, column: 1, offset: 2892 },
+              end: { line: 59, column: 32, offset: 2923 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Each item stored on disk is allocated ',
+                position: {
+                  start: { line: 60, column: 1, offset: 2924 },
+                  end: { line: 60, column: 39, offset: 2962 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: 'itemSize',
+                position: {
+                  start: { line: 60, column: 39, offset: 2962 },
+                  end: { line: 60, column: 49, offset: 2972 }
+                }
+              },
+              {
+                type: 'text',
+                value: ' bytes of disk space. The first 53 bytes are reserved for table operations. The remainder is reserved for the key, sort-value, and value of the item.',
+                position: {
+                  start: { line: 60, column: 49, offset: 2972 },
+                  end: { line: 60, column: 198, offset: 3121 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 60, column: 1, offset: 2924 },
+              end: { line: 60, column: 198, offset: 3121 }
             }
           },
           {
@@ -5096,14 +5204,14 @@ export default [
                 type: 'text',
                 value: 'Resizing the disk sorted hash table',
                 position: {
-                  start: { line: 59, column: 4, offset: 2900 },
-                  end: { line: 59, column: 39, offset: 2935 }
+                  start: { line: 62, column: 4, offset: 3126 },
+                  end: { line: 62, column: 39, offset: 3161 }
                 }
               }
             ],
             position: {
-              start: { line: 59, column: 1, offset: 2897 },
-              end: { line: 59, column: 39, offset: 2935 }
+              start: { line: 62, column: 1, offset: 3123 },
+              end: { line: 62, column: 39, offset: 3161 }
             }
           },
           {
@@ -5113,8 +5221,8 @@ export default [
                 type: 'text',
                 value: 'When an item is inserted into the disk sorted hash table via ',
                 position: {
-                  start: { line: 60, column: 1, offset: 2936 },
-                  end: { line: 60, column: 62, offset: 2997 }
+                  start: { line: 63, column: 1, offset: 3162 },
+                  end: { line: 63, column: 62, offset: 3223 }
                 }
               },
               {
@@ -5126,60 +5234,60 @@ export default [
                     type: 'text',
                     value: 'set',
                     position: {
-                      start: { line: 60, column: 63, offset: 2998 },
-                      end: { line: 60, column: 66, offset: 3001 }
+                      start: { line: 63, column: 63, offset: 3224 },
+                      end: { line: 63, column: 66, offset: 3227 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 60, column: 62, offset: 2997 },
-                  end: { line: 60, column: 98, offset: 3033 }
+                  start: { line: 63, column: 62, offset: 3223 },
+                  end: { line: 63, column: 98, offset: 3259 }
                 }
               },
               {
                 type: 'text',
                 value: ", the current capacity ratio of the table is calculated as the sum of the table's count and deleted count divided by the table's length. If the current capacity ratio exceeds the ",
                 position: {
-                  start: { line: 60, column: 98, offset: 3033 },
-                  end: { line: 60, column: 277, offset: 3212 }
+                  start: { line: 63, column: 98, offset: 3259 },
+                  end: { line: 63, column: 277, offset: 3438 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'resizeRatio',
                 position: {
-                  start: { line: 60, column: 277, offset: 3212 },
-                  end: { line: 60, column: 290, offset: 3225 }
+                  start: { line: 63, column: 277, offset: 3438 },
+                  end: { line: 63, column: 290, offset: 3451 }
                 }
               },
               {
                 type: 'text',
                 value: ' (and the ',
                 position: {
-                  start: { line: 60, column: 290, offset: 3225 },
-                  end: { line: 60, column: 300, offset: 3235 }
+                  start: { line: 63, column: 290, offset: 3451 },
+                  end: { line: 63, column: 300, offset: 3461 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'resizeRatio',
                 position: {
-                  start: { line: 60, column: 300, offset: 3235 },
-                  end: { line: 60, column: 313, offset: 3248 }
+                  start: { line: 63, column: 300, offset: 3461 },
+                  end: { line: 63, column: 313, offset: 3474 }
                 }
               },
               {
                 type: 'text',
                 value: ' is not 0), a resize of the table occurs.',
                 position: {
-                  start: { line: 60, column: 313, offset: 3248 },
-                  end: { line: 60, column: 354, offset: 3289 }
+                  start: { line: 63, column: 313, offset: 3474 },
+                  end: { line: 63, column: 354, offset: 3515 }
                 }
               }
             ],
             position: {
-              start: { line: 60, column: 1, offset: 2936 },
-              end: { line: 60, column: 354, offset: 3289 }
+              start: { line: 63, column: 1, offset: 3162 },
+              end: { line: 63, column: 354, offset: 3515 }
             }
           },
           {
@@ -5189,14 +5297,14 @@ export default [
                 type: 'text',
                 value: 'During a table resize, each item of the table is added into a temporary storage file using the new table length calculated from the equation below:',
                 position: {
-                  start: { line: 62, column: 1, offset: 3291 },
-                  end: { line: 62, column: 148, offset: 3438 }
+                  start: { line: 65, column: 1, offset: 3517 },
+                  end: { line: 65, column: 148, offset: 3664 }
                 }
               }
             ],
             position: {
-              start: { line: 62, column: 1, offset: 3291 },
-              end: { line: 62, column: 148, offset: 3438 }
+              start: { line: 65, column: 1, offset: 3517 },
+              end: { line: 65, column: 148, offset: 3664 }
             }
           },
           {
@@ -5205,8 +5313,8 @@ export default [
             meta: null,
             value: 'newTableLength = oldTableLength * resizeFactor',
             position: {
-              start: { line: 64, column: 1, offset: 3440 },
-              end: { line: 66, column: 4, offset: 3494 }
+              start: { line: 67, column: 1, offset: 3666 },
+              end: { line: 69, column: 4, offset: 3720 }
             }
           },
           {
@@ -5216,14 +5324,14 @@ export default [
                 type: 'text',
                 value: 'Once all of the items have been added into the temporary storage file, the temporary storage file is moved to the location of the old storage file to be used as the new storage file.',
                 position: {
-                  start: { line: 68, column: 1, offset: 3496 },
-                  end: { line: 68, column: 183, offset: 3678 }
+                  start: { line: 71, column: 1, offset: 3722 },
+                  end: { line: 71, column: 183, offset: 3904 }
                 }
               }
             ],
             position: {
-              start: { line: 68, column: 1, offset: 3496 },
-              end: { line: 68, column: 183, offset: 3678 }
+              start: { line: 71, column: 1, offset: 3722 },
+              end: { line: 71, column: 183, offset: 3904 }
             }
           },
           {
@@ -5234,14 +5342,14 @@ export default [
                 type: 'text',
                 value: 'Optimizing the disk sorted hash table b-tree',
                 position: {
-                  start: { line: 70, column: 4, offset: 3683 },
-                  end: { line: 70, column: 48, offset: 3727 }
+                  start: { line: 73, column: 4, offset: 3909 },
+                  end: { line: 73, column: 48, offset: 3953 }
                 }
               }
             ],
             position: {
-              start: { line: 70, column: 1, offset: 3680 },
-              end: { line: 70, column: 48, offset: 3727 }
+              start: { line: 73, column: 1, offset: 3906 },
+              end: { line: 73, column: 48, offset: 3953 }
             }
           },
           {
@@ -5251,52 +5359,52 @@ export default [
                 type: 'text',
                 value: 'The value of ',
                 position: {
-                  start: { line: 71, column: 1, offset: 3728 },
-                  end: { line: 71, column: 14, offset: 3741 }
+                  start: { line: 74, column: 1, offset: 3954 },
+                  end: { line: 74, column: 14, offset: 3967 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'degree',
                 position: {
-                  start: { line: 71, column: 14, offset: 3741 },
-                  end: { line: 71, column: 22, offset: 3749 }
+                  start: { line: 74, column: 14, offset: 3967 },
+                  end: { line: 74, column: 22, offset: 3975 }
                 }
               },
               {
                 type: 'text',
                 value: ' determines the structure of the internal b-tree used by the disk sorted hash table. A higher value for ',
                 position: {
-                  start: { line: 71, column: 22, offset: 3749 },
-                  end: { line: 71, column: 126, offset: 3853 }
+                  start: { line: 74, column: 22, offset: 3975 },
+                  end: { line: 74, column: 126, offset: 4079 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'degree',
                 position: {
-                  start: { line: 71, column: 126, offset: 3853 },
-                  end: { line: 71, column: 134, offset: 3861 }
+                  start: { line: 74, column: 126, offset: 4079 },
+                  end: { line: 74, column: 134, offset: 4087 }
                 }
               },
               {
                 type: 'text',
                 value: ' results in a shorter b-tree and more items per b-tree node, while a lower value results in a taller b-tree and fewer items per b-tree node. The default value of 2 is a safe choice for most use cases.',
                 position: {
-                  start: { line: 71, column: 134, offset: 3861 },
-                  end: { line: 71, column: 334, offset: 4061 }
+                  start: { line: 74, column: 134, offset: 4087 },
+                  end: { line: 74, column: 334, offset: 4287 }
                 }
               }
             ],
             position: {
-              start: { line: 71, column: 1, offset: 3728 },
-              end: { line: 71, column: 334, offset: 4061 }
+              start: { line: 74, column: 1, offset: 3954 },
+              end: { line: 74, column: 334, offset: 4287 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 71, column: 334, offset: 4061 }
+          end: { line: 74, column: 334, offset: 4287 }
         }
       }
     },
