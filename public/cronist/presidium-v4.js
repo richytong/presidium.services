@@ -711,8 +711,6 @@ export default [
       '\n' +
       'Presidium [Docker](https://docs.docker.com/reference/) client.\n' +
       '\n' +
-      'Note: the Presidium Docker client connects to the Docker socket. Please use caution when creating production services using the Presidium Docker client, see [How would an attacker gain access to the host machine from within a Docker container?](https://www.google.com/search?hl=en&q=how%20would%20an%20attacker%20gain%20access%20to%20the%20host%20machine%20from%20within%20a%20docker%20container).\n' +
-      '\n' +
       'Arguments:\n' +
       '  * `options`\n' +
       "    * `apiVersion` - the version of the Docker API. Defaults to `'1.48'`.\n" +
@@ -722,7 +720,9 @@ export default [
       '\n' +
       'System dependencies:\n' +
       '  * `docker`\n' +
-      '  * `tar`',
+      '  * `tar`\n' +
+      '\n' +
+      'Note: the Presidium Docker client connects to the Docker socket `/var/run/docker.sock`. For security purposes, please avoid exposing any code using the Presidium Docker client to the internet, see [How would an attacker gain access to the host machine from within a Docker container?](https://duckduckgo.com/?q=how+would+an+attacker+gain+access+to+the+host+machine+from+within+a+docker+container&ia=web).',
     mdast: {
       name: {
         type: 'root',
@@ -812,60 +812,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Note: the Presidium Docker client connects to the Docker socket. Please use caution when creating production services using the Presidium Docker client, see ',
+                value: 'Arguments:',
                 position: {
                   start: { line: 9, column: 1, offset: 161 },
-                  end: { line: 9, column: 158, offset: 318 }
-                }
-              },
-              {
-                type: 'link',
-                title: null,
-                url: 'https://www.google.com/search?hl=en&q=how%20would%20an%20attacker%20gain%20access%20to%20the%20host%20machine%20from%20within%20a%20docker%20container',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'How would an attacker gain access to the host machine from within a Docker container?',
-                    position: {
-                      start: { line: 9, column: 159, offset: 319 },
-                      end: { line: 9, column: 244, offset: 404 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 9, column: 158, offset: 318 },
-                  end: { line: 9, column: 397, offset: 557 }
-                }
-              },
-              {
-                type: 'text',
-                value: '.',
-                position: {
-                  start: { line: 9, column: 397, offset: 557 },
-                  end: { line: 9, column: 398, offset: 558 }
+                  end: { line: 9, column: 11, offset: 171 }
                 }
               }
             ],
             position: {
               start: { line: 9, column: 1, offset: 161 },
-              end: { line: 9, column: 398, offset: 558 }
-            }
-          },
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'Arguments:',
-                position: {
-                  start: { line: 11, column: 1, offset: 560 },
-                  end: { line: 11, column: 11, offset: 570 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 11, column: 1, offset: 560 },
-              end: { line: 11, column: 11, offset: 570 }
+              end: { line: 9, column: 11, offset: 171 }
             }
           },
           {
@@ -886,14 +842,14 @@ export default [
                         type: 'inlineCode',
                         value: 'options',
                         position: {
-                          start: { line: 12, column: 5, offset: 575 },
-                          end: { line: 12, column: 14, offset: 584 }
+                          start: { line: 10, column: 5, offset: 176 },
+                          end: { line: 10, column: 14, offset: 185 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 12, column: 5, offset: 575 },
-                      end: { line: 12, column: 14, offset: 584 }
+                      start: { line: 10, column: 5, offset: 176 },
+                      end: { line: 10, column: 14, offset: 185 }
                     }
                   },
                   {
@@ -914,62 +870,62 @@ export default [
                                 type: 'inlineCode',
                                 value: 'apiVersion',
                                 position: {
-                                  start: { line: 13, column: 7, offset: 591 },
-                                  end: { line: 13, column: 19, offset: 603 }
+                                  start: { line: 11, column: 7, offset: 192 },
+                                  end: { line: 11, column: 19, offset: 204 }
                                 }
                               },
                               {
                                 type: 'text',
                                 value: ' - the version of the Docker API. Defaults to ',
                                 position: {
-                                  start: { line: 13, column: 19, offset: 603 },
-                                  end: { line: 13, column: 65, offset: 649 }
+                                  start: { line: 11, column: 19, offset: 204 },
+                                  end: { line: 11, column: 65, offset: 250 }
                                 }
                               },
                               {
                                 type: 'inlineCode',
                                 value: "'1.48'",
                                 position: {
-                                  start: { line: 13, column: 65, offset: 649 },
-                                  end: { line: 13, column: 73, offset: 657 }
+                                  start: { line: 11, column: 65, offset: 250 },
+                                  end: { line: 11, column: 73, offset: 258 }
                                 }
                               },
                               {
                                 type: 'text',
                                 value: '.',
                                 position: {
-                                  start: { line: 13, column: 73, offset: 657 },
-                                  end: { line: 13, column: 74, offset: 658 }
+                                  start: { line: 11, column: 73, offset: 258 },
+                                  end: { line: 11, column: 74, offset: 259 }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 13, column: 7, offset: 591 },
-                              end: { line: 13, column: 74, offset: 658 }
+                              start: { line: 11, column: 7, offset: 192 },
+                              end: { line: 11, column: 74, offset: 259 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 13, column: 5, offset: 589 },
-                          end: { line: 13, column: 74, offset: 658 }
+                          start: { line: 11, column: 5, offset: 190 },
+                          end: { line: 11, column: 74, offset: 259 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 13, column: 5, offset: 589 },
-                      end: { line: 13, column: 74, offset: 658 }
+                      start: { line: 11, column: 5, offset: 190 },
+                      end: { line: 11, column: 74, offset: 259 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 12, column: 3, offset: 573 },
-                  end: { line: 13, column: 74, offset: 658 }
+                  start: { line: 10, column: 3, offset: 174 },
+                  end: { line: 11, column: 74, offset: 259 }
                 }
               }
             ],
             position: {
-              start: { line: 12, column: 3, offset: 573 },
-              end: { line: 13, column: 74, offset: 658 }
+              start: { line: 10, column: 3, offset: 174 },
+              end: { line: 11, column: 74, offset: 259 }
             }
           },
           {
@@ -979,14 +935,14 @@ export default [
                 type: 'text',
                 value: 'Supported platforms:',
                 position: {
-                  start: { line: 15, column: 1, offset: 660 },
-                  end: { line: 15, column: 21, offset: 680 }
+                  start: { line: 13, column: 1, offset: 261 },
+                  end: { line: 13, column: 21, offset: 281 }
                 }
               }
             ],
             position: {
-              start: { line: 15, column: 1, offset: 660 },
-              end: { line: 15, column: 21, offset: 680 }
+              start: { line: 13, column: 1, offset: 261 },
+              end: { line: 13, column: 21, offset: 281 }
             }
           },
           {
@@ -1007,26 +963,26 @@ export default [
                         type: 'inlineCode',
                         value: 'linux64',
                         position: {
-                          start: { line: 16, column: 5, offset: 685 },
-                          end: { line: 16, column: 14, offset: 694 }
+                          start: { line: 14, column: 5, offset: 286 },
+                          end: { line: 14, column: 14, offset: 295 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 16, column: 5, offset: 685 },
-                      end: { line: 16, column: 14, offset: 694 }
+                      start: { line: 14, column: 5, offset: 286 },
+                      end: { line: 14, column: 14, offset: 295 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 16, column: 3, offset: 683 },
-                  end: { line: 16, column: 14, offset: 694 }
+                  start: { line: 14, column: 3, offset: 284 },
+                  end: { line: 14, column: 14, offset: 295 }
                 }
               }
             ],
             position: {
-              start: { line: 16, column: 3, offset: 683 },
-              end: { line: 16, column: 14, offset: 694 }
+              start: { line: 14, column: 3, offset: 284 },
+              end: { line: 14, column: 14, offset: 295 }
             }
           },
           {
@@ -1036,14 +992,14 @@ export default [
                 type: 'text',
                 value: 'System dependencies:',
                 position: {
-                  start: { line: 18, column: 1, offset: 696 },
-                  end: { line: 18, column: 21, offset: 716 }
+                  start: { line: 16, column: 1, offset: 297 },
+                  end: { line: 16, column: 21, offset: 317 }
                 }
               }
             ],
             position: {
-              start: { line: 18, column: 1, offset: 696 },
-              end: { line: 18, column: 21, offset: 716 }
+              start: { line: 16, column: 1, offset: 297 },
+              end: { line: 16, column: 21, offset: 317 }
             }
           },
           {
@@ -1064,20 +1020,20 @@ export default [
                         type: 'inlineCode',
                         value: 'docker',
                         position: {
-                          start: { line: 19, column: 5, offset: 721 },
-                          end: { line: 19, column: 13, offset: 729 }
+                          start: { line: 17, column: 5, offset: 322 },
+                          end: { line: 17, column: 13, offset: 330 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 19, column: 5, offset: 721 },
-                      end: { line: 19, column: 13, offset: 729 }
+                      start: { line: 17, column: 5, offset: 322 },
+                      end: { line: 17, column: 13, offset: 330 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 19, column: 3, offset: 719 },
-                  end: { line: 19, column: 13, offset: 729 }
+                  start: { line: 17, column: 3, offset: 320 },
+                  end: { line: 17, column: 13, offset: 330 }
                 }
               },
               {
@@ -1092,32 +1048,92 @@ export default [
                         type: 'inlineCode',
                         value: 'tar',
                         position: {
-                          start: { line: 20, column: 5, offset: 734 },
-                          end: { line: 20, column: 10, offset: 739 }
+                          start: { line: 18, column: 5, offset: 335 },
+                          end: { line: 18, column: 10, offset: 340 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 20, column: 5, offset: 734 },
-                      end: { line: 20, column: 10, offset: 739 }
+                      start: { line: 18, column: 5, offset: 335 },
+                      end: { line: 18, column: 10, offset: 340 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 20, column: 3, offset: 732 },
-                  end: { line: 20, column: 10, offset: 739 }
+                  start: { line: 18, column: 3, offset: 333 },
+                  end: { line: 18, column: 10, offset: 340 }
                 }
               }
             ],
             position: {
-              start: { line: 19, column: 3, offset: 719 },
-              end: { line: 20, column: 10, offset: 739 }
+              start: { line: 17, column: 3, offset: 320 },
+              end: { line: 18, column: 10, offset: 340 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Note: the Presidium Docker client connects to the Docker socket ',
+                position: {
+                  start: { line: 20, column: 1, offset: 342 },
+                  end: { line: 20, column: 65, offset: 406 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: '/var/run/docker.sock',
+                position: {
+                  start: { line: 20, column: 65, offset: 406 },
+                  end: { line: 20, column: 87, offset: 428 }
+                }
+              },
+              {
+                type: 'text',
+                value: '. For security purposes, please avoid exposing any code using the Presidium Docker client to the internet, see ',
+                position: {
+                  start: { line: 20, column: 87, offset: 428 },
+                  end: { line: 20, column: 198, offset: 539 }
+                }
+              },
+              {
+                type: 'link',
+                title: null,
+                url: 'https://duckduckgo.com/?q=how+would+an+attacker+gain+access+to+the+host+machine+from+within+a+docker+container&ia=web',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'How would an attacker gain access to the host machine from within a Docker container?',
+                    position: {
+                      start: { line: 20, column: 199, offset: 540 },
+                      end: { line: 20, column: 284, offset: 625 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 20, column: 198, offset: 539 },
+                  end: { line: 20, column: 404, offset: 745 }
+                }
+              },
+              {
+                type: 'text',
+                value: '.',
+                position: {
+                  start: { line: 20, column: 404, offset: 745 },
+                  end: { line: 20, column: 405, offset: 746 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 20, column: 1, offset: 342 },
+              end: { line: 20, column: 405, offset: 746 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 20, column: 10, offset: 739 }
+          end: { line: 20, column: 405, offset: 746 }
         }
       }
     },
