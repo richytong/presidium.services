@@ -709,13 +709,20 @@ export default [
       '}) -> docker Docker\n' +
       '```\n' +
       '\n' +
-      'Presidium Docker client for [Docker](https://docs.docker.com/reference/).\n' +
+      'Presidium [Docker](https://docs.docker.com/reference/) client.\n' +
       '\n' +
       'Note: the Presidium Docker client connects to the Docker socket. Please use caution when creating production services using the Presidium Docker client, see [How would an attacker gain access to the host machine from within a Docker container?](https://www.google.com/search?hl=en&q=how%20would%20an%20attacker%20gain%20access%20to%20the%20host%20machine%20from%20within%20a%20docker%20container).\n' +
       '\n' +
       'Arguments:\n' +
       '  * `options`\n' +
-      "    * `apiVersion` - the version of the Docker API. Defaults to `'1.48'`.",
+      "    * `apiVersion` - the version of the Docker API. Defaults to `'1.48'`.\n" +
+      '\n' +
+      'Supported platforms:\n' +
+      '  * `linux64`\n' +
+      '\n' +
+      'System dependencies:\n' +
+      '  * `docker`\n' +
+      '  * `tar`',
     mdast: {
       name: {
         type: 'root',
@@ -761,10 +768,10 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Presidium Docker client for ',
+                value: 'Presidium ',
                 position: {
                   start: { line: 7, column: 1, offset: 97 },
-                  end: { line: 7, column: 29, offset: 125 }
+                  end: { line: 7, column: 11, offset: 107 }
                 }
               },
               {
@@ -776,28 +783,28 @@ export default [
                     type: 'text',
                     value: 'Docker',
                     position: {
-                      start: { line: 7, column: 30, offset: 126 },
-                      end: { line: 7, column: 36, offset: 132 }
+                      start: { line: 7, column: 12, offset: 108 },
+                      end: { line: 7, column: 18, offset: 114 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 7, column: 29, offset: 125 },
-                  end: { line: 7, column: 73, offset: 169 }
+                  start: { line: 7, column: 11, offset: 107 },
+                  end: { line: 7, column: 55, offset: 151 }
                 }
               },
               {
                 type: 'text',
-                value: '.',
+                value: ' client.',
                 position: {
-                  start: { line: 7, column: 73, offset: 169 },
-                  end: { line: 7, column: 74, offset: 170 }
+                  start: { line: 7, column: 55, offset: 151 },
+                  end: { line: 7, column: 63, offset: 159 }
                 }
               }
             ],
             position: {
               start: { line: 7, column: 1, offset: 97 },
-              end: { line: 7, column: 74, offset: 170 }
+              end: { line: 7, column: 63, offset: 159 }
             }
           },
           {
@@ -807,8 +814,8 @@ export default [
                 type: 'text',
                 value: 'Note: the Presidium Docker client connects to the Docker socket. Please use caution when creating production services using the Presidium Docker client, see ',
                 position: {
-                  start: { line: 9, column: 1, offset: 172 },
-                  end: { line: 9, column: 158, offset: 329 }
+                  start: { line: 9, column: 1, offset: 161 },
+                  end: { line: 9, column: 158, offset: 318 }
                 }
               },
               {
@@ -820,28 +827,28 @@ export default [
                     type: 'text',
                     value: 'How would an attacker gain access to the host machine from within a Docker container?',
                     position: {
-                      start: { line: 9, column: 159, offset: 330 },
-                      end: { line: 9, column: 244, offset: 415 }
+                      start: { line: 9, column: 159, offset: 319 },
+                      end: { line: 9, column: 244, offset: 404 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 9, column: 158, offset: 329 },
-                  end: { line: 9, column: 397, offset: 568 }
+                  start: { line: 9, column: 158, offset: 318 },
+                  end: { line: 9, column: 397, offset: 557 }
                 }
               },
               {
                 type: 'text',
                 value: '.',
                 position: {
-                  start: { line: 9, column: 397, offset: 568 },
-                  end: { line: 9, column: 398, offset: 569 }
+                  start: { line: 9, column: 397, offset: 557 },
+                  end: { line: 9, column: 398, offset: 558 }
                 }
               }
             ],
             position: {
-              start: { line: 9, column: 1, offset: 172 },
-              end: { line: 9, column: 398, offset: 569 }
+              start: { line: 9, column: 1, offset: 161 },
+              end: { line: 9, column: 398, offset: 558 }
             }
           },
           {
@@ -851,14 +858,14 @@ export default [
                 type: 'text',
                 value: 'Arguments:',
                 position: {
-                  start: { line: 11, column: 1, offset: 571 },
-                  end: { line: 11, column: 11, offset: 581 }
+                  start: { line: 11, column: 1, offset: 560 },
+                  end: { line: 11, column: 11, offset: 570 }
                 }
               }
             ],
             position: {
-              start: { line: 11, column: 1, offset: 571 },
-              end: { line: 11, column: 11, offset: 581 }
+              start: { line: 11, column: 1, offset: 560 },
+              end: { line: 11, column: 11, offset: 570 }
             }
           },
           {
@@ -879,14 +886,14 @@ export default [
                         type: 'inlineCode',
                         value: 'options',
                         position: {
-                          start: { line: 12, column: 5, offset: 586 },
-                          end: { line: 12, column: 14, offset: 595 }
+                          start: { line: 12, column: 5, offset: 575 },
+                          end: { line: 12, column: 14, offset: 584 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 12, column: 5, offset: 586 },
-                      end: { line: 12, column: 14, offset: 595 }
+                      start: { line: 12, column: 5, offset: 575 },
+                      end: { line: 12, column: 14, offset: 584 }
                     }
                   },
                   {
@@ -907,68 +914,210 @@ export default [
                                 type: 'inlineCode',
                                 value: 'apiVersion',
                                 position: {
-                                  start: { line: 13, column: 7, offset: 602 },
-                                  end: { line: 13, column: 19, offset: 614 }
+                                  start: { line: 13, column: 7, offset: 591 },
+                                  end: { line: 13, column: 19, offset: 603 }
                                 }
                               },
                               {
                                 type: 'text',
                                 value: ' - the version of the Docker API. Defaults to ',
                                 position: {
-                                  start: { line: 13, column: 19, offset: 614 },
-                                  end: { line: 13, column: 65, offset: 660 }
+                                  start: { line: 13, column: 19, offset: 603 },
+                                  end: { line: 13, column: 65, offset: 649 }
                                 }
                               },
                               {
                                 type: 'inlineCode',
                                 value: "'1.48'",
                                 position: {
-                                  start: { line: 13, column: 65, offset: 660 },
-                                  end: { line: 13, column: 73, offset: 668 }
+                                  start: { line: 13, column: 65, offset: 649 },
+                                  end: { line: 13, column: 73, offset: 657 }
                                 }
                               },
                               {
                                 type: 'text',
                                 value: '.',
                                 position: {
-                                  start: { line: 13, column: 73, offset: 668 },
-                                  end: { line: 13, column: 74, offset: 669 }
+                                  start: { line: 13, column: 73, offset: 657 },
+                                  end: { line: 13, column: 74, offset: 658 }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 13, column: 7, offset: 602 },
-                              end: { line: 13, column: 74, offset: 669 }
+                              start: { line: 13, column: 7, offset: 591 },
+                              end: { line: 13, column: 74, offset: 658 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 13, column: 5, offset: 600 },
-                          end: { line: 13, column: 74, offset: 669 }
+                          start: { line: 13, column: 5, offset: 589 },
+                          end: { line: 13, column: 74, offset: 658 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 13, column: 5, offset: 600 },
-                      end: { line: 13, column: 74, offset: 669 }
+                      start: { line: 13, column: 5, offset: 589 },
+                      end: { line: 13, column: 74, offset: 658 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 12, column: 3, offset: 584 },
-                  end: { line: 13, column: 74, offset: 669 }
+                  start: { line: 12, column: 3, offset: 573 },
+                  end: { line: 13, column: 74, offset: 658 }
                 }
               }
             ],
             position: {
-              start: { line: 12, column: 3, offset: 584 },
-              end: { line: 13, column: 74, offset: 669 }
+              start: { line: 12, column: 3, offset: 573 },
+              end: { line: 13, column: 74, offset: 658 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Supported platforms:',
+                position: {
+                  start: { line: 15, column: 1, offset: 660 },
+                  end: { line: 15, column: 21, offset: 680 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 15, column: 1, offset: 660 },
+              end: { line: 15, column: 21, offset: 680 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'linux64',
+                        position: {
+                          start: { line: 16, column: 5, offset: 685 },
+                          end: { line: 16, column: 14, offset: 694 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 16, column: 5, offset: 685 },
+                      end: { line: 16, column: 14, offset: 694 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 16, column: 3, offset: 683 },
+                  end: { line: 16, column: 14, offset: 694 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 16, column: 3, offset: 683 },
+              end: { line: 16, column: 14, offset: 694 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'System dependencies:',
+                position: {
+                  start: { line: 18, column: 1, offset: 696 },
+                  end: { line: 18, column: 21, offset: 716 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 18, column: 1, offset: 696 },
+              end: { line: 18, column: 21, offset: 716 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'docker',
+                        position: {
+                          start: { line: 19, column: 5, offset: 721 },
+                          end: { line: 19, column: 13, offset: 729 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 19, column: 5, offset: 721 },
+                      end: { line: 19, column: 13, offset: 729 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 19, column: 3, offset: 719 },
+                  end: { line: 19, column: 13, offset: 729 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'tar',
+                        position: {
+                          start: { line: 20, column: 5, offset: 734 },
+                          end: { line: 20, column: 10, offset: 739 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 20, column: 5, offset: 734 },
+                      end: { line: 20, column: 10, offset: 739 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 20, column: 3, offset: 732 },
+                  end: { line: 20, column: 10, offset: 739 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 19, column: 3, offset: 719 },
+              end: { line: 20, column: 10, offset: 739 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 13, column: 74, offset: 669 }
+          end: { line: 20, column: 10, offset: 739 }
         }
       }
     },
@@ -4796,7 +4945,7 @@ export default [
           '  * `path` - parent directory of the build context.\n' +
           '  * `options`\n' +
           "    * `image` - the name and optional tag of the image. If no tag is present, `'LATEST'` is assumed as the value for the tag.\n" +
-          '    * `ignore` - filepaths or filenames to ignore when bundling files and directories for the build context.\n' +
+          '    * `ignore` - patterns to ignore when bundling files and directories for the build context.\n' +
           '    * `archive` - an object of filenames and file contents that will be present in the build context.\n' +
           "    * `archiveDockerfile` - the filepath including filename of the Dockerfile, e.g. `'Dockerfiles/Dockerfile2'`. Defaults to `'Dockerfile'`.\n" +
           "    * `platform` - target platform for the build, e.g. `'linux/arm64'`.\n" +
@@ -5124,7 +5273,7 @@ export default [
                                   },
                                   {
                                     type: 'text',
-                                    value: ' - filepaths or filenames to ignore when bundling files and directories for the build context.',
+                                    value: ' - patterns to ignore when bundling files and directories for the build context.',
                                     position: {
                                       start: {
                                         line: 23,
@@ -5133,25 +5282,21 @@ export default [
                                       },
                                       end: {
                                         line: 23,
-                                        column: 109,
-                                        offset: 717
+                                        column: 95,
+                                        offset: 703
                                       }
                                     }
                                   }
                                 ],
                                 position: {
                                   start: { line: 23, column: 7, offset: 615 },
-                                  end: {
-                                    line: 23,
-                                    column: 109,
-                                    offset: 717
-                                  }
+                                  end: { line: 23, column: 95, offset: 703 }
                                 }
                               }
                             ],
                             position: {
                               start: { line: 23, column: 5, offset: 613 },
-                              end: { line: 23, column: 109, offset: 717 }
+                              end: { line: 23, column: 95, offset: 703 }
                             }
                           },
                           {
@@ -5169,12 +5314,12 @@ export default [
                                       start: {
                                         line: 24,
                                         column: 7,
-                                        offset: 724
+                                        offset: 710
                                       },
                                       end: {
                                         line: 24,
                                         column: 16,
-                                        offset: 733
+                                        offset: 719
                                       }
                                     }
                                   },
@@ -5185,29 +5330,29 @@ export default [
                                       start: {
                                         line: 24,
                                         column: 16,
-                                        offset: 733
+                                        offset: 719
                                       },
                                       end: {
                                         line: 24,
                                         column: 102,
-                                        offset: 819
+                                        offset: 805
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 24, column: 7, offset: 724 },
+                                  start: { line: 24, column: 7, offset: 710 },
                                   end: {
                                     line: 24,
                                     column: 102,
-                                    offset: 819
+                                    offset: 805
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 24, column: 5, offset: 722 },
-                              end: { line: 24, column: 102, offset: 819 }
+                              start: { line: 24, column: 5, offset: 708 },
+                              end: { line: 24, column: 102, offset: 805 }
                             }
                           },
                           {
@@ -5225,12 +5370,12 @@ export default [
                                       start: {
                                         line: 25,
                                         column: 7,
-                                        offset: 826
+                                        offset: 812
                                       },
                                       end: {
                                         line: 25,
                                         column: 26,
-                                        offset: 845
+                                        offset: 831
                                       }
                                     }
                                   },
@@ -5241,12 +5386,12 @@ export default [
                                       start: {
                                         line: 25,
                                         column: 26,
-                                        offset: 845
+                                        offset: 831
                                       },
                                       end: {
                                         line: 25,
                                         column: 85,
-                                        offset: 904
+                                        offset: 890
                                       }
                                     }
                                   },
@@ -5257,12 +5402,12 @@ export default [
                                       start: {
                                         line: 25,
                                         column: 85,
-                                        offset: 904
+                                        offset: 890
                                       },
                                       end: {
                                         line: 25,
                                         column: 112,
-                                        offset: 931
+                                        offset: 917
                                       }
                                     }
                                   },
@@ -5273,12 +5418,12 @@ export default [
                                       start: {
                                         line: 25,
                                         column: 112,
-                                        offset: 931
+                                        offset: 917
                                       },
                                       end: {
                                         line: 25,
                                         column: 126,
-                                        offset: 945
+                                        offset: 931
                                       }
                                     }
                                   },
@@ -5289,12 +5434,12 @@ export default [
                                       start: {
                                         line: 25,
                                         column: 126,
-                                        offset: 945
+                                        offset: 931
                                       },
                                       end: {
                                         line: 25,
                                         column: 140,
-                                        offset: 959
+                                        offset: 945
                                       }
                                     }
                                   },
@@ -5305,29 +5450,29 @@ export default [
                                       start: {
                                         line: 25,
                                         column: 140,
-                                        offset: 959
+                                        offset: 945
                                       },
                                       end: {
                                         line: 25,
                                         column: 141,
-                                        offset: 960
+                                        offset: 946
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 25, column: 7, offset: 826 },
+                                  start: { line: 25, column: 7, offset: 812 },
                                   end: {
                                     line: 25,
                                     column: 141,
-                                    offset: 960
+                                    offset: 946
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 25, column: 5, offset: 824 },
-                              end: { line: 25, column: 141, offset: 960 }
+                              start: { line: 25, column: 5, offset: 810 },
+                              end: { line: 25, column: 141, offset: 946 }
                             }
                           },
                           {
@@ -5345,12 +5490,12 @@ export default [
                                       start: {
                                         line: 26,
                                         column: 7,
-                                        offset: 967
+                                        offset: 953
                                       },
                                       end: {
                                         line: 26,
                                         column: 17,
-                                        offset: 977
+                                        offset: 963
                                       }
                                     }
                                   },
@@ -5361,12 +5506,12 @@ export default [
                                       start: {
                                         line: 26,
                                         column: 17,
-                                        offset: 977
+                                        offset: 963
                                       },
                                       end: {
                                         line: 26,
                                         column: 56,
-                                        offset: 1016
+                                        offset: 1002
                                       }
                                     }
                                   },
@@ -5377,12 +5522,12 @@ export default [
                                       start: {
                                         line: 26,
                                         column: 56,
-                                        offset: 1016
+                                        offset: 1002
                                       },
                                       end: {
                                         line: 26,
                                         column: 71,
-                                        offset: 1031
+                                        offset: 1017
                                       }
                                     }
                                   },
@@ -5393,47 +5538,47 @@ export default [
                                       start: {
                                         line: 26,
                                         column: 71,
-                                        offset: 1031
+                                        offset: 1017
                                       },
                                       end: {
                                         line: 26,
                                         column: 72,
-                                        offset: 1032
+                                        offset: 1018
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 26, column: 7, offset: 967 },
+                                  start: { line: 26, column: 7, offset: 953 },
                                   end: {
                                     line: 26,
                                     column: 72,
-                                    offset: 1032
+                                    offset: 1018
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 26, column: 5, offset: 965 },
-                              end: { line: 26, column: 72, offset: 1032 }
+                              start: { line: 26, column: 5, offset: 951 },
+                              end: { line: 26, column: 72, offset: 1018 }
                             }
                           }
                         ],
                         position: {
                           start: { line: 22, column: 5, offset: 487 },
-                          end: { line: 26, column: 72, offset: 1032 }
+                          end: { line: 26, column: 72, offset: 1018 }
                         }
                       }
                     ],
                     position: {
                       start: { line: 21, column: 3, offset: 471 },
-                      end: { line: 26, column: 72, offset: 1032 }
+                      end: { line: 26, column: 72, offset: 1018 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 20, column: 3, offset: 419 },
-                  end: { line: 26, column: 72, offset: 1032 }
+                  end: { line: 26, column: 72, offset: 1018 }
                 }
               },
               {
@@ -5443,14 +5588,14 @@ export default [
                     type: 'text',
                     value: 'Return:',
                     position: {
-                      start: { line: 28, column: 1, offset: 1034 },
-                      end: { line: 28, column: 8, offset: 1041 }
+                      start: { line: 28, column: 1, offset: 1020 },
+                      end: { line: 28, column: 8, offset: 1027 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 28, column: 1, offset: 1034 },
-                  end: { line: 28, column: 8, offset: 1041 }
+                  start: { line: 28, column: 1, offset: 1020 },
+                  end: { line: 28, column: 8, offset: 1027 }
                 }
               },
               {
@@ -5471,50 +5616,50 @@ export default [
                             type: 'inlineCode',
                             value: 'dataStream',
                             position: {
-                              start: { line: 29, column: 5, offset: 1046 },
-                              end: { line: 29, column: 17, offset: 1058 }
+                              start: { line: 29, column: 5, offset: 1032 },
+                              end: { line: 29, column: 17, offset: 1044 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - a readable stream of the progress of the Docker ',
                             position: {
-                              start: { line: 29, column: 17, offset: 1058 },
-                              end: { line: 29, column: 68, offset: 1109 }
+                              start: { line: 29, column: 17, offset: 1044 },
+                              end: { line: 29, column: 68, offset: 1095 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'buildImage',
                             position: {
-                              start: { line: 29, column: 68, offset: 1109 },
-                              end: { line: 29, column: 80, offset: 1121 }
+                              start: { line: 29, column: 68, offset: 1095 },
+                              end: { line: 29, column: 80, offset: 1107 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' operation.',
                             position: {
-                              start: { line: 29, column: 80, offset: 1121 },
-                              end: { line: 29, column: 91, offset: 1132 }
+                              start: { line: 29, column: 80, offset: 1107 },
+                              end: { line: 29, column: 91, offset: 1118 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 29, column: 5, offset: 1046 },
-                          end: { line: 29, column: 91, offset: 1132 }
+                          start: { line: 29, column: 5, offset: 1032 },
+                          end: { line: 29, column: 91, offset: 1118 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 29, column: 3, offset: 1044 },
-                      end: { line: 29, column: 91, offset: 1132 }
+                      start: { line: 29, column: 3, offset: 1030 },
+                      end: { line: 29, column: 91, offset: 1118 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 29, column: 3, offset: 1044 },
-                  end: { line: 29, column: 91, offset: 1132 }
+                  start: { line: 29, column: 3, offset: 1030 },
+                  end: { line: 29, column: 91, offset: 1118 }
                 }
               },
               {
@@ -5539,8 +5684,8 @@ export default [
                   "  console.log('Build success')\n" +
                   '})',
                 position: {
-                  start: { line: 31, column: 1, offset: 1134 },
-                  end: { line: 49, column: 4, offset: 1461 }
+                  start: { line: 31, column: 1, offset: 1120 },
+                  end: { line: 49, column: 4, offset: 1447 }
                 }
               },
               {
@@ -5551,14 +5696,14 @@ export default [
                     type: 'text',
                     value: 'Dockerfile Syntax',
                     position: {
-                      start: { line: 51, column: 5, offset: 1467 },
-                      end: { line: 51, column: 22, offset: 1484 }
+                      start: { line: 51, column: 5, offset: 1453 },
+                      end: { line: 51, column: 22, offset: 1470 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 51, column: 1, offset: 1463 },
-                  end: { line: 51, column: 22, offset: 1484 }
+                  start: { line: 51, column: 1, offset: 1449 },
+                  end: { line: 51, column: 22, offset: 1470 }
                 }
               },
               {
@@ -5590,8 +5735,8 @@ export default [
                   'CMD ["<parameter>", ...]\n' +
                   'CMD <command> <parameter> ...',
                 position: {
-                  start: { line: 52, column: 1, offset: 1485 },
-                  end: { line: 77, column: 4, offset: 2041 }
+                  start: { line: 52, column: 1, offset: 1471 },
+                  end: { line: 77, column: 4, offset: 2027 }
                 }
               },
               {
@@ -5601,14 +5746,14 @@ export default [
                     type: 'text',
                     value: 'References:',
                     position: {
-                      start: { line: 79, column: 1, offset: 2043 },
-                      end: { line: 79, column: 12, offset: 2054 }
+                      start: { line: 79, column: 1, offset: 2029 },
+                      end: { line: 79, column: 12, offset: 2040 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 79, column: 1, offset: 2043 },
-                  end: { line: 79, column: 12, offset: 2054 }
+                  start: { line: 79, column: 1, offset: 2029 },
+                  end: { line: 79, column: 12, offset: 2040 }
                 }
               },
               {
@@ -5634,42 +5779,42 @@ export default [
                                 type: 'text',
                                 value: 'Dockerfile',
                                 position: {
-                                  start: { line: 80, column: 6, offset: 2060 },
+                                  start: { line: 80, column: 6, offset: 2046 },
                                   end: {
                                     line: 80,
                                     column: 16,
-                                    offset: 2070
+                                    offset: 2056
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 80, column: 5, offset: 2059 },
-                              end: { line: 80, column: 68, offset: 2122 }
+                              start: { line: 80, column: 5, offset: 2045 },
+                              end: { line: 80, column: 68, offset: 2108 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 80, column: 5, offset: 2059 },
-                          end: { line: 80, column: 68, offset: 2122 }
+                          start: { line: 80, column: 5, offset: 2045 },
+                          end: { line: 80, column: 68, offset: 2108 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 80, column: 3, offset: 2057 },
-                      end: { line: 80, column: 68, offset: 2122 }
+                      start: { line: 80, column: 3, offset: 2043 },
+                      end: { line: 80, column: 68, offset: 2108 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 80, column: 3, offset: 2057 },
-                  end: { line: 80, column: 68, offset: 2122 }
+                  start: { line: 80, column: 3, offset: 2043 },
+                  end: { line: 80, column: 68, offset: 2108 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 80, column: 68, offset: 2122 }
+              end: { line: 80, column: 68, offset: 2108 }
             }
           }
         }
@@ -153559,428 +153704,6 @@ export default [
     },
     methods: [],
     fileName: '/home/richard/code/presidium.services/../presidium/internal/AmzSignedHeaders.js'
-  },
-  {
-    name: 'Archive.tar',
-    docs: '```coffeescript [specscript]\n' +
-      "module tar 'https://github.com/mafintosh/tar-stream'\n" +
-      '\n' +
-      'Archive.tar(path string, options {\n' +
-      '  ignore: Array<string>,\n' +
-      '  base: Object<string>,\n' +
-      '}) -> pack tar.Pack\n' +
-      '```\n' +
-      '\n' +
-      'Bundle multiple files and directories from a parent directory into a tarball.\n' +
-      '\n' +
-      'Arguments:\n' +
-      '  * `path` - the path to the parent directory which contains the files and directories to bundle.\n' +
-      '  * `options`\n' +
-      '    * `ignore` - filepaths, filenames, or patterns to ignore.',
-    mdast: {
-      name: {
-        type: 'root',
-        children: [
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'Archive.tar',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 12, offset: 11 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 12, offset: 11 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 12, offset: 11 }
-        }
-      },
-      docs: {
-        type: 'root',
-        children: [
-          {
-            type: 'code',
-            lang: 'coffeescript',
-            meta: '[specscript]',
-            value: "module tar 'https://github.com/mafintosh/tar-stream'\n" +
-              '\n' +
-              'Archive.tar(path string, options {\n' +
-              '  ignore: Array<string>,\n' +
-              '  base: Object<string>,\n' +
-              '}) -> pack tar.Pack',
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 8, column: 4, offset: 190 }
-            }
-          },
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'Bundle multiple files and directories from a parent directory into a tarball.',
-                position: {
-                  start: { line: 10, column: 1, offset: 192 },
-                  end: { line: 10, column: 78, offset: 269 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 10, column: 1, offset: 192 },
-              end: { line: 10, column: 78, offset: 269 }
-            }
-          },
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'Arguments:',
-                position: {
-                  start: { line: 12, column: 1, offset: 271 },
-                  end: { line: 12, column: 11, offset: 281 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 12, column: 1, offset: 271 },
-              end: { line: 12, column: 11, offset: 281 }
-            }
-          },
-          {
-            type: 'list',
-            ordered: false,
-            start: null,
-            spread: false,
-            children: [
-              {
-                type: 'listItem',
-                spread: false,
-                checked: null,
-                children: [
-                  {
-                    type: 'paragraph',
-                    children: [
-                      {
-                        type: 'inlineCode',
-                        value: 'path',
-                        position: {
-                          start: { line: 13, column: 5, offset: 286 },
-                          end: { line: 13, column: 11, offset: 292 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: ' - the path to the parent directory which contains the files and directories to bundle.',
-                        position: {
-                          start: { line: 13, column: 11, offset: 292 },
-                          end: { line: 13, column: 98, offset: 379 }
-                        }
-                      }
-                    ],
-                    position: {
-                      start: { line: 13, column: 5, offset: 286 },
-                      end: { line: 13, column: 98, offset: 379 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 13, column: 3, offset: 284 },
-                  end: { line: 13, column: 98, offset: 379 }
-                }
-              },
-              {
-                type: 'listItem',
-                spread: false,
-                checked: null,
-                children: [
-                  {
-                    type: 'paragraph',
-                    children: [
-                      {
-                        type: 'inlineCode',
-                        value: 'options',
-                        position: {
-                          start: { line: 14, column: 5, offset: 384 },
-                          end: { line: 14, column: 14, offset: 393 }
-                        }
-                      }
-                    ],
-                    position: {
-                      start: { line: 14, column: 5, offset: 384 },
-                      end: { line: 14, column: 14, offset: 393 }
-                    }
-                  },
-                  {
-                    type: 'list',
-                    ordered: false,
-                    start: null,
-                    spread: false,
-                    children: [
-                      {
-                        type: 'listItem',
-                        spread: false,
-                        checked: null,
-                        children: [
-                          {
-                            type: 'paragraph',
-                            children: [
-                              {
-                                type: 'inlineCode',
-                                value: 'ignore',
-                                position: {
-                                  start: { line: 15, column: 7, offset: 400 },
-                                  end: { line: 15, column: 15, offset: 408 }
-                                }
-                              },
-                              {
-                                type: 'text',
-                                value: ' - filepaths, filenames, or patterns to ignore.',
-                                position: {
-                                  start: { line: 15, column: 15, offset: 408 },
-                                  end: { line: 15, column: 62, offset: 455 }
-                                }
-                              }
-                            ],
-                            position: {
-                              start: { line: 15, column: 7, offset: 400 },
-                              end: { line: 15, column: 62, offset: 455 }
-                            }
-                          }
-                        ],
-                        position: {
-                          start: { line: 15, column: 5, offset: 398 },
-                          end: { line: 15, column: 62, offset: 455 }
-                        }
-                      }
-                    ],
-                    position: {
-                      start: { line: 15, column: 5, offset: 398 },
-                      end: { line: 15, column: 62, offset: 455 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 14, column: 3, offset: 382 },
-                  end: { line: 15, column: 62, offset: 455 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 13, column: 3, offset: 284 },
-              end: { line: 15, column: 62, offset: 455 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 15, column: 62, offset: 455 }
-        }
-      }
-    },
-    methods: [
-      {
-        name: 'untar',
-        docs: '```coffeescript [specscript]\n' +
-          "module tar 'https://github.com/mafintosh/tar-stream'\n" +
-          "module presidium 'https://presidium.services/docs'\n" +
-          '\n' +
-          'Archive.untar(pack tar.Pack) ->\n' +
-          '  contentMap Promise<Map<(filepath string)=>(content presidium.Readable)> >\n' +
-          '```\n' +
-          '\n' +
-          'Extract a tarball into a map of file paths to content streams.\n' +
-          '\n' +
-          'Arguments:\n' +
-          '  * `pack` - a tarball represented by the `tar.Pack` type. Returned by the [tar](#tar) method.',
-        mdast: {
-          name: {
-            type: 'root',
-            children: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'untar',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 6, offset: 5 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 6, offset: 5 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 6, offset: 5 }
-            }
-          },
-          docs: {
-            type: 'root',
-            children: [
-              {
-                type: 'code',
-                lang: 'coffeescript',
-                meta: '[specscript]',
-                value: "module tar 'https://github.com/mafintosh/tar-stream'\n" +
-                  "module presidium 'https://presidium.services/docs'\n" +
-                  '\n' +
-                  'Archive.untar(pack tar.Pack) ->\n' +
-                  '  contentMap Promise<Map<(filepath string)=>(content presidium.Readable)> >',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 7, column: 4, offset: 245 }
-                }
-              },
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'Extract a tarball into a map of file paths to content streams.',
-                    position: {
-                      start: { line: 9, column: 1, offset: 247 },
-                      end: { line: 9, column: 63, offset: 309 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 9, column: 1, offset: 247 },
-                  end: { line: 9, column: 63, offset: 309 }
-                }
-              },
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'Arguments:',
-                    position: {
-                      start: { line: 11, column: 1, offset: 311 },
-                      end: { line: 11, column: 11, offset: 321 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 11, column: 1, offset: 311 },
-                  end: { line: 11, column: 11, offset: 321 }
-                }
-              },
-              {
-                type: 'list',
-                ordered: false,
-                start: null,
-                spread: false,
-                children: [
-                  {
-                    type: 'listItem',
-                    spread: false,
-                    checked: null,
-                    children: [
-                      {
-                        type: 'paragraph',
-                        children: [
-                          {
-                            type: 'inlineCode',
-                            value: 'pack',
-                            position: {
-                              start: { line: 12, column: 5, offset: 326 },
-                              end: { line: 12, column: 11, offset: 332 }
-                            }
-                          },
-                          {
-                            type: 'text',
-                            value: ' - a tarball represented by the ',
-                            position: {
-                              start: { line: 12, column: 11, offset: 332 },
-                              end: { line: 12, column: 43, offset: 364 }
-                            }
-                          },
-                          {
-                            type: 'inlineCode',
-                            value: 'tar.Pack',
-                            position: {
-                              start: { line: 12, column: 43, offset: 364 },
-                              end: { line: 12, column: 53, offset: 374 }
-                            }
-                          },
-                          {
-                            type: 'text',
-                            value: ' type. Returned by the ',
-                            position: {
-                              start: { line: 12, column: 53, offset: 374 },
-                              end: { line: 12, column: 76, offset: 397 }
-                            }
-                          },
-                          {
-                            type: 'link',
-                            title: null,
-                            url: '#tar',
-                            children: [
-                              {
-                                type: 'text',
-                                value: 'tar',
-                                position: {
-                                  start: { line: 12, column: 77, offset: 398 },
-                                  end: { line: 12, column: 80, offset: 401 }
-                                }
-                              }
-                            ],
-                            position: {
-                              start: { line: 12, column: 76, offset: 397 },
-                              end: { line: 12, column: 87, offset: 408 }
-                            }
-                          },
-                          {
-                            type: 'text',
-                            value: ' method.',
-                            position: {
-                              start: { line: 12, column: 87, offset: 408 },
-                              end: { line: 12, column: 95, offset: 416 }
-                            }
-                          }
-                        ],
-                        position: {
-                          start: { line: 12, column: 5, offset: 326 },
-                          end: { line: 12, column: 95, offset: 416 }
-                        }
-                      }
-                    ],
-                    position: {
-                      start: { line: 12, column: 3, offset: 324 },
-                      end: { line: 12, column: 95, offset: 416 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 12, column: 3, offset: 324 },
-                  end: { line: 12, column: 95, offset: 416 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 95, offset: 416 }
-            }
-          }
-        }
-      }
-    ],
-    fileName: '/home/richard/code/presidium.services/../presidium/internal/Archive.js'
   },
   {
     name: 'AwsAuthorization',
