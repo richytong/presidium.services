@@ -722,7 +722,7 @@ export default [
       '  * `docker`\n' +
       '  * `tar`\n' +
       '\n' +
-      'Note: the Presidium Docker client connects to the Docker socket `/var/run/docker.sock`. For security purposes, please avoid exposing any code using the Presidium Docker client to the internet, see [How would an attacker gain access to the host machine from within a Docker container?](https://duckduckgo.com/?q=how+would+an+attacker+gain+access+to+the+host+machine+from+within+a+docker+container&ia=web).',
+      'Note: the Presidium Docker client connects to the Docker socket `/var/run/docker.sock`. For security purposes, please avoid exposing any code using the Presidium Docker client to the internet, see [How would an attacker gain access to the host machine from within a Docker container?](https://www.google.com/search?hl=en&q=how+would+an+attacker+gain+access+to+the+host+machine+from+within+a+docker+container&ia=web).',
     mdast: {
       name: {
         type: 'root',
@@ -1100,7 +1100,7 @@ export default [
               {
                 type: 'link',
                 title: null,
-                url: 'https://duckduckgo.com/?q=how+would+an+attacker+gain+access+to+the+host+machine+from+within+a+docker+container&ia=web',
+                url: 'https://www.google.com/search?hl=en&q=how+would+an+attacker+gain+access+to+the+host+machine+from+within+a+docker+container&ia=web',
                 children: [
                   {
                     type: 'text',
@@ -1113,27 +1113,27 @@ export default [
                 ],
                 position: {
                   start: { line: 20, column: 198, offset: 539 },
-                  end: { line: 20, column: 404, offset: 745 }
+                  end: { line: 20, column: 416, offset: 757 }
                 }
               },
               {
                 type: 'text',
                 value: '.',
                 position: {
-                  start: { line: 20, column: 404, offset: 745 },
-                  end: { line: 20, column: 405, offset: 746 }
+                  start: { line: 20, column: 416, offset: 757 },
+                  end: { line: 20, column: 417, offset: 758 }
                 }
               }
             ],
             position: {
               start: { line: 20, column: 1, offset: 342 },
-              end: { line: 20, column: 405, offset: 746 }
+              end: { line: 20, column: 417, offset: 758 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 20, column: 405, offset: 746 }
+          end: { line: 20, column: 417, offset: 758 }
         }
       }
     },
