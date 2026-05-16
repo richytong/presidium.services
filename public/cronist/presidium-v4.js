@@ -716,7 +716,7 @@ export default [
       "    * `apiVersion` - the version of the Docker API. Defaults to `'1.48'`.\n" +
       '\n' +
       'Supported platforms:\n' +
-      '  * MacOS (64-bit)\n' +
+      '  * macOS (64-bit)\n' +
       '  * Linux (64-bit)\n' +
       '\n' +
       'System dependencies:\n' +
@@ -962,7 +962,7 @@ export default [
                     children: [
                       {
                         type: 'text',
-                        value: 'MacOS (64-bit)',
+                        value: 'macOS (64-bit)',
                         position: {
                           start: { line: 14, column: 5, offset: 286 },
                           end: { line: 14, column: 19, offset: 300 }
