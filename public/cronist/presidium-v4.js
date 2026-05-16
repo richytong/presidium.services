@@ -84615,7 +84615,7 @@ export default [
       '  * [Chrome Devtools Protocol](https://chromedevtools.github.io/devtools-protocol/)\n' +
       '\n' +
       'Supported platforms:\n' +
-      '  * MacOS (64-bit)\n' +
+      '  * macOS (64-bit)\n' +
       '  * Linux (64-bit)\n' +
       '  * Windows (64-bit)\n' +
       '\n' +
@@ -85751,7 +85751,7 @@ export default [
                     children: [
                       {
                         type: 'text',
-                        value: 'MacOS (64-bit)',
+                        value: 'macOS (64-bit)',
                         position: {
                           start: { line: 106, column: 5, offset: 4799 },
                           end: { line: 106, column: 19, offset: 4813 }
@@ -97503,7 +97503,7 @@ export default [
       '  * [Chrome for Testing availability](https://googlechromelabs.github.io/chrome-for-testing/)\n' +
       '\n' +
       'Supported platforms:\n' +
-      '  * MacOS (64-bit)\n' +
+      '  * macOS (64-bit)\n' +
       '  * Linux (64-bit)\n' +
       '  * Windows (64-bit)\n' +
       '\n' +
@@ -98200,7 +98200,7 @@ export default [
                     children: [
                       {
                         type: 'text',
-                        value: 'MacOS (64-bit)',
+                        value: 'macOS (64-bit)',
                         position: {
                           start: { line: 34, column: 5, offset: 1466 },
                           end: { line: 34, column: 19, offset: 1480 }
