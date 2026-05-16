@@ -716,7 +716,8 @@ export default [
       "    * `apiVersion` - the version of the Docker API. Defaults to `'1.48'`.\n" +
       '\n' +
       'Supported platforms:\n' +
-      '  * `linux64`\n' +
+      '  * MacOS (64-bit)\n' +
+      '  * Linux (64-bit)\n' +
       '\n' +
       'System dependencies:\n' +
       '  * `docker`\n' +
@@ -960,29 +961,57 @@ export default [
                     type: 'paragraph',
                     children: [
                       {
-                        type: 'inlineCode',
-                        value: 'linux64',
+                        type: 'text',
+                        value: 'MacOS (64-bit)',
                         position: {
                           start: { line: 14, column: 5, offset: 286 },
-                          end: { line: 14, column: 14, offset: 295 }
+                          end: { line: 14, column: 19, offset: 300 }
                         }
                       }
                     ],
                     position: {
                       start: { line: 14, column: 5, offset: 286 },
-                      end: { line: 14, column: 14, offset: 295 }
+                      end: { line: 14, column: 19, offset: 300 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 14, column: 3, offset: 284 },
-                  end: { line: 14, column: 14, offset: 295 }
+                  end: { line: 14, column: 19, offset: 300 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'text',
+                        value: 'Linux (64-bit)',
+                        position: {
+                          start: { line: 15, column: 5, offset: 305 },
+                          end: { line: 15, column: 19, offset: 319 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 15, column: 5, offset: 305 },
+                      end: { line: 15, column: 19, offset: 319 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 15, column: 3, offset: 303 },
+                  end: { line: 15, column: 19, offset: 319 }
                 }
               }
             ],
             position: {
               start: { line: 14, column: 3, offset: 284 },
-              end: { line: 14, column: 14, offset: 295 }
+              end: { line: 15, column: 19, offset: 319 }
             }
           },
           {
@@ -992,14 +1021,14 @@ export default [
                 type: 'text',
                 value: 'System dependencies:',
                 position: {
-                  start: { line: 16, column: 1, offset: 297 },
-                  end: { line: 16, column: 21, offset: 317 }
+                  start: { line: 17, column: 1, offset: 321 },
+                  end: { line: 17, column: 21, offset: 341 }
                 }
               }
             ],
             position: {
-              start: { line: 16, column: 1, offset: 297 },
-              end: { line: 16, column: 21, offset: 317 }
+              start: { line: 17, column: 1, offset: 321 },
+              end: { line: 17, column: 21, offset: 341 }
             }
           },
           {
@@ -1020,20 +1049,20 @@ export default [
                         type: 'inlineCode',
                         value: 'docker',
                         position: {
-                          start: { line: 17, column: 5, offset: 322 },
-                          end: { line: 17, column: 13, offset: 330 }
+                          start: { line: 18, column: 5, offset: 346 },
+                          end: { line: 18, column: 13, offset: 354 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 17, column: 5, offset: 322 },
-                      end: { line: 17, column: 13, offset: 330 }
+                      start: { line: 18, column: 5, offset: 346 },
+                      end: { line: 18, column: 13, offset: 354 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 17, column: 3, offset: 320 },
-                  end: { line: 17, column: 13, offset: 330 }
+                  start: { line: 18, column: 3, offset: 344 },
+                  end: { line: 18, column: 13, offset: 354 }
                 }
               },
               {
@@ -1048,26 +1077,26 @@ export default [
                         type: 'inlineCode',
                         value: 'tar',
                         position: {
-                          start: { line: 18, column: 5, offset: 335 },
-                          end: { line: 18, column: 10, offset: 340 }
+                          start: { line: 19, column: 5, offset: 359 },
+                          end: { line: 19, column: 10, offset: 364 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 18, column: 5, offset: 335 },
-                      end: { line: 18, column: 10, offset: 340 }
+                      start: { line: 19, column: 5, offset: 359 },
+                      end: { line: 19, column: 10, offset: 364 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 18, column: 3, offset: 333 },
-                  end: { line: 18, column: 10, offset: 340 }
+                  start: { line: 19, column: 3, offset: 357 },
+                  end: { line: 19, column: 10, offset: 364 }
                 }
               }
             ],
             position: {
-              start: { line: 17, column: 3, offset: 320 },
-              end: { line: 18, column: 10, offset: 340 }
+              start: { line: 18, column: 3, offset: 344 },
+              end: { line: 19, column: 10, offset: 364 }
             }
           },
           {
@@ -1077,24 +1106,24 @@ export default [
                 type: 'text',
                 value: 'Note: the Presidium Docker client connects to the Docker socket ',
                 position: {
-                  start: { line: 20, column: 1, offset: 342 },
-                  end: { line: 20, column: 65, offset: 406 }
+                  start: { line: 21, column: 1, offset: 366 },
+                  end: { line: 21, column: 65, offset: 430 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: '/var/run/docker.sock',
                 position: {
-                  start: { line: 20, column: 65, offset: 406 },
-                  end: { line: 20, column: 87, offset: 428 }
+                  start: { line: 21, column: 65, offset: 430 },
+                  end: { line: 21, column: 87, offset: 452 }
                 }
               },
               {
                 type: 'text',
                 value: '. For security purposes, please avoid exposing any code using the Presidium Docker client to the internet, see ',
                 position: {
-                  start: { line: 20, column: 87, offset: 428 },
-                  end: { line: 20, column: 198, offset: 539 }
+                  start: { line: 21, column: 87, offset: 452 },
+                  end: { line: 21, column: 198, offset: 563 }
                 }
               },
               {
@@ -1106,34 +1135,34 @@ export default [
                     type: 'text',
                     value: 'How would an attacker gain access to the host machine from within a Docker container?',
                     position: {
-                      start: { line: 20, column: 199, offset: 540 },
-                      end: { line: 20, column: 284, offset: 625 }
+                      start: { line: 21, column: 199, offset: 564 },
+                      end: { line: 21, column: 284, offset: 649 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 20, column: 198, offset: 539 },
-                  end: { line: 20, column: 416, offset: 757 }
+                  start: { line: 21, column: 198, offset: 563 },
+                  end: { line: 21, column: 416, offset: 781 }
                 }
               },
               {
                 type: 'text',
                 value: '.',
                 position: {
-                  start: { line: 20, column: 416, offset: 757 },
-                  end: { line: 20, column: 417, offset: 758 }
+                  start: { line: 21, column: 416, offset: 781 },
+                  end: { line: 21, column: 417, offset: 782 }
                 }
               }
             ],
             position: {
-              start: { line: 20, column: 1, offset: 342 },
-              end: { line: 20, column: 417, offset: 758 }
+              start: { line: 21, column: 1, offset: 366 },
+              end: { line: 21, column: 417, offset: 782 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 20, column: 417, offset: 758 }
+          end: { line: 21, column: 417, offset: 782 }
         }
       }
     },
@@ -84586,9 +84615,9 @@ export default [
       '  * [Chrome Devtools Protocol](https://chromedevtools.github.io/devtools-protocol/)\n' +
       '\n' +
       'Supported platforms:\n' +
-      '  * `mac-arm64`\n' +
-      '  * `linux64`\n' +
-      '  * `win64`\n' +
+      '  * MacOS (64-bit)\n' +
+      '  * Linux (64-bit)\n' +
+      '  * Windows (64-bit)\n' +
       '\n' +
       '## Further Installation\n' +
       'Some further installation may be required for Linux platforms.\n' +
@@ -85721,23 +85750,23 @@ export default [
                     type: 'paragraph',
                     children: [
                       {
-                        type: 'inlineCode',
-                        value: 'mac-arm64',
+                        type: 'text',
+                        value: 'MacOS (64-bit)',
                         position: {
                           start: { line: 106, column: 5, offset: 4799 },
-                          end: { line: 106, column: 16, offset: 4810 }
+                          end: { line: 106, column: 19, offset: 4813 }
                         }
                       }
                     ],
                     position: {
                       start: { line: 106, column: 5, offset: 4799 },
-                      end: { line: 106, column: 16, offset: 4810 }
+                      end: { line: 106, column: 19, offset: 4813 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 106, column: 3, offset: 4797 },
-                  end: { line: 106, column: 16, offset: 4810 }
+                  end: { line: 106, column: 19, offset: 4813 }
                 }
               },
               {
@@ -85749,23 +85778,23 @@ export default [
                     type: 'paragraph',
                     children: [
                       {
-                        type: 'inlineCode',
-                        value: 'linux64',
+                        type: 'text',
+                        value: 'Linux (64-bit)',
                         position: {
-                          start: { line: 107, column: 5, offset: 4815 },
-                          end: { line: 107, column: 14, offset: 4824 }
+                          start: { line: 107, column: 5, offset: 4818 },
+                          end: { line: 107, column: 19, offset: 4832 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 107, column: 5, offset: 4815 },
-                      end: { line: 107, column: 14, offset: 4824 }
+                      start: { line: 107, column: 5, offset: 4818 },
+                      end: { line: 107, column: 19, offset: 4832 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 107, column: 3, offset: 4813 },
-                  end: { line: 107, column: 14, offset: 4824 }
+                  start: { line: 107, column: 3, offset: 4816 },
+                  end: { line: 107, column: 19, offset: 4832 }
                 }
               },
               {
@@ -85777,29 +85806,29 @@ export default [
                     type: 'paragraph',
                     children: [
                       {
-                        type: 'inlineCode',
-                        value: 'win64',
+                        type: 'text',
+                        value: 'Windows (64-bit)',
                         position: {
-                          start: { line: 108, column: 5, offset: 4829 },
-                          end: { line: 108, column: 12, offset: 4836 }
+                          start: { line: 108, column: 5, offset: 4837 },
+                          end: { line: 108, column: 21, offset: 4853 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 108, column: 5, offset: 4829 },
-                      end: { line: 108, column: 12, offset: 4836 }
+                      start: { line: 108, column: 5, offset: 4837 },
+                      end: { line: 108, column: 21, offset: 4853 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 108, column: 3, offset: 4827 },
-                  end: { line: 108, column: 12, offset: 4836 }
+                  start: { line: 108, column: 3, offset: 4835 },
+                  end: { line: 108, column: 21, offset: 4853 }
                 }
               }
             ],
             position: {
               start: { line: 106, column: 3, offset: 4797 },
-              end: { line: 108, column: 12, offset: 4836 }
+              end: { line: 108, column: 21, offset: 4853 }
             }
           },
           {
@@ -85810,14 +85839,14 @@ export default [
                 type: 'text',
                 value: 'Further Installation',
                 position: {
-                  start: { line: 110, column: 4, offset: 4841 },
-                  end: { line: 110, column: 24, offset: 4861 }
+                  start: { line: 110, column: 4, offset: 4858 },
+                  end: { line: 110, column: 24, offset: 4878 }
                 }
               }
             ],
             position: {
-              start: { line: 110, column: 1, offset: 4838 },
-              end: { line: 110, column: 24, offset: 4861 }
+              start: { line: 110, column: 1, offset: 4855 },
+              end: { line: 110, column: 24, offset: 4878 }
             }
           },
           {
@@ -85827,14 +85856,14 @@ export default [
                 type: 'text',
                 value: 'Some further installation may be required for Linux platforms.',
                 position: {
-                  start: { line: 111, column: 1, offset: 4862 },
-                  end: { line: 111, column: 63, offset: 4924 }
+                  start: { line: 111, column: 1, offset: 4879 },
+                  end: { line: 111, column: 63, offset: 4941 }
                 }
               }
             ],
             position: {
-              start: { line: 111, column: 1, offset: 4862 },
-              end: { line: 111, column: 63, offset: 4924 }
+              start: { line: 111, column: 1, offset: 4879 },
+              end: { line: 111, column: 63, offset: 4941 }
             }
           },
           {
@@ -85845,14 +85874,14 @@ export default [
                 type: 'text',
                 value: 'Install headless dependencies for Amazon Linux 2023 / Red Hat',
                 position: {
-                  start: { line: 113, column: 5, offset: 4930 },
-                  end: { line: 113, column: 66, offset: 4991 }
+                  start: { line: 113, column: 5, offset: 4947 },
+                  end: { line: 113, column: 66, offset: 5008 }
                 }
               }
             ],
             position: {
-              start: { line: 113, column: 1, offset: 4926 },
-              end: { line: 113, column: 66, offset: 4991 }
+              start: { line: 113, column: 1, offset: 4943 },
+              end: { line: 113, column: 66, offset: 5008 }
             }
           },
           {
@@ -85861,8 +85890,8 @@ export default [
             meta: null,
             value: 'sudo dnf install -y cairo pango nss nspr atk at-spi2-atk cups-libs libdrm libxkbcommon libXcomposite libXdamage libXfixes libXrandr mesa-libgbm alsa-lib',
             position: {
-              start: { line: 114, column: 1, offset: 4992 },
-              end: { line: 116, column: 4, offset: 5154 }
+              start: { line: 114, column: 1, offset: 5009 },
+              end: { line: 116, column: 4, offset: 5171 }
             }
           },
           {
@@ -85873,14 +85902,14 @@ export default [
                 type: 'text',
                 value: 'Install headless dependencies for Ubuntu / Debian',
                 position: {
-                  start: { line: 118, column: 5, offset: 5160 },
-                  end: { line: 118, column: 54, offset: 5209 }
+                  start: { line: 118, column: 5, offset: 5177 },
+                  end: { line: 118, column: 54, offset: 5226 }
                 }
               }
             ],
             position: {
-              start: { line: 118, column: 1, offset: 5156 },
-              end: { line: 118, column: 54, offset: 5209 }
+              start: { line: 118, column: 1, offset: 5173 },
+              end: { line: 118, column: 54, offset: 5226 }
             }
           },
           {
@@ -85889,14 +85918,14 @@ export default [
             meta: null,
             value: 'sudo apt-get update && sudo apt-get install -y libcairo2 libpango-1.0-0 libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libatspi2.0-0 libcups2 libdrm-dev libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm-dev libasound2-dev',
             position: {
-              start: { line: 119, column: 1, offset: 5210 },
-              end: { line: 121, column: 4, offset: 5462 }
+              start: { line: 119, column: 1, offset: 5227 },
+              end: { line: 121, column: 4, offset: 5479 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 121, column: 4, offset: 5462 }
+          end: { line: 121, column: 4, offset: 5479 }
         }
       }
     },
@@ -97474,9 +97503,9 @@ export default [
       '  * [Chrome for Testing availability](https://googlechromelabs.github.io/chrome-for-testing/)\n' +
       '\n' +
       'Supported platforms:\n' +
-      '  * `mac-arm64`\n' +
-      '  * `linux64`\n' +
-      '  * `win64`\n' +
+      '  * MacOS (64-bit)\n' +
+      '  * Linux (64-bit)\n' +
+      '  * Windows (64-bit)\n' +
       '\n' +
       '## Further Installation\n' +
       'Some further installation may be required for Linux platforms.\n' +
@@ -98170,23 +98199,23 @@ export default [
                     type: 'paragraph',
                     children: [
                       {
-                        type: 'inlineCode',
-                        value: 'mac-arm64',
+                        type: 'text',
+                        value: 'MacOS (64-bit)',
                         position: {
                           start: { line: 34, column: 5, offset: 1466 },
-                          end: { line: 34, column: 16, offset: 1477 }
+                          end: { line: 34, column: 19, offset: 1480 }
                         }
                       }
                     ],
                     position: {
                       start: { line: 34, column: 5, offset: 1466 },
-                      end: { line: 34, column: 16, offset: 1477 }
+                      end: { line: 34, column: 19, offset: 1480 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 34, column: 3, offset: 1464 },
-                  end: { line: 34, column: 16, offset: 1477 }
+                  end: { line: 34, column: 19, offset: 1480 }
                 }
               },
               {
@@ -98198,23 +98227,23 @@ export default [
                     type: 'paragraph',
                     children: [
                       {
-                        type: 'inlineCode',
-                        value: 'linux64',
+                        type: 'text',
+                        value: 'Linux (64-bit)',
                         position: {
-                          start: { line: 35, column: 5, offset: 1482 },
-                          end: { line: 35, column: 14, offset: 1491 }
+                          start: { line: 35, column: 5, offset: 1485 },
+                          end: { line: 35, column: 19, offset: 1499 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 35, column: 5, offset: 1482 },
-                      end: { line: 35, column: 14, offset: 1491 }
+                      start: { line: 35, column: 5, offset: 1485 },
+                      end: { line: 35, column: 19, offset: 1499 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 35, column: 3, offset: 1480 },
-                  end: { line: 35, column: 14, offset: 1491 }
+                  start: { line: 35, column: 3, offset: 1483 },
+                  end: { line: 35, column: 19, offset: 1499 }
                 }
               },
               {
@@ -98226,29 +98255,29 @@ export default [
                     type: 'paragraph',
                     children: [
                       {
-                        type: 'inlineCode',
-                        value: 'win64',
+                        type: 'text',
+                        value: 'Windows (64-bit)',
                         position: {
-                          start: { line: 36, column: 5, offset: 1496 },
-                          end: { line: 36, column: 12, offset: 1503 }
+                          start: { line: 36, column: 5, offset: 1504 },
+                          end: { line: 36, column: 21, offset: 1520 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 36, column: 5, offset: 1496 },
-                      end: { line: 36, column: 12, offset: 1503 }
+                      start: { line: 36, column: 5, offset: 1504 },
+                      end: { line: 36, column: 21, offset: 1520 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 36, column: 3, offset: 1494 },
-                  end: { line: 36, column: 12, offset: 1503 }
+                  start: { line: 36, column: 3, offset: 1502 },
+                  end: { line: 36, column: 21, offset: 1520 }
                 }
               }
             ],
             position: {
               start: { line: 34, column: 3, offset: 1464 },
-              end: { line: 36, column: 12, offset: 1503 }
+              end: { line: 36, column: 21, offset: 1520 }
             }
           },
           {
@@ -98259,14 +98288,14 @@ export default [
                 type: 'text',
                 value: 'Further Installation',
                 position: {
-                  start: { line: 38, column: 4, offset: 1508 },
-                  end: { line: 38, column: 24, offset: 1528 }
+                  start: { line: 38, column: 4, offset: 1525 },
+                  end: { line: 38, column: 24, offset: 1545 }
                 }
               }
             ],
             position: {
-              start: { line: 38, column: 1, offset: 1505 },
-              end: { line: 38, column: 24, offset: 1528 }
+              start: { line: 38, column: 1, offset: 1522 },
+              end: { line: 38, column: 24, offset: 1545 }
             }
           },
           {
@@ -98276,14 +98305,14 @@ export default [
                 type: 'text',
                 value: 'Some further installation may be required for Linux platforms.',
                 position: {
-                  start: { line: 39, column: 1, offset: 1529 },
-                  end: { line: 39, column: 63, offset: 1591 }
+                  start: { line: 39, column: 1, offset: 1546 },
+                  end: { line: 39, column: 63, offset: 1608 }
                 }
               }
             ],
             position: {
-              start: { line: 39, column: 1, offset: 1529 },
-              end: { line: 39, column: 63, offset: 1591 }
+              start: { line: 39, column: 1, offset: 1546 },
+              end: { line: 39, column: 63, offset: 1608 }
             }
           },
           {
@@ -98294,14 +98323,14 @@ export default [
                 type: 'text',
                 value: 'Install headless dependencies for Amazon Linux 2023 / Red Hat',
                 position: {
-                  start: { line: 41, column: 5, offset: 1597 },
-                  end: { line: 41, column: 66, offset: 1658 }
+                  start: { line: 41, column: 5, offset: 1614 },
+                  end: { line: 41, column: 66, offset: 1675 }
                 }
               }
             ],
             position: {
-              start: { line: 41, column: 1, offset: 1593 },
-              end: { line: 41, column: 66, offset: 1658 }
+              start: { line: 41, column: 1, offset: 1610 },
+              end: { line: 41, column: 66, offset: 1675 }
             }
           },
           {
@@ -98310,8 +98339,8 @@ export default [
             meta: null,
             value: 'sudo dnf install -y cairo pango nss nspr atk at-spi2-atk cups-libs libdrm libxkbcommon libXcomposite libXdamage libXfixes libXrandr mesa-libgbm alsa-lib',
             position: {
-              start: { line: 42, column: 1, offset: 1659 },
-              end: { line: 44, column: 4, offset: 1821 }
+              start: { line: 42, column: 1, offset: 1676 },
+              end: { line: 44, column: 4, offset: 1838 }
             }
           },
           {
@@ -98322,14 +98351,14 @@ export default [
                 type: 'text',
                 value: 'Install headless dependencies for Ubuntu / Debian',
                 position: {
-                  start: { line: 46, column: 5, offset: 1827 },
-                  end: { line: 46, column: 54, offset: 1876 }
+                  start: { line: 46, column: 5, offset: 1844 },
+                  end: { line: 46, column: 54, offset: 1893 }
                 }
               }
             ],
             position: {
-              start: { line: 46, column: 1, offset: 1823 },
-              end: { line: 46, column: 54, offset: 1876 }
+              start: { line: 46, column: 1, offset: 1840 },
+              end: { line: 46, column: 54, offset: 1893 }
             }
           },
           {
@@ -98338,14 +98367,14 @@ export default [
             meta: null,
             value: 'sudo apt-get update && sudo apt-get install -y libcairo2 libpango-1.0-0 libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libatspi2.0-0 libcups2 libdrm-dev libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm-dev libasound2-dev',
             position: {
-              start: { line: 47, column: 1, offset: 1877 },
-              end: { line: 49, column: 4, offset: 2129 }
+              start: { line: 47, column: 1, offset: 1894 },
+              end: { line: 49, column: 4, offset: 2146 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 49, column: 4, offset: 2129 }
+          end: { line: 49, column: 4, offset: 2146 }
         }
       }
     },
