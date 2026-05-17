@@ -71,8 +71,10 @@ const ReactElementFromMdast = ReactElement(props => {
         default:
           return Span()
       }
+
     case 'root':
       return Article(ReactElementFromMdastRecurse(mdast))
+
     case 'heading':
       switch (mdast.depth) {
         case 1: {
@@ -130,27 +132,38 @@ const ReactElementFromMdast = ReactElement(props => {
             style: { display: 'flex', placeItems: 'center' },
           }, [H5({ id: anchorHash }, ReactElementFromMdastRecurse(mdast))])
         }
-        default: return H6(ReactElementFromMdastRecurse(mdast))
+        default:
+          return H6(ReactElementFromMdastRecurse(mdast))
       }
+
+    case 'emphasis':
+      return I(ReactElementFromMdastRecurse(mdast))
 
     case 'image':
       return Div({ class: 'image' }, [
         Img({ src: mdast.url, alt: mdast.alt })
       ])
+
     case 'blockquote':
       return Blockquote(ReactElementFromMdastRecurse(mdast))
+
     case 'paragraph':
       return P(ReactElementFromMdastRecurse(mdast))
+
     case 'strong':
       return B(ReactElementFromMdastRecurse(mdast))
+
     case 'text':
       return Span(ReactElementFromMdastRecurse(mdast))
+
     case 'list':
       return mdast.ordered
         ? Ol({ start: mdast.start ?? 1 }, ReactElementFromMdastRecurse(mdast))
         : Ul(ReactElementFromMdastRecurse(mdast))
+
     case 'listItem':
       return Li(ReactElementFromMdastRecurse(mdast))
+
     case 'inlineCode':
       return Code(ReactElementFromMdastRecurse(mdast))
 
@@ -181,13 +194,16 @@ const ReactElementFromMdast = ReactElement(props => {
 
     case 'link':
       return A({ href: mdast.url }, ReactElementFromMdastRecurse(mdast))
+
     case 'linkReference':
       return Span([Span('['), ReactElementFromMdastRecurse(mdast), Span(']')])
+
     case 'html':
       if (mdast.value == '<br />' || mdast.value == '<br>') {
         return Br()
       }
       return Span('')
+
     default:
       return Span(mdast.value)
   }
