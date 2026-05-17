@@ -139396,11 +139396,6 @@ export default [
           '    VersionId: string,\n' +
           '    DeleteMarker: boolean,\n' +
           '    DeleteMarkerVersionId: string,\n' +
-          '  }>,\n' +
-          '  Errors: Array<{\n' +
-          '    Key: string,\n' +
-          '    VersionId: string,\n' +
-          '    Code: string\n' +
           '  }>\n' +
           '}>\n' +
           '```\n' +
@@ -139419,10 +139414,6 @@ export default [
           '      * `VersionId` - the version ID of the deleted object.\n' +
           '      * `DeleteMarker` - whether the current version or specified object version that was permanently deleted was a [delete marker](https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeleteMarker.html) before deletion.\n' +
           '      * `DeleteMarkerVersionId` - version ID of the [delete marker](https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeleteMarker.html) created as a result of the DELETE operation, or if a specific object version was deleted, the version ID of the deleted object version.\n' +
-          '    * `Errors` - container for a failed delete.\n' +
-          '      * `Key` - the name of the object of the attempted delete.\n' +
-          '      * `VersionId` - the version ID of the object of the attempted delete.\n' +
-          '      * `Code` - a response code that uniquely identifies the error condition. For a complete list of error responses, see [Error responses](https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html) from the _Amazon S3 API_.\n' +
           '\n' +
           '```javascript\n' +
           'await myBucket.deleteAllObjects()\n' +
@@ -139470,16 +139461,11 @@ export default [
                   '    VersionId: string,\n' +
                   '    DeleteMarker: boolean,\n' +
                   '    DeleteMarkerVersionId: string,\n' +
-                  '  }>,\n' +
-                  '  Errors: Array<{\n' +
-                  '    Key: string,\n' +
-                  '    VersionId: string,\n' +
-                  '    Code: string\n' +
                   '  }>\n' +
                   '}>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 18, column: 4, offset: 348 }
+                  end: { line: 13, column: 4, offset: 267 }
                 }
               },
               {
@@ -139489,14 +139475,14 @@ export default [
                     type: 'text',
                     value: 'Removes all objects from an S3 Bucket.',
                     position: {
-                      start: { line: 20, column: 1, offset: 350 },
-                      end: { line: 20, column: 39, offset: 388 }
+                      start: { line: 15, column: 1, offset: 269 },
+                      end: { line: 15, column: 39, offset: 307 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 20, column: 1, offset: 350 },
-                  end: { line: 20, column: 39, offset: 388 }
+                  start: { line: 15, column: 1, offset: 269 },
+                  end: { line: 15, column: 39, offset: 307 }
                 }
               },
               {
@@ -139506,14 +139492,14 @@ export default [
                     type: 'text',
                     value: 'Arguments:',
                     position: {
-                      start: { line: 22, column: 1, offset: 390 },
-                      end: { line: 22, column: 11, offset: 400 }
+                      start: { line: 17, column: 1, offset: 309 },
+                      end: { line: 17, column: 11, offset: 319 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 22, column: 1, offset: 390 },
-                  end: { line: 22, column: 11, offset: 400 }
+                  start: { line: 17, column: 1, offset: 309 },
+                  end: { line: 17, column: 11, offset: 319 }
                 }
               },
               {
@@ -139534,14 +139520,14 @@ export default [
                             type: 'inlineCode',
                             value: 'options',
                             position: {
-                              start: { line: 23, column: 5, offset: 405 },
-                              end: { line: 23, column: 14, offset: 414 }
+                              start: { line: 18, column: 5, offset: 324 },
+                              end: { line: 18, column: 14, offset: 333 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 23, column: 5, offset: 405 },
-                          end: { line: 23, column: 14, offset: 414 }
+                          start: { line: 18, column: 5, offset: 324 },
+                          end: { line: 18, column: 14, offset: 333 }
                         }
                       },
                       {
@@ -139563,14 +139549,14 @@ export default [
                                     value: 'BatchSize',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 19,
                                         column: 7,
-                                        offset: 421
+                                        offset: 340
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 19,
                                         column: 18,
-                                        offset: 432
+                                        offset: 351
                                       }
                                     }
                                   },
@@ -139579,27 +139565,27 @@ export default [
                                     value: ' - the maximum number of objects per batch of objects to delete.',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 19,
                                         column: 18,
-                                        offset: 432
+                                        offset: 351
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 19,
                                         column: 82,
-                                        offset: 496
+                                        offset: 415
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 24, column: 7, offset: 421 },
-                                  end: { line: 24, column: 82, offset: 496 }
+                                  start: { line: 19, column: 7, offset: 340 },
+                                  end: { line: 19, column: 82, offset: 415 }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 24, column: 5, offset: 419 },
-                              end: { line: 24, column: 82, offset: 496 }
+                              start: { line: 19, column: 5, offset: 338 },
+                              end: { line: 19, column: 82, offset: 415 }
                             }
                           },
                           {
@@ -139615,14 +139601,14 @@ export default [
                                     value: 'BypassGovernanceRetention',
                                     position: {
                                       start: {
-                                        line: 25,
+                                        line: 20,
                                         column: 7,
-                                        offset: 503
+                                        offset: 422
                                       },
                                       end: {
-                                        line: 25,
+                                        line: 20,
                                         column: 34,
-                                        offset: 530
+                                        offset: 449
                                       }
                                     }
                                   },
@@ -139631,14 +139617,14 @@ export default [
                                     value: ' - whether to bypass ',
                                     position: {
                                       start: {
-                                        line: 25,
+                                        line: 20,
                                         column: 34,
-                                        offset: 530
+                                        offset: 449
                                       },
                                       end: {
-                                        line: 25,
+                                        line: 20,
                                         column: 55,
-                                        offset: 551
+                                        offset: 470
                                       }
                                     }
                                   },
@@ -139652,28 +139638,28 @@ export default [
                                         value: 'Governance mode',
                                         position: {
                                           start: {
-                                            line: 25,
+                                            line: 20,
                                             column: 56,
-                                            offset: 552
+                                            offset: 471
                                           },
                                           end: {
-                                            line: 25,
+                                            line: 20,
                                             column: 71,
-                                            offset: 567
+                                            offset: 486
                                           }
                                         }
                                       }
                                     ],
                                     position: {
                                       start: {
-                                        line: 25,
+                                        line: 20,
                                         column: 55,
-                                        offset: 551
+                                        offset: 470
                                       },
                                       end: {
-                                        line: 25,
+                                        line: 20,
                                         column: 172,
-                                        offset: 668
+                                        offset: 587
                                       }
                                     }
                                   },
@@ -139682,14 +139668,14 @@ export default [
                                     value: ' restrictions to process the operation. Requires the ',
                                     position: {
                                       start: {
-                                        line: 25,
+                                        line: 20,
                                         column: 172,
-                                        offset: 668
+                                        offset: 587
                                       },
                                       end: {
-                                        line: 25,
+                                        line: 20,
                                         column: 225,
-                                        offset: 721
+                                        offset: 640
                                       }
                                     }
                                   },
@@ -139698,14 +139684,14 @@ export default [
                                     value: 's3:BypassGovernanceRetention',
                                     position: {
                                       start: {
-                                        line: 25,
+                                        line: 20,
                                         column: 225,
-                                        offset: 721
+                                        offset: 640
                                       },
                                       end: {
-                                        line: 25,
+                                        line: 20,
                                         column: 255,
-                                        offset: 751
+                                        offset: 670
                                       }
                                     }
                                   },
@@ -139714,49 +139700,49 @@ export default [
                                     value: ' permission.',
                                     position: {
                                       start: {
-                                        line: 25,
+                                        line: 20,
                                         column: 255,
-                                        offset: 751
+                                        offset: 670
                                       },
                                       end: {
-                                        line: 25,
+                                        line: 20,
                                         column: 267,
-                                        offset: 763
+                                        offset: 682
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 25, column: 7, offset: 503 },
+                                  start: { line: 20, column: 7, offset: 422 },
                                   end: {
-                                    line: 25,
+                                    line: 20,
                                     column: 267,
-                                    offset: 763
+                                    offset: 682
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 25, column: 5, offset: 501 },
-                              end: { line: 25, column: 267, offset: 763 }
+                              start: { line: 20, column: 5, offset: 420 },
+                              end: { line: 20, column: 267, offset: 682 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 24, column: 5, offset: 419 },
-                          end: { line: 25, column: 267, offset: 763 }
+                          start: { line: 19, column: 5, offset: 338 },
+                          end: { line: 20, column: 267, offset: 682 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 23, column: 3, offset: 403 },
-                      end: { line: 25, column: 267, offset: 763 }
+                      start: { line: 18, column: 3, offset: 322 },
+                      end: { line: 20, column: 267, offset: 682 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 23, column: 3, offset: 403 },
-                  end: { line: 25, column: 267, offset: 763 }
+                  start: { line: 18, column: 3, offset: 322 },
+                  end: { line: 20, column: 267, offset: 682 }
                 }
               },
               {
@@ -139766,14 +139752,14 @@ export default [
                     type: 'text',
                     value: 'Return:',
                     position: {
-                      start: { line: 27, column: 1, offset: 765 },
-                      end: { line: 27, column: 8, offset: 772 }
+                      start: { line: 22, column: 1, offset: 684 },
+                      end: { line: 22, column: 8, offset: 691 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 27, column: 1, offset: 765 },
-                  end: { line: 27, column: 8, offset: 772 }
+                  start: { line: 22, column: 1, offset: 684 },
+                  end: { line: 22, column: 8, offset: 691 }
                 }
               },
               {
@@ -139794,14 +139780,14 @@ export default [
                             type: 'inlineCode',
                             value: 'data',
                             position: {
-                              start: { line: 28, column: 5, offset: 777 },
-                              end: { line: 28, column: 11, offset: 783 }
+                              start: { line: 23, column: 5, offset: 696 },
+                              end: { line: 23, column: 11, offset: 702 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 28, column: 5, offset: 777 },
-                          end: { line: 28, column: 11, offset: 783 }
+                          start: { line: 23, column: 5, offset: 696 },
+                          end: { line: 23, column: 11, offset: 702 }
                         }
                       },
                       {
@@ -139823,14 +139809,14 @@ export default [
                                     value: 'Deleted',
                                     position: {
                                       start: {
-                                        line: 29,
+                                        line: 24,
                                         column: 7,
-                                        offset: 790
+                                        offset: 709
                                       },
                                       end: {
-                                        line: 29,
+                                        line: 24,
                                         column: 16,
-                                        offset: 799
+                                        offset: 718
                                       }
                                     }
                                   },
@@ -139839,21 +139825,21 @@ export default [
                                     value: ' - container for a successful delete.',
                                     position: {
                                       start: {
-                                        line: 29,
+                                        line: 24,
                                         column: 16,
-                                        offset: 799
+                                        offset: 718
                                       },
                                       end: {
-                                        line: 29,
+                                        line: 24,
                                         column: 53,
-                                        offset: 836
+                                        offset: 755
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 29, column: 7, offset: 790 },
-                                  end: { line: 29, column: 53, offset: 836 }
+                                  start: { line: 24, column: 7, offset: 709 },
+                                  end: { line: 24, column: 53, offset: 755 }
                                 }
                               },
                               {
@@ -139875,14 +139861,14 @@ export default [
                                             value: 'Key',
                                             position: {
                                               start: {
-                                                line: 30,
+                                                line: 25,
                                                 column: 9,
-                                                offset: 845
+                                                offset: 764
                                               },
                                               end: {
-                                                line: 30,
+                                                line: 25,
                                                 column: 14,
-                                                offset: 850
+                                                offset: 769
                                               }
                                             }
                                           },
@@ -139891,42 +139877,42 @@ export default [
                                             value: ' - the name of a deleted object.',
                                             position: {
                                               start: {
-                                                line: 30,
+                                                line: 25,
                                                 column: 14,
-                                                offset: 850
+                                                offset: 769
                                               },
                                               end: {
-                                                line: 30,
+                                                line: 25,
                                                 column: 46,
-                                                offset: 882
+                                                offset: 801
                                               }
                                             }
                                           }
                                         ],
                                         position: {
                                           start: {
-                                            line: 30,
+                                            line: 25,
                                             column: 9,
-                                            offset: 845
+                                            offset: 764
                                           },
                                           end: {
-                                            line: 30,
+                                            line: 25,
                                             column: 46,
-                                            offset: 882
+                                            offset: 801
                                           }
                                         }
                                       }
                                     ],
                                     position: {
                                       start: {
-                                        line: 30,
+                                        line: 25,
                                         column: 7,
-                                        offset: 843
+                                        offset: 762
                                       },
                                       end: {
-                                        line: 30,
+                                        line: 25,
                                         column: 46,
-                                        offset: 882
+                                        offset: 801
                                       }
                                     }
                                   },
@@ -139943,14 +139929,14 @@ export default [
                                             value: 'VersionId',
                                             position: {
                                               start: {
-                                                line: 31,
+                                                line: 26,
                                                 column: 9,
-                                                offset: 891
+                                                offset: 810
                                               },
                                               end: {
-                                                line: 31,
+                                                line: 26,
                                                 column: 20,
-                                                offset: 902
+                                                offset: 821
                                               }
                                             }
                                           },
@@ -139959,42 +139945,42 @@ export default [
                                             value: ' - the version ID of the deleted object.',
                                             position: {
                                               start: {
-                                                line: 31,
+                                                line: 26,
                                                 column: 20,
-                                                offset: 902
+                                                offset: 821
                                               },
                                               end: {
-                                                line: 31,
+                                                line: 26,
                                                 column: 60,
-                                                offset: 942
+                                                offset: 861
                                               }
                                             }
                                           }
                                         ],
                                         position: {
                                           start: {
-                                            line: 31,
+                                            line: 26,
                                             column: 9,
-                                            offset: 891
+                                            offset: 810
                                           },
                                           end: {
-                                            line: 31,
+                                            line: 26,
                                             column: 60,
-                                            offset: 942
+                                            offset: 861
                                           }
                                         }
                                       }
                                     ],
                                     position: {
                                       start: {
-                                        line: 31,
+                                        line: 26,
                                         column: 7,
-                                        offset: 889
+                                        offset: 808
                                       },
                                       end: {
-                                        line: 31,
+                                        line: 26,
                                         column: 60,
-                                        offset: 942
+                                        offset: 861
                                       }
                                     }
                                   },
@@ -140011,14 +139997,14 @@ export default [
                                             value: 'DeleteMarker',
                                             position: {
                                               start: {
-                                                line: 32,
+                                                line: 27,
                                                 column: 9,
-                                                offset: 951
+                                                offset: 870
                                               },
                                               end: {
-                                                line: 32,
+                                                line: 27,
                                                 column: 23,
-                                                offset: 965
+                                                offset: 884
                                               }
                                             }
                                           },
@@ -140027,14 +140013,14 @@ export default [
                                             value: ' - whether the current version or specified object version that was permanently deleted was a ',
                                             position: {
                                               start: {
-                                                line: 32,
+                                                line: 27,
                                                 column: 23,
-                                                offset: 965
+                                                offset: 884
                                               },
                                               end: {
-                                                line: 32,
+                                                line: 27,
                                                 column: 117,
-                                                offset: 1059
+                                                offset: 978
                                               }
                                             }
                                           },
@@ -140048,28 +140034,28 @@ export default [
                                                 value: 'delete marker',
                                                 position: {
                                                   start: {
-                                                    line: 32,
+                                                    line: 27,
                                                     column: 118,
-                                                    offset: 1060
+                                                    offset: 979
                                                   },
                                                   end: {
-                                                    line: 32,
+                                                    line: 27,
                                                     column: 131,
-                                                    offset: 1073
+                                                    offset: 992
                                                   }
                                                 }
                                               }
                                             ],
                                             position: {
                                               start: {
-                                                line: 32,
+                                                line: 27,
                                                 column: 117,
-                                                offset: 1059
+                                                offset: 978
                                               },
                                               end: {
-                                                line: 32,
+                                                line: 27,
                                                 column: 205,
-                                                offset: 1147
+                                                offset: 1066
                                               }
                                             }
                                           },
@@ -140078,42 +140064,42 @@ export default [
                                             value: ' before deletion.',
                                             position: {
                                               start: {
-                                                line: 32,
+                                                line: 27,
                                                 column: 205,
-                                                offset: 1147
+                                                offset: 1066
                                               },
                                               end: {
-                                                line: 32,
+                                                line: 27,
                                                 column: 222,
-                                                offset: 1164
+                                                offset: 1083
                                               }
                                             }
                                           }
                                         ],
                                         position: {
                                           start: {
-                                            line: 32,
+                                            line: 27,
                                             column: 9,
-                                            offset: 951
+                                            offset: 870
                                           },
                                           end: {
-                                            line: 32,
+                                            line: 27,
                                             column: 222,
-                                            offset: 1164
+                                            offset: 1083
                                           }
                                         }
                                       }
                                     ],
                                     position: {
                                       start: {
-                                        line: 32,
+                                        line: 27,
                                         column: 7,
-                                        offset: 949
+                                        offset: 868
                                       },
                                       end: {
-                                        line: 32,
+                                        line: 27,
                                         column: 222,
-                                        offset: 1164
+                                        offset: 1083
                                       }
                                     }
                                   },
@@ -140130,14 +140116,14 @@ export default [
                                             value: 'DeleteMarkerVersionId',
                                             position: {
                                               start: {
-                                                line: 33,
+                                                line: 28,
                                                 column: 9,
-                                                offset: 1173
+                                                offset: 1092
                                               },
                                               end: {
-                                                line: 33,
+                                                line: 28,
                                                 column: 32,
-                                                offset: 1196
+                                                offset: 1115
                                               }
                                             }
                                           },
@@ -140146,14 +140132,14 @@ export default [
                                             value: ' - version ID of the ',
                                             position: {
                                               start: {
-                                                line: 33,
+                                                line: 28,
                                                 column: 32,
-                                                offset: 1196
+                                                offset: 1115
                                               },
                                               end: {
-                                                line: 33,
+                                                line: 28,
                                                 column: 53,
-                                                offset: 1217
+                                                offset: 1136
                                               }
                                             }
                                           },
@@ -140167,28 +140153,28 @@ export default [
                                                 value: 'delete marker',
                                                 position: {
                                                   start: {
-                                                    line: 33,
+                                                    line: 28,
                                                     column: 54,
-                                                    offset: 1218
+                                                    offset: 1137
                                                   },
                                                   end: {
-                                                    line: 33,
+                                                    line: 28,
                                                     column: 67,
-                                                    offset: 1231
+                                                    offset: 1150
                                                   }
                                                 }
                                               }
                                             ],
                                             position: {
                                               start: {
-                                                line: 33,
+                                                line: 28,
                                                 column: 53,
-                                                offset: 1217
+                                                offset: 1136
                                               },
                                               end: {
-                                                line: 33,
+                                                line: 28,
                                                 column: 141,
-                                                offset: 1305
+                                                offset: 1224
                                               }
                                             }
                                           },
@@ -140197,453 +140183,77 @@ export default [
                                             value: ' created as a result of the DELETE operation, or if a specific object version was deleted, the version ID of the deleted object version.',
                                             position: {
                                               start: {
-                                                line: 33,
+                                                line: 28,
                                                 column: 141,
-                                                offset: 1305
+                                                offset: 1224
                                               },
                                               end: {
-                                                line: 33,
+                                                line: 28,
                                                 column: 277,
-                                                offset: 1441
+                                                offset: 1360
                                               }
                                             }
                                           }
                                         ],
                                         position: {
                                           start: {
-                                            line: 33,
+                                            line: 28,
                                             column: 9,
-                                            offset: 1173
+                                            offset: 1092
                                           },
                                           end: {
-                                            line: 33,
+                                            line: 28,
                                             column: 277,
-                                            offset: 1441
+                                            offset: 1360
                                           }
                                         }
                                       }
                                     ],
                                     position: {
                                       start: {
-                                        line: 33,
+                                        line: 28,
                                         column: 7,
-                                        offset: 1171
+                                        offset: 1090
                                       },
                                       end: {
-                                        line: 33,
+                                        line: 28,
                                         column: 277,
-                                        offset: 1441
+                                        offset: 1360
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 30, column: 7, offset: 843 },
+                                  start: { line: 25, column: 7, offset: 762 },
                                   end: {
-                                    line: 33,
+                                    line: 28,
                                     column: 277,
-                                    offset: 1441
+                                    offset: 1360
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 29, column: 5, offset: 788 },
-                              end: { line: 33, column: 277, offset: 1441 }
-                            }
-                          },
-                          {
-                            type: 'listItem',
-                            spread: false,
-                            checked: null,
-                            children: [
-                              {
-                                type: 'paragraph',
-                                children: [
-                                  {
-                                    type: 'inlineCode',
-                                    value: 'Errors',
-                                    position: {
-                                      start: {
-                                        line: 34,
-                                        column: 7,
-                                        offset: 1448
-                                      },
-                                      end: {
-                                        line: 34,
-                                        column: 15,
-                                        offset: 1456
-                                      }
-                                    }
-                                  },
-                                  {
-                                    type: 'text',
-                                    value: ' - container for a failed delete.',
-                                    position: {
-                                      start: {
-                                        line: 34,
-                                        column: 15,
-                                        offset: 1456
-                                      },
-                                      end: {
-                                        line: 34,
-                                        column: 48,
-                                        offset: 1489
-                                      }
-                                    }
-                                  }
-                                ],
-                                position: {
-                                  start: { line: 34, column: 7, offset: 1448 },
-                                  end: {
-                                    line: 34,
-                                    column: 48,
-                                    offset: 1489
-                                  }
-                                }
-                              },
-                              {
-                                type: 'list',
-                                ordered: false,
-                                start: null,
-                                spread: false,
-                                children: [
-                                  {
-                                    type: 'listItem',
-                                    spread: false,
-                                    checked: null,
-                                    children: [
-                                      {
-                                        type: 'paragraph',
-                                        children: [
-                                          {
-                                            type: 'inlineCode',
-                                            value: 'Key',
-                                            position: {
-                                              start: {
-                                                line: 35,
-                                                column: 9,
-                                                offset: 1498
-                                              },
-                                              end: {
-                                                line: 35,
-                                                column: 14,
-                                                offset: 1503
-                                              }
-                                            }
-                                          },
-                                          {
-                                            type: 'text',
-                                            value: ' - the name of the object of the attempted delete.',
-                                            position: {
-                                              start: {
-                                                line: 35,
-                                                column: 14,
-                                                offset: 1503
-                                              },
-                                              end: {
-                                                line: 35,
-                                                column: 64,
-                                                offset: 1553
-                                              }
-                                            }
-                                          }
-                                        ],
-                                        position: {
-                                          start: {
-                                            line: 35,
-                                            column: 9,
-                                            offset: 1498
-                                          },
-                                          end: {
-                                            line: 35,
-                                            column: 64,
-                                            offset: 1553
-                                          }
-                                        }
-                                      }
-                                    ],
-                                    position: {
-                                      start: {
-                                        line: 35,
-                                        column: 7,
-                                        offset: 1496
-                                      },
-                                      end: {
-                                        line: 35,
-                                        column: 64,
-                                        offset: 1553
-                                      }
-                                    }
-                                  },
-                                  {
-                                    type: 'listItem',
-                                    spread: false,
-                                    checked: null,
-                                    children: [
-                                      {
-                                        type: 'paragraph',
-                                        children: [
-                                          {
-                                            type: 'inlineCode',
-                                            value: 'VersionId',
-                                            position: {
-                                              start: {
-                                                line: 36,
-                                                column: 9,
-                                                offset: 1562
-                                              },
-                                              end: {
-                                                line: 36,
-                                                column: 20,
-                                                offset: 1573
-                                              }
-                                            }
-                                          },
-                                          {
-                                            type: 'text',
-                                            value: ' - the version ID of the object of the attempted delete.',
-                                            position: {
-                                              start: {
-                                                line: 36,
-                                                column: 20,
-                                                offset: 1573
-                                              },
-                                              end: {
-                                                line: 36,
-                                                column: 76,
-                                                offset: 1629
-                                              }
-                                            }
-                                          }
-                                        ],
-                                        position: {
-                                          start: {
-                                            line: 36,
-                                            column: 9,
-                                            offset: 1562
-                                          },
-                                          end: {
-                                            line: 36,
-                                            column: 76,
-                                            offset: 1629
-                                          }
-                                        }
-                                      }
-                                    ],
-                                    position: {
-                                      start: {
-                                        line: 36,
-                                        column: 7,
-                                        offset: 1560
-                                      },
-                                      end: {
-                                        line: 36,
-                                        column: 76,
-                                        offset: 1629
-                                      }
-                                    }
-                                  },
-                                  {
-                                    type: 'listItem',
-                                    spread: false,
-                                    checked: null,
-                                    children: [
-                                      {
-                                        type: 'paragraph',
-                                        children: [
-                                          {
-                                            type: 'inlineCode',
-                                            value: 'Code',
-                                            position: {
-                                              start: {
-                                                line: 37,
-                                                column: 9,
-                                                offset: 1638
-                                              },
-                                              end: {
-                                                line: 37,
-                                                column: 15,
-                                                offset: 1644
-                                              }
-                                            }
-                                          },
-                                          {
-                                            type: 'text',
-                                            value: ' - a response code that uniquely identifies the error condition. For a complete list of error responses, see ',
-                                            position: {
-                                              start: {
-                                                line: 37,
-                                                column: 15,
-                                                offset: 1644
-                                              },
-                                              end: {
-                                                line: 37,
-                                                column: 124,
-                                                offset: 1753
-                                              }
-                                            }
-                                          },
-                                          {
-                                            type: 'link',
-                                            title: null,
-                                            url: 'https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html',
-                                            children: [
-                                              {
-                                                type: 'text',
-                                                value: 'Error responses',
-                                                position: {
-                                                  start: {
-                                                    line: 37,
-                                                    column: 125,
-                                                    offset: 1754
-                                                  },
-                                                  end: {
-                                                    line: 37,
-                                                    column: 140,
-                                                    offset: 1769
-                                                  }
-                                                }
-                                              }
-                                            ],
-                                            position: {
-                                              start: {
-                                                line: 37,
-                                                column: 124,
-                                                offset: 1753
-                                              },
-                                              end: {
-                                                line: 37,
-                                                column: 210,
-                                                offset: 1839
-                                              }
-                                            }
-                                          },
-                                          {
-                                            type: 'text',
-                                            value: ' from the ',
-                                            position: {
-                                              start: {
-                                                line: 37,
-                                                column: 210,
-                                                offset: 1839
-                                              },
-                                              end: {
-                                                line: 37,
-                                                column: 220,
-                                                offset: 1849
-                                              }
-                                            }
-                                          },
-                                          {
-                                            type: 'emphasis',
-                                            children: [
-                                              {
-                                                type: 'text',
-                                                value: 'Amazon S3 API',
-                                                position: {
-                                                  start: {
-                                                    line: 37,
-                                                    column: 221,
-                                                    offset: 1850
-                                                  },
-                                                  end: {
-                                                    line: 37,
-                                                    column: 234,
-                                                    offset: 1863
-                                                  }
-                                                }
-                                              }
-                                            ],
-                                            position: {
-                                              start: {
-                                                line: 37,
-                                                column: 220,
-                                                offset: 1849
-                                              },
-                                              end: {
-                                                line: 37,
-                                                column: 235,
-                                                offset: 1864
-                                              }
-                                            }
-                                          },
-                                          {
-                                            type: 'text',
-                                            value: '.',
-                                            position: {
-                                              start: {
-                                                line: 37,
-                                                column: 235,
-                                                offset: 1864
-                                              },
-                                              end: {
-                                                line: 37,
-                                                column: 236,
-                                                offset: 1865
-                                              }
-                                            }
-                                          }
-                                        ],
-                                        position: {
-                                          start: {
-                                            line: 37,
-                                            column: 9,
-                                            offset: 1638
-                                          },
-                                          end: {
-                                            line: 37,
-                                            column: 236,
-                                            offset: 1865
-                                          }
-                                        }
-                                      }
-                                    ],
-                                    position: {
-                                      start: {
-                                        line: 37,
-                                        column: 7,
-                                        offset: 1636
-                                      },
-                                      end: {
-                                        line: 37,
-                                        column: 236,
-                                        offset: 1865
-                                      }
-                                    }
-                                  }
-                                ],
-                                position: {
-                                  start: { line: 35, column: 7, offset: 1496 },
-                                  end: {
-                                    line: 37,
-                                    column: 236,
-                                    offset: 1865
-                                  }
-                                }
-                              }
-                            ],
-                            position: {
-                              start: { line: 34, column: 5, offset: 1446 },
-                              end: { line: 37, column: 236, offset: 1865 }
+                              start: { line: 24, column: 5, offset: 707 },
+                              end: { line: 28, column: 277, offset: 1360 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 29, column: 5, offset: 788 },
-                          end: { line: 37, column: 236, offset: 1865 }
+                          start: { line: 24, column: 5, offset: 707 },
+                          end: { line: 28, column: 277, offset: 1360 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 28, column: 3, offset: 775 },
-                      end: { line: 37, column: 236, offset: 1865 }
+                      start: { line: 23, column: 3, offset: 694 },
+                      end: { line: 28, column: 277, offset: 1360 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 28, column: 3, offset: 775 },
-                  end: { line: 37, column: 236, offset: 1865 }
+                  start: { line: 23, column: 3, offset: 694 },
+                  end: { line: 28, column: 277, offset: 1360 }
                 }
               },
               {
@@ -140652,14 +140262,14 @@ export default [
                 meta: null,
                 value: 'await myBucket.deleteAllObjects()',
                 position: {
-                  start: { line: 39, column: 1, offset: 1867 },
-                  end: { line: 41, column: 4, offset: 1918 }
+                  start: { line: 30, column: 1, offset: 1362 },
+                  end: { line: 32, column: 4, offset: 1413 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 41, column: 4, offset: 1918 }
+              end: { line: 32, column: 4, offset: 1413 }
             }
           }
         }
