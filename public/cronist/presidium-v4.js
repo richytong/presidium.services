@@ -112463,7 +112463,7 @@ export default [
           'Return:\n' +
           '  * `data`\n' +
           '    * `Expiration` - if the expiration is configured for the object (see [PutBucketLifecycleConfiguration](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html) from the _Amazon S3 User Guide_), this header will be present in the response. Includes the `expiry-date` and `rule-id` key-value pairs that provide information about object expiration. The value of the `rule-id` is URL-encoded.\n' +
-          '    * `ETag` - the entity tag or MD5 hash of the object.\n' +
+          '    * `ETag` - the entity tag of the object.\n' +
           '    * `ChecksumCRC32` - the base64-encoded, 32-bit CRC-32 [checksum](https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html) of the object. For more information, see [Checking object integrity in Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html) from the _Amazon S3 User Guide_.\n' +
           '    * `ChecksumCRC32C` - the base64-encoded, 32-bit CRC-32C [checksum](https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html) of the object. For more information, see [Checking object integrity in Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html) from the _Amazon S3 User Guide_.\n' +
           '    * `ChecksumCRC64NVME` - the base64-encoded, 64-bit CRC-64NVME [checksum](https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html) of the object. For more information, see [Checking object integrity in Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html) from the _Amazon S3 User Guide_.\n' +
@@ -118036,7 +118036,7 @@ export default [
                                   },
                                   {
                                     type: 'text',
-                                    value: ' - the entity tag or MD5 hash of the object.',
+                                    value: ' - the entity tag of the object.',
                                     position: {
                                       start: {
                                         line: 114,
@@ -118045,8 +118045,8 @@ export default [
                                       },
                                       end: {
                                         line: 114,
-                                        column: 57,
-                                        offset: 11669
+                                        column: 45,
+                                        offset: 11657
                                       }
                                     }
                                   }
@@ -118059,15 +118059,15 @@ export default [
                                   },
                                   end: {
                                     line: 114,
-                                    column: 57,
-                                    offset: 11669
+                                    column: 45,
+                                    offset: 11657
                                   }
                                 }
                               }
                             ],
                             position: {
                               start: { line: 114, column: 5, offset: 11617 },
-                              end: { line: 114, column: 57, offset: 11669 }
+                              end: { line: 114, column: 45, offset: 11657 }
                             }
                           },
                           {
@@ -118085,12 +118085,12 @@ export default [
                                       start: {
                                         line: 115,
                                         column: 7,
-                                        offset: 11676
+                                        offset: 11664
                                       },
                                       end: {
                                         line: 115,
                                         column: 22,
-                                        offset: 11691
+                                        offset: 11679
                                       }
                                     }
                                   },
@@ -118101,12 +118101,12 @@ export default [
                                       start: {
                                         line: 115,
                                         column: 22,
-                                        offset: 11691
+                                        offset: 11679
                                       },
                                       end: {
                                         line: 115,
                                         column: 59,
-                                        offset: 11728
+                                        offset: 11716
                                       }
                                     }
                                   },
@@ -118122,12 +118122,12 @@ export default [
                                           start: {
                                             line: 115,
                                             column: 60,
-                                            offset: 11729
+                                            offset: 11717
                                           },
                                           end: {
                                             line: 115,
                                             column: 68,
-                                            offset: 11737
+                                            offset: 11725
                                           }
                                         }
                                       }
@@ -118136,12 +118136,12 @@ export default [
                                       start: {
                                         line: 115,
                                         column: 59,
-                                        offset: 11728
+                                        offset: 11716
                                       },
                                       end: {
                                         line: 115,
                                         column: 136,
-                                        offset: 11805
+                                        offset: 11793
                                       }
                                     }
                                   },
@@ -118152,12 +118152,12 @@ export default [
                                       start: {
                                         line: 115,
                                         column: 136,
-                                        offset: 11805
+                                        offset: 11793
                                       },
                                       end: {
                                         line: 115,
                                         column: 178,
-                                        offset: 11847
+                                        offset: 11835
                                       }
                                     }
                                   },
@@ -118173,12 +118173,12 @@ export default [
                                           start: {
                                             line: 115,
                                             column: 179,
-                                            offset: 11848
+                                            offset: 11836
                                           },
                                           end: {
                                             line: 115,
                                             column: 217,
-                                            offset: 11886
+                                            offset: 11874
                                           }
                                         }
                                       }
@@ -118187,12 +118187,12 @@ export default [
                                       start: {
                                         line: 115,
                                         column: 178,
-                                        offset: 11847
+                                        offset: 11835
                                       },
                                       end: {
                                         line: 115,
                                         column: 304,
-                                        offset: 11973
+                                        offset: 11961
                                       }
                                     }
                                   },
@@ -118203,12 +118203,12 @@ export default [
                                       start: {
                                         line: 115,
                                         column: 304,
-                                        offset: 11973
+                                        offset: 11961
                                       },
                                       end: {
                                         line: 115,
                                         column: 314,
-                                        offset: 11983
+                                        offset: 11971
                                       }
                                     }
                                   },
@@ -118222,12 +118222,12 @@ export default [
                                           start: {
                                             line: 115,
                                             column: 315,
-                                            offset: 11984
+                                            offset: 11972
                                           },
                                           end: {
                                             line: 115,
                                             column: 335,
-                                            offset: 12004
+                                            offset: 11992
                                           }
                                         }
                                       }
@@ -118236,12 +118236,12 @@ export default [
                                       start: {
                                         line: 115,
                                         column: 314,
-                                        offset: 11983
+                                        offset: 11971
                                       },
                                       end: {
                                         line: 115,
                                         column: 336,
-                                        offset: 12005
+                                        offset: 11993
                                       }
                                     }
                                   },
@@ -118252,12 +118252,12 @@ export default [
                                       start: {
                                         line: 115,
                                         column: 336,
-                                        offset: 12005
+                                        offset: 11993
                                       },
                                       end: {
                                         line: 115,
                                         column: 337,
-                                        offset: 12006
+                                        offset: 11994
                                       }
                                     }
                                   }
@@ -118266,19 +118266,19 @@ export default [
                                   start: {
                                     line: 115,
                                     column: 7,
-                                    offset: 11676
+                                    offset: 11664
                                   },
                                   end: {
                                     line: 115,
                                     column: 337,
-                                    offset: 12006
+                                    offset: 11994
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 115, column: 5, offset: 11674 },
-                              end: { line: 115, column: 337, offset: 12006 }
+                              start: { line: 115, column: 5, offset: 11662 },
+                              end: { line: 115, column: 337, offset: 11994 }
                             }
                           },
                           {
@@ -118296,12 +118296,12 @@ export default [
                                       start: {
                                         line: 116,
                                         column: 7,
-                                        offset: 12013
+                                        offset: 12001
                                       },
                                       end: {
                                         line: 116,
                                         column: 23,
-                                        offset: 12029
+                                        offset: 12017
                                       }
                                     }
                                   },
@@ -118312,12 +118312,12 @@ export default [
                                       start: {
                                         line: 116,
                                         column: 23,
-                                        offset: 12029
+                                        offset: 12017
                                       },
                                       end: {
                                         line: 116,
                                         column: 61,
-                                        offset: 12067
+                                        offset: 12055
                                       }
                                     }
                                   },
@@ -118333,12 +118333,12 @@ export default [
                                           start: {
                                             line: 116,
                                             column: 62,
-                                            offset: 12068
+                                            offset: 12056
                                           },
                                           end: {
                                             line: 116,
                                             column: 70,
-                                            offset: 12076
+                                            offset: 12064
                                           }
                                         }
                                       }
@@ -118347,12 +118347,12 @@ export default [
                                       start: {
                                         line: 116,
                                         column: 61,
-                                        offset: 12067
+                                        offset: 12055
                                       },
                                       end: {
                                         line: 116,
                                         column: 138,
-                                        offset: 12144
+                                        offset: 12132
                                       }
                                     }
                                   },
@@ -118363,12 +118363,12 @@ export default [
                                       start: {
                                         line: 116,
                                         column: 138,
-                                        offset: 12144
+                                        offset: 12132
                                       },
                                       end: {
                                         line: 116,
                                         column: 180,
-                                        offset: 12186
+                                        offset: 12174
                                       }
                                     }
                                   },
@@ -118384,12 +118384,12 @@ export default [
                                           start: {
                                             line: 116,
                                             column: 181,
-                                            offset: 12187
+                                            offset: 12175
                                           },
                                           end: {
                                             line: 116,
                                             column: 219,
-                                            offset: 12225
+                                            offset: 12213
                                           }
                                         }
                                       }
@@ -118398,12 +118398,12 @@ export default [
                                       start: {
                                         line: 116,
                                         column: 180,
-                                        offset: 12186
+                                        offset: 12174
                                       },
                                       end: {
                                         line: 116,
                                         column: 306,
-                                        offset: 12312
+                                        offset: 12300
                                       }
                                     }
                                   },
@@ -118414,12 +118414,12 @@ export default [
                                       start: {
                                         line: 116,
                                         column: 306,
-                                        offset: 12312
+                                        offset: 12300
                                       },
                                       end: {
                                         line: 116,
                                         column: 316,
-                                        offset: 12322
+                                        offset: 12310
                                       }
                                     }
                                   },
@@ -118433,12 +118433,12 @@ export default [
                                           start: {
                                             line: 116,
                                             column: 317,
-                                            offset: 12323
+                                            offset: 12311
                                           },
                                           end: {
                                             line: 116,
                                             column: 337,
-                                            offset: 12343
+                                            offset: 12331
                                           }
                                         }
                                       }
@@ -118447,12 +118447,12 @@ export default [
                                       start: {
                                         line: 116,
                                         column: 316,
-                                        offset: 12322
+                                        offset: 12310
                                       },
                                       end: {
                                         line: 116,
                                         column: 338,
-                                        offset: 12344
+                                        offset: 12332
                                       }
                                     }
                                   },
@@ -118463,12 +118463,12 @@ export default [
                                       start: {
                                         line: 116,
                                         column: 338,
-                                        offset: 12344
+                                        offset: 12332
                                       },
                                       end: {
                                         line: 116,
                                         column: 339,
-                                        offset: 12345
+                                        offset: 12333
                                       }
                                     }
                                   }
@@ -118477,19 +118477,19 @@ export default [
                                   start: {
                                     line: 116,
                                     column: 7,
-                                    offset: 12013
+                                    offset: 12001
                                   },
                                   end: {
                                     line: 116,
                                     column: 339,
-                                    offset: 12345
+                                    offset: 12333
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 116, column: 5, offset: 12011 },
-                              end: { line: 116, column: 339, offset: 12345 }
+                              start: { line: 116, column: 5, offset: 11999 },
+                              end: { line: 116, column: 339, offset: 12333 }
                             }
                           },
                           {
@@ -118507,12 +118507,12 @@ export default [
                                       start: {
                                         line: 117,
                                         column: 7,
-                                        offset: 12352
+                                        offset: 12340
                                       },
                                       end: {
                                         line: 117,
                                         column: 26,
-                                        offset: 12371
+                                        offset: 12359
                                       }
                                     }
                                   },
@@ -118523,12 +118523,12 @@ export default [
                                       start: {
                                         line: 117,
                                         column: 26,
-                                        offset: 12371
+                                        offset: 12359
                                       },
                                       end: {
                                         line: 117,
                                         column: 67,
-                                        offset: 12412
+                                        offset: 12400
                                       }
                                     }
                                   },
@@ -118544,12 +118544,12 @@ export default [
                                           start: {
                                             line: 117,
                                             column: 68,
-                                            offset: 12413
+                                            offset: 12401
                                           },
                                           end: {
                                             line: 117,
                                             column: 76,
-                                            offset: 12421
+                                            offset: 12409
                                           }
                                         }
                                       }
@@ -118558,12 +118558,12 @@ export default [
                                       start: {
                                         line: 117,
                                         column: 67,
-                                        offset: 12412
+                                        offset: 12400
                                       },
                                       end: {
                                         line: 117,
                                         column: 144,
-                                        offset: 12489
+                                        offset: 12477
                                       }
                                     }
                                   },
@@ -118574,12 +118574,12 @@ export default [
                                       start: {
                                         line: 117,
                                         column: 144,
-                                        offset: 12489
+                                        offset: 12477
                                       },
                                       end: {
                                         line: 117,
                                         column: 186,
-                                        offset: 12531
+                                        offset: 12519
                                       }
                                     }
                                   },
@@ -118595,12 +118595,12 @@ export default [
                                           start: {
                                             line: 117,
                                             column: 187,
-                                            offset: 12532
+                                            offset: 12520
                                           },
                                           end: {
                                             line: 117,
                                             column: 225,
-                                            offset: 12570
+                                            offset: 12558
                                           }
                                         }
                                       }
@@ -118609,12 +118609,12 @@ export default [
                                       start: {
                                         line: 117,
                                         column: 186,
-                                        offset: 12531
+                                        offset: 12519
                                       },
                                       end: {
                                         line: 117,
                                         column: 312,
-                                        offset: 12657
+                                        offset: 12645
                                       }
                                     }
                                   },
@@ -118625,12 +118625,12 @@ export default [
                                       start: {
                                         line: 117,
                                         column: 312,
-                                        offset: 12657
+                                        offset: 12645
                                       },
                                       end: {
                                         line: 117,
                                         column: 322,
-                                        offset: 12667
+                                        offset: 12655
                                       }
                                     }
                                   },
@@ -118644,12 +118644,12 @@ export default [
                                           start: {
                                             line: 117,
                                             column: 323,
-                                            offset: 12668
+                                            offset: 12656
                                           },
                                           end: {
                                             line: 117,
                                             column: 343,
-                                            offset: 12688
+                                            offset: 12676
                                           }
                                         }
                                       }
@@ -118658,12 +118658,12 @@ export default [
                                       start: {
                                         line: 117,
                                         column: 322,
-                                        offset: 12667
+                                        offset: 12655
                                       },
                                       end: {
                                         line: 117,
                                         column: 344,
-                                        offset: 12689
+                                        offset: 12677
                                       }
                                     }
                                   },
@@ -118674,12 +118674,12 @@ export default [
                                       start: {
                                         line: 117,
                                         column: 344,
-                                        offset: 12689
+                                        offset: 12677
                                       },
                                       end: {
                                         line: 117,
                                         column: 345,
-                                        offset: 12690
+                                        offset: 12678
                                       }
                                     }
                                   }
@@ -118688,19 +118688,19 @@ export default [
                                   start: {
                                     line: 117,
                                     column: 7,
-                                    offset: 12352
+                                    offset: 12340
                                   },
                                   end: {
                                     line: 117,
                                     column: 345,
-                                    offset: 12690
+                                    offset: 12678
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 117, column: 5, offset: 12350 },
-                              end: { line: 117, column: 345, offset: 12690 }
+                              start: { line: 117, column: 5, offset: 12338 },
+                              end: { line: 117, column: 345, offset: 12678 }
                             }
                           },
                           {
@@ -118718,12 +118718,12 @@ export default [
                                       start: {
                                         line: 118,
                                         column: 7,
-                                        offset: 12697
+                                        offset: 12685
                                       },
                                       end: {
                                         line: 118,
                                         column: 21,
-                                        offset: 12711
+                                        offset: 12699
                                       }
                                     }
                                   },
@@ -118734,12 +118734,12 @@ export default [
                                       start: {
                                         line: 118,
                                         column: 21,
-                                        offset: 12711
+                                        offset: 12699
                                       },
                                       end: {
                                         line: 118,
                                         column: 106,
-                                        offset: 12796
+                                        offset: 12784
                                       }
                                     }
                                   },
@@ -118755,12 +118755,12 @@ export default [
                                           start: {
                                             line: 118,
                                             column: 107,
-                                            offset: 12797
+                                            offset: 12785
                                           },
                                           end: {
                                             line: 118,
                                             column: 145,
-                                            offset: 12835
+                                            offset: 12823
                                           }
                                         }
                                       }
@@ -118769,12 +118769,12 @@ export default [
                                       start: {
                                         line: 118,
                                         column: 106,
-                                        offset: 12796
+                                        offset: 12784
                                       },
                                       end: {
                                         line: 118,
                                         column: 232,
-                                        offset: 12922
+                                        offset: 12910
                                       }
                                     }
                                   },
@@ -118785,12 +118785,12 @@ export default [
                                       start: {
                                         line: 118,
                                         column: 232,
-                                        offset: 12922
+                                        offset: 12910
                                       },
                                       end: {
                                         line: 118,
                                         column: 242,
-                                        offset: 12932
+                                        offset: 12920
                                       }
                                     }
                                   },
@@ -118804,12 +118804,12 @@ export default [
                                           start: {
                                             line: 118,
                                             column: 243,
-                                            offset: 12933
+                                            offset: 12921
                                           },
                                           end: {
                                             line: 118,
                                             column: 263,
-                                            offset: 12953
+                                            offset: 12941
                                           }
                                         }
                                       }
@@ -118818,12 +118818,12 @@ export default [
                                       start: {
                                         line: 118,
                                         column: 242,
-                                        offset: 12932
+                                        offset: 12920
                                       },
                                       end: {
                                         line: 118,
                                         column: 264,
-                                        offset: 12954
+                                        offset: 12942
                                       }
                                     }
                                   },
@@ -118834,12 +118834,12 @@ export default [
                                       start: {
                                         line: 118,
                                         column: 264,
-                                        offset: 12954
+                                        offset: 12942
                                       },
                                       end: {
                                         line: 118,
                                         column: 265,
-                                        offset: 12955
+                                        offset: 12943
                                       }
                                     }
                                   }
@@ -118848,19 +118848,19 @@ export default [
                                   start: {
                                     line: 118,
                                     column: 7,
-                                    offset: 12697
+                                    offset: 12685
                                   },
                                   end: {
                                     line: 118,
                                     column: 265,
-                                    offset: 12955
+                                    offset: 12943
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 118, column: 5, offset: 12695 },
-                              end: { line: 118, column: 265, offset: 12955 }
+                              start: { line: 118, column: 5, offset: 12683 },
+                              end: { line: 118, column: 265, offset: 12943 }
                             }
                           },
                           {
@@ -118878,12 +118878,12 @@ export default [
                                       start: {
                                         line: 119,
                                         column: 7,
-                                        offset: 12962
+                                        offset: 12950
                                       },
                                       end: {
                                         line: 119,
                                         column: 23,
-                                        offset: 12978
+                                        offset: 12966
                                       }
                                     }
                                   },
@@ -118894,12 +118894,12 @@ export default [
                                       start: {
                                         line: 119,
                                         column: 23,
-                                        offset: 12978
+                                        offset: 12966
                                       },
                                       end: {
                                         line: 119,
                                         column: 110,
-                                        offset: 13065
+                                        offset: 13053
                                       }
                                     }
                                   },
@@ -118915,12 +118915,12 @@ export default [
                                           start: {
                                             line: 119,
                                             column: 111,
-                                            offset: 13066
+                                            offset: 13054
                                           },
                                           end: {
                                             line: 119,
                                             column: 149,
-                                            offset: 13104
+                                            offset: 13092
                                           }
                                         }
                                       }
@@ -118929,12 +118929,12 @@ export default [
                                       start: {
                                         line: 119,
                                         column: 110,
-                                        offset: 13065
+                                        offset: 13053
                                       },
                                       end: {
                                         line: 119,
                                         column: 236,
-                                        offset: 13191
+                                        offset: 13179
                                       }
                                     }
                                   },
@@ -118945,12 +118945,12 @@ export default [
                                       start: {
                                         line: 119,
                                         column: 236,
-                                        offset: 13191
+                                        offset: 13179
                                       },
                                       end: {
                                         line: 119,
                                         column: 246,
-                                        offset: 13201
+                                        offset: 13189
                                       }
                                     }
                                   },
@@ -118964,12 +118964,12 @@ export default [
                                           start: {
                                             line: 119,
                                             column: 247,
-                                            offset: 13202
+                                            offset: 13190
                                           },
                                           end: {
                                             line: 119,
                                             column: 267,
-                                            offset: 13222
+                                            offset: 13210
                                           }
                                         }
                                       }
@@ -118978,12 +118978,12 @@ export default [
                                       start: {
                                         line: 119,
                                         column: 246,
-                                        offset: 13201
+                                        offset: 13189
                                       },
                                       end: {
                                         line: 119,
                                         column: 268,
-                                        offset: 13223
+                                        offset: 13211
                                       }
                                     }
                                   },
@@ -118994,12 +118994,12 @@ export default [
                                       start: {
                                         line: 119,
                                         column: 268,
-                                        offset: 13223
+                                        offset: 13211
                                       },
                                       end: {
                                         line: 119,
                                         column: 269,
-                                        offset: 13224
+                                        offset: 13212
                                       }
                                     }
                                   }
@@ -119008,19 +119008,19 @@ export default [
                                   start: {
                                     line: 119,
                                     column: 7,
-                                    offset: 12962
+                                    offset: 12950
                                   },
                                   end: {
                                     line: 119,
                                     column: 269,
-                                    offset: 13224
+                                    offset: 13212
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 119, column: 5, offset: 12960 },
-                              end: { line: 119, column: 269, offset: 13224 }
+                              start: { line: 119, column: 5, offset: 12948 },
+                              end: { line: 119, column: 269, offset: 13212 }
                             }
                           },
                           {
@@ -119038,12 +119038,12 @@ export default [
                                       start: {
                                         line: 120,
                                         column: 7,
-                                        offset: 13231
+                                        offset: 13219
                                       },
                                       end: {
                                         line: 120,
                                         column: 21,
-                                        offset: 13245
+                                        offset: 13233
                                       }
                                     }
                                   },
@@ -119054,12 +119054,12 @@ export default [
                                       start: {
                                         line: 120,
                                         column: 21,
-                                        offset: 13245
+                                        offset: 13233
                                       },
                                       end: {
                                         line: 120,
                                         column: 196,
-                                        offset: 13420
+                                        offset: 13408
                                       }
                                     }
                                   },
@@ -119075,12 +119075,12 @@ export default [
                                           start: {
                                             line: 120,
                                             column: 197,
-                                            offset: 13421
+                                            offset: 13409
                                           },
                                           end: {
                                             line: 120,
                                             column: 235,
-                                            offset: 13459
+                                            offset: 13447
                                           }
                                         }
                                       }
@@ -119089,12 +119089,12 @@ export default [
                                       start: {
                                         line: 120,
                                         column: 196,
-                                        offset: 13420
+                                        offset: 13408
                                       },
                                       end: {
                                         line: 120,
                                         column: 322,
-                                        offset: 13546
+                                        offset: 13534
                                       }
                                     }
                                   },
@@ -119105,12 +119105,12 @@ export default [
                                       start: {
                                         line: 120,
                                         column: 322,
-                                        offset: 13546
+                                        offset: 13534
                                       },
                                       end: {
                                         line: 120,
                                         column: 332,
-                                        offset: 13556
+                                        offset: 13544
                                       }
                                     }
                                   },
@@ -119124,12 +119124,12 @@ export default [
                                           start: {
                                             line: 120,
                                             column: 333,
-                                            offset: 13557
+                                            offset: 13545
                                           },
                                           end: {
                                             line: 120,
                                             column: 353,
-                                            offset: 13577
+                                            offset: 13565
                                           }
                                         }
                                       }
@@ -119138,12 +119138,12 @@ export default [
                                       start: {
                                         line: 120,
                                         column: 332,
-                                        offset: 13556
+                                        offset: 13544
                                       },
                                       end: {
                                         line: 120,
                                         column: 354,
-                                        offset: 13578
+                                        offset: 13566
                                       }
                                     }
                                   },
@@ -119154,12 +119154,12 @@ export default [
                                       start: {
                                         line: 120,
                                         column: 354,
-                                        offset: 13578
+                                        offset: 13566
                                       },
                                       end: {
                                         line: 120,
                                         column: 355,
-                                        offset: 13579
+                                        offset: 13567
                                       }
                                     }
                                   }
@@ -119168,19 +119168,19 @@ export default [
                                   start: {
                                     line: 120,
                                     column: 7,
-                                    offset: 13231
+                                    offset: 13219
                                   },
                                   end: {
                                     line: 120,
                                     column: 355,
-                                    offset: 13579
+                                    offset: 13567
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 120, column: 5, offset: 13229 },
-                              end: { line: 120, column: 355, offset: 13579 }
+                              start: { line: 120, column: 5, offset: 13217 },
+                              end: { line: 120, column: 355, offset: 13567 }
                             }
                           },
                           {
@@ -119198,12 +119198,12 @@ export default [
                                       start: {
                                         line: 121,
                                         column: 7,
-                                        offset: 13586
+                                        offset: 13574
                                       },
                                       end: {
                                         line: 121,
                                         column: 29,
-                                        offset: 13608
+                                        offset: 13596
                                       }
                                     }
                                   },
@@ -119214,12 +119214,12 @@ export default [
                                       start: {
                                         line: 121,
                                         column: 29,
-                                        offset: 13608
+                                        offset: 13596
                                       },
                                       end: {
                                         line: 121,
                                         column: 123,
-                                        offset: 13702
+                                        offset: 13690
                                       }
                                     }
                                   },
@@ -119235,12 +119235,12 @@ export default [
                                           start: {
                                             line: 121,
                                             column: 124,
-                                            offset: 13703
+                                            offset: 13691
                                           },
                                           end: {
                                             line: 121,
                                             column: 189,
-                                            offset: 13768
+                                            offset: 13756
                                           }
                                         }
                                       }
@@ -119249,12 +119249,12 @@ export default [
                                       start: {
                                         line: 121,
                                         column: 123,
-                                        offset: 13702
+                                        offset: 13690
                                       },
                                       end: {
                                         line: 121,
                                         column: 276,
-                                        offset: 13855
+                                        offset: 13843
                                       }
                                     }
                                   },
@@ -119265,12 +119265,12 @@ export default [
                                       start: {
                                         line: 121,
                                         column: 276,
-                                        offset: 13855
+                                        offset: 13843
                                       },
                                       end: {
                                         line: 121,
                                         column: 286,
-                                        offset: 13865
+                                        offset: 13853
                                       }
                                     }
                                   },
@@ -119284,12 +119284,12 @@ export default [
                                           start: {
                                             line: 121,
                                             column: 287,
-                                            offset: 13866
+                                            offset: 13854
                                           },
                                           end: {
                                             line: 121,
                                             column: 307,
-                                            offset: 13886
+                                            offset: 13874
                                           }
                                         }
                                       }
@@ -119298,12 +119298,12 @@ export default [
                                       start: {
                                         line: 121,
                                         column: 286,
-                                        offset: 13865
+                                        offset: 13853
                                       },
                                       end: {
                                         line: 121,
                                         column: 308,
-                                        offset: 13887
+                                        offset: 13875
                                       }
                                     }
                                   },
@@ -119314,12 +119314,12 @@ export default [
                                       start: {
                                         line: 121,
                                         column: 308,
-                                        offset: 13887
+                                        offset: 13875
                                       },
                                       end: {
                                         line: 121,
                                         column: 309,
-                                        offset: 13888
+                                        offset: 13876
                                       }
                                     }
                                   }
@@ -119328,19 +119328,19 @@ export default [
                                   start: {
                                     line: 121,
                                     column: 7,
-                                    offset: 13586
+                                    offset: 13574
                                   },
                                   end: {
                                     line: 121,
                                     column: 309,
-                                    offset: 13888
+                                    offset: 13876
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 121, column: 5, offset: 13584 },
-                              end: { line: 121, column: 309, offset: 13888 }
+                              start: { line: 121, column: 5, offset: 13572 },
+                              end: { line: 121, column: 309, offset: 13876 }
                             }
                           },
                           {
@@ -119358,12 +119358,12 @@ export default [
                                       start: {
                                         line: 122,
                                         column: 7,
-                                        offset: 13895
+                                        offset: 13883
                                       },
                                       end: {
                                         line: 122,
                                         column: 18,
-                                        offset: 13906
+                                        offset: 13894
                                       }
                                     }
                                   },
@@ -119374,12 +119374,12 @@ export default [
                                       start: {
                                         line: 122,
                                         column: 18,
-                                        offset: 13906
+                                        offset: 13894
                                       },
                                       end: {
                                         line: 122,
                                         column: 83,
-                                        offset: 13971
+                                        offset: 13959
                                       }
                                     }
                                   },
@@ -119395,12 +119395,12 @@ export default [
                                           start: {
                                             line: 122,
                                             column: 84,
-                                            offset: 13972
+                                            offset: 13960
                                           },
                                           end: {
                                             line: 122,
                                             column: 141,
-                                            offset: 14029
+                                            offset: 14017
                                           }
                                         }
                                       }
@@ -119409,12 +119409,12 @@ export default [
                                       start: {
                                         line: 122,
                                         column: 83,
-                                        offset: 13971
+                                        offset: 13959
                                       },
                                       end: {
                                         line: 122,
                                         column: 213,
-                                        offset: 14101
+                                        offset: 14089
                                       }
                                     }
                                   },
@@ -119425,12 +119425,12 @@ export default [
                                       start: {
                                         line: 122,
                                         column: 213,
-                                        offset: 14101
+                                        offset: 14089
                                       },
                                       end: {
                                         line: 122,
                                         column: 223,
-                                        offset: 14111
+                                        offset: 14099
                                       }
                                     }
                                   },
@@ -119444,12 +119444,12 @@ export default [
                                           start: {
                                             line: 122,
                                             column: 224,
-                                            offset: 14112
+                                            offset: 14100
                                           },
                                           end: {
                                             line: 122,
                                             column: 244,
-                                            offset: 14132
+                                            offset: 14120
                                           }
                                         }
                                       }
@@ -119458,12 +119458,12 @@ export default [
                                       start: {
                                         line: 122,
                                         column: 223,
-                                        offset: 14111
+                                        offset: 14099
                                       },
                                       end: {
                                         line: 122,
                                         column: 245,
-                                        offset: 14133
+                                        offset: 14121
                                       }
                                     }
                                   },
@@ -119474,12 +119474,12 @@ export default [
                                       start: {
                                         line: 122,
                                         column: 245,
-                                        offset: 14133
+                                        offset: 14121
                                       },
                                       end: {
                                         line: 122,
                                         column: 246,
-                                        offset: 14134
+                                        offset: 14122
                                       }
                                     }
                                   }
@@ -119488,19 +119488,19 @@ export default [
                                   start: {
                                     line: 122,
                                     column: 7,
-                                    offset: 13895
+                                    offset: 13883
                                   },
                                   end: {
                                     line: 122,
                                     column: 246,
-                                    offset: 14134
+                                    offset: 14122
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 122, column: 5, offset: 13893 },
-                              end: { line: 122, column: 246, offset: 14134 }
+                              start: { line: 122, column: 5, offset: 13881 },
+                              end: { line: 122, column: 246, offset: 14122 }
                             }
                           },
                           {
@@ -119518,12 +119518,12 @@ export default [
                                       start: {
                                         line: 123,
                                         column: 7,
-                                        offset: 14141
+                                        offset: 14129
                                       },
                                       end: {
                                         line: 123,
                                         column: 29,
-                                        offset: 14163
+                                        offset: 14151
                                       }
                                     }
                                   },
@@ -119534,12 +119534,12 @@ export default [
                                       start: {
                                         line: 123,
                                         column: 29,
-                                        offset: 14163
+                                        offset: 14151
                                       },
                                       end: {
                                         line: 123,
                                         column: 123,
-                                        offset: 14257
+                                        offset: 14245
                                       }
                                     }
                                   },
@@ -119555,12 +119555,12 @@ export default [
                                           start: {
                                             line: 123,
                                             column: 124,
-                                            offset: 14258
+                                            offset: 14246
                                           },
                                           end: {
                                             line: 123,
                                             column: 189,
-                                            offset: 14323
+                                            offset: 14311
                                           }
                                         }
                                       }
@@ -119569,12 +119569,12 @@ export default [
                                       start: {
                                         line: 123,
                                         column: 123,
-                                        offset: 14257
+                                        offset: 14245
                                       },
                                       end: {
                                         line: 123,
                                         column: 276,
-                                        offset: 14410
+                                        offset: 14398
                                       }
                                     }
                                   },
@@ -119585,12 +119585,12 @@ export default [
                                       start: {
                                         line: 123,
                                         column: 276,
-                                        offset: 14410
+                                        offset: 14398
                                       },
                                       end: {
                                         line: 123,
                                         column: 286,
-                                        offset: 14420
+                                        offset: 14408
                                       }
                                     }
                                   },
@@ -119604,12 +119604,12 @@ export default [
                                           start: {
                                             line: 123,
                                             column: 287,
-                                            offset: 14421
+                                            offset: 14409
                                           },
                                           end: {
                                             line: 123,
                                             column: 307,
-                                            offset: 14441
+                                            offset: 14429
                                           }
                                         }
                                       }
@@ -119618,12 +119618,12 @@ export default [
                                       start: {
                                         line: 123,
                                         column: 286,
-                                        offset: 14420
+                                        offset: 14408
                                       },
                                       end: {
                                         line: 123,
                                         column: 308,
-                                        offset: 14442
+                                        offset: 14430
                                       }
                                     }
                                   },
@@ -119634,12 +119634,12 @@ export default [
                                       start: {
                                         line: 123,
                                         column: 308,
-                                        offset: 14442
+                                        offset: 14430
                                       },
                                       end: {
                                         line: 123,
                                         column: 309,
-                                        offset: 14443
+                                        offset: 14431
                                       }
                                     }
                                   }
@@ -119648,19 +119648,19 @@ export default [
                                   start: {
                                     line: 123,
                                     column: 7,
-                                    offset: 14141
+                                    offset: 14129
                                   },
                                   end: {
                                     line: 123,
                                     column: 309,
-                                    offset: 14443
+                                    offset: 14431
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 123, column: 5, offset: 14139 },
-                              end: { line: 123, column: 309, offset: 14443 }
+                              start: { line: 123, column: 5, offset: 14127 },
+                              end: { line: 123, column: 309, offset: 14431 }
                             }
                           },
                           {
@@ -119678,12 +119678,12 @@ export default [
                                       start: {
                                         line: 124,
                                         column: 7,
-                                        offset: 14450
+                                        offset: 14438
                                       },
                                       end: {
                                         line: 124,
                                         column: 26,
-                                        offset: 14469
+                                        offset: 14457
                                       }
                                     }
                                   },
@@ -119694,12 +119694,12 @@ export default [
                                       start: {
                                         line: 124,
                                         column: 26,
-                                        offset: 14469
+                                        offset: 14457
                                       },
                                       end: {
                                         line: 124,
                                         column: 87,
-                                        offset: 14530
+                                        offset: 14518
                                       }
                                     }
                                   },
@@ -119715,12 +119715,12 @@ export default [
                                           start: {
                                             line: 124,
                                             column: 88,
-                                            offset: 14531
+                                            offset: 14519
                                           },
                                           end: {
                                             line: 124,
                                             column: 96,
-                                            offset: 14539
+                                            offset: 14527
                                           }
                                         }
                                       }
@@ -119729,12 +119729,12 @@ export default [
                                       start: {
                                         line: 124,
                                         column: 87,
-                                        offset: 14530
+                                        offset: 14518
                                       },
                                       end: {
                                         line: 124,
                                         column: 135,
-                                        offset: 14578
+                                        offset: 14566
                                       }
                                     }
                                   },
@@ -119745,12 +119745,12 @@ export default [
                                       start: {
                                         line: 124,
                                         column: 135,
-                                        offset: 14578
+                                        offset: 14566
                                       },
                                       end: {
                                         line: 124,
                                         column: 195,
-                                        offset: 14638
+                                        offset: 14626
                                       }
                                     }
                                   }
@@ -119759,19 +119759,19 @@ export default [
                                   start: {
                                     line: 124,
                                     column: 7,
-                                    offset: 14450
+                                    offset: 14438
                                   },
                                   end: {
                                     line: 124,
                                     column: 195,
-                                    offset: 14638
+                                    offset: 14626
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 124, column: 5, offset: 14448 },
-                              end: { line: 124, column: 195, offset: 14638 }
+                              start: { line: 124, column: 5, offset: 14436 },
+                              end: { line: 124, column: 195, offset: 14626 }
                             }
                           },
                           {
@@ -119789,12 +119789,12 @@ export default [
                                       start: {
                                         line: 125,
                                         column: 7,
-                                        offset: 14645
+                                        offset: 14633
                                       },
                                       end: {
                                         line: 125,
                                         column: 20,
-                                        offset: 14658
+                                        offset: 14646
                                       }
                                     }
                                   },
@@ -119805,12 +119805,12 @@ export default [
                                       start: {
                                         line: 125,
                                         column: 20,
-                                        offset: 14658
+                                        offset: 14646
                                       },
                                       end: {
                                         line: 125,
                                         column: 27,
-                                        offset: 14665
+                                        offset: 14653
                                       }
                                     }
                                   },
@@ -119826,12 +119826,12 @@ export default [
                                           start: {
                                             line: 125,
                                             column: 28,
-                                            offset: 14666
+                                            offset: 14654
                                           },
                                           end: {
                                             line: 125,
                                             column: 35,
-                                            offset: 14673
+                                            offset: 14661
                                           }
                                         }
                                       }
@@ -119840,12 +119840,12 @@ export default [
                                       start: {
                                         line: 125,
                                         column: 27,
-                                        offset: 14665
+                                        offset: 14653
                                       },
                                       end: {
                                         line: 125,
                                         column: 105,
-                                        offset: 14743
+                                        offset: 14731
                                       }
                                     }
                                   },
@@ -119856,12 +119856,12 @@ export default [
                                       start: {
                                         line: 125,
                                         column: 105,
-                                        offset: 14743
+                                        offset: 14731
                                       },
                                       end: {
                                         line: 125,
                                         column: 163,
-                                        offset: 14801
+                                        offset: 14789
                                       }
                                     }
                                   }
@@ -119870,19 +119870,19 @@ export default [
                                   start: {
                                     line: 125,
                                     column: 7,
-                                    offset: 14645
+                                    offset: 14633
                                   },
                                   end: {
                                     line: 125,
                                     column: 163,
-                                    offset: 14801
+                                    offset: 14789
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 125, column: 5, offset: 14643 },
-                              end: { line: 125, column: 163, offset: 14801 }
+                              start: { line: 125, column: 5, offset: 14631 },
+                              end: { line: 125, column: 163, offset: 14789 }
                             }
                           },
                           {
@@ -119900,12 +119900,12 @@ export default [
                                       start: {
                                         line: 126,
                                         column: 7,
-                                        offset: 14808
+                                        offset: 14796
                                       },
                                       end: {
                                         line: 126,
                                         column: 32,
-                                        offset: 14833
+                                        offset: 14821
                                       }
                                     }
                                   },
@@ -119916,12 +119916,12 @@ export default [
                                       start: {
                                         line: 126,
                                         column: 32,
-                                        offset: 14833
+                                        offset: 14821
                                       },
                                       end: {
                                         line: 126,
                                         column: 46,
-                                        offset: 14847
+                                        offset: 14835
                                       }
                                     }
                                   },
@@ -119937,12 +119937,12 @@ export default [
                                           start: {
                                             line: 126,
                                             column: 47,
-                                            offset: 14848
+                                            offset: 14836
                                           },
                                           end: {
                                             line: 126,
                                             column: 54,
-                                            offset: 14855
+                                            offset: 14843
                                           }
                                         }
                                       }
@@ -119951,12 +119951,12 @@ export default [
                                       start: {
                                         line: 126,
                                         column: 46,
-                                        offset: 14847
+                                        offset: 14835
                                       },
                                       end: {
                                         line: 126,
                                         column: 124,
-                                        offset: 14925
+                                        offset: 14913
                                       }
                                     }
                                   },
@@ -119967,12 +119967,12 @@ export default [
                                       start: {
                                         line: 126,
                                         column: 124,
-                                        offset: 14925
+                                        offset: 14913
                                       },
                                       end: {
                                         line: 126,
                                         column: 403,
-                                        offset: 15204
+                                        offset: 15192
                                       }
                                     }
                                   },
@@ -119983,12 +119983,12 @@ export default [
                                       start: {
                                         line: 126,
                                         column: 403,
-                                        offset: 15204
+                                        offset: 15192
                                       },
                                       end: {
                                         line: 126,
                                         column: 414,
-                                        offset: 15215
+                                        offset: 15203
                                       }
                                     }
                                   },
@@ -119999,12 +119999,12 @@ export default [
                                       start: {
                                         line: 126,
                                         column: 414,
-                                        offset: 15215
+                                        offset: 15203
                                       },
                                       end: {
                                         line: 126,
                                         column: 467,
-                                        offset: 15268
+                                        offset: 15256
                                       }
                                     }
                                   },
@@ -120020,12 +120020,12 @@ export default [
                                           start: {
                                             line: 126,
                                             column: 468,
-                                            offset: 15269
+                                            offset: 15257
                                           },
                                           end: {
                                             line: 126,
                                             column: 486,
-                                            offset: 15287
+                                            offset: 15275
                                           }
                                         }
                                       }
@@ -120034,12 +120034,12 @@ export default [
                                       start: {
                                         line: 126,
                                         column: 467,
-                                        offset: 15268
+                                        offset: 15256
                                       },
                                       end: {
                                         line: 126,
                                         column: 585,
-                                        offset: 15386
+                                        offset: 15374
                                       }
                                     }
                                   },
@@ -120050,12 +120050,12 @@ export default [
                                       start: {
                                         line: 126,
                                         column: 585,
-                                        offset: 15386
+                                        offset: 15374
                                       },
                                       end: {
                                         line: 126,
                                         column: 595,
-                                        offset: 15396
+                                        offset: 15384
                                       }
                                     }
                                   },
@@ -120069,12 +120069,12 @@ export default [
                                           start: {
                                             line: 126,
                                             column: 596,
-                                            offset: 15397
+                                            offset: 15385
                                           },
                                           end: {
                                             line: 126,
                                             column: 616,
-                                            offset: 15417
+                                            offset: 15405
                                           }
                                         }
                                       }
@@ -120083,12 +120083,12 @@ export default [
                                       start: {
                                         line: 126,
                                         column: 595,
-                                        offset: 15396
+                                        offset: 15384
                                       },
                                       end: {
                                         line: 126,
                                         column: 617,
-                                        offset: 15418
+                                        offset: 15406
                                       }
                                     }
                                   },
@@ -120099,12 +120099,12 @@ export default [
                                       start: {
                                         line: 126,
                                         column: 617,
-                                        offset: 15418
+                                        offset: 15406
                                       },
                                       end: {
                                         line: 126,
                                         column: 618,
-                                        offset: 15419
+                                        offset: 15407
                                       }
                                     }
                                   }
@@ -120113,19 +120113,19 @@ export default [
                                   start: {
                                     line: 126,
                                     column: 7,
-                                    offset: 14808
+                                    offset: 14796
                                   },
                                   end: {
                                     line: 126,
                                     column: 618,
-                                    offset: 15419
+                                    offset: 15407
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 126, column: 5, offset: 14806 },
-                              end: { line: 126, column: 618, offset: 15419 }
+                              start: { line: 126, column: 5, offset: 14794 },
+                              end: { line: 126, column: 618, offset: 15407 }
                             }
                           },
                           {
@@ -120143,12 +120143,12 @@ export default [
                                       start: {
                                         line: 127,
                                         column: 7,
-                                        offset: 15426
+                                        offset: 15414
                                       },
                                       end: {
                                         line: 127,
                                         column: 25,
-                                        offset: 15444
+                                        offset: 15432
                                       }
                                     }
                                   },
@@ -120159,12 +120159,12 @@ export default [
                                       start: {
                                         line: 127,
                                         column: 25,
-                                        offset: 15444
+                                        offset: 15432
                                       },
                                       end: {
                                         line: 127,
                                         column: 110,
-                                        offset: 15529
+                                        offset: 15517
                                       }
                                     }
                                   },
@@ -120180,12 +120180,12 @@ export default [
                                           start: {
                                             line: 127,
                                             column: 111,
-                                            offset: 15530
+                                            offset: 15518
                                           },
                                           end: {
                                             line: 127,
                                             column: 118,
-                                            offset: 15537
+                                            offset: 15525
                                           }
                                         }
                                       }
@@ -120194,12 +120194,12 @@ export default [
                                       start: {
                                         line: 127,
                                         column: 110,
-                                        offset: 15529
+                                        offset: 15517
                                       },
                                       end: {
                                         line: 127,
                                         column: 188,
-                                        offset: 15607
+                                        offset: 15595
                                       }
                                     }
                                   },
@@ -120210,12 +120210,12 @@ export default [
                                       start: {
                                         line: 127,
                                         column: 188,
-                                        offset: 15607
+                                        offset: 15595
                                       },
                                       end: {
                                         line: 127,
                                         column: 204,
-                                        offset: 15623
+                                        offset: 15611
                                       }
                                     }
                                   }
@@ -120224,37 +120224,37 @@ export default [
                                   start: {
                                     line: 127,
                                     column: 7,
-                                    offset: 15426
+                                    offset: 15414
                                   },
                                   end: {
                                     line: 127,
                                     column: 204,
-                                    offset: 15623
+                                    offset: 15611
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 127, column: 5, offset: 15424 },
-                              end: { line: 127, column: 204, offset: 15623 }
+                              start: { line: 127, column: 5, offset: 15412 },
+                              end: { line: 127, column: 204, offset: 15611 }
                             }
                           }
                         ],
                         position: {
                           start: { line: 113, column: 5, offset: 11191 },
-                          end: { line: 127, column: 204, offset: 15623 }
+                          end: { line: 127, column: 204, offset: 15611 }
                         }
                       }
                     ],
                     position: {
                       start: { line: 112, column: 3, offset: 11178 },
-                      end: { line: 127, column: 204, offset: 15623 }
+                      end: { line: 127, column: 204, offset: 15611 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 112, column: 3, offset: 11178 },
-                  end: { line: 127, column: 204, offset: 15623 }
+                  end: { line: 127, column: 204, offset: 15611 }
                 }
               },
               {
@@ -120265,14 +120265,14 @@ export default [
                   "  ContentType: 'application/json',\n" +
                   '})',
                 position: {
-                  start: { line: 129, column: 1, offset: 15625 },
-                  end: { line: 133, column: 4, offset: 15738 }
+                  start: { line: 129, column: 1, offset: 15613 },
+                  end: { line: 133, column: 4, offset: 15726 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 133, column: 4, offset: 15738 }
+              end: { line: 133, column: 4, offset: 15726 }
             }
           }
         }
@@ -122105,7 +122105,7 @@ export default [
           '    * `Restore` - provides information about the object restoration action and expiration time of the restored object copy. For more information, see [Restoring an archived object](https://docs.aws.amazon.com/AmazonS3/latest/userguide/restoring-objects.html) from the _Amazon S3 User Guide_.\n' +
           '    * `LastModified` - date/time when the object was last modified.\n' +
           "    * `ContentLength` - indicates the object's data length as a non-negative integer number of bytes. For more information, see [Content-Length](https://www.rfc-editor.org/rfc/rfc9110.html#section-8.6).\n" +
-          '    * `ETag` - the entity tag or MD5 hash of the object.\n' +
+          '    * `ETag` - the entity tag of the object.\n' +
           '    * `ChecksumCRC32` - the base64-encoded, 32-bit CRC-32 [checksum](https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html) of the object. For more information, see [Checking object integrity in Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html) from the _Amazon S3 User Guide_.\n' +
           '    * `ChecksumCRC32C` - the base64-encoded, 32-bit CRC-32C [checksum](https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html) of the object. For more information, see [Checking object integrity in Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html) from the _Amazon S3 User Guide_.\n' +
           '    * `ChecksumCRC64NVME` - the base64-encoded, 64-bit CRC-64NVME [checksum](https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html) of the object. For more information, see [Checking object integrity in Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html) from the _Amazon S3 User Guide_.\n' +
@@ -125643,7 +125643,7 @@ export default [
                                   },
                                   {
                                     type: 'text',
-                                    value: ' - the entity tag or MD5 hash of the object.',
+                                    value: ' - the entity tag of the object.',
                                     position: {
                                       start: {
                                         line: 104,
@@ -125652,8 +125652,8 @@ export default [
                                       },
                                       end: {
                                         line: 104,
-                                        column: 57,
-                                        offset: 7724
+                                        column: 45,
+                                        offset: 7712
                                       }
                                     }
                                   }
@@ -125666,15 +125666,15 @@ export default [
                                   },
                                   end: {
                                     line: 104,
-                                    column: 57,
-                                    offset: 7724
+                                    column: 45,
+                                    offset: 7712
                                   }
                                 }
                               }
                             ],
                             position: {
                               start: { line: 104, column: 5, offset: 7672 },
-                              end: { line: 104, column: 57, offset: 7724 }
+                              end: { line: 104, column: 45, offset: 7712 }
                             }
                           },
                           {
@@ -125692,12 +125692,12 @@ export default [
                                       start: {
                                         line: 105,
                                         column: 7,
-                                        offset: 7731
+                                        offset: 7719
                                       },
                                       end: {
                                         line: 105,
                                         column: 22,
-                                        offset: 7746
+                                        offset: 7734
                                       }
                                     }
                                   },
@@ -125708,12 +125708,12 @@ export default [
                                       start: {
                                         line: 105,
                                         column: 22,
-                                        offset: 7746
+                                        offset: 7734
                                       },
                                       end: {
                                         line: 105,
                                         column: 59,
-                                        offset: 7783
+                                        offset: 7771
                                       }
                                     }
                                   },
@@ -125729,12 +125729,12 @@ export default [
                                           start: {
                                             line: 105,
                                             column: 60,
-                                            offset: 7784
+                                            offset: 7772
                                           },
                                           end: {
                                             line: 105,
                                             column: 68,
-                                            offset: 7792
+                                            offset: 7780
                                           }
                                         }
                                       }
@@ -125743,12 +125743,12 @@ export default [
                                       start: {
                                         line: 105,
                                         column: 59,
-                                        offset: 7783
+                                        offset: 7771
                                       },
                                       end: {
                                         line: 105,
                                         column: 136,
-                                        offset: 7860
+                                        offset: 7848
                                       }
                                     }
                                   },
@@ -125759,12 +125759,12 @@ export default [
                                       start: {
                                         line: 105,
                                         column: 136,
-                                        offset: 7860
+                                        offset: 7848
                                       },
                                       end: {
                                         line: 105,
                                         column: 178,
-                                        offset: 7902
+                                        offset: 7890
                                       }
                                     }
                                   },
@@ -125780,12 +125780,12 @@ export default [
                                           start: {
                                             line: 105,
                                             column: 179,
-                                            offset: 7903
+                                            offset: 7891
                                           },
                                           end: {
                                             line: 105,
                                             column: 217,
-                                            offset: 7941
+                                            offset: 7929
                                           }
                                         }
                                       }
@@ -125794,12 +125794,12 @@ export default [
                                       start: {
                                         line: 105,
                                         column: 178,
-                                        offset: 7902
+                                        offset: 7890
                                       },
                                       end: {
                                         line: 105,
                                         column: 304,
-                                        offset: 8028
+                                        offset: 8016
                                       }
                                     }
                                   },
@@ -125810,12 +125810,12 @@ export default [
                                       start: {
                                         line: 105,
                                         column: 304,
-                                        offset: 8028
+                                        offset: 8016
                                       },
                                       end: {
                                         line: 105,
                                         column: 314,
-                                        offset: 8038
+                                        offset: 8026
                                       }
                                     }
                                   },
@@ -125829,12 +125829,12 @@ export default [
                                           start: {
                                             line: 105,
                                             column: 315,
-                                            offset: 8039
+                                            offset: 8027
                                           },
                                           end: {
                                             line: 105,
                                             column: 335,
-                                            offset: 8059
+                                            offset: 8047
                                           }
                                         }
                                       }
@@ -125843,12 +125843,12 @@ export default [
                                       start: {
                                         line: 105,
                                         column: 314,
-                                        offset: 8038
+                                        offset: 8026
                                       },
                                       end: {
                                         line: 105,
                                         column: 336,
-                                        offset: 8060
+                                        offset: 8048
                                       }
                                     }
                                   },
@@ -125859,12 +125859,12 @@ export default [
                                       start: {
                                         line: 105,
                                         column: 336,
-                                        offset: 8060
+                                        offset: 8048
                                       },
                                       end: {
                                         line: 105,
                                         column: 337,
-                                        offset: 8061
+                                        offset: 8049
                                       }
                                     }
                                   }
@@ -125873,19 +125873,19 @@ export default [
                                   start: {
                                     line: 105,
                                     column: 7,
-                                    offset: 7731
+                                    offset: 7719
                                   },
                                   end: {
                                     line: 105,
                                     column: 337,
-                                    offset: 8061
+                                    offset: 8049
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 105, column: 5, offset: 7729 },
-                              end: { line: 105, column: 337, offset: 8061 }
+                              start: { line: 105, column: 5, offset: 7717 },
+                              end: { line: 105, column: 337, offset: 8049 }
                             }
                           },
                           {
@@ -125903,12 +125903,12 @@ export default [
                                       start: {
                                         line: 106,
                                         column: 7,
-                                        offset: 8068
+                                        offset: 8056
                                       },
                                       end: {
                                         line: 106,
                                         column: 23,
-                                        offset: 8084
+                                        offset: 8072
                                       }
                                     }
                                   },
@@ -125919,12 +125919,12 @@ export default [
                                       start: {
                                         line: 106,
                                         column: 23,
-                                        offset: 8084
+                                        offset: 8072
                                       },
                                       end: {
                                         line: 106,
                                         column: 61,
-                                        offset: 8122
+                                        offset: 8110
                                       }
                                     }
                                   },
@@ -125940,12 +125940,12 @@ export default [
                                           start: {
                                             line: 106,
                                             column: 62,
-                                            offset: 8123
+                                            offset: 8111
                                           },
                                           end: {
                                             line: 106,
                                             column: 70,
-                                            offset: 8131
+                                            offset: 8119
                                           }
                                         }
                                       }
@@ -125954,12 +125954,12 @@ export default [
                                       start: {
                                         line: 106,
                                         column: 61,
-                                        offset: 8122
+                                        offset: 8110
                                       },
                                       end: {
                                         line: 106,
                                         column: 138,
-                                        offset: 8199
+                                        offset: 8187
                                       }
                                     }
                                   },
@@ -125970,12 +125970,12 @@ export default [
                                       start: {
                                         line: 106,
                                         column: 138,
-                                        offset: 8199
+                                        offset: 8187
                                       },
                                       end: {
                                         line: 106,
                                         column: 180,
-                                        offset: 8241
+                                        offset: 8229
                                       }
                                     }
                                   },
@@ -125991,12 +125991,12 @@ export default [
                                           start: {
                                             line: 106,
                                             column: 181,
-                                            offset: 8242
+                                            offset: 8230
                                           },
                                           end: {
                                             line: 106,
                                             column: 219,
-                                            offset: 8280
+                                            offset: 8268
                                           }
                                         }
                                       }
@@ -126005,12 +126005,12 @@ export default [
                                       start: {
                                         line: 106,
                                         column: 180,
-                                        offset: 8241
+                                        offset: 8229
                                       },
                                       end: {
                                         line: 106,
                                         column: 306,
-                                        offset: 8367
+                                        offset: 8355
                                       }
                                     }
                                   },
@@ -126021,12 +126021,12 @@ export default [
                                       start: {
                                         line: 106,
                                         column: 306,
-                                        offset: 8367
+                                        offset: 8355
                                       },
                                       end: {
                                         line: 106,
                                         column: 316,
-                                        offset: 8377
+                                        offset: 8365
                                       }
                                     }
                                   },
@@ -126040,12 +126040,12 @@ export default [
                                           start: {
                                             line: 106,
                                             column: 317,
-                                            offset: 8378
+                                            offset: 8366
                                           },
                                           end: {
                                             line: 106,
                                             column: 337,
-                                            offset: 8398
+                                            offset: 8386
                                           }
                                         }
                                       }
@@ -126054,12 +126054,12 @@ export default [
                                       start: {
                                         line: 106,
                                         column: 316,
-                                        offset: 8377
+                                        offset: 8365
                                       },
                                       end: {
                                         line: 106,
                                         column: 338,
-                                        offset: 8399
+                                        offset: 8387
                                       }
                                     }
                                   },
@@ -126070,12 +126070,12 @@ export default [
                                       start: {
                                         line: 106,
                                         column: 338,
-                                        offset: 8399
+                                        offset: 8387
                                       },
                                       end: {
                                         line: 106,
                                         column: 339,
-                                        offset: 8400
+                                        offset: 8388
                                       }
                                     }
                                   }
@@ -126084,19 +126084,19 @@ export default [
                                   start: {
                                     line: 106,
                                     column: 7,
-                                    offset: 8068
+                                    offset: 8056
                                   },
                                   end: {
                                     line: 106,
                                     column: 339,
-                                    offset: 8400
+                                    offset: 8388
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 106, column: 5, offset: 8066 },
-                              end: { line: 106, column: 339, offset: 8400 }
+                              start: { line: 106, column: 5, offset: 8054 },
+                              end: { line: 106, column: 339, offset: 8388 }
                             }
                           },
                           {
@@ -126114,12 +126114,12 @@ export default [
                                       start: {
                                         line: 107,
                                         column: 7,
-                                        offset: 8407
+                                        offset: 8395
                                       },
                                       end: {
                                         line: 107,
                                         column: 26,
-                                        offset: 8426
+                                        offset: 8414
                                       }
                                     }
                                   },
@@ -126130,12 +126130,12 @@ export default [
                                       start: {
                                         line: 107,
                                         column: 26,
-                                        offset: 8426
+                                        offset: 8414
                                       },
                                       end: {
                                         line: 107,
                                         column: 67,
-                                        offset: 8467
+                                        offset: 8455
                                       }
                                     }
                                   },
@@ -126151,12 +126151,12 @@ export default [
                                           start: {
                                             line: 107,
                                             column: 68,
-                                            offset: 8468
+                                            offset: 8456
                                           },
                                           end: {
                                             line: 107,
                                             column: 76,
-                                            offset: 8476
+                                            offset: 8464
                                           }
                                         }
                                       }
@@ -126165,12 +126165,12 @@ export default [
                                       start: {
                                         line: 107,
                                         column: 67,
-                                        offset: 8467
+                                        offset: 8455
                                       },
                                       end: {
                                         line: 107,
                                         column: 144,
-                                        offset: 8544
+                                        offset: 8532
                                       }
                                     }
                                   },
@@ -126181,12 +126181,12 @@ export default [
                                       start: {
                                         line: 107,
                                         column: 144,
-                                        offset: 8544
+                                        offset: 8532
                                       },
                                       end: {
                                         line: 107,
                                         column: 186,
-                                        offset: 8586
+                                        offset: 8574
                                       }
                                     }
                                   },
@@ -126202,12 +126202,12 @@ export default [
                                           start: {
                                             line: 107,
                                             column: 187,
-                                            offset: 8587
+                                            offset: 8575
                                           },
                                           end: {
                                             line: 107,
                                             column: 225,
-                                            offset: 8625
+                                            offset: 8613
                                           }
                                         }
                                       }
@@ -126216,12 +126216,12 @@ export default [
                                       start: {
                                         line: 107,
                                         column: 186,
-                                        offset: 8586
+                                        offset: 8574
                                       },
                                       end: {
                                         line: 107,
                                         column: 312,
-                                        offset: 8712
+                                        offset: 8700
                                       }
                                     }
                                   },
@@ -126232,12 +126232,12 @@ export default [
                                       start: {
                                         line: 107,
                                         column: 312,
-                                        offset: 8712
+                                        offset: 8700
                                       },
                                       end: {
                                         line: 107,
                                         column: 322,
-                                        offset: 8722
+                                        offset: 8710
                                       }
                                     }
                                   },
@@ -126251,12 +126251,12 @@ export default [
                                           start: {
                                             line: 107,
                                             column: 323,
-                                            offset: 8723
+                                            offset: 8711
                                           },
                                           end: {
                                             line: 107,
                                             column: 343,
-                                            offset: 8743
+                                            offset: 8731
                                           }
                                         }
                                       }
@@ -126265,12 +126265,12 @@ export default [
                                       start: {
                                         line: 107,
                                         column: 322,
-                                        offset: 8722
+                                        offset: 8710
                                       },
                                       end: {
                                         line: 107,
                                         column: 344,
-                                        offset: 8744
+                                        offset: 8732
                                       }
                                     }
                                   },
@@ -126281,12 +126281,12 @@ export default [
                                       start: {
                                         line: 107,
                                         column: 344,
-                                        offset: 8744
+                                        offset: 8732
                                       },
                                       end: {
                                         line: 107,
                                         column: 345,
-                                        offset: 8745
+                                        offset: 8733
                                       }
                                     }
                                   }
@@ -126295,19 +126295,19 @@ export default [
                                   start: {
                                     line: 107,
                                     column: 7,
-                                    offset: 8407
+                                    offset: 8395
                                   },
                                   end: {
                                     line: 107,
                                     column: 345,
-                                    offset: 8745
+                                    offset: 8733
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 107, column: 5, offset: 8405 },
-                              end: { line: 107, column: 345, offset: 8745 }
+                              start: { line: 107, column: 5, offset: 8393 },
+                              end: { line: 107, column: 345, offset: 8733 }
                             }
                           },
                           {
@@ -126325,12 +126325,12 @@ export default [
                                       start: {
                                         line: 108,
                                         column: 7,
-                                        offset: 8752
+                                        offset: 8740
                                       },
                                       end: {
                                         line: 108,
                                         column: 21,
-                                        offset: 8766
+                                        offset: 8754
                                       }
                                     }
                                   },
@@ -126341,12 +126341,12 @@ export default [
                                       start: {
                                         line: 108,
                                         column: 21,
-                                        offset: 8766
+                                        offset: 8754
                                       },
                                       end: {
                                         line: 108,
                                         column: 106,
-                                        offset: 8851
+                                        offset: 8839
                                       }
                                     }
                                   },
@@ -126362,12 +126362,12 @@ export default [
                                           start: {
                                             line: 108,
                                             column: 107,
-                                            offset: 8852
+                                            offset: 8840
                                           },
                                           end: {
                                             line: 108,
                                             column: 145,
-                                            offset: 8890
+                                            offset: 8878
                                           }
                                         }
                                       }
@@ -126376,12 +126376,12 @@ export default [
                                       start: {
                                         line: 108,
                                         column: 106,
-                                        offset: 8851
+                                        offset: 8839
                                       },
                                       end: {
                                         line: 108,
                                         column: 232,
-                                        offset: 8977
+                                        offset: 8965
                                       }
                                     }
                                   },
@@ -126392,12 +126392,12 @@ export default [
                                       start: {
                                         line: 108,
                                         column: 232,
-                                        offset: 8977
+                                        offset: 8965
                                       },
                                       end: {
                                         line: 108,
                                         column: 242,
-                                        offset: 8987
+                                        offset: 8975
                                       }
                                     }
                                   },
@@ -126411,12 +126411,12 @@ export default [
                                           start: {
                                             line: 108,
                                             column: 243,
-                                            offset: 8988
+                                            offset: 8976
                                           },
                                           end: {
                                             line: 108,
                                             column: 263,
-                                            offset: 9008
+                                            offset: 8996
                                           }
                                         }
                                       }
@@ -126425,12 +126425,12 @@ export default [
                                       start: {
                                         line: 108,
                                         column: 242,
-                                        offset: 8987
+                                        offset: 8975
                                       },
                                       end: {
                                         line: 108,
                                         column: 264,
-                                        offset: 9009
+                                        offset: 8997
                                       }
                                     }
                                   },
@@ -126441,12 +126441,12 @@ export default [
                                       start: {
                                         line: 108,
                                         column: 264,
-                                        offset: 9009
+                                        offset: 8997
                                       },
                                       end: {
                                         line: 108,
                                         column: 265,
-                                        offset: 9010
+                                        offset: 8998
                                       }
                                     }
                                   }
@@ -126455,19 +126455,19 @@ export default [
                                   start: {
                                     line: 108,
                                     column: 7,
-                                    offset: 8752
+                                    offset: 8740
                                   },
                                   end: {
                                     line: 108,
                                     column: 265,
-                                    offset: 9010
+                                    offset: 8998
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 108, column: 5, offset: 8750 },
-                              end: { line: 108, column: 265, offset: 9010 }
+                              start: { line: 108, column: 5, offset: 8738 },
+                              end: { line: 108, column: 265, offset: 8998 }
                             }
                           },
                           {
@@ -126485,12 +126485,12 @@ export default [
                                       start: {
                                         line: 109,
                                         column: 7,
-                                        offset: 9017
+                                        offset: 9005
                                       },
                                       end: {
                                         line: 109,
                                         column: 23,
-                                        offset: 9033
+                                        offset: 9021
                                       }
                                     }
                                   },
@@ -126501,12 +126501,12 @@ export default [
                                       start: {
                                         line: 109,
                                         column: 23,
-                                        offset: 9033
+                                        offset: 9021
                                       },
                                       end: {
                                         line: 109,
                                         column: 110,
-                                        offset: 9120
+                                        offset: 9108
                                       }
                                     }
                                   },
@@ -126522,12 +126522,12 @@ export default [
                                           start: {
                                             line: 109,
                                             column: 111,
-                                            offset: 9121
+                                            offset: 9109
                                           },
                                           end: {
                                             line: 109,
                                             column: 149,
-                                            offset: 9159
+                                            offset: 9147
                                           }
                                         }
                                       }
@@ -126536,12 +126536,12 @@ export default [
                                       start: {
                                         line: 109,
                                         column: 110,
-                                        offset: 9120
+                                        offset: 9108
                                       },
                                       end: {
                                         line: 109,
                                         column: 236,
-                                        offset: 9246
+                                        offset: 9234
                                       }
                                     }
                                   },
@@ -126552,12 +126552,12 @@ export default [
                                       start: {
                                         line: 109,
                                         column: 236,
-                                        offset: 9246
+                                        offset: 9234
                                       },
                                       end: {
                                         line: 109,
                                         column: 246,
-                                        offset: 9256
+                                        offset: 9244
                                       }
                                     }
                                   },
@@ -126571,12 +126571,12 @@ export default [
                                           start: {
                                             line: 109,
                                             column: 247,
-                                            offset: 9257
+                                            offset: 9245
                                           },
                                           end: {
                                             line: 109,
                                             column: 267,
-                                            offset: 9277
+                                            offset: 9265
                                           }
                                         }
                                       }
@@ -126585,12 +126585,12 @@ export default [
                                       start: {
                                         line: 109,
                                         column: 246,
-                                        offset: 9256
+                                        offset: 9244
                                       },
                                       end: {
                                         line: 109,
                                         column: 268,
-                                        offset: 9278
+                                        offset: 9266
                                       }
                                     }
                                   },
@@ -126601,12 +126601,12 @@ export default [
                                       start: {
                                         line: 109,
                                         column: 268,
-                                        offset: 9278
+                                        offset: 9266
                                       },
                                       end: {
                                         line: 109,
                                         column: 269,
-                                        offset: 9279
+                                        offset: 9267
                                       }
                                     }
                                   }
@@ -126615,19 +126615,19 @@ export default [
                                   start: {
                                     line: 109,
                                     column: 7,
-                                    offset: 9017
+                                    offset: 9005
                                   },
                                   end: {
                                     line: 109,
                                     column: 269,
-                                    offset: 9279
+                                    offset: 9267
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 109, column: 5, offset: 9015 },
-                              end: { line: 109, column: 269, offset: 9279 }
+                              start: { line: 109, column: 5, offset: 9003 },
+                              end: { line: 109, column: 269, offset: 9267 }
                             }
                           },
                           {
@@ -126645,12 +126645,12 @@ export default [
                                       start: {
                                         line: 110,
                                         column: 7,
-                                        offset: 9286
+                                        offset: 9274
                                       },
                                       end: {
                                         line: 110,
                                         column: 20,
-                                        offset: 9299
+                                        offset: 9287
                                       }
                                     }
                                   },
@@ -126661,12 +126661,12 @@ export default [
                                       start: {
                                         line: 110,
                                         column: 20,
-                                        offset: 9299
+                                        offset: 9287
                                       },
                                       end: {
                                         line: 110,
                                         column: 105,
-                                        offset: 9384
+                                        offset: 9372
                                       }
                                     }
                                   },
@@ -126677,12 +126677,12 @@ export default [
                                       start: {
                                         line: 110,
                                         column: 105,
-                                        offset: 9384
+                                        offset: 9372
                                       },
                                       end: {
                                         line: 110,
                                         column: 118,
-                                        offset: 9397
+                                        offset: 9385
                                       }
                                     }
                                   },
@@ -126693,12 +126693,12 @@ export default [
                                       start: {
                                         line: 110,
                                         column: 118,
-                                        offset: 9397
+                                        offset: 9385
                                       },
                                       end: {
                                         line: 110,
                                         column: 146,
-                                        offset: 9425
+                                        offset: 9413
                                       }
                                     }
                                   },
@@ -126714,12 +126714,12 @@ export default [
                                           start: {
                                             line: 110,
                                             column: 147,
-                                            offset: 9426
+                                            offset: 9414
                                           },
                                           end: {
                                             line: 110,
                                             column: 175,
-                                            offset: 9454
+                                            offset: 9442
                                           }
                                         }
                                       }
@@ -126728,12 +126728,12 @@ export default [
                                       start: {
                                         line: 110,
                                         column: 146,
-                                        offset: 9425
+                                        offset: 9413
                                       },
                                       end: {
                                         line: 110,
                                         column: 250,
-                                        offset: 9529
+                                        offset: 9517
                                       }
                                     }
                                   },
@@ -126744,12 +126744,12 @@ export default [
                                       start: {
                                         line: 110,
                                         column: 250,
-                                        offset: 9529
+                                        offset: 9517
                                       },
                                       end: {
                                         line: 110,
                                         column: 260,
-                                        offset: 9539
+                                        offset: 9527
                                       }
                                     }
                                   },
@@ -126763,12 +126763,12 @@ export default [
                                           start: {
                                             line: 110,
                                             column: 261,
-                                            offset: 9540
+                                            offset: 9528
                                           },
                                           end: {
                                             line: 110,
                                             column: 281,
-                                            offset: 9560
+                                            offset: 9548
                                           }
                                         }
                                       }
@@ -126777,12 +126777,12 @@ export default [
                                       start: {
                                         line: 110,
                                         column: 260,
-                                        offset: 9539
+                                        offset: 9527
                                       },
                                       end: {
                                         line: 110,
                                         column: 282,
-                                        offset: 9561
+                                        offset: 9549
                                       }
                                     }
                                   },
@@ -126793,12 +126793,12 @@ export default [
                                       start: {
                                         line: 110,
                                         column: 282,
-                                        offset: 9561
+                                        offset: 9549
                                       },
                                       end: {
                                         line: 110,
                                         column: 283,
-                                        offset: 9562
+                                        offset: 9550
                                       }
                                     }
                                   }
@@ -126807,19 +126807,19 @@ export default [
                                   start: {
                                     line: 110,
                                     column: 7,
-                                    offset: 9286
+                                    offset: 9274
                                   },
                                   end: {
                                     line: 110,
                                     column: 283,
-                                    offset: 9562
+                                    offset: 9550
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 110, column: 5, offset: 9284 },
-                              end: { line: 110, column: 283, offset: 9562 }
+                              start: { line: 110, column: 5, offset: 9272 },
+                              end: { line: 110, column: 283, offset: 9550 }
                             }
                           },
                           {
@@ -126837,12 +126837,12 @@ export default [
                                       start: {
                                         line: 111,
                                         column: 7,
-                                        offset: 9569
+                                        offset: 9557
                                       },
                                       end: {
                                         line: 111,
                                         column: 18,
-                                        offset: 9580
+                                        offset: 9568
                                       }
                                     }
                                   },
@@ -126853,12 +126853,12 @@ export default [
                                       start: {
                                         line: 111,
                                         column: 18,
-                                        offset: 9580
+                                        offset: 9568
                                       },
                                       end: {
                                         line: 111,
                                         column: 83,
-                                        offset: 9645
+                                        offset: 9633
                                       }
                                     }
                                   },
@@ -126874,12 +126874,12 @@ export default [
                                           start: {
                                             line: 111,
                                             column: 84,
-                                            offset: 9646
+                                            offset: 9634
                                           },
                                           end: {
                                             line: 111,
                                             column: 141,
-                                            offset: 9703
+                                            offset: 9691
                                           }
                                         }
                                       }
@@ -126888,12 +126888,12 @@ export default [
                                       start: {
                                         line: 111,
                                         column: 83,
-                                        offset: 9645
+                                        offset: 9633
                                       },
                                       end: {
                                         line: 111,
                                         column: 213,
-                                        offset: 9775
+                                        offset: 9763
                                       }
                                     }
                                   },
@@ -126904,12 +126904,12 @@ export default [
                                       start: {
                                         line: 111,
                                         column: 213,
-                                        offset: 9775
+                                        offset: 9763
                                       },
                                       end: {
                                         line: 111,
                                         column: 223,
-                                        offset: 9785
+                                        offset: 9773
                                       }
                                     }
                                   },
@@ -126923,12 +126923,12 @@ export default [
                                           start: {
                                             line: 111,
                                             column: 224,
-                                            offset: 9786
+                                            offset: 9774
                                           },
                                           end: {
                                             line: 111,
                                             column: 244,
-                                            offset: 9806
+                                            offset: 9794
                                           }
                                         }
                                       }
@@ -126937,12 +126937,12 @@ export default [
                                       start: {
                                         line: 111,
                                         column: 223,
-                                        offset: 9785
+                                        offset: 9773
                                       },
                                       end: {
                                         line: 111,
                                         column: 245,
-                                        offset: 9807
+                                        offset: 9795
                                       }
                                     }
                                   },
@@ -126953,12 +126953,12 @@ export default [
                                       start: {
                                         line: 111,
                                         column: 245,
-                                        offset: 9807
+                                        offset: 9795
                                       },
                                       end: {
                                         line: 111,
                                         column: 246,
-                                        offset: 9808
+                                        offset: 9796
                                       }
                                     }
                                   }
@@ -126967,19 +126967,19 @@ export default [
                                   start: {
                                     line: 111,
                                     column: 7,
-                                    offset: 9569
+                                    offset: 9557
                                   },
                                   end: {
                                     line: 111,
                                     column: 246,
-                                    offset: 9808
+                                    offset: 9796
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 111, column: 5, offset: 9567 },
-                              end: { line: 111, column: 246, offset: 9808 }
+                              start: { line: 111, column: 5, offset: 9555 },
+                              end: { line: 111, column: 246, offset: 9796 }
                             }
                           },
                           {
@@ -126997,12 +126997,12 @@ export default [
                                       start: {
                                         line: 112,
                                         column: 7,
-                                        offset: 9815
+                                        offset: 9803
                                       },
                                       end: {
                                         line: 112,
                                         column: 21,
-                                        offset: 9829
+                                        offset: 9817
                                       }
                                     }
                                   },
@@ -127013,12 +127013,12 @@ export default [
                                       start: {
                                         line: 112,
                                         column: 21,
-                                        offset: 9829
+                                        offset: 9817
                                       },
                                       end: {
                                         line: 112,
                                         column: 112,
-                                        offset: 9920
+                                        offset: 9908
                                       }
                                     }
                                   },
@@ -127034,12 +127034,12 @@ export default [
                                           start: {
                                             line: 112,
                                             column: 113,
-                                            offset: 9921
+                                            offset: 9909
                                           },
                                           end: {
                                             line: 112,
                                             column: 126,
-                                            offset: 9934
+                                            offset: 9922
                                           }
                                         }
                                       }
@@ -127048,12 +127048,12 @@ export default [
                                       start: {
                                         line: 112,
                                         column: 112,
-                                        offset: 9920
+                                        offset: 9908
                                       },
                                       end: {
                                         line: 112,
                                         column: 179,
-                                        offset: 9987
+                                        offset: 9975
                                       }
                                     }
                                   },
@@ -127064,12 +127064,12 @@ export default [
                                       start: {
                                         line: 112,
                                         column: 179,
-                                        offset: 9987
+                                        offset: 9975
                                       },
                                       end: {
                                         line: 112,
                                         column: 180,
-                                        offset: 9988
+                                        offset: 9976
                                       }
                                     }
                                   }
@@ -127078,19 +127078,19 @@ export default [
                                   start: {
                                     line: 112,
                                     column: 7,
-                                    offset: 9815
+                                    offset: 9803
                                   },
                                   end: {
                                     line: 112,
                                     column: 180,
-                                    offset: 9988
+                                    offset: 9976
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 112, column: 5, offset: 9813 },
-                              end: { line: 112, column: 180, offset: 9988 }
+                              start: { line: 112, column: 5, offset: 9801 },
+                              end: { line: 112, column: 180, offset: 9976 }
                             }
                           },
                           {
@@ -127108,12 +127108,12 @@ export default [
                                       start: {
                                         line: 113,
                                         column: 7,
-                                        offset: 9995
+                                        offset: 9983
                                       },
                                       end: {
                                         line: 113,
                                         column: 27,
-                                        offset: 10015
+                                        offset: 10003
                                       }
                                     }
                                   },
@@ -127124,12 +127124,12 @@ export default [
                                       start: {
                                         line: 113,
                                         column: 27,
-                                        offset: 10015
+                                        offset: 10003
                                       },
                                       end: {
                                         line: 113,
                                         column: 130,
-                                        offset: 10118
+                                        offset: 10106
                                       }
                                     }
                                   },
@@ -127145,12 +127145,12 @@ export default [
                                           start: {
                                             line: 113,
                                             column: 131,
-                                            offset: 10119
+                                            offset: 10107
                                           },
                                           end: {
                                             line: 113,
                                             column: 150,
-                                            offset: 10138
+                                            offset: 10126
                                           }
                                         }
                                       }
@@ -127159,12 +127159,12 @@ export default [
                                       start: {
                                         line: 113,
                                         column: 130,
-                                        offset: 10118
+                                        offset: 10106
                                       },
                                       end: {
                                         line: 113,
                                         column: 201,
-                                        offset: 10189
+                                        offset: 10177
                                       }
                                     }
                                   },
@@ -127175,12 +127175,12 @@ export default [
                                       start: {
                                         line: 113,
                                         column: 201,
-                                        offset: 10189
+                                        offset: 10177
                                       },
                                       end: {
                                         line: 113,
                                         column: 202,
-                                        offset: 10190
+                                        offset: 10178
                                       }
                                     }
                                   }
@@ -127189,19 +127189,19 @@ export default [
                                   start: {
                                     line: 113,
                                     column: 7,
-                                    offset: 9995
+                                    offset: 9983
                                   },
                                   end: {
                                     line: 113,
                                     column: 202,
-                                    offset: 10190
+                                    offset: 10178
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 113, column: 5, offset: 9993 },
-                              end: { line: 113, column: 202, offset: 10190 }
+                              start: { line: 113, column: 5, offset: 9981 },
+                              end: { line: 113, column: 202, offset: 10178 }
                             }
                           },
                           {
@@ -127219,12 +127219,12 @@ export default [
                                       start: {
                                         line: 114,
                                         column: 7,
-                                        offset: 10197
+                                        offset: 10185
                                       },
                                       end: {
                                         line: 114,
                                         column: 24,
-                                        offset: 10214
+                                        offset: 10202
                                       }
                                     }
                                   },
@@ -127235,12 +127235,12 @@ export default [
                                       start: {
                                         line: 114,
                                         column: 24,
-                                        offset: 10214
+                                        offset: 10202
                                       },
                                       end: {
                                         line: 114,
                                         column: 152,
-                                        offset: 10342
+                                        offset: 10330
                                       }
                                     }
                                   },
@@ -127251,12 +127251,12 @@ export default [
                                       start: {
                                         line: 114,
                                         column: 152,
-                                        offset: 10342
+                                        offset: 10330
                                       },
                                       end: {
                                         line: 114,
                                         column: 165,
-                                        offset: 10355
+                                        offset: 10343
                                       }
                                     }
                                   },
@@ -127267,12 +127267,12 @@ export default [
                                       start: {
                                         line: 114,
                                         column: 165,
-                                        offset: 10355
+                                        offset: 10343
                                       },
                                       end: {
                                         line: 114,
                                         column: 200,
-                                        offset: 10390
+                                        offset: 10378
                                       }
                                     }
                                   },
@@ -127288,12 +127288,12 @@ export default [
                                           start: {
                                             line: 114,
                                             column: 201,
-                                            offset: 10391
+                                            offset: 10379
                                           },
                                           end: {
                                             line: 114,
                                             column: 217,
-                                            offset: 10407
+                                            offset: 10395
                                           }
                                         }
                                       }
@@ -127302,12 +127302,12 @@ export default [
                                       start: {
                                         line: 114,
                                         column: 200,
-                                        offset: 10390
+                                        offset: 10378
                                       },
                                       end: {
                                         line: 114,
                                         column: 275,
-                                        offset: 10465
+                                        offset: 10453
                                       }
                                     }
                                   },
@@ -127318,12 +127318,12 @@ export default [
                                       start: {
                                         line: 114,
                                         column: 275,
-                                        offset: 10465
+                                        offset: 10453
                                       },
                                       end: {
                                         line: 114,
                                         column: 276,
-                                        offset: 10466
+                                        offset: 10454
                                       }
                                     }
                                   }
@@ -127332,19 +127332,19 @@ export default [
                                   start: {
                                     line: 114,
                                     column: 7,
-                                    offset: 10197
+                                    offset: 10185
                                   },
                                   end: {
                                     line: 114,
                                     column: 276,
-                                    offset: 10466
+                                    offset: 10454
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 114, column: 5, offset: 10195 },
-                              end: { line: 114, column: 276, offset: 10466 }
+                              start: { line: 114, column: 5, offset: 10183 },
+                              end: { line: 114, column: 276, offset: 10454 }
                             }
                           },
                           {
@@ -127362,12 +127362,12 @@ export default [
                                       start: {
                                         line: 115,
                                         column: 7,
-                                        offset: 10473
+                                        offset: 10461
                                       },
                                       end: {
                                         line: 115,
                                         column: 24,
-                                        offset: 10490
+                                        offset: 10478
                                       }
                                     }
                                   },
@@ -127378,12 +127378,12 @@ export default [
                                       start: {
                                         line: 115,
                                         column: 24,
-                                        offset: 10490
+                                        offset: 10478
                                       },
                                       end: {
                                         line: 115,
                                         column: 128,
-                                        offset: 10594
+                                        offset: 10582
                                       }
                                     }
                                   },
@@ -127399,12 +127399,12 @@ export default [
                                           start: {
                                             line: 115,
                                             column: 129,
-                                            offset: 10595
+                                            offset: 10583
                                           },
                                           end: {
                                             line: 115,
                                             column: 145,
-                                            offset: 10611
+                                            offset: 10599
                                           }
                                         }
                                       }
@@ -127413,12 +127413,12 @@ export default [
                                       start: {
                                         line: 115,
                                         column: 128,
-                                        offset: 10594
+                                        offset: 10582
                                       },
                                       end: {
                                         line: 115,
                                         column: 203,
-                                        offset: 10669
+                                        offset: 10657
                                       }
                                     }
                                   }
@@ -127427,19 +127427,19 @@ export default [
                                   start: {
                                     line: 115,
                                     column: 7,
-                                    offset: 10473
+                                    offset: 10461
                                   },
                                   end: {
                                     line: 115,
                                     column: 203,
-                                    offset: 10669
+                                    offset: 10657
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 115, column: 5, offset: 10471 },
-                              end: { line: 115, column: 203, offset: 10669 }
+                              start: { line: 115, column: 5, offset: 10459 },
+                              end: { line: 115, column: 203, offset: 10657 }
                             }
                           },
                           {
@@ -127457,12 +127457,12 @@ export default [
                                       start: {
                                         line: 116,
                                         column: 7,
-                                        offset: 10676
+                                        offset: 10664
                                       },
                                       end: {
                                         line: 116,
                                         column: 21,
-                                        offset: 10690
+                                        offset: 10678
                                       }
                                     }
                                   },
@@ -127473,12 +127473,12 @@ export default [
                                       start: {
                                         line: 116,
                                         column: 21,
-                                        offset: 10690
+                                        offset: 10678
                                       },
                                       end: {
                                         line: 116,
                                         column: 102,
-                                        offset: 10771
+                                        offset: 10759
                                       }
                                     }
                                   },
@@ -127494,12 +127494,12 @@ export default [
                                           start: {
                                             line: 116,
                                             column: 103,
-                                            offset: 10772
+                                            offset: 10760
                                           },
                                           end: {
                                             line: 116,
                                             column: 116,
-                                            offset: 10785
+                                            offset: 10773
                                           }
                                         }
                                       }
@@ -127508,12 +127508,12 @@ export default [
                                       start: {
                                         line: 116,
                                         column: 102,
-                                        offset: 10771
+                                        offset: 10759
                                       },
                                       end: {
                                         line: 116,
                                         column: 176,
-                                        offset: 10845
+                                        offset: 10833
                                       }
                                     }
                                   }
@@ -127522,19 +127522,19 @@ export default [
                                   start: {
                                     line: 116,
                                     column: 7,
-                                    offset: 10676
+                                    offset: 10664
                                   },
                                   end: {
                                     line: 116,
                                     column: 176,
-                                    offset: 10845
+                                    offset: 10833
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 116, column: 5, offset: 10674 },
-                              end: { line: 116, column: 176, offset: 10845 }
+                              start: { line: 116, column: 5, offset: 10662 },
+                              end: { line: 116, column: 176, offset: 10833 }
                             }
                           },
                           {
@@ -127552,12 +127552,12 @@ export default [
                                       start: {
                                         line: 117,
                                         column: 7,
-                                        offset: 10852
+                                        offset: 10840
                                       },
                                       end: {
                                         line: 117,
                                         column: 20,
-                                        offset: 10865
+                                        offset: 10853
                                       }
                                     }
                                   },
@@ -127568,12 +127568,12 @@ export default [
                                       start: {
                                         line: 117,
                                         column: 20,
-                                        offset: 10865
+                                        offset: 10853
                                       },
                                       end: {
                                         line: 117,
                                         column: 89,
-                                        offset: 10934
+                                        offset: 10922
                                       }
                                     }
                                   },
@@ -127589,12 +127589,12 @@ export default [
                                           start: {
                                             line: 117,
                                             column: 90,
-                                            offset: 10935
+                                            offset: 10923
                                           },
                                           end: {
                                             line: 117,
                                             column: 102,
-                                            offset: 10947
+                                            offset: 10935
                                           }
                                         }
                                       }
@@ -127603,12 +127603,12 @@ export default [
                                       start: {
                                         line: 117,
                                         column: 89,
-                                        offset: 10934
+                                        offset: 10922
                                       },
                                       end: {
                                         line: 117,
                                         column: 160,
-                                        offset: 11005
+                                        offset: 10993
                                       }
                                     }
                                   },
@@ -127619,12 +127619,12 @@ export default [
                                       start: {
                                         line: 117,
                                         column: 160,
-                                        offset: 11005
+                                        offset: 10993
                                       },
                                       end: {
                                         line: 117,
                                         column: 161,
-                                        offset: 11006
+                                        offset: 10994
                                       }
                                     }
                                   }
@@ -127633,19 +127633,19 @@ export default [
                                   start: {
                                     line: 117,
                                     column: 7,
-                                    offset: 10852
+                                    offset: 10840
                                   },
                                   end: {
                                     line: 117,
                                     column: 161,
-                                    offset: 11006
+                                    offset: 10994
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 117, column: 5, offset: 10850 },
-                              end: { line: 117, column: 161, offset: 11006 }
+                              start: { line: 117, column: 5, offset: 10838 },
+                              end: { line: 117, column: 161, offset: 10994 }
                             }
                           },
                           {
@@ -127663,12 +127663,12 @@ export default [
                                       start: {
                                         line: 118,
                                         column: 7,
-                                        offset: 11013
+                                        offset: 11001
                                       },
                                       end: {
                                         line: 118,
                                         column: 16,
-                                        offset: 11022
+                                        offset: 11010
                                       }
                                     }
                                   },
@@ -127679,12 +127679,12 @@ export default [
                                       start: {
                                         line: 118,
                                         column: 16,
-                                        offset: 11022
+                                        offset: 11010
                                       },
                                       end: {
                                         line: 118,
                                         column: 42,
-                                        offset: 11048
+                                        offset: 11036
                                       }
                                     }
                                   },
@@ -127695,12 +127695,12 @@ export default [
                                       start: {
                                         line: 118,
                                         column: 42,
-                                        offset: 11048
+                                        offset: 11036
                                       },
                                       end: {
                                         line: 118,
                                         column: 57,
-                                        offset: 11063
+                                        offset: 11051
                                       }
                                     }
                                   },
@@ -127711,12 +127711,12 @@ export default [
                                       start: {
                                         line: 118,
                                         column: 57,
-                                        offset: 11063
+                                        offset: 11051
                                       },
                                       end: {
                                         line: 118,
                                         column: 58,
-                                        offset: 11064
+                                        offset: 11052
                                       }
                                     }
                                   }
@@ -127725,19 +127725,19 @@ export default [
                                   start: {
                                     line: 118,
                                     column: 7,
-                                    offset: 11013
+                                    offset: 11001
                                   },
                                   end: {
                                     line: 118,
                                     column: 58,
-                                    offset: 11064
+                                    offset: 11052
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 118, column: 5, offset: 11011 },
-                              end: { line: 118, column: 58, offset: 11064 }
+                              start: { line: 118, column: 5, offset: 10999 },
+                              end: { line: 118, column: 58, offset: 11052 }
                             }
                           },
                           {
@@ -127755,12 +127755,12 @@ export default [
                                       start: {
                                         line: 119,
                                         column: 7,
-                                        offset: 11071
+                                        offset: 11059
                                       },
                                       end: {
                                         line: 119,
                                         column: 22,
-                                        offset: 11086
+                                        offset: 11074
                                       }
                                     }
                                   },
@@ -127771,12 +127771,12 @@ export default [
                                       start: {
                                         line: 119,
                                         column: 22,
-                                        offset: 11086
+                                        offset: 11074
                                       },
                                       end: {
                                         line: 119,
                                         column: 109,
-                                        offset: 11173
+                                        offset: 11161
                                       }
                                     }
                                   },
@@ -127792,12 +127792,12 @@ export default [
                                           start: {
                                             line: 119,
                                             column: 110,
-                                            offset: 11174
+                                            offset: 11162
                                           },
                                           end: {
                                             line: 119,
                                             column: 117,
-                                            offset: 11181
+                                            offset: 11169
                                           }
                                         }
                                       }
@@ -127806,12 +127806,12 @@ export default [
                                       start: {
                                         line: 119,
                                         column: 109,
-                                        offset: 11173
+                                        offset: 11161
                                       },
                                       end: {
                                         line: 119,
                                         column: 170,
-                                        offset: 11234
+                                        offset: 11222
                                       }
                                     }
                                   },
@@ -127822,12 +127822,12 @@ export default [
                                       start: {
                                         line: 119,
                                         column: 170,
-                                        offset: 11234
+                                        offset: 11222
                                       },
                                       end: {
                                         line: 119,
                                         column: 171,
-                                        offset: 11235
+                                        offset: 11223
                                       }
                                     }
                                   }
@@ -127836,19 +127836,19 @@ export default [
                                   start: {
                                     line: 119,
                                     column: 7,
-                                    offset: 11071
+                                    offset: 11059
                                   },
                                   end: {
                                     line: 119,
                                     column: 171,
-                                    offset: 11235
+                                    offset: 11223
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 119, column: 5, offset: 11069 },
-                              end: { line: 119, column: 171, offset: 11235 }
+                              start: { line: 119, column: 5, offset: 11057 },
+                              end: { line: 119, column: 171, offset: 11223 }
                             }
                           },
                           {
@@ -127866,12 +127866,12 @@ export default [
                                       start: {
                                         line: 120,
                                         column: 7,
-                                        offset: 11242
+                                        offset: 11230
                                       },
                                       end: {
                                         line: 120,
                                         column: 32,
-                                        offset: 11267
+                                        offset: 11255
                                       }
                                     }
                                   },
@@ -127882,12 +127882,12 @@ export default [
                                       start: {
                                         line: 120,
                                         column: 32,
-                                        offset: 11267
+                                        offset: 11255
                                       },
                                       end: {
                                         line: 120,
                                         column: 279,
-                                        offset: 11514
+                                        offset: 11502
                                       }
                                     }
                                   },
@@ -127903,12 +127903,12 @@ export default [
                                           start: {
                                             line: 120,
                                             column: 280,
-                                            offset: 11515
+                                            offset: 11503
                                           },
                                           end: {
                                             line: 120,
                                             column: 308,
-                                            offset: 11543
+                                            offset: 11531
                                           }
                                         }
                                       }
@@ -127917,12 +127917,12 @@ export default [
                                       start: {
                                         line: 120,
                                         column: 279,
-                                        offset: 11514
+                                        offset: 11502
                                       },
                                       end: {
                                         line: 120,
                                         column: 383,
-                                        offset: 11618
+                                        offset: 11606
                                       }
                                     }
                                   },
@@ -127933,12 +127933,12 @@ export default [
                                       start: {
                                         line: 120,
                                         column: 383,
-                                        offset: 11618
+                                        offset: 11606
                                       },
                                       end: {
                                         line: 120,
                                         column: 393,
-                                        offset: 11628
+                                        offset: 11616
                                       }
                                     }
                                   },
@@ -127952,12 +127952,12 @@ export default [
                                           start: {
                                             line: 120,
                                             column: 394,
-                                            offset: 11629
+                                            offset: 11617
                                           },
                                           end: {
                                             line: 120,
                                             column: 414,
-                                            offset: 11649
+                                            offset: 11637
                                           }
                                         }
                                       }
@@ -127966,12 +127966,12 @@ export default [
                                       start: {
                                         line: 120,
                                         column: 393,
-                                        offset: 11628
+                                        offset: 11616
                                       },
                                       end: {
                                         line: 120,
                                         column: 415,
-                                        offset: 11650
+                                        offset: 11638
                                       }
                                     }
                                   },
@@ -127982,12 +127982,12 @@ export default [
                                       start: {
                                         line: 120,
                                         column: 415,
-                                        offset: 11650
+                                        offset: 11638
                                       },
                                       end: {
                                         line: 120,
                                         column: 416,
-                                        offset: 11651
+                                        offset: 11639
                                       }
                                     }
                                   }
@@ -127996,19 +127996,19 @@ export default [
                                   start: {
                                     line: 120,
                                     column: 7,
-                                    offset: 11242
+                                    offset: 11230
                                   },
                                   end: {
                                     line: 120,
                                     column: 416,
-                                    offset: 11651
+                                    offset: 11639
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 120, column: 5, offset: 11240 },
-                              end: { line: 120, column: 416, offset: 11651 }
+                              start: { line: 120, column: 5, offset: 11228 },
+                              end: { line: 120, column: 416, offset: 11639 }
                             }
                           },
                           {
@@ -128026,12 +128026,12 @@ export default [
                                       start: {
                                         line: 121,
                                         column: 7,
-                                        offset: 11658
+                                        offset: 11646
                                       },
                                       end: {
                                         line: 121,
                                         column: 29,
-                                        offset: 11680
+                                        offset: 11668
                                       }
                                     }
                                   },
@@ -128042,12 +128042,12 @@ export default [
                                       start: {
                                         line: 121,
                                         column: 29,
-                                        offset: 11680
+                                        offset: 11668
                                       },
                                       end: {
                                         line: 121,
                                         column: 123,
-                                        offset: 11774
+                                        offset: 11762
                                       }
                                     }
                                   },
@@ -128063,12 +128063,12 @@ export default [
                                           start: {
                                             line: 121,
                                             column: 124,
-                                            offset: 11775
+                                            offset: 11763
                                           },
                                           end: {
                                             line: 121,
                                             column: 189,
-                                            offset: 11840
+                                            offset: 11828
                                           }
                                         }
                                       }
@@ -128077,12 +128077,12 @@ export default [
                                       start: {
                                         line: 121,
                                         column: 123,
-                                        offset: 11774
+                                        offset: 11762
                                       },
                                       end: {
                                         line: 121,
                                         column: 276,
-                                        offset: 11927
+                                        offset: 11915
                                       }
                                     }
                                   },
@@ -128093,12 +128093,12 @@ export default [
                                       start: {
                                         line: 121,
                                         column: 276,
-                                        offset: 11927
+                                        offset: 11915
                                       },
                                       end: {
                                         line: 121,
                                         column: 286,
-                                        offset: 11937
+                                        offset: 11925
                                       }
                                     }
                                   },
@@ -128112,12 +128112,12 @@ export default [
                                           start: {
                                             line: 121,
                                             column: 287,
-                                            offset: 11938
+                                            offset: 11926
                                           },
                                           end: {
                                             line: 121,
                                             column: 307,
-                                            offset: 11958
+                                            offset: 11946
                                           }
                                         }
                                       }
@@ -128126,12 +128126,12 @@ export default [
                                       start: {
                                         line: 121,
                                         column: 286,
-                                        offset: 11937
+                                        offset: 11925
                                       },
                                       end: {
                                         line: 121,
                                         column: 308,
-                                        offset: 11959
+                                        offset: 11947
                                       }
                                     }
                                   },
@@ -128142,12 +128142,12 @@ export default [
                                       start: {
                                         line: 121,
                                         column: 308,
-                                        offset: 11959
+                                        offset: 11947
                                       },
                                       end: {
                                         line: 121,
                                         column: 309,
-                                        offset: 11960
+                                        offset: 11948
                                       }
                                     }
                                   }
@@ -128156,19 +128156,19 @@ export default [
                                   start: {
                                     line: 121,
                                     column: 7,
-                                    offset: 11658
+                                    offset: 11646
                                   },
                                   end: {
                                     line: 121,
                                     column: 309,
-                                    offset: 11960
+                                    offset: 11948
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 121, column: 5, offset: 11656 },
-                              end: { line: 121, column: 309, offset: 11960 }
+                              start: { line: 121, column: 5, offset: 11644 },
+                              end: { line: 121, column: 309, offset: 11948 }
                             }
                           },
                           {
@@ -128186,12 +128186,12 @@ export default [
                                       start: {
                                         line: 122,
                                         column: 7,
-                                        offset: 11967
+                                        offset: 11955
                                       },
                                       end: {
                                         line: 122,
                                         column: 17,
-                                        offset: 11977
+                                        offset: 11965
                                       }
                                     }
                                   },
@@ -128202,12 +128202,12 @@ export default [
                                       start: {
                                         line: 122,
                                         column: 17,
-                                        offset: 11977
+                                        offset: 11965
                                       },
                                       end: {
                                         line: 122,
                                         column: 20,
-                                        offset: 11980
+                                        offset: 11968
                                       }
                                     }
                                   },
@@ -128223,12 +128223,12 @@ export default [
                                           start: {
                                             line: 122,
                                             column: 21,
-                                            offset: 11981
+                                            offset: 11969
                                           },
                                           end: {
                                             line: 122,
                                             column: 29,
-                                            offset: 11989
+                                            offset: 11977
                                           }
                                         }
                                       }
@@ -128237,12 +128237,12 @@ export default [
                                       start: {
                                         line: 122,
                                         column: 20,
-                                        offset: 11980
+                                        offset: 11968
                                       },
                                       end: {
                                         line: 122,
                                         column: 73,
-                                        offset: 12033
+                                        offset: 12021
                                       }
                                     }
                                   },
@@ -128253,12 +128253,12 @@ export default [
                                       start: {
                                         line: 122,
                                         column: 73,
-                                        offset: 12033
+                                        offset: 12021
                                       },
                                       end: {
                                         line: 122,
                                         column: 91,
-                                        offset: 12051
+                                        offset: 12039
                                       }
                                     }
                                   }
@@ -128267,19 +128267,19 @@ export default [
                                   start: {
                                     line: 122,
                                     column: 7,
-                                    offset: 11967
+                                    offset: 11955
                                   },
                                   end: {
                                     line: 122,
                                     column: 91,
-                                    offset: 12051
+                                    offset: 12039
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 122, column: 5, offset: 11965 },
-                              end: { line: 122, column: 91, offset: 12051 }
+                              start: { line: 122, column: 5, offset: 11953 },
+                              end: { line: 122, column: 91, offset: 12039 }
                             }
                           },
                           {
@@ -128297,12 +128297,12 @@ export default [
                                       start: {
                                         line: 123,
                                         column: 7,
-                                        offset: 12058
+                                        offset: 12046
                                       },
                                       end: {
                                         line: 123,
                                         column: 29,
-                                        offset: 12080
+                                        offset: 12068
                                       }
                                     }
                                   },
@@ -128313,12 +128313,12 @@ export default [
                                       start: {
                                         line: 123,
                                         column: 29,
-                                        offset: 12080
+                                        offset: 12068
                                       },
                                       end: {
                                         line: 123,
                                         column: 123,
-                                        offset: 12174
+                                        offset: 12162
                                       }
                                     }
                                   },
@@ -128334,12 +128334,12 @@ export default [
                                           start: {
                                             line: 123,
                                             column: 124,
-                                            offset: 12175
+                                            offset: 12163
                                           },
                                           end: {
                                             line: 123,
                                             column: 189,
-                                            offset: 12240
+                                            offset: 12228
                                           }
                                         }
                                       }
@@ -128348,12 +128348,12 @@ export default [
                                       start: {
                                         line: 123,
                                         column: 123,
-                                        offset: 12174
+                                        offset: 12162
                                       },
                                       end: {
                                         line: 123,
                                         column: 276,
-                                        offset: 12327
+                                        offset: 12315
                                       }
                                     }
                                   },
@@ -128364,12 +128364,12 @@ export default [
                                       start: {
                                         line: 123,
                                         column: 276,
-                                        offset: 12327
+                                        offset: 12315
                                       },
                                       end: {
                                         line: 123,
                                         column: 286,
-                                        offset: 12337
+                                        offset: 12325
                                       }
                                     }
                                   },
@@ -128383,12 +128383,12 @@ export default [
                                           start: {
                                             line: 123,
                                             column: 287,
-                                            offset: 12338
+                                            offset: 12326
                                           },
                                           end: {
                                             line: 123,
                                             column: 307,
-                                            offset: 12358
+                                            offset: 12346
                                           }
                                         }
                                       }
@@ -128397,12 +128397,12 @@ export default [
                                       start: {
                                         line: 123,
                                         column: 286,
-                                        offset: 12337
+                                        offset: 12325
                                       },
                                       end: {
                                         line: 123,
                                         column: 308,
-                                        offset: 12359
+                                        offset: 12347
                                       }
                                     }
                                   },
@@ -128413,12 +128413,12 @@ export default [
                                       start: {
                                         line: 123,
                                         column: 308,
-                                        offset: 12359
+                                        offset: 12347
                                       },
                                       end: {
                                         line: 123,
                                         column: 309,
-                                        offset: 12360
+                                        offset: 12348
                                       }
                                     }
                                   }
@@ -128427,19 +128427,19 @@ export default [
                                   start: {
                                     line: 123,
                                     column: 7,
-                                    offset: 12058
+                                    offset: 12046
                                   },
                                   end: {
                                     line: 123,
                                     column: 309,
-                                    offset: 12360
+                                    offset: 12348
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 123, column: 5, offset: 12056 },
-                              end: { line: 123, column: 309, offset: 12360 }
+                              start: { line: 123, column: 5, offset: 12044 },
+                              end: { line: 123, column: 309, offset: 12348 }
                             }
                           },
                           {
@@ -128457,12 +128457,12 @@ export default [
                                       start: {
                                         line: 124,
                                         column: 7,
-                                        offset: 12367
+                                        offset: 12355
                                       },
                                       end: {
                                         line: 124,
                                         column: 26,
-                                        offset: 12386
+                                        offset: 12374
                                       }
                                     }
                                   },
@@ -128473,12 +128473,12 @@ export default [
                                       start: {
                                         line: 124,
                                         column: 26,
-                                        offset: 12386
+                                        offset: 12374
                                       },
                                       end: {
                                         line: 124,
                                         column: 87,
-                                        offset: 12447
+                                        offset: 12435
                                       }
                                     }
                                   },
@@ -128494,12 +128494,12 @@ export default [
                                           start: {
                                             line: 124,
                                             column: 88,
-                                            offset: 12448
+                                            offset: 12436
                                           },
                                           end: {
                                             line: 124,
                                             column: 96,
-                                            offset: 12456
+                                            offset: 12444
                                           }
                                         }
                                       }
@@ -128508,12 +128508,12 @@ export default [
                                       start: {
                                         line: 124,
                                         column: 87,
-                                        offset: 12447
+                                        offset: 12435
                                       },
                                       end: {
                                         line: 124,
                                         column: 135,
-                                        offset: 12495
+                                        offset: 12483
                                       }
                                     }
                                   },
@@ -128524,12 +128524,12 @@ export default [
                                       start: {
                                         line: 124,
                                         column: 135,
-                                        offset: 12495
+                                        offset: 12483
                                       },
                                       end: {
                                         line: 124,
                                         column: 222,
-                                        offset: 12582
+                                        offset: 12570
                                       }
                                     }
                                   },
@@ -128545,12 +128545,12 @@ export default [
                                           start: {
                                             line: 124,
                                             column: 223,
-                                            offset: 12583
+                                            offset: 12571
                                           },
                                           end: {
                                             line: 124,
                                             column: 288,
-                                            offset: 12648
+                                            offset: 12636
                                           }
                                         }
                                       }
@@ -128559,12 +128559,12 @@ export default [
                                       start: {
                                         line: 124,
                                         column: 222,
-                                        offset: 12582
+                                        offset: 12570
                                       },
                                       end: {
                                         line: 124,
                                         column: 375,
-                                        offset: 12735
+                                        offset: 12723
                                       }
                                     }
                                   },
@@ -128575,12 +128575,12 @@ export default [
                                       start: {
                                         line: 124,
                                         column: 375,
-                                        offset: 12735
+                                        offset: 12723
                                       },
                                       end: {
                                         line: 124,
                                         column: 385,
-                                        offset: 12745
+                                        offset: 12733
                                       }
                                     }
                                   },
@@ -128594,12 +128594,12 @@ export default [
                                           start: {
                                             line: 124,
                                             column: 386,
-                                            offset: 12746
+                                            offset: 12734
                                           },
                                           end: {
                                             line: 124,
                                             column: 406,
-                                            offset: 12766
+                                            offset: 12754
                                           }
                                         }
                                       }
@@ -128608,12 +128608,12 @@ export default [
                                       start: {
                                         line: 124,
                                         column: 385,
-                                        offset: 12745
+                                        offset: 12733
                                       },
                                       end: {
                                         line: 124,
                                         column: 407,
-                                        offset: 12767
+                                        offset: 12755
                                       }
                                     }
                                   },
@@ -128624,12 +128624,12 @@ export default [
                                       start: {
                                         line: 124,
                                         column: 407,
-                                        offset: 12767
+                                        offset: 12755
                                       },
                                       end: {
                                         line: 124,
                                         column: 408,
-                                        offset: 12768
+                                        offset: 12756
                                       }
                                     }
                                   }
@@ -128638,19 +128638,19 @@ export default [
                                   start: {
                                     line: 124,
                                     column: 7,
-                                    offset: 12367
+                                    offset: 12355
                                   },
                                   end: {
                                     line: 124,
                                     column: 408,
-                                    offset: 12768
+                                    offset: 12756
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 124, column: 5, offset: 12365 },
-                              end: { line: 124, column: 408, offset: 12768 }
+                              start: { line: 124, column: 5, offset: 12353 },
+                              end: { line: 124, column: 408, offset: 12756 }
                             }
                           },
                           {
@@ -128668,12 +128668,12 @@ export default [
                                       start: {
                                         line: 125,
                                         column: 7,
-                                        offset: 12775
+                                        offset: 12763
                                       },
                                       end: {
                                         line: 125,
                                         column: 20,
-                                        offset: 12788
+                                        offset: 12776
                                       }
                                     }
                                   },
@@ -128684,12 +128684,12 @@ export default [
                                       start: {
                                         line: 125,
                                         column: 20,
-                                        offset: 12788
+                                        offset: 12776
                                       },
                                       end: {
                                         line: 125,
                                         column: 27,
-                                        offset: 12795
+                                        offset: 12783
                                       }
                                     }
                                   },
@@ -128705,12 +128705,12 @@ export default [
                                           start: {
                                             line: 125,
                                             column: 28,
-                                            offset: 12796
+                                            offset: 12784
                                           },
                                           end: {
                                             line: 125,
                                             column: 35,
-                                            offset: 12803
+                                            offset: 12791
                                           }
                                         }
                                       }
@@ -128719,12 +128719,12 @@ export default [
                                       start: {
                                         line: 125,
                                         column: 27,
-                                        offset: 12795
+                                        offset: 12783
                                       },
                                       end: {
                                         line: 125,
                                         column: 105,
-                                        offset: 12873
+                                        offset: 12861
                                       }
                                     }
                                   },
@@ -128735,12 +128735,12 @@ export default [
                                       start: {
                                         line: 125,
                                         column: 105,
-                                        offset: 12873
+                                        offset: 12861
                                       },
                                       end: {
                                         line: 125,
                                         column: 163,
-                                        offset: 12931
+                                        offset: 12919
                                       }
                                     }
                                   }
@@ -128749,19 +128749,19 @@ export default [
                                   start: {
                                     line: 125,
                                     column: 7,
-                                    offset: 12775
+                                    offset: 12763
                                   },
                                   end: {
                                     line: 125,
                                     column: 163,
-                                    offset: 12931
+                                    offset: 12919
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 125, column: 5, offset: 12773 },
-                              end: { line: 125, column: 163, offset: 12931 }
+                              start: { line: 125, column: 5, offset: 12761 },
+                              end: { line: 125, column: 163, offset: 12919 }
                             }
                           },
                           {
@@ -128779,12 +128779,12 @@ export default [
                                       start: {
                                         line: 126,
                                         column: 7,
-                                        offset: 12938
+                                        offset: 12926
                                       },
                                       end: {
                                         line: 126,
                                         column: 25,
-                                        offset: 12956
+                                        offset: 12944
                                       }
                                     }
                                   },
@@ -128795,12 +128795,12 @@ export default [
                                       start: {
                                         line: 126,
                                         column: 25,
-                                        offset: 12956
+                                        offset: 12944
                                       },
                                       end: {
                                         line: 126,
                                         column: 110,
-                                        offset: 13041
+                                        offset: 13029
                                       }
                                     }
                                   },
@@ -128816,12 +128816,12 @@ export default [
                                           start: {
                                             line: 126,
                                             column: 111,
-                                            offset: 13042
+                                            offset: 13030
                                           },
                                           end: {
                                             line: 126,
                                             column: 118,
-                                            offset: 13049
+                                            offset: 13037
                                           }
                                         }
                                       }
@@ -128830,12 +128830,12 @@ export default [
                                       start: {
                                         line: 126,
                                         column: 110,
-                                        offset: 13041
+                                        offset: 13029
                                       },
                                       end: {
                                         line: 126,
                                         column: 188,
-                                        offset: 13119
+                                        offset: 13107
                                       }
                                     }
                                   },
@@ -128846,12 +128846,12 @@ export default [
                                       start: {
                                         line: 126,
                                         column: 188,
-                                        offset: 13119
+                                        offset: 13107
                                       },
                                       end: {
                                         line: 126,
                                         column: 204,
-                                        offset: 13135
+                                        offset: 13123
                                       }
                                     }
                                   }
@@ -128860,19 +128860,19 @@ export default [
                                   start: {
                                     line: 126,
                                     column: 7,
-                                    offset: 12938
+                                    offset: 12926
                                   },
                                   end: {
                                     line: 126,
                                     column: 204,
-                                    offset: 13135
+                                    offset: 13123
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 126, column: 5, offset: 12936 },
-                              end: { line: 126, column: 204, offset: 13135 }
+                              start: { line: 126, column: 5, offset: 12924 },
+                              end: { line: 126, column: 204, offset: 13123 }
                             }
                           },
                           {
@@ -128890,12 +128890,12 @@ export default [
                                       start: {
                                         line: 127,
                                         column: 7,
-                                        offset: 13142
+                                        offset: 13130
                                       },
                                       end: {
                                         line: 127,
                                         column: 21,
-                                        offset: 13156
+                                        offset: 13144
                                       }
                                     }
                                   },
@@ -128906,12 +128906,12 @@ export default [
                                       start: {
                                         line: 127,
                                         column: 21,
-                                        offset: 13156
+                                        offset: 13144
                                       },
                                       end: {
                                         line: 127,
                                         column: 28,
-                                        offset: 13163
+                                        offset: 13151
                                       }
                                     }
                                   },
@@ -128927,12 +128927,12 @@ export default [
                                           start: {
                                             line: 127,
                                             column: 29,
-                                            offset: 13164
+                                            offset: 13152
                                           },
                                           end: {
                                             line: 127,
                                             column: 42,
-                                            offset: 13177
+                                            offset: 13165
                                           }
                                         }
                                       }
@@ -128941,12 +128941,12 @@ export default [
                                       start: {
                                         line: 127,
                                         column: 28,
-                                        offset: 13163
+                                        offset: 13151
                                       },
                                       end: {
                                         line: 127,
                                         column: 123,
-                                        offset: 13258
+                                        offset: 13246
                                       }
                                     }
                                   },
@@ -128957,12 +128957,12 @@ export default [
                                       start: {
                                         line: 127,
                                         column: 123,
-                                        offset: 13258
+                                        offset: 13246
                                       },
                                       end: {
                                         line: 127,
                                         column: 164,
-                                        offset: 13299
+                                        offset: 13287
                                       }
                                     }
                                   },
@@ -128973,12 +128973,12 @@ export default [
                                       start: {
                                         line: 127,
                                         column: 164,
-                                        offset: 13299
+                                        offset: 13287
                                       },
                                       end: {
                                         line: 127,
                                         column: 174,
-                                        offset: 13309
+                                        offset: 13297
                                       }
                                     }
                                   },
@@ -128989,12 +128989,12 @@ export default [
                                       start: {
                                         line: 127,
                                         column: 174,
-                                        offset: 13309
+                                        offset: 13297
                                       },
                                       end: {
                                         line: 127,
                                         column: 175,
-                                        offset: 13310
+                                        offset: 13298
                                       }
                                     }
                                   }
@@ -129003,19 +129003,19 @@ export default [
                                   start: {
                                     line: 127,
                                     column: 7,
-                                    offset: 13142
+                                    offset: 13130
                                   },
                                   end: {
                                     line: 127,
                                     column: 175,
-                                    offset: 13310
+                                    offset: 13298
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 127, column: 5, offset: 13140 },
-                              end: { line: 127, column: 175, offset: 13310 }
+                              start: { line: 127, column: 5, offset: 13128 },
+                              end: { line: 127, column: 175, offset: 13298 }
                             }
                           },
                           {
@@ -129033,12 +129033,12 @@ export default [
                                       start: {
                                         line: 128,
                                         column: 7,
-                                        offset: 13317
+                                        offset: 13305
                                       },
                                       end: {
                                         line: 128,
                                         column: 17,
-                                        offset: 13327
+                                        offset: 13315
                                       }
                                     }
                                   },
@@ -129049,12 +129049,12 @@ export default [
                                       start: {
                                         line: 128,
                                         column: 17,
-                                        offset: 13327
+                                        offset: 13315
                                       },
                                       end: {
                                         line: 128,
                                         column: 53,
-                                        offset: 13363
+                                        offset: 13351
                                       }
                                     }
                                   }
@@ -129063,19 +129063,19 @@ export default [
                                   start: {
                                     line: 128,
                                     column: 7,
-                                    offset: 13317
+                                    offset: 13305
                                   },
                                   end: {
                                     line: 128,
                                     column: 53,
-                                    offset: 13363
+                                    offset: 13351
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 128, column: 5, offset: 13315 },
-                              end: { line: 128, column: 53, offset: 13363 }
+                              start: { line: 128, column: 5, offset: 13303 },
+                              end: { line: 128, column: 53, offset: 13351 }
                             }
                           },
                           {
@@ -129093,12 +129093,12 @@ export default [
                                       start: {
                                         line: 129,
                                         column: 7,
-                                        offset: 13370
+                                        offset: 13358
                                       },
                                       end: {
                                         line: 129,
                                         column: 23,
-                                        offset: 13386
+                                        offset: 13374
                                       }
                                     }
                                   },
@@ -129109,12 +129109,12 @@ export default [
                                       start: {
                                         line: 129,
                                         column: 23,
-                                        offset: 13386
+                                        offset: 13374
                                       },
                                       end: {
                                         line: 129,
                                         column: 74,
-                                        offset: 13437
+                                        offset: 13425
                                       }
                                     }
                                   },
@@ -129130,12 +129130,12 @@ export default [
                                           start: {
                                             line: 129,
                                             column: 75,
-                                            offset: 13438
+                                            offset: 13426
                                           },
                                           end: {
                                             line: 129,
                                             column: 107,
-                                            offset: 13470
+                                            offset: 13458
                                           }
                                         }
                                       }
@@ -129144,12 +129144,12 @@ export default [
                                       start: {
                                         line: 129,
                                         column: 74,
-                                        offset: 13437
+                                        offset: 13425
                                       },
                                       end: {
                                         line: 129,
                                         column: 180,
-                                        offset: 13543
+                                        offset: 13531
                                       }
                                     }
                                   },
@@ -129160,12 +129160,12 @@ export default [
                                       start: {
                                         line: 129,
                                         column: 180,
-                                        offset: 13543
+                                        offset: 13531
                                       },
                                       end: {
                                         line: 129,
                                         column: 190,
-                                        offset: 13553
+                                        offset: 13541
                                       }
                                     }
                                   },
@@ -129179,12 +129179,12 @@ export default [
                                           start: {
                                             line: 129,
                                             column: 191,
-                                            offset: 13554
+                                            offset: 13542
                                           },
                                           end: {
                                             line: 129,
                                             column: 211,
-                                            offset: 13574
+                                            offset: 13562
                                           }
                                         }
                                       }
@@ -129193,12 +129193,12 @@ export default [
                                       start: {
                                         line: 129,
                                         column: 190,
-                                        offset: 13553
+                                        offset: 13541
                                       },
                                       end: {
                                         line: 129,
                                         column: 212,
-                                        offset: 13575
+                                        offset: 13563
                                       }
                                     }
                                   },
@@ -129209,12 +129209,12 @@ export default [
                                       start: {
                                         line: 129,
                                         column: 212,
-                                        offset: 13575
+                                        offset: 13563
                                       },
                                       end: {
                                         line: 129,
                                         column: 213,
-                                        offset: 13576
+                                        offset: 13564
                                       }
                                     }
                                   }
@@ -129223,19 +129223,19 @@ export default [
                                   start: {
                                     line: 129,
                                     column: 7,
-                                    offset: 13370
+                                    offset: 13358
                                   },
                                   end: {
                                     line: 129,
                                     column: 213,
-                                    offset: 13576
+                                    offset: 13564
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 129, column: 5, offset: 13368 },
-                              end: { line: 129, column: 213, offset: 13576 }
+                              start: { line: 129, column: 5, offset: 13356 },
+                              end: { line: 129, column: 213, offset: 13564 }
                             }
                           },
                           {
@@ -129253,12 +129253,12 @@ export default [
                                       start: {
                                         line: 130,
                                         column: 7,
-                                        offset: 13583
+                                        offset: 13571
                                       },
                                       end: {
                                         line: 130,
                                         column: 34,
-                                        offset: 13610
+                                        offset: 13598
                                       }
                                     }
                                   },
@@ -129269,12 +129269,12 @@ export default [
                                       start: {
                                         line: 130,
                                         column: 34,
-                                        offset: 13610
+                                        offset: 13598
                                       },
                                       end: {
                                         line: 130,
                                         column: 116,
-                                        offset: 13692
+                                        offset: 13680
                                       }
                                     }
                                   },
@@ -129290,12 +129290,12 @@ export default [
                                           start: {
                                             line: 130,
                                             column: 117,
-                                            offset: 13693
+                                            offset: 13681
                                           },
                                           end: {
                                             line: 130,
                                             column: 149,
-                                            offset: 13725
+                                            offset: 13713
                                           }
                                         }
                                       }
@@ -129304,12 +129304,12 @@ export default [
                                       start: {
                                         line: 130,
                                         column: 116,
-                                        offset: 13692
+                                        offset: 13680
                                       },
                                       end: {
                                         line: 130,
                                         column: 222,
-                                        offset: 13798
+                                        offset: 13786
                                       }
                                     }
                                   },
@@ -129320,12 +129320,12 @@ export default [
                                       start: {
                                         line: 130,
                                         column: 222,
-                                        offset: 13798
+                                        offset: 13786
                                       },
                                       end: {
                                         line: 130,
                                         column: 232,
-                                        offset: 13808
+                                        offset: 13796
                                       }
                                     }
                                   },
@@ -129339,12 +129339,12 @@ export default [
                                           start: {
                                             line: 130,
                                             column: 233,
-                                            offset: 13809
+                                            offset: 13797
                                           },
                                           end: {
                                             line: 130,
                                             column: 253,
-                                            offset: 13829
+                                            offset: 13817
                                           }
                                         }
                                       }
@@ -129353,12 +129353,12 @@ export default [
                                       start: {
                                         line: 130,
                                         column: 232,
-                                        offset: 13808
+                                        offset: 13796
                                       },
                                       end: {
                                         line: 130,
                                         column: 254,
-                                        offset: 13830
+                                        offset: 13818
                                       }
                                     }
                                   },
@@ -129369,12 +129369,12 @@ export default [
                                       start: {
                                         line: 130,
                                         column: 254,
-                                        offset: 13830
+                                        offset: 13818
                                       },
                                       end: {
                                         line: 130,
                                         column: 255,
-                                        offset: 13831
+                                        offset: 13819
                                       }
                                     }
                                   }
@@ -129383,19 +129383,19 @@ export default [
                                   start: {
                                     line: 130,
                                     column: 7,
-                                    offset: 13583
+                                    offset: 13571
                                   },
                                   end: {
                                     line: 130,
                                     column: 255,
-                                    offset: 13831
+                                    offset: 13819
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 130, column: 5, offset: 13581 },
-                              end: { line: 130, column: 255, offset: 13831 }
+                              start: { line: 130, column: 5, offset: 13569 },
+                              end: { line: 130, column: 255, offset: 13819 }
                             }
                           },
                           {
@@ -129413,12 +129413,12 @@ export default [
                                       start: {
                                         line: 131,
                                         column: 7,
-                                        offset: 13838
+                                        offset: 13826
                                       },
                                       end: {
                                         line: 131,
                                         column: 34,
-                                        offset: 13865
+                                        offset: 13853
                                       }
                                     }
                                   },
@@ -129429,12 +129429,12 @@ export default [
                                       start: {
                                         line: 131,
                                         column: 34,
-                                        offset: 13865
+                                        offset: 13853
                                       },
                                       end: {
                                         line: 131,
                                         column: 125,
-                                        offset: 13956
+                                        offset: 13944
                                       }
                                     }
                                   },
@@ -129450,12 +129450,12 @@ export default [
                                           start: {
                                             line: 131,
                                             column: 126,
-                                            offset: 13957
+                                            offset: 13945
                                           },
                                           end: {
                                             line: 131,
                                             column: 158,
-                                            offset: 13989
+                                            offset: 13977
                                           }
                                         }
                                       }
@@ -129464,12 +129464,12 @@ export default [
                                       start: {
                                         line: 131,
                                         column: 125,
-                                        offset: 13956
+                                        offset: 13944
                                       },
                                       end: {
                                         line: 131,
                                         column: 231,
-                                        offset: 14062
+                                        offset: 14050
                                       }
                                     }
                                   },
@@ -129480,12 +129480,12 @@ export default [
                                       start: {
                                         line: 131,
                                         column: 231,
-                                        offset: 14062
+                                        offset: 14050
                                       },
                                       end: {
                                         line: 131,
                                         column: 241,
-                                        offset: 14072
+                                        offset: 14060
                                       }
                                     }
                                   },
@@ -129499,12 +129499,12 @@ export default [
                                           start: {
                                             line: 131,
                                             column: 242,
-                                            offset: 14073
+                                            offset: 14061
                                           },
                                           end: {
                                             line: 131,
                                             column: 262,
-                                            offset: 14093
+                                            offset: 14081
                                           }
                                         }
                                       }
@@ -129513,12 +129513,12 @@ export default [
                                       start: {
                                         line: 131,
                                         column: 241,
-                                        offset: 14072
+                                        offset: 14060
                                       },
                                       end: {
                                         line: 131,
                                         column: 263,
-                                        offset: 14094
+                                        offset: 14082
                                       }
                                     }
                                   },
@@ -129529,12 +129529,12 @@ export default [
                                       start: {
                                         line: 131,
                                         column: 263,
-                                        offset: 14094
+                                        offset: 14082
                                       },
                                       end: {
                                         line: 131,
                                         column: 264,
-                                        offset: 14095
+                                        offset: 14083
                                       }
                                     }
                                   }
@@ -129543,37 +129543,37 @@ export default [
                                   start: {
                                     line: 131,
                                     column: 7,
-                                    offset: 13838
+                                    offset: 13826
                                   },
                                   end: {
                                     line: 131,
                                     column: 264,
-                                    offset: 14095
+                                    offset: 14083
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 131, column: 5, offset: 13836 },
-                              end: { line: 131, column: 264, offset: 14095 }
+                              start: { line: 131, column: 5, offset: 13824 },
+                              end: { line: 131, column: 264, offset: 14083 }
                             }
                           }
                         ],
                         position: {
                           start: { line: 97, column: 5, offset: 6329 },
-                          end: { line: 131, column: 264, offset: 14095 }
+                          end: { line: 131, column: 264, offset: 14083 }
                         }
                       }
                     ],
                     position: {
                       start: { line: 96, column: 3, offset: 6316 },
-                      end: { line: 131, column: 264, offset: 14095 }
+                      end: { line: 131, column: 264, offset: 14083 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 96, column: 3, offset: 6316 },
-                  end: { line: 131, column: 264, offset: 14095 }
+                  end: { line: 131, column: 264, offset: 14083 }
                 }
               },
               {
@@ -129600,14 +129600,14 @@ export default [
                   '  })\n' +
                   '}',
                 position: {
-                  start: { line: 133, column: 1, offset: 14097 },
-                  end: { line: 153, column: 4, offset: 14550 }
+                  start: { line: 133, column: 1, offset: 14085 },
+                  end: { line: 153, column: 4, offset: 14538 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 153, column: 4, offset: 14550 }
+              end: { line: 153, column: 4, offset: 14538 }
             }
           }
         }
@@ -129792,7 +129792,7 @@ export default [
           '    * `ArchiveStatus` - archive status of the object.\n' +
           '    * `LastModified` - date/time when the object was last modified.\n' +
           "    * `ContentLength` - indicates the object's data length as a non-negative integer number of bytes. For more information, see [Content-Length](https://www.rfc-editor.org/rfc/rfc9110.html#section-8.6).\n" +
-          '    * `ETag` - the entity tag or MD5 hash of the object.\n' +
+          '    * `ETag` - the entity tag of the object.\n' +
           '    * `ChecksumCRC32` - the base64-encoded, 32-bit CRC-32 [checksum](https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html) of the object. For more information, see [Checking object integrity in Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html) from the _Amazon S3 User Guide_.\n' +
           '    * `ChecksumCRC32C` - the base64-encoded, 32-bit CRC-32C [checksum](https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html) of the object. For more information, see [Checking object integrity in Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html) from the _Amazon S3 User Guide_.\n' +
           '    * `ChecksumCRC64NVME` - the base64-encoded, 64-bit CRC-64NVME [checksum](https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html) of the object. For more information, see [Checking object integrity in Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html) from the _Amazon S3 User Guide_.\n' +
@@ -133190,7 +133190,7 @@ export default [
                                   },
                                   {
                                     type: 'text',
-                                    value: ' - the entity tag or MD5 hash of the object.',
+                                    value: ' - the entity tag of the object.',
                                     position: {
                                       start: {
                                         line: 89,
@@ -133199,8 +133199,8 @@ export default [
                                       },
                                       end: {
                                         line: 89,
-                                        column: 57,
-                                        offset: 7214
+                                        column: 45,
+                                        offset: 7202
                                       }
                                     }
                                   }
@@ -133209,15 +133209,15 @@ export default [
                                   start: { line: 89, column: 7, offset: 7164 },
                                   end: {
                                     line: 89,
-                                    column: 57,
-                                    offset: 7214
+                                    column: 45,
+                                    offset: 7202
                                   }
                                 }
                               }
                             ],
                             position: {
                               start: { line: 89, column: 5, offset: 7162 },
-                              end: { line: 89, column: 57, offset: 7214 }
+                              end: { line: 89, column: 45, offset: 7202 }
                             }
                           },
                           {
@@ -133235,12 +133235,12 @@ export default [
                                       start: {
                                         line: 90,
                                         column: 7,
-                                        offset: 7221
+                                        offset: 7209
                                       },
                                       end: {
                                         line: 90,
                                         column: 22,
-                                        offset: 7236
+                                        offset: 7224
                                       }
                                     }
                                   },
@@ -133251,12 +133251,12 @@ export default [
                                       start: {
                                         line: 90,
                                         column: 22,
-                                        offset: 7236
+                                        offset: 7224
                                       },
                                       end: {
                                         line: 90,
                                         column: 59,
-                                        offset: 7273
+                                        offset: 7261
                                       }
                                     }
                                   },
@@ -133272,12 +133272,12 @@ export default [
                                           start: {
                                             line: 90,
                                             column: 60,
-                                            offset: 7274
+                                            offset: 7262
                                           },
                                           end: {
                                             line: 90,
                                             column: 68,
-                                            offset: 7282
+                                            offset: 7270
                                           }
                                         }
                                       }
@@ -133286,12 +133286,12 @@ export default [
                                       start: {
                                         line: 90,
                                         column: 59,
-                                        offset: 7273
+                                        offset: 7261
                                       },
                                       end: {
                                         line: 90,
                                         column: 136,
-                                        offset: 7350
+                                        offset: 7338
                                       }
                                     }
                                   },
@@ -133302,12 +133302,12 @@ export default [
                                       start: {
                                         line: 90,
                                         column: 136,
-                                        offset: 7350
+                                        offset: 7338
                                       },
                                       end: {
                                         line: 90,
                                         column: 178,
-                                        offset: 7392
+                                        offset: 7380
                                       }
                                     }
                                   },
@@ -133323,12 +133323,12 @@ export default [
                                           start: {
                                             line: 90,
                                             column: 179,
-                                            offset: 7393
+                                            offset: 7381
                                           },
                                           end: {
                                             line: 90,
                                             column: 217,
-                                            offset: 7431
+                                            offset: 7419
                                           }
                                         }
                                       }
@@ -133337,12 +133337,12 @@ export default [
                                       start: {
                                         line: 90,
                                         column: 178,
-                                        offset: 7392
+                                        offset: 7380
                                       },
                                       end: {
                                         line: 90,
                                         column: 304,
-                                        offset: 7518
+                                        offset: 7506
                                       }
                                     }
                                   },
@@ -133353,12 +133353,12 @@ export default [
                                       start: {
                                         line: 90,
                                         column: 304,
-                                        offset: 7518
+                                        offset: 7506
                                       },
                                       end: {
                                         line: 90,
                                         column: 314,
-                                        offset: 7528
+                                        offset: 7516
                                       }
                                     }
                                   },
@@ -133372,12 +133372,12 @@ export default [
                                           start: {
                                             line: 90,
                                             column: 315,
-                                            offset: 7529
+                                            offset: 7517
                                           },
                                           end: {
                                             line: 90,
                                             column: 335,
-                                            offset: 7549
+                                            offset: 7537
                                           }
                                         }
                                       }
@@ -133386,12 +133386,12 @@ export default [
                                       start: {
                                         line: 90,
                                         column: 314,
-                                        offset: 7528
+                                        offset: 7516
                                       },
                                       end: {
                                         line: 90,
                                         column: 336,
-                                        offset: 7550
+                                        offset: 7538
                                       }
                                     }
                                   },
@@ -133402,29 +133402,29 @@ export default [
                                       start: {
                                         line: 90,
                                         column: 336,
-                                        offset: 7550
+                                        offset: 7538
                                       },
                                       end: {
                                         line: 90,
                                         column: 337,
-                                        offset: 7551
+                                        offset: 7539
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 90, column: 7, offset: 7221 },
+                                  start: { line: 90, column: 7, offset: 7209 },
                                   end: {
                                     line: 90,
                                     column: 337,
-                                    offset: 7551
+                                    offset: 7539
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 90, column: 5, offset: 7219 },
-                              end: { line: 90, column: 337, offset: 7551 }
+                              start: { line: 90, column: 5, offset: 7207 },
+                              end: { line: 90, column: 337, offset: 7539 }
                             }
                           },
                           {
@@ -133442,12 +133442,12 @@ export default [
                                       start: {
                                         line: 91,
                                         column: 7,
-                                        offset: 7558
+                                        offset: 7546
                                       },
                                       end: {
                                         line: 91,
                                         column: 23,
-                                        offset: 7574
+                                        offset: 7562
                                       }
                                     }
                                   },
@@ -133458,12 +133458,12 @@ export default [
                                       start: {
                                         line: 91,
                                         column: 23,
-                                        offset: 7574
+                                        offset: 7562
                                       },
                                       end: {
                                         line: 91,
                                         column: 61,
-                                        offset: 7612
+                                        offset: 7600
                                       }
                                     }
                                   },
@@ -133479,12 +133479,12 @@ export default [
                                           start: {
                                             line: 91,
                                             column: 62,
-                                            offset: 7613
+                                            offset: 7601
                                           },
                                           end: {
                                             line: 91,
                                             column: 70,
-                                            offset: 7621
+                                            offset: 7609
                                           }
                                         }
                                       }
@@ -133493,12 +133493,12 @@ export default [
                                       start: {
                                         line: 91,
                                         column: 61,
-                                        offset: 7612
+                                        offset: 7600
                                       },
                                       end: {
                                         line: 91,
                                         column: 138,
-                                        offset: 7689
+                                        offset: 7677
                                       }
                                     }
                                   },
@@ -133509,12 +133509,12 @@ export default [
                                       start: {
                                         line: 91,
                                         column: 138,
-                                        offset: 7689
+                                        offset: 7677
                                       },
                                       end: {
                                         line: 91,
                                         column: 180,
-                                        offset: 7731
+                                        offset: 7719
                                       }
                                     }
                                   },
@@ -133530,12 +133530,12 @@ export default [
                                           start: {
                                             line: 91,
                                             column: 181,
-                                            offset: 7732
+                                            offset: 7720
                                           },
                                           end: {
                                             line: 91,
                                             column: 219,
-                                            offset: 7770
+                                            offset: 7758
                                           }
                                         }
                                       }
@@ -133544,12 +133544,12 @@ export default [
                                       start: {
                                         line: 91,
                                         column: 180,
-                                        offset: 7731
+                                        offset: 7719
                                       },
                                       end: {
                                         line: 91,
                                         column: 306,
-                                        offset: 7857
+                                        offset: 7845
                                       }
                                     }
                                   },
@@ -133560,12 +133560,12 @@ export default [
                                       start: {
                                         line: 91,
                                         column: 306,
-                                        offset: 7857
+                                        offset: 7845
                                       },
                                       end: {
                                         line: 91,
                                         column: 316,
-                                        offset: 7867
+                                        offset: 7855
                                       }
                                     }
                                   },
@@ -133579,12 +133579,12 @@ export default [
                                           start: {
                                             line: 91,
                                             column: 317,
-                                            offset: 7868
+                                            offset: 7856
                                           },
                                           end: {
                                             line: 91,
                                             column: 337,
-                                            offset: 7888
+                                            offset: 7876
                                           }
                                         }
                                       }
@@ -133593,12 +133593,12 @@ export default [
                                       start: {
                                         line: 91,
                                         column: 316,
-                                        offset: 7867
+                                        offset: 7855
                                       },
                                       end: {
                                         line: 91,
                                         column: 338,
-                                        offset: 7889
+                                        offset: 7877
                                       }
                                     }
                                   },
@@ -133609,29 +133609,29 @@ export default [
                                       start: {
                                         line: 91,
                                         column: 338,
-                                        offset: 7889
+                                        offset: 7877
                                       },
                                       end: {
                                         line: 91,
                                         column: 339,
-                                        offset: 7890
+                                        offset: 7878
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 91, column: 7, offset: 7558 },
+                                  start: { line: 91, column: 7, offset: 7546 },
                                   end: {
                                     line: 91,
                                     column: 339,
-                                    offset: 7890
+                                    offset: 7878
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 91, column: 5, offset: 7556 },
-                              end: { line: 91, column: 339, offset: 7890 }
+                              start: { line: 91, column: 5, offset: 7544 },
+                              end: { line: 91, column: 339, offset: 7878 }
                             }
                           },
                           {
@@ -133649,12 +133649,12 @@ export default [
                                       start: {
                                         line: 92,
                                         column: 7,
-                                        offset: 7897
+                                        offset: 7885
                                       },
                                       end: {
                                         line: 92,
                                         column: 26,
-                                        offset: 7916
+                                        offset: 7904
                                       }
                                     }
                                   },
@@ -133665,12 +133665,12 @@ export default [
                                       start: {
                                         line: 92,
                                         column: 26,
-                                        offset: 7916
+                                        offset: 7904
                                       },
                                       end: {
                                         line: 92,
                                         column: 67,
-                                        offset: 7957
+                                        offset: 7945
                                       }
                                     }
                                   },
@@ -133686,12 +133686,12 @@ export default [
                                           start: {
                                             line: 92,
                                             column: 68,
-                                            offset: 7958
+                                            offset: 7946
                                           },
                                           end: {
                                             line: 92,
                                             column: 76,
-                                            offset: 7966
+                                            offset: 7954
                                           }
                                         }
                                       }
@@ -133700,12 +133700,12 @@ export default [
                                       start: {
                                         line: 92,
                                         column: 67,
-                                        offset: 7957
+                                        offset: 7945
                                       },
                                       end: {
                                         line: 92,
                                         column: 144,
-                                        offset: 8034
+                                        offset: 8022
                                       }
                                     }
                                   },
@@ -133716,12 +133716,12 @@ export default [
                                       start: {
                                         line: 92,
                                         column: 144,
-                                        offset: 8034
+                                        offset: 8022
                                       },
                                       end: {
                                         line: 92,
                                         column: 186,
-                                        offset: 8076
+                                        offset: 8064
                                       }
                                     }
                                   },
@@ -133737,12 +133737,12 @@ export default [
                                           start: {
                                             line: 92,
                                             column: 187,
-                                            offset: 8077
+                                            offset: 8065
                                           },
                                           end: {
                                             line: 92,
                                             column: 225,
-                                            offset: 8115
+                                            offset: 8103
                                           }
                                         }
                                       }
@@ -133751,12 +133751,12 @@ export default [
                                       start: {
                                         line: 92,
                                         column: 186,
-                                        offset: 8076
+                                        offset: 8064
                                       },
                                       end: {
                                         line: 92,
                                         column: 312,
-                                        offset: 8202
+                                        offset: 8190
                                       }
                                     }
                                   },
@@ -133767,12 +133767,12 @@ export default [
                                       start: {
                                         line: 92,
                                         column: 312,
-                                        offset: 8202
+                                        offset: 8190
                                       },
                                       end: {
                                         line: 92,
                                         column: 322,
-                                        offset: 8212
+                                        offset: 8200
                                       }
                                     }
                                   },
@@ -133786,12 +133786,12 @@ export default [
                                           start: {
                                             line: 92,
                                             column: 323,
-                                            offset: 8213
+                                            offset: 8201
                                           },
                                           end: {
                                             line: 92,
                                             column: 343,
-                                            offset: 8233
+                                            offset: 8221
                                           }
                                         }
                                       }
@@ -133800,12 +133800,12 @@ export default [
                                       start: {
                                         line: 92,
                                         column: 322,
-                                        offset: 8212
+                                        offset: 8200
                                       },
                                       end: {
                                         line: 92,
                                         column: 344,
-                                        offset: 8234
+                                        offset: 8222
                                       }
                                     }
                                   },
@@ -133816,29 +133816,29 @@ export default [
                                       start: {
                                         line: 92,
                                         column: 344,
-                                        offset: 8234
+                                        offset: 8222
                                       },
                                       end: {
                                         line: 92,
                                         column: 345,
-                                        offset: 8235
+                                        offset: 8223
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 92, column: 7, offset: 7897 },
+                                  start: { line: 92, column: 7, offset: 7885 },
                                   end: {
                                     line: 92,
                                     column: 345,
-                                    offset: 8235
+                                    offset: 8223
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 92, column: 5, offset: 7895 },
-                              end: { line: 92, column: 345, offset: 8235 }
+                              start: { line: 92, column: 5, offset: 7883 },
+                              end: { line: 92, column: 345, offset: 8223 }
                             }
                           },
                           {
@@ -133856,12 +133856,12 @@ export default [
                                       start: {
                                         line: 93,
                                         column: 7,
-                                        offset: 8242
+                                        offset: 8230
                                       },
                                       end: {
                                         line: 93,
                                         column: 21,
-                                        offset: 8256
+                                        offset: 8244
                                       }
                                     }
                                   },
@@ -133872,12 +133872,12 @@ export default [
                                       start: {
                                         line: 93,
                                         column: 21,
-                                        offset: 8256
+                                        offset: 8244
                                       },
                                       end: {
                                         line: 93,
                                         column: 106,
-                                        offset: 8341
+                                        offset: 8329
                                       }
                                     }
                                   },
@@ -133893,12 +133893,12 @@ export default [
                                           start: {
                                             line: 93,
                                             column: 107,
-                                            offset: 8342
+                                            offset: 8330
                                           },
                                           end: {
                                             line: 93,
                                             column: 145,
-                                            offset: 8380
+                                            offset: 8368
                                           }
                                         }
                                       }
@@ -133907,12 +133907,12 @@ export default [
                                       start: {
                                         line: 93,
                                         column: 106,
-                                        offset: 8341
+                                        offset: 8329
                                       },
                                       end: {
                                         line: 93,
                                         column: 232,
-                                        offset: 8467
+                                        offset: 8455
                                       }
                                     }
                                   },
@@ -133923,12 +133923,12 @@ export default [
                                       start: {
                                         line: 93,
                                         column: 232,
-                                        offset: 8467
+                                        offset: 8455
                                       },
                                       end: {
                                         line: 93,
                                         column: 242,
-                                        offset: 8477
+                                        offset: 8465
                                       }
                                     }
                                   },
@@ -133942,12 +133942,12 @@ export default [
                                           start: {
                                             line: 93,
                                             column: 243,
-                                            offset: 8478
+                                            offset: 8466
                                           },
                                           end: {
                                             line: 93,
                                             column: 263,
-                                            offset: 8498
+                                            offset: 8486
                                           }
                                         }
                                       }
@@ -133956,12 +133956,12 @@ export default [
                                       start: {
                                         line: 93,
                                         column: 242,
-                                        offset: 8477
+                                        offset: 8465
                                       },
                                       end: {
                                         line: 93,
                                         column: 264,
-                                        offset: 8499
+                                        offset: 8487
                                       }
                                     }
                                   },
@@ -133972,29 +133972,29 @@ export default [
                                       start: {
                                         line: 93,
                                         column: 264,
-                                        offset: 8499
+                                        offset: 8487
                                       },
                                       end: {
                                         line: 93,
                                         column: 265,
-                                        offset: 8500
+                                        offset: 8488
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 93, column: 7, offset: 8242 },
+                                  start: { line: 93, column: 7, offset: 8230 },
                                   end: {
                                     line: 93,
                                     column: 265,
-                                    offset: 8500
+                                    offset: 8488
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 93, column: 5, offset: 8240 },
-                              end: { line: 93, column: 265, offset: 8500 }
+                              start: { line: 93, column: 5, offset: 8228 },
+                              end: { line: 93, column: 265, offset: 8488 }
                             }
                           },
                           {
@@ -134012,12 +134012,12 @@ export default [
                                       start: {
                                         line: 94,
                                         column: 7,
-                                        offset: 8507
+                                        offset: 8495
                                       },
                                       end: {
                                         line: 94,
                                         column: 23,
-                                        offset: 8523
+                                        offset: 8511
                                       }
                                     }
                                   },
@@ -134028,12 +134028,12 @@ export default [
                                       start: {
                                         line: 94,
                                         column: 23,
-                                        offset: 8523
+                                        offset: 8511
                                       },
                                       end: {
                                         line: 94,
                                         column: 110,
-                                        offset: 8610
+                                        offset: 8598
                                       }
                                     }
                                   },
@@ -134049,12 +134049,12 @@ export default [
                                           start: {
                                             line: 94,
                                             column: 111,
-                                            offset: 8611
+                                            offset: 8599
                                           },
                                           end: {
                                             line: 94,
                                             column: 149,
-                                            offset: 8649
+                                            offset: 8637
                                           }
                                         }
                                       }
@@ -134063,12 +134063,12 @@ export default [
                                       start: {
                                         line: 94,
                                         column: 110,
-                                        offset: 8610
+                                        offset: 8598
                                       },
                                       end: {
                                         line: 94,
                                         column: 236,
-                                        offset: 8736
+                                        offset: 8724
                                       }
                                     }
                                   },
@@ -134079,12 +134079,12 @@ export default [
                                       start: {
                                         line: 94,
                                         column: 236,
-                                        offset: 8736
+                                        offset: 8724
                                       },
                                       end: {
                                         line: 94,
                                         column: 246,
-                                        offset: 8746
+                                        offset: 8734
                                       }
                                     }
                                   },
@@ -134098,12 +134098,12 @@ export default [
                                           start: {
                                             line: 94,
                                             column: 247,
-                                            offset: 8747
+                                            offset: 8735
                                           },
                                           end: {
                                             line: 94,
                                             column: 267,
-                                            offset: 8767
+                                            offset: 8755
                                           }
                                         }
                                       }
@@ -134112,12 +134112,12 @@ export default [
                                       start: {
                                         line: 94,
                                         column: 246,
-                                        offset: 8746
+                                        offset: 8734
                                       },
                                       end: {
                                         line: 94,
                                         column: 268,
-                                        offset: 8768
+                                        offset: 8756
                                       }
                                     }
                                   },
@@ -134128,29 +134128,29 @@ export default [
                                       start: {
                                         line: 94,
                                         column: 268,
-                                        offset: 8768
+                                        offset: 8756
                                       },
                                       end: {
                                         line: 94,
                                         column: 269,
-                                        offset: 8769
+                                        offset: 8757
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 94, column: 7, offset: 8507 },
+                                  start: { line: 94, column: 7, offset: 8495 },
                                   end: {
                                     line: 94,
                                     column: 269,
-                                    offset: 8769
+                                    offset: 8757
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 94, column: 5, offset: 8505 },
-                              end: { line: 94, column: 269, offset: 8769 }
+                              start: { line: 94, column: 5, offset: 8493 },
+                              end: { line: 94, column: 269, offset: 8757 }
                             }
                           },
                           {
@@ -134168,12 +134168,12 @@ export default [
                                       start: {
                                         line: 95,
                                         column: 7,
-                                        offset: 8776
+                                        offset: 8764
                                       },
                                       end: {
                                         line: 95,
                                         column: 20,
-                                        offset: 8789
+                                        offset: 8777
                                       }
                                     }
                                   },
@@ -134184,12 +134184,12 @@ export default [
                                       start: {
                                         line: 95,
                                         column: 20,
-                                        offset: 8789
+                                        offset: 8777
                                       },
                                       end: {
                                         line: 95,
                                         column: 105,
-                                        offset: 8874
+                                        offset: 8862
                                       }
                                     }
                                   },
@@ -134200,12 +134200,12 @@ export default [
                                       start: {
                                         line: 95,
                                         column: 105,
-                                        offset: 8874
+                                        offset: 8862
                                       },
                                       end: {
                                         line: 95,
                                         column: 118,
-                                        offset: 8887
+                                        offset: 8875
                                       }
                                     }
                                   },
@@ -134216,12 +134216,12 @@ export default [
                                       start: {
                                         line: 95,
                                         column: 118,
-                                        offset: 8887
+                                        offset: 8875
                                       },
                                       end: {
                                         line: 95,
                                         column: 146,
-                                        offset: 8915
+                                        offset: 8903
                                       }
                                     }
                                   },
@@ -134237,12 +134237,12 @@ export default [
                                           start: {
                                             line: 95,
                                             column: 147,
-                                            offset: 8916
+                                            offset: 8904
                                           },
                                           end: {
                                             line: 95,
                                             column: 175,
-                                            offset: 8944
+                                            offset: 8932
                                           }
                                         }
                                       }
@@ -134251,12 +134251,12 @@ export default [
                                       start: {
                                         line: 95,
                                         column: 146,
-                                        offset: 8915
+                                        offset: 8903
                                       },
                                       end: {
                                         line: 95,
                                         column: 250,
-                                        offset: 9019
+                                        offset: 9007
                                       }
                                     }
                                   },
@@ -134267,12 +134267,12 @@ export default [
                                       start: {
                                         line: 95,
                                         column: 250,
-                                        offset: 9019
+                                        offset: 9007
                                       },
                                       end: {
                                         line: 95,
                                         column: 260,
-                                        offset: 9029
+                                        offset: 9017
                                       }
                                     }
                                   },
@@ -134286,12 +134286,12 @@ export default [
                                           start: {
                                             line: 95,
                                             column: 261,
-                                            offset: 9030
+                                            offset: 9018
                                           },
                                           end: {
                                             line: 95,
                                             column: 281,
-                                            offset: 9050
+                                            offset: 9038
                                           }
                                         }
                                       }
@@ -134300,12 +134300,12 @@ export default [
                                       start: {
                                         line: 95,
                                         column: 260,
-                                        offset: 9029
+                                        offset: 9017
                                       },
                                       end: {
                                         line: 95,
                                         column: 282,
-                                        offset: 9051
+                                        offset: 9039
                                       }
                                     }
                                   },
@@ -134316,29 +134316,29 @@ export default [
                                       start: {
                                         line: 95,
                                         column: 282,
-                                        offset: 9051
+                                        offset: 9039
                                       },
                                       end: {
                                         line: 95,
                                         column: 283,
-                                        offset: 9052
+                                        offset: 9040
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 95, column: 7, offset: 8776 },
+                                  start: { line: 95, column: 7, offset: 8764 },
                                   end: {
                                     line: 95,
                                     column: 283,
-                                    offset: 9052
+                                    offset: 9040
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 95, column: 5, offset: 8774 },
-                              end: { line: 95, column: 283, offset: 9052 }
+                              start: { line: 95, column: 5, offset: 8762 },
+                              end: { line: 95, column: 283, offset: 9040 }
                             }
                           },
                           {
@@ -134356,12 +134356,12 @@ export default [
                                       start: {
                                         line: 96,
                                         column: 7,
-                                        offset: 9059
+                                        offset: 9047
                                       },
                                       end: {
                                         line: 96,
                                         column: 18,
-                                        offset: 9070
+                                        offset: 9058
                                       }
                                     }
                                   },
@@ -134372,12 +134372,12 @@ export default [
                                       start: {
                                         line: 96,
                                         column: 18,
-                                        offset: 9070
+                                        offset: 9058
                                       },
                                       end: {
                                         line: 96,
                                         column: 83,
-                                        offset: 9135
+                                        offset: 9123
                                       }
                                     }
                                   },
@@ -134393,12 +134393,12 @@ export default [
                                           start: {
                                             line: 96,
                                             column: 84,
-                                            offset: 9136
+                                            offset: 9124
                                           },
                                           end: {
                                             line: 96,
                                             column: 141,
-                                            offset: 9193
+                                            offset: 9181
                                           }
                                         }
                                       }
@@ -134407,12 +134407,12 @@ export default [
                                       start: {
                                         line: 96,
                                         column: 83,
-                                        offset: 9135
+                                        offset: 9123
                                       },
                                       end: {
                                         line: 96,
                                         column: 213,
-                                        offset: 9265
+                                        offset: 9253
                                       }
                                     }
                                   },
@@ -134423,12 +134423,12 @@ export default [
                                       start: {
                                         line: 96,
                                         column: 213,
-                                        offset: 9265
+                                        offset: 9253
                                       },
                                       end: {
                                         line: 96,
                                         column: 223,
-                                        offset: 9275
+                                        offset: 9263
                                       }
                                     }
                                   },
@@ -134442,12 +134442,12 @@ export default [
                                           start: {
                                             line: 96,
                                             column: 224,
-                                            offset: 9276
+                                            offset: 9264
                                           },
                                           end: {
                                             line: 96,
                                             column: 244,
-                                            offset: 9296
+                                            offset: 9284
                                           }
                                         }
                                       }
@@ -134456,12 +134456,12 @@ export default [
                                       start: {
                                         line: 96,
                                         column: 223,
-                                        offset: 9275
+                                        offset: 9263
                                       },
                                       end: {
                                         line: 96,
                                         column: 245,
-                                        offset: 9297
+                                        offset: 9285
                                       }
                                     }
                                   },
@@ -134472,29 +134472,29 @@ export default [
                                       start: {
                                         line: 96,
                                         column: 245,
-                                        offset: 9297
+                                        offset: 9285
                                       },
                                       end: {
                                         line: 96,
                                         column: 246,
-                                        offset: 9298
+                                        offset: 9286
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 96, column: 7, offset: 9059 },
+                                  start: { line: 96, column: 7, offset: 9047 },
                                   end: {
                                     line: 96,
                                     column: 246,
-                                    offset: 9298
+                                    offset: 9286
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 96, column: 5, offset: 9057 },
-                              end: { line: 96, column: 246, offset: 9298 }
+                              start: { line: 96, column: 5, offset: 9045 },
+                              end: { line: 96, column: 246, offset: 9286 }
                             }
                           },
                           {
@@ -134512,12 +134512,12 @@ export default [
                                       start: {
                                         line: 97,
                                         column: 7,
-                                        offset: 9305
+                                        offset: 9293
                                       },
                                       end: {
                                         line: 97,
                                         column: 21,
-                                        offset: 9319
+                                        offset: 9307
                                       }
                                     }
                                   },
@@ -134528,12 +134528,12 @@ export default [
                                       start: {
                                         line: 97,
                                         column: 21,
-                                        offset: 9319
+                                        offset: 9307
                                       },
                                       end: {
                                         line: 97,
                                         column: 112,
-                                        offset: 9410
+                                        offset: 9398
                                       }
                                     }
                                   },
@@ -134549,12 +134549,12 @@ export default [
                                           start: {
                                             line: 97,
                                             column: 113,
-                                            offset: 9411
+                                            offset: 9399
                                           },
                                           end: {
                                             line: 97,
                                             column: 126,
-                                            offset: 9424
+                                            offset: 9412
                                           }
                                         }
                                       }
@@ -134563,12 +134563,12 @@ export default [
                                       start: {
                                         line: 97,
                                         column: 112,
-                                        offset: 9410
+                                        offset: 9398
                                       },
                                       end: {
                                         line: 97,
                                         column: 179,
-                                        offset: 9477
+                                        offset: 9465
                                       }
                                     }
                                   },
@@ -134579,29 +134579,29 @@ export default [
                                       start: {
                                         line: 97,
                                         column: 179,
-                                        offset: 9477
+                                        offset: 9465
                                       },
                                       end: {
                                         line: 97,
                                         column: 180,
-                                        offset: 9478
+                                        offset: 9466
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 97, column: 7, offset: 9305 },
+                                  start: { line: 97, column: 7, offset: 9293 },
                                   end: {
                                     line: 97,
                                     column: 180,
-                                    offset: 9478
+                                    offset: 9466
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 97, column: 5, offset: 9303 },
-                              end: { line: 97, column: 180, offset: 9478 }
+                              start: { line: 97, column: 5, offset: 9291 },
+                              end: { line: 97, column: 180, offset: 9466 }
                             }
                           },
                           {
@@ -134619,12 +134619,12 @@ export default [
                                       start: {
                                         line: 98,
                                         column: 7,
-                                        offset: 9485
+                                        offset: 9473
                                       },
                                       end: {
                                         line: 98,
                                         column: 27,
-                                        offset: 9505
+                                        offset: 9493
                                       }
                                     }
                                   },
@@ -134635,12 +134635,12 @@ export default [
                                       start: {
                                         line: 98,
                                         column: 27,
-                                        offset: 9505
+                                        offset: 9493
                                       },
                                       end: {
                                         line: 98,
                                         column: 130,
-                                        offset: 9608
+                                        offset: 9596
                                       }
                                     }
                                   },
@@ -134656,12 +134656,12 @@ export default [
                                           start: {
                                             line: 98,
                                             column: 131,
-                                            offset: 9609
+                                            offset: 9597
                                           },
                                           end: {
                                             line: 98,
                                             column: 150,
-                                            offset: 9628
+                                            offset: 9616
                                           }
                                         }
                                       }
@@ -134670,12 +134670,12 @@ export default [
                                       start: {
                                         line: 98,
                                         column: 130,
-                                        offset: 9608
+                                        offset: 9596
                                       },
                                       end: {
                                         line: 98,
                                         column: 201,
-                                        offset: 9679
+                                        offset: 9667
                                       }
                                     }
                                   },
@@ -134686,29 +134686,29 @@ export default [
                                       start: {
                                         line: 98,
                                         column: 201,
-                                        offset: 9679
+                                        offset: 9667
                                       },
                                       end: {
                                         line: 98,
                                         column: 202,
-                                        offset: 9680
+                                        offset: 9668
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 98, column: 7, offset: 9485 },
+                                  start: { line: 98, column: 7, offset: 9473 },
                                   end: {
                                     line: 98,
                                     column: 202,
-                                    offset: 9680
+                                    offset: 9668
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 98, column: 5, offset: 9483 },
-                              end: { line: 98, column: 202, offset: 9680 }
+                              start: { line: 98, column: 5, offset: 9471 },
+                              end: { line: 98, column: 202, offset: 9668 }
                             }
                           },
                           {
@@ -134726,12 +134726,12 @@ export default [
                                       start: {
                                         line: 99,
                                         column: 7,
-                                        offset: 9687
+                                        offset: 9675
                                       },
                                       end: {
                                         line: 99,
                                         column: 24,
-                                        offset: 9704
+                                        offset: 9692
                                       }
                                     }
                                   },
@@ -134742,12 +134742,12 @@ export default [
                                       start: {
                                         line: 99,
                                         column: 24,
-                                        offset: 9704
+                                        offset: 9692
                                       },
                                       end: {
                                         line: 99,
                                         column: 152,
-                                        offset: 9832
+                                        offset: 9820
                                       }
                                     }
                                   },
@@ -134758,12 +134758,12 @@ export default [
                                       start: {
                                         line: 99,
                                         column: 152,
-                                        offset: 9832
+                                        offset: 9820
                                       },
                                       end: {
                                         line: 99,
                                         column: 165,
-                                        offset: 9845
+                                        offset: 9833
                                       }
                                     }
                                   },
@@ -134774,12 +134774,12 @@ export default [
                                       start: {
                                         line: 99,
                                         column: 165,
-                                        offset: 9845
+                                        offset: 9833
                                       },
                                       end: {
                                         line: 99,
                                         column: 200,
-                                        offset: 9880
+                                        offset: 9868
                                       }
                                     }
                                   },
@@ -134795,12 +134795,12 @@ export default [
                                           start: {
                                             line: 99,
                                             column: 201,
-                                            offset: 9881
+                                            offset: 9869
                                           },
                                           end: {
                                             line: 99,
                                             column: 217,
-                                            offset: 9897
+                                            offset: 9885
                                           }
                                         }
                                       }
@@ -134809,12 +134809,12 @@ export default [
                                       start: {
                                         line: 99,
                                         column: 200,
-                                        offset: 9880
+                                        offset: 9868
                                       },
                                       end: {
                                         line: 99,
                                         column: 275,
-                                        offset: 9955
+                                        offset: 9943
                                       }
                                     }
                                   },
@@ -134825,29 +134825,29 @@ export default [
                                       start: {
                                         line: 99,
                                         column: 275,
-                                        offset: 9955
+                                        offset: 9943
                                       },
                                       end: {
                                         line: 99,
                                         column: 276,
-                                        offset: 9956
+                                        offset: 9944
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 99, column: 7, offset: 9687 },
+                                  start: { line: 99, column: 7, offset: 9675 },
                                   end: {
                                     line: 99,
                                     column: 276,
-                                    offset: 9956
+                                    offset: 9944
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 99, column: 5, offset: 9685 },
-                              end: { line: 99, column: 276, offset: 9956 }
+                              start: { line: 99, column: 5, offset: 9673 },
+                              end: { line: 99, column: 276, offset: 9944 }
                             }
                           },
                           {
@@ -134865,12 +134865,12 @@ export default [
                                       start: {
                                         line: 100,
                                         column: 7,
-                                        offset: 9963
+                                        offset: 9951
                                       },
                                       end: {
                                         line: 100,
                                         column: 24,
-                                        offset: 9980
+                                        offset: 9968
                                       }
                                     }
                                   },
@@ -134881,12 +134881,12 @@ export default [
                                       start: {
                                         line: 100,
                                         column: 24,
-                                        offset: 9980
+                                        offset: 9968
                                       },
                                       end: {
                                         line: 100,
                                         column: 128,
-                                        offset: 10084
+                                        offset: 10072
                                       }
                                     }
                                   },
@@ -134902,12 +134902,12 @@ export default [
                                           start: {
                                             line: 100,
                                             column: 129,
-                                            offset: 10085
+                                            offset: 10073
                                           },
                                           end: {
                                             line: 100,
                                             column: 145,
-                                            offset: 10101
+                                            offset: 10089
                                           }
                                         }
                                       }
@@ -134916,12 +134916,12 @@ export default [
                                       start: {
                                         line: 100,
                                         column: 128,
-                                        offset: 10084
+                                        offset: 10072
                                       },
                                       end: {
                                         line: 100,
                                         column: 203,
-                                        offset: 10159
+                                        offset: 10147
                                       }
                                     }
                                   }
@@ -134930,19 +134930,19 @@ export default [
                                   start: {
                                     line: 100,
                                     column: 7,
-                                    offset: 9963
+                                    offset: 9951
                                   },
                                   end: {
                                     line: 100,
                                     column: 203,
-                                    offset: 10159
+                                    offset: 10147
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 100, column: 5, offset: 9961 },
-                              end: { line: 100, column: 203, offset: 10159 }
+                              start: { line: 100, column: 5, offset: 9949 },
+                              end: { line: 100, column: 203, offset: 10147 }
                             }
                           },
                           {
@@ -134960,12 +134960,12 @@ export default [
                                       start: {
                                         line: 101,
                                         column: 7,
-                                        offset: 10166
+                                        offset: 10154
                                       },
                                       end: {
                                         line: 101,
                                         column: 21,
-                                        offset: 10180
+                                        offset: 10168
                                       }
                                     }
                                   },
@@ -134976,12 +134976,12 @@ export default [
                                       start: {
                                         line: 101,
                                         column: 21,
-                                        offset: 10180
+                                        offset: 10168
                                       },
                                       end: {
                                         line: 101,
                                         column: 102,
-                                        offset: 10261
+                                        offset: 10249
                                       }
                                     }
                                   },
@@ -134997,12 +134997,12 @@ export default [
                                           start: {
                                             line: 101,
                                             column: 103,
-                                            offset: 10262
+                                            offset: 10250
                                           },
                                           end: {
                                             line: 101,
                                             column: 116,
-                                            offset: 10275
+                                            offset: 10263
                                           }
                                         }
                                       }
@@ -135011,12 +135011,12 @@ export default [
                                       start: {
                                         line: 101,
                                         column: 102,
-                                        offset: 10261
+                                        offset: 10249
                                       },
                                       end: {
                                         line: 101,
                                         column: 176,
-                                        offset: 10335
+                                        offset: 10323
                                       }
                                     }
                                   }
@@ -135025,19 +135025,19 @@ export default [
                                   start: {
                                     line: 101,
                                     column: 7,
-                                    offset: 10166
+                                    offset: 10154
                                   },
                                   end: {
                                     line: 101,
                                     column: 176,
-                                    offset: 10335
+                                    offset: 10323
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 101, column: 5, offset: 10164 },
-                              end: { line: 101, column: 176, offset: 10335 }
+                              start: { line: 101, column: 5, offset: 10152 },
+                              end: { line: 101, column: 176, offset: 10323 }
                             }
                           },
                           {
@@ -135055,12 +135055,12 @@ export default [
                                       start: {
                                         line: 102,
                                         column: 7,
-                                        offset: 10342
+                                        offset: 10330
                                       },
                                       end: {
                                         line: 102,
                                         column: 20,
-                                        offset: 10355
+                                        offset: 10343
                                       }
                                     }
                                   },
@@ -135071,12 +135071,12 @@ export default [
                                       start: {
                                         line: 102,
                                         column: 20,
-                                        offset: 10355
+                                        offset: 10343
                                       },
                                       end: {
                                         line: 102,
                                         column: 89,
-                                        offset: 10424
+                                        offset: 10412
                                       }
                                     }
                                   },
@@ -135092,12 +135092,12 @@ export default [
                                           start: {
                                             line: 102,
                                             column: 90,
-                                            offset: 10425
+                                            offset: 10413
                                           },
                                           end: {
                                             line: 102,
                                             column: 102,
-                                            offset: 10437
+                                            offset: 10425
                                           }
                                         }
                                       }
@@ -135106,12 +135106,12 @@ export default [
                                       start: {
                                         line: 102,
                                         column: 89,
-                                        offset: 10424
+                                        offset: 10412
                                       },
                                       end: {
                                         line: 102,
                                         column: 160,
-                                        offset: 10495
+                                        offset: 10483
                                       }
                                     }
                                   },
@@ -135122,12 +135122,12 @@ export default [
                                       start: {
                                         line: 102,
                                         column: 160,
-                                        offset: 10495
+                                        offset: 10483
                                       },
                                       end: {
                                         line: 102,
                                         column: 161,
-                                        offset: 10496
+                                        offset: 10484
                                       }
                                     }
                                   }
@@ -135136,19 +135136,19 @@ export default [
                                   start: {
                                     line: 102,
                                     column: 7,
-                                    offset: 10342
+                                    offset: 10330
                                   },
                                   end: {
                                     line: 102,
                                     column: 161,
-                                    offset: 10496
+                                    offset: 10484
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 102, column: 5, offset: 10340 },
-                              end: { line: 102, column: 161, offset: 10496 }
+                              start: { line: 102, column: 5, offset: 10328 },
+                              end: { line: 102, column: 161, offset: 10484 }
                             }
                           },
                           {
@@ -135166,12 +135166,12 @@ export default [
                                       start: {
                                         line: 103,
                                         column: 7,
-                                        offset: 10503
+                                        offset: 10491
                                       },
                                       end: {
                                         line: 103,
                                         column: 16,
-                                        offset: 10512
+                                        offset: 10500
                                       }
                                     }
                                   },
@@ -135182,12 +135182,12 @@ export default [
                                       start: {
                                         line: 103,
                                         column: 16,
-                                        offset: 10512
+                                        offset: 10500
                                       },
                                       end: {
                                         line: 103,
                                         column: 42,
-                                        offset: 10538
+                                        offset: 10526
                                       }
                                     }
                                   },
@@ -135198,12 +135198,12 @@ export default [
                                       start: {
                                         line: 103,
                                         column: 42,
-                                        offset: 10538
+                                        offset: 10526
                                       },
                                       end: {
                                         line: 103,
                                         column: 57,
-                                        offset: 10553
+                                        offset: 10541
                                       }
                                     }
                                   },
@@ -135214,12 +135214,12 @@ export default [
                                       start: {
                                         line: 103,
                                         column: 57,
-                                        offset: 10553
+                                        offset: 10541
                                       },
                                       end: {
                                         line: 103,
                                         column: 58,
-                                        offset: 10554
+                                        offset: 10542
                                       }
                                     }
                                   }
@@ -135228,19 +135228,19 @@ export default [
                                   start: {
                                     line: 103,
                                     column: 7,
-                                    offset: 10503
+                                    offset: 10491
                                   },
                                   end: {
                                     line: 103,
                                     column: 58,
-                                    offset: 10554
+                                    offset: 10542
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 103, column: 5, offset: 10501 },
-                              end: { line: 103, column: 58, offset: 10554 }
+                              start: { line: 103, column: 5, offset: 10489 },
+                              end: { line: 103, column: 58, offset: 10542 }
                             }
                           },
                           {
@@ -135258,12 +135258,12 @@ export default [
                                       start: {
                                         line: 104,
                                         column: 7,
-                                        offset: 10561
+                                        offset: 10549
                                       },
                                       end: {
                                         line: 104,
                                         column: 22,
-                                        offset: 10576
+                                        offset: 10564
                                       }
                                     }
                                   },
@@ -135274,12 +135274,12 @@ export default [
                                       start: {
                                         line: 104,
                                         column: 22,
-                                        offset: 10576
+                                        offset: 10564
                                       },
                                       end: {
                                         line: 104,
                                         column: 109,
-                                        offset: 10663
+                                        offset: 10651
                                       }
                                     }
                                   },
@@ -135295,12 +135295,12 @@ export default [
                                           start: {
                                             line: 104,
                                             column: 110,
-                                            offset: 10664
+                                            offset: 10652
                                           },
                                           end: {
                                             line: 104,
                                             column: 117,
-                                            offset: 10671
+                                            offset: 10659
                                           }
                                         }
                                       }
@@ -135309,12 +135309,12 @@ export default [
                                       start: {
                                         line: 104,
                                         column: 109,
-                                        offset: 10663
+                                        offset: 10651
                                       },
                                       end: {
                                         line: 104,
                                         column: 170,
-                                        offset: 10724
+                                        offset: 10712
                                       }
                                     }
                                   },
@@ -135325,12 +135325,12 @@ export default [
                                       start: {
                                         line: 104,
                                         column: 170,
-                                        offset: 10724
+                                        offset: 10712
                                       },
                                       end: {
                                         line: 104,
                                         column: 171,
-                                        offset: 10725
+                                        offset: 10713
                                       }
                                     }
                                   }
@@ -135339,19 +135339,19 @@ export default [
                                   start: {
                                     line: 104,
                                     column: 7,
-                                    offset: 10561
+                                    offset: 10549
                                   },
                                   end: {
                                     line: 104,
                                     column: 171,
-                                    offset: 10725
+                                    offset: 10713
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 104, column: 5, offset: 10559 },
-                              end: { line: 104, column: 171, offset: 10725 }
+                              start: { line: 104, column: 5, offset: 10547 },
+                              end: { line: 104, column: 171, offset: 10713 }
                             }
                           },
                           {
@@ -135369,12 +135369,12 @@ export default [
                                       start: {
                                         line: 105,
                                         column: 7,
-                                        offset: 10732
+                                        offset: 10720
                                       },
                                       end: {
                                         line: 105,
                                         column: 32,
-                                        offset: 10757
+                                        offset: 10745
                                       }
                                     }
                                   },
@@ -135385,12 +135385,12 @@ export default [
                                       start: {
                                         line: 105,
                                         column: 32,
-                                        offset: 10757
+                                        offset: 10745
                                       },
                                       end: {
                                         line: 105,
                                         column: 279,
-                                        offset: 11004
+                                        offset: 10992
                                       }
                                     }
                                   },
@@ -135406,12 +135406,12 @@ export default [
                                           start: {
                                             line: 105,
                                             column: 280,
-                                            offset: 11005
+                                            offset: 10993
                                           },
                                           end: {
                                             line: 105,
                                             column: 308,
-                                            offset: 11033
+                                            offset: 11021
                                           }
                                         }
                                       }
@@ -135420,12 +135420,12 @@ export default [
                                       start: {
                                         line: 105,
                                         column: 279,
-                                        offset: 11004
+                                        offset: 10992
                                       },
                                       end: {
                                         line: 105,
                                         column: 383,
-                                        offset: 11108
+                                        offset: 11096
                                       }
                                     }
                                   },
@@ -135436,12 +135436,12 @@ export default [
                                       start: {
                                         line: 105,
                                         column: 383,
-                                        offset: 11108
+                                        offset: 11096
                                       },
                                       end: {
                                         line: 105,
                                         column: 393,
-                                        offset: 11118
+                                        offset: 11106
                                       }
                                     }
                                   },
@@ -135455,12 +135455,12 @@ export default [
                                           start: {
                                             line: 105,
                                             column: 394,
-                                            offset: 11119
+                                            offset: 11107
                                           },
                                           end: {
                                             line: 105,
                                             column: 414,
-                                            offset: 11139
+                                            offset: 11127
                                           }
                                         }
                                       }
@@ -135469,12 +135469,12 @@ export default [
                                       start: {
                                         line: 105,
                                         column: 393,
-                                        offset: 11118
+                                        offset: 11106
                                       },
                                       end: {
                                         line: 105,
                                         column: 415,
-                                        offset: 11140
+                                        offset: 11128
                                       }
                                     }
                                   },
@@ -135485,12 +135485,12 @@ export default [
                                       start: {
                                         line: 105,
                                         column: 415,
-                                        offset: 11140
+                                        offset: 11128
                                       },
                                       end: {
                                         line: 105,
                                         column: 416,
-                                        offset: 11141
+                                        offset: 11129
                                       }
                                     }
                                   }
@@ -135499,19 +135499,19 @@ export default [
                                   start: {
                                     line: 105,
                                     column: 7,
-                                    offset: 10732
+                                    offset: 10720
                                   },
                                   end: {
                                     line: 105,
                                     column: 416,
-                                    offset: 11141
+                                    offset: 11129
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 105, column: 5, offset: 10730 },
-                              end: { line: 105, column: 416, offset: 11141 }
+                              start: { line: 105, column: 5, offset: 10718 },
+                              end: { line: 105, column: 416, offset: 11129 }
                             }
                           },
                           {
@@ -135529,12 +135529,12 @@ export default [
                                       start: {
                                         line: 106,
                                         column: 7,
-                                        offset: 11148
+                                        offset: 11136
                                       },
                                       end: {
                                         line: 106,
                                         column: 29,
-                                        offset: 11170
+                                        offset: 11158
                                       }
                                     }
                                   },
@@ -135545,12 +135545,12 @@ export default [
                                       start: {
                                         line: 106,
                                         column: 29,
-                                        offset: 11170
+                                        offset: 11158
                                       },
                                       end: {
                                         line: 106,
                                         column: 123,
-                                        offset: 11264
+                                        offset: 11252
                                       }
                                     }
                                   },
@@ -135566,12 +135566,12 @@ export default [
                                           start: {
                                             line: 106,
                                             column: 124,
-                                            offset: 11265
+                                            offset: 11253
                                           },
                                           end: {
                                             line: 106,
                                             column: 189,
-                                            offset: 11330
+                                            offset: 11318
                                           }
                                         }
                                       }
@@ -135580,12 +135580,12 @@ export default [
                                       start: {
                                         line: 106,
                                         column: 123,
-                                        offset: 11264
+                                        offset: 11252
                                       },
                                       end: {
                                         line: 106,
                                         column: 276,
-                                        offset: 11417
+                                        offset: 11405
                                       }
                                     }
                                   },
@@ -135596,12 +135596,12 @@ export default [
                                       start: {
                                         line: 106,
                                         column: 276,
-                                        offset: 11417
+                                        offset: 11405
                                       },
                                       end: {
                                         line: 106,
                                         column: 286,
-                                        offset: 11427
+                                        offset: 11415
                                       }
                                     }
                                   },
@@ -135615,12 +135615,12 @@ export default [
                                           start: {
                                             line: 106,
                                             column: 287,
-                                            offset: 11428
+                                            offset: 11416
                                           },
                                           end: {
                                             line: 106,
                                             column: 307,
-                                            offset: 11448
+                                            offset: 11436
                                           }
                                         }
                                       }
@@ -135629,12 +135629,12 @@ export default [
                                       start: {
                                         line: 106,
                                         column: 286,
-                                        offset: 11427
+                                        offset: 11415
                                       },
                                       end: {
                                         line: 106,
                                         column: 308,
-                                        offset: 11449
+                                        offset: 11437
                                       }
                                     }
                                   },
@@ -135645,12 +135645,12 @@ export default [
                                       start: {
                                         line: 106,
                                         column: 308,
-                                        offset: 11449
+                                        offset: 11437
                                       },
                                       end: {
                                         line: 106,
                                         column: 309,
-                                        offset: 11450
+                                        offset: 11438
                                       }
                                     }
                                   }
@@ -135659,19 +135659,19 @@ export default [
                                   start: {
                                     line: 106,
                                     column: 7,
-                                    offset: 11148
+                                    offset: 11136
                                   },
                                   end: {
                                     line: 106,
                                     column: 309,
-                                    offset: 11450
+                                    offset: 11438
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 106, column: 5, offset: 11146 },
-                              end: { line: 106, column: 309, offset: 11450 }
+                              start: { line: 106, column: 5, offset: 11134 },
+                              end: { line: 106, column: 309, offset: 11438 }
                             }
                           },
                           {
@@ -135689,12 +135689,12 @@ export default [
                                       start: {
                                         line: 107,
                                         column: 7,
-                                        offset: 11457
+                                        offset: 11445
                                       },
                                       end: {
                                         line: 107,
                                         column: 17,
-                                        offset: 11467
+                                        offset: 11455
                                       }
                                     }
                                   },
@@ -135705,12 +135705,12 @@ export default [
                                       start: {
                                         line: 107,
                                         column: 17,
-                                        offset: 11467
+                                        offset: 11455
                                       },
                                       end: {
                                         line: 107,
                                         column: 20,
-                                        offset: 11470
+                                        offset: 11458
                                       }
                                     }
                                   },
@@ -135726,12 +135726,12 @@ export default [
                                           start: {
                                             line: 107,
                                             column: 21,
-                                            offset: 11471
+                                            offset: 11459
                                           },
                                           end: {
                                             line: 107,
                                             column: 29,
-                                            offset: 11479
+                                            offset: 11467
                                           }
                                         }
                                       }
@@ -135740,12 +135740,12 @@ export default [
                                       start: {
                                         line: 107,
                                         column: 20,
-                                        offset: 11470
+                                        offset: 11458
                                       },
                                       end: {
                                         line: 107,
                                         column: 73,
-                                        offset: 11523
+                                        offset: 11511
                                       }
                                     }
                                   },
@@ -135756,12 +135756,12 @@ export default [
                                       start: {
                                         line: 107,
                                         column: 73,
-                                        offset: 11523
+                                        offset: 11511
                                       },
                                       end: {
                                         line: 107,
                                         column: 91,
-                                        offset: 11541
+                                        offset: 11529
                                       }
                                     }
                                   }
@@ -135770,19 +135770,19 @@ export default [
                                   start: {
                                     line: 107,
                                     column: 7,
-                                    offset: 11457
+                                    offset: 11445
                                   },
                                   end: {
                                     line: 107,
                                     column: 91,
-                                    offset: 11541
+                                    offset: 11529
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 107, column: 5, offset: 11455 },
-                              end: { line: 107, column: 91, offset: 11541 }
+                              start: { line: 107, column: 5, offset: 11443 },
+                              end: { line: 107, column: 91, offset: 11529 }
                             }
                           },
                           {
@@ -135800,12 +135800,12 @@ export default [
                                       start: {
                                         line: 108,
                                         column: 7,
-                                        offset: 11548
+                                        offset: 11536
                                       },
                                       end: {
                                         line: 108,
                                         column: 29,
-                                        offset: 11570
+                                        offset: 11558
                                       }
                                     }
                                   },
@@ -135816,12 +135816,12 @@ export default [
                                       start: {
                                         line: 108,
                                         column: 29,
-                                        offset: 11570
+                                        offset: 11558
                                       },
                                       end: {
                                         line: 108,
                                         column: 123,
-                                        offset: 11664
+                                        offset: 11652
                                       }
                                     }
                                   },
@@ -135837,12 +135837,12 @@ export default [
                                           start: {
                                             line: 108,
                                             column: 124,
-                                            offset: 11665
+                                            offset: 11653
                                           },
                                           end: {
                                             line: 108,
                                             column: 189,
-                                            offset: 11730
+                                            offset: 11718
                                           }
                                         }
                                       }
@@ -135851,12 +135851,12 @@ export default [
                                       start: {
                                         line: 108,
                                         column: 123,
-                                        offset: 11664
+                                        offset: 11652
                                       },
                                       end: {
                                         line: 108,
                                         column: 276,
-                                        offset: 11817
+                                        offset: 11805
                                       }
                                     }
                                   },
@@ -135867,12 +135867,12 @@ export default [
                                       start: {
                                         line: 108,
                                         column: 276,
-                                        offset: 11817
+                                        offset: 11805
                                       },
                                       end: {
                                         line: 108,
                                         column: 286,
-                                        offset: 11827
+                                        offset: 11815
                                       }
                                     }
                                   },
@@ -135886,12 +135886,12 @@ export default [
                                           start: {
                                             line: 108,
                                             column: 287,
-                                            offset: 11828
+                                            offset: 11816
                                           },
                                           end: {
                                             line: 108,
                                             column: 307,
-                                            offset: 11848
+                                            offset: 11836
                                           }
                                         }
                                       }
@@ -135900,12 +135900,12 @@ export default [
                                       start: {
                                         line: 108,
                                         column: 286,
-                                        offset: 11827
+                                        offset: 11815
                                       },
                                       end: {
                                         line: 108,
                                         column: 308,
-                                        offset: 11849
+                                        offset: 11837
                                       }
                                     }
                                   },
@@ -135916,12 +135916,12 @@ export default [
                                       start: {
                                         line: 108,
                                         column: 308,
-                                        offset: 11849
+                                        offset: 11837
                                       },
                                       end: {
                                         line: 108,
                                         column: 309,
-                                        offset: 11850
+                                        offset: 11838
                                       }
                                     }
                                   }
@@ -135930,19 +135930,19 @@ export default [
                                   start: {
                                     line: 108,
                                     column: 7,
-                                    offset: 11548
+                                    offset: 11536
                                   },
                                   end: {
                                     line: 108,
                                     column: 309,
-                                    offset: 11850
+                                    offset: 11838
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 108, column: 5, offset: 11546 },
-                              end: { line: 108, column: 309, offset: 11850 }
+                              start: { line: 108, column: 5, offset: 11534 },
+                              end: { line: 108, column: 309, offset: 11838 }
                             }
                           },
                           {
@@ -135960,12 +135960,12 @@ export default [
                                       start: {
                                         line: 109,
                                         column: 7,
-                                        offset: 11857
+                                        offset: 11845
                                       },
                                       end: {
                                         line: 109,
                                         column: 26,
-                                        offset: 11876
+                                        offset: 11864
                                       }
                                     }
                                   },
@@ -135976,12 +135976,12 @@ export default [
                                       start: {
                                         line: 109,
                                         column: 26,
-                                        offset: 11876
+                                        offset: 11864
                                       },
                                       end: {
                                         line: 109,
                                         column: 87,
-                                        offset: 11937
+                                        offset: 11925
                                       }
                                     }
                                   },
@@ -135997,12 +135997,12 @@ export default [
                                           start: {
                                             line: 109,
                                             column: 88,
-                                            offset: 11938
+                                            offset: 11926
                                           },
                                           end: {
                                             line: 109,
                                             column: 96,
-                                            offset: 11946
+                                            offset: 11934
                                           }
                                         }
                                       }
@@ -136011,12 +136011,12 @@ export default [
                                       start: {
                                         line: 109,
                                         column: 87,
-                                        offset: 11937
+                                        offset: 11925
                                       },
                                       end: {
                                         line: 109,
                                         column: 135,
-                                        offset: 11985
+                                        offset: 11973
                                       }
                                     }
                                   },
@@ -136027,12 +136027,12 @@ export default [
                                       start: {
                                         line: 109,
                                         column: 135,
-                                        offset: 11985
+                                        offset: 11973
                                       },
                                       end: {
                                         line: 109,
                                         column: 222,
-                                        offset: 12072
+                                        offset: 12060
                                       }
                                     }
                                   },
@@ -136048,12 +136048,12 @@ export default [
                                           start: {
                                             line: 109,
                                             column: 223,
-                                            offset: 12073
+                                            offset: 12061
                                           },
                                           end: {
                                             line: 109,
                                             column: 288,
-                                            offset: 12138
+                                            offset: 12126
                                           }
                                         }
                                       }
@@ -136062,12 +136062,12 @@ export default [
                                       start: {
                                         line: 109,
                                         column: 222,
-                                        offset: 12072
+                                        offset: 12060
                                       },
                                       end: {
                                         line: 109,
                                         column: 375,
-                                        offset: 12225
+                                        offset: 12213
                                       }
                                     }
                                   },
@@ -136078,12 +136078,12 @@ export default [
                                       start: {
                                         line: 109,
                                         column: 375,
-                                        offset: 12225
+                                        offset: 12213
                                       },
                                       end: {
                                         line: 109,
                                         column: 385,
-                                        offset: 12235
+                                        offset: 12223
                                       }
                                     }
                                   },
@@ -136097,12 +136097,12 @@ export default [
                                           start: {
                                             line: 109,
                                             column: 386,
-                                            offset: 12236
+                                            offset: 12224
                                           },
                                           end: {
                                             line: 109,
                                             column: 406,
-                                            offset: 12256
+                                            offset: 12244
                                           }
                                         }
                                       }
@@ -136111,12 +136111,12 @@ export default [
                                       start: {
                                         line: 109,
                                         column: 385,
-                                        offset: 12235
+                                        offset: 12223
                                       },
                                       end: {
                                         line: 109,
                                         column: 407,
-                                        offset: 12257
+                                        offset: 12245
                                       }
                                     }
                                   },
@@ -136127,12 +136127,12 @@ export default [
                                       start: {
                                         line: 109,
                                         column: 407,
-                                        offset: 12257
+                                        offset: 12245
                                       },
                                       end: {
                                         line: 109,
                                         column: 408,
-                                        offset: 12258
+                                        offset: 12246
                                       }
                                     }
                                   }
@@ -136141,19 +136141,19 @@ export default [
                                   start: {
                                     line: 109,
                                     column: 7,
-                                    offset: 11857
+                                    offset: 11845
                                   },
                                   end: {
                                     line: 109,
                                     column: 408,
-                                    offset: 12258
+                                    offset: 12246
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 109, column: 5, offset: 11855 },
-                              end: { line: 109, column: 408, offset: 12258 }
+                              start: { line: 109, column: 5, offset: 11843 },
+                              end: { line: 109, column: 408, offset: 12246 }
                             }
                           },
                           {
@@ -136171,12 +136171,12 @@ export default [
                                       start: {
                                         line: 110,
                                         column: 7,
-                                        offset: 12265
+                                        offset: 12253
                                       },
                                       end: {
                                         line: 110,
                                         column: 20,
-                                        offset: 12278
+                                        offset: 12266
                                       }
                                     }
                                   },
@@ -136187,12 +136187,12 @@ export default [
                                       start: {
                                         line: 110,
                                         column: 20,
-                                        offset: 12278
+                                        offset: 12266
                                       },
                                       end: {
                                         line: 110,
                                         column: 27,
-                                        offset: 12285
+                                        offset: 12273
                                       }
                                     }
                                   },
@@ -136208,12 +136208,12 @@ export default [
                                           start: {
                                             line: 110,
                                             column: 28,
-                                            offset: 12286
+                                            offset: 12274
                                           },
                                           end: {
                                             line: 110,
                                             column: 35,
-                                            offset: 12293
+                                            offset: 12281
                                           }
                                         }
                                       }
@@ -136222,12 +136222,12 @@ export default [
                                       start: {
                                         line: 110,
                                         column: 27,
-                                        offset: 12285
+                                        offset: 12273
                                       },
                                       end: {
                                         line: 110,
                                         column: 105,
-                                        offset: 12363
+                                        offset: 12351
                                       }
                                     }
                                   },
@@ -136238,12 +136238,12 @@ export default [
                                       start: {
                                         line: 110,
                                         column: 105,
-                                        offset: 12363
+                                        offset: 12351
                                       },
                                       end: {
                                         line: 110,
                                         column: 163,
-                                        offset: 12421
+                                        offset: 12409
                                       }
                                     }
                                   }
@@ -136252,19 +136252,19 @@ export default [
                                   start: {
                                     line: 110,
                                     column: 7,
-                                    offset: 12265
+                                    offset: 12253
                                   },
                                   end: {
                                     line: 110,
                                     column: 163,
-                                    offset: 12421
+                                    offset: 12409
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 110, column: 5, offset: 12263 },
-                              end: { line: 110, column: 163, offset: 12421 }
+                              start: { line: 110, column: 5, offset: 12251 },
+                              end: { line: 110, column: 163, offset: 12409 }
                             }
                           },
                           {
@@ -136282,12 +136282,12 @@ export default [
                                       start: {
                                         line: 111,
                                         column: 7,
-                                        offset: 12428
+                                        offset: 12416
                                       },
                                       end: {
                                         line: 111,
                                         column: 25,
-                                        offset: 12446
+                                        offset: 12434
                                       }
                                     }
                                   },
@@ -136298,12 +136298,12 @@ export default [
                                       start: {
                                         line: 111,
                                         column: 25,
-                                        offset: 12446
+                                        offset: 12434
                                       },
                                       end: {
                                         line: 111,
                                         column: 110,
-                                        offset: 12531
+                                        offset: 12519
                                       }
                                     }
                                   },
@@ -136319,12 +136319,12 @@ export default [
                                           start: {
                                             line: 111,
                                             column: 111,
-                                            offset: 12532
+                                            offset: 12520
                                           },
                                           end: {
                                             line: 111,
                                             column: 118,
-                                            offset: 12539
+                                            offset: 12527
                                           }
                                         }
                                       }
@@ -136333,12 +136333,12 @@ export default [
                                       start: {
                                         line: 111,
                                         column: 110,
-                                        offset: 12531
+                                        offset: 12519
                                       },
                                       end: {
                                         line: 111,
                                         column: 188,
-                                        offset: 12609
+                                        offset: 12597
                                       }
                                     }
                                   },
@@ -136349,12 +136349,12 @@ export default [
                                       start: {
                                         line: 111,
                                         column: 188,
-                                        offset: 12609
+                                        offset: 12597
                                       },
                                       end: {
                                         line: 111,
                                         column: 204,
-                                        offset: 12625
+                                        offset: 12613
                                       }
                                     }
                                   }
@@ -136363,19 +136363,19 @@ export default [
                                   start: {
                                     line: 111,
                                     column: 7,
-                                    offset: 12428
+                                    offset: 12416
                                   },
                                   end: {
                                     line: 111,
                                     column: 204,
-                                    offset: 12625
+                                    offset: 12613
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 111, column: 5, offset: 12426 },
-                              end: { line: 111, column: 204, offset: 12625 }
+                              start: { line: 111, column: 5, offset: 12414 },
+                              end: { line: 111, column: 204, offset: 12613 }
                             }
                           },
                           {
@@ -136393,12 +136393,12 @@ export default [
                                       start: {
                                         line: 112,
                                         column: 7,
-                                        offset: 12632
+                                        offset: 12620
                                       },
                                       end: {
                                         line: 112,
                                         column: 21,
-                                        offset: 12646
+                                        offset: 12634
                                       }
                                     }
                                   },
@@ -136409,12 +136409,12 @@ export default [
                                       start: {
                                         line: 112,
                                         column: 21,
-                                        offset: 12646
+                                        offset: 12634
                                       },
                                       end: {
                                         line: 112,
                                         column: 28,
-                                        offset: 12653
+                                        offset: 12641
                                       }
                                     }
                                   },
@@ -136430,12 +136430,12 @@ export default [
                                           start: {
                                             line: 112,
                                             column: 29,
-                                            offset: 12654
+                                            offset: 12642
                                           },
                                           end: {
                                             line: 112,
                                             column: 42,
-                                            offset: 12667
+                                            offset: 12655
                                           }
                                         }
                                       }
@@ -136444,12 +136444,12 @@ export default [
                                       start: {
                                         line: 112,
                                         column: 28,
-                                        offset: 12653
+                                        offset: 12641
                                       },
                                       end: {
                                         line: 112,
                                         column: 123,
-                                        offset: 12748
+                                        offset: 12736
                                       }
                                     }
                                   },
@@ -136460,12 +136460,12 @@ export default [
                                       start: {
                                         line: 112,
                                         column: 123,
-                                        offset: 12748
+                                        offset: 12736
                                       },
                                       end: {
                                         line: 112,
                                         column: 164,
-                                        offset: 12789
+                                        offset: 12777
                                       }
                                     }
                                   },
@@ -136476,12 +136476,12 @@ export default [
                                       start: {
                                         line: 112,
                                         column: 164,
-                                        offset: 12789
+                                        offset: 12777
                                       },
                                       end: {
                                         line: 112,
                                         column: 174,
-                                        offset: 12799
+                                        offset: 12787
                                       }
                                     }
                                   },
@@ -136492,12 +136492,12 @@ export default [
                                       start: {
                                         line: 112,
                                         column: 174,
-                                        offset: 12799
+                                        offset: 12787
                                       },
                                       end: {
                                         line: 112,
                                         column: 175,
-                                        offset: 12800
+                                        offset: 12788
                                       }
                                     }
                                   }
@@ -136506,19 +136506,19 @@ export default [
                                   start: {
                                     line: 112,
                                     column: 7,
-                                    offset: 12632
+                                    offset: 12620
                                   },
                                   end: {
                                     line: 112,
                                     column: 175,
-                                    offset: 12800
+                                    offset: 12788
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 112, column: 5, offset: 12630 },
-                              end: { line: 112, column: 175, offset: 12800 }
+                              start: { line: 112, column: 5, offset: 12618 },
+                              end: { line: 112, column: 175, offset: 12788 }
                             }
                           },
                           {
@@ -136536,12 +136536,12 @@ export default [
                                       start: {
                                         line: 113,
                                         column: 7,
-                                        offset: 12807
+                                        offset: 12795
                                       },
                                       end: {
                                         line: 113,
                                         column: 23,
-                                        offset: 12823
+                                        offset: 12811
                                       }
                                     }
                                   },
@@ -136552,12 +136552,12 @@ export default [
                                       start: {
                                         line: 113,
                                         column: 23,
-                                        offset: 12823
+                                        offset: 12811
                                       },
                                       end: {
                                         line: 113,
                                         column: 74,
-                                        offset: 12874
+                                        offset: 12862
                                       }
                                     }
                                   },
@@ -136573,12 +136573,12 @@ export default [
                                           start: {
                                             line: 113,
                                             column: 75,
-                                            offset: 12875
+                                            offset: 12863
                                           },
                                           end: {
                                             line: 113,
                                             column: 107,
-                                            offset: 12907
+                                            offset: 12895
                                           }
                                         }
                                       }
@@ -136587,12 +136587,12 @@ export default [
                                       start: {
                                         line: 113,
                                         column: 74,
-                                        offset: 12874
+                                        offset: 12862
                                       },
                                       end: {
                                         line: 113,
                                         column: 180,
-                                        offset: 12980
+                                        offset: 12968
                                       }
                                     }
                                   },
@@ -136603,12 +136603,12 @@ export default [
                                       start: {
                                         line: 113,
                                         column: 180,
-                                        offset: 12980
+                                        offset: 12968
                                       },
                                       end: {
                                         line: 113,
                                         column: 190,
-                                        offset: 12990
+                                        offset: 12978
                                       }
                                     }
                                   },
@@ -136622,12 +136622,12 @@ export default [
                                           start: {
                                             line: 113,
                                             column: 191,
-                                            offset: 12991
+                                            offset: 12979
                                           },
                                           end: {
                                             line: 113,
                                             column: 211,
-                                            offset: 13011
+                                            offset: 12999
                                           }
                                         }
                                       }
@@ -136636,12 +136636,12 @@ export default [
                                       start: {
                                         line: 113,
                                         column: 190,
-                                        offset: 12990
+                                        offset: 12978
                                       },
                                       end: {
                                         line: 113,
                                         column: 212,
-                                        offset: 13012
+                                        offset: 13000
                                       }
                                     }
                                   },
@@ -136652,12 +136652,12 @@ export default [
                                       start: {
                                         line: 113,
                                         column: 212,
-                                        offset: 13012
+                                        offset: 13000
                                       },
                                       end: {
                                         line: 113,
                                         column: 213,
-                                        offset: 13013
+                                        offset: 13001
                                       }
                                     }
                                   }
@@ -136666,19 +136666,19 @@ export default [
                                   start: {
                                     line: 113,
                                     column: 7,
-                                    offset: 12807
+                                    offset: 12795
                                   },
                                   end: {
                                     line: 113,
                                     column: 213,
-                                    offset: 13013
+                                    offset: 13001
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 113, column: 5, offset: 12805 },
-                              end: { line: 113, column: 213, offset: 13013 }
+                              start: { line: 113, column: 5, offset: 12793 },
+                              end: { line: 113, column: 213, offset: 13001 }
                             }
                           },
                           {
@@ -136696,12 +136696,12 @@ export default [
                                       start: {
                                         line: 114,
                                         column: 7,
-                                        offset: 13020
+                                        offset: 13008
                                       },
                                       end: {
                                         line: 114,
                                         column: 34,
-                                        offset: 13047
+                                        offset: 13035
                                       }
                                     }
                                   },
@@ -136712,12 +136712,12 @@ export default [
                                       start: {
                                         line: 114,
                                         column: 34,
-                                        offset: 13047
+                                        offset: 13035
                                       },
                                       end: {
                                         line: 114,
                                         column: 116,
-                                        offset: 13129
+                                        offset: 13117
                                       }
                                     }
                                   },
@@ -136733,12 +136733,12 @@ export default [
                                           start: {
                                             line: 114,
                                             column: 117,
-                                            offset: 13130
+                                            offset: 13118
                                           },
                                           end: {
                                             line: 114,
                                             column: 149,
-                                            offset: 13162
+                                            offset: 13150
                                           }
                                         }
                                       }
@@ -136747,12 +136747,12 @@ export default [
                                       start: {
                                         line: 114,
                                         column: 116,
-                                        offset: 13129
+                                        offset: 13117
                                       },
                                       end: {
                                         line: 114,
                                         column: 222,
-                                        offset: 13235
+                                        offset: 13223
                                       }
                                     }
                                   },
@@ -136763,12 +136763,12 @@ export default [
                                       start: {
                                         line: 114,
                                         column: 222,
-                                        offset: 13235
+                                        offset: 13223
                                       },
                                       end: {
                                         line: 114,
                                         column: 232,
-                                        offset: 13245
+                                        offset: 13233
                                       }
                                     }
                                   },
@@ -136782,12 +136782,12 @@ export default [
                                           start: {
                                             line: 114,
                                             column: 233,
-                                            offset: 13246
+                                            offset: 13234
                                           },
                                           end: {
                                             line: 114,
                                             column: 253,
-                                            offset: 13266
+                                            offset: 13254
                                           }
                                         }
                                       }
@@ -136796,12 +136796,12 @@ export default [
                                       start: {
                                         line: 114,
                                         column: 232,
-                                        offset: 13245
+                                        offset: 13233
                                       },
                                       end: {
                                         line: 114,
                                         column: 254,
-                                        offset: 13267
+                                        offset: 13255
                                       }
                                     }
                                   },
@@ -136812,12 +136812,12 @@ export default [
                                       start: {
                                         line: 114,
                                         column: 254,
-                                        offset: 13267
+                                        offset: 13255
                                       },
                                       end: {
                                         line: 114,
                                         column: 255,
-                                        offset: 13268
+                                        offset: 13256
                                       }
                                     }
                                   }
@@ -136826,19 +136826,19 @@ export default [
                                   start: {
                                     line: 114,
                                     column: 7,
-                                    offset: 13020
+                                    offset: 13008
                                   },
                                   end: {
                                     line: 114,
                                     column: 255,
-                                    offset: 13268
+                                    offset: 13256
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 114, column: 5, offset: 13018 },
-                              end: { line: 114, column: 255, offset: 13268 }
+                              start: { line: 114, column: 5, offset: 13006 },
+                              end: { line: 114, column: 255, offset: 13256 }
                             }
                           },
                           {
@@ -136856,12 +136856,12 @@ export default [
                                       start: {
                                         line: 115,
                                         column: 7,
-                                        offset: 13275
+                                        offset: 13263
                                       },
                                       end: {
                                         line: 115,
                                         column: 34,
-                                        offset: 13302
+                                        offset: 13290
                                       }
                                     }
                                   },
@@ -136872,12 +136872,12 @@ export default [
                                       start: {
                                         line: 115,
                                         column: 34,
-                                        offset: 13302
+                                        offset: 13290
                                       },
                                       end: {
                                         line: 115,
                                         column: 125,
-                                        offset: 13393
+                                        offset: 13381
                                       }
                                     }
                                   },
@@ -136893,12 +136893,12 @@ export default [
                                           start: {
                                             line: 115,
                                             column: 126,
-                                            offset: 13394
+                                            offset: 13382
                                           },
                                           end: {
                                             line: 115,
                                             column: 158,
-                                            offset: 13426
+                                            offset: 13414
                                           }
                                         }
                                       }
@@ -136907,12 +136907,12 @@ export default [
                                       start: {
                                         line: 115,
                                         column: 125,
-                                        offset: 13393
+                                        offset: 13381
                                       },
                                       end: {
                                         line: 115,
                                         column: 231,
-                                        offset: 13499
+                                        offset: 13487
                                       }
                                     }
                                   },
@@ -136923,12 +136923,12 @@ export default [
                                       start: {
                                         line: 115,
                                         column: 231,
-                                        offset: 13499
+                                        offset: 13487
                                       },
                                       end: {
                                         line: 115,
                                         column: 241,
-                                        offset: 13509
+                                        offset: 13497
                                       }
                                     }
                                   },
@@ -136942,12 +136942,12 @@ export default [
                                           start: {
                                             line: 115,
                                             column: 242,
-                                            offset: 13510
+                                            offset: 13498
                                           },
                                           end: {
                                             line: 115,
                                             column: 262,
-                                            offset: 13530
+                                            offset: 13518
                                           }
                                         }
                                       }
@@ -136956,12 +136956,12 @@ export default [
                                       start: {
                                         line: 115,
                                         column: 241,
-                                        offset: 13509
+                                        offset: 13497
                                       },
                                       end: {
                                         line: 115,
                                         column: 263,
-                                        offset: 13531
+                                        offset: 13519
                                       }
                                     }
                                   },
@@ -136972,12 +136972,12 @@ export default [
                                       start: {
                                         line: 115,
                                         column: 263,
-                                        offset: 13531
+                                        offset: 13519
                                       },
                                       end: {
                                         line: 115,
                                         column: 264,
-                                        offset: 13532
+                                        offset: 13520
                                       }
                                     }
                                   }
@@ -136986,37 +136986,37 @@ export default [
                                   start: {
                                     line: 115,
                                     column: 7,
-                                    offset: 13275
+                                    offset: 13263
                                   },
                                   end: {
                                     line: 115,
                                     column: 264,
-                                    offset: 13532
+                                    offset: 13520
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 115, column: 5, offset: 13273 },
-                              end: { line: 115, column: 264, offset: 13532 }
+                              start: { line: 115, column: 5, offset: 13261 },
+                              end: { line: 115, column: 264, offset: 13520 }
                             }
                           }
                         ],
                         position: {
                           start: { line: 82, column: 5, offset: 5797 },
-                          end: { line: 115, column: 264, offset: 13532 }
+                          end: { line: 115, column: 264, offset: 13520 }
                         }
                       }
                     ],
                     position: {
                       start: { line: 81, column: 3, offset: 5784 },
-                      end: { line: 115, column: 264, offset: 13532 }
+                      end: { line: 115, column: 264, offset: 13520 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 81, column: 3, offset: 5784 },
-                  end: { line: 115, column: 264, offset: 13532 }
+                  end: { line: 115, column: 264, offset: 13520 }
                 }
               },
               {
@@ -137025,14 +137025,14 @@ export default [
                 meta: null,
                 value: "const data = await myBucket.headObject('my-key')",
                 position: {
-                  start: { line: 117, column: 1, offset: 13534 },
-                  end: { line: 119, column: 4, offset: 13600 }
+                  start: { line: 117, column: 1, offset: 13522 },
+                  end: { line: 119, column: 4, offset: 13588 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 119, column: 4, offset: 13600 }
+              end: { line: 119, column: 4, offset: 13588 }
             }
           }
         }
@@ -140715,7 +140715,7 @@ export default [
           '    * `Contents` - data and metadata about each object returned.\n' +
           '      * `Key` - a name or path that uniquely identifies the object. For more information, see [Naming Amazon S3 objects](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html) from the _Amazon S3 User Guide_.\n' +
           '      * `LastModified` - creation date of the object.\n' +
-          '      * `ETag` - the entity tag or MD5 hash of the object.\n' +
+          '      * `ETag` - the entity tag of the object.\n' +
           '      * `ChecksumAlgorithm`- indicates the algorithm used to create the [checksum](https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html) of the object. For more information, see [Checking object integrity in Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html) from the _Amazon S3 User Guide_.\n' +
           '      * `Size` - size or data length in bytes of the object.\n' +
           '      * `StorageClass` - the [storage class](https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html) associated with the object. Defaults to `STANDARD`.\n' +
@@ -142112,7 +142112,7 @@ export default [
                                           },
                                           {
                                             type: 'text',
-                                            value: ' - the entity tag or MD5 hash of the object.',
+                                            value: ' - the entity tag of the object.',
                                             position: {
                                               start: {
                                                 line: 50,
@@ -142121,8 +142121,8 @@ export default [
                                               },
                                               end: {
                                                 line: 50,
-                                                column: 59,
-                                                offset: 2723
+                                                column: 47,
+                                                offset: 2711
                                               }
                                             }
                                           }
@@ -142135,8 +142135,8 @@ export default [
                                           },
                                           end: {
                                             line: 50,
-                                            column: 59,
-                                            offset: 2723
+                                            column: 47,
+                                            offset: 2711
                                           }
                                         }
                                       }
@@ -142149,8 +142149,8 @@ export default [
                                       },
                                       end: {
                                         line: 50,
-                                        column: 59,
-                                        offset: 2723
+                                        column: 47,
+                                        offset: 2711
                                       }
                                     }
                                   },
@@ -142169,12 +142169,12 @@ export default [
                                               start: {
                                                 line: 51,
                                                 column: 9,
-                                                offset: 2732
+                                                offset: 2720
                                               },
                                               end: {
                                                 line: 51,
                                                 column: 28,
-                                                offset: 2751
+                                                offset: 2739
                                               }
                                             }
                                           },
@@ -142185,12 +142185,12 @@ export default [
                                               start: {
                                                 line: 51,
                                                 column: 28,
-                                                offset: 2751
+                                                offset: 2739
                                               },
                                               end: {
                                                 line: 51,
                                                 column: 73,
-                                                offset: 2796
+                                                offset: 2784
                                               }
                                             }
                                           },
@@ -142206,12 +142206,12 @@ export default [
                                                   start: {
                                                     line: 51,
                                                     column: 74,
-                                                    offset: 2797
+                                                    offset: 2785
                                                   },
                                                   end: {
                                                     line: 51,
                                                     column: 82,
-                                                    offset: 2805
+                                                    offset: 2793
                                                   }
                                                 }
                                               }
@@ -142220,12 +142220,12 @@ export default [
                                               start: {
                                                 line: 51,
                                                 column: 73,
-                                                offset: 2796
+                                                offset: 2784
                                               },
                                               end: {
                                                 line: 51,
                                                 column: 150,
-                                                offset: 2873
+                                                offset: 2861
                                               }
                                             }
                                           },
@@ -142236,12 +142236,12 @@ export default [
                                               start: {
                                                 line: 51,
                                                 column: 150,
-                                                offset: 2873
+                                                offset: 2861
                                               },
                                               end: {
                                                 line: 51,
                                                 column: 192,
-                                                offset: 2915
+                                                offset: 2903
                                               }
                                             }
                                           },
@@ -142257,12 +142257,12 @@ export default [
                                                   start: {
                                                     line: 51,
                                                     column: 193,
-                                                    offset: 2916
+                                                    offset: 2904
                                                   },
                                                   end: {
                                                     line: 51,
                                                     column: 231,
-                                                    offset: 2954
+                                                    offset: 2942
                                                   }
                                                 }
                                               }
@@ -142271,12 +142271,12 @@ export default [
                                               start: {
                                                 line: 51,
                                                 column: 192,
-                                                offset: 2915
+                                                offset: 2903
                                               },
                                               end: {
                                                 line: 51,
                                                 column: 318,
-                                                offset: 3041
+                                                offset: 3029
                                               }
                                             }
                                           },
@@ -142287,12 +142287,12 @@ export default [
                                               start: {
                                                 line: 51,
                                                 column: 318,
-                                                offset: 3041
+                                                offset: 3029
                                               },
                                               end: {
                                                 line: 51,
                                                 column: 328,
-                                                offset: 3051
+                                                offset: 3039
                                               }
                                             }
                                           },
@@ -142306,12 +142306,12 @@ export default [
                                                   start: {
                                                     line: 51,
                                                     column: 329,
-                                                    offset: 3052
+                                                    offset: 3040
                                                   },
                                                   end: {
                                                     line: 51,
                                                     column: 349,
-                                                    offset: 3072
+                                                    offset: 3060
                                                   }
                                                 }
                                               }
@@ -142320,12 +142320,12 @@ export default [
                                               start: {
                                                 line: 51,
                                                 column: 328,
-                                                offset: 3051
+                                                offset: 3039
                                               },
                                               end: {
                                                 line: 51,
                                                 column: 350,
-                                                offset: 3073
+                                                offset: 3061
                                               }
                                             }
                                           },
@@ -142336,12 +142336,12 @@ export default [
                                               start: {
                                                 line: 51,
                                                 column: 350,
-                                                offset: 3073
+                                                offset: 3061
                                               },
                                               end: {
                                                 line: 51,
                                                 column: 351,
-                                                offset: 3074
+                                                offset: 3062
                                               }
                                             }
                                           }
@@ -142350,12 +142350,12 @@ export default [
                                           start: {
                                             line: 51,
                                             column: 9,
-                                            offset: 2732
+                                            offset: 2720
                                           },
                                           end: {
                                             line: 51,
                                             column: 351,
-                                            offset: 3074
+                                            offset: 3062
                                           }
                                         }
                                       }
@@ -142364,12 +142364,12 @@ export default [
                                       start: {
                                         line: 51,
                                         column: 7,
-                                        offset: 2730
+                                        offset: 2718
                                       },
                                       end: {
                                         line: 51,
                                         column: 351,
-                                        offset: 3074
+                                        offset: 3062
                                       }
                                     }
                                   },
@@ -142388,12 +142388,12 @@ export default [
                                               start: {
                                                 line: 52,
                                                 column: 9,
-                                                offset: 3083
+                                                offset: 3071
                                               },
                                               end: {
                                                 line: 52,
                                                 column: 15,
-                                                offset: 3089
+                                                offset: 3077
                                               }
                                             }
                                           },
@@ -142404,12 +142404,12 @@ export default [
                                               start: {
                                                 line: 52,
                                                 column: 15,
-                                                offset: 3089
+                                                offset: 3077
                                               },
                                               end: {
                                                 line: 52,
                                                 column: 61,
-                                                offset: 3135
+                                                offset: 3123
                                               }
                                             }
                                           }
@@ -142418,12 +142418,12 @@ export default [
                                           start: {
                                             line: 52,
                                             column: 9,
-                                            offset: 3083
+                                            offset: 3071
                                           },
                                           end: {
                                             line: 52,
                                             column: 61,
-                                            offset: 3135
+                                            offset: 3123
                                           }
                                         }
                                       }
@@ -142432,12 +142432,12 @@ export default [
                                       start: {
                                         line: 52,
                                         column: 7,
-                                        offset: 3081
+                                        offset: 3069
                                       },
                                       end: {
                                         line: 52,
                                         column: 61,
-                                        offset: 3135
+                                        offset: 3123
                                       }
                                     }
                                   },
@@ -142456,12 +142456,12 @@ export default [
                                               start: {
                                                 line: 53,
                                                 column: 9,
-                                                offset: 3144
+                                                offset: 3132
                                               },
                                               end: {
                                                 line: 53,
                                                 column: 23,
-                                                offset: 3158
+                                                offset: 3146
                                               }
                                             }
                                           },
@@ -142472,12 +142472,12 @@ export default [
                                               start: {
                                                 line: 53,
                                                 column: 23,
-                                                offset: 3158
+                                                offset: 3146
                                               },
                                               end: {
                                                 line: 53,
                                                 column: 30,
-                                                offset: 3165
+                                                offset: 3153
                                               }
                                             }
                                           },
@@ -142493,12 +142493,12 @@ export default [
                                                   start: {
                                                     line: 53,
                                                     column: 31,
-                                                    offset: 3166
+                                                    offset: 3154
                                                   },
                                                   end: {
                                                     line: 53,
                                                     column: 44,
-                                                    offset: 3179
+                                                    offset: 3167
                                                   }
                                                 }
                                               }
@@ -142507,12 +142507,12 @@ export default [
                                               start: {
                                                 line: 53,
                                                 column: 30,
-                                                offset: 3165
+                                                offset: 3153
                                               },
                                               end: {
                                                 line: 53,
                                                 column: 125,
-                                                offset: 3260
+                                                offset: 3248
                                               }
                                             }
                                           },
@@ -142523,12 +142523,12 @@ export default [
                                               start: {
                                                 line: 53,
                                                 column: 125,
-                                                offset: 3260
+                                                offset: 3248
                                               },
                                               end: {
                                                 line: 53,
                                                 column: 166,
-                                                offset: 3301
+                                                offset: 3289
                                               }
                                             }
                                           },
@@ -142539,12 +142539,12 @@ export default [
                                               start: {
                                                 line: 53,
                                                 column: 166,
-                                                offset: 3301
+                                                offset: 3289
                                               },
                                               end: {
                                                 line: 53,
                                                 column: 176,
-                                                offset: 3311
+                                                offset: 3299
                                               }
                                             }
                                           },
@@ -142555,12 +142555,12 @@ export default [
                                               start: {
                                                 line: 53,
                                                 column: 176,
-                                                offset: 3311
+                                                offset: 3299
                                               },
                                               end: {
                                                 line: 53,
                                                 column: 177,
-                                                offset: 3312
+                                                offset: 3300
                                               }
                                             }
                                           }
@@ -142569,12 +142569,12 @@ export default [
                                           start: {
                                             line: 53,
                                             column: 9,
-                                            offset: 3144
+                                            offset: 3132
                                           },
                                           end: {
                                             line: 53,
                                             column: 177,
-                                            offset: 3312
+                                            offset: 3300
                                           }
                                         }
                                       }
@@ -142583,12 +142583,12 @@ export default [
                                       start: {
                                         line: 53,
                                         column: 7,
-                                        offset: 3142
+                                        offset: 3130
                                       },
                                       end: {
                                         line: 53,
                                         column: 177,
-                                        offset: 3312
+                                        offset: 3300
                                       }
                                     }
                                   },
@@ -142607,12 +142607,12 @@ export default [
                                               start: {
                                                 line: 54,
                                                 column: 9,
-                                                offset: 3321
+                                                offset: 3309
                                               },
                                               end: {
                                                 line: 54,
                                                 column: 16,
-                                                offset: 3328
+                                                offset: 3316
                                               }
                                             }
                                           },
@@ -142623,12 +142623,12 @@ export default [
                                               start: {
                                                 line: 54,
                                                 column: 16,
-                                                offset: 3328
+                                                offset: 3316
                                               },
                                               end: {
                                                 line: 54,
                                                 column: 43,
-                                                offset: 3355
+                                                offset: 3343
                                               }
                                             }
                                           }
@@ -142637,12 +142637,12 @@ export default [
                                           start: {
                                             line: 54,
                                             column: 9,
-                                            offset: 3321
+                                            offset: 3309
                                           },
                                           end: {
                                             line: 54,
                                             column: 43,
-                                            offset: 3355
+                                            offset: 3343
                                           }
                                         }
                                       },
@@ -142667,12 +142667,12 @@ export default [
                                                       start: {
                                                         line: 55,
                                                         column: 11,
-                                                        offset: 3366
+                                                        offset: 3354
                                                       },
                                                       end: {
                                                         line: 55,
                                                         column: 24,
-                                                        offset: 3379
+                                                        offset: 3367
                                                       }
                                                     }
                                                   },
@@ -142683,12 +142683,12 @@ export default [
                                                       start: {
                                                         line: 55,
                                                         column: 24,
-                                                        offset: 3379
+                                                        offset: 3367
                                                       },
                                                       end: {
                                                         line: 55,
                                                         column: 57,
-                                                        offset: 3412
+                                                        offset: 3400
                                                       }
                                                     }
                                                   }
@@ -142697,12 +142697,12 @@ export default [
                                                   start: {
                                                     line: 55,
                                                     column: 11,
-                                                    offset: 3366
+                                                    offset: 3354
                                                   },
                                                   end: {
                                                     line: 55,
                                                     column: 57,
-                                                    offset: 3412
+                                                    offset: 3400
                                                   }
                                                 }
                                               }
@@ -142711,12 +142711,12 @@ export default [
                                               start: {
                                                 line: 55,
                                                 column: 9,
-                                                offset: 3364
+                                                offset: 3352
                                               },
                                               end: {
                                                 line: 55,
                                                 column: 57,
-                                                offset: 3412
+                                                offset: 3400
                                               }
                                             }
                                           },
@@ -142735,12 +142735,12 @@ export default [
                                                       start: {
                                                         line: 56,
                                                         column: 11,
-                                                        offset: 3423
+                                                        offset: 3411
                                                       },
                                                       end: {
                                                         line: 56,
                                                         column: 15,
-                                                        offset: 3427
+                                                        offset: 3415
                                                       }
                                                     }
                                                   },
@@ -142751,12 +142751,12 @@ export default [
                                                       start: {
                                                         line: 56,
                                                         column: 15,
-                                                        offset: 3427
+                                                        offset: 3415
                                                       },
                                                       end: {
                                                         line: 56,
                                                         column: 38,
-                                                        offset: 3450
+                                                        offset: 3438
                                                       }
                                                     }
                                                   }
@@ -142765,12 +142765,12 @@ export default [
                                                   start: {
                                                     line: 56,
                                                     column: 11,
-                                                    offset: 3423
+                                                    offset: 3411
                                                   },
                                                   end: {
                                                     line: 56,
                                                     column: 38,
-                                                    offset: 3450
+                                                    offset: 3438
                                                   }
                                                 }
                                               }
@@ -142779,12 +142779,12 @@ export default [
                                               start: {
                                                 line: 56,
                                                 column: 9,
-                                                offset: 3421
+                                                offset: 3409
                                               },
                                               end: {
                                                 line: 56,
                                                 column: 38,
-                                                offset: 3450
+                                                offset: 3438
                                               }
                                             }
                                           }
@@ -142793,12 +142793,12 @@ export default [
                                           start: {
                                             line: 55,
                                             column: 9,
-                                            offset: 3364
+                                            offset: 3352
                                           },
                                           end: {
                                             line: 56,
                                             column: 38,
-                                            offset: 3450
+                                            offset: 3438
                                           }
                                         }
                                       }
@@ -142807,12 +142807,12 @@ export default [
                                       start: {
                                         line: 54,
                                         column: 7,
-                                        offset: 3319
+                                        offset: 3307
                                       },
                                       end: {
                                         line: 56,
                                         column: 38,
-                                        offset: 3450
+                                        offset: 3438
                                       }
                                     }
                                   }
@@ -142822,14 +142822,14 @@ export default [
                                   end: {
                                     line: 56,
                                     column: 38,
-                                    offset: 3450
+                                    offset: 3438
                                   }
                                 }
                               }
                             ],
                             position: {
                               start: { line: 47, column: 5, offset: 2324 },
-                              end: { line: 56, column: 38, offset: 3450 }
+                              end: { line: 56, column: 38, offset: 3438 }
                             }
                           },
                           {
@@ -142847,12 +142847,12 @@ export default [
                                       start: {
                                         line: 57,
                                         column: 7,
-                                        offset: 3457
+                                        offset: 3445
                                       },
                                       end: {
                                         line: 57,
                                         column: 23,
-                                        offset: 3473
+                                        offset: 3461
                                       }
                                     }
                                   },
@@ -142863,12 +142863,12 @@ export default [
                                       start: {
                                         line: 57,
                                         column: 23,
-                                        offset: 3473
+                                        offset: 3461
                                       },
                                       end: {
                                         line: 57,
                                         column: 149,
-                                        offset: 3599
+                                        offset: 3587
                                       }
                                     }
                                   },
@@ -142884,12 +142884,12 @@ export default [
                                           start: {
                                             line: 57,
                                             column: 150,
-                                            offset: 3600
+                                            offset: 3588
                                           },
                                           end: {
                                             line: 57,
                                             column: 183,
-                                            offset: 3633
+                                            offset: 3621
                                           }
                                         }
                                       }
@@ -142898,12 +142898,12 @@ export default [
                                       start: {
                                         line: 57,
                                         column: 149,
-                                        offset: 3599
+                                        offset: 3587
                                       },
                                       end: {
                                         line: 57,
                                         column: 259,
-                                        offset: 3709
+                                        offset: 3697
                                       }
                                     }
                                   },
@@ -142914,12 +142914,12 @@ export default [
                                       start: {
                                         line: 57,
                                         column: 259,
-                                        offset: 3709
+                                        offset: 3697
                                       },
                                       end: {
                                         line: 57,
                                         column: 269,
-                                        offset: 3719
+                                        offset: 3707
                                       }
                                     }
                                   },
@@ -142933,12 +142933,12 @@ export default [
                                           start: {
                                             line: 57,
                                             column: 270,
-                                            offset: 3720
+                                            offset: 3708
                                           },
                                           end: {
                                             line: 57,
                                             column: 290,
-                                            offset: 3740
+                                            offset: 3728
                                           }
                                         }
                                       }
@@ -142947,12 +142947,12 @@ export default [
                                       start: {
                                         line: 57,
                                         column: 269,
-                                        offset: 3719
+                                        offset: 3707
                                       },
                                       end: {
                                         line: 57,
                                         column: 291,
-                                        offset: 3741
+                                        offset: 3729
                                       }
                                     }
                                   },
@@ -142963,22 +142963,22 @@ export default [
                                       start: {
                                         line: 57,
                                         column: 291,
-                                        offset: 3741
+                                        offset: 3729
                                       },
                                       end: {
                                         line: 57,
                                         column: 292,
-                                        offset: 3742
+                                        offset: 3730
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 57, column: 7, offset: 3457 },
+                                  start: { line: 57, column: 7, offset: 3445 },
                                   end: {
                                     line: 57,
                                     column: 292,
-                                    offset: 3742
+                                    offset: 3730
                                   }
                                 }
                               },
@@ -143003,12 +143003,12 @@ export default [
                                               start: {
                                                 line: 58,
                                                 column: 9,
-                                                offset: 3751
+                                                offset: 3739
                                               },
                                               end: {
                                                 line: 58,
                                                 column: 17,
-                                                offset: 3759
+                                                offset: 3747
                                               }
                                             }
                                           },
@@ -143019,12 +143019,12 @@ export default [
                                               start: {
                                                 line: 58,
                                                 column: 17,
-                                                offset: 3759
+                                                offset: 3747
                                               },
                                               end: {
                                                 line: 58,
                                                 column: 50,
-                                                offset: 3792
+                                                offset: 3780
                                               }
                                             }
                                           }
@@ -143033,12 +143033,12 @@ export default [
                                           start: {
                                             line: 58,
                                             column: 9,
-                                            offset: 3751
+                                            offset: 3739
                                           },
                                           end: {
                                             line: 58,
                                             column: 50,
-                                            offset: 3792
+                                            offset: 3780
                                           }
                                         }
                                       }
@@ -143047,29 +143047,29 @@ export default [
                                       start: {
                                         line: 58,
                                         column: 7,
-                                        offset: 3749
+                                        offset: 3737
                                       },
                                       end: {
                                         line: 58,
                                         column: 50,
-                                        offset: 3792
+                                        offset: 3780
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 58, column: 7, offset: 3749 },
+                                  start: { line: 58, column: 7, offset: 3737 },
                                   end: {
                                     line: 58,
                                     column: 50,
-                                    offset: 3792
+                                    offset: 3780
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 57, column: 5, offset: 3455 },
-                              end: { line: 58, column: 50, offset: 3792 }
+                              start: { line: 57, column: 5, offset: 3443 },
+                              end: { line: 58, column: 50, offset: 3780 }
                             }
                           },
                           {
@@ -143087,12 +143087,12 @@ export default [
                                       start: {
                                         line: 59,
                                         column: 7,
-                                        offset: 3799
+                                        offset: 3787
                                       },
                                       end: {
                                         line: 59,
                                         column: 17,
-                                        offset: 3809
+                                        offset: 3797
                                       }
                                     }
                                   },
@@ -143103,29 +143103,29 @@ export default [
                                       start: {
                                         line: 59,
                                         column: 17,
-                                        offset: 3809
+                                        offset: 3797
                                       },
                                       end: {
                                         line: 59,
                                         column: 58,
-                                        offset: 3850
+                                        offset: 3838
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 59, column: 7, offset: 3799 },
+                                  start: { line: 59, column: 7, offset: 3787 },
                                   end: {
                                     line: 59,
                                     column: 58,
-                                    offset: 3850
+                                    offset: 3838
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 59, column: 5, offset: 3797 },
-                              end: { line: 59, column: 58, offset: 3850 }
+                              start: { line: 59, column: 5, offset: 3785 },
+                              end: { line: 59, column: 58, offset: 3838 }
                             }
                           },
                           {
@@ -143143,12 +143143,12 @@ export default [
                                       start: {
                                         line: 60,
                                         column: 7,
-                                        offset: 3857
+                                        offset: 3845
                                       },
                                       end: {
                                         line: 60,
                                         column: 30,
-                                        offset: 3880
+                                        offset: 3868
                                       }
                                     }
                                   },
@@ -143159,12 +143159,12 @@ export default [
                                       start: {
                                         line: 60,
                                         column: 30,
-                                        offset: 3880
+                                        offset: 3868
                                       },
                                       end: {
                                         line: 60,
                                         column: 156,
-                                        offset: 4006
+                                        offset: 3994
                                       }
                                     }
                                   },
@@ -143175,12 +143175,12 @@ export default [
                                       start: {
                                         line: 60,
                                         column: 156,
-                                        offset: 4006
+                                        offset: 3994
                                       },
                                       end: {
                                         line: 60,
                                         column: 175,
-                                        offset: 4025
+                                        offset: 4013
                                       }
                                     }
                                   },
@@ -143191,47 +143191,47 @@ export default [
                                       start: {
                                         line: 60,
                                         column: 175,
-                                        offset: 4025
+                                        offset: 4013
                                       },
                                       end: {
                                         line: 60,
                                         column: 210,
-                                        offset: 4060
+                                        offset: 4048
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 60, column: 7, offset: 3857 },
+                                  start: { line: 60, column: 7, offset: 3845 },
                                   end: {
                                     line: 60,
                                     column: 210,
-                                    offset: 4060
+                                    offset: 4048
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 60, column: 5, offset: 3855 },
-                              end: { line: 60, column: 210, offset: 4060 }
+                              start: { line: 60, column: 5, offset: 3843 },
+                              end: { line: 60, column: 210, offset: 4048 }
                             }
                           }
                         ],
                         position: {
                           start: { line: 46, column: 5, offset: 2228 },
-                          end: { line: 60, column: 210, offset: 4060 }
+                          end: { line: 60, column: 210, offset: 4048 }
                         }
                       }
                     ],
                     position: {
                       start: { line: 45, column: 3, offset: 2215 },
-                      end: { line: 60, column: 210, offset: 4060 }
+                      end: { line: 60, column: 210, offset: 4048 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 45, column: 3, offset: 2215 },
-                  end: { line: 60, column: 210, offset: 4060 }
+                  end: { line: 60, column: 210, offset: 4048 }
                 }
               },
               {
@@ -143244,14 +143244,14 @@ export default [
                   "  Prefix: 'my-prefix'\n" +
                   '})',
                 position: {
-                  start: { line: 62, column: 1, offset: 4062 },
-                  end: { line: 68, column: 4, offset: 4191 }
+                  start: { line: 62, column: 1, offset: 4050 },
+                  end: { line: 68, column: 4, offset: 4179 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 68, column: 4, offset: 4191 }
+              end: { line: 68, column: 4, offset: 4179 }
             }
           }
         }
@@ -143319,7 +143319,7 @@ export default [
           '      * `IsLatest` - whether this object version is the latest version of the object. If `false`, this object version is not the latest version of the object.\n' +
           '      * `Key` - a name or path that, along with the VersionId uniquely identifies the object version.\n' +
           '      * `LastModified` - date and time when the object was last modified.\n' +
-          '      * `ETag` - the entity tag or MD5 hash of the object.\n' +
+          '      * `ETag` - the entity tag of the object.\n' +
           "      * `ChecksumType` - checksum type (`'COMPOSITE'` or `'FULL_OBJECT'`) that is used to calcuulate the object version's checksum value.\n" +
           '      * `ChecksumAlgorithm`- indicates the algorithm used to create the [checksum](https://docs.aws.amazon.com/AmazonS3/latest/API/API_Checksum.html) of the object. For more information, see [Checking object integrity in Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html) from the _Amazon S3 User Guide_.\n' +
           '      * `Size` - size or data length in bytes of the object.\n' +
@@ -144597,7 +144597,7 @@ export default [
                                           },
                                           {
                                             type: 'text',
-                                            value: ' - the entity tag or MD5 hash of the object.',
+                                            value: ' - the entity tag of the object.',
                                             position: {
                                               start: {
                                                 line: 62,
@@ -144606,8 +144606,8 @@ export default [
                                               },
                                               end: {
                                                 line: 62,
-                                                column: 59,
-                                                offset: 2755
+                                                column: 47,
+                                                offset: 2743
                                               }
                                             }
                                           }
@@ -144620,8 +144620,8 @@ export default [
                                           },
                                           end: {
                                             line: 62,
-                                            column: 59,
-                                            offset: 2755
+                                            column: 47,
+                                            offset: 2743
                                           }
                                         }
                                       }
@@ -144634,8 +144634,8 @@ export default [
                                       },
                                       end: {
                                         line: 62,
-                                        column: 59,
-                                        offset: 2755
+                                        column: 47,
+                                        offset: 2743
                                       }
                                     }
                                   },
@@ -144654,12 +144654,12 @@ export default [
                                               start: {
                                                 line: 63,
                                                 column: 9,
-                                                offset: 2764
+                                                offset: 2752
                                               },
                                               end: {
                                                 line: 63,
                                                 column: 23,
-                                                offset: 2778
+                                                offset: 2766
                                               }
                                             }
                                           },
@@ -144670,12 +144670,12 @@ export default [
                                               start: {
                                                 line: 63,
                                                 column: 23,
-                                                offset: 2778
+                                                offset: 2766
                                               },
                                               end: {
                                                 line: 63,
                                                 column: 41,
-                                                offset: 2796
+                                                offset: 2784
                                               }
                                             }
                                           },
@@ -144686,12 +144686,12 @@ export default [
                                               start: {
                                                 line: 63,
                                                 column: 41,
-                                                offset: 2796
+                                                offset: 2784
                                               },
                                               end: {
                                                 line: 63,
                                                 column: 54,
-                                                offset: 2809
+                                                offset: 2797
                                               }
                                             }
                                           },
@@ -144702,12 +144702,12 @@ export default [
                                               start: {
                                                 line: 63,
                                                 column: 54,
-                                                offset: 2809
+                                                offset: 2797
                                               },
                                               end: {
                                                 line: 63,
                                                 column: 58,
-                                                offset: 2813
+                                                offset: 2801
                                               }
                                             }
                                           },
@@ -144718,12 +144718,12 @@ export default [
                                               start: {
                                                 line: 63,
                                                 column: 58,
-                                                offset: 2813
+                                                offset: 2801
                                               },
                                               end: {
                                                 line: 63,
                                                 column: 73,
-                                                offset: 2828
+                                                offset: 2816
                                               }
                                             }
                                           },
@@ -144734,12 +144734,12 @@ export default [
                                               start: {
                                                 line: 63,
                                                 column: 73,
-                                                offset: 2828
+                                                offset: 2816
                                               },
                                               end: {
                                                 line: 63,
                                                 column: 138,
-                                                offset: 2893
+                                                offset: 2881
                                               }
                                             }
                                           }
@@ -144748,12 +144748,12 @@ export default [
                                           start: {
                                             line: 63,
                                             column: 9,
-                                            offset: 2764
+                                            offset: 2752
                                           },
                                           end: {
                                             line: 63,
                                             column: 138,
-                                            offset: 2893
+                                            offset: 2881
                                           }
                                         }
                                       }
@@ -144762,12 +144762,12 @@ export default [
                                       start: {
                                         line: 63,
                                         column: 7,
-                                        offset: 2762
+                                        offset: 2750
                                       },
                                       end: {
                                         line: 63,
                                         column: 138,
-                                        offset: 2893
+                                        offset: 2881
                                       }
                                     }
                                   },
@@ -144786,12 +144786,12 @@ export default [
                                               start: {
                                                 line: 64,
                                                 column: 9,
-                                                offset: 2902
+                                                offset: 2890
                                               },
                                               end: {
                                                 line: 64,
                                                 column: 28,
-                                                offset: 2921
+                                                offset: 2909
                                               }
                                             }
                                           },
@@ -144802,12 +144802,12 @@ export default [
                                               start: {
                                                 line: 64,
                                                 column: 28,
-                                                offset: 2921
+                                                offset: 2909
                                               },
                                               end: {
                                                 line: 64,
                                                 column: 73,
-                                                offset: 2966
+                                                offset: 2954
                                               }
                                             }
                                           },
@@ -144823,12 +144823,12 @@ export default [
                                                   start: {
                                                     line: 64,
                                                     column: 74,
-                                                    offset: 2967
+                                                    offset: 2955
                                                   },
                                                   end: {
                                                     line: 64,
                                                     column: 82,
-                                                    offset: 2975
+                                                    offset: 2963
                                                   }
                                                 }
                                               }
@@ -144837,12 +144837,12 @@ export default [
                                               start: {
                                                 line: 64,
                                                 column: 73,
-                                                offset: 2966
+                                                offset: 2954
                                               },
                                               end: {
                                                 line: 64,
                                                 column: 150,
-                                                offset: 3043
+                                                offset: 3031
                                               }
                                             }
                                           },
@@ -144853,12 +144853,12 @@ export default [
                                               start: {
                                                 line: 64,
                                                 column: 150,
-                                                offset: 3043
+                                                offset: 3031
                                               },
                                               end: {
                                                 line: 64,
                                                 column: 192,
-                                                offset: 3085
+                                                offset: 3073
                                               }
                                             }
                                           },
@@ -144874,12 +144874,12 @@ export default [
                                                   start: {
                                                     line: 64,
                                                     column: 193,
-                                                    offset: 3086
+                                                    offset: 3074
                                                   },
                                                   end: {
                                                     line: 64,
                                                     column: 231,
-                                                    offset: 3124
+                                                    offset: 3112
                                                   }
                                                 }
                                               }
@@ -144888,12 +144888,12 @@ export default [
                                               start: {
                                                 line: 64,
                                                 column: 192,
-                                                offset: 3085
+                                                offset: 3073
                                               },
                                               end: {
                                                 line: 64,
                                                 column: 318,
-                                                offset: 3211
+                                                offset: 3199
                                               }
                                             }
                                           },
@@ -144904,12 +144904,12 @@ export default [
                                               start: {
                                                 line: 64,
                                                 column: 318,
-                                                offset: 3211
+                                                offset: 3199
                                               },
                                               end: {
                                                 line: 64,
                                                 column: 328,
-                                                offset: 3221
+                                                offset: 3209
                                               }
                                             }
                                           },
@@ -144923,12 +144923,12 @@ export default [
                                                   start: {
                                                     line: 64,
                                                     column: 329,
-                                                    offset: 3222
+                                                    offset: 3210
                                                   },
                                                   end: {
                                                     line: 64,
                                                     column: 349,
-                                                    offset: 3242
+                                                    offset: 3230
                                                   }
                                                 }
                                               }
@@ -144937,12 +144937,12 @@ export default [
                                               start: {
                                                 line: 64,
                                                 column: 328,
-                                                offset: 3221
+                                                offset: 3209
                                               },
                                               end: {
                                                 line: 64,
                                                 column: 350,
-                                                offset: 3243
+                                                offset: 3231
                                               }
                                             }
                                           },
@@ -144953,12 +144953,12 @@ export default [
                                               start: {
                                                 line: 64,
                                                 column: 350,
-                                                offset: 3243
+                                                offset: 3231
                                               },
                                               end: {
                                                 line: 64,
                                                 column: 351,
-                                                offset: 3244
+                                                offset: 3232
                                               }
                                             }
                                           }
@@ -144967,12 +144967,12 @@ export default [
                                           start: {
                                             line: 64,
                                             column: 9,
-                                            offset: 2902
+                                            offset: 2890
                                           },
                                           end: {
                                             line: 64,
                                             column: 351,
-                                            offset: 3244
+                                            offset: 3232
                                           }
                                         }
                                       }
@@ -144981,12 +144981,12 @@ export default [
                                       start: {
                                         line: 64,
                                         column: 7,
-                                        offset: 2900
+                                        offset: 2888
                                       },
                                       end: {
                                         line: 64,
                                         column: 351,
-                                        offset: 3244
+                                        offset: 3232
                                       }
                                     }
                                   },
@@ -145005,12 +145005,12 @@ export default [
                                               start: {
                                                 line: 65,
                                                 column: 9,
-                                                offset: 3253
+                                                offset: 3241
                                               },
                                               end: {
                                                 line: 65,
                                                 column: 15,
-                                                offset: 3259
+                                                offset: 3247
                                               }
                                             }
                                           },
@@ -145021,12 +145021,12 @@ export default [
                                               start: {
                                                 line: 65,
                                                 column: 15,
-                                                offset: 3259
+                                                offset: 3247
                                               },
                                               end: {
                                                 line: 65,
                                                 column: 61,
-                                                offset: 3305
+                                                offset: 3293
                                               }
                                             }
                                           }
@@ -145035,12 +145035,12 @@ export default [
                                           start: {
                                             line: 65,
                                             column: 9,
-                                            offset: 3253
+                                            offset: 3241
                                           },
                                           end: {
                                             line: 65,
                                             column: 61,
-                                            offset: 3305
+                                            offset: 3293
                                           }
                                         }
                                       }
@@ -145049,12 +145049,12 @@ export default [
                                       start: {
                                         line: 65,
                                         column: 7,
-                                        offset: 3251
+                                        offset: 3239
                                       },
                                       end: {
                                         line: 65,
                                         column: 61,
-                                        offset: 3305
+                                        offset: 3293
                                       }
                                     }
                                   },
@@ -145073,12 +145073,12 @@ export default [
                                               start: {
                                                 line: 66,
                                                 column: 9,
-                                                offset: 3314
+                                                offset: 3302
                                               },
                                               end: {
                                                 line: 66,
                                                 column: 23,
-                                                offset: 3328
+                                                offset: 3316
                                               }
                                             }
                                           },
@@ -145089,12 +145089,12 @@ export default [
                                               start: {
                                                 line: 66,
                                                 column: 23,
-                                                offset: 3328
+                                                offset: 3316
                                               },
                                               end: {
                                                 line: 66,
                                                 column: 30,
-                                                offset: 3335
+                                                offset: 3323
                                               }
                                             }
                                           },
@@ -145110,12 +145110,12 @@ export default [
                                                   start: {
                                                     line: 66,
                                                     column: 31,
-                                                    offset: 3336
+                                                    offset: 3324
                                                   },
                                                   end: {
                                                     line: 66,
                                                     column: 44,
-                                                    offset: 3349
+                                                    offset: 3337
                                                   }
                                                 }
                                               }
@@ -145124,12 +145124,12 @@ export default [
                                               start: {
                                                 line: 66,
                                                 column: 30,
-                                                offset: 3335
+                                                offset: 3323
                                               },
                                               end: {
                                                 line: 66,
                                                 column: 125,
-                                                offset: 3430
+                                                offset: 3418
                                               }
                                             }
                                           },
@@ -145140,12 +145140,12 @@ export default [
                                               start: {
                                                 line: 66,
                                                 column: 125,
-                                                offset: 3430
+                                                offset: 3418
                                               },
                                               end: {
                                                 line: 66,
                                                 column: 166,
-                                                offset: 3471
+                                                offset: 3459
                                               }
                                             }
                                           },
@@ -145156,12 +145156,12 @@ export default [
                                               start: {
                                                 line: 66,
                                                 column: 166,
-                                                offset: 3471
+                                                offset: 3459
                                               },
                                               end: {
                                                 line: 66,
                                                 column: 176,
-                                                offset: 3481
+                                                offset: 3469
                                               }
                                             }
                                           },
@@ -145172,12 +145172,12 @@ export default [
                                               start: {
                                                 line: 66,
                                                 column: 176,
-                                                offset: 3481
+                                                offset: 3469
                                               },
                                               end: {
                                                 line: 66,
                                                 column: 177,
-                                                offset: 3482
+                                                offset: 3470
                                               }
                                             }
                                           }
@@ -145186,12 +145186,12 @@ export default [
                                           start: {
                                             line: 66,
                                             column: 9,
-                                            offset: 3314
+                                            offset: 3302
                                           },
                                           end: {
                                             line: 66,
                                             column: 177,
-                                            offset: 3482
+                                            offset: 3470
                                           }
                                         }
                                       }
@@ -145200,12 +145200,12 @@ export default [
                                       start: {
                                         line: 66,
                                         column: 7,
-                                        offset: 3312
+                                        offset: 3300
                                       },
                                       end: {
                                         line: 66,
                                         column: 177,
-                                        offset: 3482
+                                        offset: 3470
                                       }
                                     }
                                   },
@@ -145224,12 +145224,12 @@ export default [
                                               start: {
                                                 line: 67,
                                                 column: 9,
-                                                offset: 3491
+                                                offset: 3479
                                               },
                                               end: {
                                                 line: 67,
                                                 column: 16,
-                                                offset: 3498
+                                                offset: 3486
                                               }
                                             }
                                           },
@@ -145240,12 +145240,12 @@ export default [
                                               start: {
                                                 line: 67,
                                                 column: 16,
-                                                offset: 3498
+                                                offset: 3486
                                               },
                                               end: {
                                                 line: 67,
                                                 column: 43,
-                                                offset: 3525
+                                                offset: 3513
                                               }
                                             }
                                           }
@@ -145254,12 +145254,12 @@ export default [
                                           start: {
                                             line: 67,
                                             column: 9,
-                                            offset: 3491
+                                            offset: 3479
                                           },
                                           end: {
                                             line: 67,
                                             column: 43,
-                                            offset: 3525
+                                            offset: 3513
                                           }
                                         }
                                       },
@@ -145284,12 +145284,12 @@ export default [
                                                       start: {
                                                         line: 68,
                                                         column: 11,
-                                                        offset: 3536
+                                                        offset: 3524
                                                       },
                                                       end: {
                                                         line: 68,
                                                         column: 24,
-                                                        offset: 3549
+                                                        offset: 3537
                                                       }
                                                     }
                                                   },
@@ -145300,12 +145300,12 @@ export default [
                                                       start: {
                                                         line: 68,
                                                         column: 24,
-                                                        offset: 3549
+                                                        offset: 3537
                                                       },
                                                       end: {
                                                         line: 68,
                                                         column: 57,
-                                                        offset: 3582
+                                                        offset: 3570
                                                       }
                                                     }
                                                   }
@@ -145314,12 +145314,12 @@ export default [
                                                   start: {
                                                     line: 68,
                                                     column: 11,
-                                                    offset: 3536
+                                                    offset: 3524
                                                   },
                                                   end: {
                                                     line: 68,
                                                     column: 57,
-                                                    offset: 3582
+                                                    offset: 3570
                                                   }
                                                 }
                                               }
@@ -145328,12 +145328,12 @@ export default [
                                               start: {
                                                 line: 68,
                                                 column: 9,
-                                                offset: 3534
+                                                offset: 3522
                                               },
                                               end: {
                                                 line: 68,
                                                 column: 57,
-                                                offset: 3582
+                                                offset: 3570
                                               }
                                             }
                                           },
@@ -145352,12 +145352,12 @@ export default [
                                                       start: {
                                                         line: 69,
                                                         column: 11,
-                                                        offset: 3593
+                                                        offset: 3581
                                                       },
                                                       end: {
                                                         line: 69,
                                                         column: 15,
-                                                        offset: 3597
+                                                        offset: 3585
                                                       }
                                                     }
                                                   },
@@ -145368,12 +145368,12 @@ export default [
                                                       start: {
                                                         line: 69,
                                                         column: 15,
-                                                        offset: 3597
+                                                        offset: 3585
                                                       },
                                                       end: {
                                                         line: 69,
                                                         column: 38,
-                                                        offset: 3620
+                                                        offset: 3608
                                                       }
                                                     }
                                                   }
@@ -145382,12 +145382,12 @@ export default [
                                                   start: {
                                                     line: 69,
                                                     column: 11,
-                                                    offset: 3593
+                                                    offset: 3581
                                                   },
                                                   end: {
                                                     line: 69,
                                                     column: 38,
-                                                    offset: 3620
+                                                    offset: 3608
                                                   }
                                                 }
                                               }
@@ -145396,12 +145396,12 @@ export default [
                                               start: {
                                                 line: 69,
                                                 column: 9,
-                                                offset: 3591
+                                                offset: 3579
                                               },
                                               end: {
                                                 line: 69,
                                                 column: 38,
-                                                offset: 3620
+                                                offset: 3608
                                               }
                                             }
                                           }
@@ -145410,12 +145410,12 @@ export default [
                                           start: {
                                             line: 68,
                                             column: 9,
-                                            offset: 3534
+                                            offset: 3522
                                           },
                                           end: {
                                             line: 69,
                                             column: 38,
-                                            offset: 3620
+                                            offset: 3608
                                           }
                                         }
                                       }
@@ -145424,12 +145424,12 @@ export default [
                                       start: {
                                         line: 67,
                                         column: 7,
-                                        offset: 3489
+                                        offset: 3477
                                       },
                                       end: {
                                         line: 69,
                                         column: 38,
-                                        offset: 3620
+                                        offset: 3608
                                       }
                                     }
                                   },
@@ -145448,12 +145448,12 @@ export default [
                                               start: {
                                                 line: 70,
                                                 column: 9,
-                                                offset: 3629
+                                                offset: 3617
                                               },
                                               end: {
                                                 line: 70,
                                                 column: 20,
-                                                offset: 3640
+                                                offset: 3628
                                               }
                                             }
                                           },
@@ -145464,12 +145464,12 @@ export default [
                                               start: {
                                                 line: 70,
                                                 column: 20,
-                                                offset: 3640
+                                                offset: 3628
                                               },
                                               end: {
                                                 line: 70,
                                                 column: 56,
-                                                offset: 3676
+                                                offset: 3664
                                               }
                                             }
                                           }
@@ -145478,12 +145478,12 @@ export default [
                                           start: {
                                             line: 70,
                                             column: 9,
-                                            offset: 3629
+                                            offset: 3617
                                           },
                                           end: {
                                             line: 70,
                                             column: 56,
-                                            offset: 3676
+                                            offset: 3664
                                           }
                                         }
                                       }
@@ -145492,12 +145492,12 @@ export default [
                                       start: {
                                         line: 70,
                                         column: 7,
-                                        offset: 3627
+                                        offset: 3615
                                       },
                                       end: {
                                         line: 70,
                                         column: 56,
-                                        offset: 3676
+                                        offset: 3664
                                       }
                                     }
                                   }
@@ -145507,14 +145507,14 @@ export default [
                                   end: {
                                     line: 70,
                                     column: 56,
-                                    offset: 3676
+                                    offset: 3664
                                   }
                                 }
                               }
                             ],
                             position: {
                               start: { line: 58, column: 5, offset: 2293 },
-                              end: { line: 70, column: 56, offset: 3676 }
+                              end: { line: 70, column: 56, offset: 3664 }
                             }
                           },
                           {
@@ -145532,12 +145532,12 @@ export default [
                                       start: {
                                         line: 71,
                                         column: 7,
-                                        offset: 3683
+                                        offset: 3671
                                       },
                                       end: {
                                         line: 71,
                                         column: 22,
-                                        offset: 3698
+                                        offset: 3686
                                       }
                                     }
                                   },
@@ -145548,22 +145548,22 @@ export default [
                                       start: {
                                         line: 71,
                                         column: 22,
-                                        offset: 3698
+                                        offset: 3686
                                       },
                                       end: {
                                         line: 71,
                                         column: 77,
-                                        offset: 3753
+                                        offset: 3741
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 71, column: 7, offset: 3683 },
+                                  start: { line: 71, column: 7, offset: 3671 },
                                   end: {
                                     line: 71,
                                     column: 77,
-                                    offset: 3753
+                                    offset: 3741
                                   }
                                 }
                               },
@@ -145588,12 +145588,12 @@ export default [
                                               start: {
                                                 line: 72,
                                                 column: 9,
-                                                offset: 3762
+                                                offset: 3750
                                               },
                                               end: {
                                                 line: 72,
                                                 column: 19,
-                                                offset: 3772
+                                                offset: 3760
                                               }
                                             }
                                           },
@@ -145604,12 +145604,12 @@ export default [
                                               start: {
                                                 line: 72,
                                                 column: 19,
-                                                offset: 3772
+                                                offset: 3760
                                               },
                                               end: {
                                                 line: 72,
                                                 column: 89,
-                                                offset: 3842
+                                                offset: 3830
                                               }
                                             }
                                           },
@@ -145620,12 +145620,12 @@ export default [
                                               start: {
                                                 line: 72,
                                                 column: 89,
-                                                offset: 3842
+                                                offset: 3830
                                               },
                                               end: {
                                                 line: 72,
                                                 column: 96,
-                                                offset: 3849
+                                                offset: 3837
                                               }
                                             }
                                           },
@@ -145636,12 +145636,12 @@ export default [
                                               start: {
                                                 line: 72,
                                                 column: 96,
-                                                offset: 3849
+                                                offset: 3837
                                               },
                                               end: {
                                                 line: 72,
                                                 column: 157,
-                                                offset: 3910
+                                                offset: 3898
                                               }
                                             }
                                           }
@@ -145650,12 +145650,12 @@ export default [
                                           start: {
                                             line: 72,
                                             column: 9,
-                                            offset: 3762
+                                            offset: 3750
                                           },
                                           end: {
                                             line: 72,
                                             column: 157,
-                                            offset: 3910
+                                            offset: 3898
                                           }
                                         }
                                       }
@@ -145664,12 +145664,12 @@ export default [
                                       start: {
                                         line: 72,
                                         column: 7,
-                                        offset: 3760
+                                        offset: 3748
                                       },
                                       end: {
                                         line: 72,
                                         column: 157,
-                                        offset: 3910
+                                        offset: 3898
                                       }
                                     }
                                   },
@@ -145688,12 +145688,12 @@ export default [
                                               start: {
                                                 line: 73,
                                                 column: 9,
-                                                offset: 3919
+                                                offset: 3907
                                               },
                                               end: {
                                                 line: 73,
                                                 column: 14,
-                                                offset: 3924
+                                                offset: 3912
                                               }
                                             }
                                           },
@@ -145704,12 +145704,12 @@ export default [
                                               start: {
                                                 line: 73,
                                                 column: 14,
-                                                offset: 3924
+                                                offset: 3912
                                               },
                                               end: {
                                                 line: 73,
                                                 column: 102,
-                                                offset: 4012
+                                                offset: 4000
                                               }
                                             }
                                           }
@@ -145718,12 +145718,12 @@ export default [
                                           start: {
                                             line: 73,
                                             column: 9,
-                                            offset: 3919
+                                            offset: 3907
                                           },
                                           end: {
                                             line: 73,
                                             column: 102,
-                                            offset: 4012
+                                            offset: 4000
                                           }
                                         }
                                       }
@@ -145732,12 +145732,12 @@ export default [
                                       start: {
                                         line: 73,
                                         column: 7,
-                                        offset: 3917
+                                        offset: 3905
                                       },
                                       end: {
                                         line: 73,
                                         column: 102,
-                                        offset: 4012
+                                        offset: 4000
                                       }
                                     }
                                   },
@@ -145756,12 +145756,12 @@ export default [
                                               start: {
                                                 line: 74,
                                                 column: 9,
-                                                offset: 4021
+                                                offset: 4009
                                               },
                                               end: {
                                                 line: 74,
                                                 column: 23,
-                                                offset: 4035
+                                                offset: 4023
                                               }
                                             }
                                           },
@@ -145772,12 +145772,12 @@ export default [
                                               start: {
                                                 line: 74,
                                                 column: 23,
-                                                offset: 4035
+                                                offset: 4023
                                               },
                                               end: {
                                                 line: 74,
                                                 column: 74,
-                                                offset: 4086
+                                                offset: 4074
                                               }
                                             }
                                           }
@@ -145786,12 +145786,12 @@ export default [
                                           start: {
                                             line: 74,
                                             column: 9,
-                                            offset: 4021
+                                            offset: 4009
                                           },
                                           end: {
                                             line: 74,
                                             column: 74,
-                                            offset: 4086
+                                            offset: 4074
                                           }
                                         }
                                       }
@@ -145800,12 +145800,12 @@ export default [
                                       start: {
                                         line: 74,
                                         column: 7,
-                                        offset: 4019
+                                        offset: 4007
                                       },
                                       end: {
                                         line: 74,
                                         column: 74,
-                                        offset: 4086
+                                        offset: 4074
                                       }
                                     }
                                   },
@@ -145824,12 +145824,12 @@ export default [
                                               start: {
                                                 line: 75,
                                                 column: 9,
-                                                offset: 4095
+                                                offset: 4083
                                               },
                                               end: {
                                                 line: 75,
                                                 column: 16,
-                                                offset: 4102
+                                                offset: 4090
                                               }
                                             }
                                           },
@@ -145840,12 +145840,12 @@ export default [
                                               start: {
                                                 line: 75,
                                                 column: 16,
-                                                offset: 4102
+                                                offset: 4090
                                               },
                                               end: {
                                                 line: 75,
                                                 column: 43,
-                                                offset: 4129
+                                                offset: 4117
                                               }
                                             }
                                           }
@@ -145854,12 +145854,12 @@ export default [
                                           start: {
                                             line: 75,
                                             column: 9,
-                                            offset: 4095
+                                            offset: 4083
                                           },
                                           end: {
                                             line: 75,
                                             column: 43,
-                                            offset: 4129
+                                            offset: 4117
                                           }
                                         }
                                       },
@@ -145884,12 +145884,12 @@ export default [
                                                       start: {
                                                         line: 76,
                                                         column: 11,
-                                                        offset: 4140
+                                                        offset: 4128
                                                       },
                                                       end: {
                                                         line: 76,
                                                         column: 24,
-                                                        offset: 4153
+                                                        offset: 4141
                                                       }
                                                     }
                                                   },
@@ -145900,12 +145900,12 @@ export default [
                                                       start: {
                                                         line: 76,
                                                         column: 24,
-                                                        offset: 4153
+                                                        offset: 4141
                                                       },
                                                       end: {
                                                         line: 76,
                                                         column: 57,
-                                                        offset: 4186
+                                                        offset: 4174
                                                       }
                                                     }
                                                   }
@@ -145914,12 +145914,12 @@ export default [
                                                   start: {
                                                     line: 76,
                                                     column: 11,
-                                                    offset: 4140
+                                                    offset: 4128
                                                   },
                                                   end: {
                                                     line: 76,
                                                     column: 57,
-                                                    offset: 4186
+                                                    offset: 4174
                                                   }
                                                 }
                                               }
@@ -145928,12 +145928,12 @@ export default [
                                               start: {
                                                 line: 76,
                                                 column: 9,
-                                                offset: 4138
+                                                offset: 4126
                                               },
                                               end: {
                                                 line: 76,
                                                 column: 57,
-                                                offset: 4186
+                                                offset: 4174
                                               }
                                             }
                                           },
@@ -145952,12 +145952,12 @@ export default [
                                                       start: {
                                                         line: 77,
                                                         column: 11,
-                                                        offset: 4197
+                                                        offset: 4185
                                                       },
                                                       end: {
                                                         line: 77,
                                                         column: 15,
-                                                        offset: 4201
+                                                        offset: 4189
                                                       }
                                                     }
                                                   },
@@ -145968,12 +145968,12 @@ export default [
                                                       start: {
                                                         line: 77,
                                                         column: 15,
-                                                        offset: 4201
+                                                        offset: 4189
                                                       },
                                                       end: {
                                                         line: 77,
                                                         column: 38,
-                                                        offset: 4224
+                                                        offset: 4212
                                                       }
                                                     }
                                                   }
@@ -145982,12 +145982,12 @@ export default [
                                                   start: {
                                                     line: 77,
                                                     column: 11,
-                                                    offset: 4197
+                                                    offset: 4185
                                                   },
                                                   end: {
                                                     line: 77,
                                                     column: 38,
-                                                    offset: 4224
+                                                    offset: 4212
                                                   }
                                                 }
                                               }
@@ -145996,12 +145996,12 @@ export default [
                                               start: {
                                                 line: 77,
                                                 column: 9,
-                                                offset: 4195
+                                                offset: 4183
                                               },
                                               end: {
                                                 line: 77,
                                                 column: 38,
-                                                offset: 4224
+                                                offset: 4212
                                               }
                                             }
                                           }
@@ -146010,12 +146010,12 @@ export default [
                                           start: {
                                             line: 76,
                                             column: 9,
-                                            offset: 4138
+                                            offset: 4126
                                           },
                                           end: {
                                             line: 77,
                                             column: 38,
-                                            offset: 4224
+                                            offset: 4212
                                           }
                                         }
                                       }
@@ -146024,12 +146024,12 @@ export default [
                                       start: {
                                         line: 75,
                                         column: 7,
-                                        offset: 4093
+                                        offset: 4081
                                       },
                                       end: {
                                         line: 77,
                                         column: 38,
-                                        offset: 4224
+                                        offset: 4212
                                       }
                                     }
                                   },
@@ -146048,12 +146048,12 @@ export default [
                                               start: {
                                                 line: 78,
                                                 column: 9,
-                                                offset: 4233
+                                                offset: 4221
                                               },
                                               end: {
                                                 line: 78,
                                                 column: 20,
-                                                offset: 4244
+                                                offset: 4232
                                               }
                                             }
                                           },
@@ -146064,12 +146064,12 @@ export default [
                                               start: {
                                                 line: 78,
                                                 column: 20,
-                                                offset: 4244
+                                                offset: 4232
                                               },
                                               end: {
                                                 line: 78,
                                                 column: 56,
-                                                offset: 4280
+                                                offset: 4268
                                               }
                                             }
                                           }
@@ -146078,12 +146078,12 @@ export default [
                                           start: {
                                             line: 78,
                                             column: 9,
-                                            offset: 4233
+                                            offset: 4221
                                           },
                                           end: {
                                             line: 78,
                                             column: 56,
-                                            offset: 4280
+                                            offset: 4268
                                           }
                                         }
                                       }
@@ -146092,29 +146092,29 @@ export default [
                                       start: {
                                         line: 78,
                                         column: 7,
-                                        offset: 4231
+                                        offset: 4219
                                       },
                                       end: {
                                         line: 78,
                                         column: 56,
-                                        offset: 4280
+                                        offset: 4268
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 72, column: 7, offset: 3760 },
+                                  start: { line: 72, column: 7, offset: 3748 },
                                   end: {
                                     line: 78,
                                     column: 56,
-                                    offset: 4280
+                                    offset: 4268
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 71, column: 5, offset: 3681 },
-                              end: { line: 78, column: 56, offset: 4280 }
+                              start: { line: 71, column: 5, offset: 3669 },
+                              end: { line: 78, column: 56, offset: 4268 }
                             }
                           },
                           {
@@ -146132,12 +146132,12 @@ export default [
                                       start: {
                                         line: 79,
                                         column: 7,
-                                        offset: 4287
+                                        offset: 4275
                                       },
                                       end: {
                                         line: 79,
                                         column: 23,
-                                        offset: 4303
+                                        offset: 4291
                                       }
                                     }
                                   },
@@ -146148,12 +146148,12 @@ export default [
                                       start: {
                                         line: 79,
                                         column: 23,
-                                        offset: 4303
+                                        offset: 4291
                                       },
                                       end: {
                                         line: 79,
                                         column: 149,
-                                        offset: 4429
+                                        offset: 4417
                                       }
                                     }
                                   },
@@ -146169,12 +146169,12 @@ export default [
                                           start: {
                                             line: 79,
                                             column: 150,
-                                            offset: 4430
+                                            offset: 4418
                                           },
                                           end: {
                                             line: 79,
                                             column: 183,
-                                            offset: 4463
+                                            offset: 4451
                                           }
                                         }
                                       }
@@ -146183,12 +146183,12 @@ export default [
                                       start: {
                                         line: 79,
                                         column: 149,
-                                        offset: 4429
+                                        offset: 4417
                                       },
                                       end: {
                                         line: 79,
                                         column: 259,
-                                        offset: 4539
+                                        offset: 4527
                                       }
                                     }
                                   },
@@ -146199,12 +146199,12 @@ export default [
                                       start: {
                                         line: 79,
                                         column: 259,
-                                        offset: 4539
+                                        offset: 4527
                                       },
                                       end: {
                                         line: 79,
                                         column: 269,
-                                        offset: 4549
+                                        offset: 4537
                                       }
                                     }
                                   },
@@ -146218,12 +146218,12 @@ export default [
                                           start: {
                                             line: 79,
                                             column: 270,
-                                            offset: 4550
+                                            offset: 4538
                                           },
                                           end: {
                                             line: 79,
                                             column: 290,
-                                            offset: 4570
+                                            offset: 4558
                                           }
                                         }
                                       }
@@ -146232,12 +146232,12 @@ export default [
                                       start: {
                                         line: 79,
                                         column: 269,
-                                        offset: 4549
+                                        offset: 4537
                                       },
                                       end: {
                                         line: 79,
                                         column: 291,
-                                        offset: 4571
+                                        offset: 4559
                                       }
                                     }
                                   },
@@ -146248,22 +146248,22 @@ export default [
                                       start: {
                                         line: 79,
                                         column: 291,
-                                        offset: 4571
+                                        offset: 4559
                                       },
                                       end: {
                                         line: 79,
                                         column: 292,
-                                        offset: 4572
+                                        offset: 4560
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 79, column: 7, offset: 4287 },
+                                  start: { line: 79, column: 7, offset: 4275 },
                                   end: {
                                     line: 79,
                                     column: 292,
-                                    offset: 4572
+                                    offset: 4560
                                   }
                                 }
                               },
@@ -146288,12 +146288,12 @@ export default [
                                               start: {
                                                 line: 80,
                                                 column: 9,
-                                                offset: 4581
+                                                offset: 4569
                                               },
                                               end: {
                                                 line: 80,
                                                 column: 17,
-                                                offset: 4589
+                                                offset: 4577
                                               }
                                             }
                                           },
@@ -146304,12 +146304,12 @@ export default [
                                               start: {
                                                 line: 80,
                                                 column: 17,
-                                                offset: 4589
+                                                offset: 4577
                                               },
                                               end: {
                                                 line: 80,
                                                 column: 50,
-                                                offset: 4622
+                                                offset: 4610
                                               }
                                             }
                                           }
@@ -146318,12 +146318,12 @@ export default [
                                           start: {
                                             line: 80,
                                             column: 9,
-                                            offset: 4581
+                                            offset: 4569
                                           },
                                           end: {
                                             line: 80,
                                             column: 50,
-                                            offset: 4622
+                                            offset: 4610
                                           }
                                         }
                                       }
@@ -146332,29 +146332,29 @@ export default [
                                       start: {
                                         line: 80,
                                         column: 7,
-                                        offset: 4579
+                                        offset: 4567
                                       },
                                       end: {
                                         line: 80,
                                         column: 50,
-                                        offset: 4622
+                                        offset: 4610
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 80, column: 7, offset: 4579 },
+                                  start: { line: 80, column: 7, offset: 4567 },
                                   end: {
                                     line: 80,
                                     column: 50,
-                                    offset: 4622
+                                    offset: 4610
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 79, column: 5, offset: 4285 },
-                              end: { line: 80, column: 50, offset: 4622 }
+                              start: { line: 79, column: 5, offset: 4273 },
+                              end: { line: 80, column: 50, offset: 4610 }
                             }
                           },
                           {
@@ -146372,12 +146372,12 @@ export default [
                                       start: {
                                         line: 81,
                                         column: 7,
-                                        offset: 4629
+                                        offset: 4617
                                       },
                                       end: {
                                         line: 81,
                                         column: 22,
-                                        offset: 4644
+                                        offset: 4632
                                       }
                                     }
                                   },
@@ -146388,29 +146388,29 @@ export default [
                                       start: {
                                         line: 81,
                                         column: 22,
-                                        offset: 4644
+                                        offset: 4632
                                       },
                                       end: {
                                         line: 81,
                                         column: 106,
-                                        offset: 4728
+                                        offset: 4716
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 81, column: 7, offset: 4629 },
+                                  start: { line: 81, column: 7, offset: 4617 },
                                   end: {
                                     line: 81,
                                     column: 106,
-                                    offset: 4728
+                                    offset: 4716
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 81, column: 5, offset: 4627 },
-                              end: { line: 81, column: 106, offset: 4728 }
+                              start: { line: 81, column: 5, offset: 4615 },
+                              end: { line: 81, column: 106, offset: 4716 }
                             }
                           },
                           {
@@ -146428,12 +146428,12 @@ export default [
                                       start: {
                                         line: 82,
                                         column: 7,
-                                        offset: 4735
+                                        offset: 4723
                                       },
                                       end: {
                                         line: 82,
                                         column: 28,
-                                        offset: 4756
+                                        offset: 4744
                                       }
                                     }
                                   },
@@ -146444,47 +146444,47 @@ export default [
                                       start: {
                                         line: 82,
                                         column: 28,
-                                        offset: 4756
+                                        offset: 4744
                                       },
                                       end: {
                                         line: 82,
                                         column: 119,
-                                        offset: 4847
+                                        offset: 4835
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 82, column: 7, offset: 4735 },
+                                  start: { line: 82, column: 7, offset: 4723 },
                                   end: {
                                     line: 82,
                                     column: 119,
-                                    offset: 4847
+                                    offset: 4835
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 82, column: 5, offset: 4733 },
-                              end: { line: 82, column: 119, offset: 4847 }
+                              start: { line: 82, column: 5, offset: 4721 },
+                              end: { line: 82, column: 119, offset: 4835 }
                             }
                           }
                         ],
                         position: {
                           start: { line: 57, column: 5, offset: 2186 },
-                          end: { line: 82, column: 119, offset: 4847 }
+                          end: { line: 82, column: 119, offset: 4835 }
                         }
                       }
                     ],
                     position: {
                       start: { line: 56, column: 3, offset: 2173 },
-                      end: { line: 82, column: 119, offset: 4847 }
+                      end: { line: 82, column: 119, offset: 4835 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 56, column: 3, offset: 2173 },
-                  end: { line: 82, column: 119, offset: 4847 }
+                  end: { line: 82, column: 119, offset: 4835 }
                 }
               },
               {
@@ -146495,14 +146495,14 @@ export default [
                   '\n' +
                   "const data2 = await myBucket.listObjectVersions({ Prefix: 'my-prefix })",
                 position: {
-                  start: { line: 84, column: 1, offset: 4849 },
-                  end: { line: 88, column: 4, offset: 4989 }
+                  start: { line: 84, column: 1, offset: 4837 },
+                  end: { line: 88, column: 4, offset: 4977 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 88, column: 4, offset: 4989 }
+              end: { line: 88, column: 4, offset: 4977 }
             }
           }
         }
