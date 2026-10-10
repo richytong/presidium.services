@@ -1,6 +1,6 @@
 ---
 title: Database System Guide
-author: Richard Yufei Tong, King of Software at CLOUT
+author: Richard Tong, King of Software at CLOUŢ
 date: 2026-05-01
 updated: 2026-05-06
 path: /blog/database-system-guide
