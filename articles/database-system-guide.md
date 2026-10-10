@@ -2,7 +2,7 @@
 title: Database System Guide
 author: Richard Tong, King of Software at CLOUŢ
 date: 2026-05-01
-updated: 2026-05-06
+updated: 2026-10-09
 path: /blog/database-system-guide
 description: Database System Guide with Presidium DiskSortedHashTable and DiskHashTable classes.
 image: /assets/disk-lights-w2000.jpg

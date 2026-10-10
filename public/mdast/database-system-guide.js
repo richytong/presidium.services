@@ -6,7 +6,7 @@ export default {
       value: 'title: Database System Guide\n' +
         'author: Richard Tong, King of Software at CLOUŢ\n' +
         'date: 2026-05-01\n' +
-        'updated: 2026-05-06\n' +
+        'updated: 2026-10-09\n' +
         'path: /blog/database-system-guide\n' +
         'description: Database System Guide with Presidium DiskSortedHashTable and DiskHashTable classes.\n' +
         'image: /assets/disk-lights-w2000.jpg',
