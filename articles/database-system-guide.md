@@ -1,6 +1,6 @@
 ---
 title: Database System Guide
-author: Richard Tong, King of Software at CLOUŢ
+author: Richard Tong, King of Technology at CLOUŢ
 date: 2026-05-01
 updated: 2026-10-09
 path: /blog/database-system-guide
