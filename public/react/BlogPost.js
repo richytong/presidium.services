@@ -38,6 +38,7 @@ const BlogPost = ReactElement(props => {
     href,
     description,
     image,
+    imageMaxHeight,
   } = metadata
 
   const [activeBlogPostHref, setActiveBlogPostHref] = useActiveBlogPostHref()
@@ -68,13 +69,14 @@ const BlogPost = ReactElement(props => {
     }
   }
 
+  const classes = [
+    'blog-post',
+    isActive ? 'active' : 'inactive',
+  ]
+
   return Div({
     key: href,
-    class: (
-      activeBlogPostHref == null ? 'blog-post inactive'
-      : isActive ? 'blog-post active'
-      : 'blog-post inactive'
-    ),
+    class: classes.join(' '),
   }, [
     A({
       href: isActive ? backHref : href,
@@ -100,6 +102,7 @@ const BlogPost = ReactElement(props => {
           Img({
             src: image,
             alt: image,
+            ...imageMaxHeight ? { style: { maxHeight: imageMaxHeight } } : {},
           }),
         ]),
       ],
@@ -109,6 +112,7 @@ const BlogPost = ReactElement(props => {
           Img({
             src: image,
             alt: image,
+            ...imageMaxHeight ? { style: { maxHeight: imageMaxHeight } } : {},
           }),
         ]),
       ],

@@ -1,6 +1,7 @@
 import useGlobalState from './useGlobalState.js'
 import MdastBlogMetadata from './MdastBlogMetadata.js'
 import databaseSystemGuideMdast from '../mdast/database-system-guide.js'
+import blueGreenDeploymentsWithPresidiumAndDockerMdast from '../mdast/blue-green-deployments-with-presidium-and-docker.js'
 
 function createBlogPostList(mdastList) {
   return mdastList.map(mdast => ({
@@ -16,8 +17,11 @@ function createBlogPostList(mdastList) {
 }
 
 const initial = createBlogPostList([
+  blueGreenDeploymentsWithPresidiumAndDockerMdast,
   databaseSystemGuideMdast,
 ])
+
+console.log(initial)
 
 function useBlogPostList() {
   return useGlobalState('blogPostList', initial)

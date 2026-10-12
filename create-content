@@ -140,6 +140,12 @@ export default [
     `${__dirname}/public/mdast/database-system-guide.js`,
   )
 
+  console.log(`Creating mdast/blue-green-deployments-with-presidium-and-docker.js`)
+  await createMdastFile(
+    `${__dirname}/articles/blue-green-deployments-with-presidium-and-docker.md`,
+    `${__dirname}/public/mdast/blue-green-deployments-with-presidium-and-docker.js`,
+  )
+
 }
 
 if (require.main == module) {
