@@ -69,9 +69,16 @@ module.exports = {
 
     {
       title: 'Database System Guide | Presidium',
-      description: 'Presidium Blog',
+      description: 'Database System Guide with Presidium DiskSortedHashTable and DiskHashTable',
       url: '/blog/database-system-guide',
       filepath: '/blog/database-system-guide',
+    },
+
+    {
+      title: 'Blue-Green Deployments with Presidium and Docker | Presidium',
+      description: 'Reliably deploy with zero downtime with blue-green deployments with Presidium and Docker',
+      url: '/blog/blue-green-deployments-with-presidium-and-docker',
+      filepath: '/blog/blue-green-deployments-with-presidium-and-docker',
     },
   ],
 }

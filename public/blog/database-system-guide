@@ -4,16 +4,16 @@
 <title>Database System Guide | Presidium</title>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width">
-<meta name="description" content="Presidium Blog" />
+<meta name="description" content="Database System Guide with Presidium DiskSortedHashTable and DiskHashTable" />
 <meta name="image" content="/assets/presidium-logo-3.jpg">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Database System Guide | Presidium" />
-<meta name="twitter:description" content="Presidium Blog" />
+<meta name="twitter:description" content="Database System Guide with Presidium DiskSortedHashTable and DiskHashTable" />
 <meta property="twitter:image" content="/assets/presidium-logo-3.jpg">
 <meta property="og:title" content="Database System Guide | Presidium" />
 <meta property="og:type" content="object" />
 <meta property="og:url" content="https://presidium.services/blog/database-system-guide" />
-<meta property="og:description" content="Presidium Blog" />
+<meta property="og:description" content="Database System Guide with Presidium DiskSortedHashTable and DiskHashTable" />
 <meta property="og:image" content="/assets/presidium-logo-3.jpg">
 
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">

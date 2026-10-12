@@ -86,4 +86,7 @@
 <url>
   <loc>https://presidium.services/blog/database-system-guide</loc>
 </url>
+<url>
+  <loc>https://presidium.services/blog/blue-green-deployments-with-presidium-and-docker</loc>
+</url>
 </urlset>
