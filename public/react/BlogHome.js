@@ -33,7 +33,7 @@ const BlogHome = ReactElement(props => {
           const desiredScrollY = scrollToElement.offsetTop
           window.scrollTo(0, desiredScrollY)
         }
-      }, 10)
+      }, 500)
     }
   }, [])
 

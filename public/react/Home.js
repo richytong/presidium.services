@@ -17,7 +17,7 @@ const Home = ReactElement(props => {
           const desiredScrollY = scrollToElement.offsetTop + offset
           window.scrollTo(0, desiredScrollY)
         }
-      }, 300)
+      }, 500)
     }
   }, [mediaQuery])
 
