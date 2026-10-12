@@ -9,7 +9,6 @@ const MdastBlogMetadata = function (mdast) {
     map(keyValue => keyValue.split(': ')),
     Object.fromEntries,
   ])
-  console.log(data)
   return {
     title: data.title,
     datePublished: DatePublished(data.date),

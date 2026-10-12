@@ -1,5 +1,6 @@
 import Layout from './Layout.js'
 import useBlogPostList from './useBlogPostList.js'
+import useActiveBlogPostHref from './useActiveBlogPostHref.js'
 import MdastBlogPost from './MdastBlogPost.js'
 
 /**
@@ -12,17 +13,8 @@ import MdastBlogPost from './MdastBlogPost.js'
  */
 const BlogHome = ReactElement(props => {
 
-  // const [presidiumVersion] = usePresidiumVersion()
-  // const [path, setPath] = usePath()
   const [blogPostList, setBlogPostList] = useBlogPostList()
-
-  /*
-  useEffect(() => {
-    if (path == '/blog') {
-      setPath(blogPostList[0].href, { replace: true })
-    }
-  }, [path, blogPostList])
-  */
+  const [activeBlogPostHref, setActiveBlogPostHref] = useActiveBlogPostHref()
 
   useEffect(function scrollToAnchor() {
     const anchor = new URL(location.href).hash
@@ -37,12 +29,30 @@ const BlogHome = ReactElement(props => {
     }
   }, [])
 
+  const activeBlogPostIndex =
+    blogPostList.findIndex(({ metadata }) => metadata.href == activeBlogPostHref)
+
+  if (activeBlogPostIndex > -1) {
+    const activeBlogPost = MdastBlogPost(blogPostList[activeBlogPostIndex])
+    const otherBlogPosts =
+      blogPostList
+      .filter((_, i) => i != activeBlogPostIndex)
+      .map(blogPostProps => MdastBlogPost(blogPostProps))
+
+    return Layout(props, [
+      Div({ id: 'blog' }, [
+        activeBlogPost,
+        otherBlogPosts,
+      ]),
+    ])
+  }
+
   return Layout(props, [
     Div({ id: 'blog' }, [
       blogPostList.map(blogPost => MdastBlogPost({
-        key: blogPost.href,
+        key: blogPost.metadata.href,
         ...blogPost,
-      })),
+      }))
     ]),
   ])
 })

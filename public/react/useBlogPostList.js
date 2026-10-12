@@ -21,8 +21,6 @@ const initial = createBlogPostList([
   databaseSystemGuideMdast,
 ])
 
-console.log(initial)
-
 function useBlogPostList() {
   return useGlobalState('blogPostList', initial)
 }
