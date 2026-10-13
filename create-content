@@ -118,7 +118,7 @@ const createMdast = async function () {
 
   console.log(`Creating cronist/presidium-db-v${presidiumDBMajorVersion}.js`)
   await createCronistFile(
-    `${__dirname}/../presidium-db`,
+    `${__dirname}/../presidium-db-docs`,
     `${__dirname}/public/cronist/presidium-db-v${presidiumDBMajorVersion}.js`,
     {
       requiredKeys: ['name', 'docs'],

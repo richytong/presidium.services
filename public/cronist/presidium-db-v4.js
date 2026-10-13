@@ -2217,7 +2217,7 @@ export default [
       {
         name: 'get',
         docs: '```coffeescript [specscript]\n' +
-          'get(key string) -> value Promise<string>\n' +
+          'get(key string) -> value Promise<string|undefined>\n' +
           '```\n' +
           '\n' +
           'Gets a value by key from the disk hash table.\n' +
@@ -2226,7 +2226,7 @@ export default [
           '  * `key` - `string` - the key corresponding to the value.\n' +
           '\n' +
           'Return:\n' +
-          '  * `value` - `string` - the value corresponding to the key.\n' +
+          '  * `value` - `Promise<string|undefined>` - a promise of the value corresponding to the key. If the key is not found, the promise resolves with `undefined`.\n' +
           '\n' +
           '```javascript\n' +
           "const value = await ht.get('my-key')\n" +
@@ -2265,10 +2265,10 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: 'get(key string) -> value Promise<string>',
+                value: 'get(key string) -> value Promise<string|undefined>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 3, column: 4, offset: 73 }
+                  end: { line: 3, column: 4, offset: 83 }
                 }
               },
               {
@@ -2278,14 +2278,14 @@ export default [
                     type: 'text',
                     value: 'Gets a value by key from the disk hash table.',
                     position: {
-                      start: { line: 5, column: 1, offset: 75 },
-                      end: { line: 5, column: 46, offset: 120 }
+                      start: { line: 5, column: 1, offset: 85 },
+                      end: { line: 5, column: 46, offset: 130 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 5, column: 1, offset: 75 },
-                  end: { line: 5, column: 46, offset: 120 }
+                  start: { line: 5, column: 1, offset: 85 },
+                  end: { line: 5, column: 46, offset: 130 }
                 }
               },
               {
@@ -2295,14 +2295,14 @@ export default [
                     type: 'text',
                     value: 'Arguments:',
                     position: {
-                      start: { line: 7, column: 1, offset: 122 },
-                      end: { line: 7, column: 11, offset: 132 }
+                      start: { line: 7, column: 1, offset: 132 },
+                      end: { line: 7, column: 11, offset: 142 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 7, column: 1, offset: 122 },
-                  end: { line: 7, column: 11, offset: 132 }
+                  start: { line: 7, column: 1, offset: 132 },
+                  end: { line: 7, column: 11, offset: 142 }
                 }
               },
               {
@@ -2323,50 +2323,50 @@ export default [
                             type: 'inlineCode',
                             value: 'key',
                             position: {
-                              start: { line: 8, column: 5, offset: 137 },
-                              end: { line: 8, column: 10, offset: 142 }
+                              start: { line: 8, column: 5, offset: 147 },
+                              end: { line: 8, column: 10, offset: 152 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - ',
                             position: {
-                              start: { line: 8, column: 10, offset: 142 },
-                              end: { line: 8, column: 13, offset: 145 }
+                              start: { line: 8, column: 10, offset: 152 },
+                              end: { line: 8, column: 13, offset: 155 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'string',
                             position: {
-                              start: { line: 8, column: 13, offset: 145 },
-                              end: { line: 8, column: 21, offset: 153 }
+                              start: { line: 8, column: 13, offset: 155 },
+                              end: { line: 8, column: 21, offset: 163 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - the key corresponding to the value.',
                             position: {
-                              start: { line: 8, column: 21, offset: 153 },
-                              end: { line: 8, column: 59, offset: 191 }
+                              start: { line: 8, column: 21, offset: 163 },
+                              end: { line: 8, column: 59, offset: 201 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 8, column: 5, offset: 137 },
-                          end: { line: 8, column: 59, offset: 191 }
+                          start: { line: 8, column: 5, offset: 147 },
+                          end: { line: 8, column: 59, offset: 201 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 8, column: 3, offset: 135 },
-                      end: { line: 8, column: 59, offset: 191 }
+                      start: { line: 8, column: 3, offset: 145 },
+                      end: { line: 8, column: 59, offset: 201 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 8, column: 3, offset: 135 },
-                  end: { line: 8, column: 59, offset: 191 }
+                  start: { line: 8, column: 3, offset: 145 },
+                  end: { line: 8, column: 59, offset: 201 }
                 }
               },
               {
@@ -2376,14 +2376,14 @@ export default [
                     type: 'text',
                     value: 'Return:',
                     position: {
-                      start: { line: 10, column: 1, offset: 193 },
-                      end: { line: 10, column: 8, offset: 200 }
+                      start: { line: 10, column: 1, offset: 203 },
+                      end: { line: 10, column: 8, offset: 210 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 10, column: 1, offset: 193 },
-                  end: { line: 10, column: 8, offset: 200 }
+                  start: { line: 10, column: 1, offset: 203 },
+                  end: { line: 10, column: 8, offset: 210 }
                 }
               },
               {
@@ -2404,50 +2404,66 @@ export default [
                             type: 'inlineCode',
                             value: 'value',
                             position: {
-                              start: { line: 11, column: 5, offset: 205 },
-                              end: { line: 11, column: 12, offset: 212 }
+                              start: { line: 11, column: 5, offset: 215 },
+                              end: { line: 11, column: 12, offset: 222 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - ',
                             position: {
-                              start: { line: 11, column: 12, offset: 212 },
-                              end: { line: 11, column: 15, offset: 215 }
+                              start: { line: 11, column: 12, offset: 222 },
+                              end: { line: 11, column: 15, offset: 225 }
                             }
                           },
                           {
                             type: 'inlineCode',
-                            value: 'string',
+                            value: 'Promise<string|undefined>',
                             position: {
-                              start: { line: 11, column: 15, offset: 215 },
-                              end: { line: 11, column: 23, offset: 223 }
+                              start: { line: 11, column: 15, offset: 225 },
+                              end: { line: 11, column: 42, offset: 252 }
                             }
                           },
                           {
                             type: 'text',
-                            value: ' - the value corresponding to the key.',
+                            value: ' - a promise of the value corresponding to the key. If the key is not found, the promise resolves with ',
                             position: {
-                              start: { line: 11, column: 23, offset: 223 },
-                              end: { line: 11, column: 61, offset: 261 }
+                              start: { line: 11, column: 42, offset: 252 },
+                              end: { line: 11, column: 145, offset: 355 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'undefined',
+                            position: {
+                              start: { line: 11, column: 145, offset: 355 },
+                              end: { line: 11, column: 156, offset: 366 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: '.',
+                            position: {
+                              start: { line: 11, column: 156, offset: 366 },
+                              end: { line: 11, column: 157, offset: 367 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 11, column: 5, offset: 205 },
-                          end: { line: 11, column: 61, offset: 261 }
+                          start: { line: 11, column: 5, offset: 215 },
+                          end: { line: 11, column: 157, offset: 367 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 11, column: 3, offset: 203 },
-                      end: { line: 11, column: 61, offset: 261 }
+                      start: { line: 11, column: 3, offset: 213 },
+                      end: { line: 11, column: 157, offset: 367 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 11, column: 3, offset: 203 },
-                  end: { line: 11, column: 61, offset: 261 }
+                  start: { line: 11, column: 3, offset: 213 },
+                  end: { line: 11, column: 157, offset: 367 }
                 }
               },
               {
@@ -2456,14 +2472,14 @@ export default [
                 meta: null,
                 value: "const value = await ht.get('my-key')",
                 position: {
-                  start: { line: 13, column: 1, offset: 263 },
-                  end: { line: 15, column: 4, offset: 317 }
+                  start: { line: 13, column: 1, offset: 369 },
+                  end: { line: 15, column: 4, offset: 423 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 15, column: 4, offset: 317 }
+              end: { line: 15, column: 4, offset: 423 }
             }
           }
         }
@@ -2480,7 +2496,7 @@ export default [
           '  * `key` - `string` - the key corresponding to the binary value.\n' +
           '\n' +
           'Return:\n' +
-          '  * `binaryValue` - `Buffer` - the binary value corresponding to the key.\n' +
+          '  * `binaryValue` - `Promise<Buffer>` - a promise of the binary value corresponding to the key. If the key is not found, the promise resolves with `undefined`.\n' +
           '\n' +
           '```javascript\n' +
           "const buffer = await ht.getBinary('my-buffer')\n" +
@@ -2672,36 +2688,52 @@ export default [
                           },
                           {
                             type: 'inlineCode',
-                            value: 'Buffer',
+                            value: 'Promise<Buffer>',
                             position: {
                               start: { line: 11, column: 21, offset: 247 },
-                              end: { line: 11, column: 29, offset: 255 }
+                              end: { line: 11, column: 38, offset: 264 }
                             }
                           },
                           {
                             type: 'text',
-                            value: ' - the binary value corresponding to the key.',
+                            value: ' - a promise of the binary value corresponding to the key. If the key is not found, the promise resolves with ',
                             position: {
-                              start: { line: 11, column: 29, offset: 255 },
-                              end: { line: 11, column: 74, offset: 300 }
+                              start: { line: 11, column: 38, offset: 264 },
+                              end: { line: 11, column: 148, offset: 374 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'undefined',
+                            position: {
+                              start: { line: 11, column: 148, offset: 374 },
+                              end: { line: 11, column: 159, offset: 385 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: '.',
+                            position: {
+                              start: { line: 11, column: 159, offset: 385 },
+                              end: { line: 11, column: 160, offset: 386 }
                             }
                           }
                         ],
                         position: {
                           start: { line: 11, column: 5, offset: 231 },
-                          end: { line: 11, column: 74, offset: 300 }
+                          end: { line: 11, column: 160, offset: 386 }
                         }
                       }
                     ],
                     position: {
                       start: { line: 11, column: 3, offset: 229 },
-                      end: { line: 11, column: 74, offset: 300 }
+                      end: { line: 11, column: 160, offset: 386 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 11, column: 3, offset: 229 },
-                  end: { line: 11, column: 74, offset: 300 }
+                  end: { line: 11, column: 160, offset: 386 }
                 }
               },
               {
@@ -2710,14 +2742,14 @@ export default [
                 meta: null,
                 value: "const buffer = await ht.getBinary('my-buffer')",
                 position: {
-                  start: { line: 13, column: 1, offset: 302 },
-                  end: { line: 15, column: 4, offset: 366 }
+                  start: { line: 13, column: 1, offset: 388 },
+                  end: { line: 15, column: 4, offset: 452 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 15, column: 4, offset: 366 }
+              end: { line: 15, column: 4, offset: 452 }
             }
           }
         }
@@ -2734,7 +2766,7 @@ export default [
           '  * `key` - `string` - the key to delete.\n' +
           '\n' +
           'Return:\n' +
-          '  * `didDelete` - `boolean` - a promise of whether the key and corresponding value was deleted.\n' +
+          '  * `didDelete` - `Promise<boolean>` - a promise of whether the key and corresponding value was deleted.\n' +
           '\n' +
           '```javascript\n' +
           "const didDelete = await ht.delete('my-key')\n" +
@@ -2926,36 +2958,36 @@ export default [
                           },
                           {
                             type: 'inlineCode',
-                            value: 'boolean',
+                            value: 'Promise<boolean>',
                             position: {
                               start: { line: 11, column: 19, offset: 213 },
-                              end: { line: 11, column: 28, offset: 222 }
+                              end: { line: 11, column: 37, offset: 231 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - a promise of whether the key and corresponding value was deleted.',
                             position: {
-                              start: { line: 11, column: 28, offset: 222 },
-                              end: { line: 11, column: 96, offset: 290 }
+                              start: { line: 11, column: 37, offset: 231 },
+                              end: { line: 11, column: 105, offset: 299 }
                             }
                           }
                         ],
                         position: {
                           start: { line: 11, column: 5, offset: 199 },
-                          end: { line: 11, column: 96, offset: 290 }
+                          end: { line: 11, column: 105, offset: 299 }
                         }
                       }
                     ],
                     position: {
                       start: { line: 11, column: 3, offset: 197 },
-                      end: { line: 11, column: 96, offset: 290 }
+                      end: { line: 11, column: 105, offset: 299 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 11, column: 3, offset: 197 },
-                  end: { line: 11, column: 96, offset: 290 }
+                  end: { line: 11, column: 105, offset: 299 }
                 }
               },
               {
@@ -2964,14 +2996,14 @@ export default [
                 meta: null,
                 value: "const didDelete = await ht.delete('my-key')",
                 position: {
-                  start: { line: 13, column: 1, offset: 292 },
-                  end: { line: 15, column: 4, offset: 353 }
+                  start: { line: 13, column: 1, offset: 301 },
+                  end: { line: 15, column: 4, offset: 362 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 15, column: 4, offset: 353 }
+              end: { line: 15, column: 4, offset: 362 }
             }
           }
         }
@@ -3210,7 +3242,7 @@ export default [
           "      * `'binary'` - iterator yields `Buffer` values.\n" +
           '\n' +
           'Return:\n' +
-          '  * `values` - `AsyncGenerator<string|Buffer>` - an async iterator of the values of all items in the disk hash table sorted by reverse insertion order.\n' +
+          '  * `values` - `AsyncGenerator<string|Buffer>` - an async generator of the values of all items in the disk hash table sorted by reverse insertion order.\n' +
           '\n' +
           '```javascript\n' +
           "await ht.set('key1', 'value1')\n" +
@@ -3770,28 +3802,28 @@ export default [
                           },
                           {
                             type: 'text',
-                            value: ' - an async iterator of the values of all items in the disk hash table sorted by reverse insertion order.',
+                            value: ' - an async generator of the values of all items in the disk hash table sorted by reverse insertion order.',
                             position: {
                               start: { line: 19, column: 47, offset: 666 },
-                              end: { line: 19, column: 152, offset: 771 }
+                              end: { line: 19, column: 153, offset: 772 }
                             }
                           }
                         ],
                         position: {
                           start: { line: 19, column: 5, offset: 624 },
-                          end: { line: 19, column: 152, offset: 771 }
+                          end: { line: 19, column: 153, offset: 772 }
                         }
                       }
                     ],
                     position: {
                       start: { line: 19, column: 3, offset: 622 },
-                      end: { line: 19, column: 152, offset: 771 }
+                      end: { line: 19, column: 153, offset: 772 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 19, column: 3, offset: 622 },
-                  end: { line: 19, column: 152, offset: 771 }
+                  end: { line: 19, column: 153, offset: 772 }
                 }
               },
               {
@@ -3808,14 +3840,14 @@ export default [
                   '                     // value1\n' +
                   '}',
                 position: {
-                  start: { line: 21, column: 1, offset: 773 },
-                  end: { line: 31, column: 4, offset: 1022 }
+                  start: { line: 21, column: 1, offset: 774 },
+                  end: { line: 31, column: 4, offset: 1023 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 31, column: 4, offset: 1022 }
+              end: { line: 31, column: 4, offset: 1023 }
             }
           }
         }
@@ -3840,7 +3872,7 @@ export default [
           "      * `'binary'` - iterator yields entries with `Buffer` values.\n" +
           '\n' +
           'Return:\n' +
-          '  * `entries` - `AsyncGenerator<[key string, value string|Buffer]>` - an async iterator of the entries of all items in the disk hash table sorted by reverse insertion order.\n' +
+          '  * `entries` - `AsyncGenerator<[key string, value string|Buffer]>` - an async generator of the entries of all items in the disk hash table sorted by reverse insertion order.\n' +
           '\n' +
           '```javascript\n' +
           "await ht.set('key1', 'value1')\n" +
@@ -4400,28 +4432,28 @@ export default [
                           },
                           {
                             type: 'text',
-                            value: ' - an async iterator of the entries of all items in the disk hash table sorted by reverse insertion order.',
+                            value: ' - an async generator of the entries of all items in the disk hash table sorted by reverse insertion order.',
                             position: {
                               start: { line: 19, column: 68, offset: 790 },
-                              end: { line: 19, column: 174, offset: 896 }
+                              end: { line: 19, column: 175, offset: 897 }
                             }
                           }
                         ],
                         position: {
                           start: { line: 19, column: 5, offset: 727 },
-                          end: { line: 19, column: 174, offset: 896 }
+                          end: { line: 19, column: 175, offset: 897 }
                         }
                       }
                     ],
                     position: {
                       start: { line: 19, column: 3, offset: 725 },
-                      end: { line: 19, column: 174, offset: 896 }
+                      end: { line: 19, column: 175, offset: 897 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 19, column: 3, offset: 725 },
-                  end: { line: 19, column: 174, offset: 896 }
+                  end: { line: 19, column: 175, offset: 897 }
                 }
               },
               {
@@ -4438,20 +4470,20 @@ export default [
                   '                          // key1 value1\n' +
                   '}',
                 position: {
-                  start: { line: 21, column: 1, offset: 898 },
-                  end: { line: 31, column: 4, offset: 1191 }
+                  start: { line: 21, column: 1, offset: 899 },
+                  end: { line: 31, column: 4, offset: 1192 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 31, column: 4, offset: 1191 }
+              end: { line: 31, column: 4, offset: 1192 }
             }
           }
         }
       }
     ],
-    fileName: '/home/richard/code/presidium.services/../presidium-db/DiskHashTable.js'
+    fileName: '/home/richard/code/presidium.services/../presidium-db-docs/DiskHashTable.js'
   },
   {
     name: 'DiskSortedHashTable',
@@ -7268,7 +7300,7 @@ export default [
       {
         name: 'get',
         docs: '```coffeescript [specscript]\n' +
-          'get(key string) -> value Promise<string>\n' +
+          'get(key string) -> value Promise<string|undefined>\n' +
           '```\n' +
           '\n' +
           'Gets a value by key from the disk sorted hash table.\n' +
@@ -7277,7 +7309,7 @@ export default [
           '  * `key` - `string` - the key corresponding to the value.\n' +
           '\n' +
           'Return:\n' +
-          '  * `value` - `string` - the value corresponding to the key.\n' +
+          '  * `value` - `Promise<string|undefined>` - a promise of the string value corresponding to the key. If the key is not found, the promise resolves with `undefined`.\n' +
           '\n' +
           '```javascript\n' +
           "const value = await sortedHt.get('my-key')\n" +
@@ -7316,10 +7348,10 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: 'get(key string) -> value Promise<string>',
+                value: 'get(key string) -> value Promise<string|undefined>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 3, column: 4, offset: 73 }
+                  end: { line: 3, column: 4, offset: 83 }
                 }
               },
               {
@@ -7329,14 +7361,14 @@ export default [
                     type: 'text',
                     value: 'Gets a value by key from the disk sorted hash table.',
                     position: {
-                      start: { line: 5, column: 1, offset: 75 },
-                      end: { line: 5, column: 53, offset: 127 }
+                      start: { line: 5, column: 1, offset: 85 },
+                      end: { line: 5, column: 53, offset: 137 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 5, column: 1, offset: 75 },
-                  end: { line: 5, column: 53, offset: 127 }
+                  start: { line: 5, column: 1, offset: 85 },
+                  end: { line: 5, column: 53, offset: 137 }
                 }
               },
               {
@@ -7346,14 +7378,14 @@ export default [
                     type: 'text',
                     value: 'Arguments:',
                     position: {
-                      start: { line: 7, column: 1, offset: 129 },
-                      end: { line: 7, column: 11, offset: 139 }
+                      start: { line: 7, column: 1, offset: 139 },
+                      end: { line: 7, column: 11, offset: 149 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 7, column: 1, offset: 129 },
-                  end: { line: 7, column: 11, offset: 139 }
+                  start: { line: 7, column: 1, offset: 139 },
+                  end: { line: 7, column: 11, offset: 149 }
                 }
               },
               {
@@ -7374,50 +7406,50 @@ export default [
                             type: 'inlineCode',
                             value: 'key',
                             position: {
-                              start: { line: 8, column: 5, offset: 144 },
-                              end: { line: 8, column: 10, offset: 149 }
+                              start: { line: 8, column: 5, offset: 154 },
+                              end: { line: 8, column: 10, offset: 159 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - ',
                             position: {
-                              start: { line: 8, column: 10, offset: 149 },
-                              end: { line: 8, column: 13, offset: 152 }
+                              start: { line: 8, column: 10, offset: 159 },
+                              end: { line: 8, column: 13, offset: 162 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'string',
                             position: {
-                              start: { line: 8, column: 13, offset: 152 },
-                              end: { line: 8, column: 21, offset: 160 }
+                              start: { line: 8, column: 13, offset: 162 },
+                              end: { line: 8, column: 21, offset: 170 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - the key corresponding to the value.',
                             position: {
-                              start: { line: 8, column: 21, offset: 160 },
-                              end: { line: 8, column: 59, offset: 198 }
+                              start: { line: 8, column: 21, offset: 170 },
+                              end: { line: 8, column: 59, offset: 208 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 8, column: 5, offset: 144 },
-                          end: { line: 8, column: 59, offset: 198 }
+                          start: { line: 8, column: 5, offset: 154 },
+                          end: { line: 8, column: 59, offset: 208 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 8, column: 3, offset: 142 },
-                      end: { line: 8, column: 59, offset: 198 }
+                      start: { line: 8, column: 3, offset: 152 },
+                      end: { line: 8, column: 59, offset: 208 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 8, column: 3, offset: 142 },
-                  end: { line: 8, column: 59, offset: 198 }
+                  start: { line: 8, column: 3, offset: 152 },
+                  end: { line: 8, column: 59, offset: 208 }
                 }
               },
               {
@@ -7427,14 +7459,14 @@ export default [
                     type: 'text',
                     value: 'Return:',
                     position: {
-                      start: { line: 10, column: 1, offset: 200 },
-                      end: { line: 10, column: 8, offset: 207 }
+                      start: { line: 10, column: 1, offset: 210 },
+                      end: { line: 10, column: 8, offset: 217 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 10, column: 1, offset: 200 },
-                  end: { line: 10, column: 8, offset: 207 }
+                  start: { line: 10, column: 1, offset: 210 },
+                  end: { line: 10, column: 8, offset: 217 }
                 }
               },
               {
@@ -7455,50 +7487,66 @@ export default [
                             type: 'inlineCode',
                             value: 'value',
                             position: {
-                              start: { line: 11, column: 5, offset: 212 },
-                              end: { line: 11, column: 12, offset: 219 }
+                              start: { line: 11, column: 5, offset: 222 },
+                              end: { line: 11, column: 12, offset: 229 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - ',
                             position: {
-                              start: { line: 11, column: 12, offset: 219 },
-                              end: { line: 11, column: 15, offset: 222 }
+                              start: { line: 11, column: 12, offset: 229 },
+                              end: { line: 11, column: 15, offset: 232 }
                             }
                           },
                           {
                             type: 'inlineCode',
-                            value: 'string',
+                            value: 'Promise<string|undefined>',
                             position: {
-                              start: { line: 11, column: 15, offset: 222 },
-                              end: { line: 11, column: 23, offset: 230 }
+                              start: { line: 11, column: 15, offset: 232 },
+                              end: { line: 11, column: 42, offset: 259 }
                             }
                           },
                           {
                             type: 'text',
-                            value: ' - the value corresponding to the key.',
+                            value: ' - a promise of the string value corresponding to the key. If the key is not found, the promise resolves with ',
                             position: {
-                              start: { line: 11, column: 23, offset: 230 },
-                              end: { line: 11, column: 61, offset: 268 }
+                              start: { line: 11, column: 42, offset: 259 },
+                              end: { line: 11, column: 152, offset: 369 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'undefined',
+                            position: {
+                              start: { line: 11, column: 152, offset: 369 },
+                              end: { line: 11, column: 163, offset: 380 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: '.',
+                            position: {
+                              start: { line: 11, column: 163, offset: 380 },
+                              end: { line: 11, column: 164, offset: 381 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 11, column: 5, offset: 212 },
-                          end: { line: 11, column: 61, offset: 268 }
+                          start: { line: 11, column: 5, offset: 222 },
+                          end: { line: 11, column: 164, offset: 381 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 11, column: 3, offset: 210 },
-                      end: { line: 11, column: 61, offset: 268 }
+                      start: { line: 11, column: 3, offset: 220 },
+                      end: { line: 11, column: 164, offset: 381 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 11, column: 3, offset: 210 },
-                  end: { line: 11, column: 61, offset: 268 }
+                  start: { line: 11, column: 3, offset: 220 },
+                  end: { line: 11, column: 164, offset: 381 }
                 }
               },
               {
@@ -7507,14 +7555,14 @@ export default [
                 meta: null,
                 value: "const value = await sortedHt.get('my-key')",
                 position: {
-                  start: { line: 13, column: 1, offset: 270 },
-                  end: { line: 15, column: 4, offset: 330 }
+                  start: { line: 13, column: 1, offset: 383 },
+                  end: { line: 15, column: 4, offset: 443 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 15, column: 4, offset: 330 }
+              end: { line: 15, column: 4, offset: 443 }
             }
           }
         }
@@ -7522,7 +7570,7 @@ export default [
       {
         name: 'getBinary',
         docs: '```coffeescript [specscript]\n' +
-          'getBinary(key string) -> binaryValue Promise<Buffer>\n' +
+          'getBinary(key string) -> binaryValue Promise<Buffer|undefined>\n' +
           '```\n' +
           '\n' +
           'Gets a binary value by key from the disk sorted hash table.\n' +
@@ -7531,7 +7579,7 @@ export default [
           '  * `key` - `string` - the key corresponding to the binary value.\n' +
           '\n' +
           'Return:\n' +
-          '  * `binaryValue` - `Buffer` - the binary value corresponding to the key.\n' +
+          '  * `binaryValue` - `Promise<Buffer|undefined>` - a promise of the binary value corresponding to the key. If the key is not found, the promise resolves with `undefined`.\n' +
           '\n' +
           '```javascript\n' +
           "const buffer = await ht.getBinary('my-buffer')\n" +
@@ -7570,10 +7618,10 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: 'getBinary(key string) -> binaryValue Promise<Buffer>',
+                value: 'getBinary(key string) -> binaryValue Promise<Buffer|undefined>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 3, column: 4, offset: 85 }
+                  end: { line: 3, column: 4, offset: 95 }
                 }
               },
               {
@@ -7583,14 +7631,14 @@ export default [
                     type: 'text',
                     value: 'Gets a binary value by key from the disk sorted hash table.',
                     position: {
-                      start: { line: 5, column: 1, offset: 87 },
-                      end: { line: 5, column: 60, offset: 146 }
+                      start: { line: 5, column: 1, offset: 97 },
+                      end: { line: 5, column: 60, offset: 156 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 5, column: 1, offset: 87 },
-                  end: { line: 5, column: 60, offset: 146 }
+                  start: { line: 5, column: 1, offset: 97 },
+                  end: { line: 5, column: 60, offset: 156 }
                 }
               },
               {
@@ -7600,14 +7648,14 @@ export default [
                     type: 'text',
                     value: 'Arguments:',
                     position: {
-                      start: { line: 7, column: 1, offset: 148 },
-                      end: { line: 7, column: 11, offset: 158 }
+                      start: { line: 7, column: 1, offset: 158 },
+                      end: { line: 7, column: 11, offset: 168 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 7, column: 1, offset: 148 },
-                  end: { line: 7, column: 11, offset: 158 }
+                  start: { line: 7, column: 1, offset: 158 },
+                  end: { line: 7, column: 11, offset: 168 }
                 }
               },
               {
@@ -7628,50 +7676,50 @@ export default [
                             type: 'inlineCode',
                             value: 'key',
                             position: {
-                              start: { line: 8, column: 5, offset: 163 },
-                              end: { line: 8, column: 10, offset: 168 }
+                              start: { line: 8, column: 5, offset: 173 },
+                              end: { line: 8, column: 10, offset: 178 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - ',
                             position: {
-                              start: { line: 8, column: 10, offset: 168 },
-                              end: { line: 8, column: 13, offset: 171 }
+                              start: { line: 8, column: 10, offset: 178 },
+                              end: { line: 8, column: 13, offset: 181 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'string',
                             position: {
-                              start: { line: 8, column: 13, offset: 171 },
-                              end: { line: 8, column: 21, offset: 179 }
+                              start: { line: 8, column: 13, offset: 181 },
+                              end: { line: 8, column: 21, offset: 189 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - the key corresponding to the binary value.',
                             position: {
-                              start: { line: 8, column: 21, offset: 179 },
-                              end: { line: 8, column: 66, offset: 224 }
+                              start: { line: 8, column: 21, offset: 189 },
+                              end: { line: 8, column: 66, offset: 234 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 8, column: 5, offset: 163 },
-                          end: { line: 8, column: 66, offset: 224 }
+                          start: { line: 8, column: 5, offset: 173 },
+                          end: { line: 8, column: 66, offset: 234 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 8, column: 3, offset: 161 },
-                      end: { line: 8, column: 66, offset: 224 }
+                      start: { line: 8, column: 3, offset: 171 },
+                      end: { line: 8, column: 66, offset: 234 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 8, column: 3, offset: 161 },
-                  end: { line: 8, column: 66, offset: 224 }
+                  start: { line: 8, column: 3, offset: 171 },
+                  end: { line: 8, column: 66, offset: 234 }
                 }
               },
               {
@@ -7681,14 +7729,14 @@ export default [
                     type: 'text',
                     value: 'Return:',
                     position: {
-                      start: { line: 10, column: 1, offset: 226 },
-                      end: { line: 10, column: 8, offset: 233 }
+                      start: { line: 10, column: 1, offset: 236 },
+                      end: { line: 10, column: 8, offset: 243 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 10, column: 1, offset: 226 },
-                  end: { line: 10, column: 8, offset: 233 }
+                  start: { line: 10, column: 1, offset: 236 },
+                  end: { line: 10, column: 8, offset: 243 }
                 }
               },
               {
@@ -7709,50 +7757,66 @@ export default [
                             type: 'inlineCode',
                             value: 'binaryValue',
                             position: {
-                              start: { line: 11, column: 5, offset: 238 },
-                              end: { line: 11, column: 18, offset: 251 }
+                              start: { line: 11, column: 5, offset: 248 },
+                              end: { line: 11, column: 18, offset: 261 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - ',
                             position: {
-                              start: { line: 11, column: 18, offset: 251 },
-                              end: { line: 11, column: 21, offset: 254 }
+                              start: { line: 11, column: 18, offset: 261 },
+                              end: { line: 11, column: 21, offset: 264 }
                             }
                           },
                           {
                             type: 'inlineCode',
-                            value: 'Buffer',
+                            value: 'Promise<Buffer|undefined>',
                             position: {
-                              start: { line: 11, column: 21, offset: 254 },
-                              end: { line: 11, column: 29, offset: 262 }
+                              start: { line: 11, column: 21, offset: 264 },
+                              end: { line: 11, column: 48, offset: 291 }
                             }
                           },
                           {
                             type: 'text',
-                            value: ' - the binary value corresponding to the key.',
+                            value: ' - a promise of the binary value corresponding to the key. If the key is not found, the promise resolves with ',
                             position: {
-                              start: { line: 11, column: 29, offset: 262 },
-                              end: { line: 11, column: 74, offset: 307 }
+                              start: { line: 11, column: 48, offset: 291 },
+                              end: { line: 11, column: 158, offset: 401 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'undefined',
+                            position: {
+                              start: { line: 11, column: 158, offset: 401 },
+                              end: { line: 11, column: 169, offset: 412 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: '.',
+                            position: {
+                              start: { line: 11, column: 169, offset: 412 },
+                              end: { line: 11, column: 170, offset: 413 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 11, column: 5, offset: 238 },
-                          end: { line: 11, column: 74, offset: 307 }
+                          start: { line: 11, column: 5, offset: 248 },
+                          end: { line: 11, column: 170, offset: 413 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 11, column: 3, offset: 236 },
-                      end: { line: 11, column: 74, offset: 307 }
+                      start: { line: 11, column: 3, offset: 246 },
+                      end: { line: 11, column: 170, offset: 413 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 11, column: 3, offset: 236 },
-                  end: { line: 11, column: 74, offset: 307 }
+                  start: { line: 11, column: 3, offset: 246 },
+                  end: { line: 11, column: 170, offset: 413 }
                 }
               },
               {
@@ -7761,14 +7825,14 @@ export default [
                 meta: null,
                 value: "const buffer = await ht.getBinary('my-buffer')",
                 position: {
-                  start: { line: 13, column: 1, offset: 309 },
-                  end: { line: 15, column: 4, offset: 373 }
+                  start: { line: 13, column: 1, offset: 415 },
+                  end: { line: 15, column: 4, offset: 479 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 15, column: 4, offset: 373 }
+              end: { line: 15, column: 4, offset: 479 }
             }
           }
         }
@@ -7803,7 +7867,7 @@ export default [
           "      * `'binary'` - iterator yields `Buffer` values.\n" +
           '\n' +
           'Return:\n' +
-          '  * `values` - `AsyncGenerator<string|Buffer>` - an async iterator of the values of all items in the disk sorted hash table sorted by sort-value in ascending order.\n' +
+          '  * `values` - `AsyncGenerator<string|Buffer>` - an async generator of the values of all items in the disk sorted hash table sorted by sort-value in ascending order.\n' +
           '\n' +
           '```javascript\n' +
           "await ht.set('key1', 'value1', 1)\n" +
@@ -8682,28 +8746,28 @@ export default [
                           },
                           {
                             type: 'text',
-                            value: ' - an async iterator of the values of all items in the disk sorted hash table sorted by sort-value in ascending order.',
+                            value: ' - an async generator of the values of all items in the disk sorted hash table sorted by sort-value in ascending order.',
                             position: {
                               start: { line: 29, column: 47, offset: 1916 },
-                              end: { line: 29, column: 165, offset: 2034 }
+                              end: { line: 29, column: 166, offset: 2035 }
                             }
                           }
                         ],
                         position: {
                           start: { line: 29, column: 5, offset: 1874 },
-                          end: { line: 29, column: 165, offset: 2034 }
+                          end: { line: 29, column: 166, offset: 2035 }
                         }
                       }
                     ],
                     position: {
                       start: { line: 29, column: 3, offset: 1872 },
-                      end: { line: 29, column: 165, offset: 2034 }
+                      end: { line: 29, column: 166, offset: 2035 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 29, column: 3, offset: 1872 },
-                  end: { line: 29, column: 165, offset: 2034 }
+                  end: { line: 29, column: 166, offset: 2035 }
                 }
               },
               {
@@ -8734,14 +8798,14 @@ export default [
                   '  console.log(value) // value2\n' +
                   '}',
                 position: {
-                  start: { line: 31, column: 1, offset: 2036 },
-                  end: { line: 55, column: 4, offset: 2737 }
+                  start: { line: 31, column: 1, offset: 2037 },
+                  end: { line: 55, column: 4, offset: 2738 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 55, column: 4, offset: 2737 }
+              end: { line: 55, column: 4, offset: 2738 }
             }
           }
         }
@@ -8776,7 +8840,7 @@ export default [
           '      * `binary` - iterator yields `Buffer` values.\n' +
           '\n' +
           'Return:\n' +
-          '  * `values` - `AsyncGenerator<string|Buffer>` - an async iterator of the values of all items in the disk sorted hash table sorted by sort-value in descending order.\n' +
+          '  * `values` - `AsyncGenerator<string|Buffer>` - an async generator of the values of all items in the disk sorted hash table sorted by sort-value in descending order.\n' +
           '\n' +
           '```javascript\n' +
           "await ht.set('key1', 'value1', 1)\n" +
@@ -9655,28 +9719,28 @@ export default [
                           },
                           {
                             type: 'text',
-                            value: ' - an async iterator of the values of all items in the disk sorted hash table sorted by sort-value in descending order.',
+                            value: ' - an async generator of the values of all items in the disk sorted hash table sorted by sort-value in descending order.',
                             position: {
                               start: { line: 29, column: 47, offset: 1766 },
-                              end: { line: 29, column: 166, offset: 1885 }
+                              end: { line: 29, column: 167, offset: 1886 }
                             }
                           }
                         ],
                         position: {
                           start: { line: 29, column: 5, offset: 1724 },
-                          end: { line: 29, column: 166, offset: 1885 }
+                          end: { line: 29, column: 167, offset: 1886 }
                         }
                       }
                     ],
                     position: {
                       start: { line: 29, column: 3, offset: 1722 },
-                      end: { line: 29, column: 166, offset: 1885 }
+                      end: { line: 29, column: 167, offset: 1886 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 29, column: 3, offset: 1722 },
-                  end: { line: 29, column: 166, offset: 1885 }
+                  end: { line: 29, column: 167, offset: 1886 }
                 }
               },
               {
@@ -9707,14 +9771,14 @@ export default [
                   '  console.log(value) // value2\n' +
                   '}',
                 position: {
-                  start: { line: 31, column: 1, offset: 1887 },
-                  end: { line: 55, column: 4, offset: 2588 }
+                  start: { line: 31, column: 1, offset: 1888 },
+                  end: { line: 55, column: 4, offset: 2589 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 55, column: 4, offset: 2588 }
+              end: { line: 55, column: 4, offset: 2589 }
             }
           }
         }
@@ -9749,7 +9813,7 @@ export default [
           "      * `'binary'` - iterator yields entries with `Buffer` values.\n" +
           '\n' +
           'Return:\n' +
-          '  * `entries` - `AsyncGenerator<[key string, value string|Buffer, sortValue string|number]>` - an async iterator of the entries of all items in the disk sorted hash table sorted by sort-value in ascending order.\n' +
+          '  * `entries` - `AsyncGenerator<[key string, value string|Buffer, sortValue string|number]>` - an async generator of the entries of all items in the disk sorted hash table sorted by sort-value in ascending order.\n' +
           '\n' +
           '```javascript\n' +
           "await ht.set('key1', 'value1', 1)\n" +
@@ -10628,28 +10692,28 @@ export default [
                           },
                           {
                             type: 'text',
-                            value: ' - an async iterator of the entries of all items in the disk sorted hash table sorted by sort-value in ascending order.',
+                            value: ' - an async generator of the entries of all items in the disk sorted hash table sorted by sort-value in ascending order.',
                             position: {
                               start: { line: 29, column: 93, offset: 2131 },
-                              end: { line: 29, column: 212, offset: 2250 }
+                              end: { line: 29, column: 213, offset: 2251 }
                             }
                           }
                         ],
                         position: {
                           start: { line: 29, column: 5, offset: 2043 },
-                          end: { line: 29, column: 212, offset: 2250 }
+                          end: { line: 29, column: 213, offset: 2251 }
                         }
                       }
                     ],
                     position: {
                       start: { line: 29, column: 3, offset: 2041 },
-                      end: { line: 29, column: 212, offset: 2250 }
+                      end: { line: 29, column: 213, offset: 2251 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 29, column: 3, offset: 2041 },
-                  end: { line: 29, column: 212, offset: 2250 }
+                  end: { line: 29, column: 213, offset: 2251 }
                 }
               },
               {
@@ -10680,14 +10744,14 @@ export default [
                   '  console.log(key, value, sortValue) // key2 value2 2\n' +
                   '}',
                 position: {
-                  start: { line: 31, column: 1, offset: 2252 },
-                  end: { line: 55, column: 4, offset: 3237 }
+                  start: { line: 31, column: 1, offset: 2253 },
+                  end: { line: 55, column: 4, offset: 3238 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 55, column: 4, offset: 3237 }
+              end: { line: 55, column: 4, offset: 3238 }
             }
           }
         }
@@ -10722,7 +10786,7 @@ export default [
           '      * `binary` - iterator yields entries with `Buffer` values.\n' +
           '\n' +
           'Return:\n' +
-          '  * `entries` - `AsyncGenerator<[key string, value string|Buffer, sortValue string|number]>` - an async iterator of the entries of all items in the disk sorted hash table sorted by sort-value in descending order.\n' +
+          '  * `entries` - `AsyncGenerator<[key string, value string|Buffer, sortValue string|number]>` - an async generator of the entries of all items in the disk sorted hash table sorted by sort-value in descending order.\n' +
           '\n' +
           '```javascript\n' +
           "await ht.set('key1', 'value1', 1)\n" +
@@ -11601,28 +11665,28 @@ export default [
                           },
                           {
                             type: 'text',
-                            value: ' - an async iterator of the entries of all items in the disk sorted hash table sorted by sort-value in descending order.',
+                            value: ' - an async generator of the entries of all items in the disk sorted hash table sorted by sort-value in descending order.',
                             position: {
                               start: { line: 29, column: 93, offset: 1980 },
-                              end: { line: 29, column: 213, offset: 2100 }
+                              end: { line: 29, column: 214, offset: 2101 }
                             }
                           }
                         ],
                         position: {
                           start: { line: 29, column: 5, offset: 1892 },
-                          end: { line: 29, column: 213, offset: 2100 }
+                          end: { line: 29, column: 214, offset: 2101 }
                         }
                       }
                     ],
                     position: {
                       start: { line: 29, column: 3, offset: 1890 },
-                      end: { line: 29, column: 213, offset: 2100 }
+                      end: { line: 29, column: 214, offset: 2101 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 29, column: 3, offset: 1890 },
-                  end: { line: 29, column: 213, offset: 2100 }
+                  end: { line: 29, column: 214, offset: 2101 }
                 }
               },
               {
@@ -11653,14 +11717,14 @@ export default [
                   '  console.log(key, value, sortValue) // key2 value2 2\n' +
                   '}',
                 position: {
-                  start: { line: 31, column: 1, offset: 2102 },
-                  end: { line: 55, column: 4, offset: 3087 }
+                  start: { line: 31, column: 1, offset: 2103 },
+                  end: { line: 55, column: 4, offset: 3088 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 55, column: 4, offset: 3087 }
+              end: { line: 55, column: 4, offset: 3088 }
             }
           }
         }
@@ -11677,7 +11741,7 @@ export default [
           '  * `key` - `string` - the key to delete.\n' +
           '\n' +
           'Return:\n' +
-          '  * `didDelete` - `boolean` - a promise of whether the key and corresponding value was deleted.\n' +
+          '  * `didDelete` - `boolean` - a promise of whether the key and corresponding value were deleted.\n' +
           '\n' +
           '```javascript\n' +
           "const didDelete = await sortedHt.delete('my-key')\n" +
@@ -11877,28 +11941,28 @@ export default [
                           },
                           {
                             type: 'text',
-                            value: ' - a promise of whether the key and corresponding value was deleted.',
+                            value: ' - a promise of whether the key and corresponding value were deleted.',
                             position: {
                               start: { line: 11, column: 28, offset: 229 },
-                              end: { line: 11, column: 96, offset: 297 }
+                              end: { line: 11, column: 97, offset: 298 }
                             }
                           }
                         ],
                         position: {
                           start: { line: 11, column: 5, offset: 206 },
-                          end: { line: 11, column: 96, offset: 297 }
+                          end: { line: 11, column: 97, offset: 298 }
                         }
                       }
                     ],
                     position: {
                       start: { line: 11, column: 3, offset: 204 },
-                      end: { line: 11, column: 96, offset: 297 }
+                      end: { line: 11, column: 97, offset: 298 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 11, column: 3, offset: 204 },
-                  end: { line: 11, column: 96, offset: 297 }
+                  end: { line: 11, column: 97, offset: 298 }
                 }
               },
               {
@@ -11907,14 +11971,14 @@ export default [
                 meta: null,
                 value: "const didDelete = await sortedHt.delete('my-key')",
                 position: {
-                  start: { line: 13, column: 1, offset: 299 },
-                  end: { line: 15, column: 4, offset: 366 }
+                  start: { line: 13, column: 1, offset: 300 },
+                  end: { line: 15, column: 4, offset: 367 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 15, column: 4, offset: 366 }
+              end: { line: 15, column: 4, offset: 367 }
             }
           }
         }
@@ -12134,651 +12198,6 @@ export default [
         }
       }
     ],
-    fileName: '/home/richard/code/presidium.services/../presidium-db/DiskSortedHashTable.js'
-  },
-  {
-    name: 'calculateMaxBTreeHeight',
-    docs: '```coffeescript [specscript]\n' +
-      'calculateMaxBTreeHeight(n number, degree number) -> maxHeight number\n' +
-      '```\n' +
-      '\n' +
-      'Calculates the maximum height of a b-tree.\n' +
-      '\n' +
-      'Arguments:\n' +
-      '  * `n` - `number` - number of keys/items.\n' +
-      '  * `degree` - `number` - the degree of the b-tree.\n' +
-      '\n' +
-      'Return:\n' +
-      '  * `maxHeight` - `number` - the maximum height of the b-tree.',
-    mdast: {
-      name: {
-        type: 'root',
-        children: [
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'calculateMaxBTreeHeight',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 24, offset: 23 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 24, offset: 23 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 24, offset: 23 }
-        }
-      },
-      docs: {
-        type: 'root',
-        children: [
-          {
-            type: 'code',
-            lang: 'coffeescript',
-            meta: '[specscript]',
-            value: 'calculateMaxBTreeHeight(n number, degree number) -> maxHeight number',
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 3, column: 4, offset: 101 }
-            }
-          },
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'Calculates the maximum height of a b-tree.',
-                position: {
-                  start: { line: 5, column: 1, offset: 103 },
-                  end: { line: 5, column: 43, offset: 145 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 5, column: 1, offset: 103 },
-              end: { line: 5, column: 43, offset: 145 }
-            }
-          },
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'Arguments:',
-                position: {
-                  start: { line: 7, column: 1, offset: 147 },
-                  end: { line: 7, column: 11, offset: 157 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 7, column: 1, offset: 147 },
-              end: { line: 7, column: 11, offset: 157 }
-            }
-          },
-          {
-            type: 'list',
-            ordered: false,
-            start: null,
-            spread: false,
-            children: [
-              {
-                type: 'listItem',
-                spread: false,
-                checked: null,
-                children: [
-                  {
-                    type: 'paragraph',
-                    children: [
-                      {
-                        type: 'inlineCode',
-                        value: 'n',
-                        position: {
-                          start: { line: 8, column: 5, offset: 162 },
-                          end: { line: 8, column: 8, offset: 165 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: ' - ',
-                        position: {
-                          start: { line: 8, column: 8, offset: 165 },
-                          end: { line: 8, column: 11, offset: 168 }
-                        }
-                      },
-                      {
-                        type: 'inlineCode',
-                        value: 'number',
-                        position: {
-                          start: { line: 8, column: 11, offset: 168 },
-                          end: { line: 8, column: 19, offset: 176 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: ' - number of keys/items.',
-                        position: {
-                          start: { line: 8, column: 19, offset: 176 },
-                          end: { line: 8, column: 43, offset: 200 }
-                        }
-                      }
-                    ],
-                    position: {
-                      start: { line: 8, column: 5, offset: 162 },
-                      end: { line: 8, column: 43, offset: 200 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 8, column: 3, offset: 160 },
-                  end: { line: 8, column: 43, offset: 200 }
-                }
-              },
-              {
-                type: 'listItem',
-                spread: false,
-                checked: null,
-                children: [
-                  {
-                    type: 'paragraph',
-                    children: [
-                      {
-                        type: 'inlineCode',
-                        value: 'degree',
-                        position: {
-                          start: { line: 9, column: 5, offset: 205 },
-                          end: { line: 9, column: 13, offset: 213 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: ' - ',
-                        position: {
-                          start: { line: 9, column: 13, offset: 213 },
-                          end: { line: 9, column: 16, offset: 216 }
-                        }
-                      },
-                      {
-                        type: 'inlineCode',
-                        value: 'number',
-                        position: {
-                          start: { line: 9, column: 16, offset: 216 },
-                          end: { line: 9, column: 24, offset: 224 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: ' - the degree of the b-tree.',
-                        position: {
-                          start: { line: 9, column: 24, offset: 224 },
-                          end: { line: 9, column: 52, offset: 252 }
-                        }
-                      }
-                    ],
-                    position: {
-                      start: { line: 9, column: 5, offset: 205 },
-                      end: { line: 9, column: 52, offset: 252 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 9, column: 3, offset: 203 },
-                  end: { line: 9, column: 52, offset: 252 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 8, column: 3, offset: 160 },
-              end: { line: 9, column: 52, offset: 252 }
-            }
-          },
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'Return:',
-                position: {
-                  start: { line: 11, column: 1, offset: 254 },
-                  end: { line: 11, column: 8, offset: 261 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 11, column: 1, offset: 254 },
-              end: { line: 11, column: 8, offset: 261 }
-            }
-          },
-          {
-            type: 'list',
-            ordered: false,
-            start: null,
-            spread: false,
-            children: [
-              {
-                type: 'listItem',
-                spread: false,
-                checked: null,
-                children: [
-                  {
-                    type: 'paragraph',
-                    children: [
-                      {
-                        type: 'inlineCode',
-                        value: 'maxHeight',
-                        position: {
-                          start: { line: 12, column: 5, offset: 266 },
-                          end: { line: 12, column: 16, offset: 277 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: ' - ',
-                        position: {
-                          start: { line: 12, column: 16, offset: 277 },
-                          end: { line: 12, column: 19, offset: 280 }
-                        }
-                      },
-                      {
-                        type: 'inlineCode',
-                        value: 'number',
-                        position: {
-                          start: { line: 12, column: 19, offset: 280 },
-                          end: { line: 12, column: 27, offset: 288 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: ' - the maximum height of the b-tree.',
-                        position: {
-                          start: { line: 12, column: 27, offset: 288 },
-                          end: { line: 12, column: 63, offset: 324 }
-                        }
-                      }
-                    ],
-                    position: {
-                      start: { line: 12, column: 5, offset: 266 },
-                      end: { line: 12, column: 63, offset: 324 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 12, column: 3, offset: 264 },
-                  end: { line: 12, column: 63, offset: 324 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 12, column: 3, offset: 264 },
-              end: { line: 12, column: 63, offset: 324 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 63, offset: 324 }
-        }
-      }
-    },
-    methods: [],
-    fileName: '/home/richard/code/presidium.services/../presidium-db/_internal/calculateMaxBTreeHeight.js'
-  },
-  {
-    name: 'calculateMinBTreeHeight',
-    docs: '```coffeescript [specscript]\n' +
-      'calculateMinBTreeHeight(n number, degree number) -> minHeight number\n' +
-      '```\n' +
-      '\n' +
-      'Calculates the minimum height of a b-tree.\n' +
-      '\n' +
-      'Arguments:\n' +
-      '  * `n` - `number` - number of keys/items.\n' +
-      '  * `degree` - `number` - the degree of the b-tree.\n' +
-      '\n' +
-      'Return:\n' +
-      '  * `minHeight` - `number` - the minimum height of the b-tree.',
-    mdast: {
-      name: {
-        type: 'root',
-        children: [
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'calculateMinBTreeHeight',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 24, offset: 23 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 24, offset: 23 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 24, offset: 23 }
-        }
-      },
-      docs: {
-        type: 'root',
-        children: [
-          {
-            type: 'code',
-            lang: 'coffeescript',
-            meta: '[specscript]',
-            value: 'calculateMinBTreeHeight(n number, degree number) -> minHeight number',
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 3, column: 4, offset: 101 }
-            }
-          },
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'Calculates the minimum height of a b-tree.',
-                position: {
-                  start: { line: 5, column: 1, offset: 103 },
-                  end: { line: 5, column: 43, offset: 145 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 5, column: 1, offset: 103 },
-              end: { line: 5, column: 43, offset: 145 }
-            }
-          },
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'Arguments:',
-                position: {
-                  start: { line: 7, column: 1, offset: 147 },
-                  end: { line: 7, column: 11, offset: 157 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 7, column: 1, offset: 147 },
-              end: { line: 7, column: 11, offset: 157 }
-            }
-          },
-          {
-            type: 'list',
-            ordered: false,
-            start: null,
-            spread: false,
-            children: [
-              {
-                type: 'listItem',
-                spread: false,
-                checked: null,
-                children: [
-                  {
-                    type: 'paragraph',
-                    children: [
-                      {
-                        type: 'inlineCode',
-                        value: 'n',
-                        position: {
-                          start: { line: 8, column: 5, offset: 162 },
-                          end: { line: 8, column: 8, offset: 165 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: ' - ',
-                        position: {
-                          start: { line: 8, column: 8, offset: 165 },
-                          end: { line: 8, column: 11, offset: 168 }
-                        }
-                      },
-                      {
-                        type: 'inlineCode',
-                        value: 'number',
-                        position: {
-                          start: { line: 8, column: 11, offset: 168 },
-                          end: { line: 8, column: 19, offset: 176 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: ' - number of keys/items.',
-                        position: {
-                          start: { line: 8, column: 19, offset: 176 },
-                          end: { line: 8, column: 43, offset: 200 }
-                        }
-                      }
-                    ],
-                    position: {
-                      start: { line: 8, column: 5, offset: 162 },
-                      end: { line: 8, column: 43, offset: 200 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 8, column: 3, offset: 160 },
-                  end: { line: 8, column: 43, offset: 200 }
-                }
-              },
-              {
-                type: 'listItem',
-                spread: false,
-                checked: null,
-                children: [
-                  {
-                    type: 'paragraph',
-                    children: [
-                      {
-                        type: 'inlineCode',
-                        value: 'degree',
-                        position: {
-                          start: { line: 9, column: 5, offset: 205 },
-                          end: { line: 9, column: 13, offset: 213 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: ' - ',
-                        position: {
-                          start: { line: 9, column: 13, offset: 213 },
-                          end: { line: 9, column: 16, offset: 216 }
-                        }
-                      },
-                      {
-                        type: 'inlineCode',
-                        value: 'number',
-                        position: {
-                          start: { line: 9, column: 16, offset: 216 },
-                          end: { line: 9, column: 24, offset: 224 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: ' - the degree of the b-tree.',
-                        position: {
-                          start: { line: 9, column: 24, offset: 224 },
-                          end: { line: 9, column: 52, offset: 252 }
-                        }
-                      }
-                    ],
-                    position: {
-                      start: { line: 9, column: 5, offset: 205 },
-                      end: { line: 9, column: 52, offset: 252 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 9, column: 3, offset: 203 },
-                  end: { line: 9, column: 52, offset: 252 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 8, column: 3, offset: 160 },
-              end: { line: 9, column: 52, offset: 252 }
-            }
-          },
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'Return:',
-                position: {
-                  start: { line: 11, column: 1, offset: 254 },
-                  end: { line: 11, column: 8, offset: 261 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 11, column: 1, offset: 254 },
-              end: { line: 11, column: 8, offset: 261 }
-            }
-          },
-          {
-            type: 'list',
-            ordered: false,
-            start: null,
-            spread: false,
-            children: [
-              {
-                type: 'listItem',
-                spread: false,
-                checked: null,
-                children: [
-                  {
-                    type: 'paragraph',
-                    children: [
-                      {
-                        type: 'inlineCode',
-                        value: 'minHeight',
-                        position: {
-                          start: { line: 12, column: 5, offset: 266 },
-                          end: { line: 12, column: 16, offset: 277 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: ' - ',
-                        position: {
-                          start: { line: 12, column: 16, offset: 277 },
-                          end: { line: 12, column: 19, offset: 280 }
-                        }
-                      },
-                      {
-                        type: 'inlineCode',
-                        value: 'number',
-                        position: {
-                          start: { line: 12, column: 19, offset: 280 },
-                          end: { line: 12, column: 27, offset: 288 }
-                        }
-                      },
-                      {
-                        type: 'text',
-                        value: ' - the minimum height of the b-tree.',
-                        position: {
-                          start: { line: 12, column: 27, offset: 288 },
-                          end: { line: 12, column: 63, offset: 324 }
-                        }
-                      }
-                    ],
-                    position: {
-                      start: { line: 12, column: 5, offset: 266 },
-                      end: { line: 12, column: 63, offset: 324 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 12, column: 3, offset: 264 },
-                  end: { line: 12, column: 63, offset: 324 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 12, column: 3, offset: 264 },
-              end: { line: 12, column: 63, offset: 324 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 63, offset: 324 }
-        }
-      }
-    },
-    methods: [],
-    fileName: '/home/richard/code/presidium.services/../presidium-db/_internal/calculateMinBTreeHeight.js'
-  },
-  {
-    name: 'convert',
-    docs: '```coffeescript [specscript]\n' +
-      "convert(value any, t 'number'|'string') -> number|string\n" +
-      '```',
-    mdast: {
-      name: {
-        type: 'root',
-        children: [
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'convert',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 8, offset: 7 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 8, offset: 7 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 8, offset: 7 }
-        }
-      },
-      docs: {
-        type: 'root',
-        children: [
-          {
-            type: 'code',
-            lang: 'coffeescript',
-            meta: '[specscript]',
-            value: "convert(value any, t 'number'|'string') -> number|string",
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 3, column: 4, offset: 89 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 3, column: 4, offset: 89 }
-        }
-      }
-    },
-    methods: [],
-    fileName: '/home/richard/code/presidium.services/../presidium-db/_internal/convert.js'
+    fileName: '/home/richard/code/presidium.services/../presidium-db-docs/DiskSortedHashTable.js'
   }
 ]
