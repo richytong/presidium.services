@@ -1,5 +1,3 @@
-console.log('import global.js')
-
 const ReactElement = Arche(React)
 window.ReactElement = ReactElement
 

@@ -22,6 +22,7 @@ const Home = ReactElement(props => {
   }, [mediaQuery])
 
   const [readmeContent] = useReadmeContent()
+  console.error('Home', readmeContent)
   return Layout(props, [
     Div({ id: 'home' }, [
       readmeContent,

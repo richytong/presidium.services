@@ -1,18 +1,17 @@
 import useGlobalState from './useGlobalState.js'
 import usePresidiumVersion from './usePresidiumVersion.js'
 import ReactElementFromMdast from './ReactElementFromMdast.js'
-import defaultPresidiumReadme from '../mdast/presidium-v3-readme.js'
+import defaultPresidiumReadme from '../mdast/presidium-v4-readme.js'
 
-function createPresidiumReadmeContent(presidiumReadmeMdast) {
+function createPresidiumReadmeMdast(presidiumReadmeMdast) {
   const mdastCopy = omit(presidiumReadmeMdast, [])
   mdastCopy.children.splice(0, 1)
-  const readmeContent = ReactElementFromMdast({ mdast: mdastCopy })
-  return readmeContent
+  return mdastCopy
 }
 
 // readmeContent ReactElement
 const initial = ReactElementFromMdast({
-  mdast: createPresidiumReadmeContent(defaultPresidiumReadme)
+  mdast: createPresidiumReadmeMdast(defaultPresidiumReadme)
 })
 
 /**
@@ -30,7 +29,9 @@ function useReadmeContent() {
   useEffect(() => {
     setTimeout(async () => {
       const readmeMdast = await import(`../mdast/presidium-${presidiumVersion.toLowerCase()}-readme.js`).then(get('default'))
-      const readmeContent1 = createPresidiumReadmeContent(readmeMdast)
+      const readmeContent1 = ReactElementFromMdast({
+        mdast: createPresidiumReadmeMdast(readmeMdast),
+      })
       setReadmeContent(readmeContent1)
     }, 0)
   }, [presidiumVersion])

@@ -30,7 +30,7 @@ const {
 async function main() {
   const archeHTML = new ArcheHTML(`${__dirname}/${publicDir}/react/Root.js`, {
     scriptImports: [
-      `${__dirname}/ssr-polyfills.js`,
+      `${__dirname}/ssr-polyfills.mjs`,
       `${__dirname}/public/global.js`,
     ],
   })
@@ -48,7 +48,7 @@ async function main() {
   for (const page of pages) {
     const { title, description, url, filepath } = page
     const filePart = filepath.endsWith('.html') ? filepath : `${filepath}.html`
-    const fullFilepath = `${__dirname}/${publicDir}/${filePart}`
+    const fullFilepath = `${__dirname}/${publicDir}${filePart}`
     try {
       /* TODO
       const content = await fs.promises.readFile(fullFilepath)
@@ -57,8 +57,7 @@ async function main() {
       const bodyHTML = $('body').html().trim()
       */
 
-      const reactRootHTML = await archeHTML.render(filepath)
-      console.log(reactRootHTML)
+      const reactRootHTML = await archeHTML.render(url)
       const bodyHTML = `<div id="react-root">${reactRootHTML}</div>`
       console.log('Updating page', fullFilepath.replace(process.env.HOME, '~'))
 
