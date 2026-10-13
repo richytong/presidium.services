@@ -47,7 +47,8 @@ async function main() {
 
   for (const page of pages) {
     const { title, description, url, filepath } = page
-    const filePart = filepath.endsWith('.html') ? filepath : `${filepath}.html`
+    // const filePart = filepath.endsWith('.html') ? filepath : `${filepath}.html`
+    const filePart = filepath
     const fullFilepath = `${__dirname}/${publicDir}${filePart}`
     try {
       /* TODO
@@ -60,6 +61,8 @@ async function main() {
       const reactRootHTML = await archeHTML.render(url)
       const bodyHTML = `<div id="react-root">${reactRootHTML}</div>`
       console.log('Updating page', fullFilepath.replace(process.env.HOME, '~'))
+      if (url == '/blog/blue-green-deployments-with-presidium-and-docker') {
+      }
 
       await fs.promises.writeFile(fullFilepath, PageHTML({
         title,
