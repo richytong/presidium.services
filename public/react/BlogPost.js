@@ -41,6 +41,12 @@ const BlogPost = ReactElement(props => {
     imageMaxHeight,
   } = metadata
 
+  useEffect(() => {
+    setTimeout(() => {
+      window.dispatchEvent(new Event('resize'))
+    }, 100)
+  }, [])
+
   const [activeBlogPostHref, setActiveBlogPostHref] = useActiveBlogPostHref()
   const [path, setPath] = usePath()
 
