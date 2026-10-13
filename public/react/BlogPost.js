@@ -90,6 +90,9 @@ const BlogPost = ReactElement(props => {
       onClick(event) {
         event.preventDefault()
         onLinkClick()
+        setTimeout(() => {
+          window.scrollTo(0, 0)
+        }, 300)
       },
     }, [
       H1(title),
