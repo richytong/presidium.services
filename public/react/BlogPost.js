@@ -92,7 +92,7 @@ const BlogPost = ReactElement(props => {
         onLinkClick()
         setTimeout(() => {
           window.scrollTo(0, 0)
-        }, 300)
+        }, 100)
       },
     }, [
       H1(title),
@@ -134,6 +134,9 @@ const BlogPost = ReactElement(props => {
           onClick(event) {
             event.preventDefault()
             onLinkClick()
+            setTimeout(() => {
+              window.scrollTo(0, 0)
+            }, 100)
           },
         }, 'Read more'),
       ]),
