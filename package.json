@@ -10,6 +10,7 @@
   },
   "homepage": "https://github.com/richytong/presidium.services",
   "dependencies": {
+    "arche-html": "^1.2.1",
     "cronist": "^0.3.0",
     "jquery": "^3.7.1",
     "jsdom": "^26.1.0",

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const fs = require('fs')
+const ArcheHTML = require('arche-html')
 const findPaths = require('./lib/findPaths')
 const PageHTML = require('./lib/PageHTML')
 const parseHTML = require('./lib/parseHTML')
@@ -27,6 +28,13 @@ const {
  * ```
  */
 async function main() {
+  const archeHTML = new ArcheHTML(`${__dirname}/${publicDir}/react/Root.js`, {
+    scriptImports: [
+      `${__dirname}/ssr-polyfills.js`,
+      `${__dirname}/public/global.js`,
+    ],
+  })
+
   if (fs.existsSync(`${__dirname}/${publicDir}`)) {
     // continue
   } else {
@@ -49,7 +57,9 @@ async function main() {
       const bodyHTML = $('body').html().trim()
       */
 
-      const bodyHTML = '<div id="react-root"></div>'
+      const reactRootHTML = await archeHTML.render(filepath)
+      console.log(reactRootHTML)
+      const bodyHTML = `<div id="react-root">${reactRootHTML}</div>`
       console.log('Updating page', fullFilepath.replace(process.env.HOME, '~'))
 
       await fs.promises.writeFile(fullFilepath, PageHTML({
