@@ -327,16 +327,16 @@ export default {
       children: [
         {
           type: 'text',
-          value: 'Next, a network administrator manages the load balancer that directs traffic between the blue and the green network. The traffic is initially be evenly split between the two networks. The network administrator first identifies either the blue or the green network to deploy the image of the release and directs traffic via the load balancer away from the identified network. The network administrator logs into a manager node of the identified network and deploys the image of the release.',
+          value: 'Next, a network administrator manages the load balancer that directs traffic between the blue and the green network. The traffic is initially evenly split between the two networks. The network administrator first identifies either the blue or the green network to deploy the image of the release and directs traffic via the load balancer away from the identified network. The network administrator logs into a manager node of the identified network and deploys the image of the release.',
           position: {
             start: { line: 117, column: 1, offset: 4434 },
-            end: { line: 117, column: 490, offset: 4923 }
+            end: { line: 117, column: 487, offset: 4920 }
           }
         }
       ],
       position: {
         start: { line: 117, column: 1, offset: 4434 },
-        end: { line: 117, column: 490, offset: 4923 }
+        end: { line: 117, column: 487, offset: 4920 }
       }
     },
     {
@@ -346,30 +346,30 @@ export default {
           type: 'text',
           value: 'The following ',
           position: {
-            start: { line: 119, column: 1, offset: 4925 },
-            end: { line: 119, column: 15, offset: 4939 }
+            start: { line: 119, column: 1, offset: 4922 },
+            end: { line: 119, column: 15, offset: 4936 }
           }
         },
         {
           type: 'inlineCode',
           value: 'deploy',
           position: {
-            start: { line: 119, column: 15, offset: 4939 },
-            end: { line: 119, column: 23, offset: 4947 }
+            start: { line: 119, column: 15, offset: 4936 },
+            end: { line: 119, column: 23, offset: 4944 }
           }
         },
         {
           type: 'text',
           value: ' script deploys the image of the release as a Docker Service onto the Docker Swarm of the identified network.',
           position: {
-            start: { line: 119, column: 23, offset: 4947 },
-            end: { line: 119, column: 132, offset: 5056 }
+            start: { line: 119, column: 23, offset: 4944 },
+            end: { line: 119, column: 132, offset: 5053 }
           }
         }
       ],
       position: {
-        start: { line: 119, column: 1, offset: 4925 },
-        end: { line: 119, column: 132, offset: 5056 }
+        start: { line: 119, column: 1, offset: 4922 },
+        end: { line: 119, column: 132, offset: 5053 }
       }
     },
     {
@@ -381,7 +381,7 @@ export default {
         "const Docker = require('presidium/Docker')\n" +
         '\n' +
         'setImmediate(async () => {\n' +
-        "  const docker = new Docker({ apiVersion: '1.44' })\n" +
+        "  const docker = new Docker({ apiVersion: '1.52' })\n" +
         '\n' +
         '  const projectName = "my-web-server"\n' +
         '  const version = "11.3.1"\n' +
@@ -413,8 +413,8 @@ export default {
         '  }\n' +
         '})',
       position: {
-        start: { line: 120, column: 1, offset: 5057 },
-        end: { line: 157, column: 4, offset: 5894 }
+        start: { line: 120, column: 1, offset: 5054 },
+        end: { line: 157, column: 4, offset: 5891 }
       }
     },
     {
@@ -424,30 +424,30 @@ export default {
           type: 'text',
           value: 'When the Docker Service is initially deployed, it is in the "new" state. The network administrator must wait for the Docker Service to be in the "running" state. While the Docker Service is deploying onto the Docker Swarm, the network administrator can check the current state of the service with ',
           position: {
-            start: { line: 159, column: 1, offset: 5896 },
-            end: { line: 159, column: 298, offset: 6193 }
+            start: { line: 159, column: 1, offset: 5893 },
+            end: { line: 159, column: 298, offset: 6190 }
           }
         },
         {
           type: 'inlineCode',
           value: 'docker service ps <service_name>',
           position: {
-            start: { line: 159, column: 298, offset: 6193 },
-            end: { line: 159, column: 332, offset: 6227 }
+            start: { line: 159, column: 298, offset: 6190 },
+            end: { line: 159, column: 332, offset: 6224 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 159, column: 332, offset: 6227 },
-            end: { line: 159, column: 333, offset: 6228 }
+            start: { line: 159, column: 332, offset: 6224 },
+            end: { line: 159, column: 333, offset: 6225 }
           }
         }
       ],
       position: {
-        start: { line: 159, column: 1, offset: 5896 },
-        end: { line: 159, column: 333, offset: 6228 }
+        start: { line: 159, column: 1, offset: 5893 },
+        end: { line: 159, column: 333, offset: 6225 }
       }
     },
     {
@@ -457,14 +457,14 @@ export default {
           type: 'text',
           value: 'Following a successful deploy, the network administrator directs traffic via the load balancer to the network of the successful deployment, and directs traffic away from the other blue or green network.',
           position: {
-            start: { line: 161, column: 1, offset: 6230 },
-            end: { line: 161, column: 203, offset: 6432 }
+            start: { line: 161, column: 1, offset: 6227 },
+            end: { line: 161, column: 203, offset: 6429 }
           }
         }
       ],
       position: {
-        start: { line: 161, column: 1, offset: 6230 },
-        end: { line: 161, column: 203, offset: 6432 }
+        start: { line: 161, column: 1, offset: 6227 },
+        end: { line: 161, column: 203, offset: 6429 }
       }
     },
     {
@@ -474,14 +474,14 @@ export default {
           type: 'text',
           value: 'The network administrator then logs into a manager node of the other network and deploys the image of the release.',
           position: {
-            start: { line: 163, column: 1, offset: 6434 },
-            end: { line: 163, column: 115, offset: 6548 }
+            start: { line: 163, column: 1, offset: 6431 },
+            end: { line: 163, column: 115, offset: 6545 }
           }
         }
       ],
       position: {
-        start: { line: 163, column: 1, offset: 6434 },
-        end: { line: 163, column: 115, offset: 6548 }
+        start: { line: 163, column: 1, offset: 6431 },
+        end: { line: 163, column: 115, offset: 6545 }
       }
     },
     {
@@ -491,14 +491,14 @@ export default {
           type: 'text',
           value: 'Following a successful deploy of the image of the release on the other network, the network administrator directs traffic back to the other network so that the traffic is once again evenly split between the blue and the green networks.',
           position: {
-            start: { line: 165, column: 1, offset: 6550 },
-            end: { line: 165, column: 236, offset: 6785 }
+            start: { line: 165, column: 1, offset: 6547 },
+            end: { line: 165, column: 236, offset: 6782 }
           }
         }
       ],
       position: {
-        start: { line: 165, column: 1, offset: 6550 },
-        end: { line: 165, column: 236, offset: 6785 }
+        start: { line: 165, column: 1, offset: 6547 },
+        end: { line: 165, column: 236, offset: 6782 }
       }
     },
     {
@@ -509,14 +509,14 @@ export default {
           type: 'text',
           value: 'Conclusion',
           position: {
-            start: { line: 167, column: 4, offset: 6790 },
-            end: { line: 167, column: 14, offset: 6800 }
+            start: { line: 167, column: 4, offset: 6787 },
+            end: { line: 167, column: 14, offset: 6797 }
           }
         }
       ],
       position: {
-        start: { line: 167, column: 1, offset: 6787 },
-        end: { line: 167, column: 14, offset: 6800 }
+        start: { line: 167, column: 1, offset: 6784 },
+        end: { line: 167, column: 14, offset: 6797 }
       }
     },
     {
@@ -526,14 +526,14 @@ export default {
           type: 'text',
           value: 'With blue-green deployments, you can reliably deploy with zero downtime. Presidium allows for convenient scripting in JavaScript with Docker, the foundation and cornerstone technology of containers for distributed services for the world wide web.',
           position: {
-            start: { line: 168, column: 1, offset: 6801 },
-            end: { line: 168, column: 247, offset: 7047 }
+            start: { line: 168, column: 1, offset: 6798 },
+            end: { line: 168, column: 247, offset: 7044 }
           }
         }
       ],
       position: {
-        start: { line: 168, column: 1, offset: 6801 },
-        end: { line: 168, column: 247, offset: 7047 }
+        start: { line: 168, column: 1, offset: 6798 },
+        end: { line: 168, column: 247, offset: 7044 }
       }
     },
     {
@@ -543,8 +543,8 @@ export default {
           type: 'text',
           value: 'To get started with Presidium and Docker, please see the Presidium installation on the  ',
           position: {
-            start: { line: 170, column: 1, offset: 7049 },
-            end: { line: 170, column: 89, offset: 7137 }
+            start: { line: 170, column: 1, offset: 7046 },
+            end: { line: 170, column: 89, offset: 7134 }
           }
         },
         {
@@ -556,33 +556,33 @@ export default {
               type: 'text',
               value: 'Presidium Home Page',
               position: {
-                start: { line: 170, column: 90, offset: 7138 },
-                end: { line: 170, column: 109, offset: 7157 }
+                start: { line: 170, column: 90, offset: 7135 },
+                end: { line: 170, column: 109, offset: 7154 }
               }
             }
           ],
           position: {
-            start: { line: 170, column: 89, offset: 7137 },
-            end: { line: 170, column: 152, offset: 7200 }
+            start: { line: 170, column: 89, offset: 7134 },
+            end: { line: 170, column: 152, offset: 7197 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 170, column: 152, offset: 7200 },
-            end: { line: 170, column: 153, offset: 7201 }
+            start: { line: 170, column: 152, offset: 7197 },
+            end: { line: 170, column: 153, offset: 7198 }
           }
         }
       ],
       position: {
-        start: { line: 170, column: 1, offset: 7049 },
-        end: { line: 170, column: 153, offset: 7201 }
+        start: { line: 170, column: 1, offset: 7046 },
+        end: { line: 170, column: 153, offset: 7198 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 171, column: 1, offset: 7202 }
+    end: { line: 171, column: 1, offset: 7199 }
   }
 }

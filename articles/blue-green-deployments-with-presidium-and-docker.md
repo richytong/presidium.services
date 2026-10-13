@@ -114,7 +114,7 @@ if (process.argv[1] == __filename) {
 module.exports = run
 ```
 
-Next, a network administrator manages the load balancer that directs traffic between the blue and the green network. The traffic is initially be evenly split between the two networks. The network administrator first identifies either the blue or the green network to deploy the image of the release and directs traffic via the load balancer away from the identified network. The network administrator logs into a manager node of the identified network and deploys the image of the release.
+Next, a network administrator manages the load balancer that directs traffic between the blue and the green network. The traffic is initially evenly split between the two networks. The network administrator first identifies either the blue or the green network to deploy the image of the release and directs traffic via the load balancer away from the identified network. The network administrator logs into a manager node of the identified network and deploys the image of the release.
 
 The following `deploy` script deploys the image of the release as a Docker Service onto the Docker Swarm of the identified network.
 ```javascript
@@ -123,7 +123,7 @@ The following `deploy` script deploys the image of the release as a Docker Servi
 const Docker = require('presidium/Docker')
 
 setImmediate(async () => {
-  const docker = new Docker({ apiVersion: '1.44' })
+  const docker = new Docker({ apiVersion: '1.52' })
 
   const projectName = "my-web-server"
   const version = "11.3.1"

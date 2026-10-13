@@ -16,6 +16,10 @@ const Root = ReactElement(() => {
   const [path, setPath] = usePath()
 
   useEffect(() => {
+    window.dispatchEvent(new Event('resize'))
+  }, [])
+
+  useEffect(() => {
     const listener = addEventListener('popstate', () => {
       setPath(document.location.pathname, { ignoreHistory: true })
     })
