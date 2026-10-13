@@ -16,7 +16,9 @@ const Root = ReactElement(() => {
   const [path, setPath] = usePath()
 
   useEffect(() => {
-    window.dispatchEvent(new Event('resize'))
+    setTimeout(() => {
+      window.dispatchEvent(new Event('resize'))
+    }, 500)
   }, [])
 
   useEffect(() => {

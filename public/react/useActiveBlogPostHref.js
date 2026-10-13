@@ -17,7 +17,6 @@ function useActiveBlogPostHref() {
   for (const blogPost of blogPostList) {
     if (blogPost.metadata.href == window.location.pathname) {
       initial = blogPost.metadata.href
-      console.log('set initial', initial)
     }
   }
   return useGlobalState('activeBlogPostHref', initial)
