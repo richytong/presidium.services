@@ -2,7 +2,6 @@ import inspect from './inspect.js'
 import CopyIcon from './CopyIcon.js'
 import CopySuccessIcon from './CopySuccessIcon.js'
 import copyToClipboard from './copyToClipboard.js'
-import useMediaQuery from './useMediaQuery.js'
 
 const codeMirrors = new Map()
 
@@ -18,15 +17,13 @@ const CodeViewer = ReactElement(({
   const ref = useRef(null)
   const [hover, setHover] = useState(false)
   const [copySuccess, setCopySuccess] = useState(false)
-  const [mediaQuery] = useMediaQuery('(max-width: 768px)')
 
   useEffect(() => {
     // hljs.highlightElement(ref.current)
   }, [])
 
   return Div({
-    // class: hover ? 'code-viewer hover' : 'code-viewer',
-    class: 'code-viewer',
+    class: hover ? 'code-viewer hover' : 'code-viewer',
     onMouseEnter() {
       setHover(true)
     },
