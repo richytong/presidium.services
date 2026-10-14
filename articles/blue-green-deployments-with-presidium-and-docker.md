@@ -92,7 +92,7 @@ The following `run` script contains the code of the web server of the release, a
 ```javascript
 #!/usr/bin/env node
 
-const http = require('http')
+const http = require("http")
 
 const run = async function () {
   const server = http.createServer((request, response) => {
@@ -120,10 +120,10 @@ The following `deploy` script deploys the image of the release as a Docker Servi
 ```javascript
 #!/usr/bin/env node
 
-const Docker = require('presidium/Docker')
+const Docker = require("presidium/Docker")
 
 setImmediate(async () => {
-  const docker = new Docker({ apiVersion: '1.52' })
+  const docker = new Docker({ apiVersion: "1.52" })
 
   const projectName = "my-web-server"
   const version = "11.3.1"
@@ -133,16 +133,16 @@ setImmediate(async () => {
 
   const serviceOptions = {
     image: `${username}/${image}`,
-    cmd: ['./run'],
-    healthCmd: ['curl', 'http://localhost:8080/'],
+    cmd: ["./run"],
+    healthCmd: ["curl", "http://localhost:8080/"],
     env: {
-      NODE_ENV: 'production',
+      NODE_ENV: "production",
     },
     publish: {
       3001: 8080,
     },
     replicas: 1,
-    restart: 'any',
+    restart: "any",
     username,
     password: pat,
   }

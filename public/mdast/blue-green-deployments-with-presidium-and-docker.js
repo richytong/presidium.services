@@ -297,7 +297,7 @@ export default {
       meta: null,
       value: '#!/usr/bin/env node\n' +
         '\n' +
-        "const http = require('http')\n" +
+        'const http = require("http")\n' +
         '\n' +
         'const run = async function () {\n' +
         '  const server = http.createServer((request, response) => {\n' +
@@ -378,10 +378,10 @@ export default {
       meta: null,
       value: '#!/usr/bin/env node\n' +
         '\n' +
-        "const Docker = require('presidium/Docker')\n" +
+        'const Docker = require("presidium/Docker")\n' +
         '\n' +
         'setImmediate(async () => {\n' +
-        "  const docker = new Docker({ apiVersion: '1.52' })\n" +
+        '  const docker = new Docker({ apiVersion: "1.52" })\n' +
         '\n' +
         '  const projectName = "my-web-server"\n' +
         '  const version = "11.3.1"\n' +
@@ -391,16 +391,16 @@ export default {
         '\n' +
         '  const serviceOptions = {\n' +
         '    image: `${username}/${image}`,\n' +
-        "    cmd: ['./run'],\n" +
-        "    healthCmd: ['curl', 'http://localhost:8080/'],\n" +
+        '    cmd: ["./run"],\n' +
+        '    healthCmd: ["curl", "http://localhost:8080/"],\n' +
         '    env: {\n' +
-        "      NODE_ENV: 'production',\n" +
+        '      NODE_ENV: "production",\n' +
         '    },\n' +
         '    publish: {\n' +
         '      3001: 8080,\n' +
         '    },\n' +
         '    replicas: 1,\n' +
-        "    restart: 'any',\n" +
+        '    restart: "any",\n' +
         '    username,\n' +
         '    password: pat,\n' +
         '  }\n' +
