@@ -114,6 +114,10 @@ h1::-webkit-scrollbar {
   border: none;
   cursor: pointer;
   visibility: hidden;
+  background: #fff;
+  border-radius: 3px;
+  padding-top: 6px;
+  padding-bottom: 3px;
 }
 
 .code-viewer.hover .copy-button {
