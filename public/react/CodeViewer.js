@@ -14,13 +14,8 @@ const CodeViewer = ReactElement(({
   lineNumbers = false,
 }) => {
 
-  const ref = useRef(null)
   const [hover, setHover] = useState(false)
   const [copySuccess, setCopySuccess] = useState(false)
-
-  useEffect(() => {
-    // hljs.highlightElement(ref.current)
-  }, [])
 
   return Div({
     class: hover ? 'code-viewer hover' : 'code-viewer',
@@ -41,12 +36,8 @@ const CodeViewer = ReactElement(({
         }, 500)
       },
     }, [copySuccess ? CopySuccessIcon() : CopyIcon()]),
-    Code([Pre({ ref }, code)]),
+    Code([Pre(code)]),
   ])
-
-  // return Div({ class: 'code-viewer' }, [
-  // Div({ ref: codeAreaRef }),
-  // ])
 })
 
 export default CodeViewer
