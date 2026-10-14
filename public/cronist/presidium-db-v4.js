@@ -65,7 +65,7 @@ export default [
       'Once all of the items have been added into the temporary storage file, the temporary storage file is moved to the location of the old storage file to be used as the new storage file.\n' +
       '\n' +
       '## Number of Running Instances\n' +
-      'There should only be one instance of a DiskHashTable running per storage and header file at any time.',
+      'There should only be one instance of a DiskHashTable running per storage and header file per machine at a time.',
     mdast: {
       name: {
         type: 'root',
@@ -1121,22 +1121,22 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'There should only be one instance of a DiskHashTable running per storage and header file at any time.',
+                value: 'There should only be one instance of a DiskHashTable running per storage and header file per machine at a time.',
                 position: {
                   start: { line: 65, column: 1, offset: 3162 },
-                  end: { line: 65, column: 102, offset: 3263 }
+                  end: { line: 65, column: 112, offset: 3273 }
                 }
               }
             ],
             position: {
               start: { line: 65, column: 1, offset: 3162 },
-              end: { line: 65, column: 102, offset: 3263 }
+              end: { line: 65, column: 112, offset: 3273 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 65, column: 102, offset: 3263 }
+          end: { line: 65, column: 112, offset: 3273 }
         }
       }
     },
@@ -4602,7 +4602,7 @@ export default [
       'The value of `degree` determines the structure of the internal b-tree used by the disk sorted hash table. A higher value for `degree` results in a shorter b-tree and more items per b-tree node, while a lower value results in a taller b-tree and fewer items per b-tree node. The default value of 2 is a safe choice for most use cases.\n' +
       '\n' +
       '## Number of Running Instances\n' +
-      'There should only be one instance of a DiskSortedHashTable running per storage and header file at any time.',
+      'There should only be one instance of a DiskSortedHashTable running per storage and header file per machine at a time.',
     mdast: {
       name: {
         type: 'root',
@@ -6185,22 +6185,22 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'There should only be one instance of a DiskSortedHashTable running per storage and header file at any time.',
+                value: 'There should only be one instance of a DiskSortedHashTable running per storage and header file per machine at a time.',
                 position: {
                   start: { line: 78, column: 1, offset: 4344 },
-                  end: { line: 78, column: 108, offset: 4451 }
+                  end: { line: 78, column: 118, offset: 4461 }
                 }
               }
             ],
             position: {
               start: { line: 78, column: 1, offset: 4344 },
-              end: { line: 78, column: 108, offset: 4451 }
+              end: { line: 78, column: 118, offset: 4461 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 78, column: 108, offset: 4451 }
+          end: { line: 78, column: 118, offset: 4461 }
         }
       }
     },
