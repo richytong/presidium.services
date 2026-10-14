@@ -91,6 +91,9 @@ h1::-webkit-scrollbar {
   overflow-x: scroll;
   overflow-y: hidden;
   position: relative;
+  scrollbar-width: none;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .code-viewer pre {
