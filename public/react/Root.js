@@ -14,7 +14,6 @@ import usePath from './usePath.js'
  */
 const Root = ReactElement(() => {
   const [path, setPath] = usePath()
-  console.error('Root', { path })
 
   useEffect(() => {
     const listener = addEventListener('popstate', () => {

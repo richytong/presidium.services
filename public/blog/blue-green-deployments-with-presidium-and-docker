@@ -27,12 +27,14 @@
 <script src="https://cdn.jsdelivr.net/npm/arche@0.3.11/index.js" crossorigin></script>
 <script src="/global.js" ></script>
 <script src="/vendor/codemirror/index.js" ></script>
-<script src="/vendor/codemirror/syntax/javascript.js" async></script>
-<script src="/vendor/codemirror/syntax/coffeescript.js" async></script>
-<script src="/vendor/codemirror/syntax/htmlmixed.js" async></script>
-<script src="/vendor/codemirror/syntax/xml.js" async></script>
-<script src="/vendor/codemirror/syntax/css.js" async></script>
+<script src="/vendor/codemirror/syntax/javascript.js" ></script>
+<script src="/vendor/codemirror/syntax/coffeescript.js" ></script>
+<script src="/vendor/codemirror/syntax/htmlmixed.js" ></script>
+<script src="/vendor/codemirror/syntax/xml.js" ></script>
+<script src="/vendor/codemirror/syntax/css.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.12.0/highlight.min.js" ></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.12.0/styles/isbl-editor-light.min.css" />
 <link rel="stylesheet" href="/index.css" />
 <link rel="stylesheet" href="/vendor/codemirror/styles.css" />
 <link rel="stylesheet" href="/vendor/codemirror/theme/rubico.css" />
@@ -40,7 +42,138 @@
 </head>
 
 <body>
-<div id="react-root"><div id="layout"><nav><div class="home"><a id="home-link" href="/" class="nav-link"><span class="text1">Presidium</span></a><select><option value="V1">V1</option><option value="V2">V2</option><option value="V3">V3</option><option value="V4" selected>V4</option></select><div class="links"><a href="/docs" class="nav-link">Docs</a><a href="/blog" class="nav-link active">Blog</a></div></div><div class="right-links"></div></nav><div class="slider"><div class="panels" style="width: 200%; transform: translate(calc(0%));"><div class="panel" style="width: 50%;"><main><div id="blog"><div class="blog-post active"><a href="/blog" class="active"><h1>Blue-Green Deployments with Presidium and Docker</h1><svg class="down-arrow-svg" width="200" height="133" viewBox="0 0 200 133" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="143.875" height="41.9555" rx="20.9777" transform="matrix(0.683998 -0.729484 0.756447 0.654055 69.8527 105.123)" fill="black"></rect><rect width="143.875" height="41.9555" rx="20.9777" transform="matrix(0.683998 0.729484 -0.756447 0.654055 31.7371 0)" fill="black"></rect></svg></a><p>Updated October 12, 2026 by Richard Tong, King of Technology at CLOUŢ</p><div class="cover"><img src="/assets/docker-mark-deep-blue.png" alt="/assets/docker-mark-deep-blue.png" style="max-height: 300px;"></img></div><div class="fade-in-out"><article><p><span>Blue-green deployment is a deployment strategy for the deployment phase of the DevOps lifecycle in software engineering. In blue-green deployment with Presidium and Docker, the Docker Swarm container orchestration technology manages the deployment of containers across two networks of remote physical or virtual servers, each with an identical production environment. A Docker daemon connects each server of a network on a Docker overlay network. The Docker Swarm technology manages the lifecycle of containers across each server via the Docker daemon, including resolving the appropriate server to host a container, pulling in an image of application software onto the appropriate server, running the image of application software on the appropriate server in a container, and load balancing traffic to a container across the network of servers.</span></p><p><span>A container is one or more processes started from an image using container management software such as Docker. An image is data including all files of the application software, binary and library dependencies of the application software, and configurations for running a container from the image of the application software.</span></p><a class="anchor-hash" href="#purpose" style="display: flex; place-items: center;"><h2 id="purpose"><span>Purpose</span></h2></a><p><span>The purpose of blue-green deployment is to achieve reliability and zero downtime when deploying application software as software services such as web servers for the world wide web.</span></p><a class="anchor-hash" href="#architecture" style="display: flex; place-items: center;"><h2 id="architecture"><span>Architecture</span></h2></a><p><span>The essential components of an architecture for blue-green deployment with Presidium and Docker is two networks of remote physical or virtual servers connected and load balanced by Docker and one load balancer directing traffic between the two networks. One of the networks is designated as the blue network, and the other network as the green network.</span></p><a class="anchor-hash" href="#procedure" style="display: flex; place-items: center;"><h2 id="procedure"><span>Procedure</span></h2></a><p><span>A blue-green deployment with Presidium and Docker starts with a new release of application software. The release is first containerized with the Presidium Docker client into an image and pushed up to an image registry on a remote server.</span></p><p><span>The following </span><code>build-push</code><span> script builds and pushes a release of a web server to a private repository of Docker Hub with the Presidium Docker client.</span></p><div class="code-viewer"><div></div></div><p><span>The following </span><code>run</code><span> script contains the code of the web server of the release, and is copied into the image.</span></p><div class="code-viewer"><div></div></div><p><span>Next, a network administrator manages the load balancer that directs traffic between the blue and the green network. The traffic is initially evenly split between the two networks. The network administrator first identifies either the blue or the green network to deploy the image of the release and directs traffic via the load balancer away from the identified network. The network administrator logs into a manager node of the identified network and deploys the image of the release.</span></p><p><span>The following </span><code>deploy</code><span> script deploys the image of the release as a Docker Service onto the Docker Swarm of the identified network.</span></p><div class="code-viewer"><div></div></div><p><span>When the Docker Service is initially deployed, it is in the "new" state. The network administrator must wait for the Docker Service to be in the "running" state. While the Docker Service is deploying onto the Docker Swarm, the network administrator can check the current state of the service with </span><code>docker service ps <service_name></code><span>.</span></p><p><span>Following a successful deploy, the network administrator directs traffic via the load balancer to the network of the successful deployment, and directs traffic away from the other blue or green network.</span></p><p><span>The network administrator then logs into a manager node of the other network and deploys the image of the release.</span></p><p><span>Following a successful deploy of the image of the release on the other network, the network administrator directs traffic back to the other network so that the traffic is once again evenly split between the blue and the green networks.</span></p><a class="anchor-hash" href="#conclusion" style="display: flex; place-items: center;"><h2 id="conclusion"><span>Conclusion</span></h2></a><p><span>With blue-green deployments, you can reliably deploy with zero downtime. Presidium allows for convenient scripting in JavaScript with Docker, the foundation and cornerstone technology of containers for distributed services for the world wide web.</span></p><p><span>To get started with Presidium and Docker, please see the Presidium installation on the  </span><a href="https://presidium.services/#installation"><span>Presidium Home Page</span></a><span>.</span></p></article></div></div><div class="blog-post inactive"><a href="/blog/database-system-guide" class=""><h1>Database System Guide</h1><svg class="down-arrow-svg" width="200" height="133" viewBox="0 0 200 133" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="143.875" height="41.9555" rx="20.9777" transform="matrix(0.683998 -0.729484 0.756447 0.654055 69.8527 105.123)" fill="black"></rect><rect width="143.875" height="41.9555" rx="20.9777" transform="matrix(0.683998 0.729484 -0.756447 0.654055 31.7371 0)" fill="black"></rect></svg></a><p>Updated October 9, 2026 by Richard Tong, King of Technology at CLOUŢ</p><div class="cover"><img src="/assets/disk-lights-w2000.jpg" alt="/assets/disk-lights-w2000.jpg"></img></div><div class="description"><h3>Database System Guide with Presidium DiskSortedHashTable and DiskHashTable</h3><button class="read-more">Read more</button></div><div class="fade-in-out"></div></div></div></main></div><div class="panel" style="width: 50%;"><div id="hamburger-menu" class=""><nav><a href="/" class="nav-link">Home</a><hr></hr><a href="/docs" class="nav-link">Docs</a><hr></hr><a href="/blog" class="nav-link active">Blog</a></nav><div class="docs-nav"><nav id="docs-nav"><section><div id="docs-search-bar"><input type="text" value="" placeholder="Search"></input></div></section><section><div><div class="docs-nav-item"><a href="/docs/AwsCredentials">AwsCredentials</a></div></div><div><div class="docs-nav-item"><a href="/docs/DiskHashTable">DiskHashTable</a></div></div><div><div class="docs-nav-item"><a href="/docs/DiskSortedHashTable">DiskSortedHashTable</a></div></div><div><div class="docs-nav-item"><a href="/docs/Docker">Docker</a></div></div><div><div class="docs-nav-item"><a href="/docs/DynamoDBGlobalSecondaryIndex">DynamoDBGlobalSecondaryIndex</a></div></div><div><div class="docs-nav-item"><a href="/docs/DynamoDBStream">DynamoDBStream</a></div></div><div><div class="docs-nav-item"><a href="/docs/DynamoDBTable">DynamoDBTable</a></div></div><div><div class="docs-nav-item"><a href="/docs/ECR">ECR</a></div></div><div><div class="docs-nav-item"><a href="/docs/GoogleChromeDevTools">GoogleChromeDevTools</a></div></div><div><div class="docs-nav-item"><a href="/docs/GoogleChromeForTesting">GoogleChromeForTesting</a></div></div><div><div class="docs-nav-item"><a href="/docs/HTTP">HTTP</a></div></div><div><div class="docs-nav-item"><a href="/docs/NpmToken">NpmToken</a></div></div><div><div class="docs-nav-item"><a href="/docs/OptionalValidator">OptionalValidator</a></div></div><div><div class="docs-nav-item"><a href="/docs/Password">Password</a></div></div><div><div class="docs-nav-item"><a href="/docs/Readable">Readable</a></div></div><div><div class="docs-nav-item"><a href="/docs/S3Bucket">S3Bucket</a></div></div><div><div class="docs-nav-item"><a href="/docs/Secrets">Secrets</a></div></div><div><div class="docs-nav-item"><a href="/docs/SecretsManager">SecretsManager</a></div></div><div><div class="docs-nav-item"><a href="/docs/StrictValidator">StrictValidator</a></div></div><div><div class="docs-nav-item"><a href="/docs/TranscribeStream">TranscribeStream</a></div></div><div><div class="docs-nav-item"><a href="/docs/WebSocket">WebSocket</a></div></div><div><div class="docs-nav-item"><a href="/docs/WebSocketServer">WebSocketServer</a></div></div><div><div class="docs-nav-item"><a href="/docs/WebSocketSecureServer">WebSocketSecureServer</a></div></div><div><div class="docs-nav-item"><a href="/docs/ServerWebSocket">ServerWebSocket</a></div></div><div><div class="docs-nav-item"><a href="/docs/XML">XML</a></div></div></section></nav></div></div></div></div></div><footer><p style="font-size: 12px; text-align: center; padding: 15px 0;">All content on this site is freely released in the public domain.</p></footer></div></div>
+<div id="react-root"><div id="layout"><nav><div class="home"><a id="home-link" href="/" class="nav-link"><span class="text1">Presidium</span></a><select><option value="V1">V1</option><option value="V2">V2</option><option value="V3">V3</option><option value="V4" selected>V4</option></select><div class="links"><a href="/docs" class="nav-link">Docs</a><a href="/blog" class="nav-link active">Blog</a></div></div><div class="right-links"></div></nav><div class="slider"><div class="panels" style="width: 200%; transform: translate(calc(0%));"><div class="panel" style="width: 50%;"><main><div id="blog"><div class="blog-post active"><a href="/blog" class="active"><h1>Blue-Green Deployments with Presidium and Docker</h1><svg class="down-arrow-svg" width="200" height="133" viewBox="0 0 200 133" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="143.875" height="41.9555" rx="20.9777" transform="matrix(0.683998 -0.729484 0.756447 0.654055 69.8527 105.123)" fill="black"></rect><rect width="143.875" height="41.9555" rx="20.9777" transform="matrix(0.683998 0.729484 -0.756447 0.654055 31.7371 0)" fill="black"></rect></svg></a><p>Updated October 12, 2026 by Richard Tong, King of Technology at CLOUŢ</p><div class="cover"><img src="/assets/docker-mark-deep-blue.png" alt="/assets/docker-mark-deep-blue.png" style="max-height: 300px;"></img></div><div class="fade-in-out"><article><p><span>Blue-green deployment is a deployment strategy for the deployment phase of the DevOps lifecycle in software engineering. In blue-green deployment with Presidium and Docker, the Docker Swarm container orchestration technology manages the deployment of containers across two networks of remote physical or virtual servers, each with an identical production environment. A Docker daemon connects each server of a network on a Docker overlay network. The Docker Swarm technology manages the lifecycle of containers across each server via the Docker daemon, including resolving the appropriate server to host a container, pulling in an image of application software onto the appropriate server, running the image of application software on the appropriate server in a container, and load balancing traffic to a container across the network of servers.</span></p><p><span>A container is one or more processes started from an image using container management software such as Docker. An image is data including all files of the application software, binary and library dependencies of the application software, and configurations for running a container from the image of the application software.</span></p><a class="anchor-hash" href="#purpose" style="display: flex; place-items: center;"><h2 id="purpose"><span>Purpose</span></h2></a><p><span>The purpose of blue-green deployment is to achieve reliability and zero downtime when deploying application software as software services such as web servers for the world wide web.</span></p><a class="anchor-hash" href="#architecture" style="display: flex; place-items: center;"><h2 id="architecture"><span>Architecture</span></h2></a><p><span>The essential components of an architecture for blue-green deployment with Presidium and Docker is two networks of remote physical or virtual servers connected and load balanced by Docker and one load balancer directing traffic between the two networks. One of the networks is designated as the blue network, and the other network as the green network.</span></p><a class="anchor-hash" href="#procedure" style="display: flex; place-items: center;"><h2 id="procedure"><span>Procedure</span></h2></a><p><span>A blue-green deployment with Presidium and Docker starts with a new release of application software. The release is first containerized with the Presidium Docker client into an image and pushed up to an image registry on a remote server.</span></p><p><span>The following </span><code>build-push</code><span> script builds and pushes a release of a web server to a private repository of Docker Hub with the Presidium Docker client.</span></p><div class="code-viewer"><button class="copy-button"><div class="copy-icon">
+<svg width="1055" height="1043" viewBox="0 0 1055 1043" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M650 242.266C732.843 242.266 800 309.423 800 392.266V892.266C800 975.108 732.842 1042.27 650 1042.27H150C67.1575 1042.27 0.000263959 975.108 0 892.266V392.266C0 309.423 67.1573 242.266 150 242.266H650ZM200 392.266C172.386 392.266 150 414.652 150 442.266V842.266C150 869.88 172.386 892.266 200 892.266H600C627.614 892.266 650 869.88 650 842.266V442.266C650 414.652 627.614 392.266 600 392.266H200Z" fill="black"/>
+<path d="M904.449 0C987.291 0.000131945 1054.45 67.1583 1054.45 150.001V650.001C1054.45 732.843 987.291 800.001 904.449 800.001H727.766V650.001H854.449C882.063 650.001 904.448 627.615 904.449 600.001V200.001C904.449 172.387 882.063 150.001 854.449 150.001H454.449C426.834 150.001 404.449 172.387 404.449 200.001V319.509H254.449V150.001C254.449 67.1583 321.606 0 404.449 0H904.449Z" fill="black"/>
+</svg>
+      </div></button><code><pre>#!/usr/bin/env node
+
+const Docker = require("presidium/Docker")
+
+setImmediate(async function () {
+  const docker = new Docker({ apiVersion: "1.52" })
+
+  const projectName = "my-web-server"
+  const version = "11.3.2"
+  const image = `${projectName}:${version}`
+  const username = "my_dockerhub_username"
+  const pat = "my_pat"
+
+  const buildStream = await docker.buildImage(__dirname, {
+    ignore: [".git", ".github", "build-push", "deploy", "test"],
+    image,
+    platform: "x86_64",
+    archive: {
+      Dockerfile: `
+FROM node:26-alpine
+WORKDIR /home/node
+COPY . .
+RUN apk add curl \
+  && chmod +x ./run \
+  && rm Dockerfile
+USER node
+      `.trim()
+    },
+  })
+
+  buildStream.on("data", chunk => {
+    const message = chunk.toString("utf8")
+    if (message.includes("error")) {
+      throw new Error(message)
+    }
+  })
+
+  buildStream.pipe(process.stdout)
+
+  await new Promise(resolve => buildStream.on("end", resolve))
+
+  await docker.tagImage(image, `${username}/${image}`)
+
+  const pushStream = await docker.pushImage({
+    image,
+    registry: username,
+    username,
+    password: pat,
+  })
+
+  pushStream.on("data", chunk => {
+    const message = chunk.toString("utf8")
+    if (message.includes("error")) {
+      throw new Error(message)
+    }
+  })
+
+  pushStream.pipe(process.stdout)
+
+  await new Promise(resolve => pushStream.on("end", resolve))
+})</pre></code></div><p><span>The following </span><code>run</code><span> script contains the code of the web server of the release, and is copied into the image.</span></p><div class="code-viewer"><button class="copy-button"><div class="copy-icon">
+<svg width="1055" height="1043" viewBox="0 0 1055 1043" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M650 242.266C732.843 242.266 800 309.423 800 392.266V892.266C800 975.108 732.842 1042.27 650 1042.27H150C67.1575 1042.27 0.000263959 975.108 0 892.266V392.266C0 309.423 67.1573 242.266 150 242.266H650ZM200 392.266C172.386 392.266 150 414.652 150 442.266V842.266C150 869.88 172.386 892.266 200 892.266H600C627.614 892.266 650 869.88 650 842.266V442.266C650 414.652 627.614 392.266 600 392.266H200Z" fill="black"/>
+<path d="M904.449 0C987.291 0.000131945 1054.45 67.1583 1054.45 150.001V650.001C1054.45 732.843 987.291 800.001 904.449 800.001H727.766V650.001H854.449C882.063 650.001 904.448 627.615 904.449 600.001V200.001C904.449 172.387 882.063 150.001 854.449 150.001H454.449C426.834 150.001 404.449 172.387 404.449 200.001V319.509H254.449V150.001C254.449 67.1583 321.606 0 404.449 0H904.449Z" fill="black"/>
+</svg>
+      </div></button><code><pre>#!/usr/bin/env node
+
+const http = require('http')
+
+const run = async function () {
+  const server = http.createServer((request, response) => {
+    response.writeHead(200, {
+      "Content-Type": "text/plain",
+    })
+    response.end("OK")
+  })
+
+  server.listen(8080, () => {
+    console.log("HTTP server listening on port 8080")
+  })
+}
+
+if (process.argv[1] == __filename) {
+  run()
+}
+
+module.exports = run</pre></code></div><p><span>Next, a network administrator manages the load balancer that directs traffic between the blue and the green network. The traffic is initially evenly split between the two networks. The network administrator first identifies either the blue or the green network to deploy the image of the release and directs traffic via the load balancer away from the identified network. The network administrator logs into a manager node of the identified network and deploys the image of the release.</span></p><p><span>The following </span><code>deploy</code><span> script deploys the image of the release as a Docker Service onto the Docker Swarm of the identified network.</span></p><div class="code-viewer"><button class="copy-button"><div class="copy-icon">
+<svg width="1055" height="1043" viewBox="0 0 1055 1043" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M650 242.266C732.843 242.266 800 309.423 800 392.266V892.266C800 975.108 732.842 1042.27 650 1042.27H150C67.1575 1042.27 0.000263959 975.108 0 892.266V392.266C0 309.423 67.1573 242.266 150 242.266H650ZM200 392.266C172.386 392.266 150 414.652 150 442.266V842.266C150 869.88 172.386 892.266 200 892.266H600C627.614 892.266 650 869.88 650 842.266V442.266C650 414.652 627.614 392.266 600 392.266H200Z" fill="black"/>
+<path d="M904.449 0C987.291 0.000131945 1054.45 67.1583 1054.45 150.001V650.001C1054.45 732.843 987.291 800.001 904.449 800.001H727.766V650.001H854.449C882.063 650.001 904.448 627.615 904.449 600.001V200.001C904.449 172.387 882.063 150.001 854.449 150.001H454.449C426.834 150.001 404.449 172.387 404.449 200.001V319.509H254.449V150.001C254.449 67.1583 321.606 0 404.449 0H904.449Z" fill="black"/>
+</svg>
+      </div></button><code><pre>#!/usr/bin/env node
+
+const Docker = require('presidium/Docker')
+
+setImmediate(async () => {
+  const docker = new Docker({ apiVersion: '1.52' })
+
+  const projectName = "my-web-server"
+  const version = "11.3.1"
+  const image = `${projectName}:${version}`
+  const username = "my_dockerhub_username"
+  const pat = "my_pat"
+
+  const serviceOptions = {
+    image: `${username}/${image}`,
+    cmd: ['./run'],
+    healthCmd: ['curl', 'http://localhost:8080/'],
+    env: {
+      NODE_ENV: 'production',
+    },
+    publish: {
+      3001: 8080,
+    },
+    replicas: 1,
+    restart: 'any',
+    username,
+    password: pat,
+  }
+
+  console.log(`Deploying ${projectName}@${version}...`)
+  try {
+    await docker.createService(projectName, serviceOptions)
+  } catch {
+    await docker.updateService(projectName, serviceOptions)
+  }
+})</pre></code></div><p><span>When the Docker Service is initially deployed, it is in the "new" state. The network administrator must wait for the Docker Service to be in the "running" state. While the Docker Service is deploying onto the Docker Swarm, the network administrator can check the current state of the service with </span><code>docker service ps <service_name></code><span>.</span></p><p><span>Following a successful deploy, the network administrator directs traffic via the load balancer to the network of the successful deployment, and directs traffic away from the other blue or green network.</span></p><p><span>The network administrator then logs into a manager node of the other network and deploys the image of the release.</span></p><p><span>Following a successful deploy of the image of the release on the other network, the network administrator directs traffic back to the other network so that the traffic is once again evenly split between the blue and the green networks.</span></p><a class="anchor-hash" href="#conclusion" style="display: flex; place-items: center;"><h2 id="conclusion"><span>Conclusion</span></h2></a><p><span>With blue-green deployments, you can reliably deploy with zero downtime. Presidium allows for convenient scripting in JavaScript with Docker, the foundation and cornerstone technology of containers for distributed services for the world wide web.</span></p><p><span>To get started with Presidium and Docker, please see the Presidium installation on the  </span><a href="https://presidium.services/#installation"><span>Presidium Home Page</span></a><span>.</span></p></article></div></div><div class="blog-post inactive"><a href="/blog/database-system-guide" class=""><h1>Database System Guide</h1><svg class="down-arrow-svg" width="200" height="133" viewBox="0 0 200 133" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="143.875" height="41.9555" rx="20.9777" transform="matrix(0.683998 -0.729484 0.756447 0.654055 69.8527 105.123)" fill="black"></rect><rect width="143.875" height="41.9555" rx="20.9777" transform="matrix(0.683998 0.729484 -0.756447 0.654055 31.7371 0)" fill="black"></rect></svg></a><p>Updated October 9, 2026 by Richard Tong, King of Technology at CLOUŢ</p><div class="cover"><img src="/assets/disk-lights-w2000.jpg" alt="/assets/disk-lights-w2000.jpg"></img></div><div class="description"><h3>Database System Guide with Presidium DiskSortedHashTable and DiskHashTable</h3><button class="read-more">Read more</button></div><div class="fade-in-out"></div></div></div></main></div><div class="panel" style="width: 50%;"><div id="hamburger-menu" class=""><nav><a href="/" class="nav-link">Home</a><hr></hr><a href="/docs" class="nav-link">Docs</a><hr></hr><a href="/blog" class="nav-link active">Blog</a></nav><div class="docs-nav"><nav id="docs-nav"><section><div id="docs-search-bar"><input type="text" value="" placeholder="Search"></input></div></section><section><div><div class="docs-nav-item"><a href="/docs/AwsCredentials">AwsCredentials</a></div></div><div><div class="docs-nav-item"><a href="/docs/DiskHashTable">DiskHashTable</a></div></div><div><div class="docs-nav-item"><a href="/docs/DiskSortedHashTable">DiskSortedHashTable</a></div></div><div><div class="docs-nav-item"><a href="/docs/Docker">Docker</a></div></div><div><div class="docs-nav-item"><a href="/docs/DynamoDBGlobalSecondaryIndex">DynamoDBGlobalSecondaryIndex</a></div></div><div><div class="docs-nav-item"><a href="/docs/DynamoDBStream">DynamoDBStream</a></div></div><div><div class="docs-nav-item"><a href="/docs/DynamoDBTable">DynamoDBTable</a></div></div><div><div class="docs-nav-item"><a href="/docs/ECR">ECR</a></div></div><div><div class="docs-nav-item"><a href="/docs/GoogleChromeDevTools">GoogleChromeDevTools</a></div></div><div><div class="docs-nav-item"><a href="/docs/GoogleChromeForTesting">GoogleChromeForTesting</a></div></div><div><div class="docs-nav-item"><a href="/docs/HTTP">HTTP</a></div></div><div><div class="docs-nav-item"><a href="/docs/NpmToken">NpmToken</a></div></div><div><div class="docs-nav-item"><a href="/docs/OptionalValidator">OptionalValidator</a></div></div><div><div class="docs-nav-item"><a href="/docs/Password">Password</a></div></div><div><div class="docs-nav-item"><a href="/docs/Readable">Readable</a></div></div><div><div class="docs-nav-item"><a href="/docs/S3Bucket">S3Bucket</a></div></div><div><div class="docs-nav-item"><a href="/docs/Secrets">Secrets</a></div></div><div><div class="docs-nav-item"><a href="/docs/SecretsManager">SecretsManager</a></div></div><div><div class="docs-nav-item"><a href="/docs/StrictValidator">StrictValidator</a></div></div><div><div class="docs-nav-item"><a href="/docs/TranscribeStream">TranscribeStream</a></div></div><div><div class="docs-nav-item"><a href="/docs/WebSocket">WebSocket</a></div></div><div><div class="docs-nav-item"><a href="/docs/WebSocketServer">WebSocketServer</a></div></div><div><div class="docs-nav-item"><a href="/docs/WebSocketSecureServer">WebSocketSecureServer</a></div></div><div><div class="docs-nav-item"><a href="/docs/ServerWebSocket">ServerWebSocket</a></div></div><div><div class="docs-nav-item"><a href="/docs/XML">XML</a></div></div></section></nav></div></div></div></div></div><footer><p style="font-size: 12px; text-align: center; padding: 15px 0;">All content on this site is freely released in the public domain.</p></footer></div></div>
 </body>
 
 <script type="module" src="/index.js"></script>

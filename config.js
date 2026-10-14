@@ -22,15 +22,17 @@ module.exports = {
     ScriptTag('/global.js'),
 
     ScriptTag('/vendor/codemirror/index.js'),
-    ScriptTag('/vendor/codemirror/syntax/javascript.js', { async: true }),
-    ScriptTag('/vendor/codemirror/syntax/coffeescript.js', { async: true }),
-    ScriptTag('/vendor/codemirror/syntax/htmlmixed.js', { async: true }),
-    ScriptTag('/vendor/codemirror/syntax/xml.js', { async: true }),
-    ScriptTag('/vendor/codemirror/syntax/css.js', { async: true }),
+    ScriptTag('/vendor/codemirror/syntax/javascript.js'),
+    ScriptTag('/vendor/codemirror/syntax/coffeescript.js'),
+    ScriptTag('/vendor/codemirror/syntax/htmlmixed.js'),
+    ScriptTag('/vendor/codemirror/syntax/xml.js'),
+    ScriptTag('/vendor/codemirror/syntax/css.js'),
+    ScriptTag('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.12.0/highlight.min.js'),
   ],
 
   stylesheets: [
     StylesheetTag('https://fonts.googleapis.com'),
+    StylesheetTag('https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.12.0/styles/isbl-editor-light.min.css'),
     StylesheetTag('/index.css'),
     StylesheetTag('/vendor/codemirror/styles.css'),
     StylesheetTag('/vendor/codemirror/theme/rubico.css'),
