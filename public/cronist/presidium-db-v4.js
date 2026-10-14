@@ -62,7 +62,10 @@ export default [
       'newTableLength = oldTableLength * resizeFactor\n' +
       '```\n' +
       '\n' +
-      'Once all of the items have been added into the temporary storage file, the temporary storage file is moved to the location of the old storage file to be used as the new storage file.',
+      'Once all of the items have been added into the temporary storage file, the temporary storage file is moved to the location of the old storage file to be used as the new storage file.\n' +
+      '\n' +
+      '## Number of Running Instances\n' +
+      'There should only be one instance of a DiskHashTable running per storage and header file at any time.',
     mdast: {
       name: {
         type: 'root',
@@ -1094,11 +1097,46 @@ export default [
               start: { line: 62, column: 1, offset: 2947 },
               end: { line: 62, column: 183, offset: 3129 }
             }
+          },
+          {
+            type: 'heading',
+            depth: 2,
+            children: [
+              {
+                type: 'text',
+                value: 'Number of Running Instances',
+                position: {
+                  start: { line: 64, column: 4, offset: 3134 },
+                  end: { line: 64, column: 31, offset: 3161 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 64, column: 1, offset: 3131 },
+              end: { line: 64, column: 31, offset: 3161 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'There should only be one instance of a DiskHashTable running per storage and header file at any time.',
+                position: {
+                  start: { line: 65, column: 1, offset: 3162 },
+                  end: { line: 65, column: 102, offset: 3263 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 65, column: 1, offset: 3162 },
+              end: { line: 65, column: 102, offset: 3263 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 62, column: 183, offset: 3129 }
+          end: { line: 65, column: 102, offset: 3263 }
         }
       }
     },
@@ -4561,7 +4599,10 @@ export default [
       'Once all of the items have been added into the temporary storage file, the temporary storage file is moved to the location of the old storage file to be used as the new storage file.\n' +
       '\n' +
       '## Optimizing the disk sorted hash table b-tree\n' +
-      'The value of `degree` determines the structure of the internal b-tree used by the disk sorted hash table. A higher value for `degree` results in a shorter b-tree and more items per b-tree node, while a lower value results in a taller b-tree and fewer items per b-tree node. The default value of 2 is a safe choice for most use cases.',
+      'The value of `degree` determines the structure of the internal b-tree used by the disk sorted hash table. A higher value for `degree` results in a shorter b-tree and more items per b-tree node, while a lower value results in a taller b-tree and fewer items per b-tree node. The default value of 2 is a safe choice for most use cases.\n' +
+      '\n' +
+      '## Number of Running Instances\n' +
+      'There should only be one instance of a DiskSortedHashTable running per storage and header file at any time.',
     mdast: {
       name: {
         type: 'root',
@@ -6120,11 +6161,46 @@ export default [
               start: { line: 75, column: 1, offset: 3978 },
               end: { line: 75, column: 334, offset: 4311 }
             }
+          },
+          {
+            type: 'heading',
+            depth: 2,
+            children: [
+              {
+                type: 'text',
+                value: 'Number of Running Instances',
+                position: {
+                  start: { line: 77, column: 4, offset: 4316 },
+                  end: { line: 77, column: 31, offset: 4343 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 77, column: 1, offset: 4313 },
+              end: { line: 77, column: 31, offset: 4343 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'There should only be one instance of a DiskSortedHashTable running per storage and header file at any time.',
+                position: {
+                  start: { line: 78, column: 1, offset: 4344 },
+                  end: { line: 78, column: 108, offset: 4451 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 78, column: 1, offset: 4344 },
+              end: { line: 78, column: 108, offset: 4451 }
+            }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 75, column: 334, offset: 4311 }
+          end: { line: 78, column: 108, offset: 4451 }
         }
       }
     },
