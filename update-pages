@@ -59,10 +59,10 @@ async function main() {
       */
 
       const reactRootHTML = await archeHTML.render(url)
-      const bodyHTML = `<div id="react-root">${reactRootHTML}</div>`
+      const bodyHTML = url == "/"
+        ? `<div id="react-root"></div>`
+        : `<div id="react-root">${reactRootHTML}</div>`
       console.log('Updating page', fullFilepath.replace(process.env.HOME, '~'))
-      if (url == '/blog/blue-green-deployments-with-presidium-and-docker') {
-      }
 
       await fs.promises.writeFile(fullFilepath, PageHTML({
         title,

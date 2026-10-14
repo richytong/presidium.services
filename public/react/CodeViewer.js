@@ -21,11 +21,12 @@ const CodeViewer = ReactElement(({
   const [mediaQuery] = useMediaQuery('(max-width: 768px)')
 
   useEffect(() => {
-    hljs.highlightElement(ref.current)
+    // hljs.highlightElement(ref.current)
   }, [])
 
   return Div({
-    class: hover ? 'code-viewer hover' : 'code-viewer',
+    // class: hover ? 'code-viewer hover' : 'code-viewer',
+    class: 'code-viewer',
     onMouseEnter() {
       setHover(true)
     },
@@ -33,7 +34,7 @@ const CodeViewer = ReactElement(({
       setHover(false)
     }
   }, [
-    mediaQuery.matches ? [] : Button({
+    Button({
       class: 'copy-button',
       onClick() {
         copyToClipboard(code)
