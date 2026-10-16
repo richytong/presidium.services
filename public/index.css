@@ -46,7 +46,7 @@ a > code {
   color: blue;
 }
 
-code {
+.docs article code {
   background-color: #f6f8fa;
   font-family: SourceCodePro;
   font-weight: 500;
@@ -87,18 +87,79 @@ h1::-webkit-scrollbar {
   font-weight: 500;
   font-size: 14px;
   width: 100%;
-  background-color: #f2f2f2;
+  background-color: #fff;
   overflow-x: scroll;
   overflow-y: hidden;
   position: relative;
   scrollbar-width: none;
   padding: 5px;
   border-radius: 5px;
+  color: #000;
 }
 
 .code-viewer pre {
   padding: 5px;
   margin: 0;
+}
+
+.code-viewer .comment {
+  color: #888;
+}
+
+.code-viewer .number, .code-viewer .bigint, .code-viewer .undefined, .code-viewer .null, .code-viewer .boolean, .code-viewer .not-a-number {
+  color: #8807bf;
+}
+
+.code-viewer .variable-declaration-keyword {
+  color: #36e2ce;
+}
+
+.code-viewer .keyword {
+  color: red;
+}
+
+.code-viewer .function-keyword {
+  color: green;
+}
+
+.code-viewer .arrow-function-operator {
+  color: green;
+}
+
+.code-viewer .function-name {
+  color: #49db43;
+}
+
+.code-viewer .string {
+  color: #e0c82f;
+}
+
+.code-viewer .operator {
+  color: #000;
+}
+
+.code-viewer .object-colon {
+  color: #000;
+}
+
+.code-viewer .property-accessor {
+  color: #000;
+}
+
+.code-viewer .spread-operator {
+  color: #000;
+}
+
+.code-viewer .global-object {
+  color: #d15186;
+}
+
+.code-viewer .template-literal {
+  color: #e0c82f;
+}
+
+.code-viewer .template-variable {
+  color: #000;
 }
 
 .code-viewer code  {

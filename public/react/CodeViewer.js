@@ -36,7 +36,9 @@ const CodeViewer = ReactElement(({
         }, 500)
       },
     }, [copySuccess ? CopySuccessIcon() : CopyIcon()]),
-    Code([Pre(code)]),
+    mode == "javascript"
+      ? Code([Pre(ArcheHighlight.parseJavaScript(code))])
+      : Code([Pre(code)]),
   ])
 })
 
