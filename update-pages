@@ -57,9 +57,12 @@ async function main() {
       */
 
       const reactRootHTML = await archeHTML.render(url)
+      /*
       const bodyHTML = url == "/"
         ? `<div id="react-root"></div>`
         : `<div id="react-root">${reactRootHTML}</div>`
+        */
+      const bodyHTML = '<div id="react-root"></div>'
       console.log('Updating page', fullFilepath.replace(process.env.HOME, '~'))
 
       await fs.promises.writeFile(fullFilepath, PageHTML({
