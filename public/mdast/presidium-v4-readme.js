@@ -1152,10 +1152,14 @@ export default {
         '  rm: true,\n' +
         '})\n' +
         '\n' +
-        'runStream.pipe(process.stdout) // Example',
+        'runStream.pipe(process.stdout) // Example\n' +
+        '\n' +
+        'const s = "test"\n' +
+        '\n' +
+        'const ts = `123 ${s} 456`',
       position: {
         start: { line: 311, column: 1, offset: 9313 },
-        end: { line: 324, column: 4, offset: 9616 }
+        end: { line: 328, column: 4, offset: 9661 }
       }
     },
     {
@@ -1171,20 +1175,20 @@ export default {
               type: 'text',
               value: 'Deploy Docker Swarm services',
               position: {
-                start: { line: 326, column: 5, offset: 9622 },
-                end: { line: 326, column: 33, offset: 9650 }
+                start: { line: 330, column: 5, offset: 9667 },
+                end: { line: 330, column: 33, offset: 9695 }
               }
             }
           ],
           position: {
-            start: { line: 326, column: 4, offset: 9621 },
-            end: { line: 326, column: 74, offset: 9691 }
+            start: { line: 330, column: 4, offset: 9666 },
+            end: { line: 330, column: 74, offset: 9736 }
           }
         }
       ],
       position: {
-        start: { line: 326, column: 1, offset: 9618 },
-        end: { line: 326, column: 74, offset: 9691 }
+        start: { line: 330, column: 1, offset: 9663 },
+        end: { line: 330, column: 74, offset: 9736 }
       }
     },
     {
@@ -1207,8 +1211,8 @@ export default {
         '})\n' +
         '// new nginx service is deploying to the docker swarm',
       position: {
-        start: { line: 327, column: 1, offset: 9692 },
-        end: { line: 343, column: 4, offset: 10049 }
+        start: { line: 331, column: 1, offset: 9737 },
+        end: { line: 347, column: 4, offset: 10094 }
       }
     },
     {
@@ -1224,20 +1228,20 @@ export default {
               type: 'text',
               value: 'Automate tests with Google Chrome for Testing',
               position: {
-                start: { line: 345, column: 5, offset: 10055 },
-                end: { line: 345, column: 50, offset: 10100 }
+                start: { line: 349, column: 5, offset: 10100 },
+                end: { line: 349, column: 50, offset: 10145 }
               }
             }
           ],
           position: {
-            start: { line: 345, column: 4, offset: 10054 },
-            end: { line: 345, column: 105, offset: 10155 }
+            start: { line: 349, column: 4, offset: 10099 },
+            end: { line: 349, column: 105, offset: 10200 }
           }
         }
       ],
       position: {
-        start: { line: 345, column: 1, offset: 10051 },
-        end: { line: 345, column: 105, offset: 10155 }
+        start: { line: 349, column: 1, offset: 10096 },
+        end: { line: 349, column: 105, offset: 10200 }
       }
     },
     {
@@ -1270,8 +1274,8 @@ export default {
         '  url: `http://localhost:3000/`,\n' +
         '})',
       position: {
-        start: { line: 346, column: 1, offset: 10156 },
-        end: { line: 372, column: 4, offset: 11132 }
+        start: { line: 350, column: 1, offset: 10201 },
+        end: { line: 376, column: 4, offset: 11177 }
       }
     },
     {
@@ -1287,20 +1291,20 @@ export default {
               type: 'text',
               value: 'Store data on disk as a hash table',
               position: {
-                start: { line: 374, column: 5, offset: 11138 },
-                end: { line: 374, column: 39, offset: 11172 }
+                start: { line: 378, column: 5, offset: 11183 },
+                end: { line: 378, column: 39, offset: 11217 }
               }
             }
           ],
           position: {
-            start: { line: 374, column: 4, offset: 11137 },
-            end: { line: 374, column: 87, offset: 11220 }
+            start: { line: 378, column: 4, offset: 11182 },
+            end: { line: 378, column: 87, offset: 11265 }
           }
         }
       ],
       position: {
-        start: { line: 374, column: 1, offset: 11134 },
-        end: { line: 374, column: 87, offset: 11220 }
+        start: { line: 378, column: 1, offset: 11179 },
+        end: { line: 378, column: 87, offset: 11265 }
       }
     },
     {
@@ -1323,8 +1327,8 @@ export default {
         '\n' +
         "await ht.delete('my-key')",
       position: {
-        start: { line: 375, column: 1, offset: 11221 },
-        end: { line: 391, column: 4, offset: 11602 }
+        start: { line: 379, column: 1, offset: 11266 },
+        end: { line: 395, column: 4, offset: 11647 }
       }
     },
     {
@@ -1340,20 +1344,20 @@ export default {
               type: 'text',
               value: 'Store data on disk as a sorted hash table',
               position: {
-                start: { line: 393, column: 5, offset: 11608 },
-                end: { line: 393, column: 46, offset: 11649 }
+                start: { line: 397, column: 5, offset: 11653 },
+                end: { line: 397, column: 46, offset: 11694 }
               }
             }
           ],
           position: {
-            start: { line: 393, column: 4, offset: 11607 },
-            end: { line: 393, column: 100, offset: 11703 }
+            start: { line: 397, column: 4, offset: 11652 },
+            end: { line: 397, column: 100, offset: 11748 }
           }
         }
       ],
       position: {
-        start: { line: 393, column: 1, offset: 11604 },
-        end: { line: 393, column: 100, offset: 11703 }
+        start: { line: 397, column: 1, offset: 11649 },
+        end: { line: 397, column: 100, offset: 11748 }
       }
     },
     {
@@ -1395,8 +1399,8 @@ export default {
         '                     // first-value\n' +
         '}',
       position: {
-        start: { line: 394, column: 1, offset: 11704 },
-        end: { line: 429, column: 4, offset: 12830 }
+        start: { line: 398, column: 1, offset: 11749 },
+        end: { line: 433, column: 4, offset: 12875 }
       }
     },
     {
@@ -1407,14 +1411,14 @@ export default {
           type: 'text',
           value: 'License',
           position: {
-            start: { line: 431, column: 4, offset: 12835 },
-            end: { line: 431, column: 11, offset: 12842 }
+            start: { line: 435, column: 4, offset: 12880 },
+            end: { line: 435, column: 11, offset: 12887 }
           }
         }
       ],
       position: {
-        start: { line: 431, column: 1, offset: 12832 },
-        end: { line: 431, column: 11, offset: 12842 }
+        start: { line: 435, column: 1, offset: 12877 },
+        end: { line: 435, column: 11, offset: 12887 }
       }
     },
     {
@@ -1424,8 +1428,8 @@ export default {
           type: 'text',
           value: 'Presidium is distributed under the ',
           position: {
-            start: { line: 432, column: 1, offset: 12843 },
-            end: { line: 432, column: 36, offset: 12878 }
+            start: { line: 436, column: 1, offset: 12888 },
+            end: { line: 436, column: 36, offset: 12923 }
           }
         },
         {
@@ -1437,28 +1441,28 @@ export default {
               type: 'text',
               value: 'CFOSS License',
               position: {
-                start: { line: 432, column: 37, offset: 12879 },
-                end: { line: 432, column: 50, offset: 12892 }
+                start: { line: 436, column: 37, offset: 12924 },
+                end: { line: 436, column: 50, offset: 12937 }
               }
             }
           ],
           position: {
-            start: { line: 432, column: 36, offset: 12878 },
-            end: { line: 432, column: 102, offset: 12944 }
+            start: { line: 436, column: 36, offset: 12923 },
+            end: { line: 436, column: 102, offset: 12989 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 432, column: 102, offset: 12944 },
-            end: { line: 432, column: 103, offset: 12945 }
+            start: { line: 436, column: 102, offset: 12989 },
+            end: { line: 436, column: 103, offset: 12990 }
           }
         }
       ],
       position: {
-        start: { line: 432, column: 1, offset: 12843 },
-        end: { line: 432, column: 103, offset: 12945 }
+        start: { line: 436, column: 1, offset: 12888 },
+        end: { line: 436, column: 103, offset: 12990 }
       }
     },
     {
@@ -1469,14 +1473,14 @@ export default {
           type: 'text',
           value: 'Support',
           position: {
-            start: { line: 434, column: 3, offset: 12949 },
-            end: { line: 434, column: 10, offset: 12956 }
+            start: { line: 438, column: 3, offset: 12994 },
+            end: { line: 438, column: 10, offset: 13001 }
           }
         }
       ],
       position: {
-        start: { line: 434, column: 1, offset: 12947 },
-        end: { line: 434, column: 10, offset: 12956 }
+        start: { line: 438, column: 1, offset: 12992 },
+        end: { line: 438, column: 10, offset: 13001 }
       }
     },
     {
@@ -1497,31 +1501,31 @@ export default {
                   type: 'text',
                   value: 'minimum Node.js version: 16',
                   position: {
-                    start: { line: 435, column: 4, offset: 12960 },
-                    end: { line: 435, column: 31, offset: 12987 }
+                    start: { line: 439, column: 4, offset: 13005 },
+                    end: { line: 439, column: 31, offset: 13032 }
                   }
                 }
               ],
               position: {
-                start: { line: 435, column: 4, offset: 12960 },
-                end: { line: 435, column: 31, offset: 12987 }
+                start: { line: 439, column: 4, offset: 13005 },
+                end: { line: 439, column: 31, offset: 13032 }
               }
             }
           ],
           position: {
-            start: { line: 435, column: 2, offset: 12958 },
-            end: { line: 435, column: 31, offset: 12987 }
+            start: { line: 439, column: 2, offset: 13003 },
+            end: { line: 439, column: 31, offset: 13032 }
           }
         }
       ],
       position: {
-        start: { line: 435, column: 2, offset: 12958 },
-        end: { line: 435, column: 31, offset: 12987 }
+        start: { line: 439, column: 2, offset: 13003 },
+        end: { line: 439, column: 31, offset: 13032 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 436, column: 1, offset: 12988 }
+    end: { line: 440, column: 1, offset: 13033 }
   }
 }

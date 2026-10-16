@@ -47,9 +47,7 @@ async function main() {
 
   for (const page of pages) {
     const { title, description, url, filepath } = page
-    // const filePart = filepath.endsWith('.html') ? filepath : `${filepath}.html`
-    const filePart = filepath
-    const fullFilepath = `${__dirname}/${publicDir}${filePart}`
+    const fullFilepath = `${__dirname}/${publicDir}${filepath}`
     try {
       /* TODO
       const content = await fs.promises.readFile(fullFilepath)
