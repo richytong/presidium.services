@@ -11,7 +11,7 @@ module.exports = {
     ScriptTag('https://cdn.jsdelivr.net/npm/react@18.3.0/umd/react.production.min.js'),
     ScriptTag('https://cdn.jsdelivr.net/npm/react-dom@18.3.0/umd/react-dom.production.min.js'),
     ScriptTag('https://cdn.jsdelivr.net/npm/arche@0.3.11/index.js'),
-    ScriptTag('https://cdn.jsdelivr.net/npm/arche-highlight@0.6.1/ArcheHighlight.js'),
+    ScriptTag('https://cdn.jsdelivr.net/npm/arche-highlight@0.6.2/ArcheHighlight.js'),
     ScriptTag('/global.js'),
   ],
 
