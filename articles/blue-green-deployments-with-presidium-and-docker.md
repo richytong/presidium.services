@@ -7,6 +7,7 @@ path: /blog/blue-green-deployments-with-presidium-and-docker
 description: Reliably deploy with zero downtime with blue-green deployments with Presidium and Docker
 image: /assets/docker-mark-deep-blue.png
 image-max-height: 300px
+static: true
 ---
 
 Blue-green deployment is a deployment strategy for the deployment phase of the DevOps lifecycle in software engineering. In blue-green deployment with Presidium and Docker, the Docker Swarm container orchestration technology manages the deployment of containers across two networks of remote physical or virtual servers, each with an identical production environment. A Docker daemon connects each server of a network on a Docker overlay network. The Docker Swarm technology manages the lifecycle of containers across each server via the Docker daemon, including resolving the appropriate server to host a container, pulling in an image of application software onto the appropriate server, running the image of application software on the appropriate server in a container, and load balancing traffic to a container across the network of servers.

@@ -19,6 +19,7 @@ const MdastBlogMetadata = function (mdast) {
     description: data.description,
     image: data.image,
     ...data['image-max-height'] ? { imageMaxHeight: data['image-max-height'] } : {},
+    ...data.static == "true" ? { static: true } : {},
   }
   return data
 }

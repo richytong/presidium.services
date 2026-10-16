@@ -143,7 +143,8 @@ const BlogPost = ReactElement(props => {
     ],
 
     Div({
-      class: transition == 'start' ? 'fade-in-out'
+      class: static ? ''
+        : transition == 'start' ? 'fade-in-out'
         : isActive && transition == 'end' ? 'fade-in-out transition-end'
         : 'fade-in-out',
     }, isActive ? [children] : []),
