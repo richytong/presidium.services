@@ -48,21 +48,11 @@ async function main() {
   for (const page of pages) {
     const { title, description, url, filepath } = page
     const fullFilepath = `${__dirname}/${publicDir}${filepath}`
+    const reactRootHTML = await archeHTML.render(url)
+    const bodyHTML = url == '/'
+      ? `<div id="react-root"></div>`
+      : `<div id="react-root">${reactRootHTML}</div>`
     try {
-      /* TODO
-      const content = await fs.promises.readFile(fullFilepath)
-        .then(buf => buf.toString('utf8'))
-      const $ = parseHTML(content)
-      const bodyHTML = $('body').html().trim()
-      */
-
-      const reactRootHTML = await archeHTML.render(url)
-      /*
-      const bodyHTML = url == "/"
-        ? `<div id="react-root"></div>`
-        : `<div id="react-root">${reactRootHTML}</div>`
-        */
-      const bodyHTML = '<div id="react-root"></div>'
       console.log('Updating page', fullFilepath.replace(process.env.HOME, '~'))
 
       await fs.promises.writeFile(fullFilepath, PageHTML({
@@ -84,7 +74,7 @@ async function main() {
           url: `https://${domain}${url}`,
           scripts,
           stylesheets,
-          bodyHTML: '<div id="react-root"></div>',
+          bodyHTML,
         }))
       } else {
         throw error

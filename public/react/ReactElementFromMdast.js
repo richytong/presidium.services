@@ -23,10 +23,21 @@ const anchorHashFromMdast = function (mdast) {
   }
 }
 
+function MdastKey(mdast) {
+  return [
+    mdast.position.start.line,
+    mdast.position.start.column,
+    mdast.position.start.offset,
+    mdast.position.end.line,
+    mdast.position.end.column,
+    mdast.position.end.offset,
+  ].join('-')
+}
+
 // mdast -> ReactElement
 const ReactElementFromMdastRecurse = function (mdast) {
   return isArray(mdast.children)
-    ? mdast.children.map(mdast => ReactElementFromMdast({ mdast }))
+    ? mdast.children.map(mdast => ReactElementFromMdast({ key: MdastKey(mdast), mdast }))
     : mdast.value
 }
 
@@ -93,6 +104,7 @@ const ReactElementFromMdast = ReactElement(props => {
             anchorHashFromMdast,
             anchorHashFormat,
           ])
+          // console.error("anchorHash", anchorHash)
           return A({
             class: 'anchor-hash',
             href: `#${anchorHash}`,
@@ -184,12 +196,13 @@ const ReactElementFromMdast = ReactElement(props => {
             mode: mdast.lang,
             theme: 'rubico',
           })
-        default:
+        default: {
           return CodeViewer({
             code: mdast.value,
             mode: mdast.meta == null ? mdast.lang : mdast.meta.slice(1, -1),
             theme: 'default',
           })
+        }
       }
 
     case 'link':
