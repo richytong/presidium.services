@@ -16,7 +16,6 @@ const CodeViewer = ReactElement(({
 
   const [hover, setHover] = useState(false)
   const [copySuccess, setCopySuccess] = useState(false)
-  const [rerender, setRerender] = useState(false)
 
   return Div({
     class: hover ? "code-viewer hover" : "code-viewer",
