@@ -152,7 +152,7 @@ h1::-webkit-scrollbar {
 }
 
 .code-viewer .global-object {
-  color: purple;
+  color: magenta;
 }
 
 .code-viewer .template-literal {
