@@ -102,6 +102,10 @@ h1::-webkit-scrollbar {
   margin: 0;
 }
 
+.code-viewer .shebang-interpreter-directive {
+  color: #888;
+}
+
 .code-viewer .comment {
   color: #888;
 }
