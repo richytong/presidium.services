@@ -3,6 +3,7 @@
 const fs = require('fs')
 const ArcheHTML = require('arche-html')
 const findPaths = require('./lib/findPaths')
+const StaticPageHTML = require('./lib/StaticPageHTML')
 const PageHTML = require('./lib/PageHTML')
 const parseHTML = require('./lib/parseHTML')
 const validateConfig = require('./lib/validateConfig')
@@ -46,16 +47,17 @@ async function main() {
   await fs.promises.writeFile(`${__dirname}/${publicDir}/sitemap.xml`, SitemapXml())
 
   for (const page of pages) {
-    const { title, description, url, filepath } = page
+    const { title, description, url, filepath, static = false } = page
     const fullFilepath = `${__dirname}/${publicDir}${filepath}`
     const reactRootHTML = await archeHTML.render(url)
     const bodyHTML = url == '/'
       ? `<div id="react-root"></div>`
       : `<div id="react-root">${reactRootHTML}</div>`
+    const generateHTML = static ? StaticPageHTML : PageHTML
     try {
       console.log('Updating page', fullFilepath.replace(process.env.HOME, '~'))
 
-      await fs.promises.writeFile(fullFilepath, PageHTML({
+      await fs.promises.writeFile(fullFilepath, generateHTML({
         title,
         description,
         url: `https://${domain}${url}`,
@@ -68,7 +70,7 @@ async function main() {
         console.log('Creating page', fullFilepath.replace(process.env.HOME, '~'))
         const dirname = fullFilepath.split('/').slice(0, -1).join('/')
         await fs.promises.mkdir(dirname, { recursive: true })
-        await fs.promises.writeFile(fullFilepath, PageHTML({
+        await fs.promises.writeFile(fullFilepath, generateHTML({
           title,
           description,
           url: `https://${domain}${url}`,

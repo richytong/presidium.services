@@ -62,6 +62,7 @@ module.exports = {
       description: 'Reliably deploy with zero downtime with blue-green deployments with Presidium and Docker',
       url: '/blog/blue-green-deployments-with-presidium-and-docker',
       filepath: '/blog/blue-green-deployments-with-presidium-and-docker',
+      static: true,
     },
   ],
 }
