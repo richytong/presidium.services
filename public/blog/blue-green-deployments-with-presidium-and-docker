@@ -25,7 +25,7 @@
 <script src="https://cdn.jsdelivr.net/npm/react@18.3.0/umd/react.production.min.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.0/umd/react-dom.production.min.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/arche@0.3.11/index.js" ></script>
-<script src="https://cdn.jsdelivr.net/npm/arche-highlight@0.7.1/ArcheHighlight.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/arche-highlight@0.8.1/ArcheHighlight.js" ></script>
 <script src="/global.js" ></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com" />
 <link rel="stylesheet" href="/index.css" />
@@ -42,7 +42,7 @@
 <span class="variable-declaration-keyword">const</span> Docker <span class="operator">=</span> <span class="global-object">require</span>(<span class="string">"presidium/Docker"</span>)
 
 <span class="function-name">setImmediate</span>(<span class="keyword">async</span> <span class="function-keyword">function</span> () {
-  <span class="variable-declaration-keyword">const</span> <span class="function-name">docker</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="function-name">Docker</span>({ apiVersion<span class="object-colon">:</span> <span class="string">"1.52"</span> })
+  <span class="variable-declaration-keyword">const</span> docker <span class="operator">=</span> <span class="keyword">new</span> <span class="function-name">Docker</span>({ apiVersion<span class="object-colon">:</span> <span class="string">"1.52"</span> })
 
   <span class="variable-declaration-keyword">const</span> projectName <span class="operator">=</span> <span class="string">"my-web-server"</span>
   <span class="variable-declaration-keyword">const</span> version <span class="operator">=</span> <span class="string">"11.3.2"</span>
@@ -69,7 +69,7 @@ USER node
 
   buildStream<span class="property-accessor">.</span><span class="function-name">on</span>(<span class="string">"data"</span>, chunk <span class="arrow-function-operator">=></span> {
     <span class="variable-declaration-keyword">const</span> message <span class="operator">=</span> chunk<span class="property-accessor">.</span><span class="function-name">toString</span>(<span class="string">"utf8"</span>)
-    <span class="function-name">if</span> (message<span class="property-accessor">.</span><span class="function-name">includes</span>(<span class="string">"error"</span>)) {
+    <span class="keyword">if</span> (message<span class="property-accessor">.</span><span class="function-name">includes</span>(<span class="string">"error"</span>)) {
       throw <span class="keyword">new</span> <span class="function-name">Error</span>(message)
     }
   })
@@ -89,7 +89,7 @@ USER node
 
   pushStream<span class="property-accessor">.</span><span class="function-name">on</span>(<span class="string">"data"</span>, chunk <span class="arrow-function-operator">=></span> {
     <span class="variable-declaration-keyword">const</span> message <span class="operator">=</span> chunk<span class="property-accessor">.</span><span class="function-name">toString</span>(<span class="string">"utf8"</span>)
-    <span class="function-name">if</span> (message<span class="property-accessor">.</span><span class="function-name">includes</span>(<span class="string">"error"</span>)) {
+    <span class="keyword">if</span> (message<span class="property-accessor">.</span><span class="function-name">includes</span>(<span class="string">"error"</span>)) {
       throw <span class="keyword">new</span> <span class="function-name">Error</span>(message)
     }
   })
@@ -107,7 +107,7 @@ USER node
 <span class="variable-declaration-keyword">const</span> http <span class="operator">=</span> <span class="global-object">require</span>(<span class="string">"http"</span>)
 
 <span class="variable-declaration-keyword">const</span> run <span class="operator">=</span> <span class="keyword">async</span> <span class="function-keyword">function</span> () {
-  <span class="variable-declaration-keyword">const</span> <span class="function-name">server</span> <span class="operator">=</span> http<span class="property-accessor">.</span><span class="function-name">createServer</span>((request, response) <span class="arrow-function-operator">=></span> {
+  <span class="variable-declaration-keyword">const</span> server <span class="operator">=</span> http<span class="property-accessor">.</span><span class="function-name">createServer</span>((request, response) <span class="arrow-function-operator">=></span> {
     response<span class="property-accessor">.</span><span class="function-name">writeHead</span>(<span class="number">200</span>, {
       <span class="string">"Content-Type"</span><span class="object-colon">:</span> <span class="string">"text/plain"</span>,
     })
@@ -119,7 +119,7 @@ USER node
   })
 }
 
-<span class="function-name">if</span> (<span class="global-object">process</span><span class="property-accessor">.</span>argv[<span class="number">1</span>] <span class="operator">==</span> __filename) {
+<span class="keyword">if</span> (<span class="global-object">process</span><span class="property-accessor">.</span>argv[<span class="number">1</span>] <span class="operator">==</span> __filename) {
   <span class="function-name">run</span>()
 }
 
