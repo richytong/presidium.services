@@ -111,11 +111,12 @@ h1::-webkit-scrollbar {
 }
 
 .code-viewer .variable-declaration-keyword {
-  color: #36e2ce;
+  /* color: #36e2ce; */
+  color: green;
 }
 
 .code-viewer .keyword {
-  color: red;
+  color: red
 }
 
 .code-viewer .function-keyword {
@@ -127,11 +128,11 @@ h1::-webkit-scrollbar {
 }
 
 .code-viewer .function-name {
-  color: #49db43;
+  color: blue;
 }
 
 .code-viewer .string {
-  color: #e0c82f;
+  color: orange;
 }
 
 .code-viewer .operator {
@@ -151,11 +152,11 @@ h1::-webkit-scrollbar {
 }
 
 .code-viewer .global-object {
-  color: #d15186;
+  color: purple;
 }
 
 .code-viewer .template-literal {
-  color: #e0c82f;
+  color: orange;
 }
 
 .code-viewer .template-variable {
