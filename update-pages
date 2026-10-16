@@ -53,8 +53,8 @@ async function main() {
     const bodyHTML = url == '/'
       ? `<div id="react-root"></div>`
       : `<div id="react-root">${reactRootHTML}</div>`
-    // const generateHTML = static ? StaticPageHTML : PageHTML
-    const generateHTML = PageHTML
+    const generateHTML = static ? StaticPageHTML : PageHTML
+    // const generateHTML = PageHTML
     try {
       console.log('Updating page', fullFilepath.replace(process.env.HOME, '~'))
 
