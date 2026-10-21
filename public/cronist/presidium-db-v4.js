@@ -1144,7 +1144,7 @@ export default [
       {
         name: 'init',
         docs: '```coffeescript [specscript]\n' +
-          'ht.init() -> Promise<>\n' +
+          'init() -> Promise<>\n' +
           '```\n' +
           '\n' +
           'Initializes the disk hash table.\n' +
@@ -1192,10 +1192,10 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: 'ht.init() -> Promise<>',
+                value: 'init() -> Promise<>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 3, column: 4, offset: 55 }
+                  end: { line: 3, column: 4, offset: 52 }
                 }
               },
               {
@@ -1205,14 +1205,14 @@ export default [
                     type: 'text',
                     value: 'Initializes the disk hash table.',
                     position: {
-                      start: { line: 5, column: 1, offset: 57 },
-                      end: { line: 5, column: 33, offset: 89 }
+                      start: { line: 5, column: 1, offset: 54 },
+                      end: { line: 5, column: 33, offset: 86 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 5, column: 1, offset: 57 },
-                  end: { line: 5, column: 33, offset: 89 }
+                  start: { line: 5, column: 1, offset: 54 },
+                  end: { line: 5, column: 33, offset: 86 }
                 }
               },
               {
@@ -1222,14 +1222,14 @@ export default [
                     type: 'text',
                     value: 'Arguments:',
                     position: {
-                      start: { line: 7, column: 1, offset: 91 },
-                      end: { line: 7, column: 11, offset: 101 }
+                      start: { line: 7, column: 1, offset: 88 },
+                      end: { line: 7, column: 11, offset: 98 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 7, column: 1, offset: 91 },
-                  end: { line: 7, column: 11, offset: 101 }
+                  start: { line: 7, column: 1, offset: 88 },
+                  end: { line: 7, column: 11, offset: 98 }
                 }
               },
               {
@@ -1250,26 +1250,26 @@ export default [
                             type: 'text',
                             value: '(none)',
                             position: {
-                              start: { line: 8, column: 5, offset: 106 },
-                              end: { line: 8, column: 11, offset: 112 }
+                              start: { line: 8, column: 5, offset: 103 },
+                              end: { line: 8, column: 11, offset: 109 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 8, column: 5, offset: 106 },
-                          end: { line: 8, column: 11, offset: 112 }
+                          start: { line: 8, column: 5, offset: 103 },
+                          end: { line: 8, column: 11, offset: 109 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 8, column: 3, offset: 104 },
-                      end: { line: 8, column: 11, offset: 112 }
+                      start: { line: 8, column: 3, offset: 101 },
+                      end: { line: 8, column: 11, offset: 109 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 8, column: 3, offset: 104 },
-                  end: { line: 8, column: 11, offset: 112 }
+                  start: { line: 8, column: 3, offset: 101 },
+                  end: { line: 8, column: 11, offset: 109 }
                 }
               },
               {
@@ -1279,14 +1279,14 @@ export default [
                     type: 'text',
                     value: 'Return:',
                     position: {
-                      start: { line: 10, column: 1, offset: 114 },
-                      end: { line: 10, column: 8, offset: 121 }
+                      start: { line: 10, column: 1, offset: 111 },
+                      end: { line: 10, column: 8, offset: 118 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 10, column: 1, offset: 114 },
-                  end: { line: 10, column: 8, offset: 121 }
+                  start: { line: 10, column: 1, offset: 111 },
+                  end: { line: 10, column: 8, offset: 118 }
                 }
               },
               {
@@ -1307,26 +1307,26 @@ export default [
                             type: 'text',
                             value: 'Empty promise.',
                             position: {
-                              start: { line: 11, column: 5, offset: 126 },
-                              end: { line: 11, column: 19, offset: 140 }
+                              start: { line: 11, column: 5, offset: 123 },
+                              end: { line: 11, column: 19, offset: 137 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 11, column: 5, offset: 126 },
-                          end: { line: 11, column: 19, offset: 140 }
+                          start: { line: 11, column: 5, offset: 123 },
+                          end: { line: 11, column: 19, offset: 137 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 11, column: 3, offset: 124 },
-                      end: { line: 11, column: 19, offset: 140 }
+                      start: { line: 11, column: 3, offset: 121 },
+                      end: { line: 11, column: 19, offset: 137 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 11, column: 3, offset: 124 },
-                  end: { line: 11, column: 19, offset: 140 }
+                  start: { line: 11, column: 3, offset: 121 },
+                  end: { line: 11, column: 19, offset: 137 }
                 }
               },
               {
@@ -1335,14 +1335,14 @@ export default [
                 meta: null,
                 value: 'await ht.init()',
                 position: {
-                  start: { line: 13, column: 1, offset: 142 },
-                  end: { line: 15, column: 4, offset: 175 }
+                  start: { line: 13, column: 1, offset: 139 },
+                  end: { line: 15, column: 4, offset: 172 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 15, column: 4, offset: 175 }
+              end: { line: 15, column: 4, offset: 172 }
             }
           }
         }
