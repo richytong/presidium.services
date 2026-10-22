@@ -1433,16 +1433,70 @@ export default {
       lang: 'javascript',
       meta: null,
       value: 'const DatabaseServer = require("presidium/DatabaseServer")\n' +
-        'const DiskHashTableClient = require("presidium/DiskHashTableClient")\n' +
         '\n' +
         'const server = new DatabaseServer({\n' +
         '  databasePath: `${__dirname}/database`,\n' +
         '})\n' +
         'await server.init()\n' +
         '\n' +
+        'await server.registerDiskHashTable("Session", {\n' +
+        '  storagePath: `${this.databasePath}/Session/storage`,\n' +
+        '  headerPath: `${this.databasePath}/Session/header`,\n' +
+        '  initialLength: 536870912,\n' +
+        '  itemSize: 512,\n' +
+        '})\n' +
+        '\n' +
+        'await server.registerDiskSortedHashTable("Post", {\n' +
+        '  storagePath: `${this.databasePath}/Post/storage`,\n' +
+        '  headerPath: `${this.databasePath}/Post/header`,\n' +
+        '  initialLength: 1048576,\n' +
+        '  itemSize: 8192,\n' +
+        '  sortValueType: "number",\n' +
+        '  degree: 2,\n' +
+        '})\n' +
+        '\n' +
         'server.listen(5000, () => {\n' +
         '  console.log("Database server listening on port 5000")\n' +
-        '})\n' +
+        '})',
+      position: {
+        start: { line: 432, column: 1, offset: 12912 },
+        end: { line: 459, column: 4, offset: 13623 }
+      }
+    },
+    {
+      type: 'heading',
+      depth: 2,
+      children: [
+        {
+          type: 'link',
+          title: null,
+          url: 'https://presidium.services/docs/DiskHashTableClient',
+          children: [
+            {
+              type: 'text',
+              value: 'Call a database table from anywhere',
+              position: {
+                start: { line: 461, column: 5, offset: 13629 },
+                end: { line: 461, column: 40, offset: 13664 }
+              }
+            }
+          ],
+          position: {
+            start: { line: 461, column: 4, offset: 13628 },
+            end: { line: 461, column: 94, offset: 13718 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 461, column: 1, offset: 13625 },
+        end: { line: 461, column: 94, offset: 13718 }
+      }
+    },
+    {
+      type: 'code',
+      lang: 'javascript',
+      meta: null,
+      value: 'const DiskHashTableClient = require("presidium/DiskHashTableClient")\n' +
         '\n' +
         'const sessionHt = new DiskHashTableClient({\n' +
         '  serverUrl: "http://localhost:5000",\n' +
@@ -1458,8 +1512,8 @@ export default {
         '\n' +
         'await sessionHt.delete(accessToken)',
       position: {
-        start: { line: 432, column: 1, offset: 12912 },
-        end: { line: 458, column: 4, offset: 13567 }
+        start: { line: 462, column: 1, offset: 13719 },
+        end: { line: 478, column: 4, offset: 14126 }
       }
     },
     {
@@ -1473,29 +1527,29 @@ export default {
           children: [
             {
               type: 'text',
-              value: 'Query your distributed database',
+              value: 'Query a database table from anywhere',
               position: {
-                start: { line: 460, column: 5, offset: 13573 },
-                end: { line: 460, column: 36, offset: 13604 }
+                start: { line: 480, column: 5, offset: 14132 },
+                end: { line: 480, column: 41, offset: 14168 }
               }
             }
           ],
           position: {
-            start: { line: 460, column: 4, offset: 13572 },
-            end: { line: 460, column: 96, offset: 13664 }
+            start: { line: 480, column: 4, offset: 14131 },
+            end: { line: 480, column: 101, offset: 14228 }
           }
         }
       ],
       position: {
-        start: { line: 460, column: 1, offset: 13569 },
-        end: { line: 460, column: 96, offset: 13664 }
+        start: { line: 480, column: 1, offset: 14128 },
+        end: { line: 480, column: 101, offset: 14228 }
       }
     },
     {
       type: 'code',
       lang: 'javascript',
       meta: null,
-      value: 'const DiskSortedHashTableClient = require("presidium/DiskSortedHashTableClient")\n' +
+      value: 'const DiskSortedHashTableClient = require("presidium-db-client-server/DiskSortedHashTableClient")\n' +
         '\n' +
         'const postHt = new DiskSortedHashTableClient({\n' +
         '  serverUrl: "http://localhost:5000",\n' +
@@ -1533,8 +1587,8 @@ export default {
         '  myPosts.push(JSON.parse(postJson))\n' +
         '}',
       position: {
-        start: { line: 461, column: 1, offset: 13665 },
-        end: { line: 499, column: 4, offset: 14570 }
+        start: { line: 481, column: 1, offset: 14229 },
+        end: { line: 519, column: 4, offset: 15151 }
       }
     },
     {
@@ -1545,14 +1599,14 @@ export default {
           type: 'text',
           value: 'License',
           position: {
-            start: { line: 501, column: 4, offset: 14575 },
-            end: { line: 501, column: 11, offset: 14582 }
+            start: { line: 521, column: 4, offset: 15156 },
+            end: { line: 521, column: 11, offset: 15163 }
           }
         }
       ],
       position: {
-        start: { line: 501, column: 1, offset: 14572 },
-        end: { line: 501, column: 11, offset: 14582 }
+        start: { line: 521, column: 1, offset: 15153 },
+        end: { line: 521, column: 11, offset: 15163 }
       }
     },
     {
@@ -1562,8 +1616,8 @@ export default {
           type: 'text',
           value: 'Presidium is distributed under the ',
           position: {
-            start: { line: 502, column: 1, offset: 14583 },
-            end: { line: 502, column: 36, offset: 14618 }
+            start: { line: 522, column: 1, offset: 15164 },
+            end: { line: 522, column: 36, offset: 15199 }
           }
         },
         {
@@ -1575,28 +1629,28 @@ export default {
               type: 'text',
               value: 'CFOSS License',
               position: {
-                start: { line: 502, column: 37, offset: 14619 },
-                end: { line: 502, column: 50, offset: 14632 }
+                start: { line: 522, column: 37, offset: 15200 },
+                end: { line: 522, column: 50, offset: 15213 }
               }
             }
           ],
           position: {
-            start: { line: 502, column: 36, offset: 14618 },
-            end: { line: 502, column: 102, offset: 14684 }
+            start: { line: 522, column: 36, offset: 15199 },
+            end: { line: 522, column: 102, offset: 15265 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 502, column: 102, offset: 14684 },
-            end: { line: 502, column: 103, offset: 14685 }
+            start: { line: 522, column: 102, offset: 15265 },
+            end: { line: 522, column: 103, offset: 15266 }
           }
         }
       ],
       position: {
-        start: { line: 502, column: 1, offset: 14583 },
-        end: { line: 502, column: 103, offset: 14685 }
+        start: { line: 522, column: 1, offset: 15164 },
+        end: { line: 522, column: 103, offset: 15266 }
       }
     },
     {
@@ -1607,14 +1661,14 @@ export default {
           type: 'text',
           value: 'Support',
           position: {
-            start: { line: 504, column: 3, offset: 14689 },
-            end: { line: 504, column: 10, offset: 14696 }
+            start: { line: 524, column: 3, offset: 15270 },
+            end: { line: 524, column: 10, offset: 15277 }
           }
         }
       ],
       position: {
-        start: { line: 504, column: 1, offset: 14687 },
-        end: { line: 504, column: 10, offset: 14696 }
+        start: { line: 524, column: 1, offset: 15268 },
+        end: { line: 524, column: 10, offset: 15277 }
       }
     },
     {
@@ -1635,31 +1689,31 @@ export default {
                   type: 'text',
                   value: 'minimum Node.js version: 16',
                   position: {
-                    start: { line: 505, column: 4, offset: 14700 },
-                    end: { line: 505, column: 31, offset: 14727 }
+                    start: { line: 525, column: 4, offset: 15281 },
+                    end: { line: 525, column: 31, offset: 15308 }
                   }
                 }
               ],
               position: {
-                start: { line: 505, column: 4, offset: 14700 },
-                end: { line: 505, column: 31, offset: 14727 }
+                start: { line: 525, column: 4, offset: 15281 },
+                end: { line: 525, column: 31, offset: 15308 }
               }
             }
           ],
           position: {
-            start: { line: 505, column: 2, offset: 14698 },
-            end: { line: 505, column: 31, offset: 14727 }
+            start: { line: 525, column: 2, offset: 15279 },
+            end: { line: 525, column: 31, offset: 15308 }
           }
         }
       ],
       position: {
-        start: { line: 505, column: 2, offset: 14698 },
-        end: { line: 505, column: 31, offset: 14727 }
+        start: { line: 525, column: 2, offset: 15279 },
+        end: { line: 525, column: 31, offset: 15308 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 506, column: 1, offset: 14728 }
+    end: { line: 526, column: 1, offset: 15309 }
   }
 }
