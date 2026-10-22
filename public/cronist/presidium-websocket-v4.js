@@ -10,7 +10,7 @@ export default [
       '}) -> websocket ServerWebSocket\n' +
       '```\n' +
       '\n' +
-      'Presidium ServerWebSocket class. Used by Presidium [WebSocketServer](/docs/WebSocketServer) and [WebSocketSecureServer](/docs/WebSocketSecureServer) classes.\n' +
+      'Presidium ServerWebSocket class. Called by Presidium [WebSocketServer](/docs/WebSocketServer) and [WebSocketSecureServer](/docs/WebSocketSecureServer) classes.\n' +
       '\n' +
       'Arguments:\n' +
       "  * `socket` - an instance of a [Node.js net.Socket](https://nodejs.org/docs/latest-v24.x/api/net.html#class-netsocket). Represents the server's underlying TCP connection to the client.\n" +
@@ -70,10 +70,10 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Presidium ServerWebSocket class. Used by Presidium ',
+                value: 'Presidium ServerWebSocket class. Called by Presidium ',
                 position: {
                   start: { line: 10, column: 1, offset: 218 },
-                  end: { line: 10, column: 52, offset: 269 }
+                  end: { line: 10, column: 54, offset: 271 }
                 }
               },
               {
@@ -85,22 +85,22 @@ export default [
                     type: 'text',
                     value: 'WebSocketServer',
                     position: {
-                      start: { line: 10, column: 53, offset: 270 },
-                      end: { line: 10, column: 68, offset: 285 }
+                      start: { line: 10, column: 55, offset: 272 },
+                      end: { line: 10, column: 70, offset: 287 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 10, column: 52, offset: 269 },
-                  end: { line: 10, column: 92, offset: 309 }
+                  start: { line: 10, column: 54, offset: 271 },
+                  end: { line: 10, column: 94, offset: 311 }
                 }
               },
               {
                 type: 'text',
                 value: ' and ',
                 position: {
-                  start: { line: 10, column: 92, offset: 309 },
-                  end: { line: 10, column: 97, offset: 314 }
+                  start: { line: 10, column: 94, offset: 311 },
+                  end: { line: 10, column: 99, offset: 316 }
                 }
               },
               {
@@ -112,28 +112,28 @@ export default [
                     type: 'text',
                     value: 'WebSocketSecureServer',
                     position: {
-                      start: { line: 10, column: 98, offset: 315 },
-                      end: { line: 10, column: 119, offset: 336 }
+                      start: { line: 10, column: 100, offset: 317 },
+                      end: { line: 10, column: 121, offset: 338 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 10, column: 97, offset: 314 },
-                  end: { line: 10, column: 149, offset: 366 }
+                  start: { line: 10, column: 99, offset: 316 },
+                  end: { line: 10, column: 151, offset: 368 }
                 }
               },
               {
                 type: 'text',
                 value: ' classes.',
                 position: {
-                  start: { line: 10, column: 149, offset: 366 },
-                  end: { line: 10, column: 158, offset: 375 }
+                  start: { line: 10, column: 151, offset: 368 },
+                  end: { line: 10, column: 160, offset: 377 }
                 }
               }
             ],
             position: {
               start: { line: 10, column: 1, offset: 218 },
-              end: { line: 10, column: 158, offset: 375 }
+              end: { line: 10, column: 160, offset: 377 }
             }
           },
           {
@@ -143,14 +143,14 @@ export default [
                 type: 'text',
                 value: 'Arguments:',
                 position: {
-                  start: { line: 12, column: 1, offset: 377 },
-                  end: { line: 12, column: 11, offset: 387 }
+                  start: { line: 12, column: 1, offset: 379 },
+                  end: { line: 12, column: 11, offset: 389 }
                 }
               }
             ],
             position: {
-              start: { line: 12, column: 1, offset: 377 },
-              end: { line: 12, column: 11, offset: 387 }
+              start: { line: 12, column: 1, offset: 379 },
+              end: { line: 12, column: 11, offset: 389 }
             }
           },
           {
@@ -171,16 +171,16 @@ export default [
                         type: 'inlineCode',
                         value: 'socket',
                         position: {
-                          start: { line: 13, column: 5, offset: 392 },
-                          end: { line: 13, column: 13, offset: 400 }
+                          start: { line: 13, column: 5, offset: 394 },
+                          end: { line: 13, column: 13, offset: 402 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - an instance of a ',
                         position: {
-                          start: { line: 13, column: 13, offset: 400 },
-                          end: { line: 13, column: 33, offset: 420 }
+                          start: { line: 13, column: 13, offset: 402 },
+                          end: { line: 13, column: 33, offset: 422 }
                         }
                       },
                       {
@@ -192,34 +192,34 @@ export default [
                             type: 'text',
                             value: 'Node.js net.Socket',
                             position: {
-                              start: { line: 13, column: 34, offset: 421 },
-                              end: { line: 13, column: 52, offset: 439 }
+                              start: { line: 13, column: 34, offset: 423 },
+                              end: { line: 13, column: 52, offset: 441 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 13, column: 33, offset: 420 },
-                          end: { line: 13, column: 120, offset: 507 }
+                          start: { line: 13, column: 33, offset: 422 },
+                          end: { line: 13, column: 120, offset: 509 }
                         }
                       },
                       {
                         type: 'text',
                         value: ". Represents the server's underlying TCP connection to the client.",
                         position: {
-                          start: { line: 13, column: 120, offset: 507 },
-                          end: { line: 13, column: 186, offset: 573 }
+                          start: { line: 13, column: 120, offset: 509 },
+                          end: { line: 13, column: 186, offset: 575 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 13, column: 5, offset: 392 },
-                      end: { line: 13, column: 186, offset: 573 }
+                      start: { line: 13, column: 5, offset: 394 },
+                      end: { line: 13, column: 186, offset: 575 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 13, column: 3, offset: 390 },
-                  end: { line: 13, column: 186, offset: 573 }
+                  start: { line: 13, column: 3, offset: 392 },
+                  end: { line: 13, column: 186, offset: 575 }
                 }
               },
               {
@@ -234,14 +234,14 @@ export default [
                         type: 'inlineCode',
                         value: 'options',
                         position: {
-                          start: { line: 14, column: 5, offset: 578 },
-                          end: { line: 14, column: 14, offset: 587 }
+                          start: { line: 14, column: 5, offset: 580 },
+                          end: { line: 14, column: 14, offset: 589 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 14, column: 5, offset: 578 },
-                      end: { line: 14, column: 14, offset: 587 }
+                      start: { line: 14, column: 5, offset: 580 },
+                      end: { line: 14, column: 14, offset: 589 }
                     }
                   },
                   {
@@ -262,19 +262,19 @@ export default [
                                 type: 'inlineCode',
                                 value: 'maxMessageLength',
                                 position: {
-                                  start: { line: 15, column: 7, offset: 594 },
-                                  end: { line: 15, column: 25, offset: 612 }
+                                  start: { line: 15, column: 7, offset: 596 },
+                                  end: { line: 15, column: 25, offset: 614 }
                                 }
                               },
                               {
                                 type: 'text',
                                 value: ' - the maximum length in bytes of sent messages. If a message is longer than ',
                                 position: {
-                                  start: { line: 15, column: 25, offset: 612 },
+                                  start: { line: 15, column: 25, offset: 614 },
                                   end: {
                                     line: 15,
                                     column: 102,
-                                    offset: 689
+                                    offset: 691
                                   }
                                 }
                               },
@@ -285,12 +285,12 @@ export default [
                                   start: {
                                     line: 15,
                                     column: 102,
-                                    offset: 689
+                                    offset: 691
                                   },
                                   end: {
                                     line: 15,
                                     column: 120,
-                                    offset: 707
+                                    offset: 709
                                   }
                                 }
                               },
@@ -301,25 +301,25 @@ export default [
                                   start: {
                                     line: 15,
                                     column: 120,
-                                    offset: 707
+                                    offset: 709
                                   },
                                   end: {
                                     line: 15,
                                     column: 196,
-                                    offset: 783
+                                    offset: 785
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 15, column: 7, offset: 594 },
-                              end: { line: 15, column: 196, offset: 783 }
+                              start: { line: 15, column: 7, offset: 596 },
+                              end: { line: 15, column: 196, offset: 785 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 15, column: 5, offset: 592 },
-                          end: { line: 15, column: 196, offset: 783 }
+                          start: { line: 15, column: 5, offset: 594 },
+                          end: { line: 15, column: 196, offset: 785 }
                         }
                       },
                       {
@@ -334,16 +334,16 @@ export default [
                                 type: 'inlineCode',
                                 value: 'socketBufferLength',
                                 position: {
-                                  start: { line: 16, column: 7, offset: 790 },
-                                  end: { line: 16, column: 27, offset: 810 }
+                                  start: { line: 16, column: 7, offset: 792 },
+                                  end: { line: 16, column: 27, offset: 812 }
                                 }
                               },
                               {
                                 type: 'text',
                                 value: ' - length in bytes of the internal buffer of the underlying ',
                                 position: {
-                                  start: { line: 16, column: 27, offset: 810 },
-                                  end: { line: 16, column: 87, offset: 870 }
+                                  start: { line: 16, column: 27, offset: 812 },
+                                  end: { line: 16, column: 87, offset: 872 }
                                 }
                               },
                               {
@@ -358,22 +358,22 @@ export default [
                                       start: {
                                         line: 16,
                                         column: 88,
-                                        offset: 871
+                                        offset: 873
                                       },
                                       end: {
                                         line: 16,
                                         column: 94,
-                                        offset: 877
+                                        offset: 879
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 16, column: 87, offset: 870 },
+                                  start: { line: 16, column: 87, offset: 872 },
                                   end: {
                                     line: 16,
                                     column: 144,
-                                    offset: 927
+                                    offset: 929
                                   }
                                 }
                               },
@@ -384,43 +384,43 @@ export default [
                                   start: {
                                     line: 16,
                                     column: 144,
-                                    offset: 927
+                                    offset: 929
                                   },
                                   end: {
                                     line: 16,
                                     column: 145,
-                                    offset: 928
+                                    offset: 930
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 16, column: 7, offset: 790 },
-                              end: { line: 16, column: 145, offset: 928 }
+                              start: { line: 16, column: 7, offset: 792 },
+                              end: { line: 16, column: 145, offset: 930 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 16, column: 5, offset: 788 },
-                          end: { line: 16, column: 145, offset: 928 }
+                          start: { line: 16, column: 5, offset: 790 },
+                          end: { line: 16, column: 145, offset: 930 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 15, column: 5, offset: 592 },
-                      end: { line: 16, column: 145, offset: 928 }
+                      start: { line: 15, column: 5, offset: 594 },
+                      end: { line: 16, column: 145, offset: 930 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 14, column: 3, offset: 576 },
-                  end: { line: 16, column: 145, offset: 928 }
+                  start: { line: 14, column: 3, offset: 578 },
+                  end: { line: 16, column: 145, offset: 930 }
                 }
               }
             ],
             position: {
-              start: { line: 13, column: 3, offset: 390 },
-              end: { line: 16, column: 145, offset: 928 }
+              start: { line: 13, column: 3, offset: 392 },
+              end: { line: 16, column: 145, offset: 930 }
             }
           },
           {
@@ -430,14 +430,14 @@ export default [
                 type: 'text',
                 value: 'Return:',
                 position: {
-                  start: { line: 18, column: 1, offset: 930 },
-                  end: { line: 18, column: 8, offset: 937 }
+                  start: { line: 18, column: 1, offset: 932 },
+                  end: { line: 18, column: 8, offset: 939 }
                 }
               }
             ],
             position: {
-              start: { line: 18, column: 1, offset: 930 },
-              end: { line: 18, column: 8, offset: 937 }
+              start: { line: 18, column: 1, offset: 932 },
+              end: { line: 18, column: 8, offset: 939 }
             }
           },
           {
@@ -458,40 +458,40 @@ export default [
                         type: 'inlineCode',
                         value: 'websocket',
                         position: {
-                          start: { line: 19, column: 5, offset: 942 },
-                          end: { line: 19, column: 16, offset: 953 }
+                          start: { line: 19, column: 5, offset: 944 },
+                          end: { line: 19, column: 16, offset: 955 }
                         }
                       },
                       {
                         type: 'text',
                         value: " - a ServerWebSocket instance. Represents the server's WebSocket connection to the client.",
                         position: {
-                          start: { line: 19, column: 16, offset: 953 },
-                          end: { line: 19, column: 106, offset: 1043 }
+                          start: { line: 19, column: 16, offset: 955 },
+                          end: { line: 19, column: 106, offset: 1045 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 19, column: 5, offset: 942 },
-                      end: { line: 19, column: 106, offset: 1043 }
+                      start: { line: 19, column: 5, offset: 944 },
+                      end: { line: 19, column: 106, offset: 1045 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 19, column: 3, offset: 940 },
-                  end: { line: 19, column: 106, offset: 1043 }
+                  start: { line: 19, column: 3, offset: 942 },
+                  end: { line: 19, column: 106, offset: 1045 }
                 }
               }
             ],
             position: {
-              start: { line: 19, column: 3, offset: 940 },
-              end: { line: 19, column: 106, offset: 1043 }
+              start: { line: 19, column: 3, offset: 942 },
+              end: { line: 19, column: 106, offset: 1045 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 19, column: 106, offset: 1043 }
+          end: { line: 19, column: 106, offset: 1045 }
         }
       }
     },
@@ -7527,7 +7527,7 @@ export default [
       '    * `httpHandler` - function that processes incoming HTTP requests from clients. Defaults to an HTTP handler that responds with `200 OK`.\n' +
       '    * `key` - private key(s) in PEM format. Encrypted keys will be decrypted using the `passphrase` option. Multiple keys using different algorithms can be provided as an array of unencrypted key strings or buffers, or an array of objects in the form `{ pem: string|Buffer, passphrase: string }`.\n' +
       '    * `cert` - cert chain(s) in PEM format. One cert chain should be provided per private key.\n' +
-      '    * `passphrase` - used to decrypt the private key(s).\n' +
+      '    * `passphrase` - read to decrypt the private key(s).\n' +
       '    * `supportPerMessageDeflate` - if `true`, indicates to WebSocket clients that the server supports [Compression Extensions for WebSocket](https://datatracker.ietf.org/doc/html/rfc7692). If an incoming WebSocket connection has requested compression extensions via the `Sec-WebSocket-Extensions: permessage-deflate` header, all messages exchanged in the WebSocket connection will be compressed using [zlib](https://nodejs.org/api/zlib.html) default options. Defaults to `false`.\n' +
       '    * `maxMessageLength` - the maximum length in bytes of sent messages. If a message is longer than `maxMessageLength`, it is split into fragmented messages that are reassembled by the receiver.\n' +
       '    * `socketBufferLength` - length in bytes of the internal buffer of the underlying [socket](https://nodejs.org/api/net.html#class-netsocket) for all connections to the server.\n' +
@@ -8009,7 +8009,7 @@ export default [
                               },
                               {
                                 type: 'text',
-                                value: ' - used to decrypt the private key(s).',
+                                value: ' - read to decrypt the private key(s).',
                                 position: {
                                   start: {
                                     line: 44,
@@ -8610,7 +8610,7 @@ export default [
       '    * `secure` - if `true`, starts an HTTPS server instead of an HTTP server. Clients must connect to the server using the `wss` protocol instead of the `ws` protocol. Requires `key` and `cert` options.\n' +
       '    * `key` - private key(s) in PEM format. Encrypted keys will be decrypted using the `passphrase` option. Multiple keys using different algorithms can be provided as an array of unencrypted key strings or buffers, or an array of objects in the form `{ pem: string|Buffer, passphrase: string }`.\n' +
       '    * `cert` - cert chain(s) in PEM format. One cert chain should be provided per private key.\n' +
-      '    * `passphrase` - used to decrypt the private key(s).\n' +
+      '    * `passphrase` - read to decrypt the private key(s).\n' +
       '    * `supportPerMessageDeflate` - if `true`, indicates to WebSocket clients that the server supports [Compression Extensions for WebSocket](https://datatracker.ietf.org/doc/html/rfc7692). If an incoming WebSocket connection has requested compression extensions via the `Sec-WebSocket-Extensions: permessage-deflate` header, all messages exchanged in the WebSocket connection will be compressed using [zlib](https://nodejs.org/api/zlib.html) default options. Defaults to `false`.\n' +
       '    * `maxMessageLength` - the maximum length in bytes of sent messages. If a message is longer than `maxMessageLength`, it is split into fragmented messages that are reassembled by the receiver.\n' +
       '    * `socketBufferLength` - length in bytes of the internal buffer of the underlying [socket](https://nodejs.org/api/net.html#class-netsocket) for all connections to the server.\n' +
@@ -9291,7 +9291,7 @@ export default [
                               },
                               {
                                 type: 'text',
-                                value: ' - used to decrypt the private key(s).',
+                                value: ' - read to decrypt the private key(s).',
                                 position: {
                                   start: {
                                     line: 39,

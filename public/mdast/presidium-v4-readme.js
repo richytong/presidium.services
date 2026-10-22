@@ -632,16 +632,16 @@ export default {
       lang: 'javascript',
       meta: null,
       value: '// import Presidium globally\n' +
-        "require('presidium/global')\n" +
+        'require("presidium/global")\n' +
         '\n' +
         '// import Presidium\n' +
-        "const presidium = require('presidium')\n" +
+        'const presidium = require("presidium")\n' +
         '\n' +
         '// import Presidium clients\n' +
-        "const DynamoDBTable = require('presidium/DynamoDBTable')\n" +
-        "const S3Bucket = require('presidium/S3Bucket')\n" +
-        "const WebSocket = require('presidium/WebSocket')\n" +
-        "const Readable = require('presidium/Readable')",
+        'const DynamoDBTable = require("presidium/DynamoDBTable")\n' +
+        'const S3Bucket = require("presidium/S3Bucket")\n' +
+        'const WebSocket = require("presidium/WebSocket")\n' +
+        'const Readable = require("presidium/Readable")',
       position: {
         start: { line: 38, column: 1, offset: 1845 },
         end: { line: 50, column: 4, offset: 2208 }
@@ -680,21 +680,21 @@ export default {
       type: 'code',
       lang: 'javascript',
       meta: null,
-      value: "const HTTP = require('presidium/HTTP')\n" +
+      value: 'const HTTP = require("presidium/HTTP")\n' +
         '\n' +
         'const server = HTTP.Server((request, response) => {\n' +
-        "  response.writeHead(200, { 'Content-Type': 'application/json' })\n" +
-        "  response.write(JSON.stringify({ greeting: 'Hello World' }))\n" +
+        '  response.writeHead(200, { "Content-Type": "application/json" })\n' +
+        '  response.write(JSON.stringify({ greeting: "Hello World" }))\n' +
         '  response.end()\n' +
         '})\n' +
         '\n' +
         'server.listen(3000)\n' +
         '\n' +
-        "const http = new HTTP('http://localhost:3000/')\n" +
+        'const http = new HTTP("http://localhost:3000/")\n' +
         '\n' +
-        "http.get('/')\n" +
+        'http.get("/")\n' +
         '  .then(response => response.json())\n' +
-        "  .then(console.log) // { greeting: 'Hello World' }",
+        '  .then(console.log) // { greeting: "Hello World" }',
       position: {
         start: { line: 53, column: 1, offset: 2265 },
         end: { line: 69, column: 4, offset: 2696 }
@@ -733,25 +733,25 @@ export default {
       type: 'code',
       lang: 'javascript',
       meta: null,
-      value: "const WebSocket = require('presidium/WebSocket')\n" +
+      value: 'const WebSocket = require("presidium/WebSocket")\n' +
         '\n' +
         'const server = new WebSocket.Server(websocket => {\n' +
-        "  websocket.on('message', message => {\n" +
-        "    console.log('Message from client:', message)\n" +
-        "    websocket.send('Hello Client!')\n" +
+        '  websocket.on("message", message => {\n' +
+        '    console.log("Message from client:", message)\n' +
+        '    websocket.send("Hello Client!")\n' +
         '  })\n' +
-        "  websocket.on('close', () => {\n" +
-        "    console.log('websocket closed')\n" +
+        '  websocket.on("close", () => {\n' +
+        '    console.log("websocket closed")\n' +
         '  })\n' +
         '})\n' +
         'server.listen(1337)\n' +
         '\n' +
-        "const websocket = new WebSocket('ws://localhost:1337/')\n" +
-        "websocket.on('open', () => {\n" +
-        "  websocket.send('Hello Server!')\n" +
+        'const websocket = new WebSocket("ws://localhost:1337/")\n' +
+        'websocket.on("open", () => {\n' +
+        '  websocket.send("Hello Server!")\n' +
         '})\n' +
-        "websocket.on('message', message => {\n" +
-        "  console.log('Message from server:', message)\n" +
+        'websocket.on("message", message => {\n' +
+        '  console.log("Message from server:", message)\n' +
         '})',
       position: {
         start: { line: 72, column: 1, offset: 2775 },
@@ -791,56 +791,56 @@ export default {
       type: 'code',
       lang: 'javascript',
       meta: null,
-      value: "const DynamoDBTable = require('presidium/DynamoDBTable')\n" +
-        "const DynamoDBGlobalSecondaryIndex = require('presidium/DynamoDBGlobalSecondaryIndex')\n" +
-        "const AwsCredentials = require('presidium/AwsCredentials')\n" +
+      value: 'const DynamoDBTable = require("presidium/DynamoDBTable")\n' +
+        'const DynamoDBGlobalSecondaryIndex = require("presidium/DynamoDBGlobalSecondaryIndex")\n' +
+        'const AwsCredentials = require("presidium/AwsCredentials")\n' +
         '\n' +
-        "const awsCreds = await AwsCredentials('default')\n" +
-        "awsCreds.region = 'us-east-1'\n" +
+        'const awsCreds = await AwsCredentials("default")\n' +
+        'awsCreds.region = "us-east-1"\n' +
         '\n' +
         'const myTable = new DynamoDBTable({\n' +
-        "  name: 'my-table',\n" +
-        "  key: [{ id: 'string' }],\n" +
+        '  name: "my-table",\n' +
+        '  key: [{ id: "string" }],\n' +
         '  ...awsCreds,\n' +
         '})\n' +
         'await myTable.ready\n' +
         '\n' +
         'const myTypeAgeIndex = new DynamoDBGlobalSecondaryIndex({\n' +
-        "  table: 'my-table',\n" +
-        "  key: [{ type: 'string' }, { age: 'number' }],\n" +
+        '  table: "my-table",\n' +
+        '  key: [{ type: "string" }, { age: "number" }],\n' +
         '  ...awsCreds,\n' +
         '})\n' +
         'await myTypeAgeIndex.ready\n' +
         '\n' +
-        "await myTable.putItem({ id: { S: '1' }, name: { S: 'John' }, type: { S: 'person' } })\n" +
-        "await myTable.updateItem({ id: { S: '1' } }, { age: { N: '32' } })\n" +
+        'await myTable.putItem({ id: { S: "1" }, name: { S: "John" }, type: { S: "person" } })\n' +
+        'await myTable.updateItem({ id: { S: "1" } }, { age: { N: "32" } })\n' +
         '\n' +
-        "await myTable.putItemJSON({ id: '2', name: 'Joe', age: 19, type: 'person' })\n" +
-        "await myTable.putItemJSON({ id: '3', name: 'Jane', age: 33, type: 'person' })\n" +
+        'await myTable.putItemJSON({ id: "2", name: "Joe", age: 19, type: "person" })\n' +
+        'await myTable.putItemJSON({ id: "3", name: "Jane", age: 33, type: "person" })\n' +
         '\n' +
         '{\n' +
-        "  const data = await myTable.getItem({ id: { S: '1' } }),\n" +
+        '  const data = await myTable.getItem({ id: { S: "1" } }),\n' +
         '  console.log(data)\n' +
-        "  // { Item: { id: { S: '1' }, name: { S: 'John' }, age: { N: '32' } } }\n" +
+        '  // { Item: { id: { S: "1" }, name: { S: "John" }, age: { N: "32" } } }\n' +
         '}\n' +
         '\n' +
         '{\n' +
-        "  const data = await myTable.getItemJSON({ id: '1' })\n" +
+        '  const data = await myTable.getItemJSON({ id: "1" })\n' +
         '  console.log(data)\n' +
-        "  // { item: { id: '1', name: 'John', age: 32 } }\n" +
+        '  // { item: { id: "1", name: "John", age: 32 } }\n' +
         '}\n' +
         '\n' +
         '{\n' +
         '  const data = await myTypeAgeIndex.query(\n' +
-        "    'type = :type AND age < :age',\n" +
-        "    { type: { S: 'person' }, age: { N: '100' } },\n" +
+        '    "type = :type AND age < :age",\n' +
+        '    { type: { S: "person" }, age: { N: "100" } },\n' +
         '    { Limit: 2, ScanIndexForward: true },\n' +
         '  )\n' +
         '  console.log(data)\n' +
         '  // {\n' +
         '  //   Items: [\n' +
-        "  //     { id: { S: '1' }, name: { S: 'John' }, age: { N: '32' }, type: { S: 'person' } },\n" +
-        "  //     { id: { S: '2' }, name: { S: 'Joe' }, age: { N: '19' }, type: { S: 'person' } },\n" +
+        '  //     { id: { S: "1" }, name: { S: "John" }, age: { N: "32" }, type: { S: "person" } },\n' +
+        '  //     { id: { S: "2" }, name: { S: "Joe" }, age: { N: "19" }, type: { S: "person" } },\n' +
         '  //   ],\n' +
         '  //   Count: 2,\n' +
         '  //   ScannedCount: 2,\n' +
@@ -849,15 +849,15 @@ export default {
         '\n' +
         '{\n' +
         '  const data = await myTypeAgeIndex.queryJSON(\n' +
-        "    'type = :type AND age < :age',\n" +
-        "    { type: 'person', age: 100 },\n" +
+        '    "type = :type AND age < :age",\n' +
+        '    { type: "person", age: 100 },\n' +
         '    { Limit: 2, ScanIndexForward: true },\n' +
         '  )\n' +
         '  console.log(data)\n' +
         '  // {\n' +
         '  //   ItemsJSON: [\n' +
-        "  //     { id: '1', name: 'John', age: 32, type: 'person' },\n" +
-        "  //     { id: '2', name: 'Joe', age: 19, type: 'person' },\n" +
+        '  //     { id: "1", name: "John", age: 32, type: "person" },\n' +
+        '  //     { id: "2", name: "Joe", age: 19, type: "person" },\n' +
         '  //   ],\n' +
         '  //   Count: 2,\n' +
         '  //   ScannedCount: 2,\n' +
@@ -866,29 +866,29 @@ export default {
         '\n' +
         '{\n' +
         '  const ItemIterator = myTypeAgeIndex.queryItemsIterator(\n' +
-        "    'type = :type AND age < :age',\n" +
-        "    { type: { S: 'person' }, age: { N: '100' } },\n" +
+        '    "type = :type AND age < :age",\n' +
+        '    { type: { S: "person" }, age: { N: "100" } },\n' +
         '    { ScanIndexForward: true },\n' +
         '  )\n' +
         '  for await (const Item of ItemIterator) {\n' +
         '    console.log(Item)\n' +
-        "    // { id: { S: '2' }, name: { S: 'Joe' }, age: { N: '19' }, type: { S: 'person' } },\n" +
-        "    // { id: { S: '1' }, name: { S: 'John' }, age: { N: '32' }, type: { S: 'person' } },\n" +
-        "    // { id: { S: '3' }, name: { S: 'Jane' }, age: { N: '33' }, type: { S: 'person' } },\n" +
+        '    // { id: { S: "2" }, name: { S: "Joe" }, age: { N: "19" }, type: { S: "person" } },\n' +
+        '    // { id: { S: "1" }, name: { S: "John" }, age: { N: "32" }, type: { S: "person" } },\n' +
+        '    // { id: { S: "3" }, name: { S: "Jane" }, age: { N: "33" }, type: { S: "person" } },\n' +
         '  }\n' +
         '}\n' +
         '\n' +
         '{\n' +
         '  const itemsIterator = myTypeAgeIndex.queryItemsIteratorJSON(\n' +
-        "    'type = :type AND age < :age',\n" +
-        "    { type: 'person', age: 100 },\n" +
+        '    "type = :type AND age < :age",\n' +
+        '    { type: "person", age: 100 },\n' +
         '    { ScanIndexForward: true },\n' +
         '  )\n' +
         '  for await (const item of itemsIterator) {\n' +
         '    console.log(item)\n' +
-        "    // { id: '2', name: 'Joe', age: 19, type: 'person' }\n" +
-        "    // { id: '1', name: 'John', age: 32, type: 'person' }\n" +
-        "    // { id: '3', name: 'Jane', age: 33, type: 'person' }\n" +
+        '    // { id: "2", name: "Joe", age: 19, type: "person" }\n' +
+        '    // { id: "1", name: "John", age: 32, type: "person" }\n' +
+        '    // { id: "3", name: "Jane", age: 33, type: "person" }\n' +
         '  }\n' +
         '}',
       position: {
@@ -929,22 +929,22 @@ export default {
       type: 'code',
       lang: 'javascript',
       meta: null,
-      value: "const DynamoDBTable = require('presidium/DynamoDBTable')\n" +
-        "const DynamoDBStream = require('presidium/DynamoDBStream')\n" +
-        "const AwsCredentials = require('presidium/AwsCredentials')\n" +
+      value: 'const DynamoDBTable = require("presidium/DynamoDBTable")\n' +
+        'const DynamoDBStream = require("presidium/DynamoDBStream")\n' +
+        'const AwsCredentials = require("presidium/AwsCredentials")\n' +
         '\n' +
-        "const awsCreds = await AwsCredentials('default')\n" +
-        "awsCreds.region = 'us-east-1'\n" +
+        'const awsCreds = await AwsCredentials("default")\n' +
+        'awsCreds.region = "us-east-1"\n' +
         '\n' +
         'const myTable = new DynamoDBTable({\n' +
-        "  name: 'my-table',\n" +
-        "  key: [{ id: 'string' }],\n" +
+        '  name: "my-table",\n' +
+        '  key: [{ id: "string" }],\n' +
         '  ...awsCreds,\n' +
         '})\n' +
         'await myTable.ready\n' +
         '\n' +
         'const myStream = new DynamoDBStream({\n' +
-        "  table: 'my-table',\n" +
+        '  table: "my-table",\n' +
         '  ...awsCreds,\n' +
         '})\n' +
         'await myStream.ready\n' +
@@ -957,7 +957,7 @@ export default {
         '}\n' +
         '\n' +
         'const myStreamJSON = new DynamoDBStream({\n' +
-        "  table: 'my-table',\n" +
+        '  table: "my-table",\n' +
         '  ...awsCreds,\n' +
         '  JSON: true,\n' +
         '})\n' +
@@ -1007,25 +1007,25 @@ export default {
       type: 'code',
       lang: 'javascript',
       meta: null,
-      value: "const S3Bucket = require('presidium/S3Bucket')\n" +
-        "const AwsCredentials = require('presidium/AwsCredentials')\n" +
+      value: 'const S3Bucket = require("presidium/S3Bucket")\n' +
+        'const AwsCredentials = require("presidium/AwsCredentials")\n' +
         '\n' +
-        "const awsCreds = await AwsCredentials('default')\n" +
-        "awsCreds.region = 'us-east-1'\n" +
+        'const awsCreds = await AwsCredentials("default")\n' +
+        'awsCreds.region = "us-east-1"\n' +
         '\n' +
         'const myBucket = new S3Bucket({\n' +
-        "  name: 'my-bucket',\n" +
+        '  name: "my-bucket",\n' +
         '  ...awsCreds,\n' +
         '})\n' +
         'await myBucket.ready\n' +
         '\n' +
-        `await myBucket.putObject('some-key', '{"hello":"world"}', {\n` +
-        "  ContentType: 'application/json',\n" +
+        'await myBucket.putObject("some-key", "{"hello":"world"}", {\n' +
+        '  ContentType: "application/json",\n' +
         '})\n' +
         '\n' +
-        "const data = await myBucket.getObject('some-key')\n" +
+        'const data = await myBucket.getObject("some-key")\n' +
         'console.log(data)\n' +
-        "// { Etag: '...', Body: <Buffer 7b 22 68 ...>, ContentType: 'application/json' }\n" +
+        '// { Etag: "...", Body: <Buffer 7b 22 68 ...>, ContentType: "application/json" }\n' +
         '\n' +
         'await myBucket.deleteAllObjects()\n' +
         'await myBucket.delete()',
@@ -1067,19 +1067,19 @@ export default {
       type: 'code',
       lang: 'javascript',
       meta: null,
-      value: "const Docker = require('presidium/Docker')\n" +
-        "const NpmToken = require('presidium/NpmToken')\n" +
-        "const fs = require('fs')\n" +
+      value: 'const Docker = require("presidium/Docker")\n' +
+        'const NpmToken = require("presidium/NpmToken")\n' +
+        'const fs = require("fs")\n' +
         '\n' +
-        "const myImage = 'my-app:1.0.0'\n" +
+        'const myImage = "my-app:1.0.0"\n' +
         '\n' +
-        "const npmrc = fs.createWriteStream('.npmrc')\n" +
+        'const npmrc = fs.createWriteStream(".npmrc")\n' +
         'npmrc.write(`//registry.npmjs.org/:_authToken=${await NpmToken()}`)\n' +
         'npmrc.end()\n' +
         '\n' +
         'const buildStream = await docker.buildImage(__dirname, {\n' +
         '  image: myImage,\n' +
-        "  ignore: ['.github', 'node_modules'],\n" +
+        '  ignore: [".github", "node_modules"],\n' +
         '  archive: {\n' +
         '    Dockerfile: `\n' +
         'FROM node:15-alpine\n' +
@@ -1096,10 +1096,10 @@ export default {
         '\n' +
         'buildStream.pipe(process.stdout)\n' +
         '\n' +
-        "buildStream.on('end', () => {\n" +
+        'buildStream.on("end", () => {\n' +
         '  const pushStream = await docker.pushImage({\n' +
         '    image: myImage,\n' +
-        "    repository: 'my-registry.io',\n" +
+        '    repository: "my-registry.io",\n' +
         '  })\n' +
         '  pushStream.pipe(process.stdout)\n' +
         '})\n',
@@ -1141,25 +1141,21 @@ export default {
       type: 'code',
       lang: 'javascript',
       meta: null,
-      value: "const Docker = require('presidium/Docker')\n" +
+      value: 'const Docker = require("presidium/Docker")\n' +
         '\n' +
         'const docker = new Docker()\n' +
         '\n' +
         'const runStream = await docker.runContainer({\n' +
-        "  image: 'node:15-alpine',\n" +
-        "  env: { FOO: 'Example' },\n" +
-        "  cmd: ['node', '-e', 'console.log(process.env.FOO)'],\n" +
+        '  image: "node:15-alpine",\n' +
+        '  env: { FOO: "Example" },\n' +
+        '  cmd: ["node", "-e", "console.log(process.env.FOO)"],\n' +
         '  rm: true,\n' +
         '})\n' +
         '\n' +
-        'runStream.pipe(process.stdout) // Example\n' +
-        '\n' +
-        'const s = "test"\n' +
-        '\n' +
-        'const ts = `123 ${s} 456`',
+        'runStream.pipe(process.stdout) // Example',
       position: {
         start: { line: 311, column: 1, offset: 9313 },
-        end: { line: 328, column: 4, offset: 9661 }
+        end: { line: 324, column: 4, offset: 9616 }
       }
     },
     {
@@ -1175,44 +1171,44 @@ export default {
               type: 'text',
               value: 'Deploy Docker Swarm services',
               position: {
-                start: { line: 330, column: 5, offset: 9667 },
-                end: { line: 330, column: 33, offset: 9695 }
+                start: { line: 326, column: 5, offset: 9622 },
+                end: { line: 326, column: 33, offset: 9650 }
               }
             }
           ],
           position: {
-            start: { line: 330, column: 4, offset: 9666 },
-            end: { line: 330, column: 74, offset: 9736 }
+            start: { line: 326, column: 4, offset: 9621 },
+            end: { line: 326, column: 74, offset: 9691 }
           }
         }
       ],
       position: {
-        start: { line: 330, column: 1, offset: 9663 },
-        end: { line: 330, column: 74, offset: 9736 }
+        start: { line: 326, column: 1, offset: 9618 },
+        end: { line: 326, column: 74, offset: 9691 }
       }
     },
     {
       type: 'code',
       lang: 'javascript',
       meta: null,
-      value: "const Docker = require('presidium/Docker')\n" +
+      value: 'const Docker = require("presidium/Docker")\n' +
         '\n' +
         'const docker = new Docker()\n' +
         '\n' +
         '// initialize docker swarm\n' +
-        "await docker.initSwarm('eth0:2377')\n" +
+        'await docker.initSwarm("eth0:2377")\n' +
         '\n' +
         'await docker.createService({\n' +
-        "  name: 'my-service',\n" +
-        "  image: 'nginx:1.19',\n" +
+        '  name: "my-service",\n' +
+        '  image: "nginx:1.19",\n' +
         '  publish: { 80: 80 },\n' +
-        "  healthCheck: ['curl', '[::1]'],\n" +
+        '  healthCheck: ["curl", "[::1]"],\n' +
         '  replicas: 5,\n' +
         '})\n' +
         '// new nginx service is deploying to the docker swarm',
       position: {
-        start: { line: 331, column: 1, offset: 9737 },
-        end: { line: 347, column: 4, offset: 10094 }
+        start: { line: 327, column: 1, offset: 9692 },
+        end: { line: 343, column: 4, offset: 10049 }
       }
     },
     {
@@ -1228,28 +1224,28 @@ export default {
               type: 'text',
               value: 'Automate tests with Google Chrome for Testing',
               position: {
-                start: { line: 349, column: 5, offset: 10100 },
-                end: { line: 349, column: 50, offset: 10145 }
+                start: { line: 345, column: 5, offset: 10055 },
+                end: { line: 345, column: 50, offset: 10100 }
               }
             }
           ],
           position: {
-            start: { line: 349, column: 4, offset: 10099 },
-            end: { line: 349, column: 105, offset: 10200 }
+            start: { line: 345, column: 4, offset: 10054 },
+            end: { line: 345, column: 105, offset: 10155 }
           }
         }
       ],
       position: {
-        start: { line: 349, column: 1, offset: 10096 },
-        end: { line: 349, column: 105, offset: 10200 }
+        start: { line: 345, column: 1, offset: 10051 },
+        end: { line: 345, column: 105, offset: 10155 }
       }
     },
     {
       type: 'code',
       lang: 'javascript',
       meta: null,
-      value: "const GoogleChromeForTesting = require('presidium/GoogleChromeForTesting')\n" +
-        "const GoogleChromeDevTools = require('presidium/GoogleChromeDevTools')\n" +
+      value: 'const GoogleChromeForTesting = require("presidium/GoogleChromeForTesting")\n' +
+        'const GoogleChromeDevTools = require("presidium/GoogleChromeDevTools")\n' +
         '\n' +
         'const googleChromeForTesting = new GoogleChromeForTesting()\n' +
         'await googleChromeForTesting.init() // downloads Google Chrome for Testing\n' +
@@ -1259,7 +1255,7 @@ export default {
         '\n' +
         '// get targets\n' +
         'const targetsData = await googleChromeDevTools.Target.getTargets()\n' +
-        "const pageTarget = targetsData.result.targetInfos.find(info => info.type == 'page')\n" +
+        'const pageTarget = targetsData.result.targetInfos.find(info => info.type == "page")\n' +
         '\n' +
         '// attach to target\n' +
         'const attachToTargetData = await googleChromeDevTools.Target.attachToTarget({\n' +
@@ -1274,8 +1270,8 @@ export default {
         '  url: `http://localhost:3000/`,\n' +
         '})',
       position: {
-        start: { line: 350, column: 1, offset: 10201 },
-        end: { line: 376, column: 4, offset: 11177 }
+        start: { line: 346, column: 1, offset: 10156 },
+        end: { line: 372, column: 4, offset: 11132 }
       }
     },
     {
@@ -1289,46 +1285,46 @@ export default {
           children: [
             {
               type: 'text',
-              value: 'Store data on disk as a hash table',
+              value: 'Store data on disk in a hash table',
               position: {
-                start: { line: 378, column: 5, offset: 11183 },
-                end: { line: 378, column: 39, offset: 11217 }
+                start: { line: 374, column: 5, offset: 11138 },
+                end: { line: 374, column: 39, offset: 11172 }
               }
             }
           ],
           position: {
-            start: { line: 378, column: 4, offset: 11182 },
-            end: { line: 378, column: 87, offset: 11265 }
+            start: { line: 374, column: 4, offset: 11137 },
+            end: { line: 374, column: 87, offset: 11220 }
           }
         }
       ],
       position: {
-        start: { line: 378, column: 1, offset: 11179 },
-        end: { line: 378, column: 87, offset: 11265 }
+        start: { line: 374, column: 1, offset: 11134 },
+        end: { line: 374, column: 87, offset: 11220 }
       }
     },
     {
       type: 'code',
       lang: 'javascript',
       meta: null,
-      value: "const DiskHashTable = require('presidium-db/DiskHashTable')\n" +
+      value: 'const DiskHashTable = require("presidium/DiskHashTable")\n' +
         '\n' +
         'const ht = new DiskHashTable({\n' +
-        "  storageFilepath: '/path/to/ht-storage-file',\n" +
-        "  headerFilepath: '/path/to/ht-header-file',\n" +
+        '  storageFilepath: "/path/to/ht-storage-file",\n' +
+        '  headerFilepath: "/path/to/ht-header-file",\n' +
         '  initialLength: 1024,\n' +
         '})\n' +
         'await ht.init()\n' +
         '\n' +
-        "await ht.set('my-key', 'my-value')\n" +
+        'await ht.set("my-key", "my-value")\n' +
         '\n' +
-        "const myValue = await ht.get('my-key')\n" +
-        "console.log(myValue) // 'my-value'\n" +
+        'const myValue = await ht.get("my-key")\n' +
+        'console.log(myValue) // my-value\n' +
         '\n' +
-        "await ht.delete('my-key')",
+        'await ht.delete("my-key")',
       position: {
-        start: { line: 379, column: 1, offset: 11266 },
-        end: { line: 395, column: 4, offset: 11647 }
+        start: { line: 375, column: 1, offset: 11221 },
+        end: { line: 391, column: 4, offset: 11597 }
       }
     },
     {
@@ -1342,40 +1338,40 @@ export default {
           children: [
             {
               type: 'text',
-              value: 'Store data on disk as a sorted hash table',
+              value: 'Store data on disk in a sorted hash table',
               position: {
-                start: { line: 397, column: 5, offset: 11653 },
-                end: { line: 397, column: 46, offset: 11694 }
+                start: { line: 393, column: 5, offset: 11603 },
+                end: { line: 393, column: 46, offset: 11644 }
               }
             }
           ],
           position: {
-            start: { line: 397, column: 4, offset: 11652 },
-            end: { line: 397, column: 100, offset: 11748 }
+            start: { line: 393, column: 4, offset: 11602 },
+            end: { line: 393, column: 100, offset: 11698 }
           }
         }
       ],
       position: {
-        start: { line: 397, column: 1, offset: 11649 },
-        end: { line: 397, column: 100, offset: 11748 }
+        start: { line: 393, column: 1, offset: 11599 },
+        end: { line: 393, column: 100, offset: 11698 }
       }
     },
     {
       type: 'code',
       lang: 'javascript',
       meta: null,
-      value: "const DiskSortedHashTable = require('presidium-db/DiskSortedHashTable')\n" +
+      value: 'const DiskSortedHashTable = require("presidium/DiskSortedHashTable")\n' +
         '\n' +
         'const sortedHt = new DiskSortedHashTable({\n' +
-        "  storageFilepath: '/path/to/sortedHt-storage-file',\n" +
-        "  headerFilepath: '/path/to/sortedHt-header-file',\n" +
+        '  storageFilepath: "/path/to/sortedHt-storage-file",\n' +
+        '  headerFilepath: "/path/to/sortedHt-header-file",\n' +
         '  initialLength: 1024,\n' +
         '})\n' +
         'await sortedHt.init()\n' +
         '\n' +
-        "await sortedHt.set('first-key', 'first-value', 1)\n" +
-        "await sortedHt.set('second-key', 'second-value', 2)\n" +
-        "await sortedHt.set('third-key', 'third-value', 3)\n" +
+        'await sortedHt.set("first-key", "first-value", 1)\n' +
+        'await sortedHt.set("second-key", "second-value", 2)\n' +
+        'await sortedHt.set("third-key", "third-value", 3)\n' +
         '\n' +
         'for await (const value of sortedHt.forwardIterator()) {\n' +
         '  console.log(value) // first-value\n' +
@@ -1399,8 +1395,146 @@ export default {
         '                     // first-value\n' +
         '}',
       position: {
-        start: { line: 398, column: 1, offset: 11749 },
-        end: { line: 433, column: 4, offset: 12875 }
+        start: { line: 394, column: 1, offset: 11699 },
+        end: { line: 429, column: 4, offset: 12822 }
+      }
+    },
+    {
+      type: 'heading',
+      depth: 2,
+      children: [
+        {
+          type: 'link',
+          title: null,
+          url: 'https://presidium.services/docs/DatabaseServer',
+          children: [
+            {
+              type: 'text',
+              value: 'Host your own distributed database',
+              position: {
+                start: { line: 431, column: 5, offset: 12828 },
+                end: { line: 431, column: 39, offset: 12862 }
+              }
+            }
+          ],
+          position: {
+            start: { line: 431, column: 4, offset: 12827 },
+            end: { line: 431, column: 88, offset: 12911 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 431, column: 1, offset: 12824 },
+        end: { line: 431, column: 88, offset: 12911 }
+      }
+    },
+    {
+      type: 'code',
+      lang: 'javascript',
+      meta: null,
+      value: 'const DatabaseServer = require("presidium/DatabaseServer")\n' +
+        'const DiskHashTableClient = require("presidium/DiskHashTableClient")\n' +
+        '\n' +
+        'const server = new DatabaseServer({\n' +
+        '  databasePath: `${__dirname}/database`,\n' +
+        '})\n' +
+        'await server.init()\n' +
+        '\n' +
+        'server.listen(5000, () => {\n' +
+        '  console.log("Database server listening on port 5000")\n' +
+        '})\n' +
+        '\n' +
+        'const sessionHt = new DiskHashTableClient({\n' +
+        '  serverUrl: "http://localhost:5000",\n' +
+        '  tableName: "Session",\n' +
+        '})\n' +
+        '\n' +
+        'const accessToken = "token"\n' +
+        'const session = { accessToken }\n' +
+        '\n' +
+        'await sessionHt.set(accessToken, JSON.stringify(session))\n' +
+        '\n' +
+        'const sessionJson = await sessionHt.get(accessToken)\n' +
+        '\n' +
+        'await sessionHt.delete(accessToken)',
+      position: {
+        start: { line: 432, column: 1, offset: 12912 },
+        end: { line: 458, column: 4, offset: 13567 }
+      }
+    },
+    {
+      type: 'heading',
+      depth: 2,
+      children: [
+        {
+          type: 'link',
+          title: null,
+          url: 'https://presidium.services/docs/DiskSortedHashTableClient',
+          children: [
+            {
+              type: 'text',
+              value: 'Query your distributed database',
+              position: {
+                start: { line: 460, column: 5, offset: 13573 },
+                end: { line: 460, column: 36, offset: 13604 }
+              }
+            }
+          ],
+          position: {
+            start: { line: 460, column: 4, offset: 13572 },
+            end: { line: 460, column: 96, offset: 13664 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 460, column: 1, offset: 13569 },
+        end: { line: 460, column: 96, offset: 13664 }
+      }
+    },
+    {
+      type: 'code',
+      lang: 'javascript',
+      meta: null,
+      value: 'const DiskSortedHashTableClient = require("presidium/DiskSortedHashTableClient")\n' +
+        '\n' +
+        'const postHt = new DiskSortedHashTableClient({\n' +
+        '  serverUrl: "http://localhost:5000",\n' +
+        '  tableName: "Post",\n' +
+        '  sortValueType: "number",\n' +
+        '})\n' +
+        '\n' +
+        'const post1 = {\n' +
+        '  id: "post-1",\n' +
+        '  images: ["/assets/post-1/image-1.jpg"],\n' +
+        '  content: "First post",\n' +
+        '  time: Date.now(),\n' +
+        '}\n' +
+        '\n' +
+        'const post2 = {\n' +
+        '  id: "post-2",\n' +
+        '  images: ["/assets/post-2/image-2.jpg"],\n' +
+        '  content: "Second post",\n' +
+        '  time: Date.now(),\n' +
+        '}\n' +
+        '\n' +
+        'const post3 = {\n' +
+        '  id: "post-3",\n' +
+        '  images: ["/assets/post-3/image-3.jpg"],\n' +
+        '  content: "Third post",\n' +
+        '  time: Date.now(),\n' +
+        '}\n' +
+        '\n' +
+        'await postHt.set(post1.id, JSON.stringify(post1), post1.time)\n' +
+        'await postHt.set(post2.id, JSON.stringify(post2), post2.time)\n' +
+        'await postHt.set(post3.id, JSON.stringify(post3), post3.time)\n' +
+        '\n' +
+        'const myPosts = []\n' +
+        'for await (const postJson of postHt.reverseIterator()) {\n' +
+        '  myPosts.push(JSON.parse(postJson))\n' +
+        '}',
+      position: {
+        start: { line: 461, column: 1, offset: 13665 },
+        end: { line: 499, column: 4, offset: 14570 }
       }
     },
     {
@@ -1411,14 +1545,14 @@ export default {
           type: 'text',
           value: 'License',
           position: {
-            start: { line: 435, column: 4, offset: 12880 },
-            end: { line: 435, column: 11, offset: 12887 }
+            start: { line: 501, column: 4, offset: 14575 },
+            end: { line: 501, column: 11, offset: 14582 }
           }
         }
       ],
       position: {
-        start: { line: 435, column: 1, offset: 12877 },
-        end: { line: 435, column: 11, offset: 12887 }
+        start: { line: 501, column: 1, offset: 14572 },
+        end: { line: 501, column: 11, offset: 14582 }
       }
     },
     {
@@ -1428,8 +1562,8 @@ export default {
           type: 'text',
           value: 'Presidium is distributed under the ',
           position: {
-            start: { line: 436, column: 1, offset: 12888 },
-            end: { line: 436, column: 36, offset: 12923 }
+            start: { line: 502, column: 1, offset: 14583 },
+            end: { line: 502, column: 36, offset: 14618 }
           }
         },
         {
@@ -1441,28 +1575,28 @@ export default {
               type: 'text',
               value: 'CFOSS License',
               position: {
-                start: { line: 436, column: 37, offset: 12924 },
-                end: { line: 436, column: 50, offset: 12937 }
+                start: { line: 502, column: 37, offset: 14619 },
+                end: { line: 502, column: 50, offset: 14632 }
               }
             }
           ],
           position: {
-            start: { line: 436, column: 36, offset: 12923 },
-            end: { line: 436, column: 102, offset: 12989 }
+            start: { line: 502, column: 36, offset: 14618 },
+            end: { line: 502, column: 102, offset: 14684 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 436, column: 102, offset: 12989 },
-            end: { line: 436, column: 103, offset: 12990 }
+            start: { line: 502, column: 102, offset: 14684 },
+            end: { line: 502, column: 103, offset: 14685 }
           }
         }
       ],
       position: {
-        start: { line: 436, column: 1, offset: 12888 },
-        end: { line: 436, column: 103, offset: 12990 }
+        start: { line: 502, column: 1, offset: 14583 },
+        end: { line: 502, column: 103, offset: 14685 }
       }
     },
     {
@@ -1473,14 +1607,14 @@ export default {
           type: 'text',
           value: 'Support',
           position: {
-            start: { line: 438, column: 3, offset: 12994 },
-            end: { line: 438, column: 10, offset: 13001 }
+            start: { line: 504, column: 3, offset: 14689 },
+            end: { line: 504, column: 10, offset: 14696 }
           }
         }
       ],
       position: {
-        start: { line: 438, column: 1, offset: 12992 },
-        end: { line: 438, column: 10, offset: 13001 }
+        start: { line: 504, column: 1, offset: 14687 },
+        end: { line: 504, column: 10, offset: 14696 }
       }
     },
     {
@@ -1501,31 +1635,31 @@ export default {
                   type: 'text',
                   value: 'minimum Node.js version: 16',
                   position: {
-                    start: { line: 439, column: 4, offset: 13005 },
-                    end: { line: 439, column: 31, offset: 13032 }
+                    start: { line: 505, column: 4, offset: 14700 },
+                    end: { line: 505, column: 31, offset: 14727 }
                   }
                 }
               ],
               position: {
-                start: { line: 439, column: 4, offset: 13005 },
-                end: { line: 439, column: 31, offset: 13032 }
+                start: { line: 505, column: 4, offset: 14700 },
+                end: { line: 505, column: 31, offset: 14727 }
               }
             }
           ],
           position: {
-            start: { line: 439, column: 2, offset: 13003 },
-            end: { line: 439, column: 31, offset: 13032 }
+            start: { line: 505, column: 2, offset: 14698 },
+            end: { line: 505, column: 31, offset: 14727 }
           }
         }
       ],
       position: {
-        start: { line: 439, column: 2, offset: 13003 },
-        end: { line: 439, column: 31, offset: 13032 }
+        start: { line: 505, column: 2, offset: 14698 },
+        end: { line: 505, column: 31, offset: 14727 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 440, column: 1, offset: 13033 }
+    end: { line: 506, column: 1, offset: 14728 }
   }
 }
