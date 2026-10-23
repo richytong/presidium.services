@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 
-require('rubico/global')
-const fs = require('fs')
-const cronist = require('cronist')
-const FileSystem = require('./internal/FileSystem')
-const walkPathForJSFilePaths = require('./internal/walkPathForJSFilePaths')
-const { inspect } = require('util')
+require("rubico/global")
+const fs = require("fs")
+const cronist = require("cronist")
+const FileSystem = require("./internal/FileSystem")
+const walkPathForJSFilePaths = require("./internal/walkPathForJSFilePaths")
+const { inspect } = require("util")
 
-const readFileUtf8 = path => fs.promises.readFile(path, { encoding: 'utf8' })
+const readFileUtf8 = path => fs.promises.readFile(path, { encoding: "utf8" })
 
 const createMdastFile = async function (source, dest, options = {}) {
   await pipe(source, [
@@ -35,27 +35,27 @@ const createCronistFile = async function (source, dest, options = {}) {
       filter(data => data.name && data.docs && Object.keys(data.mdast).length > 1),
 
       switchCase([
-        data => data.length > 0 && data.some(item => item.name == 'GoogleChromeDevTools'),
+        data => data.length > 0 && data.some(item => item.name == "GoogleChromeDevTools"),
         docsData => [{
-          ...docsData.find(item => item.hasOwnProperty('constructor')),
+          ...docsData.find(item => item.hasOwnProperty("constructor")),
           methods: [
-            docsData.find(item => item.name == 'init'),
-            docsData.find(item => item.name == 'setSessionId'),
-            docsData.find(item => item.name == 'close'),
+            docsData.find(item => item.name == "init"),
+            docsData.find(item => item.name == "setSessionId"),
+            docsData.find(item => item.name == "close"),
             ...docsData.filter(and([
-              not(item => ['init', 'setSessionId', 'close'].includes(item.name)),
-              not(item => item.name.includes('.')),
-              not(item => item.hasOwnProperty('constructor')),
-              not(item => item.name.startsWith('Event:')),
+              not(item => ["init", "setSessionId", "close"].includes(item.name)),
+              not(item => item.name.includes(".")),
+              not(item => item.hasOwnProperty("constructor")),
+              not(item => item.name.startsWith("Event:")),
             ])),
             ...docsData.filter(and([
-              item => item.name.includes('.'),
-              not(item => item.hasOwnProperty('constructor')),
-              not(item => item.name.startsWith('Event:')),
+              item => item.name.includes("."),
+              not(item => item.hasOwnProperty("constructor")),
+              not(item => item.name.startsWith("Event:")),
             ])),
             ...docsData.filter(and([
-              not(item => item.hasOwnProperty('constructor')),
-              item => item.name.startsWith('Event:'),
+              not(item => item.hasOwnProperty("constructor")),
+              item => item.name.startsWith("Event:"),
             ])),
           ],
         }],
@@ -83,12 +83,14 @@ export default ${inspect(data, {
 
 // createMdast() -> Promise<>
 const createMdast = async function () {
-  const presidiumVersion = require('../presidium/package').version
-  const presidiumMajorVersion = presidiumVersion.split('.')[0]
-  const presidiumWebSocketVersion = require('../presidium-websocket/package').version
-  const presidiumWebSocketMajorVersion = presidiumWebSocketVersion.split('.')[0]
-  const presidiumDBVersion = require('../presidium-db/package').version
-  const presidiumDBMajorVersion = presidiumDBVersion.split('.')[0]
+  const presidiumVersion = require("../presidium/package").version
+  const presidiumMajorVersion = presidiumVersion.split(".")[0]
+  const presidiumWebSocketVersion = require("../presidium-websocket/package").version
+  const presidiumWebSocketMajorVersion = presidiumWebSocketVersion.split(".")[0]
+  const presidiumDBVersion = require("../presidium-db/package").version
+  const presidiumDBMajorVersion = presidiumDBVersion.split(".")[0]
+  const presidiumDBClientAndServerVersion = require("../presidium-db-client-server/package").version
+  const presidiumDBClientAndServerMajorVersion = presidiumDBClientAndServerVersion.split(".")[0]
 
   console.log(`Creating mdast/presidium-v${presidiumMajorVersion}-readme.js`)
   await createMdastFile(
@@ -101,8 +103,8 @@ const createMdast = async function () {
     `${__dirname}/../presidium`,
     `${__dirname}/public/cronist/presidium-v${presidiumMajorVersion}.js`,
     {
-      requiredKeys: ['name', 'docs'],
-      ignoreDirs: ['node_modules', 'archive'],
+      requiredKeys: ["name", "docs"],
+      ignoreDirs: ["node_modules", "archive"],
     },
   )
 
@@ -111,8 +113,8 @@ const createMdast = async function () {
     `${__dirname}/../presidium-websocket`,
     `${__dirname}/public/cronist/presidium-websocket-v${presidiumWebSocketMajorVersion}.js`,
     {
-      requiredKeys: ['name', 'docs'],
-      ignoreDirs: ['node_modules', 'archive'],
+      requiredKeys: ["name", "docs"],
+      ignoreDirs: ["node_modules", "archive"],
     },
   )
 
@@ -121,16 +123,26 @@ const createMdast = async function () {
     `${__dirname}/../presidium-db-docs`,
     `${__dirname}/public/cronist/presidium-db-v${presidiumDBMajorVersion}.js`,
     {
-      requiredKeys: ['name', 'docs'],
-      ignoreDirs: ['node_modules', 'archive'],
+      requiredKeys: ["name", "docs"],
+      ignoreDirs: ["node_modules", "archive"],
+    },
+  )
+
+  console.log(`Creating cronist/presidium-db-client-server-v${presidiumDBClientAndServerMajorVersion}.js`)
+  await createCronistFile(
+    `${__dirname}/../presidium-db-client-server`,
+    `${__dirname}/public/cronist/presidium-db-client-server-v${presidiumDBClientAndServerMajorVersion}.js`,
+    {
+      requiredKeys: ["name", "docs"],
+      ignoreDirs: ["node_modules", "archive"],
     },
   )
 
   console.log(`Creating presidium/v${presidiumMajorVersion}-filenames.js`)
-  const presidiumFiles = require('../presidium/package').files
+  const presidiumFiles = require("../presidium/package").files
   await fs.promises.writeFile(`${__dirname}/public/presidium/v${presidiumMajorVersion}-filenames.js`, `
 export default [
-  ${presidiumFiles.map(name => `'${name}',`).join('\n  ')}
+  ${presidiumFiles.map(name => `"${name}",`).join("\n  ")}
 ]
   `.trim())
 

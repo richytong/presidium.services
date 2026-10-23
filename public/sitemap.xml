@@ -9,10 +9,22 @@
   <loc>https://presidium.services/docs/AwsCredentials</loc>
 </url>
 <url>
+  <loc>https://presidium.services/docs/DatabaseLoadBalancer</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/DatabaseServer</loc>
+</url>
+<url>
   <loc>https://presidium.services/docs/DiskHashTable</loc>
 </url>
 <url>
+  <loc>https://presidium.services/docs/DiskHashTableClient</loc>
+</url>
+<url>
   <loc>https://presidium.services/docs/DiskSortedHashTable</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/DiskSortedHashTableClient</loc>
 </url>
 <url>
   <loc>https://presidium.services/docs/Docker</loc>
@@ -76,6 +88,9 @@
 </url>
 <url>
   <loc>https://presidium.services/docs/ServerWebSocket</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/Validator</loc>
 </url>
 <url>
   <loc>https://presidium.services/docs/XML</loc>

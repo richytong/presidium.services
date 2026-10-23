@@ -1,6 +1,6 @@
 import useGlobalState from './useGlobalState.js'
 import usePresidiumVersion from './usePresidiumVersion.js'
-import defaultFilenames from '../presidium/v3-filenames.js'
+import defaultFilenames from '../presidium/v4-filenames.js'
 
 function createClassNames(filenames) {
   return filenames.filter(filename =>

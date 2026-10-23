@@ -6,6 +6,7 @@ function createCronistMap(cronistObject, version) {
     cronistPresidium,
     cronistPresidiumWebSocket,
     cronistPresidiumDB,
+    cronistPresidiumDBClientAndServer,
   } = cronistObject
 
   const result = new Map()
@@ -17,6 +18,9 @@ function createCronistMap(cronistObject, version) {
     result.set(item.name, item)
   })
   cronistPresidiumDB?.forEach(item => {
+    result.set(item.name, item)
+  })
+  cronistPresidiumDBClientAndServer?.forEach(item => {
     result.set(item.name, item)
   })
   result.version = version
@@ -64,6 +68,7 @@ function useCronistMap() {
         cronistPresidium: import(`../cronist/presidium-${presidiumVersion.toLowerCase()}.js`).catch(() => {}),
         cronistPresidiumWebSocket: import(`../cronist/presidium-websocket-${presidiumVersion.toLowerCase()}.js`).catch(() => {}),
         cronistPresidiumDB: import(`../cronist/presidium-db-${presidiumVersion.toLowerCase()}.js`).catch(() => {}),
+        cronistPresidiumDBClientAndServer: import(`../cronist/presidium-db-client-server-${presidiumVersion.toLowerCase()}.js`).catch(() => {}),
       }).then(pipe([
         map(get('default')),
         curry.arity(2, createCronistMap, __, presidiumVersion),

@@ -152617,6 +152617,445 @@ export default [
     fileName: '/home/richard/code/presidium.services/../presidium/TranscribeStream.js'
   },
   {
+    name: 'Validator.Object',
+    docs: '```specscript\n' +
+      'Validator.Object(validators Object<function>) -> objectValidator function\n' +
+      '\n' +
+      'objectValidator(data any) -> result Object\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Validator.Object',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 17, offset: 16 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 17, offset: 16 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 17, offset: 16 }
+        }
+      },
+      docs: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'specscript',
+            meta: null,
+            value: 'Validator.Object(validators Object<function>) -> objectValidator function\n' +
+              '\n' +
+              'objectValidator(data any) -> result Object',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 5, column: 4, offset: 135 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 4, offset: 135 }
+        }
+      }
+    },
+    methods: [
+      {
+        name: 'Validator.Array',
+        docs: '```specscript\n' +
+          'Validator.Array(data) -> Array\n' +
+          '\n' +
+          'Validator.Array(validator function) -> arrayValidator\n' +
+          '\n' +
+          'arrayValidator(data any) -> result Array\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Validator.Array',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 16, offset: 15 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 16, offset: 15 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 16, offset: 15 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'specscript',
+                meta: null,
+                value: 'Validator.Array(data) -> Array\n' +
+                  '\n' +
+                  'Validator.Array(validator function) -> arrayValidator\n' +
+                  '\n' +
+                  'arrayValidator(data any) -> result Array',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 7, column: 4, offset: 145 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 7, column: 4, offset: 145 }
+            }
+          }
+        }
+      },
+      {
+        name: 'Validator.Number',
+        docs: '```specscript\nValidator.Number(data any) -> number\n```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Validator.Number',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 17, offset: 16 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 17, offset: 16 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 17, offset: 16 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'specscript',
+                meta: null,
+                value: 'Validator.Number(data any) -> number',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 4, offset: 54 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 54 }
+            }
+          }
+        }
+      },
+      {
+        name: 'Validator.String',
+        docs: '```specscript\nValidator.String(data any) -> string\n```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Validator.String',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 17, offset: 16 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 17, offset: 16 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 17, offset: 16 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'specscript',
+                meta: null,
+                value: 'Validator.String(data any) -> string',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 4, offset: 54 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 54 }
+            }
+          }
+        }
+      },
+      {
+        name: 'Validator.Email',
+        docs: '```specscript\nValidator.Email(data any) -> email string\n```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Validator.Email',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 16, offset: 15 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 16, offset: 15 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 16, offset: 15 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'specscript',
+                meta: null,
+                value: 'Validator.Email(data any) -> email string',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 4, offset: 59 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 59 }
+            }
+          }
+        }
+      },
+      {
+        name: 'Validator.Boolean',
+        docs: '```specscript\nValidator.Boolean(data any) -> boolean\n```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Validator.Boolean',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 18, offset: 17 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 18, offset: 17 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 18, offset: 17 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'specscript',
+                meta: null,
+                value: 'Validator.Boolean(data any) -> boolean',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 4, offset: 56 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 56 }
+            }
+          }
+        }
+      },
+      {
+        name: 'Validator.OneOf',
+        docs: '```specscript\n' +
+          'Validator.OneOf(...values Arguments) -> oneOfValidator\n' +
+          '\n' +
+          'oneOfValidator(data any) -> result string|number\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Validator.OneOf',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 16, offset: 15 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 16, offset: 15 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 16, offset: 15 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'specscript',
+                meta: null,
+                value: 'Validator.OneOf(...values Arguments) -> oneOfValidator\n' +
+                  '\n' +
+                  'oneOfValidator(data any) -> result string|number',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 5, column: 4, offset: 122 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 5, column: 4, offset: 122 }
+            }
+          }
+        }
+      },
+      {
+        name: 'Validator.Optional',
+        docs: '```specscript\n' +
+          'Validator.Optional(validator function) -> optionalValidator\n' +
+          '\n' +
+          'optionalValidator(data any) -> result any\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Validator.Optional',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 19, offset: 18 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 19, offset: 18 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 19, offset: 18 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'specscript',
+                meta: null,
+                value: 'Validator.Optional(validator function) -> optionalValidator\n' +
+                  '\n' +
+                  'optionalValidator(data any) -> result any',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 5, column: 4, offset: 120 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 5, column: 4, offset: 120 }
+            }
+          }
+        }
+      }
+    ],
+    fileName: '/home/richard/code/presidium.services/../presidium/Validator.js'
+  },
+  {
     name: 'XML',
     docs: 'Presidium XML class.',
     mdast: {

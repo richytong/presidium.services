@@ -923,273 +923,72 @@ export default {
         {
           type: 'link',
           title: null,
-          url: 'https://presidium.services/docs/DynamoDBTable',
+          url: 'https://presidium.services/docs/Validator',
           children: [
             {
               type: 'text',
-              value: 'Create, read, update, delete, and query with AWS DynamoDB',
+              value: 'Validate data',
               position: {
                 start: { line: 104, column: 5, offset: 3938 },
-                end: { line: 104, column: 62, offset: 3995 }
+                end: { line: 104, column: 18, offset: 3951 }
               }
             }
           ],
           position: {
             start: { line: 104, column: 4, offset: 3937 },
-            end: { line: 104, column: 110, offset: 4043 }
+            end: { line: 104, column: 62, offset: 3995 }
           }
         }
       ],
       position: {
         start: { line: 104, column: 1, offset: 3934 },
-        end: { line: 104, column: 110, offset: 4043 }
+        end: { line: 104, column: 62, offset: 3995 }
       }
     },
     {
       type: 'code',
       lang: 'javascript',
       meta: null,
-      value: 'const DynamoDBTable = require("presidium/DynamoDBTable")\n' +
-        'const DynamoDBGlobalSecondaryIndex = require("presidium/DynamoDBGlobalSecondaryIndex")\n' +
-        'const AwsCredentials = require("presidium/AwsCredentials")\n' +
+      value: 'const Validator = require("presidium/Validator")\n' +
         '\n' +
-        'const awsCreds = await AwsCredentials("default")\n' +
-        'awsCreds.region = "us-east-1"\n' +
+        'const {\n' +
+        '  Object, Array, Number, String, Email, Boolean, OneOf, Optional,\n' +
+        '} = Validator\n' +
         '\n' +
-        'const myTable = new DynamoDBTable({\n' +
-        '  name: "my-table",\n' +
-        '  key: [{ id: "string" }],\n' +
-        '  ...awsCreds,\n' +
+        'const validator = Object({\n' +
+        '  Name: String,\n' +
+        '  Email: Email,\n' +
+        '  Password: String,\n' +
+        '  Preferences: Object({\n' +
+        '    Gender: OneOf("Male", "Female"),\n' +
+        '  }),\n' +
+        '  Gender: OneOf("Male", "Female"),\n' +
+        '  IsReturning: Boolean,\n' +
+        '  Time: Optional(Number),\n' +
+        '  Media: Array(Object({\n' +
+        '    MediaUrl: String,\n' +
+        '    Description: String,\n' +
+        '  })),\n' +
         '})\n' +
-        'await myTable.ready\n' +
         '\n' +
-        'const myTypeAgeIndex = new DynamoDBGlobalSecondaryIndex({\n' +
-        '  table: "my-table",\n' +
-        '  key: [{ type: "string" }, { age: "number" }],\n' +
-        '  ...awsCreds,\n' +
-        '})\n' +
-        'await myTypeAgeIndex.ready\n' +
-        '\n' +
-        'await myTable.putItem({ id: { S: "1" }, name: { S: "John" }, type: { S: "person" } })\n' +
-        'await myTable.updateItem({ id: { S: "1" } }, { age: { N: "32" } })\n' +
-        '\n' +
-        'await myTable.putItemJSON({ id: "2", name: "Joe", age: 19, type: "person" })\n' +
-        'await myTable.putItemJSON({ id: "3", name: "Jane", age: 33, type: "person" })\n' +
-        '\n' +
-        '{\n' +
-        '  const data = await myTable.getItem({ id: { S: "1" } }),\n' +
-        '  console.log(data)\n' +
-        '  // { Item: { id: { S: "1" }, name: { S: "John" }, age: { N: "32" } } }\n' +
+        'const data = {\n' +
+        '  Name: "Example Name",\n' +
+        '  Email: "email@domain.com",\n' +
+        '  Password: "************",\n' +
+        '  Preferences: {\n' +
+        '    Gender: "Male",\n' +
+        '  },\n' +
+        '  IsReturning: false,\n' +
+        '  Media: [{\n' +
+        '    MediaUrl: "https://cdn.my-website.com/assets/1.mp4",\n' +
+        '    Description: "Example description.",\n' +
+        '  }],\n' +
         '}\n' +
         '\n' +
-        '{\n' +
-        '  const data = await myTable.getItemJSON({ id: "1" })\n' +
-        '  console.log(data)\n' +
-        '  // { item: { id: "1", name: "John", age: 32 } }\n' +
-        '}\n' +
-        '\n' +
-        '{\n' +
-        '  const data = await myTypeAgeIndex.query(\n' +
-        '    "type = :type AND age < :age",\n' +
-        '    { type: { S: "person" }, age: { N: "100" } },\n' +
-        '    { Limit: 2, ScanIndexForward: true },\n' +
-        '  )\n' +
-        '  console.log(data)\n' +
-        '  // {\n' +
-        '  //   Items: [\n' +
-        '  //     { id: { S: "1" }, name: { S: "John" }, age: { N: "32" }, type: { S: "person" } },\n' +
-        '  //     { id: { S: "2" }, name: { S: "Joe" }, age: { N: "19" }, type: { S: "person" } },\n' +
-        '  //   ],\n' +
-        '  //   Count: 2,\n' +
-        '  //   ScannedCount: 2,\n' +
-        '  // }\n' +
-        '}\n' +
-        '\n' +
-        '{\n' +
-        '  const data = await myTypeAgeIndex.queryJSON(\n' +
-        '    "type = :type AND age < :age",\n' +
-        '    { type: "person", age: 100 },\n' +
-        '    { Limit: 2, ScanIndexForward: true },\n' +
-        '  )\n' +
-        '  console.log(data)\n' +
-        '  // {\n' +
-        '  //   ItemsJSON: [\n' +
-        '  //     { id: "1", name: "John", age: 32, type: "person" },\n' +
-        '  //     { id: "2", name: "Joe", age: 19, type: "person" },\n' +
-        '  //   ],\n' +
-        '  //   Count: 2,\n' +
-        '  //   ScannedCount: 2,\n' +
-        '  // }\n' +
-        '}\n' +
-        '\n' +
-        '{\n' +
-        '  const ItemIterator = myTypeAgeIndex.queryItemsIterator(\n' +
-        '    "type = :type AND age < :age",\n' +
-        '    { type: { S: "person" }, age: { N: "100" } },\n' +
-        '    { ScanIndexForward: true },\n' +
-        '  )\n' +
-        '  for await (const Item of ItemIterator) {\n' +
-        '    console.log(Item)\n' +
-        '    // { id: { S: "2" }, name: { S: "Joe" }, age: { N: "19" }, type: { S: "person" } },\n' +
-        '    // { id: { S: "1" }, name: { S: "John" }, age: { N: "32" }, type: { S: "person" } },\n' +
-        '    // { id: { S: "3" }, name: { S: "Jane" }, age: { N: "33" }, type: { S: "person" } },\n' +
-        '  }\n' +
-        '}\n' +
-        '\n' +
-        '{\n' +
-        '  const itemsIterator = myTypeAgeIndex.queryItemsIteratorJSON(\n' +
-        '    "type = :type AND age < :age",\n' +
-        '    { type: "person", age: 100 },\n' +
-        '    { ScanIndexForward: true },\n' +
-        '  )\n' +
-        '  for await (const item of itemsIterator) {\n' +
-        '    console.log(item)\n' +
-        '    // { id: "2", name: "Joe", age: 19, type: "person" }\n' +
-        '    // { id: "1", name: "John", age: 32, type: "person" }\n' +
-        '    // { id: "3", name: "Jane", age: 33, type: "person" }\n' +
-        '  }\n' +
-        '}',
+        'validator(data)',
       position: {
-        start: { line: 105, column: 1, offset: 4044 },
-        end: { line: 206, column: 4, offset: 7023 }
-      }
-    },
-    {
-      type: 'heading',
-      depth: 2,
-      children: [
-        {
-          type: 'link',
-          title: null,
-          url: 'https://presidium.services/docs/DynamoDBStream',
-          children: [
-            {
-              type: 'text',
-              value: 'Consume AWS DynamoDB Streams',
-              position: {
-                start: { line: 208, column: 5, offset: 7029 },
-                end: { line: 208, column: 33, offset: 7057 }
-              }
-            }
-          ],
-          position: {
-            start: { line: 208, column: 4, offset: 7028 },
-            end: { line: 208, column: 82, offset: 7106 }
-          }
-        }
-      ],
-      position: {
-        start: { line: 208, column: 1, offset: 7025 },
-        end: { line: 208, column: 82, offset: 7106 }
-      }
-    },
-    {
-      type: 'code',
-      lang: 'javascript',
-      meta: null,
-      value: 'const DynamoDBTable = require("presidium/DynamoDBTable")\n' +
-        'const DynamoDBStream = require("presidium/DynamoDBStream")\n' +
-        'const AwsCredentials = require("presidium/AwsCredentials")\n' +
-        '\n' +
-        'const awsCreds = await AwsCredentials("default")\n' +
-        'awsCreds.region = "us-east-1"\n' +
-        '\n' +
-        'const myTable = new DynamoDBTable({\n' +
-        '  name: "my-table",\n' +
-        '  key: [{ id: "string" }],\n' +
-        '  ...awsCreds,\n' +
-        '})\n' +
-        'await myTable.ready\n' +
-        '\n' +
-        'const myStream = new DynamoDBStream({\n' +
-        '  table: "my-table",\n' +
-        '  ...awsCreds,\n' +
-        '})\n' +
-        'await myStream.ready\n' +
-        '\n' +
-        'for await (const record of myStream) {\n' +
-        '  console.log(record)\n' +
-        '  // { dynamodb: { Keys: {...}, NewImage: {...}, OldImage: {...} }  }\n' +
-        '  // { dynamodb: { Keys: {...}, NewImage: {...}, OldImage: {...} }  }\n' +
-        '  // { dynamodb: { Keys: {...}, NewImage: {...}, OldImage: {...} }  }\n' +
-        '}\n' +
-        '\n' +
-        'const myStreamJSON = new DynamoDBStream({\n' +
-        '  table: "my-table",\n' +
-        '  ...awsCreds,\n' +
-        '  JSON: true,\n' +
-        '})\n' +
-        'await myStream.ready\n' +
-        '\n' +
-        'for await (const record of myStreamJSON) {\n' +
-        '  console.log(record)\n' +
-        '  // { dynamodb: { KeysJSON: {...}, NewImageJSON: {...}, OldImageJSON: {...} }  }\n' +
-        '  // { dynamodb: { KeysJSON: {...}, NewImageJSON: {...}, OldImageJSON: {...} }  }\n' +
-        '  // { dynamodb: { KeysJSON: {...}, NewImageJSON: {...}, OldImageJSON: {...} }  }\n' +
-        '}',
-      position: {
-        start: { line: 209, column: 1, offset: 7107 },
-        end: { line: 250, column: 4, offset: 8305 }
-      }
-    },
-    {
-      type: 'heading',
-      depth: 2,
-      children: [
-        {
-          type: 'link',
-          title: null,
-          url: 'https://presidium.services/docs/S3Bucket',
-          children: [
-            {
-              type: 'text',
-              value: 'Download and upload with AWS S3',
-              position: {
-                start: { line: 252, column: 5, offset: 8311 },
-                end: { line: 252, column: 36, offset: 8342 }
-              }
-            }
-          ],
-          position: {
-            start: { line: 252, column: 4, offset: 8310 },
-            end: { line: 252, column: 79, offset: 8385 }
-          }
-        }
-      ],
-      position: {
-        start: { line: 252, column: 1, offset: 8307 },
-        end: { line: 252, column: 79, offset: 8385 }
-      }
-    },
-    {
-      type: 'code',
-      lang: 'javascript',
-      meta: null,
-      value: 'const S3Bucket = require("presidium/S3Bucket")\n' +
-        'const AwsCredentials = require("presidium/AwsCredentials")\n' +
-        '\n' +
-        'const awsCreds = await AwsCredentials("default")\n' +
-        'awsCreds.region = "us-east-1"\n' +
-        '\n' +
-        'const myBucket = new S3Bucket({\n' +
-        '  name: "my-bucket",\n' +
-        '  ...awsCreds,\n' +
-        '})\n' +
-        'await myBucket.ready\n' +
-        '\n' +
-        'await myBucket.putObject("some-key", "{"hello":"world"}", {\n' +
-        '  ContentType: "application/json",\n' +
-        '})\n' +
-        '\n' +
-        'const data = await myBucket.getObject("some-key")\n' +
-        'console.log(data)\n' +
-        '// { Etag: "...", Body: <Buffer 7b 22 68 ...>, ContentType: "application/json" }\n' +
-        '\n' +
-        'await myBucket.deleteAllObjects()\n' +
-        'await myBucket.delete()',
-      position: {
-        start: { line: 253, column: 1, offset: 8386 },
-        end: { line: 276, column: 4, offset: 8990 }
+        start: { line: 105, column: 1, offset: 3996 },
+        end: { line: 143, column: 4, offset: 4760 }
       }
     },
     {
@@ -1205,20 +1004,20 @@ export default {
               type: 'text',
               value: 'Build and push Docker images',
               position: {
-                start: { line: 278, column: 5, offset: 8996 },
-                end: { line: 278, column: 33, offset: 9024 }
+                start: { line: 145, column: 5, offset: 4766 },
+                end: { line: 145, column: 33, offset: 4794 }
               }
             }
           ],
           position: {
-            start: { line: 278, column: 4, offset: 8995 },
-            end: { line: 278, column: 74, offset: 9065 }
+            start: { line: 145, column: 4, offset: 4765 },
+            end: { line: 145, column: 74, offset: 4835 }
           }
         }
       ],
       position: {
-        start: { line: 278, column: 1, offset: 8992 },
-        end: { line: 278, column: 74, offset: 9065 }
+        start: { line: 145, column: 1, offset: 4762 },
+        end: { line: 145, column: 74, offset: 4835 }
       }
     },
     {
@@ -1262,8 +1061,8 @@ export default {
         '  pushStream.pipe(process.stdout)\n' +
         '})\n',
       position: {
-        start: { line: 279, column: 1, offset: 9066 },
-        end: { line: 317, column: 4, offset: 9848 }
+        start: { line: 146, column: 1, offset: 4836 },
+        end: { line: 184, column: 4, offset: 5618 }
       }
     },
     {
@@ -1279,20 +1078,20 @@ export default {
               type: 'text',
               value: 'Run Docker containers',
               position: {
-                start: { line: 319, column: 5, offset: 9854 },
-                end: { line: 319, column: 26, offset: 9875 }
+                start: { line: 186, column: 5, offset: 5624 },
+                end: { line: 186, column: 26, offset: 5645 }
               }
             }
           ],
           position: {
-            start: { line: 319, column: 4, offset: 9853 },
-            end: { line: 319, column: 67, offset: 9916 }
+            start: { line: 186, column: 4, offset: 5623 },
+            end: { line: 186, column: 67, offset: 5686 }
           }
         }
       ],
       position: {
-        start: { line: 319, column: 1, offset: 9850 },
-        end: { line: 319, column: 67, offset: 9916 }
+        start: { line: 186, column: 1, offset: 5620 },
+        end: { line: 186, column: 67, offset: 5686 }
       }
     },
     {
@@ -1312,8 +1111,8 @@ export default {
         '\n' +
         'runStream.pipe(process.stdout) // Example',
       position: {
-        start: { line: 320, column: 1, offset: 9917 },
-        end: { line: 333, column: 4, offset: 10220 }
+        start: { line: 187, column: 1, offset: 5687 },
+        end: { line: 200, column: 4, offset: 5990 }
       }
     },
     {
@@ -1329,20 +1128,20 @@ export default {
               type: 'text',
               value: 'Deploy Docker Swarm services',
               position: {
-                start: { line: 335, column: 5, offset: 10226 },
-                end: { line: 335, column: 33, offset: 10254 }
+                start: { line: 202, column: 5, offset: 5996 },
+                end: { line: 202, column: 33, offset: 6024 }
               }
             }
           ],
           position: {
-            start: { line: 335, column: 4, offset: 10225 },
-            end: { line: 335, column: 74, offset: 10295 }
+            start: { line: 202, column: 4, offset: 5995 },
+            end: { line: 202, column: 74, offset: 6065 }
           }
         }
       ],
       position: {
-        start: { line: 335, column: 1, offset: 10222 },
-        end: { line: 335, column: 74, offset: 10295 }
+        start: { line: 202, column: 1, offset: 5992 },
+        end: { line: 202, column: 74, offset: 6065 }
       }
     },
     {
@@ -1365,8 +1164,8 @@ export default {
         '})\n' +
         '// new nginx service is deploying to the docker swarm',
       position: {
-        start: { line: 336, column: 1, offset: 10296 },
-        end: { line: 352, column: 4, offset: 10653 }
+        start: { line: 203, column: 1, offset: 6066 },
+        end: { line: 219, column: 4, offset: 6423 }
       }
     },
     {
@@ -1382,20 +1181,20 @@ export default {
               type: 'text',
               value: 'Automate tests with Google Chrome for Testing',
               position: {
-                start: { line: 354, column: 5, offset: 10659 },
-                end: { line: 354, column: 50, offset: 10704 }
+                start: { line: 221, column: 5, offset: 6429 },
+                end: { line: 221, column: 50, offset: 6474 }
               }
             }
           ],
           position: {
-            start: { line: 354, column: 4, offset: 10658 },
-            end: { line: 354, column: 105, offset: 10759 }
+            start: { line: 221, column: 4, offset: 6428 },
+            end: { line: 221, column: 105, offset: 6529 }
           }
         }
       ],
       position: {
-        start: { line: 354, column: 1, offset: 10655 },
-        end: { line: 354, column: 105, offset: 10759 }
+        start: { line: 221, column: 1, offset: 6425 },
+        end: { line: 221, column: 105, offset: 6529 }
       }
     },
     {
@@ -1428,8 +1227,8 @@ export default {
         '  url: `http://localhost:3000/`,\n' +
         '})',
       position: {
-        start: { line: 355, column: 1, offset: 10760 },
-        end: { line: 381, column: 4, offset: 11736 }
+        start: { line: 222, column: 1, offset: 6530 },
+        end: { line: 248, column: 4, offset: 7506 }
       }
     },
     {
@@ -1445,20 +1244,20 @@ export default {
               type: 'text',
               value: 'Store data on disk in a hash table',
               position: {
-                start: { line: 383, column: 5, offset: 11742 },
-                end: { line: 383, column: 39, offset: 11776 }
+                start: { line: 250, column: 5, offset: 7512 },
+                end: { line: 250, column: 39, offset: 7546 }
               }
             }
           ],
           position: {
-            start: { line: 383, column: 4, offset: 11741 },
-            end: { line: 383, column: 87, offset: 11824 }
+            start: { line: 250, column: 4, offset: 7511 },
+            end: { line: 250, column: 87, offset: 7594 }
           }
         }
       ],
       position: {
-        start: { line: 383, column: 1, offset: 11738 },
-        end: { line: 383, column: 87, offset: 11824 }
+        start: { line: 250, column: 1, offset: 7508 },
+        end: { line: 250, column: 87, offset: 7594 }
       }
     },
     {
@@ -1481,8 +1280,8 @@ export default {
         '\n' +
         'await ht.delete("my-key")',
       position: {
-        start: { line: 384, column: 1, offset: 11825 },
-        end: { line: 400, column: 4, offset: 12201 }
+        start: { line: 251, column: 1, offset: 7595 },
+        end: { line: 267, column: 4, offset: 7971 }
       }
     },
     {
@@ -1498,20 +1297,20 @@ export default {
               type: 'text',
               value: 'Store data on disk in a sorted hash table',
               position: {
-                start: { line: 402, column: 5, offset: 12207 },
-                end: { line: 402, column: 46, offset: 12248 }
+                start: { line: 269, column: 5, offset: 7977 },
+                end: { line: 269, column: 46, offset: 8018 }
               }
             }
           ],
           position: {
-            start: { line: 402, column: 4, offset: 12206 },
-            end: { line: 402, column: 100, offset: 12302 }
+            start: { line: 269, column: 4, offset: 7976 },
+            end: { line: 269, column: 100, offset: 8072 }
           }
         }
       ],
       position: {
-        start: { line: 402, column: 1, offset: 12203 },
-        end: { line: 402, column: 100, offset: 12302 }
+        start: { line: 269, column: 1, offset: 7973 },
+        end: { line: 269, column: 100, offset: 8072 }
       }
     },
     {
@@ -1553,8 +1352,8 @@ export default {
         '                     // first-value\n' +
         '}',
       position: {
-        start: { line: 403, column: 1, offset: 12303 },
-        end: { line: 438, column: 4, offset: 13426 }
+        start: { line: 270, column: 1, offset: 8073 },
+        end: { line: 305, column: 4, offset: 9196 }
       }
     },
     {
@@ -1570,20 +1369,20 @@ export default {
               type: 'text',
               value: 'Host your own distributed database',
               position: {
-                start: { line: 440, column: 5, offset: 13432 },
-                end: { line: 440, column: 39, offset: 13466 }
+                start: { line: 307, column: 5, offset: 9202 },
+                end: { line: 307, column: 39, offset: 9236 }
               }
             }
           ],
           position: {
-            start: { line: 440, column: 4, offset: 13431 },
-            end: { line: 440, column: 88, offset: 13515 }
+            start: { line: 307, column: 4, offset: 9201 },
+            end: { line: 307, column: 88, offset: 9285 }
           }
         }
       ],
       position: {
-        start: { line: 440, column: 1, offset: 13428 },
-        end: { line: 440, column: 88, offset: 13515 }
+        start: { line: 307, column: 1, offset: 9198 },
+        end: { line: 307, column: 88, offset: 9285 }
       }
     },
     {
@@ -1617,8 +1416,8 @@ export default {
         '  console.log("Database server listening on port 5000")\n' +
         '})',
       position: {
-        start: { line: 441, column: 1, offset: 13516 },
-        end: { line: 468, column: 4, offset: 14227 }
+        start: { line: 308, column: 1, offset: 9286 },
+        end: { line: 335, column: 4, offset: 9997 }
       }
     },
     {
@@ -1634,20 +1433,20 @@ export default {
               type: 'text',
               value: 'Call a database table from anywhere',
               position: {
-                start: { line: 470, column: 5, offset: 14233 },
-                end: { line: 470, column: 40, offset: 14268 }
+                start: { line: 337, column: 5, offset: 10003 },
+                end: { line: 337, column: 40, offset: 10038 }
               }
             }
           ],
           position: {
-            start: { line: 470, column: 4, offset: 14232 },
-            end: { line: 470, column: 94, offset: 14322 }
+            start: { line: 337, column: 4, offset: 10002 },
+            end: { line: 337, column: 94, offset: 10092 }
           }
         }
       ],
       position: {
-        start: { line: 470, column: 1, offset: 14229 },
-        end: { line: 470, column: 94, offset: 14322 }
+        start: { line: 337, column: 1, offset: 9999 },
+        end: { line: 337, column: 94, offset: 10092 }
       }
     },
     {
@@ -1670,8 +1469,8 @@ export default {
         '\n' +
         'await sessionHt.delete(accessToken)',
       position: {
-        start: { line: 471, column: 1, offset: 14323 },
-        end: { line: 487, column: 4, offset: 14730 }
+        start: { line: 338, column: 1, offset: 10093 },
+        end: { line: 354, column: 4, offset: 10500 }
       }
     },
     {
@@ -1687,20 +1486,20 @@ export default {
               type: 'text',
               value: 'Query a database table from anywhere',
               position: {
-                start: { line: 489, column: 5, offset: 14736 },
-                end: { line: 489, column: 41, offset: 14772 }
+                start: { line: 356, column: 5, offset: 10506 },
+                end: { line: 356, column: 41, offset: 10542 }
               }
             }
           ],
           position: {
-            start: { line: 489, column: 4, offset: 14735 },
-            end: { line: 489, column: 101, offset: 14832 }
+            start: { line: 356, column: 4, offset: 10505 },
+            end: { line: 356, column: 101, offset: 10602 }
           }
         }
       ],
       position: {
-        start: { line: 489, column: 1, offset: 14732 },
-        end: { line: 489, column: 101, offset: 14832 }
+        start: { line: 356, column: 1, offset: 10502 },
+        end: { line: 356, column: 101, offset: 10602 }
       }
     },
     {
@@ -1745,8 +1544,63 @@ export default {
         '  myPosts.push(JSON.parse(postJson))\n' +
         '}',
       position: {
-        start: { line: 490, column: 1, offset: 14833 },
-        end: { line: 528, column: 4, offset: 15755 }
+        start: { line: 357, column: 1, offset: 10603 },
+        end: { line: 395, column: 4, offset: 11525 }
+      }
+    },
+    {
+      type: 'heading',
+      depth: 2,
+      children: [
+        {
+          type: 'link',
+          title: null,
+          url: 'https://presidium.services/docs/DiskSortedHashTableClient',
+          children: [
+            {
+              type: 'text',
+              value: 'Load balance your distributed database',
+              position: {
+                start: { line: 397, column: 5, offset: 11531 },
+                end: { line: 397, column: 43, offset: 11569 }
+              }
+            }
+          ],
+          position: {
+            start: { line: 397, column: 4, offset: 11530 },
+            end: { line: 397, column: 103, offset: 11629 }
+          }
+        }
+      ],
+      position: {
+        start: { line: 397, column: 1, offset: 11527 },
+        end: { line: 397, column: 103, offset: 11629 }
+      }
+    },
+    {
+      type: 'code',
+      lang: 'javascript',
+      meta: null,
+      value: 'const DatabaseLoadBalancer = require("presidium/DatabaseLoadBalancer")\n' +
+        '\n' +
+        'function hash(tableName, key, length) {\n' +
+        '  const value = `${tableName}${key}`\n' +
+        '  const digest = crypto.createHash("md5").update(value).digest()\n' +
+        '  const integerHash = digest.readUInt16BE(0)\n' +
+        '  const index = Math.floor(integerHash / 65535 * length)\n' +
+        '  return index\n' +
+        '}\n' +
+        '\n' +
+        'const loadBalancer = new DatabaseLoadBalancer(hash, {\n' +
+        '  serverIps: ["10.0.0.1:8080", "10.0.0.2:8080"],\n' +
+        '})\n' +
+        '\n' +
+        'loadBalancer.listen(6333, () => {\n' +
+        '  console.log("Database load balancer listening on port 6333")\n' +
+        '})',
+      position: {
+        start: { line: 398, column: 1, offset: 11630 },
+        end: { line: 416, column: 4, offset: 12188 }
       }
     },
     {
@@ -1757,14 +1611,14 @@ export default {
           type: 'text',
           value: 'License',
           position: {
-            start: { line: 530, column: 4, offset: 15760 },
-            end: { line: 530, column: 11, offset: 15767 }
+            start: { line: 418, column: 4, offset: 12193 },
+            end: { line: 418, column: 11, offset: 12200 }
           }
         }
       ],
       position: {
-        start: { line: 530, column: 1, offset: 15757 },
-        end: { line: 530, column: 11, offset: 15767 }
+        start: { line: 418, column: 1, offset: 12190 },
+        end: { line: 418, column: 11, offset: 12200 }
       }
     },
     {
@@ -1774,8 +1628,8 @@ export default {
           type: 'text',
           value: 'Presidium is distributed under the ',
           position: {
-            start: { line: 531, column: 1, offset: 15768 },
-            end: { line: 531, column: 36, offset: 15803 }
+            start: { line: 419, column: 1, offset: 12201 },
+            end: { line: 419, column: 36, offset: 12236 }
           }
         },
         {
@@ -1787,28 +1641,28 @@ export default {
               type: 'text',
               value: 'CFOSS License',
               position: {
-                start: { line: 531, column: 37, offset: 15804 },
-                end: { line: 531, column: 50, offset: 15817 }
+                start: { line: 419, column: 37, offset: 12237 },
+                end: { line: 419, column: 50, offset: 12250 }
               }
             }
           ],
           position: {
-            start: { line: 531, column: 36, offset: 15803 },
-            end: { line: 531, column: 102, offset: 15869 }
+            start: { line: 419, column: 36, offset: 12236 },
+            end: { line: 419, column: 102, offset: 12302 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 531, column: 102, offset: 15869 },
-            end: { line: 531, column: 103, offset: 15870 }
+            start: { line: 419, column: 102, offset: 12302 },
+            end: { line: 419, column: 103, offset: 12303 }
           }
         }
       ],
       position: {
-        start: { line: 531, column: 1, offset: 15768 },
-        end: { line: 531, column: 103, offset: 15870 }
+        start: { line: 419, column: 1, offset: 12201 },
+        end: { line: 419, column: 103, offset: 12303 }
       }
     },
     {
@@ -1819,14 +1673,14 @@ export default {
           type: 'text',
           value: 'Support',
           position: {
-            start: { line: 533, column: 4, offset: 15875 },
-            end: { line: 533, column: 11, offset: 15882 }
+            start: { line: 421, column: 4, offset: 12308 },
+            end: { line: 421, column: 11, offset: 12315 }
           }
         }
       ],
       position: {
-        start: { line: 533, column: 1, offset: 15872 },
-        end: { line: 533, column: 11, offset: 15882 }
+        start: { line: 421, column: 1, offset: 12305 },
+        end: { line: 421, column: 11, offset: 12315 }
       }
     },
     {
@@ -1847,31 +1701,31 @@ export default {
                   type: 'text',
                   value: 'minimum Node.js version: 16',
                   position: {
-                    start: { line: 534, column: 4, offset: 15886 },
-                    end: { line: 534, column: 31, offset: 15913 }
+                    start: { line: 422, column: 4, offset: 12319 },
+                    end: { line: 422, column: 31, offset: 12346 }
                   }
                 }
               ],
               position: {
-                start: { line: 534, column: 4, offset: 15886 },
-                end: { line: 534, column: 31, offset: 15913 }
+                start: { line: 422, column: 4, offset: 12319 },
+                end: { line: 422, column: 31, offset: 12346 }
               }
             }
           ],
           position: {
-            start: { line: 534, column: 2, offset: 15884 },
-            end: { line: 534, column: 31, offset: 15913 }
+            start: { line: 422, column: 2, offset: 12317 },
+            end: { line: 422, column: 31, offset: 12346 }
           }
         }
       ],
       position: {
-        start: { line: 534, column: 2, offset: 15884 },
-        end: { line: 534, column: 31, offset: 15913 }
+        start: { line: 422, column: 2, offset: 12317 },
+        end: { line: 422, column: 31, offset: 12346 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 535, column: 1, offset: 15914 }
+    end: { line: 423, column: 1, offset: 12347 }
   }
 }
