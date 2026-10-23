@@ -152617,12 +152617,8 @@ export default [
     fileName: '/home/richard/code/presidium.services/../presidium/TranscribeStream.js'
   },
   {
-    name: 'Validator.Object',
-    docs: '```specscript\n' +
-      'Validator.Object(validators Object<function>) -> objectValidator function\n' +
-      '\n' +
-      'objectValidator(data any) -> result Object\n' +
-      '```',
+    name: 'Validator',
+    docs: '```specscript\nValidator\n```',
     mdast: {
       name: {
         type: 'root',
@@ -152632,22 +152628,22 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Validator.Object',
+                value: 'Validator',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 17, offset: 16 }
+                  end: { line: 1, column: 10, offset: 9 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 17, offset: 16 }
+              end: { line: 1, column: 10, offset: 9 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 17, offset: 16 }
+          end: { line: 1, column: 10, offset: 9 }
         }
       },
       docs: {
@@ -152657,24 +152653,79 @@ export default [
             type: 'code',
             lang: 'specscript',
             meta: null,
-            value: 'Validator.Object(validators Object<function>) -> objectValidator function\n' +
-              '\n' +
-              'objectValidator(data any) -> result Object',
+            value: 'Validator',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 135 }
+              end: { line: 3, column: 4, offset: 27 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 5, column: 4, offset: 135 }
+          end: { line: 3, column: 4, offset: 27 }
         }
       }
     },
     methods: [
       {
-        name: 'Validator.Array',
+        name: 'Object',
+        docs: '```specscript\n' +
+          'Validator.Object(validators Object<function>) -> objectValidator function\n' +
+          '\n' +
+          'objectValidator(data any) -> result Object\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Object',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 7, offset: 6 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 7, offset: 6 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 7, offset: 6 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'specscript',
+                meta: null,
+                value: 'Validator.Object(validators Object<function>) -> objectValidator function\n' +
+                  '\n' +
+                  'objectValidator(data any) -> result Object',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 5, column: 4, offset: 135 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 5, column: 4, offset: 135 }
+            }
+          }
+        }
+      },
+      {
+        name: 'Array',
         docs: '```specscript\n' +
           'Validator.Array(data) -> Array\n' +
           '\n' +
@@ -152691,22 +152742,22 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'Validator.Array',
+                    value: 'Array',
                     position: {
                       start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 16, offset: 15 }
+                      end: { line: 1, column: 6, offset: 5 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 16, offset: 15 }
+                  end: { line: 1, column: 6, offset: 5 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 16, offset: 15 }
+              end: { line: 1, column: 6, offset: 5 }
             }
           },
           docs: {
@@ -152735,7 +152786,7 @@ export default [
         }
       },
       {
-        name: 'Validator.Number',
+        name: 'Number',
         docs: '```specscript\nValidator.Number(data any) -> number\n```',
         mdast: {
           name: {
@@ -152746,22 +152797,22 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'Validator.Number',
+                    value: 'Number',
                     position: {
                       start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 17, offset: 16 }
+                      end: { line: 1, column: 7, offset: 6 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 17, offset: 16 }
+                  end: { line: 1, column: 7, offset: 6 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 17, offset: 16 }
+              end: { line: 1, column: 7, offset: 6 }
             }
           },
           docs: {
@@ -152786,7 +152837,7 @@ export default [
         }
       },
       {
-        name: 'Validator.String',
+        name: 'String',
         docs: '```specscript\nValidator.String(data any) -> string\n```',
         mdast: {
           name: {
@@ -152797,22 +152848,22 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'Validator.String',
+                    value: 'String',
                     position: {
                       start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 17, offset: 16 }
+                      end: { line: 1, column: 7, offset: 6 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 17, offset: 16 }
+                  end: { line: 1, column: 7, offset: 6 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 17, offset: 16 }
+              end: { line: 1, column: 7, offset: 6 }
             }
           },
           docs: {
@@ -152837,7 +152888,7 @@ export default [
         }
       },
       {
-        name: 'Validator.Email',
+        name: 'Email',
         docs: '```specscript\nValidator.Email(data any) -> email string\n```',
         mdast: {
           name: {
@@ -152848,22 +152899,22 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'Validator.Email',
+                    value: 'Email',
                     position: {
                       start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 16, offset: 15 }
+                      end: { line: 1, column: 6, offset: 5 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 16, offset: 15 }
+                  end: { line: 1, column: 6, offset: 5 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 16, offset: 15 }
+              end: { line: 1, column: 6, offset: 5 }
             }
           },
           docs: {
@@ -152888,7 +152939,7 @@ export default [
         }
       },
       {
-        name: 'Validator.Boolean',
+        name: 'Boolean',
         docs: '```specscript\nValidator.Boolean(data any) -> boolean\n```',
         mdast: {
           name: {
@@ -152899,22 +152950,22 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'Validator.Boolean',
+                    value: 'Boolean',
                     position: {
                       start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 18, offset: 17 }
+                      end: { line: 1, column: 8, offset: 7 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 18, offset: 17 }
+                  end: { line: 1, column: 8, offset: 7 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 18, offset: 17 }
+              end: { line: 1, column: 8, offset: 7 }
             }
           },
           docs: {
@@ -152939,7 +152990,7 @@ export default [
         }
       },
       {
-        name: 'Validator.OneOf',
+        name: 'OneOf',
         docs: '```specscript\n' +
           'Validator.OneOf(...values Arguments) -> oneOfValidator\n' +
           '\n' +
@@ -152954,22 +153005,22 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'Validator.OneOf',
+                    value: 'OneOf',
                     position: {
                       start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 16, offset: 15 }
+                      end: { line: 1, column: 6, offset: 5 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 16, offset: 15 }
+                  end: { line: 1, column: 6, offset: 5 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 16, offset: 15 }
+              end: { line: 1, column: 6, offset: 5 }
             }
           },
           docs: {
@@ -152996,7 +153047,7 @@ export default [
         }
       },
       {
-        name: 'Validator.Optional',
+        name: 'Optional',
         docs: '```specscript\n' +
           'Validator.Optional(validator function) -> optionalValidator\n' +
           '\n' +
@@ -153011,22 +153062,22 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'Validator.Optional',
+                    value: 'Optional',
                     position: {
                       start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 19, offset: 18 }
+                      end: { line: 1, column: 9, offset: 8 }
                     }
                   }
                 ],
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 19, offset: 18 }
+                  end: { line: 1, column: 9, offset: 8 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 19, offset: 18 }
+              end: { line: 1, column: 9, offset: 8 }
             }
           },
           docs: {

@@ -29,6 +29,7 @@ const createCronistFile = async function (source, dest, options = {}) {
     curry.arity(2, walkPathForJSFilePaths, __, { ignoreDirs }),
 
     flatMap(async fileName => pipe(fileName, [
+      tap(console.log),
       readFileUtf8,
       cronist,
 
