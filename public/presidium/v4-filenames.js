@@ -1,8 +1,11 @@
 export default [
   'internal',
   'AwsCredentials.js',
+  'DatabaseServer.js',
   'DiskHashTable.js',
+  'DiskHashTableClient.js',
   'DiskSortedHashTable.js',
+  'DiskSortedHashTableClient.js',
   'Docker.js',
   'DynamoDBGlobalSecondaryIndex.js',
   'DynamoDBStream.js',
