@@ -266,143 +266,6 @@ export default [
     fileName: '/home/richard/code/presidium.services/../presidium-db-client-server/BinaryStream.js'
   },
   {
-    name: 'DatabaseHandler',
-    docs: '```specscript\n' +
-      'module DiskHashTable "https://presidium.services/docs/DiskHashTable"\n' +
-      'module HTTP "https://presidium.services/docs/HTTP"\n' +
-      '\n' +
-      'DatabaseHandler(options {\n' +
-      '  databasePath: string,\n' +
-      '  manifestTableName: string,\n' +
-      '  manifestTableInitialLength: number,\n' +
-      '  manifestTableItemSize: number,\n' +
-      '  defaultTableInitialLength: number,\n' +
-      '  defaultTableItemSize: number,\n' +
-      '  manifestHt: DiskHashTable,\n' +
-      '  hts: Map<tableName string, DiskHashTable>,\n' +
-      '}) -> databaseHandler HTTP.AsyncHandler\n' +
-      '```',
-    mdast: {
-      name: {
-        type: 'root',
-        children: [
-          {
-            type: 'paragraph',
-            children: [
-              {
-                type: 'text',
-                value: 'DatabaseHandler',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 16, offset: 15 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 16, offset: 15 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 16, offset: 15 }
-        }
-      },
-      docs: {
-        type: 'root',
-        children: [
-          {
-            type: 'code',
-            lang: 'specscript',
-            meta: null,
-            value: 'module DiskHashTable "https://presidium.services/docs/DiskHashTable"\n' +
-              'module HTTP "https://presidium.services/docs/HTTP"\n' +
-              '\n' +
-              'DatabaseHandler(options {\n' +
-              '  databasePath: string,\n' +
-              '  manifestTableName: string,\n' +
-              '  manifestTableInitialLength: number,\n' +
-              '  manifestTableItemSize: number,\n' +
-              '  defaultTableInitialLength: number,\n' +
-              '  defaultTableItemSize: number,\n' +
-              '  manifestHt: DiskHashTable,\n' +
-              '  hts: Map<tableName string, DiskHashTable>,\n' +
-              '}) -> databaseHandler HTTP.AsyncHandler',
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 15, column: 4, offset: 471 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 15, column: 4, offset: 471 }
-        }
-      }
-    },
-    methods: [
-      {
-        name: 'getHt',
-        docs: '```specscript\n' +
-          'module HTTP "https://presidium.services/docs/HTTP"\n' +
-          '\n' +
-          'getHt(tableName string, request HTTP.Request) -> ht DiskHashTable|DiskSortedHashTable\n' +
-          '```',
-        mdast: {
-          name: {
-            type: 'root',
-            children: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'getHt',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 6, offset: 5 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 6, offset: 5 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 6, offset: 5 }
-            }
-          },
-          docs: {
-            type: 'root',
-            children: [
-              {
-                type: 'code',
-                lang: 'specscript',
-                meta: null,
-                value: 'module HTTP "https://presidium.services/docs/HTTP"\n' +
-                  '\n' +
-                  'getHt(tableName string, request HTTP.Request) -> ht DiskHashTable|DiskSortedHashTable',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 5, column: 4, offset: 155 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 155 }
-            }
-          }
-        }
-      }
-    ],
-    fileName: '/home/richard/code/presidium.services/../presidium-db-client-server/DatabaseHandler.js'
-  },
-  {
     name: 'DatabaseLoadBalancer',
     docs: '```specscript\n' +
       'module HTTP "https://presidium.services/docs/HTTP"\n' +
@@ -2347,6 +2210,125 @@ export default [
     },
     methods: [],
     fileName: '/home/richard/code/presidium.services/../presidium-db-client-server/buffersToEntry.js'
+  },
+  {
+    name: 'getHt',
+    docs: '```specscript\n' +
+      'module HTTP "https://presidium.services/docs/HTTP"\n' +
+      '\n' +
+      'getHt(tableName string, request HTTP.Request) -> ht DiskHashTable|DiskSortedHashTable\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'getHt',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 6, offset: 5 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 6, offset: 5 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 6, offset: 5 }
+        }
+      },
+      docs: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'specscript',
+            meta: null,
+            value: 'module HTTP "https://presidium.services/docs/HTTP"\n' +
+              '\n' +
+              'getHt(tableName string, request HTTP.Request) -> ht DiskHashTable|DiskSortedHashTable',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 5, column: 4, offset: 155 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 5, column: 4, offset: 155 }
+        }
+      }
+    },
+    methods: [
+      {
+        name: 'databaseHandler',
+        docs: '```specscript\n' +
+          'module DiskHashTable "https://presidium.services/docs/DiskHashTable"\n' +
+          'module HTTP "https://presidium.services/docs/HTTP"\n' +
+          '\n' +
+          'databaseHandler(HTTP.Request, HTTP.Response) -> ()\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'databaseHandler',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 16, offset: 15 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 16, offset: 15 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 16, offset: 15 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'specscript',
+                meta: null,
+                value: 'module DiskHashTable "https://presidium.services/docs/DiskHashTable"\n' +
+                  'module HTTP "https://presidium.services/docs/HTTP"\n' +
+                  '\n' +
+                  'databaseHandler(HTTP.Request, HTTP.Response) -> ()',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 6, column: 4, offset: 189 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 6, column: 4, offset: 189 }
+            }
+          }
+        }
+      }
+    ],
+    fileName: '/home/richard/code/presidium.services/../presidium-db-client-server/databaseHandler.js'
   },
   {
     name: 'errorHandler',
