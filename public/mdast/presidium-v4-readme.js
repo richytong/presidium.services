@@ -1540,12 +1540,12 @@ export default {
         'await postHt.set(post3.id, JSON.stringify(post3), post3.time)\n' +
         '\n' +
         'const myPosts = []\n' +
-        'for await (const postJson of postHt.reverseIterator()) {\n' +
+        'for await (const postJson of await postHt.reverseIterator()) {\n' +
         '  myPosts.push(JSON.parse(postJson))\n' +
         '}',
       position: {
         start: { line: 357, column: 1, offset: 10603 },
-        end: { line: 395, column: 4, offset: 11525 }
+        end: { line: 395, column: 4, offset: 11531 }
       }
     },
     {
@@ -1561,20 +1561,20 @@ export default {
               type: 'text',
               value: 'Load balance your distributed database',
               position: {
-                start: { line: 397, column: 5, offset: 11531 },
-                end: { line: 397, column: 43, offset: 11569 }
+                start: { line: 397, column: 5, offset: 11537 },
+                end: { line: 397, column: 43, offset: 11575 }
               }
             }
           ],
           position: {
-            start: { line: 397, column: 4, offset: 11530 },
-            end: { line: 397, column: 98, offset: 11624 }
+            start: { line: 397, column: 4, offset: 11536 },
+            end: { line: 397, column: 98, offset: 11630 }
           }
         }
       ],
       position: {
-        start: { line: 397, column: 1, offset: 11527 },
-        end: { line: 397, column: 98, offset: 11624 }
+        start: { line: 397, column: 1, offset: 11533 },
+        end: { line: 397, column: 98, offset: 11630 }
       }
     },
     {
@@ -1599,8 +1599,8 @@ export default {
         '  console.log("Database load balancer listening on port 6333")\n' +
         '})',
       position: {
-        start: { line: 398, column: 1, offset: 11625 },
-        end: { line: 416, column: 4, offset: 12183 }
+        start: { line: 398, column: 1, offset: 11631 },
+        end: { line: 416, column: 4, offset: 12189 }
       }
     },
     {
@@ -1611,14 +1611,14 @@ export default {
           type: 'text',
           value: 'License',
           position: {
-            start: { line: 418, column: 4, offset: 12188 },
-            end: { line: 418, column: 11, offset: 12195 }
+            start: { line: 418, column: 4, offset: 12194 },
+            end: { line: 418, column: 11, offset: 12201 }
           }
         }
       ],
       position: {
-        start: { line: 418, column: 1, offset: 12185 },
-        end: { line: 418, column: 11, offset: 12195 }
+        start: { line: 418, column: 1, offset: 12191 },
+        end: { line: 418, column: 11, offset: 12201 }
       }
     },
     {
@@ -1628,8 +1628,8 @@ export default {
           type: 'text',
           value: 'Presidium is distributed under the ',
           position: {
-            start: { line: 419, column: 1, offset: 12196 },
-            end: { line: 419, column: 36, offset: 12231 }
+            start: { line: 419, column: 1, offset: 12202 },
+            end: { line: 419, column: 36, offset: 12237 }
           }
         },
         {
@@ -1641,28 +1641,28 @@ export default {
               type: 'text',
               value: 'CFOSS License',
               position: {
-                start: { line: 419, column: 37, offset: 12232 },
-                end: { line: 419, column: 50, offset: 12245 }
+                start: { line: 419, column: 37, offset: 12238 },
+                end: { line: 419, column: 50, offset: 12251 }
               }
             }
           ],
           position: {
-            start: { line: 419, column: 36, offset: 12231 },
-            end: { line: 419, column: 102, offset: 12297 }
+            start: { line: 419, column: 36, offset: 12237 },
+            end: { line: 419, column: 102, offset: 12303 }
           }
         },
         {
           type: 'text',
           value: '.',
           position: {
-            start: { line: 419, column: 102, offset: 12297 },
-            end: { line: 419, column: 103, offset: 12298 }
+            start: { line: 419, column: 102, offset: 12303 },
+            end: { line: 419, column: 103, offset: 12304 }
           }
         }
       ],
       position: {
-        start: { line: 419, column: 1, offset: 12196 },
-        end: { line: 419, column: 103, offset: 12298 }
+        start: { line: 419, column: 1, offset: 12202 },
+        end: { line: 419, column: 103, offset: 12304 }
       }
     },
     {
@@ -1673,14 +1673,14 @@ export default {
           type: 'text',
           value: 'Support',
           position: {
-            start: { line: 421, column: 4, offset: 12303 },
-            end: { line: 421, column: 11, offset: 12310 }
+            start: { line: 421, column: 4, offset: 12309 },
+            end: { line: 421, column: 11, offset: 12316 }
           }
         }
       ],
       position: {
-        start: { line: 421, column: 1, offset: 12300 },
-        end: { line: 421, column: 11, offset: 12310 }
+        start: { line: 421, column: 1, offset: 12306 },
+        end: { line: 421, column: 11, offset: 12316 }
       }
     },
     {
@@ -1701,31 +1701,31 @@ export default {
                   type: 'text',
                   value: 'minimum Node.js version: 16',
                   position: {
-                    start: { line: 422, column: 4, offset: 12314 },
-                    end: { line: 422, column: 31, offset: 12341 }
+                    start: { line: 422, column: 4, offset: 12320 },
+                    end: { line: 422, column: 31, offset: 12347 }
                   }
                 }
               ],
               position: {
-                start: { line: 422, column: 4, offset: 12314 },
-                end: { line: 422, column: 31, offset: 12341 }
+                start: { line: 422, column: 4, offset: 12320 },
+                end: { line: 422, column: 31, offset: 12347 }
               }
             }
           ],
           position: {
-            start: { line: 422, column: 2, offset: 12312 },
-            end: { line: 422, column: 31, offset: 12341 }
+            start: { line: 422, column: 2, offset: 12318 },
+            end: { line: 422, column: 31, offset: 12347 }
           }
         }
       ],
       position: {
-        start: { line: 422, column: 2, offset: 12312 },
-        end: { line: 422, column: 31, offset: 12341 }
+        start: { line: 422, column: 2, offset: 12318 },
+        end: { line: 422, column: 31, offset: 12347 }
       }
     }
   ],
   position: {
     start: { line: 1, column: 1, offset: 0 },
-    end: { line: 423, column: 1, offset: 12342 }
+    end: { line: 423, column: 1, offset: 12348 }
   }
 }
