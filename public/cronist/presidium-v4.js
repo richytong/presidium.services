@@ -713,7 +713,7 @@ export default [
       '\n' +
       'Arguments:\n' +
       '  * `options`\n' +
-      "    * `apiVersion` - the version of the Docker API. Defaults to `'1.48'`.\n" +
+      '    * `apiVersion` - the version of the Docker API. Defaults to `"1.48"`.\n' +
       '\n' +
       'Supported platforms:\n' +
       '  * macOS (64-bit)\n' +
@@ -884,7 +884,7 @@ export default [
                               },
                               {
                                 type: 'inlineCode',
-                                value: "'1.48'",
+                                value: '"1.48"',
                                 position: {
                                   start: { line: 11, column: 65, offset: 250 },
                                   end: { line: 11, column: 73, offset: 258 }
@@ -1143,10 +1143,10 @@ export default [
           'const docker = new Docker()\n' +
           '\n' +
           'const data = await docker.auth({\n' +
-          "  username: 'admin',\n" +
-          "  password: 'password',\n" +
-          "  email: 'test@example.com',\n" +
-          "  serveraddress: 'localhost:5000',\n" +
+          '  username: "admin",\n' +
+          '  password: "password",\n' +
+          '  email: "test@example.com",\n' +
+          '  serveraddress: "localhost:5000",\n' +
           '})\n' +
           '```',
         mdast: {
@@ -1679,10 +1679,10 @@ export default [
                 value: 'const docker = new Docker()\n' +
                   '\n' +
                   'const data = await docker.auth({\n' +
-                  "  username: 'admin',\n" +
-                  "  password: 'password',\n" +
-                  "  email: 'test@example.com',\n" +
-                  "  serveraddress: 'localhost:5000',\n" +
+                  '  username: "admin",\n' +
+                  '  password: "password",\n' +
+                  '  email: "test@example.com",\n' +
+                  '  serveraddress: "localhost:5000",\n' +
                   '})',
                 position: {
                   start: { line: 27, column: 1, offset: 788 },
@@ -1700,7 +1700,7 @@ export default [
       {
         name: 'listImages',
         docs: '```coffeescript [specscript]\n' +
-          "module DockerDocs 'https://docs.docker.com/reference/api/engine/version/v1.52/'\n" +
+          'module DockerDocs "https://docs.docker.com/reference/api/engine/version/v1.52/"\n' +
           '\n' +
           'listImages() -> data Promise<[\n' +
           '  Id: string,\n' +
@@ -1775,7 +1775,7 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: "module DockerDocs 'https://docs.docker.com/reference/api/engine/version/v1.52/'\n" +
+                value: 'module DockerDocs "https://docs.docker.com/reference/api/engine/version/v1.52/"\n' +
                   '\n' +
                   'listImages() -> data Promise<[\n' +
                   '  Id: string,\n' +
@@ -2763,7 +2763,7 @@ export default [
       {
         name: 'listContainers',
         docs: '```coffeescript [specscript]\n' +
-          "module DockerDocs 'https://docs.docker.com/reference/api/engine/version/v1.52/'\n" +
+          'module DockerDocs "https://docs.docker.com/reference/api/engine/version/v1.52/"\n' +
           '\n' +
           'listContainers() -> data Promise<[\n' +
           '  Id: string,\n' +
@@ -2777,7 +2777,7 @@ export default [
           '  SizeRw: number,\n' +
           '  SizeRootFs: number,\n' +
           '  Labels: Object<string>,\n' +
-          "  State: 'created'|'running'|'paused'|'restarting'|'exited'|'removing'|'dead',\n" +
+          '  State: "created"|"running"|"paused"|"restarting"|"exited"|"removing"|"dead",\n' +
           '  Status: string,\n' +
           '  HostConfig: {\n' +
           '    NetworkMode: string,\n' +
@@ -2788,7 +2788,7 @@ export default [
           '  },\n' +
           '  Mounts: Array<DockerDocs.MountPoint>,\n' +
           '  Health: {\n' +
-          "    Status: 'none'|'starting'|'healthy'|'unhealthy',\n" +
+          '    Status: "none"|"starting"|"healthy"|"unhealthy",\n' +
           '    FailingStreak: number,\n' +
           '  },\n' +
           ']>\n' +
@@ -2813,7 +2813,7 @@ export default [
           '    * `SizeRootFs` - the total size of all files in the read-only layers of the image of the Docker container.\n' +
           '    * `Labels` - object of key-value metadata.\n' +
           '    * `State` - the state of the Docker container.\n' +
-          "    * `Status` - additional human-readable status of the Docker container, e.g. `'Exit 0'`.\n" +
+          '    * `Status` - additional human-readable status of the Docker container, e.g. `"Exit 0"`.\n' +
           '    * `HostConfig` - summary of host-specific runtime information of the Docker container.\n' +
           "    * `NetworkSettings` - summary of the Docker container's network settings.\n" +
           '    * `Mounts` - list of mounts of the Docker container.\n' +
@@ -2858,7 +2858,7 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: "module DockerDocs 'https://docs.docker.com/reference/api/engine/version/v1.52/'\n" +
+                value: 'module DockerDocs "https://docs.docker.com/reference/api/engine/version/v1.52/"\n' +
                   '\n' +
                   'listContainers() -> data Promise<[\n' +
                   '  Id: string,\n' +
@@ -2872,7 +2872,7 @@ export default [
                   '  SizeRw: number,\n' +
                   '  SizeRootFs: number,\n' +
                   '  Labels: Object<string>,\n' +
-                  "  State: 'created'|'running'|'paused'|'restarting'|'exited'|'removing'|'dead',\n" +
+                  '  State: "created"|"running"|"paused"|"restarting"|"exited"|"removing"|"dead",\n' +
                   '  Status: string,\n' +
                   '  HostConfig: {\n' +
                   '    NetworkMode: string,\n' +
@@ -2883,7 +2883,7 @@ export default [
                   '  },\n' +
                   '  Mounts: Array<DockerDocs.MountPoint>,\n' +
                   '  Health: {\n' +
-                  "    Status: 'none'|'starting'|'healthy'|'unhealthy',\n" +
+                  '    Status: "none"|"starting"|"healthy"|"unhealthy",\n' +
                   '    FailingStreak: number,\n' +
                   '  },\n' +
                   ']>',
@@ -3778,7 +3778,7 @@ export default [
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: "'Exit 0'",
+                                    value: '"Exit 0"',
                                     position: {
                                       start: {
                                         line: 52,
@@ -4089,7 +4089,7 @@ export default [
       {
         name: 'pullImage',
         docs: '```coffeescript [specscript]\n' +
-          "module stream 'https://nodejs.org/api/stream.html'\n" +
+          'module stream "https://nodejs.org/api/stream.html"\n' +
           '\n' +
           'pullImage(\n' +
           '  name string,\n' +
@@ -4097,7 +4097,7 @@ export default [
           '    repo: string,\n' +
           '    tag: string,\n' +
           '    message: string,\n' +
-          "    platform: string, # '<os>[/arch[/variant]]'\n" +
+          '    platform: string, # "<os>[/arch[/variant]]"\n' +
           '    username: string,\n' +
           '    password: string,\n' +
           '    email: string,\n' +
@@ -4128,11 +4128,11 @@ export default [
           '```javascript\n' +
           'const docker = new Docker()\n' +
           '\n' +
-          "const pullStream = await docker.pullImage('nginx:1.19')\n" +
+          'const pullStream = await docker.pullImage("nginx:1.19")\n' +
           '\n' +
           'pullStream.pipe(process.stdout)\n' +
-          "pullStream.on('end', () => {\n" +
-          "  console.log('pullImage success')\n" +
+          'pullStream.on("end", () => {\n' +
+          '  console.log("pullImage success")\n' +
           '})\n' +
           '```',
         mdast: {
@@ -4169,7 +4169,7 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: "module stream 'https://nodejs.org/api/stream.html'\n" +
+                value: 'module stream "https://nodejs.org/api/stream.html"\n' +
                   '\n' +
                   'pullImage(\n' +
                   '  name string,\n' +
@@ -4177,7 +4177,7 @@ export default [
                   '    repo: string,\n' +
                   '    tag: string,\n' +
                   '    message: string,\n' +
-                  "    platform: string, # '<os>[/arch[/variant]]'\n" +
+                  '    platform: string, # "<os>[/arch[/variant]]"\n' +
                   '    username: string,\n' +
                   '    password: string,\n' +
                   '    email: string,\n' +
@@ -4891,11 +4891,11 @@ export default [
                 meta: null,
                 value: 'const docker = new Docker()\n' +
                   '\n' +
-                  "const pullStream = await docker.pullImage('nginx:1.19')\n" +
+                  'const pullStream = await docker.pullImage("nginx:1.19")\n' +
                   '\n' +
                   'pullStream.pipe(process.stdout)\n' +
-                  "pullStream.on('end', () => {\n" +
-                  "  console.log('pullImage success')\n" +
+                  'pullStream.on("end", () => {\n' +
+                  '  console.log("pullImage success")\n' +
                   '})',
                 position: {
                   start: { line: 38, column: 1, offset: 1477 },
@@ -4913,7 +4913,7 @@ export default [
       {
         name: 'buildImage',
         docs: '```coffeescript [specscript]\n' +
-          "module stream 'https://nodejs.org/api/stream.html'\n" +
+          'module stream "https://nodejs.org/api/stream.html"\n' +
           '\n' +
           'buildImage(path string, options {\n' +
           '  image: string,\n' +
@@ -4924,7 +4924,8 @@ export default [
           '    ...\n' +
           '  >,\n' +
           '  archiveDockerfile: string,\n' +
-          "  platform: string, # '<os>[/arch[/variant]]'\n" +
+          '  platform: string, # "<os>[/arch[/variant]]"\n' +
+          '  nocache: boolean,\n' +
           '}) -> dataStream Promise<stream.Readable>\n' +
           '```\n' +
           '\n' +
@@ -4933,11 +4934,12 @@ export default [
           'Arguments:\n' +
           '  * `path` - parent directory of the build context.\n' +
           '  * `options`\n' +
-          "    * `image` - the name and optional tag of the image. If no tag is present, `'LATEST'` is assumed as the value for the tag.\n" +
+          '    * `image` - the name and optional tag of the image. If no tag is present, `"LATEST"` is assumed as the value for the tag.\n' +
           '    * `ignore` - patterns to ignore when bundling files and directories for the build context.\n' +
           '    * `archive` - an object of filenames and file contents that will be present in the build context.\n' +
-          "    * `archiveDockerfile` - the filepath including filename of the Dockerfile, e.g. `'Dockerfiles/Dockerfile2'`. Defaults to `'Dockerfile'`.\n" +
-          "    * `platform` - target platform for the build, e.g. `'linux/arm64'`.\n" +
+          '    * `archiveDockerfile` - the filepath within the build context to the Dockerfile, e.g. `"Dockerfiles/Dockerfile2"`. Defaults to `"Dockerfile"`.\n' +
+          '    * `platform` - target platform for the build, e.g. `"linux/arm64"`.\n' +
+          '    * `nocache` - causes Docker to not reference image layers from the cache when building the image.\n' +
           '\n' +
           'Return:\n' +
           '  * `dataStream` - a readable stream of the progress of the Docker `buildImage` operation.\n' +
@@ -4946,7 +4948,7 @@ export default [
           'const docker = new Docker()\n' +
           '\n' +
           'const buildStream = await docker.buildImage(__dirname, {\n' +
-          "  image: 'my-image',\n" +
+          '  image: "my-image",\n' +
           '  archive: {\n' +
           '    Dockerfile: `\n' +
           'FROM node:15-alpine\n' +
@@ -4957,23 +4959,23 @@ export default [
           '})\n' +
           '\n' +
           'buildStream.pipe(process.stdout)\n' +
-          "buildStream.on('end', () => {\n" +
-          "  console.log('Build success')\n" +
+          'buildStream.on("end", () => {\n' +
+          '  console.log("Build success")\n' +
           '})\n' +
           '```\n' +
           '\n' +
           '### Dockerfile Syntax\n' +
           '```sh\n' +
           'HEALTHCHECK \\\n' +
-          "  [--interval=<duration '30s'|string>] \\\n" +
-          "  [--timeout=<duration '30s'|string>] \\\n" +
-          "  [--start-period=<duration '0s'|string>] \\\n" +
-          "  [--start-interval=<duration '5s'|string>] \\\n" +
+          '  [--interval=<duration "30s"|string>] \\\n' +
+          '  [--timeout=<duration "30s"|string>] \\\n' +
+          '  [--start-period=<duration "0s"|string>] \\\n' +
+          '  [--start-interval=<duration "5s"|string>] \\\n' +
           '  [--retries=<3|number>]\n' +
           '\n' +
           'ENV <key>=<value> ...\n' +
           '\n' +
-          "EXPOSE <port>/<protocol 'tcp'|'udp'> ...\n" +
+          'EXPOSE <port>/<protocol "tcp"|"udp"> ...\n' +
           '\n' +
           'WORKDIR <path>\n' +
           '\n' +
@@ -5026,7 +5028,7 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: "module stream 'https://nodejs.org/api/stream.html'\n" +
+                value: 'module stream "https://nodejs.org/api/stream.html"\n' +
                   '\n' +
                   'buildImage(path string, options {\n' +
                   '  image: string,\n' +
@@ -5037,11 +5039,12 @@ export default [
                   '    ...\n' +
                   '  >,\n' +
                   '  archiveDockerfile: string,\n' +
-                  "  platform: string, # '<os>[/arch[/variant]]'\n" +
+                  '  platform: string, # "<os>[/arch[/variant]]"\n' +
+                  '  nocache: boolean,\n' +
                   '}) -> dataStream Promise<stream.Readable>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 15, column: 4, offset: 380 }
+                  end: { line: 16, column: 4, offset: 400 }
                 }
               },
               {
@@ -5051,14 +5054,14 @@ export default [
                     type: 'text',
                     value: 'Builds a Docker Image.',
                     position: {
-                      start: { line: 17, column: 1, offset: 382 },
-                      end: { line: 17, column: 23, offset: 404 }
+                      start: { line: 18, column: 1, offset: 402 },
+                      end: { line: 18, column: 23, offset: 424 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 17, column: 1, offset: 382 },
-                  end: { line: 17, column: 23, offset: 404 }
+                  start: { line: 18, column: 1, offset: 402 },
+                  end: { line: 18, column: 23, offset: 424 }
                 }
               },
               {
@@ -5068,14 +5071,14 @@ export default [
                     type: 'text',
                     value: 'Arguments:',
                     position: {
-                      start: { line: 19, column: 1, offset: 406 },
-                      end: { line: 19, column: 11, offset: 416 }
+                      start: { line: 20, column: 1, offset: 426 },
+                      end: { line: 20, column: 11, offset: 436 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 19, column: 1, offset: 406 },
-                  end: { line: 19, column: 11, offset: 416 }
+                  start: { line: 20, column: 1, offset: 426 },
+                  end: { line: 20, column: 11, offset: 436 }
                 }
               },
               {
@@ -5096,28 +5099,28 @@ export default [
                             type: 'inlineCode',
                             value: 'path',
                             position: {
-                              start: { line: 20, column: 5, offset: 421 },
-                              end: { line: 20, column: 11, offset: 427 }
+                              start: { line: 21, column: 5, offset: 441 },
+                              end: { line: 21, column: 11, offset: 447 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - parent directory of the build context.',
                             position: {
-                              start: { line: 20, column: 11, offset: 427 },
-                              end: { line: 20, column: 52, offset: 468 }
+                              start: { line: 21, column: 11, offset: 447 },
+                              end: { line: 21, column: 52, offset: 488 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 20, column: 5, offset: 421 },
-                          end: { line: 20, column: 52, offset: 468 }
+                          start: { line: 21, column: 5, offset: 441 },
+                          end: { line: 21, column: 52, offset: 488 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 20, column: 3, offset: 419 },
-                      end: { line: 20, column: 52, offset: 468 }
+                      start: { line: 21, column: 3, offset: 439 },
+                      end: { line: 21, column: 52, offset: 488 }
                     }
                   },
                   {
@@ -5132,14 +5135,14 @@ export default [
                             type: 'inlineCode',
                             value: 'options',
                             position: {
-                              start: { line: 21, column: 5, offset: 473 },
-                              end: { line: 21, column: 14, offset: 482 }
+                              start: { line: 22, column: 5, offset: 493 },
+                              end: { line: 22, column: 14, offset: 502 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 21, column: 5, offset: 473 },
-                          end: { line: 21, column: 14, offset: 482 }
+                          start: { line: 22, column: 5, offset: 493 },
+                          end: { line: 22, column: 14, offset: 502 }
                         }
                       },
                       {
@@ -5161,14 +5164,14 @@ export default [
                                     value: 'image',
                                     position: {
                                       start: {
-                                        line: 22,
+                                        line: 23,
                                         column: 7,
-                                        offset: 489
+                                        offset: 509
                                       },
                                       end: {
-                                        line: 22,
+                                        line: 23,
                                         column: 14,
-                                        offset: 496
+                                        offset: 516
                                       }
                                     }
                                   },
@@ -5177,30 +5180,30 @@ export default [
                                     value: ' - the name and optional tag of the image. If no tag is present, ',
                                     position: {
                                       start: {
-                                        line: 22,
+                                        line: 23,
                                         column: 14,
-                                        offset: 496
+                                        offset: 516
                                       },
                                       end: {
-                                        line: 22,
+                                        line: 23,
                                         column: 79,
-                                        offset: 561
+                                        offset: 581
                                       }
                                     }
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: "'LATEST'",
+                                    value: '"LATEST"',
                                     position: {
                                       start: {
-                                        line: 22,
+                                        line: 23,
                                         column: 79,
-                                        offset: 561
+                                        offset: 581
                                       },
                                       end: {
-                                        line: 22,
+                                        line: 23,
                                         column: 89,
-                                        offset: 571
+                                        offset: 591
                                       }
                                     }
                                   },
@@ -5209,31 +5212,31 @@ export default [
                                     value: ' is assumed as the value for the tag.',
                                     position: {
                                       start: {
-                                        line: 22,
+                                        line: 23,
                                         column: 89,
-                                        offset: 571
+                                        offset: 591
                                       },
                                       end: {
-                                        line: 22,
+                                        line: 23,
                                         column: 126,
-                                        offset: 608
+                                        offset: 628
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 22, column: 7, offset: 489 },
+                                  start: { line: 23, column: 7, offset: 509 },
                                   end: {
-                                    line: 22,
+                                    line: 23,
                                     column: 126,
-                                    offset: 608
+                                    offset: 628
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 22, column: 5, offset: 487 },
-                              end: { line: 22, column: 126, offset: 608 }
+                              start: { line: 23, column: 5, offset: 507 },
+                              end: { line: 23, column: 126, offset: 628 }
                             }
                           },
                           {
@@ -5249,14 +5252,14 @@ export default [
                                     value: 'ignore',
                                     position: {
                                       start: {
-                                        line: 23,
+                                        line: 24,
                                         column: 7,
-                                        offset: 615
+                                        offset: 635
                                       },
                                       end: {
-                                        line: 23,
+                                        line: 24,
                                         column: 15,
-                                        offset: 623
+                                        offset: 643
                                       }
                                     }
                                   },
@@ -5265,27 +5268,27 @@ export default [
                                     value: ' - patterns to ignore when bundling files and directories for the build context.',
                                     position: {
                                       start: {
-                                        line: 23,
+                                        line: 24,
                                         column: 15,
-                                        offset: 623
+                                        offset: 643
                                       },
                                       end: {
-                                        line: 23,
+                                        line: 24,
                                         column: 95,
-                                        offset: 703
+                                        offset: 723
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 23, column: 7, offset: 615 },
-                                  end: { line: 23, column: 95, offset: 703 }
+                                  start: { line: 24, column: 7, offset: 635 },
+                                  end: { line: 24, column: 95, offset: 723 }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 23, column: 5, offset: 613 },
-                              end: { line: 23, column: 95, offset: 703 }
+                              start: { line: 24, column: 5, offset: 633 },
+                              end: { line: 24, column: 95, offset: 723 }
                             }
                           },
                           {
@@ -5301,14 +5304,14 @@ export default [
                                     value: 'archive',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 25,
                                         column: 7,
-                                        offset: 710
+                                        offset: 730
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 25,
                                         column: 16,
-                                        offset: 719
+                                        offset: 739
                                       }
                                     }
                                   },
@@ -5317,31 +5320,31 @@ export default [
                                     value: ' - an object of filenames and file contents that will be present in the build context.',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 25,
                                         column: 16,
-                                        offset: 719
+                                        offset: 739
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 25,
                                         column: 102,
-                                        offset: 805
+                                        offset: 825
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 24, column: 7, offset: 710 },
+                                  start: { line: 25, column: 7, offset: 730 },
                                   end: {
-                                    line: 24,
+                                    line: 25,
                                     column: 102,
-                                    offset: 805
+                                    offset: 825
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 24, column: 5, offset: 708 },
-                              end: { line: 24, column: 102, offset: 805 }
+                              start: { line: 25, column: 5, offset: 728 },
+                              end: { line: 25, column: 102, offset: 825 }
                             }
                           },
                           {
@@ -5357,46 +5360,46 @@ export default [
                                     value: 'archiveDockerfile',
                                     position: {
                                       start: {
-                                        line: 25,
+                                        line: 26,
                                         column: 7,
-                                        offset: 812
+                                        offset: 832
                                       },
                                       end: {
-                                        line: 25,
+                                        line: 26,
                                         column: 26,
-                                        offset: 831
+                                        offset: 851
                                       }
                                     }
                                   },
                                   {
                                     type: 'text',
-                                    value: ' - the filepath including filename of the Dockerfile, e.g. ',
+                                    value: ' - the filepath within the build context to the Dockerfile, e.g. ',
                                     position: {
                                       start: {
-                                        line: 25,
+                                        line: 26,
                                         column: 26,
-                                        offset: 831
+                                        offset: 851
                                       },
                                       end: {
-                                        line: 25,
-                                        column: 85,
-                                        offset: 890
+                                        line: 26,
+                                        column: 91,
+                                        offset: 916
                                       }
                                     }
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: "'Dockerfiles/Dockerfile2'",
+                                    value: '"Dockerfiles/Dockerfile2"',
                                     position: {
                                       start: {
-                                        line: 25,
-                                        column: 85,
-                                        offset: 890
+                                        line: 26,
+                                        column: 91,
+                                        offset: 916
                                       },
                                       end: {
-                                        line: 25,
-                                        column: 112,
-                                        offset: 917
+                                        line: 26,
+                                        column: 118,
+                                        offset: 943
                                       }
                                     }
                                   },
@@ -5405,30 +5408,30 @@ export default [
                                     value: '. Defaults to ',
                                     position: {
                                       start: {
-                                        line: 25,
-                                        column: 112,
-                                        offset: 917
+                                        line: 26,
+                                        column: 118,
+                                        offset: 943
                                       },
                                       end: {
-                                        line: 25,
-                                        column: 126,
-                                        offset: 931
+                                        line: 26,
+                                        column: 132,
+                                        offset: 957
                                       }
                                     }
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: "'Dockerfile'",
+                                    value: '"Dockerfile"',
                                     position: {
                                       start: {
-                                        line: 25,
-                                        column: 126,
-                                        offset: 931
+                                        line: 26,
+                                        column: 132,
+                                        offset: 957
                                       },
                                       end: {
-                                        line: 25,
-                                        column: 140,
-                                        offset: 945
+                                        line: 26,
+                                        column: 146,
+                                        offset: 971
                                       }
                                     }
                                   },
@@ -5437,31 +5440,31 @@ export default [
                                     value: '.',
                                     position: {
                                       start: {
-                                        line: 25,
-                                        column: 140,
-                                        offset: 945
+                                        line: 26,
+                                        column: 146,
+                                        offset: 971
                                       },
                                       end: {
-                                        line: 25,
-                                        column: 141,
-                                        offset: 946
+                                        line: 26,
+                                        column: 147,
+                                        offset: 972
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 25, column: 7, offset: 812 },
+                                  start: { line: 26, column: 7, offset: 832 },
                                   end: {
-                                    line: 25,
-                                    column: 141,
-                                    offset: 946
+                                    line: 26,
+                                    column: 147,
+                                    offset: 972
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 25, column: 5, offset: 810 },
-                              end: { line: 25, column: 141, offset: 946 }
+                              start: { line: 26, column: 5, offset: 830 },
+                              end: { line: 26, column: 147, offset: 972 }
                             }
                           },
                           {
@@ -5477,14 +5480,14 @@ export default [
                                     value: 'platform',
                                     position: {
                                       start: {
-                                        line: 26,
+                                        line: 27,
                                         column: 7,
-                                        offset: 953
+                                        offset: 979
                                       },
                                       end: {
-                                        line: 26,
+                                        line: 27,
                                         column: 17,
-                                        offset: 963
+                                        offset: 989
                                       }
                                     }
                                   },
@@ -5493,30 +5496,30 @@ export default [
                                     value: ' - target platform for the build, e.g. ',
                                     position: {
                                       start: {
-                                        line: 26,
+                                        line: 27,
                                         column: 17,
-                                        offset: 963
+                                        offset: 989
                                       },
                                       end: {
-                                        line: 26,
+                                        line: 27,
                                         column: 56,
-                                        offset: 1002
+                                        offset: 1028
                                       }
                                     }
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: "'linux/arm64'",
+                                    value: '"linux/arm64"',
                                     position: {
                                       start: {
-                                        line: 26,
+                                        line: 27,
                                         column: 56,
-                                        offset: 1002
+                                        offset: 1028
                                       },
                                       end: {
-                                        line: 26,
+                                        line: 27,
                                         column: 71,
-                                        offset: 1017
+                                        offset: 1043
                                       }
                                     }
                                   },
@@ -5525,49 +5528,105 @@ export default [
                                     value: '.',
                                     position: {
                                       start: {
-                                        line: 26,
+                                        line: 27,
                                         column: 71,
-                                        offset: 1017
+                                        offset: 1043
                                       },
                                       end: {
-                                        line: 26,
+                                        line: 27,
                                         column: 72,
-                                        offset: 1018
+                                        offset: 1044
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 26, column: 7, offset: 953 },
+                                  start: { line: 27, column: 7, offset: 979 },
                                   end: {
-                                    line: 26,
+                                    line: 27,
                                     column: 72,
-                                    offset: 1018
+                                    offset: 1044
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 26, column: 5, offset: 951 },
-                              end: { line: 26, column: 72, offset: 1018 }
+                              start: { line: 27, column: 5, offset: 977 },
+                              end: { line: 27, column: 72, offset: 1044 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'nocache',
+                                    position: {
+                                      start: {
+                                        line: 28,
+                                        column: 7,
+                                        offset: 1051
+                                      },
+                                      end: {
+                                        line: 28,
+                                        column: 16,
+                                        offset: 1060
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - causes Docker to not reference image layers from the cache when building the image.',
+                                    position: {
+                                      start: {
+                                        line: 28,
+                                        column: 16,
+                                        offset: 1060
+                                      },
+                                      end: {
+                                        line: 28,
+                                        column: 102,
+                                        offset: 1146
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 28, column: 7, offset: 1051 },
+                                  end: {
+                                    line: 28,
+                                    column: 102,
+                                    offset: 1146
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 28, column: 5, offset: 1049 },
+                              end: { line: 28, column: 102, offset: 1146 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 22, column: 5, offset: 487 },
-                          end: { line: 26, column: 72, offset: 1018 }
+                          start: { line: 23, column: 5, offset: 507 },
+                          end: { line: 28, column: 102, offset: 1146 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 21, column: 3, offset: 471 },
-                      end: { line: 26, column: 72, offset: 1018 }
+                      start: { line: 22, column: 3, offset: 491 },
+                      end: { line: 28, column: 102, offset: 1146 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 20, column: 3, offset: 419 },
-                  end: { line: 26, column: 72, offset: 1018 }
+                  start: { line: 21, column: 3, offset: 439 },
+                  end: { line: 28, column: 102, offset: 1146 }
                 }
               },
               {
@@ -5577,14 +5636,14 @@ export default [
                     type: 'text',
                     value: 'Return:',
                     position: {
-                      start: { line: 28, column: 1, offset: 1020 },
-                      end: { line: 28, column: 8, offset: 1027 }
+                      start: { line: 30, column: 1, offset: 1148 },
+                      end: { line: 30, column: 8, offset: 1155 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 28, column: 1, offset: 1020 },
-                  end: { line: 28, column: 8, offset: 1027 }
+                  start: { line: 30, column: 1, offset: 1148 },
+                  end: { line: 30, column: 8, offset: 1155 }
                 }
               },
               {
@@ -5605,50 +5664,50 @@ export default [
                             type: 'inlineCode',
                             value: 'dataStream',
                             position: {
-                              start: { line: 29, column: 5, offset: 1032 },
-                              end: { line: 29, column: 17, offset: 1044 }
+                              start: { line: 31, column: 5, offset: 1160 },
+                              end: { line: 31, column: 17, offset: 1172 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - a readable stream of the progress of the Docker ',
                             position: {
-                              start: { line: 29, column: 17, offset: 1044 },
-                              end: { line: 29, column: 68, offset: 1095 }
+                              start: { line: 31, column: 17, offset: 1172 },
+                              end: { line: 31, column: 68, offset: 1223 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'buildImage',
                             position: {
-                              start: { line: 29, column: 68, offset: 1095 },
-                              end: { line: 29, column: 80, offset: 1107 }
+                              start: { line: 31, column: 68, offset: 1223 },
+                              end: { line: 31, column: 80, offset: 1235 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' operation.',
                             position: {
-                              start: { line: 29, column: 80, offset: 1107 },
-                              end: { line: 29, column: 91, offset: 1118 }
+                              start: { line: 31, column: 80, offset: 1235 },
+                              end: { line: 31, column: 91, offset: 1246 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 29, column: 5, offset: 1032 },
-                          end: { line: 29, column: 91, offset: 1118 }
+                          start: { line: 31, column: 5, offset: 1160 },
+                          end: { line: 31, column: 91, offset: 1246 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 29, column: 3, offset: 1030 },
-                      end: { line: 29, column: 91, offset: 1118 }
+                      start: { line: 31, column: 3, offset: 1158 },
+                      end: { line: 31, column: 91, offset: 1246 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 29, column: 3, offset: 1030 },
-                  end: { line: 29, column: 91, offset: 1118 }
+                  start: { line: 31, column: 3, offset: 1158 },
+                  end: { line: 31, column: 91, offset: 1246 }
                 }
               },
               {
@@ -5658,7 +5717,7 @@ export default [
                 value: 'const docker = new Docker()\n' +
                   '\n' +
                   'const buildStream = await docker.buildImage(__dirname, {\n' +
-                  "  image: 'my-image',\n" +
+                  '  image: "my-image",\n' +
                   '  archive: {\n' +
                   '    Dockerfile: `\n' +
                   'FROM node:15-alpine\n' +
@@ -5669,12 +5728,12 @@ export default [
                   '})\n' +
                   '\n' +
                   'buildStream.pipe(process.stdout)\n' +
-                  "buildStream.on('end', () => {\n" +
-                  "  console.log('Build success')\n" +
+                  'buildStream.on("end", () => {\n' +
+                  '  console.log("Build success")\n' +
                   '})',
                 position: {
-                  start: { line: 31, column: 1, offset: 1120 },
-                  end: { line: 49, column: 4, offset: 1447 }
+                  start: { line: 33, column: 1, offset: 1248 },
+                  end: { line: 51, column: 4, offset: 1575 }
                 }
               },
               {
@@ -5685,14 +5744,14 @@ export default [
                     type: 'text',
                     value: 'Dockerfile Syntax',
                     position: {
-                      start: { line: 51, column: 5, offset: 1453 },
-                      end: { line: 51, column: 22, offset: 1470 }
+                      start: { line: 53, column: 5, offset: 1581 },
+                      end: { line: 53, column: 22, offset: 1598 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 51, column: 1, offset: 1449 },
-                  end: { line: 51, column: 22, offset: 1470 }
+                  start: { line: 53, column: 1, offset: 1577 },
+                  end: { line: 53, column: 22, offset: 1598 }
                 }
               },
               {
@@ -5700,15 +5759,15 @@ export default [
                 lang: 'sh',
                 meta: null,
                 value: 'HEALTHCHECK \\\n' +
-                  "  [--interval=<duration '30s'|string>] \\\n" +
-                  "  [--timeout=<duration '30s'|string>] \\\n" +
-                  "  [--start-period=<duration '0s'|string>] \\\n" +
-                  "  [--start-interval=<duration '5s'|string>] \\\n" +
+                  '  [--interval=<duration "30s"|string>] \\\n' +
+                  '  [--timeout=<duration "30s"|string>] \\\n' +
+                  '  [--start-period=<duration "0s"|string>] \\\n' +
+                  '  [--start-interval=<duration "5s"|string>] \\\n' +
                   '  [--retries=<3|number>]\n' +
                   '\n' +
                   'ENV <key>=<value> ...\n' +
                   '\n' +
-                  "EXPOSE <port>/<protocol 'tcp'|'udp'> ...\n" +
+                  'EXPOSE <port>/<protocol "tcp"|"udp"> ...\n' +
                   '\n' +
                   'WORKDIR <path>\n' +
                   '\n' +
@@ -5724,8 +5783,8 @@ export default [
                   'CMD ["<parameter>", ...]\n' +
                   'CMD <command> <parameter> ...',
                 position: {
-                  start: { line: 52, column: 1, offset: 1471 },
-                  end: { line: 77, column: 4, offset: 2027 }
+                  start: { line: 54, column: 1, offset: 1599 },
+                  end: { line: 79, column: 4, offset: 2155 }
                 }
               },
               {
@@ -5735,14 +5794,14 @@ export default [
                     type: 'text',
                     value: 'References:',
                     position: {
-                      start: { line: 79, column: 1, offset: 2029 },
-                      end: { line: 79, column: 12, offset: 2040 }
+                      start: { line: 81, column: 1, offset: 2157 },
+                      end: { line: 81, column: 12, offset: 2168 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 79, column: 1, offset: 2029 },
-                  end: { line: 79, column: 12, offset: 2040 }
+                  start: { line: 81, column: 1, offset: 2157 },
+                  end: { line: 81, column: 12, offset: 2168 }
                 }
               },
               {
@@ -5768,42 +5827,42 @@ export default [
                                 type: 'text',
                                 value: 'Dockerfile',
                                 position: {
-                                  start: { line: 80, column: 6, offset: 2046 },
+                                  start: { line: 82, column: 6, offset: 2174 },
                                   end: {
-                                    line: 80,
+                                    line: 82,
                                     column: 16,
-                                    offset: 2056
+                                    offset: 2184
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 80, column: 5, offset: 2045 },
-                              end: { line: 80, column: 68, offset: 2108 }
+                              start: { line: 82, column: 5, offset: 2173 },
+                              end: { line: 82, column: 68, offset: 2236 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 80, column: 5, offset: 2045 },
-                          end: { line: 80, column: 68, offset: 2108 }
+                          start: { line: 82, column: 5, offset: 2173 },
+                          end: { line: 82, column: 68, offset: 2236 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 80, column: 3, offset: 2043 },
-                      end: { line: 80, column: 68, offset: 2108 }
+                      start: { line: 82, column: 3, offset: 2171 },
+                      end: { line: 82, column: 68, offset: 2236 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 80, column: 3, offset: 2043 },
-                  end: { line: 80, column: 68, offset: 2108 }
+                  start: { line: 82, column: 3, offset: 2171 },
+                  end: { line: 82, column: 68, offset: 2236 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 80, column: 68, offset: 2108 }
+              end: { line: 82, column: 68, offset: 2236 }
             }
           }
         }
@@ -5811,10 +5870,10 @@ export default [
       {
         name: 'pushImage',
         docs: '```coffeescript [specscript]\n' +
-          "module stream 'https://nodejs.org/api/stream.html'\n" +
+          'module stream "https://nodejs.org/api/stream.html"\n' +
           '\n' +
           'pushImage(options {\n' +
-          "  image: string, # '[<repo>/]<name>:<tag>'\n" +
+          '  image: string, # "[<repo>/]<name>:<tag>"\n' +
           '  registry: string,\n' +
           '  authToken: string,\n' +
           '  username: string,\n' +
@@ -5845,12 +5904,12 @@ export default [
           'const docker = new Docker()\n' +
           '\n' +
           'const dataStream = await docker.pushImage({\n' +
-          "  image: 'repo/my-image:mytag',\n" +
-          "  registry: 'my-registry.io',\n" +
+          '  image: "repo/my-image:mytag",\n' +
+          '  registry: "my-registry.io",\n' +
           '})\n' +
           'dataStream.pipe(process.stdout)\n' +
-          "dataStream.on('end', () => {\n" +
-          "  console.log('Push success')\n" +
+          'dataStream.on("end", () => {\n' +
+          '  console.log("Push success")\n' +
           '})\n' +
           '```',
         mdast: {
@@ -5887,10 +5946,10 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: "module stream 'https://nodejs.org/api/stream.html'\n" +
+                value: 'module stream "https://nodejs.org/api/stream.html"\n' +
                   '\n' +
                   'pushImage(options {\n' +
-                  "  image: string, # '[<repo>/]<name>:<tag>'\n" +
+                  '  image: string, # "[<repo>/]<name>:<tag>"\n' +
                   '  registry: string,\n' +
                   '  authToken: string,\n' +
                   '  username: string,\n' +
@@ -6553,12 +6612,12 @@ export default [
                 value: 'const docker = new Docker()\n' +
                   '\n' +
                   'const dataStream = await docker.pushImage({\n' +
-                  "  image: 'repo/my-image:mytag',\n" +
-                  "  registry: 'my-registry.io',\n" +
+                  '  image: "repo/my-image:mytag",\n' +
+                  '  registry: "my-registry.io",\n' +
                   '})\n' +
                   'dataStream.pipe(process.stdout)\n' +
-                  "dataStream.on('end', () => {\n" +
-                  "  console.log('Push success')\n" +
+                  'dataStream.on("end", () => {\n' +
+                  '  console.log("Push success")\n' +
                   '})',
                 position: {
                   start: { line: 32, column: 1, offset: 1107 },
@@ -6576,7 +6635,7 @@ export default [
       {
         name: 'inspectImage',
         docs: '```coffeescript [specscript]\n' +
-          "module DockerDocs 'https://docs.docker.com/reference/api/engine/version/v1.52/'\n" +
+          'module DockerDocs "https://docs.docker.com/reference/api/engine/version/v1.52/"\n' +
           '\n' +
           'inspectImage(image string) -> data Promise<{\n' +
           '  Id: string,\n' +
@@ -6632,7 +6691,7 @@ export default [
           '```javascript\n' +
           'const docker = new Docker()\n' +
           '\n' +
-          "const data = await docker.inspectImage('my-image:example')\n" +
+          'const data = await docker.inspectImage("my-image:example")\n' +
           '```',
         mdast: {
           name: {
@@ -6668,7 +6727,7 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: "module DockerDocs 'https://docs.docker.com/reference/api/engine/version/v1.52/'\n" +
+                value: 'module DockerDocs "https://docs.docker.com/reference/api/engine/version/v1.52/"\n' +
                   '\n' +
                   'inspectImage(image string) -> data Promise<{\n' +
                   '  Id: string,\n' +
@@ -7970,7 +8029,7 @@ export default [
                 meta: null,
                 value: 'const docker = new Docker()\n' +
                   '\n' +
-                  "const data = await docker.inspectImage('my-image:example')",
+                  'const data = await docker.inspectImage("my-image:example")',
                 position: {
                   start: { line: 55, column: 1, offset: 2713 },
                   end: { line: 59, column: 4, offset: 2818 }
@@ -7988,8 +8047,8 @@ export default [
         name: 'tagImage',
         docs: '```coffeescript [specscript]\n' +
           'tagImage(\n' +
-          "  sourceImageTag string, # '[<repo>/]<image>:<tag>'\n" +
-          "  targetImageTag string, # '[<repo>/]<image>:<tag>'\n" +
+          '  sourceImageTag string, # "[<repo>/]<image>:<tag>"\n' +
+          '  targetImageTag string, # "[<repo>/]<image>:<tag>"\n' +
           ') -> data Promise<{}>\n' +
           '```\n' +
           '\n' +
@@ -8005,7 +8064,7 @@ export default [
           '```javascript\n' +
           'const docker = new Docker()\n' +
           '\n' +
-          "await docker.tagImage('my-image:example', 'my-registry/my-image:example')\n" +
+          'await docker.tagImage("my-image:example", "my-registry/my-image:example")\n' +
           '```',
         mdast: {
           name: {
@@ -8042,8 +8101,8 @@ export default [
                 lang: 'coffeescript',
                 meta: '[specscript]',
                 value: 'tagImage(\n' +
-                  "  sourceImageTag string, # '[<repo>/]<image>:<tag>'\n" +
-                  "  targetImageTag string, # '[<repo>/]<image>:<tag>'\n" +
+                  '  sourceImageTag string, # "[<repo>/]<image>:<tag>"\n' +
+                  '  targetImageTag string, # "[<repo>/]<image>:<tag>"\n' +
                   ') -> data Promise<{}>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
@@ -8239,7 +8298,7 @@ export default [
                 meta: null,
                 value: 'const docker = new Docker()\n' +
                   '\n' +
-                  "await docker.tagImage('my-image:example', 'my-registry/my-image:example')",
+                  'await docker.tagImage("my-image:example", "my-registry/my-image:example")',
                 position: {
                   start: { line: 17, column: 1, offset: 393 },
                   end: { line: 21, column: 4, offset: 513 }
@@ -8278,7 +8337,7 @@ export default [
           '```javascript\n' +
           'const docker = new Docker()\n' +
           '\n' +
-          "await docker.removeImage('my-image:example')\n" +
+          'await docker.removeImage("my-image:example")\n' +
           '```',
         mdast: {
           name: {
@@ -8932,7 +8991,7 @@ export default [
                 meta: null,
                 value: 'const docker = new Docker()\n' +
                   '\n' +
-                  "await docker.removeImage('my-image:example')",
+                  'await docker.removeImage("my-image:example")',
                 position: {
                   start: { line: 21, column: 1, offset: 1023 },
                   end: { line: 25, column: 4, offset: 1114 }
@@ -8953,12 +9012,12 @@ export default [
           '  name: string,\n' +
           '  image: string,\n' +
           '  rm: boolean,\n' +
-          "  restart: 'no'|'on-failure[:<max-retries>]'|'always'|'unless-stopped',\n" +
-          "  logDriver: 'local'|'json-file'|'syslog'|'journald'|'gelf'|'fluentd'|'awslogs'|'splunk'|'etwlogs'|'none',\n" +
+          '  restart: "no"|"on-failure[:<max-retries>]"|"always"|"unless-stopped",\n' +
+          '  logDriver: "local"|"json-file"|"syslog"|"journald"|"gelf"|"fluentd"|"awslogs"|"splunk"|"etwlogs"|"none",\n' +
           '  logDriverOptions: Object<string>,\n' +
           '  publish: Object<\n' +
           '    [hostPort string]: containerPort string # 8080\n' +
-          `      |containerPortWithProtocol string # '<containerPort>[/<"tcp"|"udp"|"sctp">]'\n` +
+          '      |containerPortWithProtocol string # "<containerPort>[/<"tcp"|"udp"|"sctp">]"\n' +
           '  >,\n' +
           '  healthCmd: Array<string>,\n' +
           '  healthInterval: number, # nanoseconds, minimum 1e6, default 10e9\n' +
@@ -8971,14 +9030,14 @@ export default [
           '    source: string,\n' +
           '    target: string,\n' +
           '    readonly: boolean,\n' +
-          "    type: 'bind'|'cluster'|'image'|'npipe'|'tmpfs'|'volume',\n" +
+          '    type: "bind"|"cluster"|"image"|"npipe"|"tmpfs"|"volume",\n' +
           '  }>|Array<\n' +
-          "    mount string, # '<source>:<target>[:<readonly true|false>]'\n" +
+          '    mount string, # "<source>:<target>[:<readonly true|false>]"\n' +
           '  >,\n' +
           '\n' +
           '  # Dockerfile defaults\n' +
           '  cmd: Array<string|number>,\n' +
-          `  expose: Array<port string>, # '<port>[/<"tcp"|"udp"|"sctp">]'\n` +
+          '  expose: Array<port string>, # "<port>[/<"tcp"|"udp"|"sctp">]"\n' +
           '  volume: Array<path string>,\n' +
           '  workdir: path string,\n' +
           '  env: Object<string>,\n' +
@@ -9015,7 +9074,7 @@ export default [
           '    * `expose` - an array of ports with optional protocols that the Docker container exposes.\n' +
           '    * `volume` - an array of mount point paths inside the Docker container.\n' +
           '    * `workdir` - the working directory of the Docker container.\n' +
-          "    * `env` - an object of the Docker container's environment variables. Maps environment variable names to environment variable values, e.g. `{ FOO: 'bar' }`.\n" +
+          '    * `env` - an object of the Docker container"s environment variables. Maps environment variable names to environment variable values, e.g. `{ FOO: "bar\' }`.\n' +
           '\n' +
           'Return:\n' +
           '  * `data`\n' +
@@ -9030,9 +9089,9 @@ export default [
           '\n' +
           'Health checks:\n' +
           '  * `[]` - inherit healthcheck from image or parent image\n' +
-          "  * `['NONE']` - disable healthcheck\n" +
-          "  * `['CMD', ...args]` - exec arguments directly\n" +
-          "  * `['CMD-SHELL', command string]` - run command with system's default shell\n" +
+          '  * `["NONE"]` - disable healthcheck\n' +
+          '  * `["CMD", ...args]` - exec arguments directly\n' +
+          '  * `["CMD-SHELL", command string]` - run command with system\'s default shell\n' +
           '\n' +
           'Mount types:\n' +
           '  * `bind` - mounts a file or directory from the host into the Docker container. The `source` must exist prior to creating the Docker container.\n' +
@@ -9046,8 +9105,8 @@ export default [
           'const docker = new Docker()\n' +
           '\n' +
           'const data = await docker.createContainer({\n' +
-          "  image: 'node:15-alpine',\n" +
-          "  cmd: ['node', '-e', 'console.log(\\'Hello World.\\')'],\n" +
+          '  image: "node:15-alpine",\n' +
+          `  cmd: ["node", "-e", "console.log(\\'Hello World.\\')"],\n` +
           '  rm: true,\n' +
           '})\n' +
           '```',
@@ -9089,12 +9148,12 @@ export default [
                   '  name: string,\n' +
                   '  image: string,\n' +
                   '  rm: boolean,\n' +
-                  "  restart: 'no'|'on-failure[:<max-retries>]'|'always'|'unless-stopped',\n" +
-                  "  logDriver: 'local'|'json-file'|'syslog'|'journald'|'gelf'|'fluentd'|'awslogs'|'splunk'|'etwlogs'|'none',\n" +
+                  '  restart: "no"|"on-failure[:<max-retries>]"|"always"|"unless-stopped",\n' +
+                  '  logDriver: "local"|"json-file"|"syslog"|"journald"|"gelf"|"fluentd"|"awslogs"|"splunk"|"etwlogs"|"none",\n' +
                   '  logDriverOptions: Object<string>,\n' +
                   '  publish: Object<\n' +
                   '    [hostPort string]: containerPort string # 8080\n' +
-                  `      |containerPortWithProtocol string # '<containerPort>[/<"tcp"|"udp"|"sctp">]'\n` +
+                  '      |containerPortWithProtocol string # "<containerPort>[/<"tcp"|"udp"|"sctp">]"\n' +
                   '  >,\n' +
                   '  healthCmd: Array<string>,\n' +
                   '  healthInterval: number, # nanoseconds, minimum 1e6, default 10e9\n' +
@@ -9107,14 +9166,14 @@ export default [
                   '    source: string,\n' +
                   '    target: string,\n' +
                   '    readonly: boolean,\n' +
-                  "    type: 'bind'|'cluster'|'image'|'npipe'|'tmpfs'|'volume',\n" +
+                  '    type: "bind"|"cluster"|"image"|"npipe"|"tmpfs"|"volume",\n' +
                   '  }>|Array<\n' +
-                  "    mount string, # '<source>:<target>[:<readonly true|false>]'\n" +
+                  '    mount string, # "<source>:<target>[:<readonly true|false>]"\n' +
                   '  >,\n' +
                   '\n' +
                   '  # Dockerfile defaults\n' +
                   '  cmd: Array<string|number>,\n' +
-                  `  expose: Array<port string>, # '<port>[/<"tcp"|"udp"|"sctp">]'\n` +
+                  '  expose: Array<port string>, # "<port>[/<"tcp"|"udp"|"sctp">]"\n' +
                   '  volume: Array<path string>,\n' +
                   '  workdir: path string,\n' +
                   '  env: Object<string>,\n' +
@@ -10669,7 +10728,7 @@ export default [
                                   },
                                   {
                                     type: 'text',
-                                    value: " - an object of the Docker container's environment variables. Maps environment variable names to environment variable values, e.g. ",
+                                    value: ' - an object of the Docker container"s environment variables. Maps environment variable names to environment variable values, e.g. ',
                                     position: {
                                       start: {
                                         line: 68,
@@ -10685,7 +10744,7 @@ export default [
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: "{ FOO: 'bar' }",
+                                    value: `{ FOO: "bar' }`,
                                     position: {
                                       start: {
                                         line: 68,
@@ -11188,7 +11247,7 @@ export default [
                         children: [
                           {
                             type: 'inlineCode',
-                            value: "['NONE']",
+                            value: '["NONE"]',
                             position: {
                               start: { line: 83, column: 5, offset: 3885 },
                               end: { line: 83, column: 15, offset: 3895 }
@@ -11224,7 +11283,7 @@ export default [
                         children: [
                           {
                             type: 'inlineCode',
-                            value: "['CMD', ...args]",
+                            value: '["CMD", ...args]',
                             position: {
                               start: { line: 84, column: 5, offset: 3922 },
                               end: { line: 84, column: 23, offset: 3940 }
@@ -11260,7 +11319,7 @@ export default [
                         children: [
                           {
                             type: 'inlineCode',
-                            value: "['CMD-SHELL', command string]",
+                            value: '["CMD-SHELL", command string]',
                             position: {
                               start: { line: 85, column: 5, offset: 3971 },
                               end: { line: 85, column: 36, offset: 4002 }
@@ -11592,8 +11651,8 @@ export default [
                 value: 'const docker = new Docker()\n' +
                   '\n' +
                   'const data = await docker.createContainer({\n' +
-                  "  image: 'node:15-alpine',\n" +
-                  "  cmd: ['node', '-e', 'console.log(\\'Hello World.\\')'],\n" +
+                  '  image: "node:15-alpine",\n' +
+                  `  cmd: ["node", "-e", "console.log(\\'Hello World.\\')"],\n` +
                   '  rm: true,\n' +
                   '})',
                 position: {
@@ -11612,7 +11671,7 @@ export default [
       {
         name: 'attachContainer',
         docs: '```coffeescript [specscript]\n' +
-          "module stream 'https://nodejs.org/api/stream.html'\n" +
+          'module stream "https://nodejs.org/api/stream.html"\n' +
           '\n' +
           'attachContainer(containerId string, options {\n' +
           '  stdout: boolean,\n' +
@@ -11625,8 +11684,8 @@ export default [
           'Arguments:\n' +
           '  * `containerId` - the ID of the Docker container.\n' +
           '  * `options`\n' +
-          "    * `stdout` - if `true`, `attachContainer` attaches to the Docker container's `stdout`. If `false`, `attachContainer` does not attach to the Docker container's `stdout`. Defaults to `true`.\n" +
-          "    * `stderr` - if `true`, `attachContainer` attaches to the Docker container's `stderr`. If `false`, `attachContainer` does not attach to the Docker container's `stderr`. Defaults to `true`.\n" +
+          '    * `stdout` - if `true`, `attachContainer` attaches to the Docker container"s `stdout`. If `false`, `attachContainer` does not attach to the Docker container"s `stdout`. Defaults to `true`.\n' +
+          '    * `stderr` - if `true`, `attachContainer` attaches to the Docker container"s `stderr`. If `false`, `attachContainer` does not attach to the Docker container"s `stderr`. Defaults to `true`.\n' +
           '\n' +
           'Return:\n' +
           "  * `dataStream` - a readable stream of the Docker container's `stdout` and/or `stderr`.\n" +
@@ -11635,16 +11694,16 @@ export default [
           'const docker = new Docker()\n' +
           '\n' +
           'const data = await docker.createContainer({\n' +
-          "  image: 'node:15-alpine',\n" +
-          "  cmd: ['node', '-e', 'console.log(\\'Hello World.\\')'],\n" +
+          '  image: "node:15-alpine",\n' +
+          `  cmd: ["node", "-e", "console.log(\\'Hello World.\\')"],\n` +
           '  rm: true,\n' +
           '})\n' +
           'const containerId = data.Id\n' +
           '\n' +
           'const attachStream = await docker.attachContainer(containerId)\n' +
           'attachStream.pipe(process.stdout) // Hello World.\n' +
-          "attachStream.on('end', () => {\n" +
-          "  console.log('Attach success')\n" +
+          'attachStream.on("end", () => {\n' +
+          '  console.log("Attach success")\n' +
           '})\n' +
           '\n' +
           'await docker.startContainer(containerId)\n' +
@@ -11683,7 +11742,7 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: "module stream 'https://nodejs.org/api/stream.html'\n" +
+                value: 'module stream "https://nodejs.org/api/stream.html"\n' +
                   '\n' +
                   'attachContainer(containerId string, options {\n' +
                   '  stdout: boolean,\n' +
@@ -11888,7 +11947,7 @@ export default [
                                   },
                                   {
                                     type: 'text',
-                                    value: " attaches to the Docker container's ",
+                                    value: ' attaches to the Docker container"s ',
                                     position: {
                                       start: {
                                         line: 15,
@@ -11984,7 +12043,7 @@ export default [
                                   },
                                   {
                                     type: 'text',
-                                    value: " does not attach to the Docker container's ",
+                                    value: ' does not attach to the Docker container"s ',
                                     position: {
                                       start: {
                                         line: 15,
@@ -12168,7 +12227,7 @@ export default [
                                   },
                                   {
                                     type: 'text',
-                                    value: " attaches to the Docker container's ",
+                                    value: ' attaches to the Docker container"s ',
                                     position: {
                                       start: {
                                         line: 16,
@@ -12264,7 +12323,7 @@ export default [
                                   },
                                   {
                                     type: 'text',
-                                    value: " does not attach to the Docker container's ",
+                                    value: ' does not attach to the Docker container"s ',
                                     position: {
                                       start: {
                                         line: 16,
@@ -12480,16 +12539,16 @@ export default [
                 value: 'const docker = new Docker()\n' +
                   '\n' +
                   'const data = await docker.createContainer({\n' +
-                  "  image: 'node:15-alpine',\n" +
-                  "  cmd: ['node', '-e', 'console.log(\\'Hello World.\\')'],\n" +
+                  '  image: "node:15-alpine",\n' +
+                  `  cmd: ["node", "-e", "console.log(\\'Hello World.\\')"],\n` +
                   '  rm: true,\n' +
                   '})\n' +
                   'const containerId = data.Id\n' +
                   '\n' +
                   'const attachStream = await docker.attachContainer(containerId)\n' +
                   'attachStream.pipe(process.stdout) // Hello World.\n' +
-                  "attachStream.on('end', () => {\n" +
-                  "  console.log('Attach success')\n" +
+                  'attachStream.on("end", () => {\n' +
+                  '  console.log("Attach success")\n' +
                   '})\n' +
                   '\n' +
                   'await docker.startContainer(containerId)',
@@ -12509,18 +12568,18 @@ export default [
       {
         name: 'runContainer',
         docs: '```coffeescript [specscript]\n' +
-          "module stream 'https://nodejs.org/api/stream.html'\n" +
+          'module stream "https://nodejs.org/api/stream.html"\n' +
           '\n' +
           'runContainer(options {\n' +
           '  name: string,\n' +
           '  image: string,\n' +
           '  rm: boolean,\n' +
-          "  restart: 'no'|'on-failure[:<max-retries>]'|'always'|'unless-stopped',\n" +
-          "  logDriver: 'local'|'json-file'|'syslog'|'journald'|'gelf'|'fluentd'|'awslogs'|'splunk'|'etwlogs'|'none',\n" +
+          '  restart: "no"|"on-failure[:<max-retries>]"|"always"|"unless-stopped",\n' +
+          '  logDriver: "local"|"json-file"|"syslog"|"journald"|"gelf"|"fluentd"|"awslogs"|"splunk"|"etwlogs"|"none",\n' +
           '  logDriverOptions: Object<string>,\n' +
           '  publish: Object<\n' +
           '    [hostPort string]: containerPort string # 8080\n' +
-          `      |containerPortWithProtocol string # '<containerPort>[/<"tcp"|"udp"|"sctp">]'\n` +
+          '      |containerPortWithProtocol string # "<containerPort>[/<"tcp"|"udp"|"sctp">]"\n' +
           '  >,\n' +
           '  healthCmd: Array<string>,\n' +
           '  healthInterval: number, # nanoseconds, minimum 1e6, default 10e9\n' +
@@ -12533,14 +12592,14 @@ export default [
           '    source: string,\n' +
           '    target: string,\n' +
           '    readonly: boolean,\n' +
-          "    type: 'bind'|'cluster'|'image'|'npipe'|'tmpfs'|'volume',\n" +
+          '    type: "bind"|"cluster"|"image"|"npipe"|"tmpfs"|"volume",\n' +
           '  }>|Array<\n' +
-          "    mount string, # '<source>:<target>[:<readonly true|false>]'\n" +
+          '    mount string, # "<source>:<target>[:<readonly true|false>]"\n' +
           '  >,\n' +
           '\n' +
           '  # Dockerfile defaults\n' +
           '  cmd: Array<string|number>,\n' +
-          `  expose: Array<port string>, # '<port>[/<"tcp"|"udp"|"sctp">]'\n` +
+          '  expose: Array<port string>, # "<port>[/<"tcp"|"udp"|"sctp">]"\n' +
           '  volume: Array<path string>,\n' +
           '  workdir: path string,\n' +
           '  env: Object<string>,\n' +
@@ -12574,7 +12633,7 @@ export default [
           '    * `expose` - an array of ports with optional protocols that the Docker container exposes.\n' +
           '    * `volume` - an array of mount point paths inside the Docker container.\n' +
           '    * `workdir` - the working directory of the Docker container.\n' +
-          "    * `env` - an object of the Docker container's environment variables. Maps environment variable names to environment variable values, e.g. `{ FOO: 'bar' }`.\n" +
+          '    * `env` - an object of the Docker container"s environment variables. Maps environment variable names to environment variable values, e.g. `{ FOO: "bar\' }`.\n' +
           '\n' +
           'Return:\n' +
           "  * `dataStream` - a readable stream of the Docker container's `stdout` and/or `stderr`.\n" +
@@ -12587,9 +12646,9 @@ export default [
           '\n' +
           'Health checks:\n' +
           '  * `[]` - inherit healthcheck from image or parent image\n' +
-          "  * `['NONE']` - disable healthcheck\n" +
-          "  * `['CMD', ...args]` - exec arguments directly\n" +
-          "  * `['CMD-SHELL', command string]` - run command with system's default shell\n" +
+          '  * `["NONE"]` - disable healthcheck\n' +
+          '  * `["CMD", ...args]` - exec arguments directly\n' +
+          '  * `["CMD-SHELL", command string]` - run command with system\'s default shell\n' +
           '\n' +
           'Mount types:\n' +
           '  * `bind` - mounts a file or directory from the host into the Docker container. The `source` must exist prior to creating the Docker container.\n' +
@@ -12603,14 +12662,14 @@ export default [
           'const docker = new Docker()\n' +
           '\n' +
           'const dataStream = await docker.runContainer({\n' +
-          "  image: 'node:15-alpine',\n" +
-          "  cmd: ['node', '-e', 'console.log(\\'Hello World.\\')'],\n" +
+          '  image: "node:15-alpine",\n' +
+          `  cmd: ["node", "-e", "console.log(\\'Hello World.\\')"],\n` +
           '  rm: true,\n' +
           '})\n' +
           '\n' +
           'dataStream.pipe(process.stdout) // Hello World.\n' +
-          "dataStream.on('end', () => {\n" +
-          "  console.log('Run success')\n" +
+          'dataStream.on("end", () => {\n' +
+          '  console.log("Run success")\n' +
           '})\n' +
           '```',
         mdast: {
@@ -12647,18 +12706,18 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: "module stream 'https://nodejs.org/api/stream.html'\n" +
+                value: 'module stream "https://nodejs.org/api/stream.html"\n' +
                   '\n' +
                   'runContainer(options {\n' +
                   '  name: string,\n' +
                   '  image: string,\n' +
                   '  rm: boolean,\n' +
-                  "  restart: 'no'|'on-failure[:<max-retries>]'|'always'|'unless-stopped',\n" +
-                  "  logDriver: 'local'|'json-file'|'syslog'|'journald'|'gelf'|'fluentd'|'awslogs'|'splunk'|'etwlogs'|'none',\n" +
+                  '  restart: "no"|"on-failure[:<max-retries>]"|"always"|"unless-stopped",\n' +
+                  '  logDriver: "local"|"json-file"|"syslog"|"journald"|"gelf"|"fluentd"|"awslogs"|"splunk"|"etwlogs"|"none",\n' +
                   '  logDriverOptions: Object<string>,\n' +
                   '  publish: Object<\n' +
                   '    [hostPort string]: containerPort string # 8080\n' +
-                  `      |containerPortWithProtocol string # '<containerPort>[/<"tcp"|"udp"|"sctp">]'\n` +
+                  '      |containerPortWithProtocol string # "<containerPort>[/<"tcp"|"udp"|"sctp">]"\n' +
                   '  >,\n' +
                   '  healthCmd: Array<string>,\n' +
                   '  healthInterval: number, # nanoseconds, minimum 1e6, default 10e9\n' +
@@ -12671,14 +12730,14 @@ export default [
                   '    source: string,\n' +
                   '    target: string,\n' +
                   '    readonly: boolean,\n' +
-                  "    type: 'bind'|'cluster'|'image'|'npipe'|'tmpfs'|'volume',\n" +
+                  '    type: "bind"|"cluster"|"image"|"npipe"|"tmpfs"|"volume",\n' +
                   '  }>|Array<\n' +
-                  "    mount string, # '<source>:<target>[:<readonly true|false>]'\n" +
+                  '    mount string, # "<source>:<target>[:<readonly true|false>]"\n' +
                   '  >,\n' +
                   '\n' +
                   '  # Dockerfile defaults\n' +
                   '  cmd: Array<string|number>,\n' +
-                  `  expose: Array<port string>, # '<port>[/<"tcp"|"udp"|"sctp">]'\n` +
+                  '  expose: Array<port string>, # "<port>[/<"tcp"|"udp"|"sctp">]"\n' +
                   '  volume: Array<path string>,\n' +
                   '  workdir: path string,\n' +
                   '  env: Object<string>,\n' +
@@ -14230,7 +14289,7 @@ export default [
                                   },
                                   {
                                     type: 'text',
-                                    value: " - an object of the Docker container's environment variables. Maps environment variable names to environment variable values, e.g. ",
+                                    value: ' - an object of the Docker container"s environment variables. Maps environment variable names to environment variable values, e.g. ',
                                     position: {
                                       start: {
                                         line: 67,
@@ -14246,7 +14305,7 @@ export default [
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: "{ FOO: 'bar' }",
+                                    value: `{ FOO: "bar' }`,
                                     position: {
                                       start: {
                                         line: 67,
@@ -14665,7 +14724,7 @@ export default [
                         children: [
                           {
                             type: 'inlineCode',
-                            value: "['NONE']",
+                            value: '["NONE"]',
                             position: {
                               start: { line: 80, column: 5, offset: 3893 },
                               end: { line: 80, column: 15, offset: 3903 }
@@ -14701,7 +14760,7 @@ export default [
                         children: [
                           {
                             type: 'inlineCode',
-                            value: "['CMD', ...args]",
+                            value: '["CMD", ...args]',
                             position: {
                               start: { line: 81, column: 5, offset: 3930 },
                               end: { line: 81, column: 23, offset: 3948 }
@@ -14737,7 +14796,7 @@ export default [
                         children: [
                           {
                             type: 'inlineCode',
-                            value: "['CMD-SHELL', command string]",
+                            value: '["CMD-SHELL", command string]',
                             position: {
                               start: { line: 82, column: 5, offset: 3979 },
                               end: { line: 82, column: 36, offset: 4010 }
@@ -15069,14 +15128,14 @@ export default [
                 value: 'const docker = new Docker()\n' +
                   '\n' +
                   'const dataStream = await docker.runContainer({\n' +
-                  "  image: 'node:15-alpine',\n" +
-                  "  cmd: ['node', '-e', 'console.log(\\'Hello World.\\')'],\n" +
+                  '  image: "node:15-alpine",\n' +
+                  `  cmd: ["node", "-e", "console.log(\\'Hello World.\\')"],\n` +
                   '  rm: true,\n' +
                   '})\n' +
                   '\n' +
                   'dataStream.pipe(process.stdout) // Hello World.\n' +
-                  "dataStream.on('end', () => {\n" +
-                  "  console.log('Run success')\n" +
+                  'dataStream.on("end", () => {\n' +
+                  '  console.log("Run success")\n' +
                   '})',
                 position: {
                   start: { line: 92, column: 1, offset: 4620 },
@@ -15094,7 +15153,7 @@ export default [
       {
         name: 'execContainer',
         docs: '```coffeescript [specscript]\n' +
-          "module stream 'https://nodejs.org/api/stream.html'\n" +
+          'module stream "https://nodejs.org/api/stream.html"\n' +
           '\n' +
           'execContainer(\n' +
           '  containerId string,\n' +
@@ -15115,8 +15174,8 @@ export default [
           'const docker = new Docker()\n' +
           '\n' +
           'const data = await docker.createContainer({\n' +
-          "  image: 'node:15-alpine',\n" +
-          "  cmd: ['node', '-e', 'setTimeout(() => {}, 500)'],\n" +
+          '  image: "node:15-alpine",\n' +
+          '  cmd: ["node", "-e", "setTimeout(() => {}, 500)"],\n' +
           '  rm: true,\n' +
           '})\n' +
           '\n' +
@@ -15125,12 +15184,12 @@ export default [
           'await docker.startContainer(containerId)\n' +
           'const execDataStream = await docker.execContainer(\n' +
           '  containerId,\n' +
-          "  ['node', '-e', 'console.log(\\'Hello from Exec.\\')']\n" +
+          `  ["node", "-e", "console.log(\\'Hello from Exec.\\')"]\n` +
           ')\n' +
           '\n' +
           'execDataStream.pipe(process.stdout) // Hello from Exec.\n' +
-          "execDataStream.on('end', () => {\n" +
-          "  console.log('Exec success.')\n" +
+          'execDataStream.on("end", () => {\n' +
+          '  console.log("Exec success.")\n' +
           '})\n' +
           '```',
         mdast: {
@@ -15167,7 +15226,7 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: "module stream 'https://nodejs.org/api/stream.html'\n" +
+                value: 'module stream "https://nodejs.org/api/stream.html"\n' +
                   '\n' +
                   'execContainer(\n' +
                   '  containerId string,\n' +
@@ -15400,8 +15459,8 @@ export default [
                 value: 'const docker = new Docker()\n' +
                   '\n' +
                   'const data = await docker.createContainer({\n' +
-                  "  image: 'node:15-alpine',\n" +
-                  "  cmd: ['node', '-e', 'setTimeout(() => {}, 500)'],\n" +
+                  '  image: "node:15-alpine",\n' +
+                  '  cmd: ["node", "-e", "setTimeout(() => {}, 500)"],\n' +
                   '  rm: true,\n' +
                   '})\n' +
                   '\n' +
@@ -15410,12 +15469,12 @@ export default [
                   'await docker.startContainer(containerId)\n' +
                   'const execDataStream = await docker.execContainer(\n' +
                   '  containerId,\n' +
-                  "  ['node', '-e', 'console.log(\\'Hello from Exec.\\')']\n" +
+                  `  ["node", "-e", "console.log(\\'Hello from Exec.\\')"]\n` +
                   ')\n' +
                   '\n' +
                   'execDataStream.pipe(process.stdout) // Hello from Exec.\n' +
-                  "execDataStream.on('end', () => {\n" +
-                  "  console.log('Exec success.')\n" +
+                  'execDataStream.on("end", () => {\n' +
+                  '  console.log("Exec success.")\n' +
                   '})',
                 position: {
                   start: { line: 19, column: 1, offset: 465 },
@@ -15433,7 +15492,7 @@ export default [
       {
         name: 'startContainer',
         docs: '```coffeescript [specscript]\n' +
-          "module stream 'https://nodejs.org/api/stream.html'\n" +
+          'module stream "https://nodejs.org/api/stream.html"\n' +
           '\n' +
           'startContainer(containerId string) -> message string\n' +
           '```\n' +
@@ -15450,33 +15509,33 @@ export default [
           'const docker = new Docker()\n' +
           '\n' +
           'const data = await docker.createContainer({\n' +
-          "  image: 'node:15-alpine',\n" +
-          "  cmd: ['node', '-e', `\n" +
+          '  image: "node:15-alpine",\n' +
+          '  cmd: ["node", "-e", `\n' +
           'const server = http.createServer((request, response) => {\n' +
           '  request.pipe(response)\n' +
-          "  request.on('end', () => {\n" +
+          '  request.on("end", () => {\n' +
           '    response.end()\n' +
           '    server.close()\n' +
           '  })\n' +
           '})\n' +
           'server.listen(8081)\n' +
           '  `],\n' +
-          "  publish: { 8081: '8081' },\n" +
-          "  expose: ['8081'],\n" +
+          '  publish: { 8081: "8081" },\n' +
+          '  expose: ["8081"],\n' +
           '  rm: true,\n' +
           '})\n' +
           'const containerId = data.Id\n' +
           '\n' +
           'await docker.startContainer(containerId)\n' +
           '\n' +
-          "const http = new HTTP('http://localhost:8081')\n" +
+          'const http = new HTTP("http://localhost:8081")\n' +
           '\n' +
-          "let response = await http.post('/', {\n" +
-          "  body: 'Echo Message.',\n" +
+          'let response = await http.post("/", {\n' +
+          '  body: "Echo Message.",\n' +
           '}).catch(() => ({ ok: false }))\n' +
           'while (!response.ok) {\n' +
-          "  response = await http.post('/', {\n" +
-          "    body: 'Echo Message.',\n" +
+          '  response = await http.post("/", {\n' +
+          '    body: "Echo Message.",\n' +
           '  }).catch(() => ({ ok: false }))\n' +
           '}\n' +
           '\n' +
@@ -15516,7 +15575,7 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: "module stream 'https://nodejs.org/api/stream.html'\n" +
+                value: 'module stream "https://nodejs.org/api/stream.html"\n' +
                   '\n' +
                   'startContainer(containerId string) -> message string',
                 position: {
@@ -15678,33 +15737,33 @@ export default [
                 value: 'const docker = new Docker()\n' +
                   '\n' +
                   'const data = await docker.createContainer({\n' +
-                  "  image: 'node:15-alpine',\n" +
-                  "  cmd: ['node', '-e', `\n" +
+                  '  image: "node:15-alpine",\n' +
+                  '  cmd: ["node", "-e", `\n' +
                   'const server = http.createServer((request, response) => {\n' +
                   '  request.pipe(response)\n' +
-                  "  request.on('end', () => {\n" +
+                  '  request.on("end", () => {\n' +
                   '    response.end()\n' +
                   '    server.close()\n' +
                   '  })\n' +
                   '})\n' +
                   'server.listen(8081)\n' +
                   '  `],\n' +
-                  "  publish: { 8081: '8081' },\n" +
-                  "  expose: ['8081'],\n" +
+                  '  publish: { 8081: "8081" },\n' +
+                  '  expose: ["8081"],\n' +
                   '  rm: true,\n' +
                   '})\n' +
                   'const containerId = data.Id\n' +
                   '\n' +
                   'await docker.startContainer(containerId)\n' +
                   '\n' +
-                  "const http = new HTTP('http://localhost:8081')\n" +
+                  'const http = new HTTP("http://localhost:8081")\n' +
                   '\n' +
-                  "let response = await http.post('/', {\n" +
-                  "  body: 'Echo Message.',\n" +
+                  'let response = await http.post("/", {\n' +
+                  '  body: "Echo Message.",\n' +
                   '}).catch(() => ({ ok: false }))\n' +
                   'while (!response.ok) {\n' +
-                  "  response = await http.post('/', {\n" +
-                  "    body: 'Echo Message.',\n" +
+                  '  response = await http.post("/", {\n' +
+                  '    body: "Echo Message.",\n' +
                   '  }).catch(() => ({ ok: false }))\n' +
                   '}\n' +
                   '\n' +
@@ -15744,8 +15803,8 @@ export default [
           'const docker = new Docker()\n' +
           '\n' +
           'const data = await docker.createContainer({\n' +
-          "  image: 'node:15-alpine',\n" +
-          "  cmd: ['node', '-e', 'http.createServer(() => {})'],\n" +
+          '  image: "node:15-alpine",\n' +
+          '  cmd: ["node", "-e", "http.createServer(() => {})"],\n' +
           '  rm: true,\n' +
           '})\n' +
           '\n' +
@@ -15754,7 +15813,7 @@ export default [
           'await docker.startContainer(containerId)\n' +
           '\n' +
           'await docker.stopContainer(containerId)\n' +
-          "console.log('Stop success')\n" +
+          'console.log("Stop success")\n' +
           '```',
         mdast: {
           name: {
@@ -16044,8 +16103,8 @@ export default [
                 value: 'const docker = new Docker()\n' +
                   '\n' +
                   'const data = await docker.createContainer({\n' +
-                  "  image: 'node:15-alpine',\n" +
-                  "  cmd: ['node', '-e', 'http.createServer(() => {})'],\n" +
+                  '  image: "node:15-alpine",\n' +
+                  '  cmd: ["node", "-e", "http.createServer(() => {})"],\n' +
                   '  rm: true,\n' +
                   '})\n' +
                   '\n' +
@@ -16054,7 +16113,7 @@ export default [
                   'await docker.startContainer(containerId)\n' +
                   '\n' +
                   'await docker.stopContainer(containerId)\n' +
-                  "console.log('Stop success')",
+                  'console.log("Stop success")',
                 position: {
                   start: { line: 17, column: 1, offset: 361 },
                   end: { line: 32, column: 4, offset: 687 }
@@ -16071,7 +16130,7 @@ export default [
       {
         name: 'inspectContainer',
         docs: '```coffeescript [specscript]\n' +
-          "module DockerDocs 'https://docs.docker.com/reference/api/engine/version/v1.52/'\n" +
+          'module DockerDocs "https://docs.docker.com/reference/api/engine/version/v1.52/"\n' +
           '\n' +
           'inspectContainer(containerId string) -> data Promise<{\n' +
           '  Id: string,\n' +
@@ -16143,8 +16202,8 @@ export default [
           'const docker = new Docker()\n' +
           '\n' +
           'const data = await docker.createContainer({\n' +
-          "  image: 'node:15-alpine',\n" +
-          "  cmd: ['node', '-e', 'http.createServer(() => {})'],\n" +
+          '  image: "node:15-alpine",\n' +
+          '  cmd: ["node", "-e", "http.createServer(() => {})"],\n' +
           '  rm: true,\n' +
           '})\n' +
           '\n' +
@@ -16186,7 +16245,7 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: "module DockerDocs 'https://docs.docker.com/reference/api/engine/version/v1.52/'\n" +
+                value: 'module DockerDocs "https://docs.docker.com/reference/api/engine/version/v1.52/"\n' +
                   '\n' +
                   'inspectContainer(containerId string) -> data Promise<{\n' +
                   '  Id: string,\n' +
@@ -18071,8 +18130,8 @@ export default [
                 value: 'const docker = new Docker()\n' +
                   '\n' +
                   'const data = await docker.createContainer({\n' +
-                  "  image: 'node:15-alpine',\n" +
-                  "  cmd: ['node', '-e', 'http.createServer(() => {})'],\n" +
+                  '  image: "node:15-alpine",\n' +
+                  '  cmd: ["node", "-e", "http.createServer(() => {})"],\n' +
                   '  rm: true,\n' +
                   '})\n' +
                   '\n' +
@@ -18095,7 +18154,7 @@ export default [
       {
         name: 'inspectSwarm',
         docs: '```coffeescript [specscript]\n' +
-          "module DockerDocs 'https://docs.docker.com/reference/api/engine/version/v1.52/'\n" +
+          'module DockerDocs "https://docs.docker.com/reference/api/engine/version/v1.52/"\n' +
           '\n' +
           'inspectSwarm() -> data Promise<{\n' +
           '  ID: string,\n' +
@@ -18139,7 +18198,7 @@ export default [
           '```javascript\n' +
           'const docker = new Docker()\n' +
           '\n' +
-          "await docker.initSwarm('[::1]:2377')\n" +
+          'await docker.initSwarm("[::1]:2377")\n' +
           '\n' +
           'const data = await docker.inspectSwarm()\n' +
           '```',
@@ -18177,7 +18236,7 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: "module DockerDocs 'https://docs.docker.com/reference/api/engine/version/v1.52/'\n" +
+                value: 'module DockerDocs "https://docs.docker.com/reference/api/engine/version/v1.52/"\n' +
                   '\n' +
                   'inspectSwarm() -> data Promise<{\n' +
                   '  ID: string,\n' +
@@ -19205,7 +19264,7 @@ export default [
                 meta: null,
                 value: 'const docker = new Docker()\n' +
                   '\n' +
-                  "await docker.initSwarm('[::1]:2377')\n" +
+                  'await docker.initSwarm("[::1]:2377")\n' +
                   '\n' +
                   'const data = await docker.inspectSwarm()',
                 position: {
@@ -19238,7 +19297,7 @@ export default [
           '```javascript\n' +
           'const docker = new Docker()\n' +
           '\n' +
-          "await docker.initSwarm('[::1]:2377')\n" +
+          'await docker.initSwarm("[::1]:2377")\n' +
           '```',
         mdast: {
           name: {
@@ -19433,7 +19492,7 @@ export default [
                 meta: null,
                 value: 'const docker = new Docker()\n' +
                   '\n' +
-                  "await docker.initSwarm('[::1]:2377')",
+                  'await docker.initSwarm("[::1]:2377")',
                 position: {
                   start: { line: 13, column: 1, offset: 266 },
                   end: { line: 17, column: 4, offset: 349 }
@@ -19470,10 +19529,10 @@ export default [
           '```javascript\n' +
           'const docker = new Docker()\n' +
           '\n' +
-          "const workerJoinToken = 'token'\n" +
+          'const workerJoinToken = "token"\n' +
           '\n' +
-          "await docker.joinSwarm('[::1]:2377', {\n" +
-          "  RemoteAddrs: ['ip-102-30-0-70.ec2.internal'],\n" +
+          'await docker.joinSwarm("[::1]:2377", {\n' +
+          '  RemoteAddrs: ["ip-102-30-0-70.ec2.internal"],\n' +
           '  JoinToken: workerJoinToken,\n' +
           '})\n' +
           '```',
@@ -19821,10 +19880,10 @@ export default [
                 meta: null,
                 value: 'const docker = new Docker()\n' +
                   '\n' +
-                  "const workerJoinToken = 'token'\n" +
+                  'const workerJoinToken = "token"\n' +
                   '\n' +
-                  "await docker.joinSwarm('[::1]:2377', {\n" +
-                  "  RemoteAddrs: ['ip-102-30-0-70.ec2.internal'],\n" +
+                  'await docker.joinSwarm("[::1]:2377", {\n' +
+                  '  RemoteAddrs: ["ip-102-30-0-70.ec2.internal"],\n' +
                   '  JoinToken: workerJoinToken,\n' +
                   '})',
                 position: {
@@ -20129,13 +20188,13 @@ export default [
           'createService(service string, options {\n' +
           '  image: string,\n' +
           '  replicas: 1|number,\n' +
-          "  restart: 'no'|'on-failure[:<max-retries>]'|'any',\n" +
+          '  restart: "no"|"on-failure[:<max-retries>]"|"any",\n' +
           '  restartDelay: 10e9|number,\n' +
-          "  logDriver: 'json-file'|'syslog'|'journald'|'gelf'|'fluentd'|'awslogs'|'splunk'|'none',\n" +
+          '  logDriver: "json-file"|"syslog"|"journald"|"gelf"|"fluentd"|"awslogs"|"splunk"|"none",\n' +
           '  logDriverOptions: Object<string>,\n' +
           '  publish: Object<\n' +
           '    [hostPort string]: containerPort string # 8080\n' +
-          `      |containerPortWithProtocol string # '<containerPort>[/<"tcp"|"udp"|"sctp">]'\n` +
+          '      |containerPortWithProtocol string # "<containerPort>[/<"tcp"|"udp"|"sctp">]"\n' +
           '  >,\n' +
           '  healthCmd: Array<string>,\n' +
           '  healthInterval: number, # number greater than 1e6\n' +
@@ -20148,18 +20207,18 @@ export default [
           '    source: string,\n' +
           '    target: string,\n' +
           '    readonly: boolean,\n' +
-          "    type: 'bind'|'cluster'|'image'|'npipe'|'tmpfs'|'volume',\n" +
+          '    type: "bind"|"cluster"|"image"|"npipe"|"tmpfs"|"volume",\n' +
           '  }>|Array<\n' +
-          "    mount string, # '<source>:<target>[:<readonly true|false>]'\n" +
+          '    mount string, # "<source>:<target>[:<readonly true|false>]"\n' +
           '  >,\n' +
           '  updateParallelism: number,\n' +
           '  updateDelay: number,\n' +
-          "  updateFailureAction: 'pause'|'continue'|'rollback',\n" +
+          '  updateFailureAction: "pause"|"continue"|"rollback",\n' +
           '  updateMonitor: number,\n' +
           '  updateMaxFailureRatio: number, # [0, 1]\n' +
           '  rollbackParallelism: 2|number,\n' +
           '  rollbackDelay: 1e9|number,\n' +
-          "  rollbackFailureAction: 'pause'|'continue',\n" +
+          '  rollbackFailureAction: "pause"|"continue",\n' +
           '  rollbackMonitor: 15e9|number,\n' +
           '  rollbackMaxFailureRatio: 0.15|number,\n' +
           '  network: string,\n' +
@@ -20186,7 +20245,7 @@ export default [
           '  * `service` - the Docker service name.\n' +
           '  * `options`\n' +
           '    * `image` - the Docker image of the Docker service.\n' +
-          "    * `replicas` - the number of containers that the Docker service will run across all nodes of the Docker swarm. If `replicas` is set to 'global', the Docker service will run containers on each node of the Docker swarm.\n" +
+          '    * `replicas` - the number of containers that the Docker service will run across all nodes of the Docker swarm. If `replicas` is set to "global", the Docker service will run containers on each node of the Docker swarm.\n' +
           '    * `restart` - the restart policy for the Docker service.\n' +
           '    * `restartDelay` - the delay between restarts for the Docker service.\n' +
           '    * `logDriver` - the logging driver of the Docker service.\n' +
@@ -20207,14 +20266,14 @@ export default [
           '    * `updateMaxFailureRatio` - the maximum ratio of tasks that may fail during an update before the failure action is invoked. Defaults to `0.15`.\n' +
           '    * `rollbackParallelism` - the maximum number of tasks to be rolled back in one iteration. `0` means unlimited parallelism. Defaults to `1`.\n' +
           '    * `rollbackDelay` - the delay in nanoseconds between rollback iterations. Defaults to `1e9`.\n' +
-          "    * `rollbackFailureAction` - the action to take if a rolled back task fails to run, or stops running during the rollback. Defaults to `'pause'`.\n" +
+          '    * `rollbackFailureAction` - the action to take if a rolled back task fails to run, or stops running during the rollback. Defaults to `"pause"`.\n' +
           '    * `rollbackMonitor` - the amount of time in nanoseconds to monitor each rolled back task for failures. Defaults to `15e9`.\n' +
           '    * `rollbackMaxFailureRatio` - the maximum ratio of tasks that may fail during a rollback before the failure action is invoked. Defaults to `0.15`.\n' +
           '    * `network` - the network name or ID for attachment.\n' +
           '    * `networks` - the names or IDs of networks for attachment.\n' +
           '    * `cmd` - the command that to be run by the Docker service.\n' +
           '    * `workdir` - the working directory of the containers of the Docker service.\n' +
-          "    * `env` - an object of the Docker service's environment variables. Maps environment variable names to environment variable values, e.g. `{ FOO: 'bar' }`.\n" +
+          '    * `env` - an object of the Docker service"s environment variables. Maps environment variable names to environment variable values, e.g. `{ FOO: "bar\' }`.\n' +
           '    * `labels` - object of user-defined key/value metadata.\n' +
           '    * `username` - authentication credentials.\n' +
           '    * `password` - authentication credentials.\n' +
@@ -20230,15 +20289,15 @@ export default [
           '```javascript\n' +
           'const docker = new Docker()\n' +
           '\n' +
-          "await docker.createService('my-service', {\n" +
-          "  image: 'node:15-alpine',\n" +
+          'await docker.createService("my-service", {\n' +
+          '  image: "node:15-alpine",\n' +
           '  replicas: 3,\n' +
-          "  cmd: ['node', '-e', 'http.createServer((request, response) => response.end(\\'Hello World.\\')).listen(3001)'],\n" +
-          "  workdir: '/home/node',\n" +
-          "  env: { TEST: 'test' },\n" +
-          "  restart: 'on-failure',\n" +
+          `  cmd: ["node", "-e", "http.createServer((request, response) => response.end(\\'Hello World.\\')).listen(3001)"],\n` +
+          '  workdir: "/home/node",\n' +
+          '  env: { TEST: "test" },\n' +
+          '  restart: "on-failure",\n' +
           '  publish: { 8081: 3001 },\n' +
-          "  healthCmd: ['wget', '--no-verbose', '--tries=1', '--spider', 'localhost:3001'],\n" +
+          '  healthCmd: ["wget", "--no-verbose", "--tries=1", "--spider", "localhost:3001"],\n' +
           '})\n' +
           '```\n' +
           '\n' +
@@ -20281,13 +20340,13 @@ export default [
                 value: 'createService(service string, options {\n' +
                   '  image: string,\n' +
                   '  replicas: 1|number,\n' +
-                  "  restart: 'no'|'on-failure[:<max-retries>]'|'any',\n" +
+                  '  restart: "no"|"on-failure[:<max-retries>]"|"any",\n' +
                   '  restartDelay: 10e9|number,\n' +
-                  "  logDriver: 'json-file'|'syslog'|'journald'|'gelf'|'fluentd'|'awslogs'|'splunk'|'none',\n" +
+                  '  logDriver: "json-file"|"syslog"|"journald"|"gelf"|"fluentd"|"awslogs"|"splunk"|"none",\n' +
                   '  logDriverOptions: Object<string>,\n' +
                   '  publish: Object<\n' +
                   '    [hostPort string]: containerPort string # 8080\n' +
-                  `      |containerPortWithProtocol string # '<containerPort>[/<"tcp"|"udp"|"sctp">]'\n` +
+                  '      |containerPortWithProtocol string # "<containerPort>[/<"tcp"|"udp"|"sctp">]"\n' +
                   '  >,\n' +
                   '  healthCmd: Array<string>,\n' +
                   '  healthInterval: number, # number greater than 1e6\n' +
@@ -20300,18 +20359,18 @@ export default [
                   '    source: string,\n' +
                   '    target: string,\n' +
                   '    readonly: boolean,\n' +
-                  "    type: 'bind'|'cluster'|'image'|'npipe'|'tmpfs'|'volume',\n" +
+                  '    type: "bind"|"cluster"|"image"|"npipe"|"tmpfs"|"volume",\n' +
                   '  }>|Array<\n' +
-                  "    mount string, # '<source>:<target>[:<readonly true|false>]'\n" +
+                  '    mount string, # "<source>:<target>[:<readonly true|false>]"\n' +
                   '  >,\n' +
                   '  updateParallelism: number,\n' +
                   '  updateDelay: number,\n' +
-                  "  updateFailureAction: 'pause'|'continue'|'rollback',\n" +
+                  '  updateFailureAction: "pause"|"continue"|"rollback",\n' +
                   '  updateMonitor: number,\n' +
                   '  updateMaxFailureRatio: number, # [0, 1]\n' +
                   '  rollbackParallelism: 2|number,\n' +
                   '  rollbackDelay: 1e9|number,\n' +
-                  "  rollbackFailureAction: 'pause'|'continue',\n" +
+                  '  rollbackFailureAction: "pause"|"continue",\n' +
                   '  rollbackMonitor: 15e9|number,\n' +
                   '  rollbackMaxFailureRatio: 0.15|number,\n' +
                   '  network: string,\n' +
@@ -20553,7 +20612,7 @@ export default [
                                   },
                                   {
                                     type: 'text',
-                                    value: " is set to 'global', the Docker service will run containers on each node of the Docker swarm.",
+                                    value: ' is set to "global", the Docker service will run containers on each node of the Docker swarm.',
                                     position: {
                                       start: {
                                         line: 62,
@@ -22097,7 +22156,7 @@ export default [
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: "'pause'",
+                                    value: '"pause"',
                                     position: {
                                       start: {
                                         line: 83,
@@ -22569,7 +22628,7 @@ export default [
                                   },
                                   {
                                     type: 'text',
-                                    value: " - an object of the Docker service's environment variables. Maps environment variable names to environment variable values, e.g. ",
+                                    value: ' - an object of the Docker service"s environment variables. Maps environment variable names to environment variable values, e.g. ',
                                     position: {
                                       start: {
                                         line: 90,
@@ -22585,7 +22644,7 @@ export default [
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: "{ FOO: 'bar' }",
+                                    value: `{ FOO: "bar' }`,
                                     position: {
                                       start: {
                                         line: 90,
@@ -23180,15 +23239,15 @@ export default [
                 meta: null,
                 value: 'const docker = new Docker()\n' +
                   '\n' +
-                  "await docker.createService('my-service', {\n" +
-                  "  image: 'node:15-alpine',\n" +
+                  'await docker.createService("my-service", {\n' +
+                  '  image: "node:15-alpine",\n' +
                   '  replicas: 3,\n' +
-                  "  cmd: ['node', '-e', 'http.createServer((request, response) => response.end(\\'Hello World.\\')).listen(3001)'],\n" +
-                  "  workdir: '/home/node',\n" +
-                  "  env: { TEST: 'test' },\n" +
-                  "  restart: 'on-failure',\n" +
+                  `  cmd: ["node", "-e", "http.createServer((request, response) => response.end(\\'Hello World.\\')).listen(3001)"],\n` +
+                  '  workdir: "/home/node",\n' +
+                  '  env: { TEST: "test" },\n' +
+                  '  restart: "on-failure",\n' +
                   '  publish: { 8081: 3001 },\n' +
-                  "  healthCmd: ['wget', '--no-verbose', '--tries=1', '--spider', 'localhost:3001'],\n" +
+                  '  healthCmd: ["wget", "--no-verbose", "--tries=1", "--spider", "localhost:3001"],\n' +
                   '})',
                 position: {
                   start: { line: 103, column: 1, offset: 5556 },
@@ -23283,17 +23342,17 @@ export default [
         name: 'updateService',
         docs: '```coffeescript [specscript]\n' +
           'updateService(service string, options {\n' +
-          "  rollback: 'previous',\n" +
+          '  rollback: "previous",\n' +
           '  force: boolean,\n' +
           '  image: string,\n' +
           '  replicas: 1|number,\n' +
-          "  restart: 'no'|'on-failure[:<max-retries>]'|'any',\n" +
+          '  restart: "no"|"on-failure[:<max-retries>]"|"any",\n' +
           '  restartDelay: 10e9|number,\n' +
-          "  logDriver: 'json-file'|'syslog'|'journald'|'gelf'|'fluentd'|'awslogs'|'splunk'|'none',\n" +
+          '  logDriver: "json-file"|"syslog"|"journald"|"gelf"|"fluentd"|"awslogs"|"splunk"|"none",\n' +
           '  logDriverOptions: Object<string>,\n' +
           '  publish: Object<\n' +
           '    [hostPort string]: containerPort string # 8080\n' +
-          `      |containerPortWithProtocol string # '<containerPort>[/<"tcp"|"udp"|"sctp">]'\n` +
+          '      |containerPortWithProtocol string # "<containerPort>[/<"tcp"|"udp"|"sctp">]"\n' +
           '  >,\n' +
           '  healthCmd: Array<string>,\n' +
           '  healthInterval: number, # number greater than 1e6\n' +
@@ -23306,9 +23365,9 @@ export default [
           '    source: string,\n' +
           '    target: string,\n' +
           '    readonly: boolean,\n' +
-          "    type: 'bind'|'cluster'|'image'|'npipe'|'tmpfs'|'volume',\n" +
+          '    type: "bind"|"cluster"|"image"|"npipe"|"tmpfs"|"volume",\n' +
           '  }>|Array<\n' +
-          "    mount string, # '<source>:<target>[:<readonly true|false>]'\n" +
+          '    mount string, # "<source>:<target>[:<readonly true|false>]"\n' +
           '  >,\n' +
           '  cmd: Array<string|number>,\n' +
           '  workdir: path string,\n' +
@@ -23334,7 +23393,7 @@ export default [
           '    * `rollback` - causes a rollback to the previous Docker service version.\n' +
           '    * `force` - if `true`, an update of the Docker service will occur even if no relevant parameters have been changed. If `false`, no update will occur if no relevant parameters have been changed.\n' +
           '    * `image` - the Docker image that will be used by the Docker service.\n' +
-          "    * `replicas` - the number of containers that the Docker service will run across all nodes of the Docker swarm. If `replicas` is set to 'global', the Docker service will run containers on each node of the Docker swarm.\n" +
+          '    * `replicas` - the number of containers that the Docker service will run across all nodes of the Docker swarm. If `replicas` is set to "global", the Docker service will run containers on each node of the Docker swarm.\n' +
           '    * `restart` - the restart policy for the Docker service.\n' +
           '    * `restartDelay` - the delay between restarts for the Docker service.\n' +
           '    * `logDriver` - the logging driver of the Docker service.\n' +
@@ -23351,7 +23410,7 @@ export default [
           '    * `updateParallelism` - the maximum number of tasks to be updated in one iteration. `0` means unlimited parallelism. Defaults to `2`.\n' +
           '    * `cmd` - the command that to be run by the Docker service.\n' +
           '    * `workdir` - the working directory of the containers of the Docker service.\n' +
-          "    * `env` - an object of the Docker service's environment variables. Maps environment variable names to environment variable values, e.g. `{ FOO: 'bar' }`.\n" +
+          '    * `env` - an object of the Docker service"s environment variables. Maps environment variable names to environment variable values, e.g. `{ FOO: "bar\' }`.\n' +
           '    * `labels` - object of user-defined key/value metadata.\n' +
           '    * `username` - authentication credentials.\n' +
           '    * `password` - authentication credentials.\n' +
@@ -23366,8 +23425,8 @@ export default [
           '```javascript\n' +
           'const docker = new Docker()\n' +
           '\n' +
-          "await docker.updateService('my-service', {\n" +
-          "  image: 'node:16-alpine',\n" +
+          'await docker.updateService("my-service", {\n' +
+          '  image: "node:16-alpine",\n' +
           '  memory: 512e6,\n' +
           '  cpus: 2,\n' +
           '})\n' +
@@ -23410,17 +23469,17 @@ export default [
                 lang: 'coffeescript',
                 meta: '[specscript]',
                 value: 'updateService(service string, options {\n' +
-                  "  rollback: 'previous',\n" +
+                  '  rollback: "previous",\n' +
                   '  force: boolean,\n' +
                   '  image: string,\n' +
                   '  replicas: 1|number,\n' +
-                  "  restart: 'no'|'on-failure[:<max-retries>]'|'any',\n" +
+                  '  restart: "no"|"on-failure[:<max-retries>]"|"any",\n' +
                   '  restartDelay: 10e9|number,\n' +
-                  "  logDriver: 'json-file'|'syslog'|'journald'|'gelf'|'fluentd'|'awslogs'|'splunk'|'none',\n" +
+                  '  logDriver: "json-file"|"syslog"|"journald"|"gelf"|"fluentd"|"awslogs"|"splunk"|"none",\n' +
                   '  logDriverOptions: Object<string>,\n' +
                   '  publish: Object<\n' +
                   '    [hostPort string]: containerPort string # 8080\n' +
-                  `      |containerPortWithProtocol string # '<containerPort>[/<"tcp"|"udp"|"sctp">]'\n` +
+                  '      |containerPortWithProtocol string # "<containerPort>[/<"tcp"|"udp"|"sctp">]"\n' +
                   '  >,\n' +
                   '  healthCmd: Array<string>,\n' +
                   '  healthInterval: number, # number greater than 1e6\n' +
@@ -23433,9 +23492,9 @@ export default [
                   '    source: string,\n' +
                   '    target: string,\n' +
                   '    readonly: boolean,\n' +
-                  "    type: 'bind'|'cluster'|'image'|'npipe'|'tmpfs'|'volume',\n" +
+                  '    type: "bind"|"cluster"|"image"|"npipe"|"tmpfs"|"volume",\n' +
                   '  }>|Array<\n' +
-                  "    mount string, # '<source>:<target>[:<readonly true|false>]'\n" +
+                  '    mount string, # "<source>:<target>[:<readonly true|false>]"\n' +
                   '  >,\n' +
                   '  cmd: Array<string|number>,\n' +
                   '  workdir: path string,\n' +
@@ -23850,7 +23909,7 @@ export default [
                                   },
                                   {
                                     type: 'text',
-                                    value: " is set to 'global', the Docker service will run containers on each node of the Docker swarm.",
+                                    value: ' is set to "global", the Docker service will run containers on each node of the Docker swarm.',
                                     position: {
                                       start: {
                                         line: 54,
@@ -24962,7 +25021,7 @@ export default [
                                   },
                                   {
                                     type: 'text',
-                                    value: " - an object of the Docker service's environment variables. Maps environment variable names to environment variable values, e.g. ",
+                                    value: ' - an object of the Docker service"s environment variables. Maps environment variable names to environment variable values, e.g. ',
                                     position: {
                                       start: {
                                         line: 71,
@@ -24978,7 +25037,7 @@ export default [
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: "{ FOO: 'bar' }",
+                                    value: `{ FOO: "bar' }`,
                                     position: {
                                       start: {
                                         line: 71,
@@ -25509,8 +25568,8 @@ export default [
                 meta: null,
                 value: 'const docker = new Docker()\n' +
                   '\n' +
-                  "await docker.updateService('my-service', {\n" +
-                  "  image: 'node:16-alpine',\n" +
+                  'await docker.updateService("my-service", {\n' +
+                  '  image: "node:16-alpine",\n' +
                   '  memory: 512e6,\n' +
                   '  cpus: 2,\n' +
                   '})',
@@ -25616,7 +25675,7 @@ export default [
           '```javascript\n' +
           'const docker = new Docker()\n' +
           '\n' +
-          "await docker.deleteService('my-service')\n" +
+          'await docker.deleteService("my-service")\n' +
           '```\n' +
           '\n' +
           'References:\n' +
@@ -25814,7 +25873,7 @@ export default [
                 meta: null,
                 value: 'const docker = new Docker()\n' +
                   '\n' +
-                  "await docker.deleteService('my-service')",
+                  'await docker.deleteService("my-service")',
                 position: {
                   start: { line: 13, column: 1, offset: 327 },
                   end: { line: 17, column: 4, offset: 414 }
@@ -25899,7 +25958,7 @@ export default [
       {
         name: 'listServices',
         docs: '```coffeescript [specscript]\n' +
-          "module DockerDocs 'https://docs.docker.com/reference/api/engine/version/v1.52/'\n" +
+          'module DockerDocs "https://docs.docker.com/reference/api/engine/version/v1.52/"\n' +
           '\n' +
           'listServices(options { filters: string }) -> data Promise<{\n' +
           '  ID: string,\n' +
@@ -25916,7 +25975,7 @@ export default [
           '    }>,\n' +
           '  }>,\n' +
           '  UpdateStatus: {\n' +
-          "    State: 'updating'|'paused'|'completed',\n" +
+          '    State: "updating"|"paused"|"completed",\n' +
           '    StartedAt: string, # ISO 8601 date string\n' +
           '    CompletedAt: string, # ISO 8601 date string\n' +
           '    Message: string,\n' +
@@ -25998,7 +26057,7 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: "module DockerDocs 'https://docs.docker.com/reference/api/engine/version/v1.52/'\n" +
+                value: 'module DockerDocs "https://docs.docker.com/reference/api/engine/version/v1.52/"\n' +
                   '\n' +
                   'listServices(options { filters: string }) -> data Promise<{\n' +
                   '  ID: string,\n' +
@@ -26015,7 +26074,7 @@ export default [
                   '    }>,\n' +
                   '  }>,\n' +
                   '  UpdateStatus: {\n' +
-                  "    State: 'updating'|'paused'|'completed',\n" +
+                  '    State: "updating"|"paused"|"completed",\n' +
                   '    StartedAt: string, # ISO 8601 date string\n' +
                   '    CompletedAt: string, # ISO 8601 date string\n' +
                   '    Message: string,\n' +
@@ -26985,7 +27044,7 @@ export default [
       {
         name: 'inspectService',
         docs: '```coffeescript [specscript]\n' +
-          "module DockerDocs 'https://docs.docker.com/reference/api/engine/version/v1.52/'\n" +
+          'module DockerDocs "https://docs.docker.com/reference/api/engine/version/v1.52/"\n' +
           '\n' +
           'inspectService(serviceId string) -> data Promise<{\n' +
           '  ID: string,\n' +
@@ -27002,7 +27061,7 @@ export default [
           '    }>,\n' +
           '  }>,\n' +
           '  UpdateStatus: {\n' +
-          "    State: 'updating'|'paused'|'completed',\n" +
+          '    State: "updating"|"paused"|"completed",\n' +
           '    StartedAt: string, # ISO 8601 date string\n' +
           '    CompletedAt: string, # ISO 8601 date string\n' +
           '    Message: string,\n' +
@@ -27038,7 +27097,7 @@ export default [
           '```javascript\n' +
           'const docker = new Docker()\n' +
           '\n' +
-          "const data = await docker.inspectService('my-service')\n" +
+          'const data = await docker.inspectService("my-service")\n' +
           '```\n' +
           '\n' +
           'References:\n' +
@@ -27077,7 +27136,7 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: "module DockerDocs 'https://docs.docker.com/reference/api/engine/version/v1.52/'\n" +
+                value: 'module DockerDocs "https://docs.docker.com/reference/api/engine/version/v1.52/"\n' +
                   '\n' +
                   'inspectService(serviceId string) -> data Promise<{\n' +
                   '  ID: string,\n' +
@@ -27094,7 +27153,7 @@ export default [
                   '    }>,\n' +
                   '  }>,\n' +
                   '  UpdateStatus: {\n' +
-                  "    State: 'updating'|'paused'|'completed',\n" +
+                  '    State: "updating"|"paused"|"completed",\n' +
                   '    StartedAt: string, # ISO 8601 date string\n' +
                   '    CompletedAt: string, # ISO 8601 date string\n' +
                   '    Message: string,\n' +
@@ -27774,7 +27833,7 @@ export default [
                 meta: null,
                 value: 'const docker = new Docker()\n' +
                   '\n' +
-                  "const data = await docker.inspectService('my-service')",
+                  'const data = await docker.inspectService("my-service")',
                 position: {
                   start: { line: 52, column: 1, offset: 1842 },
                   end: { line: 56, column: 4, offset: 1943 }
@@ -27863,7 +27922,7 @@ export default [
       {
         name: 'getServiceLogs',
         docs: '```coffeescript [specscript]\n' +
-          "module stream 'https://nodejs.org/api/stream.html'\n" +
+          'module stream "https://nodejs.org/api/stream.html"\n' +
           '\n' +
           'getServiceLogs(serviceId string, options {\n' +
           '  stdout: boolean,\n' +
@@ -27893,14 +27952,14 @@ export default [
           '```javascript\n' +
           'const docker = new Docker()\n' +
           '\n' +
-          "const logStream = await docker.getServiceLogs('my-service', {\n" +
+          'const logStream = await docker.getServiceLogs("my-service", {\n' +
           '  tail: 1000,\n' +
           '  follow: true,\n' +
           '})\n' +
           '\n' +
           'logStream.pipe(process.stdout)\n' +
-          "logStream.on('end', () => {\n" +
-          "  console.log('getServiceLogs success.')\n" +
+          'logStream.on("end", () => {\n' +
+          '  console.log("getServiceLogs success.")\n' +
           '})\n' +
           '```\n' +
           '\n' +
@@ -27940,7 +27999,7 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: "module stream 'https://nodejs.org/api/stream.html'\n" +
+                value: 'module stream "https://nodejs.org/api/stream.html"\n' +
                   '\n' +
                   'getServiceLogs(serviceId string, options {\n' +
                   '  stdout: boolean,\n' +
@@ -28468,14 +28527,14 @@ export default [
                 meta: null,
                 value: 'const docker = new Docker()\n' +
                   '\n' +
-                  "const logStream = await docker.getServiceLogs('my-service', {\n" +
+                  'const logStream = await docker.getServiceLogs("my-service", {\n' +
                   '  tail: 1000,\n' +
                   '  follow: true,\n' +
                   '})\n' +
                   '\n' +
                   'logStream.pipe(process.stdout)\n' +
-                  "logStream.on('end', () => {\n" +
-                  "  console.log('getServiceLogs success.')\n" +
+                  'logStream.on("end", () => {\n' +
+                  '  console.log("getServiceLogs success.")\n' +
                   '})',
                 position: {
                   start: { line: 29, column: 1, offset: 1119 },
@@ -28565,10 +28624,10 @@ export default [
       {
         name: 'listTasks',
         docs: '```coffeescript [specscript]\n' +
-          "module DockerDocs 'https://docs.docker.com/reference/api/engine/version/v1.52/'\n" +
+          'module DockerDocs "https://docs.docker.com/reference/api/engine/version/v1.52/"\n' +
           '\n' +
           'listTasks(options {\n' +
-          "  desiredState: 'running'|'shutdown'|'accepted'\n" +
+          '  desiredState: "running"|"shutdown"|"accepted"\n' +
           '  service: string,\n' +
           '}) -> data Promise<[\n' +
           '  ID: string,\n' +
@@ -28583,9 +28642,9 @@ export default [
           '  NodeID: string,\n' +
           '  AssignedGenericResources: Array<DockerDocs.GenericResources>,\n' +
           '  Status: DockerDocs.TaskStatus,\n' +
-          "  DesiredState: 'new'|'allocated'|'pending'|'assigned'|'accepted'\n" +
-          "    |'preparing'|'ready'|'starting'|'running'|'complete'|'shutdown'\n" +
-          "    |'failed'|'rejected'|'remove'|'orphaned',\n" +
+          '  DesiredState: "new"|"allocated"|"pending"|"assigned"|"accepted"\n' +
+          '    |"preparing"|"ready"|"starting"|"running"|"complete"|"shutdown"\n' +
+          '    |"failed"|"rejected"|"remove"|"orphaned",\n' +
           '  JobIteration: DockerDocs.ObjectVersion,\n' +
           ']>\n' +
           '```\n' +
@@ -28618,7 +28677,7 @@ export default [
           'const docker = new Docker()\n' +
           '\n' +
           'const tasksData = await docker.listTasks()\n' +
-          "const runningTasksData = await docker.listTasks({ desiredState: 'running' })\n" +
+          'const runningTasksData = await docker.listTasks({ desiredState: "running" })\n' +
           '```\n' +
           '\n' +
           'References:\n' +
@@ -28657,10 +28716,10 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: "module DockerDocs 'https://docs.docker.com/reference/api/engine/version/v1.52/'\n" +
+                value: 'module DockerDocs "https://docs.docker.com/reference/api/engine/version/v1.52/"\n' +
                   '\n' +
                   'listTasks(options {\n' +
-                  "  desiredState: 'running'|'shutdown'|'accepted'\n" +
+                  '  desiredState: "running"|"shutdown"|"accepted"\n' +
                   '  service: string,\n' +
                   '}) -> data Promise<[\n' +
                   '  ID: string,\n' +
@@ -28675,9 +28734,9 @@ export default [
                   '  NodeID: string,\n' +
                   '  AssignedGenericResources: Array<DockerDocs.GenericResources>,\n' +
                   '  Status: DockerDocs.TaskStatus,\n' +
-                  "  DesiredState: 'new'|'allocated'|'pending'|'assigned'|'accepted'\n" +
-                  "    |'preparing'|'ready'|'starting'|'running'|'complete'|'shutdown'\n" +
-                  "    |'failed'|'rejected'|'remove'|'orphaned',\n" +
+                  '  DesiredState: "new"|"allocated"|"pending"|"assigned"|"accepted"\n' +
+                  '    |"preparing"|"ready"|"starting"|"running"|"complete"|"shutdown"\n' +
+                  '    |"failed"|"rejected"|"remove"|"orphaned",\n' +
                   '  JobIteration: DockerDocs.ObjectVersion,\n' +
                   ']>',
                 position: {
@@ -29775,7 +29834,7 @@ export default [
                 value: 'const docker = new Docker()\n' +
                   '\n' +
                   'const tasksData = await docker.listTasks()\n' +
-                  "const runningTasksData = await docker.listTasks({ desiredState: 'running' })",
+                  'const runningTasksData = await docker.listTasks({ desiredState: "running" })',
                 position: {
                   start: { line: 51, column: 1, offset: 1960 },
                   end: { line: 56, column: 4, offset: 2126 }
@@ -29864,7 +29923,7 @@ export default [
       {
         name: 'inspectTask',
         docs: '```coffeescript [specscript]\n' +
-          "module DockerDocs 'https://docs.docker.com/reference/api/engine/version/v1.52/'\n" +
+          'module DockerDocs "https://docs.docker.com/reference/api/engine/version/v1.52/"\n' +
           '\n' +
           'inspectTask(taskId string) -> data Promise<{\n' +
           '  ID: string,\n' +
@@ -29879,9 +29938,9 @@ export default [
           '  NodeID: string,\n' +
           '  AssignedGenericResources: Array<DockerDocs.GenericResources>,\n' +
           '  Status: DockerDocs.TaskStatus,\n' +
-          "  DesiredState: 'new'|'allocated'|'pending'|'assigned'|'accepted'\n" +
-          "    |'preparing'|'ready'|'starting'|'running'|'complete'|'shutdown'\n" +
-          "    |'failed'|'rejected'|'remove'|'orphaned',\n" +
+          '  DesiredState: "new"|"allocated"|"pending"|"assigned"|"accepted"\n' +
+          '    |"preparing"|"ready"|"starting"|"running"|"complete"|"shutdown"\n' +
+          '    |"failed"|"rejected"|"remove"|"orphaned",\n' +
           '  JobIteration: DockerDocs.ObjectVersion,\n' +
           '  NetworksAttachments: Array<{\n' +
           '    Network: DockerDocs.Network,\n' +
@@ -29923,7 +29982,7 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: "module DockerDocs 'https://docs.docker.com/reference/api/engine/version/v1.52/'\n" +
+                value: 'module DockerDocs "https://docs.docker.com/reference/api/engine/version/v1.52/"\n' +
                   '\n' +
                   'inspectTask(taskId string) -> data Promise<{\n' +
                   '  ID: string,\n' +
@@ -29938,9 +29997,9 @@ export default [
                   '  NodeID: string,\n' +
                   '  AssignedGenericResources: Array<DockerDocs.GenericResources>,\n' +
                   '  Status: DockerDocs.TaskStatus,\n' +
-                  "  DesiredState: 'new'|'allocated'|'pending'|'assigned'|'accepted'\n" +
-                  "    |'preparing'|'ready'|'starting'|'running'|'complete'|'shutdown'\n" +
-                  "    |'failed'|'rejected'|'remove'|'orphaned',\n" +
+                  '  DesiredState: "new"|"allocated"|"pending"|"assigned"|"accepted"\n' +
+                  '    |"preparing"|"ready"|"starting"|"running"|"complete"|"shutdown"\n' +
+                  '    |"failed"|"rejected"|"remove"|"orphaned",\n' +
                   '  JobIteration: DockerDocs.ObjectVersion,\n' +
                   '  NetworksAttachments: Array<{\n' +
                   '    Network: DockerDocs.Network,\n' +
@@ -29963,7 +30022,7 @@ export default [
       {
         name: 'listNodes',
         docs: '```coffeescript [specscript]\n' +
-          "module DockerDocs 'https://docs.docker.com/reference/api/engine/version/v1.52/'\n" +
+          'module DockerDocs "https://docs.docker.com/reference/api/engine/version/v1.52/"\n' +
           '\n' +
           'listNodes() -> data Promise<[\n' +
           '  ID: string,\n' +
@@ -30035,7 +30094,7 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: "module DockerDocs 'https://docs.docker.com/reference/api/engine/version/v1.52/'\n" +
+                value: 'module DockerDocs "https://docs.docker.com/reference/api/engine/version/v1.52/"\n' +
                   '\n' +
                   'listNodes() -> data Promise<[\n' +
                   '  ID: string,\n' +
@@ -30740,7 +30799,7 @@ export default [
           '```javascript\n' +
           'const docker = new Docker()\n' +
           '\n' +
-          "await docker.deleteNode('node-id')\n" +
+          'await docker.deleteNode("node-id")\n' +
           '```\n' +
           '\n' +
           'References:\n' +
@@ -30938,7 +30997,7 @@ export default [
                 meta: null,
                 value: 'const docker = new Docker()\n' +
                   '\n' +
-                  "await docker.deleteNode('node-id')",
+                  'await docker.deleteNode("node-id")',
                 position: {
                   start: { line: 13, column: 1, offset: 310 },
                   end: { line: 17, column: 4, offset: 391 }
@@ -32298,7 +32357,7 @@ export default [
         docs: '```coffeescript [specscript]\n' +
           'createNetwork(options {\n' +
           '  name: string,\n' +
-          "  driver: 'bridge'|'host'|'overlay'|'ipvlan'|'macvlan',\n" +
+          '  driver: "bridge"|"host"|"overlay"|"ipvlan"|"macvlan",\n' +
           '  ingress: boolean,\n' +
           '  subnet: string,\n' +
           '  gateway: string,\n' +
@@ -32327,8 +32386,8 @@ export default [
           'const docker = new Docker()\n' +
           '\n' +
           'const data = await docker.createNetwork({\n' +
-          "  name: 'my-network',\n" +
-          "  driver: 'overlay',\n" +
+          '  name: "my-network",\n' +
+          '  driver: "overlay",\n' +
           '})\n' +
           '```',
         mdast: {
@@ -32367,7 +32426,7 @@ export default [
                 meta: '[specscript]',
                 value: 'createNetwork(options {\n' +
                   '  name: string,\n' +
-                  "  driver: 'bridge'|'host'|'overlay'|'ipvlan'|'macvlan',\n" +
+                  '  driver: "bridge"|"host"|"overlay"|"ipvlan"|"macvlan",\n' +
                   '  ingress: boolean,\n' +
                   '  subnet: string,\n' +
                   '  gateway: string,\n' +
@@ -32974,8 +33033,8 @@ export default [
                 value: 'const docker = new Docker()\n' +
                   '\n' +
                   'const data = await docker.createNetwork({\n' +
-                  "  name: 'my-network',\n" +
-                  "  driver: 'overlay',\n" +
+                  '  name: "my-network",\n' +
+                  '  driver: "overlay",\n' +
                   '})',
                 position: {
                   start: { line: 29, column: 1, offset: 809 },
@@ -32993,7 +33052,7 @@ export default [
       {
         name: 'inspectNetwork',
         docs: '```coffeescript [specscript]\n' +
-          "module DockerDocs 'https://docs.docker.com/reference/api/engine/version/v1.52/'\n" +
+          'module DockerDocs "https://docs.docker.com/reference/api/engine/version/v1.52/"\n' +
           '\n' +
           'inspectNetwork(networkId string) -> data Promise<{\n' +
           '  Containers: Object<DockerDocs.EndpointResource>,\n' +
@@ -33002,7 +33061,7 @@ export default [
           '  Name: string,\n' +
           '  Id: string,\n' +
           '  Created: string, # ISO 8601 date string\n' +
-          "  Scope: 'swarm'|'local',\n" +
+          '  Scope: "swarm"|"local",\n' +
           '  Driver: string,\n' +
           '  EnableIPv4: boolean,\n' +
           '  EnableIPv6: boolean,\n' +
@@ -33048,7 +33107,7 @@ export default [
           '```javascript\n' +
           'const docker = new Docker()\n' +
           '\n' +
-          "const data = await docker.inspectNetwork('my-network')\n" +
+          'const data = await docker.inspectNetwork("my-network")\n' +
           '```',
         mdast: {
           name: {
@@ -33084,7 +33143,7 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: "module DockerDocs 'https://docs.docker.com/reference/api/engine/version/v1.52/'\n" +
+                value: 'module DockerDocs "https://docs.docker.com/reference/api/engine/version/v1.52/"\n' +
                   '\n' +
                   'inspectNetwork(networkId string) -> data Promise<{\n' +
                   '  Containers: Object<DockerDocs.EndpointResource>,\n' +
@@ -33093,7 +33152,7 @@ export default [
                   '  Name: string,\n' +
                   '  Id: string,\n' +
                   '  Created: string, # ISO 8601 date string\n' +
-                  "  Scope: 'swarm'|'local',\n" +
+                  '  Scope: "swarm"|"local",\n' +
                   '  Driver: string,\n' +
                   '  EnableIPv4: boolean,\n' +
                   '  EnableIPv6: boolean,\n' +
@@ -34353,7 +34412,7 @@ export default [
                 meta: null,
                 value: 'const docker = new Docker()\n' +
                   '\n' +
-                  "const data = await docker.inspectNetwork('my-network')",
+                  'const data = await docker.inspectNetwork("my-network")',
                 position: {
                   start: { line: 54, column: 1, offset: 2335 },
                   end: { line: 58, column: 4, offset: 2436 }
@@ -34384,7 +34443,7 @@ export default [
           '```javascript\n' +
           'const docker = new Docker()\n' +
           '\n' +
-          "await docker.deleteNetwork('my-network')\n" +
+          'await docker.deleteNetwork("my-network")\n' +
           '```',
         mdast: {
           name: {
@@ -34579,7 +34638,7 @@ export default [
                 meta: null,
                 value: 'const docker = new Docker()\n' +
                   '\n' +
-                  "await docker.deleteNetwork('my-network')",
+                  'await docker.deleteNetwork("my-network")',
                 position: {
                   start: { line: 13, column: 1, offset: 247 },
                   end: { line: 17, column: 4, offset: 334 }
@@ -34589,6 +34648,1441 @@ export default [
             position: {
               start: { line: 1, column: 1, offset: 0 },
               end: { line: 17, column: 4, offset: 334 }
+            }
+          }
+        }
+      },
+      {
+        name: 'createVolume',
+        docs: '```coffeescript [specscript]\n' +
+          'createVolume(name string) -> data Promise<{\n' +
+          '  Name: string,\n' +
+          '  Driver: string,\n' +
+          '  Mountpoint: string,\n' +
+          '  CreatedAt: string,\n' +
+          '  Status: object,\n' +
+          '  Labels: object,\n' +
+          '  Scope: "local",\n' +
+          '  Options: object,\n' +
+          '  UsageData: {\n' +
+          '    Size: number,\n' +
+          '    RefCount: number,\n' +
+          '  },\n' +
+          '}>\n' +
+          '```\n' +
+          '\n' +
+          'Creates a local Docker volume.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * `name` - `string` - the name of the volume.\n' +
+          '\n' +
+          'Return:\n' +
+          '  * `data` - `Promise<{...}>` - a promise of data about the created volume.\n' +
+          '    * `Name` - `string` - the name of the volume.\n' +
+          '    * `Driver` - `string` - the name of the volume driver of the volume.\n' +
+          '    * `Mountpoint` - `string` - the mount path of the volume on the host.\n' +
+          '    * `CreatedAt` - `string` - an ISO 8601 date string for the volume creation time.\n' +
+          '    * `Status` - `object` - low-level details about the volume provided by the volume driver.\n' +
+          '    * `Labels` - `object` - key/value metadata\n' +
+          '    * `Scope` - `string` - the level at which the volume exists, either `"local"` for machine level or `"global"` for for cluster-wide.\n' +
+          '    * `Options` - `object` - the driver-specific options for creating the volume.\n' +
+          '    * `UsageData` - `object`\n' +
+          '      * `Size` - `number` - amount of disk space taken up by the volume in bytes. Only available for volumes at the `"local"` level, otherwise set to `-1`.\n' +
+          '      * `RefCount` - `number` - the number of containers referencing the volume. Set to `-1` if the reference count is unavailable.\n' +
+          '\n' +
+          '```javascript\n' +
+          'const docker = new Docker()\n' +
+          '\n' +
+          'await docker.createVolume("local-database")\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'createVolume',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 13, offset: 12 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 13, offset: 12 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 13, offset: 12 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'coffeescript',
+                meta: '[specscript]',
+                value: 'createVolume(name string) -> data Promise<{\n' +
+                  '  Name: string,\n' +
+                  '  Driver: string,\n' +
+                  '  Mountpoint: string,\n' +
+                  '  CreatedAt: string,\n' +
+                  '  Status: object,\n' +
+                  '  Labels: object,\n' +
+                  '  Scope: "local",\n' +
+                  '  Options: object,\n' +
+                  '  UsageData: {\n' +
+                  '    Size: number,\n' +
+                  '    RefCount: number,\n' +
+                  '  },\n' +
+                  '}>',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 16, column: 4, offset: 289 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Creates a local Docker volume.',
+                    position: {
+                      start: { line: 18, column: 1, offset: 291 },
+                      end: { line: 18, column: 31, offset: 321 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 18, column: 1, offset: 291 },
+                  end: { line: 18, column: 31, offset: 321 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 20, column: 1, offset: 323 },
+                      end: { line: 20, column: 11, offset: 333 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 20, column: 1, offset: 323 },
+                  end: { line: 20, column: 11, offset: 333 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'name',
+                            position: {
+                              start: { line: 21, column: 5, offset: 338 },
+                              end: { line: 21, column: 11, offset: 344 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - ',
+                            position: {
+                              start: { line: 21, column: 11, offset: 344 },
+                              end: { line: 21, column: 14, offset: 347 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'string',
+                            position: {
+                              start: { line: 21, column: 14, offset: 347 },
+                              end: { line: 21, column: 22, offset: 355 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - the name of the volume.',
+                            position: {
+                              start: { line: 21, column: 22, offset: 355 },
+                              end: { line: 21, column: 48, offset: 381 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 21, column: 5, offset: 338 },
+                          end: { line: 21, column: 48, offset: 381 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 21, column: 3, offset: 336 },
+                      end: { line: 21, column: 48, offset: 381 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 21, column: 3, offset: 336 },
+                  end: { line: 21, column: 48, offset: 381 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 23, column: 1, offset: 383 },
+                      end: { line: 23, column: 8, offset: 390 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 23, column: 1, offset: 383 },
+                  end: { line: 23, column: 8, offset: 390 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'data',
+                            position: {
+                              start: { line: 24, column: 5, offset: 395 },
+                              end: { line: 24, column: 11, offset: 401 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - ',
+                            position: {
+                              start: { line: 24, column: 11, offset: 401 },
+                              end: { line: 24, column: 14, offset: 404 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'Promise<{...}>',
+                            position: {
+                              start: { line: 24, column: 14, offset: 404 },
+                              end: { line: 24, column: 30, offset: 420 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - a promise of data about the created volume.',
+                            position: {
+                              start: { line: 24, column: 30, offset: 420 },
+                              end: { line: 24, column: 76, offset: 466 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 24, column: 5, offset: 395 },
+                          end: { line: 24, column: 76, offset: 466 }
+                        }
+                      },
+                      {
+                        type: 'list',
+                        ordered: false,
+                        start: null,
+                        spread: false,
+                        children: [
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Name',
+                                    position: {
+                                      start: {
+                                        line: 25,
+                                        column: 7,
+                                        offset: 473
+                                      },
+                                      end: {
+                                        line: 25,
+                                        column: 13,
+                                        offset: 479
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - ',
+                                    position: {
+                                      start: {
+                                        line: 25,
+                                        column: 13,
+                                        offset: 479
+                                      },
+                                      end: {
+                                        line: 25,
+                                        column: 16,
+                                        offset: 482
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'string',
+                                    position: {
+                                      start: {
+                                        line: 25,
+                                        column: 16,
+                                        offset: 482
+                                      },
+                                      end: {
+                                        line: 25,
+                                        column: 24,
+                                        offset: 490
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the name of the volume.',
+                                    position: {
+                                      start: {
+                                        line: 25,
+                                        column: 24,
+                                        offset: 490
+                                      },
+                                      end: {
+                                        line: 25,
+                                        column: 50,
+                                        offset: 516
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 25, column: 7, offset: 473 },
+                                  end: { line: 25, column: 50, offset: 516 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 25, column: 5, offset: 471 },
+                              end: { line: 25, column: 50, offset: 516 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Driver',
+                                    position: {
+                                      start: {
+                                        line: 26,
+                                        column: 7,
+                                        offset: 523
+                                      },
+                                      end: {
+                                        line: 26,
+                                        column: 15,
+                                        offset: 531
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - ',
+                                    position: {
+                                      start: {
+                                        line: 26,
+                                        column: 15,
+                                        offset: 531
+                                      },
+                                      end: {
+                                        line: 26,
+                                        column: 18,
+                                        offset: 534
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'string',
+                                    position: {
+                                      start: {
+                                        line: 26,
+                                        column: 18,
+                                        offset: 534
+                                      },
+                                      end: {
+                                        line: 26,
+                                        column: 26,
+                                        offset: 542
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the name of the volume driver of the volume.',
+                                    position: {
+                                      start: {
+                                        line: 26,
+                                        column: 26,
+                                        offset: 542
+                                      },
+                                      end: {
+                                        line: 26,
+                                        column: 73,
+                                        offset: 589
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 26, column: 7, offset: 523 },
+                                  end: { line: 26, column: 73, offset: 589 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 26, column: 5, offset: 521 },
+                              end: { line: 26, column: 73, offset: 589 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Mountpoint',
+                                    position: {
+                                      start: {
+                                        line: 27,
+                                        column: 7,
+                                        offset: 596
+                                      },
+                                      end: {
+                                        line: 27,
+                                        column: 19,
+                                        offset: 608
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - ',
+                                    position: {
+                                      start: {
+                                        line: 27,
+                                        column: 19,
+                                        offset: 608
+                                      },
+                                      end: {
+                                        line: 27,
+                                        column: 22,
+                                        offset: 611
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'string',
+                                    position: {
+                                      start: {
+                                        line: 27,
+                                        column: 22,
+                                        offset: 611
+                                      },
+                                      end: {
+                                        line: 27,
+                                        column: 30,
+                                        offset: 619
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the mount path of the volume on the host.',
+                                    position: {
+                                      start: {
+                                        line: 27,
+                                        column: 30,
+                                        offset: 619
+                                      },
+                                      end: {
+                                        line: 27,
+                                        column: 74,
+                                        offset: 663
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 27, column: 7, offset: 596 },
+                                  end: { line: 27, column: 74, offset: 663 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 27, column: 5, offset: 594 },
+                              end: { line: 27, column: 74, offset: 663 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'CreatedAt',
+                                    position: {
+                                      start: {
+                                        line: 28,
+                                        column: 7,
+                                        offset: 670
+                                      },
+                                      end: {
+                                        line: 28,
+                                        column: 18,
+                                        offset: 681
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - ',
+                                    position: {
+                                      start: {
+                                        line: 28,
+                                        column: 18,
+                                        offset: 681
+                                      },
+                                      end: {
+                                        line: 28,
+                                        column: 21,
+                                        offset: 684
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'string',
+                                    position: {
+                                      start: {
+                                        line: 28,
+                                        column: 21,
+                                        offset: 684
+                                      },
+                                      end: {
+                                        line: 28,
+                                        column: 29,
+                                        offset: 692
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - an ISO 8601 date string for the volume creation time.',
+                                    position: {
+                                      start: {
+                                        line: 28,
+                                        column: 29,
+                                        offset: 692
+                                      },
+                                      end: {
+                                        line: 28,
+                                        column: 85,
+                                        offset: 748
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 28, column: 7, offset: 670 },
+                                  end: { line: 28, column: 85, offset: 748 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 28, column: 5, offset: 668 },
+                              end: { line: 28, column: 85, offset: 748 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Status',
+                                    position: {
+                                      start: {
+                                        line: 29,
+                                        column: 7,
+                                        offset: 755
+                                      },
+                                      end: {
+                                        line: 29,
+                                        column: 15,
+                                        offset: 763
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - ',
+                                    position: {
+                                      start: {
+                                        line: 29,
+                                        column: 15,
+                                        offset: 763
+                                      },
+                                      end: {
+                                        line: 29,
+                                        column: 18,
+                                        offset: 766
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'object',
+                                    position: {
+                                      start: {
+                                        line: 29,
+                                        column: 18,
+                                        offset: 766
+                                      },
+                                      end: {
+                                        line: 29,
+                                        column: 26,
+                                        offset: 774
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - low-level details about the volume provided by the volume driver.',
+                                    position: {
+                                      start: {
+                                        line: 29,
+                                        column: 26,
+                                        offset: 774
+                                      },
+                                      end: {
+                                        line: 29,
+                                        column: 94,
+                                        offset: 842
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 29, column: 7, offset: 755 },
+                                  end: { line: 29, column: 94, offset: 842 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 29, column: 5, offset: 753 },
+                              end: { line: 29, column: 94, offset: 842 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Labels',
+                                    position: {
+                                      start: {
+                                        line: 30,
+                                        column: 7,
+                                        offset: 849
+                                      },
+                                      end: {
+                                        line: 30,
+                                        column: 15,
+                                        offset: 857
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - ',
+                                    position: {
+                                      start: {
+                                        line: 30,
+                                        column: 15,
+                                        offset: 857
+                                      },
+                                      end: {
+                                        line: 30,
+                                        column: 18,
+                                        offset: 860
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'object',
+                                    position: {
+                                      start: {
+                                        line: 30,
+                                        column: 18,
+                                        offset: 860
+                                      },
+                                      end: {
+                                        line: 30,
+                                        column: 26,
+                                        offset: 868
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - key/value metadata',
+                                    position: {
+                                      start: {
+                                        line: 30,
+                                        column: 26,
+                                        offset: 868
+                                      },
+                                      end: {
+                                        line: 30,
+                                        column: 47,
+                                        offset: 889
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 30, column: 7, offset: 849 },
+                                  end: { line: 30, column: 47, offset: 889 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 30, column: 5, offset: 847 },
+                              end: { line: 30, column: 47, offset: 889 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Scope',
+                                    position: {
+                                      start: {
+                                        line: 31,
+                                        column: 7,
+                                        offset: 896
+                                      },
+                                      end: {
+                                        line: 31,
+                                        column: 14,
+                                        offset: 903
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - ',
+                                    position: {
+                                      start: {
+                                        line: 31,
+                                        column: 14,
+                                        offset: 903
+                                      },
+                                      end: {
+                                        line: 31,
+                                        column: 17,
+                                        offset: 906
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'string',
+                                    position: {
+                                      start: {
+                                        line: 31,
+                                        column: 17,
+                                        offset: 906
+                                      },
+                                      end: {
+                                        line: 31,
+                                        column: 25,
+                                        offset: 914
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the level at which the volume exists, either ',
+                                    position: {
+                                      start: {
+                                        line: 31,
+                                        column: 25,
+                                        offset: 914
+                                      },
+                                      end: {
+                                        line: 31,
+                                        column: 73,
+                                        offset: 962
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: '"local"',
+                                    position: {
+                                      start: {
+                                        line: 31,
+                                        column: 73,
+                                        offset: 962
+                                      },
+                                      end: {
+                                        line: 31,
+                                        column: 82,
+                                        offset: 971
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' for machine level or ',
+                                    position: {
+                                      start: {
+                                        line: 31,
+                                        column: 82,
+                                        offset: 971
+                                      },
+                                      end: {
+                                        line: 31,
+                                        column: 104,
+                                        offset: 993
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: '"global"',
+                                    position: {
+                                      start: {
+                                        line: 31,
+                                        column: 104,
+                                        offset: 993
+                                      },
+                                      end: {
+                                        line: 31,
+                                        column: 114,
+                                        offset: 1003
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' for for cluster-wide.',
+                                    position: {
+                                      start: {
+                                        line: 31,
+                                        column: 114,
+                                        offset: 1003
+                                      },
+                                      end: {
+                                        line: 31,
+                                        column: 136,
+                                        offset: 1025
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 31, column: 7, offset: 896 },
+                                  end: {
+                                    line: 31,
+                                    column: 136,
+                                    offset: 1025
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 31, column: 5, offset: 894 },
+                              end: { line: 31, column: 136, offset: 1025 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Options',
+                                    position: {
+                                      start: {
+                                        line: 32,
+                                        column: 7,
+                                        offset: 1032
+                                      },
+                                      end: {
+                                        line: 32,
+                                        column: 16,
+                                        offset: 1041
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - ',
+                                    position: {
+                                      start: {
+                                        line: 32,
+                                        column: 16,
+                                        offset: 1041
+                                      },
+                                      end: {
+                                        line: 32,
+                                        column: 19,
+                                        offset: 1044
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'object',
+                                    position: {
+                                      start: {
+                                        line: 32,
+                                        column: 19,
+                                        offset: 1044
+                                      },
+                                      end: {
+                                        line: 32,
+                                        column: 27,
+                                        offset: 1052
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the driver-specific options for creating the volume.',
+                                    position: {
+                                      start: {
+                                        line: 32,
+                                        column: 27,
+                                        offset: 1052
+                                      },
+                                      end: {
+                                        line: 32,
+                                        column: 82,
+                                        offset: 1107
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 32, column: 7, offset: 1032 },
+                                  end: {
+                                    line: 32,
+                                    column: 82,
+                                    offset: 1107
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 32, column: 5, offset: 1030 },
+                              end: { line: 32, column: 82, offset: 1107 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'UsageData',
+                                    position: {
+                                      start: {
+                                        line: 33,
+                                        column: 7,
+                                        offset: 1114
+                                      },
+                                      end: {
+                                        line: 33,
+                                        column: 18,
+                                        offset: 1125
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - ',
+                                    position: {
+                                      start: {
+                                        line: 33,
+                                        column: 18,
+                                        offset: 1125
+                                      },
+                                      end: {
+                                        line: 33,
+                                        column: 21,
+                                        offset: 1128
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'object',
+                                    position: {
+                                      start: {
+                                        line: 33,
+                                        column: 21,
+                                        offset: 1128
+                                      },
+                                      end: {
+                                        line: 33,
+                                        column: 29,
+                                        offset: 1136
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 33, column: 7, offset: 1114 },
+                                  end: {
+                                    line: 33,
+                                    column: 29,
+                                    offset: 1136
+                                  }
+                                }
+                              },
+                              {
+                                type: 'list',
+                                ordered: false,
+                                start: null,
+                                spread: false,
+                                children: [
+                                  {
+                                    type: 'listItem',
+                                    spread: false,
+                                    checked: null,
+                                    children: [
+                                      {
+                                        type: 'paragraph',
+                                        children: [
+                                          {
+                                            type: 'inlineCode',
+                                            value: 'Size',
+                                            position: {
+                                              start: {
+                                                line: 34,
+                                                column: 9,
+                                                offset: 1145
+                                              },
+                                              end: {
+                                                line: 34,
+                                                column: 15,
+                                                offset: 1151
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'text',
+                                            value: ' - ',
+                                            position: {
+                                              start: {
+                                                line: 34,
+                                                column: 15,
+                                                offset: 1151
+                                              },
+                                              end: {
+                                                line: 34,
+                                                column: 18,
+                                                offset: 1154
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'inlineCode',
+                                            value: 'number',
+                                            position: {
+                                              start: {
+                                                line: 34,
+                                                column: 18,
+                                                offset: 1154
+                                              },
+                                              end: {
+                                                line: 34,
+                                                column: 26,
+                                                offset: 1162
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'text',
+                                            value: ' - amount of disk space taken up by the volume in bytes. Only available for volumes at the ',
+                                            position: {
+                                              start: {
+                                                line: 34,
+                                                column: 26,
+                                                offset: 1162
+                                              },
+                                              end: {
+                                                line: 34,
+                                                column: 117,
+                                                offset: 1253
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'inlineCode',
+                                            value: '"local"',
+                                            position: {
+                                              start: {
+                                                line: 34,
+                                                column: 117,
+                                                offset: 1253
+                                              },
+                                              end: {
+                                                line: 34,
+                                                column: 126,
+                                                offset: 1262
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'text',
+                                            value: ' level, otherwise set to ',
+                                            position: {
+                                              start: {
+                                                line: 34,
+                                                column: 126,
+                                                offset: 1262
+                                              },
+                                              end: {
+                                                line: 34,
+                                                column: 151,
+                                                offset: 1287
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'inlineCode',
+                                            value: '-1',
+                                            position: {
+                                              start: {
+                                                line: 34,
+                                                column: 151,
+                                                offset: 1287
+                                              },
+                                              end: {
+                                                line: 34,
+                                                column: 155,
+                                                offset: 1291
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'text',
+                                            value: '.',
+                                            position: {
+                                              start: {
+                                                line: 34,
+                                                column: 155,
+                                                offset: 1291
+                                              },
+                                              end: {
+                                                line: 34,
+                                                column: 156,
+                                                offset: 1292
+                                              }
+                                            }
+                                          }
+                                        ],
+                                        position: {
+                                          start: {
+                                            line: 34,
+                                            column: 9,
+                                            offset: 1145
+                                          },
+                                          end: {
+                                            line: 34,
+                                            column: 156,
+                                            offset: 1292
+                                          }
+                                        }
+                                      }
+                                    ],
+                                    position: {
+                                      start: {
+                                        line: 34,
+                                        column: 7,
+                                        offset: 1143
+                                      },
+                                      end: {
+                                        line: 34,
+                                        column: 156,
+                                        offset: 1292
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'listItem',
+                                    spread: false,
+                                    checked: null,
+                                    children: [
+                                      {
+                                        type: 'paragraph',
+                                        children: [
+                                          {
+                                            type: 'inlineCode',
+                                            value: 'RefCount',
+                                            position: {
+                                              start: {
+                                                line: 35,
+                                                column: 9,
+                                                offset: 1301
+                                              },
+                                              end: {
+                                                line: 35,
+                                                column: 19,
+                                                offset: 1311
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'text',
+                                            value: ' - ',
+                                            position: {
+                                              start: {
+                                                line: 35,
+                                                column: 19,
+                                                offset: 1311
+                                              },
+                                              end: {
+                                                line: 35,
+                                                column: 22,
+                                                offset: 1314
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'inlineCode',
+                                            value: 'number',
+                                            position: {
+                                              start: {
+                                                line: 35,
+                                                column: 22,
+                                                offset: 1314
+                                              },
+                                              end: {
+                                                line: 35,
+                                                column: 30,
+                                                offset: 1322
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'text',
+                                            value: ' - the number of containers referencing the volume. Set to ',
+                                            position: {
+                                              start: {
+                                                line: 35,
+                                                column: 30,
+                                                offset: 1322
+                                              },
+                                              end: {
+                                                line: 35,
+                                                column: 89,
+                                                offset: 1381
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'inlineCode',
+                                            value: '-1',
+                                            position: {
+                                              start: {
+                                                line: 35,
+                                                column: 89,
+                                                offset: 1381
+                                              },
+                                              end: {
+                                                line: 35,
+                                                column: 93,
+                                                offset: 1385
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'text',
+                                            value: ' if the reference count is unavailable.',
+                                            position: {
+                                              start: {
+                                                line: 35,
+                                                column: 93,
+                                                offset: 1385
+                                              },
+                                              end: {
+                                                line: 35,
+                                                column: 132,
+                                                offset: 1424
+                                              }
+                                            }
+                                          }
+                                        ],
+                                        position: {
+                                          start: {
+                                            line: 35,
+                                            column: 9,
+                                            offset: 1301
+                                          },
+                                          end: {
+                                            line: 35,
+                                            column: 132,
+                                            offset: 1424
+                                          }
+                                        }
+                                      }
+                                    ],
+                                    position: {
+                                      start: {
+                                        line: 35,
+                                        column: 7,
+                                        offset: 1299
+                                      },
+                                      end: {
+                                        line: 35,
+                                        column: 132,
+                                        offset: 1424
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 34, column: 7, offset: 1143 },
+                                  end: {
+                                    line: 35,
+                                    column: 132,
+                                    offset: 1424
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 33, column: 5, offset: 1112 },
+                              end: { line: 35, column: 132, offset: 1424 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 25, column: 5, offset: 471 },
+                          end: { line: 35, column: 132, offset: 1424 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 24, column: 3, offset: 393 },
+                      end: { line: 35, column: 132, offset: 1424 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 24, column: 3, offset: 393 },
+                  end: { line: 35, column: 132, offset: 1424 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'const docker = new Docker()\n' +
+                  '\n' +
+                  'await docker.createVolume("local-database")',
+                position: {
+                  start: { line: 37, column: 1, offset: 1426 },
+                  end: { line: 41, column: 4, offset: 1516 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 41, column: 4, offset: 1516 }
             }
           }
         }
