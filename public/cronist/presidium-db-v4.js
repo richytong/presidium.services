@@ -7990,8 +7990,6 @@ export default [
           '\n' +
           'for await (const value of sortedHt.forwardIterator({ limit: 1 })) {\n' +
           '  console.log(value) // value1\n' +
-          '                     // value2\n' +
-          '                     // value3\n' +
           '}\n' +
           '\n' +
           'for await (const value of sortedHt.forwardIterator({ startingSortValue: 2, endingSortValue: 3 })) {\n' +
@@ -9001,8 +8999,6 @@ export default [
                   '\n' +
                   'for await (const value of sortedHt.forwardIterator({ limit: 1 })) {\n' +
                   '  console.log(value) // value1\n' +
-                  '                     // value2\n' +
-                  '                     // value3\n' +
                   '}\n' +
                   '\n' +
                   'for await (const value of sortedHt.forwardIterator({ startingSortValue: 2, endingSortValue: 3 })) {\n' +
@@ -9032,13 +9028,13 @@ export default [
                   '}',
                 position: {
                   start: { line: 33, column: 1, offset: 2548 },
-                  end: { line: 75, column: 4, offset: 3868 }
+                  end: { line: 73, column: 4, offset: 3806 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 75, column: 4, offset: 3868 }
+              end: { line: 73, column: 4, offset: 3806 }
             }
           }
         }
