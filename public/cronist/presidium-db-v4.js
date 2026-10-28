@@ -28,8 +28,8 @@ export default [
       '\n' +
       '```javascript\n' +
       'const ht = new DiskHashTable({\n' +
-      "  storagePath: '/path/to/storage-file',\n" +
-      "  headerPath: '/path/to/header-file',\n" +
+      '  storagePath: "/path/to/storage-file",\n' +
+      '  headerPath: "/path/to/header-file",\n' +
       '  initialLength: 1024,\n' +
       '  itemSize: 512 * 1024,\n' +
       '  resizeRatio: 0.7,\n' +
@@ -54,7 +54,7 @@ export default [
       'Each item stored on disk is allocated `itemSize` bytes of disk space. The first 17 bytes are reserved for table operations. The remainder is reserved for the key and value of the item.\n' +
       '\n' +
       '## Resizing the disk hash table\n' +
-      "When an item is inserted into the disk hash table via [set](/docs/DiskHashTable#set), the current capacity ratio of the table is calculated as the sum of the table's count and deleted count divided by the table's length. If the current capacity ratio exceeds the `resizeRatio` (and the `resizeRatio` is not 0), a resize of the table occurs.\n" +
+      'When an item is inserted into the disk hash table via [set](/docs/DiskHashTable#set), the current capacity ratio of the table is calculated as the sum of the table"s count and deleted count divided by the table"s length. If the current capacity ratio exceeds the `resizeRatio` (and the `resizeRatio` is not 0), a resize of the table occurs.\n' +
       '\n' +
       'During a table resize, each item of the table is added into a temporary storage file using the new table length calculated from the equation below:\n' +
       '\n' +
@@ -700,8 +700,8 @@ export default [
             lang: 'javascript',
             meta: null,
             value: 'const ht = new DiskHashTable({\n' +
-              "  storagePath: '/path/to/storage-file',\n" +
-              "  headerPath: '/path/to/header-file',\n" +
+              '  storagePath: "/path/to/storage-file",\n' +
+              '  headerPath: "/path/to/header-file",\n' +
               '  initialLength: 1024,\n' +
               '  itemSize: 512 * 1024,\n' +
               '  resizeRatio: 0.7,\n' +
@@ -1010,7 +1010,7 @@ export default [
               },
               {
                 type: 'text',
-                value: ", the current capacity ratio of the table is calculated as the sum of the table's count and deleted count divided by the table's length. If the current capacity ratio exceeds the ",
+                value: ', the current capacity ratio of the table is calculated as the sum of the table"s count and deleted count divided by the table"s length. If the current capacity ratio exceeds the ',
                 position: {
                   start: { line: 54, column: 85, offset: 2484 },
                   end: { line: 54, column: 264, offset: 2663 }
@@ -1981,9 +1981,9 @@ export default [
           '  * Empty promise.\n' +
           '\n' +
           '```javascript\n' +
-          "await ht.set('my-key', 'my-value')\n" +
+          'await ht.set("my-key", "my-value")\n' +
           '\n' +
-          "await ht.set('my-buffer', Buffer.from('binary'))\n" +
+          'await ht.set("my-buffer", Buffer.from("binary"))\n' +
           '```',
         mdast: {
           name: {
@@ -2236,9 +2236,9 @@ export default [
                 type: 'code',
                 lang: 'javascript',
                 meta: null,
-                value: "await ht.set('my-key', 'my-value')\n" +
+                value: 'await ht.set("my-key", "my-value")\n' +
                   '\n' +
-                  "await ht.set('my-buffer', Buffer.from('binary'))",
+                  'await ht.set("my-buffer", Buffer.from("binary"))',
                 position: {
                   start: { line: 14, column: 1, offset: 316 },
                   end: { line: 18, column: 4, offset: 418 }
@@ -2267,7 +2267,7 @@ export default [
           '  * `value` - `Promise<string|undefined>` - a promise of the value corresponding to the key. If the key is not found, the promise resolves with `undefined`.\n' +
           '\n' +
           '```javascript\n' +
-          "const value = await ht.get('my-key')\n" +
+          'const value = await ht.get("my-key")\n' +
           '```',
         mdast: {
           name: {
@@ -2508,7 +2508,7 @@ export default [
                 type: 'code',
                 lang: 'javascript',
                 meta: null,
-                value: "const value = await ht.get('my-key')",
+                value: 'const value = await ht.get("my-key")',
                 position: {
                   start: { line: 13, column: 1, offset: 369 },
                   end: { line: 15, column: 4, offset: 423 }
@@ -2525,7 +2525,7 @@ export default [
       {
         name: 'getBinary',
         docs: '```coffeescript [specscript]\n' +
-          'getBinary(key string) -> binaryValue Promise<Buffer>\n' +
+          'getBinary(key string) -> binaryValue Promise<Buffer|undefined>\n' +
           '```\n' +
           '\n' +
           'Gets a binary value by key from the disk hash table.\n' +
@@ -2534,10 +2534,10 @@ export default [
           '  * `key` - `string` - the key corresponding to the binary value.\n' +
           '\n' +
           'Return:\n' +
-          '  * `binaryValue` - `Promise<Buffer>` - a promise of the binary value corresponding to the key. If the key is not found, the promise resolves with `undefined`.\n' +
+          '  * `binaryValue` - `Promise<Buffer|undefined>` - a promise of the binary value corresponding to the key. If the key is not found, the promise resolves with `undefined`.\n' +
           '\n' +
           '```javascript\n' +
-          "const buffer = await ht.getBinary('my-buffer')\n" +
+          'const buffer = await ht.getBinary("my-buffer")\n' +
           '```',
         mdast: {
           name: {
@@ -2573,10 +2573,10 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: 'getBinary(key string) -> binaryValue Promise<Buffer>',
+                value: 'getBinary(key string) -> binaryValue Promise<Buffer|undefined>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 3, column: 4, offset: 85 }
+                  end: { line: 3, column: 4, offset: 95 }
                 }
               },
               {
@@ -2586,14 +2586,14 @@ export default [
                     type: 'text',
                     value: 'Gets a binary value by key from the disk hash table.',
                     position: {
-                      start: { line: 5, column: 1, offset: 87 },
-                      end: { line: 5, column: 53, offset: 139 }
+                      start: { line: 5, column: 1, offset: 97 },
+                      end: { line: 5, column: 53, offset: 149 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 5, column: 1, offset: 87 },
-                  end: { line: 5, column: 53, offset: 139 }
+                  start: { line: 5, column: 1, offset: 97 },
+                  end: { line: 5, column: 53, offset: 149 }
                 }
               },
               {
@@ -2603,14 +2603,14 @@ export default [
                     type: 'text',
                     value: 'Arguments:',
                     position: {
-                      start: { line: 7, column: 1, offset: 141 },
-                      end: { line: 7, column: 11, offset: 151 }
+                      start: { line: 7, column: 1, offset: 151 },
+                      end: { line: 7, column: 11, offset: 161 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 7, column: 1, offset: 141 },
-                  end: { line: 7, column: 11, offset: 151 }
+                  start: { line: 7, column: 1, offset: 151 },
+                  end: { line: 7, column: 11, offset: 161 }
                 }
               },
               {
@@ -2631,50 +2631,50 @@ export default [
                             type: 'inlineCode',
                             value: 'key',
                             position: {
-                              start: { line: 8, column: 5, offset: 156 },
-                              end: { line: 8, column: 10, offset: 161 }
+                              start: { line: 8, column: 5, offset: 166 },
+                              end: { line: 8, column: 10, offset: 171 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - ',
                             position: {
-                              start: { line: 8, column: 10, offset: 161 },
-                              end: { line: 8, column: 13, offset: 164 }
+                              start: { line: 8, column: 10, offset: 171 },
+                              end: { line: 8, column: 13, offset: 174 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'string',
                             position: {
-                              start: { line: 8, column: 13, offset: 164 },
-                              end: { line: 8, column: 21, offset: 172 }
+                              start: { line: 8, column: 13, offset: 174 },
+                              end: { line: 8, column: 21, offset: 182 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - the key corresponding to the binary value.',
                             position: {
-                              start: { line: 8, column: 21, offset: 172 },
-                              end: { line: 8, column: 66, offset: 217 }
+                              start: { line: 8, column: 21, offset: 182 },
+                              end: { line: 8, column: 66, offset: 227 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 8, column: 5, offset: 156 },
-                          end: { line: 8, column: 66, offset: 217 }
+                          start: { line: 8, column: 5, offset: 166 },
+                          end: { line: 8, column: 66, offset: 227 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 8, column: 3, offset: 154 },
-                      end: { line: 8, column: 66, offset: 217 }
+                      start: { line: 8, column: 3, offset: 164 },
+                      end: { line: 8, column: 66, offset: 227 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 8, column: 3, offset: 154 },
-                  end: { line: 8, column: 66, offset: 217 }
+                  start: { line: 8, column: 3, offset: 164 },
+                  end: { line: 8, column: 66, offset: 227 }
                 }
               },
               {
@@ -2684,14 +2684,14 @@ export default [
                     type: 'text',
                     value: 'Return:',
                     position: {
-                      start: { line: 10, column: 1, offset: 219 },
-                      end: { line: 10, column: 8, offset: 226 }
+                      start: { line: 10, column: 1, offset: 229 },
+                      end: { line: 10, column: 8, offset: 236 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 10, column: 1, offset: 219 },
-                  end: { line: 10, column: 8, offset: 226 }
+                  start: { line: 10, column: 1, offset: 229 },
+                  end: { line: 10, column: 8, offset: 236 }
                 }
               },
               {
@@ -2712,82 +2712,82 @@ export default [
                             type: 'inlineCode',
                             value: 'binaryValue',
                             position: {
-                              start: { line: 11, column: 5, offset: 231 },
-                              end: { line: 11, column: 18, offset: 244 }
+                              start: { line: 11, column: 5, offset: 241 },
+                              end: { line: 11, column: 18, offset: 254 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - ',
                             position: {
-                              start: { line: 11, column: 18, offset: 244 },
-                              end: { line: 11, column: 21, offset: 247 }
+                              start: { line: 11, column: 18, offset: 254 },
+                              end: { line: 11, column: 21, offset: 257 }
                             }
                           },
                           {
                             type: 'inlineCode',
-                            value: 'Promise<Buffer>',
+                            value: 'Promise<Buffer|undefined>',
                             position: {
-                              start: { line: 11, column: 21, offset: 247 },
-                              end: { line: 11, column: 38, offset: 264 }
+                              start: { line: 11, column: 21, offset: 257 },
+                              end: { line: 11, column: 48, offset: 284 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - a promise of the binary value corresponding to the key. If the key is not found, the promise resolves with ',
                             position: {
-                              start: { line: 11, column: 38, offset: 264 },
-                              end: { line: 11, column: 148, offset: 374 }
+                              start: { line: 11, column: 48, offset: 284 },
+                              end: { line: 11, column: 158, offset: 394 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'undefined',
                             position: {
-                              start: { line: 11, column: 148, offset: 374 },
-                              end: { line: 11, column: 159, offset: 385 }
+                              start: { line: 11, column: 158, offset: 394 },
+                              end: { line: 11, column: 169, offset: 405 }
                             }
                           },
                           {
                             type: 'text',
                             value: '.',
                             position: {
-                              start: { line: 11, column: 159, offset: 385 },
-                              end: { line: 11, column: 160, offset: 386 }
+                              start: { line: 11, column: 169, offset: 405 },
+                              end: { line: 11, column: 170, offset: 406 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 11, column: 5, offset: 231 },
-                          end: { line: 11, column: 160, offset: 386 }
+                          start: { line: 11, column: 5, offset: 241 },
+                          end: { line: 11, column: 170, offset: 406 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 11, column: 3, offset: 229 },
-                      end: { line: 11, column: 160, offset: 386 }
+                      start: { line: 11, column: 3, offset: 239 },
+                      end: { line: 11, column: 170, offset: 406 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 11, column: 3, offset: 229 },
-                  end: { line: 11, column: 160, offset: 386 }
+                  start: { line: 11, column: 3, offset: 239 },
+                  end: { line: 11, column: 170, offset: 406 }
                 }
               },
               {
                 type: 'code',
                 lang: 'javascript',
                 meta: null,
-                value: "const buffer = await ht.getBinary('my-buffer')",
+                value: 'const buffer = await ht.getBinary("my-buffer")',
                 position: {
-                  start: { line: 13, column: 1, offset: 388 },
-                  end: { line: 15, column: 4, offset: 452 }
+                  start: { line: 13, column: 1, offset: 408 },
+                  end: { line: 15, column: 4, offset: 472 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 15, column: 4, offset: 452 }
+              end: { line: 15, column: 4, offset: 472 }
             }
           }
         }
@@ -2807,7 +2807,7 @@ export default [
           '  * `didDelete` - `Promise<boolean>` - a promise of whether the key and corresponding value was deleted.\n' +
           '\n' +
           '```javascript\n' +
-          "const didDelete = await ht.delete('my-key')\n" +
+          'const didDelete = await ht.delete("my-key")\n' +
           '```',
         mdast: {
           name: {
@@ -3032,7 +3032,7 @@ export default [
                 type: 'code',
                 lang: 'javascript',
                 meta: null,
-                value: "const didDelete = await ht.delete('my-key')",
+                value: 'const didDelete = await ht.delete("my-key")',
                 position: {
                   start: { line: 13, column: 1, offset: 301 },
                   end: { line: 15, column: 4, offset: 362 }
@@ -3266,7 +3266,7 @@ export default [
           'iterator() -> values AsyncGenerator<string>\n' +
           '\n' +
           'iterator(options {\n' +
-          "  valueType: 'string'|'binary',\n" +
+          '  valueType: "string"|"binary",\n' +
           '}) -> values AsyncGenerator<string|Buffer>\n' +
           '```\n' +
           '\n' +
@@ -3275,17 +3275,17 @@ export default [
           'Arguments:\n' +
           '  * (none) - retrieves the values of all items in the disk hash table.\n' +
           '  * `options`\n' +
-          "    * `valueType` - `'string'|'binary'` - the type of value that the iterator yields. Defaults to `'string'`.\n" +
-          "      * `'string'` - iterator yields `string` values.\n" +
-          "      * `'binary'` - iterator yields `Buffer` values.\n" +
+          '    * `valueType` - `"string"|"binary"` - the type of value that the iterator yields. Defaults to `"string"`.\n' +
+          '      * `"string"` - iterator yields `string` values.\n' +
+          '      * `"binary"` - iterator yields `Buffer` values.\n' +
           '\n' +
           'Return:\n' +
           '  * `values` - `AsyncGenerator<string|Buffer>` - an async generator of the values of all items in the disk hash table sorted by reverse insertion order.\n' +
           '\n' +
           '```javascript\n' +
-          "await ht.set('key1', 'value1')\n" +
-          "await ht.set('key2', 'value2')\n" +
-          "await ht.set('key3', 'value3')\n" +
+          'await ht.set("key1", "value1")\n' +
+          'await ht.set("key2", "value2")\n' +
+          'await ht.set("key3", "value3")\n' +
           '\n' +
           'for await (const value of ht.iterator()) {\n' +
           '  console.log(value) // value3\n' +
@@ -3330,7 +3330,7 @@ export default [
                 value: 'iterator() -> values AsyncGenerator<string>\n' +
                   '\n' +
                   'iterator(options {\n' +
-                  "  valueType: 'string'|'binary',\n" +
+                  '  valueType: "string"|"binary",\n' +
                   '}) -> values AsyncGenerator<string|Buffer>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
@@ -3475,7 +3475,7 @@ export default [
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: "'string'|'binary'",
+                                    value: '"string"|"binary"',
                                     position: {
                                       start: {
                                         line: 14,
@@ -3507,7 +3507,7 @@ export default [
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: "'string'",
+                                    value: '"string"',
                                     position: {
                                       start: {
                                         line: 14,
@@ -3563,7 +3563,7 @@ export default [
                                         children: [
                                           {
                                             type: 'inlineCode',
-                                            value: "'string'",
+                                            value: '"string"',
                                             position: {
                                               start: {
                                                 line: 15,
@@ -3663,7 +3663,7 @@ export default [
                                         children: [
                                           {
                                             type: 'inlineCode',
-                                            value: "'binary'",
+                                            value: '"binary"',
                                             position: {
                                               start: {
                                                 line: 16,
@@ -3868,9 +3868,9 @@ export default [
                 type: 'code',
                 lang: 'javascript',
                 meta: null,
-                value: "await ht.set('key1', 'value1')\n" +
-                  "await ht.set('key2', 'value2')\n" +
-                  "await ht.set('key3', 'value3')\n" +
+                value: 'await ht.set("key1", "value1")\n' +
+                  'await ht.set("key2", "value2")\n' +
+                  'await ht.set("key3", "value3")\n' +
                   '\n' +
                   'for await (const value of ht.iterator()) {\n' +
                   '  console.log(value) // value3\n' +
@@ -3896,7 +3896,7 @@ export default [
           'entriesIterator() -> entries AsyncGenerator<[key string, value string]>\n' +
           '\n' +
           'entriesIterator(options {\n' +
-          "  valueType: 'string'|'binary',\n" +
+          '  valueType: "string"|"binary",\n' +
           '}) -> entries AsyncGenerator<[key string, value string|Buffer]>\n' +
           '```\n' +
           '\n' +
@@ -3905,17 +3905,17 @@ export default [
           'Arguments:\n' +
           '  * (none) - retrieves the entries of all items in the disk hash table.\n' +
           '  * `options`\n' +
-          "    * `valueType` - `'string'|'binary'` - the type of value that the iterator yields. Defaults to `'string'`.\n" +
-          "      * `'string'` - iterator yields entries with `string` values.\n" +
-          "      * `'binary'` - iterator yields entries with `Buffer` values.\n" +
+          '    * `valueType` - `"string"|"binary"` - the type of value that the iterator yields. Defaults to `"string"`.\n' +
+          '      * `"string"` - iterator yields entries with `string` values.\n' +
+          '      * `"binary"` - iterator yields entries with `Buffer` values.\n' +
           '\n' +
           'Return:\n' +
           '  * `entries` - `AsyncGenerator<[key string, value string|Buffer]>` - an async generator of the entries of all items in the disk hash table sorted by reverse insertion order.\n' +
           '\n' +
           '```javascript\n' +
-          "await ht.set('key1', 'value1')\n" +
-          "await ht.set('key2', 'value2')\n" +
-          "await ht.set('key3', 'value3')\n" +
+          'await ht.set("key1", "value1")\n' +
+          'await ht.set("key2", "value2")\n' +
+          'await ht.set("key3", "value3")\n' +
           '\n' +
           'for await (const [key, value] of ht.entriesIterator()) {\n' +
           '  console.log(key, value) // key3 value3\n' +
@@ -3960,7 +3960,7 @@ export default [
                 value: 'entriesIterator() -> entries AsyncGenerator<[key string, value string]>\n' +
                   '\n' +
                   'entriesIterator(options {\n' +
-                  "  valueType: 'string'|'binary',\n" +
+                  '  valueType: "string"|"binary",\n' +
                   '}) -> entries AsyncGenerator<[key string, value string|Buffer]>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
@@ -4105,7 +4105,7 @@ export default [
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: "'string'|'binary'",
+                                    value: '"string"|"binary"',
                                     position: {
                                       start: {
                                         line: 14,
@@ -4137,7 +4137,7 @@ export default [
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: "'string'",
+                                    value: '"string"',
                                     position: {
                                       start: {
                                         line: 14,
@@ -4193,7 +4193,7 @@ export default [
                                         children: [
                                           {
                                             type: 'inlineCode',
-                                            value: "'string'",
+                                            value: '"string"',
                                             position: {
                                               start: {
                                                 line: 15,
@@ -4293,7 +4293,7 @@ export default [
                                         children: [
                                           {
                                             type: 'inlineCode',
-                                            value: "'binary'",
+                                            value: '"binary"',
                                             position: {
                                               start: {
                                                 line: 16,
@@ -4498,9 +4498,9 @@ export default [
                 type: 'code',
                 lang: 'javascript',
                 meta: null,
-                value: "await ht.set('key1', 'value1')\n" +
-                  "await ht.set('key2', 'value2')\n" +
-                  "await ht.set('key3', 'value3')\n" +
+                value: 'await ht.set("key1", "value1")\n' +
+                  'await ht.set("key2", "value2")\n' +
+                  'await ht.set("key3", "value3")\n' +
                   '\n' +
                   'for await (const [key, value] of ht.entriesIterator()) {\n' +
                   '  console.log(key, value) // key3 value3\n' +
@@ -4531,7 +4531,7 @@ export default [
       '  headerPath: string,\n' +
       '  initialLength: number,\n' +
       '  itemSize: number,\n' +
-      "  sortValueType: 'string'|'number',\n" +
+      '  sortValueType: "string"|"number"|Array<"string"|"number">,\n' +
       '  resizeRatio: number,\n' +
       '  resizeFactor: number,\n' +
       '  degree: number,\n' +
@@ -4546,7 +4546,7 @@ export default [
       '    * `headerPath` - `string` - the path to the file that stores header information about the disk sorted hash table.\n' +
       '    * `initialLength` - `number` - the initial length of the disk sorted hash table. Minimum value 1, maximum value `Math.floor(9007199254740991 / itemSize)`. Defaults to 1024.\n' +
       '    * `itemSize` - `number` - the size in bytes of each item (including internal item info, key, value, and sortValue) stored on disk. Minimum value 54. Defaults to 524288.\n' +
-      "    * `sortValueType` - `'string'|'number'` - the type of the disk sorted hash table sort-values.\n" +
+      '    * `sortValueType` - `"string"|"number"|Array<"string"|"number">` - the type of the disk sorted hash table sort values. If this value is an array, the sort value will be treated as a composite sort value. A composite sort value has each element of the array compared in order.\n' +
       '    * `resizeRatio` - `number` - the ratio of number of items to table length at which to resize the disk sorted hash table. Minimum value 0 (no resize), maximum value 1. Defaults to 0.\n' +
       "    * `resizeFactor` - `number` - the factor that is multiplied with the disk sorted hash table's current length to determine the new table length on a resize.\n" +
       '    * `degree` - `number` - minimum value 2, defaults to 2 - defines the following parameters for the internal b-tree that organizes all of the items in the disk sorted hash table:\n' +
@@ -4560,11 +4560,22 @@ export default [
       '\n' +
       '```javascript\n' +
       'const sortedHt = new DiskSortedHashTable({\n' +
-      "  storagePath: '/path/to/storage-file',\n" +
-      "  headerPath: '/path/to/header-file',\n" +
+      '  storagePath: "/path/to/storage-file",\n' +
+      '  headerPath: "/path/to/header-file",\n' +
       '  initialLength: 1024,\n' +
       '  itemSize: 512 * 1024,\n' +
-      "  sortValueType: 'number',\n" +
+      '  sortValueType: "number",\n' +
+      '  resizeRatio: 0.5,\n' +
+      '  resizeFactor: 1000,\n' +
+      '  degree: 2,\n' +
+      '})\n' +
+      '\n' +
+      'const compositeSortValueHt = new DiskSortedHashTable({\n' +
+      '  storagePath: "/path/to/storage-file",\n' +
+      '  headerPath: "/path/to/header-file",\n' +
+      '  initialLength: 1024,\n' +
+      '  itemSize: 512 * 1024,\n' +
+      '  sortValueType: ["string", "number"],\n' +
       '  resizeRatio: 0.5,\n' +
       '  resizeFactor: 1000,\n' +
       '  degree: 2,\n' +
@@ -4585,10 +4596,10 @@ export default [
       'The disk sorted hash table initially preallocates a block of memory on disk of `(itemSize * initialLength)` bytes as the storage file and a 48-byte block of memory as the header file for database operations. When the disk sorted hash table is resized, the block of memory on disk is reallocated to a new size of `(itemSize * initialLength * numberOfResizes * resizeFactor)` bytes.\n' +
       '\n' +
       '## Byte allocations for an item\n' +
-      'Each item stored on disk is allocated `itemSize` bytes of disk space. The first 53 bytes are reserved for table operations. The remainder is reserved for the key, sort-value, and value of the item.\n' +
+      'Each item stored on disk is allocated `itemSize` bytes of disk space. The first 53 bytes are reserved for table operations. The remainder is reserved for the key, sort value, and value of the item.\n' +
       '\n' +
       '## Resizing the disk sorted hash table\n' +
-      "When an item is inserted into the disk sorted hash table via [set](/docs/DiskSortedHashTable#set), the current capacity ratio of the table is calculated as the sum of the table's count and deleted count divided by the table's length. If the current capacity ratio exceeds the `resizeRatio` (and the `resizeRatio` is not 0), a resize of the table occurs.\n" +
+      'When an item is inserted into the disk sorted hash table via [set](/docs/DiskSortedHashTable#set), the current capacity ratio of the table is calculated as the sum of the table"s count and deleted count divided by the table"s length. If the current capacity ratio exceeds the `resizeRatio` (and the `resizeRatio` is not 0), a resize of the table occurs.\n' +
       '\n' +
       'During a table resize, each item of the table is added into a temporary storage file using the new table length calculated from the equation below:\n' +
       '\n' +
@@ -4642,14 +4653,14 @@ export default [
               '  headerPath: string,\n' +
               '  initialLength: number,\n' +
               '  itemSize: number,\n' +
-              "  sortValueType: 'string'|'number',\n" +
+              '  sortValueType: "string"|"number"|Array<"string"|"number">,\n' +
               '  resizeRatio: number,\n' +
               '  resizeFactor: number,\n' +
               '  degree: number,\n' +
               '}) -> sortedHt DiskSortedHashTable',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 292 }
+              end: { line: 12, column: 4, offset: 317 }
             }
           },
           {
@@ -4659,14 +4670,14 @@ export default [
                 type: 'text',
                 value: 'Presidium DiskSortedHashTable class. Creates a sorted hash table that stores all data on disk.',
                 position: {
-                  start: { line: 14, column: 1, offset: 294 },
-                  end: { line: 14, column: 95, offset: 388 }
+                  start: { line: 14, column: 1, offset: 319 },
+                  end: { line: 14, column: 95, offset: 413 }
                 }
               }
             ],
             position: {
-              start: { line: 14, column: 1, offset: 294 },
-              end: { line: 14, column: 95, offset: 388 }
+              start: { line: 14, column: 1, offset: 319 },
+              end: { line: 14, column: 95, offset: 413 }
             }
           },
           {
@@ -4676,14 +4687,14 @@ export default [
                 type: 'text',
                 value: 'Arguments:',
                 position: {
-                  start: { line: 16, column: 1, offset: 390 },
-                  end: { line: 16, column: 11, offset: 400 }
+                  start: { line: 16, column: 1, offset: 415 },
+                  end: { line: 16, column: 11, offset: 425 }
                 }
               }
             ],
             position: {
-              start: { line: 16, column: 1, offset: 390 },
-              end: { line: 16, column: 11, offset: 400 }
+              start: { line: 16, column: 1, offset: 415 },
+              end: { line: 16, column: 11, offset: 425 }
             }
           },
           {
@@ -4704,14 +4715,14 @@ export default [
                         type: 'inlineCode',
                         value: 'options',
                         position: {
-                          start: { line: 17, column: 5, offset: 405 },
-                          end: { line: 17, column: 14, offset: 414 }
+                          start: { line: 17, column: 5, offset: 430 },
+                          end: { line: 17, column: 14, offset: 439 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 17, column: 5, offset: 405 },
-                      end: { line: 17, column: 14, offset: 414 }
+                      start: { line: 17, column: 5, offset: 430 },
+                      end: { line: 17, column: 14, offset: 439 }
                     }
                   },
                   {
@@ -4732,44 +4743,44 @@ export default [
                                 type: 'inlineCode',
                                 value: 'storagePath',
                                 position: {
-                                  start: { line: 18, column: 7, offset: 421 },
-                                  end: { line: 18, column: 20, offset: 434 }
+                                  start: { line: 18, column: 7, offset: 446 },
+                                  end: { line: 18, column: 20, offset: 459 }
                                 }
                               },
                               {
                                 type: 'text',
                                 value: ' - ',
                                 position: {
-                                  start: { line: 18, column: 20, offset: 434 },
-                                  end: { line: 18, column: 23, offset: 437 }
+                                  start: { line: 18, column: 20, offset: 459 },
+                                  end: { line: 18, column: 23, offset: 462 }
                                 }
                               },
                               {
                                 type: 'inlineCode',
                                 value: 'string',
                                 position: {
-                                  start: { line: 18, column: 23, offset: 437 },
-                                  end: { line: 18, column: 31, offset: 445 }
+                                  start: { line: 18, column: 23, offset: 462 },
+                                  end: { line: 18, column: 31, offset: 470 }
                                 }
                               },
                               {
                                 type: 'text',
                                 value: ' - the path to the file that stores the disk sorted hash table data.',
                                 position: {
-                                  start: { line: 18, column: 31, offset: 445 },
-                                  end: { line: 18, column: 99, offset: 513 }
+                                  start: { line: 18, column: 31, offset: 470 },
+                                  end: { line: 18, column: 99, offset: 538 }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 18, column: 7, offset: 421 },
-                              end: { line: 18, column: 99, offset: 513 }
+                              start: { line: 18, column: 7, offset: 446 },
+                              end: { line: 18, column: 99, offset: 538 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 18, column: 5, offset: 419 },
-                          end: { line: 18, column: 99, offset: 513 }
+                          start: { line: 18, column: 5, offset: 444 },
+                          end: { line: 18, column: 99, offset: 538 }
                         }
                       },
                       {
@@ -4784,48 +4795,48 @@ export default [
                                 type: 'inlineCode',
                                 value: 'headerPath',
                                 position: {
-                                  start: { line: 19, column: 7, offset: 520 },
-                                  end: { line: 19, column: 19, offset: 532 }
+                                  start: { line: 19, column: 7, offset: 545 },
+                                  end: { line: 19, column: 19, offset: 557 }
                                 }
                               },
                               {
                                 type: 'text',
                                 value: ' - ',
                                 position: {
-                                  start: { line: 19, column: 19, offset: 532 },
-                                  end: { line: 19, column: 22, offset: 535 }
+                                  start: { line: 19, column: 19, offset: 557 },
+                                  end: { line: 19, column: 22, offset: 560 }
                                 }
                               },
                               {
                                 type: 'inlineCode',
                                 value: 'string',
                                 position: {
-                                  start: { line: 19, column: 22, offset: 535 },
-                                  end: { line: 19, column: 30, offset: 543 }
+                                  start: { line: 19, column: 22, offset: 560 },
+                                  end: { line: 19, column: 30, offset: 568 }
                                 }
                               },
                               {
                                 type: 'text',
                                 value: ' - the path to the file that stores header information about the disk sorted hash table.',
                                 position: {
-                                  start: { line: 19, column: 30, offset: 543 },
+                                  start: { line: 19, column: 30, offset: 568 },
                                   end: {
                                     line: 19,
                                     column: 118,
-                                    offset: 631
+                                    offset: 656
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 19, column: 7, offset: 520 },
-                              end: { line: 19, column: 118, offset: 631 }
+                              start: { line: 19, column: 7, offset: 545 },
+                              end: { line: 19, column: 118, offset: 656 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 19, column: 5, offset: 518 },
-                          end: { line: 19, column: 118, offset: 631 }
+                          start: { line: 19, column: 5, offset: 543 },
+                          end: { line: 19, column: 118, offset: 656 }
                         }
                       },
                       {
@@ -4840,35 +4851,35 @@ export default [
                                 type: 'inlineCode',
                                 value: 'initialLength',
                                 position: {
-                                  start: { line: 20, column: 7, offset: 638 },
-                                  end: { line: 20, column: 22, offset: 653 }
+                                  start: { line: 20, column: 7, offset: 663 },
+                                  end: { line: 20, column: 22, offset: 678 }
                                 }
                               },
                               {
                                 type: 'text',
                                 value: ' - ',
                                 position: {
-                                  start: { line: 20, column: 22, offset: 653 },
-                                  end: { line: 20, column: 25, offset: 656 }
+                                  start: { line: 20, column: 22, offset: 678 },
+                                  end: { line: 20, column: 25, offset: 681 }
                                 }
                               },
                               {
                                 type: 'inlineCode',
                                 value: 'number',
                                 position: {
-                                  start: { line: 20, column: 25, offset: 656 },
-                                  end: { line: 20, column: 33, offset: 664 }
+                                  start: { line: 20, column: 25, offset: 681 },
+                                  end: { line: 20, column: 33, offset: 689 }
                                 }
                               },
                               {
                                 type: 'text',
                                 value: ' - the initial length of the disk sorted hash table. Minimum value 1, maximum value ',
                                 position: {
-                                  start: { line: 20, column: 33, offset: 664 },
+                                  start: { line: 20, column: 33, offset: 689 },
                                   end: {
                                     line: 20,
                                     column: 117,
-                                    offset: 748
+                                    offset: 773
                                   }
                                 }
                               },
@@ -4879,12 +4890,12 @@ export default [
                                   start: {
                                     line: 20,
                                     column: 117,
-                                    offset: 748
+                                    offset: 773
                                   },
                                   end: {
                                     line: 20,
                                     column: 158,
-                                    offset: 789
+                                    offset: 814
                                   }
                                 }
                               },
@@ -4895,25 +4906,25 @@ export default [
                                   start: {
                                     line: 20,
                                     column: 158,
-                                    offset: 789
+                                    offset: 814
                                   },
                                   end: {
                                     line: 20,
                                     column: 177,
-                                    offset: 808
+                                    offset: 833
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 20, column: 7, offset: 638 },
-                              end: { line: 20, column: 177, offset: 808 }
+                              start: { line: 20, column: 7, offset: 663 },
+                              end: { line: 20, column: 177, offset: 833 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 20, column: 5, offset: 636 },
-                          end: { line: 20, column: 177, offset: 808 }
+                          start: { line: 20, column: 5, offset: 661 },
+                          end: { line: 20, column: 177, offset: 833 }
                         }
                       },
                       {
@@ -4928,48 +4939,48 @@ export default [
                                 type: 'inlineCode',
                                 value: 'itemSize',
                                 position: {
-                                  start: { line: 21, column: 7, offset: 815 },
-                                  end: { line: 21, column: 17, offset: 825 }
+                                  start: { line: 21, column: 7, offset: 840 },
+                                  end: { line: 21, column: 17, offset: 850 }
                                 }
                               },
                               {
                                 type: 'text',
                                 value: ' - ',
                                 position: {
-                                  start: { line: 21, column: 17, offset: 825 },
-                                  end: { line: 21, column: 20, offset: 828 }
+                                  start: { line: 21, column: 17, offset: 850 },
+                                  end: { line: 21, column: 20, offset: 853 }
                                 }
                               },
                               {
                                 type: 'inlineCode',
                                 value: 'number',
                                 position: {
-                                  start: { line: 21, column: 20, offset: 828 },
-                                  end: { line: 21, column: 28, offset: 836 }
+                                  start: { line: 21, column: 20, offset: 853 },
+                                  end: { line: 21, column: 28, offset: 861 }
                                 }
                               },
                               {
                                 type: 'text',
                                 value: ' - the size in bytes of each item (including internal item info, key, value, and sortValue) stored on disk. Minimum value 54. Defaults to 524288.',
                                 position: {
-                                  start: { line: 21, column: 28, offset: 836 },
+                                  start: { line: 21, column: 28, offset: 861 },
                                   end: {
                                     line: 21,
                                     column: 173,
-                                    offset: 981
+                                    offset: 1006
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 21, column: 7, offset: 815 },
-                              end: { line: 21, column: 173, offset: 981 }
+                              start: { line: 21, column: 7, offset: 840 },
+                              end: { line: 21, column: 173, offset: 1006 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 21, column: 5, offset: 813 },
-                          end: { line: 21, column: 173, offset: 981 }
+                          start: { line: 21, column: 5, offset: 838 },
+                          end: { line: 21, column: 173, offset: 1006 }
                         }
                       },
                       {
@@ -4984,11 +4995,11 @@ export default [
                                 type: 'inlineCode',
                                 value: 'sortValueType',
                                 position: {
-                                  start: { line: 22, column: 7, offset: 988 },
+                                  start: { line: 22, column: 7, offset: 1013 },
                                   end: {
                                     line: 22,
                                     column: 22,
-                                    offset: 1003
+                                    offset: 1028
                                   }
                                 }
                               },
@@ -4999,57 +5010,57 @@ export default [
                                   start: {
                                     line: 22,
                                     column: 22,
-                                    offset: 1003
+                                    offset: 1028
                                   },
                                   end: {
                                     line: 22,
                                     column: 25,
-                                    offset: 1006
+                                    offset: 1031
                                   }
                                 }
                               },
                               {
                                 type: 'inlineCode',
-                                value: "'string'|'number'",
+                                value: '"string"|"number"|Array<"string"|"number">',
                                 position: {
                                   start: {
                                     line: 22,
                                     column: 25,
-                                    offset: 1006
+                                    offset: 1031
                                   },
                                   end: {
                                     line: 22,
-                                    column: 44,
-                                    offset: 1025
+                                    column: 69,
+                                    offset: 1075
                                   }
                                 }
                               },
                               {
                                 type: 'text',
-                                value: ' - the type of the disk sorted hash table sort-values.',
+                                value: ' - the type of the disk sorted hash table sort values. If this value is an array, the sort value will be treated as a composite sort value. A composite sort value has each element of the array compared in order.',
                                 position: {
                                   start: {
                                     line: 22,
-                                    column: 44,
-                                    offset: 1025
+                                    column: 69,
+                                    offset: 1075
                                   },
                                   end: {
                                     line: 22,
-                                    column: 98,
-                                    offset: 1079
+                                    column: 280,
+                                    offset: 1286
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 22, column: 7, offset: 988 },
-                              end: { line: 22, column: 98, offset: 1079 }
+                              start: { line: 22, column: 7, offset: 1013 },
+                              end: { line: 22, column: 280, offset: 1286 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 22, column: 5, offset: 986 },
-                          end: { line: 22, column: 98, offset: 1079 }
+                          start: { line: 22, column: 5, offset: 1011 },
+                          end: { line: 22, column: 280, offset: 1286 }
                         }
                       },
                       {
@@ -5064,11 +5075,11 @@ export default [
                                 type: 'inlineCode',
                                 value: 'resizeRatio',
                                 position: {
-                                  start: { line: 23, column: 7, offset: 1086 },
+                                  start: { line: 23, column: 7, offset: 1293 },
                                   end: {
                                     line: 23,
                                     column: 20,
-                                    offset: 1099
+                                    offset: 1306
                                   }
                                 }
                               },
@@ -5079,12 +5090,12 @@ export default [
                                   start: {
                                     line: 23,
                                     column: 20,
-                                    offset: 1099
+                                    offset: 1306
                                   },
                                   end: {
                                     line: 23,
                                     column: 23,
-                                    offset: 1102
+                                    offset: 1309
                                   }
                                 }
                               },
@@ -5095,12 +5106,12 @@ export default [
                                   start: {
                                     line: 23,
                                     column: 23,
-                                    offset: 1102
+                                    offset: 1309
                                   },
                                   end: {
                                     line: 23,
                                     column: 31,
-                                    offset: 1110
+                                    offset: 1317
                                   }
                                 }
                               },
@@ -5111,25 +5122,25 @@ export default [
                                   start: {
                                     line: 23,
                                     column: 31,
-                                    offset: 1110
+                                    offset: 1317
                                   },
                                   end: {
                                     line: 23,
                                     column: 186,
-                                    offset: 1265
+                                    offset: 1472
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 23, column: 7, offset: 1086 },
-                              end: { line: 23, column: 186, offset: 1265 }
+                              start: { line: 23, column: 7, offset: 1293 },
+                              end: { line: 23, column: 186, offset: 1472 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 23, column: 5, offset: 1084 },
-                          end: { line: 23, column: 186, offset: 1265 }
+                          start: { line: 23, column: 5, offset: 1291 },
+                          end: { line: 23, column: 186, offset: 1472 }
                         }
                       },
                       {
@@ -5144,11 +5155,11 @@ export default [
                                 type: 'inlineCode',
                                 value: 'resizeFactor',
                                 position: {
-                                  start: { line: 24, column: 7, offset: 1272 },
+                                  start: { line: 24, column: 7, offset: 1479 },
                                   end: {
                                     line: 24,
                                     column: 21,
-                                    offset: 1286
+                                    offset: 1493
                                   }
                                 }
                               },
@@ -5159,12 +5170,12 @@ export default [
                                   start: {
                                     line: 24,
                                     column: 21,
-                                    offset: 1286
+                                    offset: 1493
                                   },
                                   end: {
                                     line: 24,
                                     column: 24,
-                                    offset: 1289
+                                    offset: 1496
                                   }
                                 }
                               },
@@ -5175,12 +5186,12 @@ export default [
                                   start: {
                                     line: 24,
                                     column: 24,
-                                    offset: 1289
+                                    offset: 1496
                                   },
                                   end: {
                                     line: 24,
                                     column: 32,
-                                    offset: 1297
+                                    offset: 1504
                                   }
                                 }
                               },
@@ -5191,25 +5202,25 @@ export default [
                                   start: {
                                     line: 24,
                                     column: 32,
-                                    offset: 1297
+                                    offset: 1504
                                   },
                                   end: {
                                     line: 24,
                                     column: 160,
-                                    offset: 1425
+                                    offset: 1632
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 24, column: 7, offset: 1272 },
-                              end: { line: 24, column: 160, offset: 1425 }
+                              start: { line: 24, column: 7, offset: 1479 },
+                              end: { line: 24, column: 160, offset: 1632 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 24, column: 5, offset: 1270 },
-                          end: { line: 24, column: 160, offset: 1425 }
+                          start: { line: 24, column: 5, offset: 1477 },
+                          end: { line: 24, column: 160, offset: 1632 }
                         }
                       },
                       {
@@ -5224,11 +5235,11 @@ export default [
                                 type: 'inlineCode',
                                 value: 'degree',
                                 position: {
-                                  start: { line: 25, column: 7, offset: 1432 },
+                                  start: { line: 25, column: 7, offset: 1639 },
                                   end: {
                                     line: 25,
                                     column: 15,
-                                    offset: 1440
+                                    offset: 1647
                                   }
                                 }
                               },
@@ -5239,12 +5250,12 @@ export default [
                                   start: {
                                     line: 25,
                                     column: 15,
-                                    offset: 1440
+                                    offset: 1647
                                   },
                                   end: {
                                     line: 25,
                                     column: 18,
-                                    offset: 1443
+                                    offset: 1650
                                   }
                                 }
                               },
@@ -5255,12 +5266,12 @@ export default [
                                   start: {
                                     line: 25,
                                     column: 18,
-                                    offset: 1443
+                                    offset: 1650
                                   },
                                   end: {
                                     line: 25,
                                     column: 26,
-                                    offset: 1451
+                                    offset: 1658
                                   }
                                 }
                               },
@@ -5271,19 +5282,19 @@ export default [
                                   start: {
                                     line: 25,
                                     column: 26,
-                                    offset: 1451
+                                    offset: 1658
                                   },
                                   end: {
                                     line: 25,
                                     column: 181,
-                                    offset: 1606
+                                    offset: 1813
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 25, column: 7, offset: 1432 },
-                              end: { line: 25, column: 181, offset: 1606 }
+                              start: { line: 25, column: 7, offset: 1639 },
+                              end: { line: 25, column: 181, offset: 1813 }
                             }
                           },
                           {
@@ -5307,12 +5318,12 @@ export default [
                                           start: {
                                             line: 26,
                                             column: 9,
-                                            offset: 1615
+                                            offset: 1822
                                           },
                                           end: {
                                             line: 26,
                                             column: 50,
-                                            offset: 1656
+                                            offset: 1863
                                           }
                                         }
                                       },
@@ -5323,12 +5334,12 @@ export default [
                                           start: {
                                             line: 26,
                                             column: 50,
-                                            offset: 1656
+                                            offset: 1863
                                           },
                                           end: {
                                             line: 26,
                                             column: 62,
-                                            offset: 1668
+                                            offset: 1875
                                           }
                                         }
                                       }
@@ -5337,22 +5348,22 @@ export default [
                                       start: {
                                         line: 26,
                                         column: 9,
-                                        offset: 1615
+                                        offset: 1822
                                       },
                                       end: {
                                         line: 26,
                                         column: 62,
-                                        offset: 1668
+                                        offset: 1875
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 26, column: 7, offset: 1613 },
+                                  start: { line: 26, column: 7, offset: 1820 },
                                   end: {
                                     line: 26,
                                     column: 62,
-                                    offset: 1668
+                                    offset: 1875
                                   }
                                 }
                               },
@@ -5371,12 +5382,12 @@ export default [
                                           start: {
                                             line: 27,
                                             column: 9,
-                                            offset: 1677
+                                            offset: 1884
                                           },
                                           end: {
                                             line: 27,
                                             column: 50,
-                                            offset: 1718
+                                            offset: 1925
                                           }
                                         }
                                       },
@@ -5387,12 +5398,12 @@ export default [
                                           start: {
                                             line: 27,
                                             column: 50,
-                                            offset: 1718
+                                            offset: 1925
                                           },
                                           end: {
                                             line: 27,
                                             column: 68,
-                                            offset: 1736
+                                            offset: 1943
                                           }
                                         }
                                       }
@@ -5401,22 +5412,22 @@ export default [
                                       start: {
                                         line: 27,
                                         column: 9,
-                                        offset: 1677
+                                        offset: 1884
                                       },
                                       end: {
                                         line: 27,
                                         column: 68,
-                                        offset: 1736
+                                        offset: 1943
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 27, column: 7, offset: 1675 },
+                                  start: { line: 27, column: 7, offset: 1882 },
                                   end: {
                                     line: 27,
                                     column: 68,
-                                    offset: 1736
+                                    offset: 1943
                                   }
                                 }
                               },
@@ -5435,12 +5446,12 @@ export default [
                                           start: {
                                             line: 28,
                                             column: 9,
-                                            offset: 1745
+                                            offset: 1952
                                           },
                                           end: {
                                             line: 28,
                                             column: 53,
-                                            offset: 1789
+                                            offset: 1996
                                           }
                                         }
                                       },
@@ -5451,12 +5462,12 @@ export default [
                                           start: {
                                             line: 28,
                                             column: 53,
-                                            offset: 1789
+                                            offset: 1996
                                           },
                                           end: {
                                             line: 28,
                                             column: 61,
-                                            offset: 1797
+                                            offset: 2004
                                           }
                                         }
                                       }
@@ -5465,22 +5476,22 @@ export default [
                                       start: {
                                         line: 28,
                                         column: 9,
-                                        offset: 1745
+                                        offset: 1952
                                       },
                                       end: {
                                         line: 28,
                                         column: 61,
-                                        offset: 1797
+                                        offset: 2004
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 28, column: 7, offset: 1743 },
+                                  start: { line: 28, column: 7, offset: 1950 },
                                   end: {
                                     line: 28,
                                     column: 61,
-                                    offset: 1797
+                                    offset: 2004
                                   }
                                 }
                               },
@@ -5499,12 +5510,12 @@ export default [
                                           start: {
                                             line: 29,
                                             column: 9,
-                                            offset: 1806
+                                            offset: 2013
                                           },
                                           end: {
                                             line: 29,
                                             column: 53,
-                                            offset: 1850
+                                            offset: 2057
                                           }
                                         }
                                       },
@@ -5515,12 +5526,12 @@ export default [
                                           start: {
                                             line: 29,
                                             column: 53,
-                                            offset: 1850
+                                            offset: 2057
                                           },
                                           end: {
                                             line: 29,
                                             column: 65,
-                                            offset: 1862
+                                            offset: 2069
                                           }
                                         }
                                       }
@@ -5529,53 +5540,53 @@ export default [
                                       start: {
                                         line: 29,
                                         column: 9,
-                                        offset: 1806
+                                        offset: 2013
                                       },
                                       end: {
                                         line: 29,
                                         column: 65,
-                                        offset: 1862
+                                        offset: 2069
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 29, column: 7, offset: 1804 },
+                                  start: { line: 29, column: 7, offset: 2011 },
                                   end: {
                                     line: 29,
                                     column: 65,
-                                    offset: 1862
+                                    offset: 2069
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 26, column: 7, offset: 1613 },
-                              end: { line: 29, column: 65, offset: 1862 }
+                              start: { line: 26, column: 7, offset: 1820 },
+                              end: { line: 29, column: 65, offset: 2069 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 25, column: 5, offset: 1430 },
-                          end: { line: 29, column: 65, offset: 1862 }
+                          start: { line: 25, column: 5, offset: 1637 },
+                          end: { line: 29, column: 65, offset: 2069 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 18, column: 5, offset: 419 },
-                      end: { line: 29, column: 65, offset: 1862 }
+                      start: { line: 18, column: 5, offset: 444 },
+                      end: { line: 29, column: 65, offset: 2069 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 17, column: 3, offset: 403 },
-                  end: { line: 29, column: 65, offset: 1862 }
+                  start: { line: 17, column: 3, offset: 428 },
+                  end: { line: 29, column: 65, offset: 2069 }
                 }
               }
             ],
             position: {
-              start: { line: 17, column: 3, offset: 403 },
-              end: { line: 29, column: 65, offset: 1862 }
+              start: { line: 17, column: 3, offset: 428 },
+              end: { line: 29, column: 65, offset: 2069 }
             }
           },
           {
@@ -5585,14 +5596,14 @@ export default [
                 type: 'text',
                 value: 'Return:',
                 position: {
-                  start: { line: 31, column: 1, offset: 1864 },
-                  end: { line: 31, column: 8, offset: 1871 }
+                  start: { line: 31, column: 1, offset: 2071 },
+                  end: { line: 31, column: 8, offset: 2078 }
                 }
               }
             ],
             position: {
-              start: { line: 31, column: 1, offset: 1864 },
-              end: { line: 31, column: 8, offset: 1871 }
+              start: { line: 31, column: 1, offset: 2071 },
+              end: { line: 31, column: 8, offset: 2078 }
             }
           },
           {
@@ -5613,16 +5624,16 @@ export default [
                         type: 'inlineCode',
                         value: 'sortedHt',
                         position: {
-                          start: { line: 32, column: 5, offset: 1876 },
-                          end: { line: 32, column: 15, offset: 1886 }
+                          start: { line: 32, column: 5, offset: 2083 },
+                          end: { line: 32, column: 15, offset: 2093 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - ',
                         position: {
-                          start: { line: 32, column: 15, offset: 1886 },
-                          end: { line: 32, column: 18, offset: 1889 }
+                          start: { line: 32, column: 15, offset: 2093 },
+                          end: { line: 32, column: 18, offset: 2096 }
                         }
                       },
                       {
@@ -5634,56 +5645,56 @@ export default [
                             type: 'inlineCode',
                             value: 'DiskSortedHashTable',
                             position: {
-                              start: { line: 32, column: 19, offset: 1890 },
-                              end: { line: 32, column: 40, offset: 1911 }
+                              start: { line: 32, column: 19, offset: 2097 },
+                              end: { line: 32, column: 40, offset: 2118 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 32, column: 18, offset: 1889 },
-                          end: { line: 32, column: 68, offset: 1939 }
+                          start: { line: 32, column: 18, offset: 2096 },
+                          end: { line: 32, column: 68, offset: 2146 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - a ',
                         position: {
-                          start: { line: 32, column: 68, offset: 1939 },
-                          end: { line: 32, column: 73, offset: 1944 }
+                          start: { line: 32, column: 68, offset: 2146 },
+                          end: { line: 32, column: 73, offset: 2151 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: 'DiskSortedHashTable',
                         position: {
-                          start: { line: 32, column: 73, offset: 1944 },
-                          end: { line: 32, column: 94, offset: 1965 }
+                          start: { line: 32, column: 73, offset: 2151 },
+                          end: { line: 32, column: 94, offset: 2172 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' instance.',
                         position: {
-                          start: { line: 32, column: 94, offset: 1965 },
-                          end: { line: 32, column: 104, offset: 1975 }
+                          start: { line: 32, column: 94, offset: 2172 },
+                          end: { line: 32, column: 104, offset: 2182 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 32, column: 5, offset: 1876 },
-                      end: { line: 32, column: 104, offset: 1975 }
+                      start: { line: 32, column: 5, offset: 2083 },
+                      end: { line: 32, column: 104, offset: 2182 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 32, column: 3, offset: 1874 },
-                  end: { line: 32, column: 104, offset: 1975 }
+                  start: { line: 32, column: 3, offset: 2081 },
+                  end: { line: 32, column: 104, offset: 2182 }
                 }
               }
             ],
             position: {
-              start: { line: 32, column: 3, offset: 1874 },
-              end: { line: 32, column: 104, offset: 1975 }
+              start: { line: 32, column: 3, offset: 2081 },
+              end: { line: 32, column: 104, offset: 2182 }
             }
           },
           {
@@ -5691,18 +5702,29 @@ export default [
             lang: 'javascript',
             meta: null,
             value: 'const sortedHt = new DiskSortedHashTable({\n' +
-              "  storagePath: '/path/to/storage-file',\n" +
-              "  headerPath: '/path/to/header-file',\n" +
+              '  storagePath: "/path/to/storage-file",\n' +
+              '  headerPath: "/path/to/header-file",\n' +
               '  initialLength: 1024,\n' +
               '  itemSize: 512 * 1024,\n' +
-              "  sortValueType: 'number',\n" +
+              '  sortValueType: "number",\n' +
+              '  resizeRatio: 0.5,\n' +
+              '  resizeFactor: 1000,\n' +
+              '  degree: 2,\n' +
+              '})\n' +
+              '\n' +
+              'const compositeSortValueHt = new DiskSortedHashTable({\n' +
+              '  storagePath: "/path/to/storage-file",\n' +
+              '  headerPath: "/path/to/header-file",\n' +
+              '  initialLength: 1024,\n' +
+              '  itemSize: 512 * 1024,\n' +
+              '  sortValueType: ["string", "number"],\n' +
               '  resizeRatio: 0.5,\n' +
               '  resizeFactor: 1000,\n' +
               '  degree: 2,\n' +
               '})',
             position: {
-              start: { line: 34, column: 1, offset: 1977 },
-              end: { line: 45, column: 4, offset: 2247 }
+              start: { line: 34, column: 1, offset: 2184 },
+              end: { line: 56, column: 4, offset: 2732 }
             }
           },
           {
@@ -5712,14 +5734,14 @@ export default [
                 type: 'text',
                 value: 'Supported platforms:',
                 position: {
-                  start: { line: 47, column: 1, offset: 2249 },
-                  end: { line: 47, column: 21, offset: 2269 }
+                  start: { line: 58, column: 1, offset: 2734 },
+                  end: { line: 58, column: 21, offset: 2754 }
                 }
               }
             ],
             position: {
-              start: { line: 47, column: 1, offset: 2249 },
-              end: { line: 47, column: 21, offset: 2269 }
+              start: { line: 58, column: 1, offset: 2734 },
+              end: { line: 58, column: 21, offset: 2754 }
             }
           },
           {
@@ -5740,20 +5762,20 @@ export default [
                         type: 'text',
                         value: 'macOS (64-bit)',
                         position: {
-                          start: { line: 48, column: 5, offset: 2274 },
-                          end: { line: 48, column: 19, offset: 2288 }
+                          start: { line: 59, column: 5, offset: 2759 },
+                          end: { line: 59, column: 19, offset: 2773 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 48, column: 5, offset: 2274 },
-                      end: { line: 48, column: 19, offset: 2288 }
+                      start: { line: 59, column: 5, offset: 2759 },
+                      end: { line: 59, column: 19, offset: 2773 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 48, column: 3, offset: 2272 },
-                  end: { line: 48, column: 19, offset: 2288 }
+                  start: { line: 59, column: 3, offset: 2757 },
+                  end: { line: 59, column: 19, offset: 2773 }
                 }
               },
               {
@@ -5768,26 +5790,26 @@ export default [
                         type: 'text',
                         value: 'Linux (64-bit)',
                         position: {
-                          start: { line: 49, column: 5, offset: 2293 },
-                          end: { line: 49, column: 19, offset: 2307 }
+                          start: { line: 60, column: 5, offset: 2778 },
+                          end: { line: 60, column: 19, offset: 2792 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 49, column: 5, offset: 2293 },
-                      end: { line: 49, column: 19, offset: 2307 }
+                      start: { line: 60, column: 5, offset: 2778 },
+                      end: { line: 60, column: 19, offset: 2792 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 49, column: 3, offset: 2291 },
-                  end: { line: 49, column: 19, offset: 2307 }
+                  start: { line: 60, column: 3, offset: 2776 },
+                  end: { line: 60, column: 19, offset: 2792 }
                 }
               }
             ],
             position: {
-              start: { line: 48, column: 3, offset: 2272 },
-              end: { line: 49, column: 19, offset: 2307 }
+              start: { line: 59, column: 3, offset: 2757 },
+              end: { line: 60, column: 19, offset: 2792 }
             }
           },
           {
@@ -5798,14 +5820,14 @@ export default [
                 type: 'text',
                 value: 'Maximum length of the disk sorted hash table',
                 position: {
-                  start: { line: 51, column: 4, offset: 2312 },
-                  end: { line: 51, column: 48, offset: 2356 }
+                  start: { line: 62, column: 4, offset: 2797 },
+                  end: { line: 62, column: 48, offset: 2841 }
                 }
               }
             ],
             position: {
-              start: { line: 51, column: 1, offset: 2309 },
-              end: { line: 51, column: 48, offset: 2356 }
+              start: { line: 62, column: 1, offset: 2794 },
+              end: { line: 62, column: 48, offset: 2841 }
             }
           },
           {
@@ -5815,14 +5837,14 @@ export default [
                 type: 'text',
                 value: 'The maximum length of the disk sorted hash table is represented by the following equation:',
                 position: {
-                  start: { line: 52, column: 1, offset: 2357 },
-                  end: { line: 52, column: 91, offset: 2447 }
+                  start: { line: 63, column: 1, offset: 2842 },
+                  end: { line: 63, column: 91, offset: 2932 }
                 }
               }
             ],
             position: {
-              start: { line: 52, column: 1, offset: 2357 },
-              end: { line: 52, column: 91, offset: 2447 }
+              start: { line: 63, column: 1, offset: 2842 },
+              end: { line: 63, column: 91, offset: 2932 }
             }
           },
           {
@@ -5831,8 +5853,8 @@ export default [
             meta: null,
             value: 'Math.floor(9_007_199_254_740_991 / itemSize)',
             position: {
-              start: { line: 53, column: 1, offset: 2448 },
-              end: { line: 55, column: 4, offset: 2500 }
+              start: { line: 64, column: 1, offset: 2933 },
+              end: { line: 66, column: 4, offset: 2985 }
             }
           },
           {
@@ -5843,14 +5865,14 @@ export default [
                 type: 'text',
                 value: 'Allocation of disk space',
                 position: {
-                  start: { line: 57, column: 4, offset: 2505 },
-                  end: { line: 57, column: 28, offset: 2529 }
+                  start: { line: 68, column: 4, offset: 2990 },
+                  end: { line: 68, column: 28, offset: 3014 }
                 }
               }
             ],
             position: {
-              start: { line: 57, column: 1, offset: 2502 },
-              end: { line: 57, column: 28, offset: 2529 }
+              start: { line: 68, column: 1, offset: 2987 },
+              end: { line: 68, column: 28, offset: 3014 }
             }
           },
           {
@@ -5860,46 +5882,46 @@ export default [
                 type: 'text',
                 value: 'The disk sorted hash table initially preallocates a block of memory on disk of ',
                 position: {
-                  start: { line: 58, column: 1, offset: 2530 },
-                  end: { line: 58, column: 80, offset: 2609 }
+                  start: { line: 69, column: 1, offset: 3015 },
+                  end: { line: 69, column: 80, offset: 3094 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: '(itemSize * initialLength)',
                 position: {
-                  start: { line: 58, column: 80, offset: 2609 },
-                  end: { line: 58, column: 108, offset: 2637 }
+                  start: { line: 69, column: 80, offset: 3094 },
+                  end: { line: 69, column: 108, offset: 3122 }
                 }
               },
               {
                 type: 'text',
                 value: ' bytes as the storage file and a 48-byte block of memory as the header file for database operations. When the disk sorted hash table is resized, the block of memory on disk is reallocated to a new size of ',
                 position: {
-                  start: { line: 58, column: 108, offset: 2637 },
-                  end: { line: 58, column: 313, offset: 2842 }
+                  start: { line: 69, column: 108, offset: 3122 },
+                  end: { line: 69, column: 313, offset: 3327 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: '(itemSize * initialLength * numberOfResizes * resizeFactor)',
                 position: {
-                  start: { line: 58, column: 313, offset: 2842 },
-                  end: { line: 58, column: 374, offset: 2903 }
+                  start: { line: 69, column: 313, offset: 3327 },
+                  end: { line: 69, column: 374, offset: 3388 }
                 }
               },
               {
                 type: 'text',
                 value: ' bytes.',
                 position: {
-                  start: { line: 58, column: 374, offset: 2903 },
-                  end: { line: 58, column: 381, offset: 2910 }
+                  start: { line: 69, column: 374, offset: 3388 },
+                  end: { line: 69, column: 381, offset: 3395 }
                 }
               }
             ],
             position: {
-              start: { line: 58, column: 1, offset: 2530 },
-              end: { line: 58, column: 381, offset: 2910 }
+              start: { line: 69, column: 1, offset: 3015 },
+              end: { line: 69, column: 381, offset: 3395 }
             }
           },
           {
@@ -5910,14 +5932,14 @@ export default [
                 type: 'text',
                 value: 'Byte allocations for an item',
                 position: {
-                  start: { line: 60, column: 4, offset: 2915 },
-                  end: { line: 60, column: 32, offset: 2943 }
+                  start: { line: 71, column: 4, offset: 3400 },
+                  end: { line: 71, column: 32, offset: 3428 }
                 }
               }
             ],
             position: {
-              start: { line: 60, column: 1, offset: 2912 },
-              end: { line: 60, column: 32, offset: 2943 }
+              start: { line: 71, column: 1, offset: 3397 },
+              end: { line: 71, column: 32, offset: 3428 }
             }
           },
           {
@@ -5927,30 +5949,30 @@ export default [
                 type: 'text',
                 value: 'Each item stored on disk is allocated ',
                 position: {
-                  start: { line: 61, column: 1, offset: 2944 },
-                  end: { line: 61, column: 39, offset: 2982 }
+                  start: { line: 72, column: 1, offset: 3429 },
+                  end: { line: 72, column: 39, offset: 3467 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'itemSize',
                 position: {
-                  start: { line: 61, column: 39, offset: 2982 },
-                  end: { line: 61, column: 49, offset: 2992 }
+                  start: { line: 72, column: 39, offset: 3467 },
+                  end: { line: 72, column: 49, offset: 3477 }
                 }
               },
               {
                 type: 'text',
-                value: ' bytes of disk space. The first 53 bytes are reserved for table operations. The remainder is reserved for the key, sort-value, and value of the item.',
+                value: ' bytes of disk space. The first 53 bytes are reserved for table operations. The remainder is reserved for the key, sort value, and value of the item.',
                 position: {
-                  start: { line: 61, column: 49, offset: 2992 },
-                  end: { line: 61, column: 198, offset: 3141 }
+                  start: { line: 72, column: 49, offset: 3477 },
+                  end: { line: 72, column: 198, offset: 3626 }
                 }
               }
             ],
             position: {
-              start: { line: 61, column: 1, offset: 2944 },
-              end: { line: 61, column: 198, offset: 3141 }
+              start: { line: 72, column: 1, offset: 3429 },
+              end: { line: 72, column: 198, offset: 3626 }
             }
           },
           {
@@ -5961,14 +5983,14 @@ export default [
                 type: 'text',
                 value: 'Resizing the disk sorted hash table',
                 position: {
-                  start: { line: 63, column: 4, offset: 3146 },
-                  end: { line: 63, column: 39, offset: 3181 }
+                  start: { line: 74, column: 4, offset: 3631 },
+                  end: { line: 74, column: 39, offset: 3666 }
                 }
               }
             ],
             position: {
-              start: { line: 63, column: 1, offset: 3143 },
-              end: { line: 63, column: 39, offset: 3181 }
+              start: { line: 74, column: 1, offset: 3628 },
+              end: { line: 74, column: 39, offset: 3666 }
             }
           },
           {
@@ -5978,8 +6000,8 @@ export default [
                 type: 'text',
                 value: 'When an item is inserted into the disk sorted hash table via ',
                 position: {
-                  start: { line: 64, column: 1, offset: 3182 },
-                  end: { line: 64, column: 62, offset: 3243 }
+                  start: { line: 75, column: 1, offset: 3667 },
+                  end: { line: 75, column: 62, offset: 3728 }
                 }
               },
               {
@@ -5991,60 +6013,60 @@ export default [
                     type: 'text',
                     value: 'set',
                     position: {
-                      start: { line: 64, column: 63, offset: 3244 },
-                      end: { line: 64, column: 66, offset: 3247 }
+                      start: { line: 75, column: 63, offset: 3729 },
+                      end: { line: 75, column: 66, offset: 3732 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 64, column: 62, offset: 3243 },
-                  end: { line: 64, column: 98, offset: 3279 }
+                  start: { line: 75, column: 62, offset: 3728 },
+                  end: { line: 75, column: 98, offset: 3764 }
                 }
               },
               {
                 type: 'text',
-                value: ", the current capacity ratio of the table is calculated as the sum of the table's count and deleted count divided by the table's length. If the current capacity ratio exceeds the ",
+                value: ', the current capacity ratio of the table is calculated as the sum of the table"s count and deleted count divided by the table"s length. If the current capacity ratio exceeds the ',
                 position: {
-                  start: { line: 64, column: 98, offset: 3279 },
-                  end: { line: 64, column: 277, offset: 3458 }
+                  start: { line: 75, column: 98, offset: 3764 },
+                  end: { line: 75, column: 277, offset: 3943 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'resizeRatio',
                 position: {
-                  start: { line: 64, column: 277, offset: 3458 },
-                  end: { line: 64, column: 290, offset: 3471 }
+                  start: { line: 75, column: 277, offset: 3943 },
+                  end: { line: 75, column: 290, offset: 3956 }
                 }
               },
               {
                 type: 'text',
                 value: ' (and the ',
                 position: {
-                  start: { line: 64, column: 290, offset: 3471 },
-                  end: { line: 64, column: 300, offset: 3481 }
+                  start: { line: 75, column: 290, offset: 3956 },
+                  end: { line: 75, column: 300, offset: 3966 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'resizeRatio',
                 position: {
-                  start: { line: 64, column: 300, offset: 3481 },
-                  end: { line: 64, column: 313, offset: 3494 }
+                  start: { line: 75, column: 300, offset: 3966 },
+                  end: { line: 75, column: 313, offset: 3979 }
                 }
               },
               {
                 type: 'text',
                 value: ' is not 0), a resize of the table occurs.',
                 position: {
-                  start: { line: 64, column: 313, offset: 3494 },
-                  end: { line: 64, column: 354, offset: 3535 }
+                  start: { line: 75, column: 313, offset: 3979 },
+                  end: { line: 75, column: 354, offset: 4020 }
                 }
               }
             ],
             position: {
-              start: { line: 64, column: 1, offset: 3182 },
-              end: { line: 64, column: 354, offset: 3535 }
+              start: { line: 75, column: 1, offset: 3667 },
+              end: { line: 75, column: 354, offset: 4020 }
             }
           },
           {
@@ -6054,14 +6076,14 @@ export default [
                 type: 'text',
                 value: 'During a table resize, each item of the table is added into a temporary storage file using the new table length calculated from the equation below:',
                 position: {
-                  start: { line: 66, column: 1, offset: 3537 },
-                  end: { line: 66, column: 148, offset: 3684 }
+                  start: { line: 77, column: 1, offset: 4022 },
+                  end: { line: 77, column: 148, offset: 4169 }
                 }
               }
             ],
             position: {
-              start: { line: 66, column: 1, offset: 3537 },
-              end: { line: 66, column: 148, offset: 3684 }
+              start: { line: 77, column: 1, offset: 4022 },
+              end: { line: 77, column: 148, offset: 4169 }
             }
           },
           {
@@ -6070,8 +6092,8 @@ export default [
             meta: null,
             value: 'newTableLength = oldTableLength * resizeFactor',
             position: {
-              start: { line: 68, column: 1, offset: 3686 },
-              end: { line: 70, column: 4, offset: 3740 }
+              start: { line: 79, column: 1, offset: 4171 },
+              end: { line: 81, column: 4, offset: 4225 }
             }
           },
           {
@@ -6081,14 +6103,14 @@ export default [
                 type: 'text',
                 value: 'Once all of the items have been added into the temporary storage file, the temporary storage file is moved to the location of the old storage file.',
                 position: {
-                  start: { line: 72, column: 1, offset: 3742 },
-                  end: { line: 72, column: 148, offset: 3889 }
+                  start: { line: 83, column: 1, offset: 4227 },
+                  end: { line: 83, column: 148, offset: 4374 }
                 }
               }
             ],
             position: {
-              start: { line: 72, column: 1, offset: 3742 },
-              end: { line: 72, column: 148, offset: 3889 }
+              start: { line: 83, column: 1, offset: 4227 },
+              end: { line: 83, column: 148, offset: 4374 }
             }
           },
           {
@@ -6099,14 +6121,14 @@ export default [
                 type: 'text',
                 value: 'Optimizing the disk sorted hash table b-tree',
                 position: {
-                  start: { line: 74, column: 4, offset: 3894 },
-                  end: { line: 74, column: 48, offset: 3938 }
+                  start: { line: 85, column: 4, offset: 4379 },
+                  end: { line: 85, column: 48, offset: 4423 }
                 }
               }
             ],
             position: {
-              start: { line: 74, column: 1, offset: 3891 },
-              end: { line: 74, column: 48, offset: 3938 }
+              start: { line: 85, column: 1, offset: 4376 },
+              end: { line: 85, column: 48, offset: 4423 }
             }
           },
           {
@@ -6116,46 +6138,46 @@ export default [
                 type: 'text',
                 value: 'The value of ',
                 position: {
-                  start: { line: 75, column: 1, offset: 3939 },
-                  end: { line: 75, column: 14, offset: 3952 }
+                  start: { line: 86, column: 1, offset: 4424 },
+                  end: { line: 86, column: 14, offset: 4437 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'degree',
                 position: {
-                  start: { line: 75, column: 14, offset: 3952 },
-                  end: { line: 75, column: 22, offset: 3960 }
+                  start: { line: 86, column: 14, offset: 4437 },
+                  end: { line: 86, column: 22, offset: 4445 }
                 }
               },
               {
                 type: 'text',
                 value: ' determines the structure of the internal b-tree of the disk sorted hash table. A higher value for ',
                 position: {
-                  start: { line: 75, column: 22, offset: 3960 },
-                  end: { line: 75, column: 121, offset: 4059 }
+                  start: { line: 86, column: 22, offset: 4445 },
+                  end: { line: 86, column: 121, offset: 4544 }
                 }
               },
               {
                 type: 'inlineCode',
                 value: 'degree',
                 position: {
-                  start: { line: 75, column: 121, offset: 4059 },
-                  end: { line: 75, column: 129, offset: 4067 }
+                  start: { line: 86, column: 121, offset: 4544 },
+                  end: { line: 86, column: 129, offset: 4552 }
                 }
               },
               {
                 type: 'text',
                 value: ' results in a shorter b-tree and more items per b-tree node, while a lower value results in a taller b-tree and fewer items per b-tree node. The default value of 2 is good for any number of items.',
                 position: {
-                  start: { line: 75, column: 129, offset: 4067 },
-                  end: { line: 75, column: 325, offset: 4263 }
+                  start: { line: 86, column: 129, offset: 4552 },
+                  end: { line: 86, column: 325, offset: 4748 }
                 }
               }
             ],
             position: {
-              start: { line: 75, column: 1, offset: 3939 },
-              end: { line: 75, column: 325, offset: 4263 }
+              start: { line: 86, column: 1, offset: 4424 },
+              end: { line: 86, column: 325, offset: 4748 }
             }
           },
           {
@@ -6166,14 +6188,14 @@ export default [
                 type: 'text',
                 value: 'Number of Running Instances',
                 position: {
-                  start: { line: 77, column: 4, offset: 4268 },
-                  end: { line: 77, column: 31, offset: 4295 }
+                  start: { line: 88, column: 4, offset: 4753 },
+                  end: { line: 88, column: 31, offset: 4780 }
                 }
               }
             ],
             position: {
-              start: { line: 77, column: 1, offset: 4265 },
-              end: { line: 77, column: 31, offset: 4295 }
+              start: { line: 88, column: 1, offset: 4750 },
+              end: { line: 88, column: 31, offset: 4780 }
             }
           },
           {
@@ -6183,20 +6205,20 @@ export default [
                 type: 'text',
                 value: 'There should only be one instance of a DiskSortedHashTable running per storage and header file per machine at a time.',
                 position: {
-                  start: { line: 78, column: 1, offset: 4296 },
-                  end: { line: 78, column: 118, offset: 4413 }
+                  start: { line: 89, column: 1, offset: 4781 },
+                  end: { line: 89, column: 118, offset: 4898 }
                 }
               }
             ],
             position: {
-              start: { line: 78, column: 1, offset: 4296 },
-              end: { line: 78, column: 118, offset: 4413 }
+              start: { line: 89, column: 1, offset: 4781 },
+              end: { line: 89, column: 118, offset: 4898 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 78, column: 118, offset: 4413 }
+          end: { line: 89, column: 118, offset: 4898 }
         }
       }
     },
@@ -7029,24 +7051,30 @@ export default [
         name: 'set',
         docs: '```coffeescript [specscript]\n' +
           'set(key string, value string|Buffer|Uint8Array, sortValue string|number) -> Promise<>\n' +
+          '\n' +
+          'set(key string, value string|Buffer|Uint8Array, ...sortValue Array<string|number>) -> Promise<>\n' +
           '```\n' +
           '\n' +
-          'Sets and stores a value by key and sort-value in the disk sorted hash table.\n' +
+          'Sets and stores a value by key and sort value in the disk sorted hash table.\n' +
           '\n' +
           'Arguments:\n' +
           '  * `key` - `string` - the key to set.\n' +
           '  * `value` - `string|Buffer|Uint8Array` - the value to set corresponding to the key.\n' +
-          '  * `sortValue` - `string|number` - the value by which the item is sorted in the disk sorted hash table.\n' +
+          '  * `sortValues` - `Arguments<string|number>` - values by which the item is indexed and sorted in the disk sorted hash table. If multiple sort values are provided, the sort values are treated as a composite sort value. Composite sort values have each element of their arrays compared in order.\n' +
           '\n' +
           'Return:\n' +
           '  * Empty promise.\n' +
           '\n' +
           '```javascript\n' +
-          "await sortedHt.set('key1', 'value1', 1)\n" +
-          "await sortedHt.set('key2', 'value2', 2)\n" +
-          "await sortedHt.set('key3', 'value3', 3)\n" +
+          'await sortedHt.set("key1", "value1", 1)\n' +
+          'await sortedHt.set("key2", "value2", 2)\n' +
+          'await sortedHt.set("key3", "value3", 3)\n' +
           '\n' +
-          "await sortedHt.set('my-buffer', Buffer.from('binary'), 4)\n" +
+          'await sortedHt.set("my-buffer", Buffer.from("binary"), 4)\n' +
+          '\n' +
+          'await compositeSortValueHt.set("key1", "value1", "index-key1", 1)\n' +
+          'await compositeSortValueHt.set("key2", "value2", "index-key1", 2)\n' +
+          'await compositeSortValueHt.set("key3", "value3", "index-key1", 3)\n' +
           '```',
         mdast: {
           name: {
@@ -7082,10 +7110,12 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: 'set(key string, value string|Buffer|Uint8Array, sortValue string|number) -> Promise<>',
+                value: 'set(key string, value string|Buffer|Uint8Array, sortValue string|number) -> Promise<>\n' +
+                  '\n' +
+                  'set(key string, value string|Buffer|Uint8Array, ...sortValue Array<string|number>) -> Promise<>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 3, column: 4, offset: 118 }
+                  end: { line: 5, column: 4, offset: 215 }
                 }
               },
               {
@@ -7093,16 +7123,16 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'Sets and stores a value by key and sort-value in the disk sorted hash table.',
+                    value: 'Sets and stores a value by key and sort value in the disk sorted hash table.',
                     position: {
-                      start: { line: 5, column: 1, offset: 120 },
-                      end: { line: 5, column: 77, offset: 196 }
+                      start: { line: 7, column: 1, offset: 217 },
+                      end: { line: 7, column: 77, offset: 293 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 5, column: 1, offset: 120 },
-                  end: { line: 5, column: 77, offset: 196 }
+                  start: { line: 7, column: 1, offset: 217 },
+                  end: { line: 7, column: 77, offset: 293 }
                 }
               },
               {
@@ -7112,14 +7142,14 @@ export default [
                     type: 'text',
                     value: 'Arguments:',
                     position: {
-                      start: { line: 7, column: 1, offset: 198 },
-                      end: { line: 7, column: 11, offset: 208 }
+                      start: { line: 9, column: 1, offset: 295 },
+                      end: { line: 9, column: 11, offset: 305 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 7, column: 1, offset: 198 },
-                  end: { line: 7, column: 11, offset: 208 }
+                  start: { line: 9, column: 1, offset: 295 },
+                  end: { line: 9, column: 11, offset: 305 }
                 }
               },
               {
@@ -7140,44 +7170,44 @@ export default [
                             type: 'inlineCode',
                             value: 'key',
                             position: {
-                              start: { line: 8, column: 5, offset: 213 },
-                              end: { line: 8, column: 10, offset: 218 }
+                              start: { line: 10, column: 5, offset: 310 },
+                              end: { line: 10, column: 10, offset: 315 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - ',
                             position: {
-                              start: { line: 8, column: 10, offset: 218 },
-                              end: { line: 8, column: 13, offset: 221 }
+                              start: { line: 10, column: 10, offset: 315 },
+                              end: { line: 10, column: 13, offset: 318 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'string',
                             position: {
-                              start: { line: 8, column: 13, offset: 221 },
-                              end: { line: 8, column: 21, offset: 229 }
+                              start: { line: 10, column: 13, offset: 318 },
+                              end: { line: 10, column: 21, offset: 326 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - the key to set.',
                             position: {
-                              start: { line: 8, column: 21, offset: 229 },
-                              end: { line: 8, column: 39, offset: 247 }
+                              start: { line: 10, column: 21, offset: 326 },
+                              end: { line: 10, column: 39, offset: 344 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 8, column: 5, offset: 213 },
-                          end: { line: 8, column: 39, offset: 247 }
+                          start: { line: 10, column: 5, offset: 310 },
+                          end: { line: 10, column: 39, offset: 344 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 8, column: 3, offset: 211 },
-                      end: { line: 8, column: 39, offset: 247 }
+                      start: { line: 10, column: 3, offset: 308 },
+                      end: { line: 10, column: 39, offset: 344 }
                     }
                   },
                   {
@@ -7192,44 +7222,44 @@ export default [
                             type: 'inlineCode',
                             value: 'value',
                             position: {
-                              start: { line: 9, column: 5, offset: 252 },
-                              end: { line: 9, column: 12, offset: 259 }
+                              start: { line: 11, column: 5, offset: 349 },
+                              end: { line: 11, column: 12, offset: 356 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - ',
                             position: {
-                              start: { line: 9, column: 12, offset: 259 },
-                              end: { line: 9, column: 15, offset: 262 }
+                              start: { line: 11, column: 12, offset: 356 },
+                              end: { line: 11, column: 15, offset: 359 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'string|Buffer|Uint8Array',
                             position: {
-                              start: { line: 9, column: 15, offset: 262 },
-                              end: { line: 9, column: 41, offset: 288 }
+                              start: { line: 11, column: 15, offset: 359 },
+                              end: { line: 11, column: 41, offset: 385 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - the value to set corresponding to the key.',
                             position: {
-                              start: { line: 9, column: 41, offset: 288 },
-                              end: { line: 9, column: 86, offset: 333 }
+                              start: { line: 11, column: 41, offset: 385 },
+                              end: { line: 11, column: 86, offset: 430 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 9, column: 5, offset: 252 },
-                          end: { line: 9, column: 86, offset: 333 }
+                          start: { line: 11, column: 5, offset: 349 },
+                          end: { line: 11, column: 86, offset: 430 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 9, column: 3, offset: 250 },
-                      end: { line: 9, column: 86, offset: 333 }
+                      start: { line: 11, column: 3, offset: 347 },
+                      end: { line: 11, column: 86, offset: 430 }
                     }
                   },
                   {
@@ -7242,52 +7272,52 @@ export default [
                         children: [
                           {
                             type: 'inlineCode',
-                            value: 'sortValue',
+                            value: 'sortValues',
                             position: {
-                              start: { line: 10, column: 5, offset: 338 },
-                              end: { line: 10, column: 16, offset: 349 }
+                              start: { line: 12, column: 5, offset: 435 },
+                              end: { line: 12, column: 17, offset: 447 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - ',
                             position: {
-                              start: { line: 10, column: 16, offset: 349 },
-                              end: { line: 10, column: 19, offset: 352 }
+                              start: { line: 12, column: 17, offset: 447 },
+                              end: { line: 12, column: 20, offset: 450 }
                             }
                           },
                           {
                             type: 'inlineCode',
-                            value: 'string|number',
+                            value: 'Arguments<string|number>',
                             position: {
-                              start: { line: 10, column: 19, offset: 352 },
-                              end: { line: 10, column: 34, offset: 367 }
+                              start: { line: 12, column: 20, offset: 450 },
+                              end: { line: 12, column: 46, offset: 476 }
                             }
                           },
                           {
                             type: 'text',
-                            value: ' - the value by which the item is sorted in the disk sorted hash table.',
+                            value: ' - values by which the item is indexed and sorted in the disk sorted hash table. If multiple sort values are provided, the sort values are treated as a composite sort value. Composite sort values have each element of their arrays compared in order.',
                             position: {
-                              start: { line: 10, column: 34, offset: 367 },
-                              end: { line: 10, column: 105, offset: 438 }
+                              start: { line: 12, column: 46, offset: 476 },
+                              end: { line: 12, column: 294, offset: 724 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 10, column: 5, offset: 338 },
-                          end: { line: 10, column: 105, offset: 438 }
+                          start: { line: 12, column: 5, offset: 435 },
+                          end: { line: 12, column: 294, offset: 724 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 10, column: 3, offset: 336 },
-                      end: { line: 10, column: 105, offset: 438 }
+                      start: { line: 12, column: 3, offset: 433 },
+                      end: { line: 12, column: 294, offset: 724 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 8, column: 3, offset: 211 },
-                  end: { line: 10, column: 105, offset: 438 }
+                  start: { line: 10, column: 3, offset: 308 },
+                  end: { line: 12, column: 294, offset: 724 }
                 }
               },
               {
@@ -7297,14 +7327,14 @@ export default [
                     type: 'text',
                     value: 'Return:',
                     position: {
-                      start: { line: 12, column: 1, offset: 440 },
-                      end: { line: 12, column: 8, offset: 447 }
+                      start: { line: 14, column: 1, offset: 726 },
+                      end: { line: 14, column: 8, offset: 733 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 12, column: 1, offset: 440 },
-                  end: { line: 12, column: 8, offset: 447 }
+                  start: { line: 14, column: 1, offset: 726 },
+                  end: { line: 14, column: 8, offset: 733 }
                 }
               },
               {
@@ -7325,46 +7355,50 @@ export default [
                             type: 'text',
                             value: 'Empty promise.',
                             position: {
-                              start: { line: 13, column: 5, offset: 452 },
-                              end: { line: 13, column: 19, offset: 466 }
+                              start: { line: 15, column: 5, offset: 738 },
+                              end: { line: 15, column: 19, offset: 752 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 13, column: 5, offset: 452 },
-                          end: { line: 13, column: 19, offset: 466 }
+                          start: { line: 15, column: 5, offset: 738 },
+                          end: { line: 15, column: 19, offset: 752 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 13, column: 3, offset: 450 },
-                      end: { line: 13, column: 19, offset: 466 }
+                      start: { line: 15, column: 3, offset: 736 },
+                      end: { line: 15, column: 19, offset: 752 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 13, column: 3, offset: 450 },
-                  end: { line: 13, column: 19, offset: 466 }
+                  start: { line: 15, column: 3, offset: 736 },
+                  end: { line: 15, column: 19, offset: 752 }
                 }
               },
               {
                 type: 'code',
                 lang: 'javascript',
                 meta: null,
-                value: "await sortedHt.set('key1', 'value1', 1)\n" +
-                  "await sortedHt.set('key2', 'value2', 2)\n" +
-                  "await sortedHt.set('key3', 'value3', 3)\n" +
+                value: 'await sortedHt.set("key1", "value1", 1)\n' +
+                  'await sortedHt.set("key2", "value2", 2)\n' +
+                  'await sortedHt.set("key3", "value3", 3)\n' +
                   '\n' +
-                  "await sortedHt.set('my-buffer', Buffer.from('binary'), 4)",
+                  'await sortedHt.set("my-buffer", Buffer.from("binary"), 4)\n' +
+                  '\n' +
+                  'await compositeSortValueHt.set("key1", "value1", "index-key1", 1)\n' +
+                  'await compositeSortValueHt.set("key2", "value2", "index-key1", 2)\n' +
+                  'await compositeSortValueHt.set("key3", "value3", "index-key1", 3)',
                 position: {
-                  start: { line: 15, column: 1, offset: 468 },
-                  end: { line: 21, column: 4, offset: 664 }
+                  start: { line: 17, column: 1, offset: 754 },
+                  end: { line: 27, column: 4, offset: 1149 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 21, column: 4, offset: 664 }
+              end: { line: 27, column: 4, offset: 1149 }
             }
           }
         }
@@ -7384,7 +7418,7 @@ export default [
           '  * `value` - `Promise<string|undefined>` - a promise of the string value corresponding to the key. If the key is not found, the promise resolves with `undefined`.\n' +
           '\n' +
           '```javascript\n' +
-          "const value = await sortedHt.get('my-key')\n" +
+          'const value = await sortedHt.get("my-key")\n' +
           '```',
         mdast: {
           name: {
@@ -7625,7 +7659,7 @@ export default [
                 type: 'code',
                 lang: 'javascript',
                 meta: null,
-                value: "const value = await sortedHt.get('my-key')",
+                value: 'const value = await sortedHt.get("my-key")',
                 position: {
                   start: { line: 13, column: 1, offset: 383 },
                   end: { line: 15, column: 4, offset: 443 }
@@ -7654,7 +7688,7 @@ export default [
           '  * `binaryValue` - `Promise<Buffer|undefined>` - a promise of the binary value corresponding to the key. If the key is not found, the promise resolves with `undefined`.\n' +
           '\n' +
           '```javascript\n' +
-          "const buffer = await ht.getBinary('my-buffer')\n" +
+          'const buffer = await ht.getBinary("my-buffer")\n' +
           '```',
         mdast: {
           name: {
@@ -7895,7 +7929,7 @@ export default [
                 type: 'code',
                 lang: 'javascript',
                 meta: null,
-                value: "const buffer = await ht.getBinary('my-buffer')",
+                value: 'const buffer = await ht.getBinary("my-buffer")',
                 position: {
                   start: { line: 13, column: 1, offset: 415 },
                   end: { line: 15, column: 4, offset: 479 }
@@ -7916,54 +7950,74 @@ export default [
           '\n' +
           'forwardIterator(options {\n' +
           '  exclusiveStartKey: string,\n' +
-          '  startingSortValue: string|number,\n' +
-          '  endingSortValue: string|number,\n' +
-          "  valueType: 'string'|'binary',\n" +
+          '  startingSortValue: string|number|Array<string|number>,\n' +
+          '  endingSortValue: string|number|Array<string|number>,\n' +
+          '  valueType: "string"|"binary",\n' +
+          '  limit: number,\n' +
           '}) -> values AsyncGenerator<string|Buffer>\n' +
           '```\n' +
           '\n' +
-          'Returns an iterator of the values of all items in the disk sorted hash table sorted by sort-value. Item values are yielded in ascending order.\n' +
+          'Returns an iterator of the values of all items in the disk sorted hash table sorted by sort value. Item values are yielded in ascending order.\n' +
           '\n' +
-          'If a starting sort-value and ending sort-value are provided, the iterator returns only values of items with sort-values between the starting and ending sort-values, including values of items with sort-values equal to the starting and ending sort-values. If only a starting sort-value is provided, the iterator returns values of items with sort-values greater than or equal to the starting sort-value. If only an ending sort-value is provided, the iterator returns values of items with sort-values less than or equal to the ending sort-value.\n' +
+          'If a starting sort value and ending sort value are provided, the iterator returns only values of items with sort values between the starting and ending sort values, including values of items with sort values equal to the starting and ending sort values. If only a starting sort value is provided, the iterator returns values of items with sort values greater than or equal to the starting sort value. If only an ending sort value is provided, the iterator returns values of items with sort values less than or equal to the ending sort value.\n' +
           '\n' +
-          'If an exclusive start key is provided, the iterator returns values of items with sort-values greater than or equal to the sort-value of the item at the exclusive start key, not including the value of the item at the exclusive start key. The exclusive start key takes precedence over the starting sort-value.\n' +
+          'If an exclusive start key is provided, the iterator returns values of items with sort values greater than or equal to the sort value of the item at the exclusive start key, not including the value of the item at the exclusive start key. The exclusive start key takes precedence over the starting sort value.\n' +
           '\n' +
           'Arguments:\n' +
           '  * (none) - retrieves the values of all items in the disk sorted hash table.\n' +
           '  * `options`\n' +
           '    * `exclusiveStartKey` - `string` - the key after which to start iterating.\n' +
-          '    * `startingSortValue` - `string|number` - the sort-value from which to start iterating.\n' +
-          '    * `endingSortValue` - `string|number` - the sort-value at which to stop iterating.\n' +
-          "    * `valueType` - `'string'|'binary'` - the type of value that the iterator yields. Defaults to `'string'`.\n" +
-          "      * `'string'` - iterator yields `string` values.\n" +
-          "      * `'binary'` - iterator yields `Buffer` values.\n" +
+          '    * `startingSortValue` - `string|number|Array<string|number>` - the sort value from which to start iterating. If this value is an array, the starting sort value is treated as a composite sort value. Composite sort values have each element of their arrays compared in order.\n' +
+          '    * `endingSortValue` - `string|number|Array<string|number>` - the sort value at which to stop iterating. If this value is an array, the ending sort value is treated as a composite sort value. Composite sort values have each element of their arrays compared in order.\n' +
+          '    * `valueType` - `"string"|"binary"` - the type of value that the iterator yields. Defaults to `"string"`.\n' +
+          '      * `"string"` - iterator yields `string` values.\n' +
+          '      * `"binary"` - iterator yields `Buffer` values.\n' +
+          '    * `limit` - `number` - the maximum number of values to yield from the iterator.\n' +
           '\n' +
           'Return:\n' +
-          '  * `values` - `AsyncGenerator<string|Buffer>` - an async generator of the values of all items in the disk sorted hash table sorted by sort-value in ascending order.\n' +
+          '  * `values` - `AsyncGenerator<string|Buffer>` - an async generator of the values of all items in the disk sorted hash table sorted by sort value in ascending order.\n' +
           '\n' +
           '```javascript\n' +
-          "await ht.set('key1', 'value1', 1)\n" +
-          "await ht.set('key2', 'value2', 2)\n" +
-          "await ht.set('key3', 'value3', 3)\n" +
+          'await sortedHt.set("key1", "value1", 1)\n' +
+          'await sortedHt.set("key2", "value2", 2)\n' +
+          'await sortedHt.set("key3", "value3", 3)\n' +
           '\n' +
-          'for await (const value of ht.forwardIterator()) {\n' +
+          'for await (const value of sortedHt.forwardIterator()) {\n' +
           '  console.log(value) // value1\n' +
           '                     // value2\n' +
           '                     // value3\n' +
           '}\n' +
           '\n' +
-          'for await (const value of ht.forwardIterator({ startingSortValue: 2, endingSortValue: 3 })) {\n' +
+          'for await (const value of sortedHt.forwardIterator({ limit: 1 })) {\n' +
+          '  console.log(value) // value1\n' +
+          '                     // value2\n' +
+          '                     // value3\n' +
+          '}\n' +
+          '\n' +
+          'for await (const value of sortedHt.forwardIterator({ startingSortValue: 2, endingSortValue: 3 })) {\n' +
           '  console.log(value) // value2\n' +
           '                     // value3\n' +
           '}\n' +
           '\n' +
-          "for await (const value of ht.forwardIterator({ exclusiveStartKey: 'key1' })) {\n" +
+          'for await (const value of sortedHt.forwardIterator({ exclusiveStartKey: "key1" })) {\n' +
           '  console.log(value) // value2\n' +
           '                     // value3\n' +
           '}\n' +
           '\n' +
-          "for await (const value of ht.forwardIterator({ exclusiveStartKey: 'key1', endingSortValue: 2 })) {\n" +
+          'for await (const value of sortedHt.forwardIterator({ exclusiveStartKey: "key1", endingSortValue: 2 })) {\n' +
           '  console.log(value) // value2\n' +
+          '}\n' +
+          '\n' +
+          'await compositeSortValueHt.set("key1", "value1", "index-key1", 1)\n' +
+          'await compositeSortValueHt.set("key2", "value2", "index-key1", 2)\n' +
+          'await compositeSortValueHt.set("key3", "value3", "index-key1", 3)\n' +
+          '\n' +
+          'for await (const value of compositeSortValueHt.forwardIterator({\n' +
+          '  startingSortValue: ["index-key1", 2],\n' +
+          '  endingSortValue: ["index-key1", 3],\n' +
+          '})) {\n' +
+          '  console.log(value) // value2\n' +
+          '                     // value3\n' +
           '}\n' +
           '```',
         mdast: {
@@ -8004,13 +8058,14 @@ export default [
                   '\n' +
                   'forwardIterator(options {\n' +
                   '  exclusiveStartKey: string,\n' +
-                  '  startingSortValue: string|number,\n' +
-                  '  endingSortValue: string|number,\n' +
-                  "  valueType: 'string'|'binary',\n" +
+                  '  startingSortValue: string|number|Array<string|number>,\n' +
+                  '  endingSortValue: string|number|Array<string|number>,\n' +
+                  '  valueType: "string"|"binary",\n' +
+                  '  limit: number,\n' +
                   '}) -> values AsyncGenerator<string|Buffer>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 10, column: 4, offset: 284 }
+                  end: { line: 11, column: 4, offset: 343 }
                 }
               },
               {
@@ -8018,16 +8073,16 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'Returns an iterator of the values of all items in the disk sorted hash table sorted by sort-value. Item values are yielded in ascending order.',
+                    value: 'Returns an iterator of the values of all items in the disk sorted hash table sorted by sort value. Item values are yielded in ascending order.',
                     position: {
-                      start: { line: 12, column: 1, offset: 286 },
-                      end: { line: 12, column: 143, offset: 428 }
+                      start: { line: 13, column: 1, offset: 345 },
+                      end: { line: 13, column: 143, offset: 487 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 12, column: 1, offset: 286 },
-                  end: { line: 12, column: 143, offset: 428 }
+                  start: { line: 13, column: 1, offset: 345 },
+                  end: { line: 13, column: 143, offset: 487 }
                 }
               },
               {
@@ -8035,16 +8090,16 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'If a starting sort-value and ending sort-value are provided, the iterator returns only values of items with sort-values between the starting and ending sort-values, including values of items with sort-values equal to the starting and ending sort-values. If only a starting sort-value is provided, the iterator returns values of items with sort-values greater than or equal to the starting sort-value. If only an ending sort-value is provided, the iterator returns values of items with sort-values less than or equal to the ending sort-value.',
+                    value: 'If a starting sort value and ending sort value are provided, the iterator returns only values of items with sort values between the starting and ending sort values, including values of items with sort values equal to the starting and ending sort values. If only a starting sort value is provided, the iterator returns values of items with sort values greater than or equal to the starting sort value. If only an ending sort value is provided, the iterator returns values of items with sort values less than or equal to the ending sort value.',
                     position: {
-                      start: { line: 14, column: 1, offset: 430 },
-                      end: { line: 14, column: 542, offset: 971 }
+                      start: { line: 15, column: 1, offset: 489 },
+                      end: { line: 15, column: 542, offset: 1030 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 14, column: 1, offset: 430 },
-                  end: { line: 14, column: 542, offset: 971 }
+                  start: { line: 15, column: 1, offset: 489 },
+                  end: { line: 15, column: 542, offset: 1030 }
                 }
               },
               {
@@ -8052,16 +8107,16 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'If an exclusive start key is provided, the iterator returns values of items with sort-values greater than or equal to the sort-value of the item at the exclusive start key, not including the value of the item at the exclusive start key. The exclusive start key takes precedence over the starting sort-value.',
+                    value: 'If an exclusive start key is provided, the iterator returns values of items with sort values greater than or equal to the sort value of the item at the exclusive start key, not including the value of the item at the exclusive start key. The exclusive start key takes precedence over the starting sort value.',
                     position: {
-                      start: { line: 16, column: 1, offset: 973 },
-                      end: { line: 16, column: 308, offset: 1280 }
+                      start: { line: 17, column: 1, offset: 1032 },
+                      end: { line: 17, column: 308, offset: 1339 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 16, column: 1, offset: 973 },
-                  end: { line: 16, column: 308, offset: 1280 }
+                  start: { line: 17, column: 1, offset: 1032 },
+                  end: { line: 17, column: 308, offset: 1339 }
                 }
               },
               {
@@ -8071,14 +8126,14 @@ export default [
                     type: 'text',
                     value: 'Arguments:',
                     position: {
-                      start: { line: 18, column: 1, offset: 1282 },
-                      end: { line: 18, column: 11, offset: 1292 }
+                      start: { line: 19, column: 1, offset: 1341 },
+                      end: { line: 19, column: 11, offset: 1351 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 18, column: 1, offset: 1282 },
-                  end: { line: 18, column: 11, offset: 1292 }
+                  start: { line: 19, column: 1, offset: 1341 },
+                  end: { line: 19, column: 11, offset: 1351 }
                 }
               },
               {
@@ -8099,20 +8154,20 @@ export default [
                             type: 'text',
                             value: '(none) - retrieves the values of all items in the disk sorted hash table.',
                             position: {
-                              start: { line: 19, column: 5, offset: 1297 },
-                              end: { line: 19, column: 78, offset: 1370 }
+                              start: { line: 20, column: 5, offset: 1356 },
+                              end: { line: 20, column: 78, offset: 1429 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 19, column: 5, offset: 1297 },
-                          end: { line: 19, column: 78, offset: 1370 }
+                          start: { line: 20, column: 5, offset: 1356 },
+                          end: { line: 20, column: 78, offset: 1429 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 19, column: 3, offset: 1295 },
-                      end: { line: 19, column: 78, offset: 1370 }
+                      start: { line: 20, column: 3, offset: 1354 },
+                      end: { line: 20, column: 78, offset: 1429 }
                     }
                   },
                   {
@@ -8127,14 +8182,14 @@ export default [
                             type: 'inlineCode',
                             value: 'options',
                             position: {
-                              start: { line: 20, column: 5, offset: 1375 },
-                              end: { line: 20, column: 14, offset: 1384 }
+                              start: { line: 21, column: 5, offset: 1434 },
+                              end: { line: 21, column: 14, offset: 1443 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 20, column: 5, offset: 1375 },
-                          end: { line: 20, column: 14, offset: 1384 }
+                          start: { line: 21, column: 5, offset: 1434 },
+                          end: { line: 21, column: 14, offset: 1443 }
                         }
                       },
                       {
@@ -8156,14 +8211,14 @@ export default [
                                     value: 'exclusiveStartKey',
                                     position: {
                                       start: {
-                                        line: 21,
+                                        line: 22,
                                         column: 7,
-                                        offset: 1391
+                                        offset: 1450
                                       },
                                       end: {
-                                        line: 21,
+                                        line: 22,
                                         column: 26,
-                                        offset: 1410
+                                        offset: 1469
                                       }
                                     }
                                   },
@@ -8172,14 +8227,14 @@ export default [
                                     value: ' - ',
                                     position: {
                                       start: {
-                                        line: 21,
+                                        line: 22,
                                         column: 26,
-                                        offset: 1410
+                                        offset: 1469
                                       },
                                       end: {
-                                        line: 21,
+                                        line: 22,
                                         column: 29,
-                                        offset: 1413
+                                        offset: 1472
                                       }
                                     }
                                   },
@@ -8188,14 +8243,14 @@ export default [
                                     value: 'string',
                                     position: {
                                       start: {
-                                        line: 21,
+                                        line: 22,
                                         column: 29,
-                                        offset: 1413
+                                        offset: 1472
                                       },
                                       end: {
-                                        line: 21,
+                                        line: 22,
                                         column: 37,
-                                        offset: 1421
+                                        offset: 1480
                                       }
                                     }
                                   },
@@ -8204,31 +8259,31 @@ export default [
                                     value: ' - the key after which to start iterating.',
                                     position: {
                                       start: {
-                                        line: 21,
+                                        line: 22,
                                         column: 37,
-                                        offset: 1421
+                                        offset: 1480
                                       },
                                       end: {
-                                        line: 21,
+                                        line: 22,
                                         column: 79,
-                                        offset: 1463
+                                        offset: 1522
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 21, column: 7, offset: 1391 },
+                                  start: { line: 22, column: 7, offset: 1450 },
                                   end: {
-                                    line: 21,
+                                    line: 22,
                                     column: 79,
-                                    offset: 1463
+                                    offset: 1522
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 21, column: 5, offset: 1389 },
-                              end: { line: 21, column: 79, offset: 1463 }
+                              start: { line: 22, column: 5, offset: 1448 },
+                              end: { line: 22, column: 79, offset: 1522 }
                             }
                           },
                           {
@@ -8244,14 +8299,14 @@ export default [
                                     value: 'startingSortValue',
                                     position: {
                                       start: {
-                                        line: 22,
+                                        line: 23,
                                         column: 7,
-                                        offset: 1470
+                                        offset: 1529
                                       },
                                       end: {
-                                        line: 22,
+                                        line: 23,
                                         column: 26,
-                                        offset: 1489
+                                        offset: 1548
                                       }
                                     }
                                   },
@@ -8260,63 +8315,63 @@ export default [
                                     value: ' - ',
                                     position: {
                                       start: {
-                                        line: 22,
+                                        line: 23,
                                         column: 26,
-                                        offset: 1489
+                                        offset: 1548
                                       },
                                       end: {
-                                        line: 22,
+                                        line: 23,
                                         column: 29,
-                                        offset: 1492
+                                        offset: 1551
                                       }
                                     }
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: 'string|number',
+                                    value: 'string|number|Array<string|number>',
                                     position: {
                                       start: {
-                                        line: 22,
+                                        line: 23,
                                         column: 29,
-                                        offset: 1492
+                                        offset: 1551
                                       },
                                       end: {
-                                        line: 22,
-                                        column: 44,
-                                        offset: 1507
+                                        line: 23,
+                                        column: 65,
+                                        offset: 1587
                                       }
                                     }
                                   },
                                   {
                                     type: 'text',
-                                    value: ' - the sort-value from which to start iterating.',
+                                    value: ' - the sort value from which to start iterating. If this value is an array, the starting sort value is treated as a composite sort value. Composite sort values have each element of their arrays compared in order.',
                                     position: {
                                       start: {
-                                        line: 22,
-                                        column: 44,
-                                        offset: 1507
+                                        line: 23,
+                                        column: 65,
+                                        offset: 1587
                                       },
                                       end: {
-                                        line: 22,
-                                        column: 92,
-                                        offset: 1555
+                                        line: 23,
+                                        column: 277,
+                                        offset: 1799
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 22, column: 7, offset: 1470 },
+                                  start: { line: 23, column: 7, offset: 1529 },
                                   end: {
-                                    line: 22,
-                                    column: 92,
-                                    offset: 1555
+                                    line: 23,
+                                    column: 277,
+                                    offset: 1799
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 22, column: 5, offset: 1468 },
-                              end: { line: 22, column: 92, offset: 1555 }
+                              start: { line: 23, column: 5, offset: 1527 },
+                              end: { line: 23, column: 277, offset: 1799 }
                             }
                           },
                           {
@@ -8332,14 +8387,14 @@ export default [
                                     value: 'endingSortValue',
                                     position: {
                                       start: {
-                                        line: 23,
+                                        line: 24,
                                         column: 7,
-                                        offset: 1562
+                                        offset: 1806
                                       },
                                       end: {
-                                        line: 23,
+                                        line: 24,
                                         column: 24,
-                                        offset: 1579
+                                        offset: 1823
                                       }
                                     }
                                   },
@@ -8348,63 +8403,63 @@ export default [
                                     value: ' - ',
                                     position: {
                                       start: {
-                                        line: 23,
+                                        line: 24,
                                         column: 24,
-                                        offset: 1579
+                                        offset: 1823
                                       },
                                       end: {
-                                        line: 23,
+                                        line: 24,
                                         column: 27,
-                                        offset: 1582
+                                        offset: 1826
                                       }
                                     }
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: 'string|number',
+                                    value: 'string|number|Array<string|number>',
                                     position: {
                                       start: {
-                                        line: 23,
+                                        line: 24,
                                         column: 27,
-                                        offset: 1582
+                                        offset: 1826
                                       },
                                       end: {
-                                        line: 23,
-                                        column: 42,
-                                        offset: 1597
+                                        line: 24,
+                                        column: 63,
+                                        offset: 1862
                                       }
                                     }
                                   },
                                   {
                                     type: 'text',
-                                    value: ' - the sort-value at which to stop iterating.',
+                                    value: ' - the sort value at which to stop iterating. If this value is an array, the ending sort value is treated as a composite sort value. Composite sort values have each element of their arrays compared in order.',
                                     position: {
                                       start: {
-                                        line: 23,
-                                        column: 42,
-                                        offset: 1597
+                                        line: 24,
+                                        column: 63,
+                                        offset: 1862
                                       },
                                       end: {
-                                        line: 23,
-                                        column: 87,
-                                        offset: 1642
+                                        line: 24,
+                                        column: 270,
+                                        offset: 2069
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 23, column: 7, offset: 1562 },
+                                  start: { line: 24, column: 7, offset: 1806 },
                                   end: {
-                                    line: 23,
-                                    column: 87,
-                                    offset: 1642
+                                    line: 24,
+                                    column: 270,
+                                    offset: 2069
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 23, column: 5, offset: 1560 },
-                              end: { line: 23, column: 87, offset: 1642 }
+                              start: { line: 24, column: 5, offset: 1804 },
+                              end: { line: 24, column: 270, offset: 2069 }
                             }
                           },
                           {
@@ -8420,14 +8475,14 @@ export default [
                                     value: 'valueType',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 25,
                                         column: 7,
-                                        offset: 1649
+                                        offset: 2076
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 25,
                                         column: 18,
-                                        offset: 1660
+                                        offset: 2087
                                       }
                                     }
                                   },
@@ -8436,30 +8491,30 @@ export default [
                                     value: ' - ',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 25,
                                         column: 18,
-                                        offset: 1660
+                                        offset: 2087
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 25,
                                         column: 21,
-                                        offset: 1663
+                                        offset: 2090
                                       }
                                     }
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: "'string'|'binary'",
+                                    value: '"string"|"binary"',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 25,
                                         column: 21,
-                                        offset: 1663
+                                        offset: 2090
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 25,
                                         column: 40,
-                                        offset: 1682
+                                        offset: 2109
                                       }
                                     }
                                   },
@@ -8468,30 +8523,30 @@ export default [
                                     value: ' - the type of value that the iterator yields. Defaults to ',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 25,
                                         column: 40,
-                                        offset: 1682
+                                        offset: 2109
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 25,
                                         column: 99,
-                                        offset: 1741
+                                        offset: 2168
                                       }
                                     }
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: "'string'",
+                                    value: '"string"',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 25,
                                         column: 99,
-                                        offset: 1741
+                                        offset: 2168
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 25,
                                         column: 109,
-                                        offset: 1751
+                                        offset: 2178
                                       }
                                     }
                                   },
@@ -8500,24 +8555,24 @@ export default [
                                     value: '.',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 25,
                                         column: 109,
-                                        offset: 1751
+                                        offset: 2178
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 25,
                                         column: 110,
-                                        offset: 1752
+                                        offset: 2179
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 24, column: 7, offset: 1649 },
+                                  start: { line: 25, column: 7, offset: 2076 },
                                   end: {
-                                    line: 24,
+                                    line: 25,
                                     column: 110,
-                                    offset: 1752
+                                    offset: 2179
                                   }
                                 }
                               },
@@ -8537,17 +8592,17 @@ export default [
                                         children: [
                                           {
                                             type: 'inlineCode',
-                                            value: "'string'",
+                                            value: '"string"',
                                             position: {
                                               start: {
-                                                line: 25,
+                                                line: 26,
                                                 column: 9,
-                                                offset: 1761
+                                                offset: 2188
                                               },
                                               end: {
-                                                line: 25,
+                                                line: 26,
                                                 column: 19,
-                                                offset: 1771
+                                                offset: 2198
                                               }
                                             }
                                           },
@@ -8556,14 +8611,14 @@ export default [
                                             value: ' - iterator yields ',
                                             position: {
                                               start: {
-                                                line: 25,
+                                                line: 26,
                                                 column: 19,
-                                                offset: 1771
+                                                offset: 2198
                                               },
                                               end: {
-                                                line: 25,
+                                                line: 26,
                                                 column: 38,
-                                                offset: 1790
+                                                offset: 2217
                                               }
                                             }
                                           },
@@ -8572,14 +8627,14 @@ export default [
                                             value: 'string',
                                             position: {
                                               start: {
-                                                line: 25,
+                                                line: 26,
                                                 column: 38,
-                                                offset: 1790
+                                                offset: 2217
                                               },
                                               end: {
-                                                line: 25,
+                                                line: 26,
                                                 column: 46,
-                                                offset: 1798
+                                                offset: 2225
                                               }
                                             }
                                           },
@@ -8588,42 +8643,42 @@ export default [
                                             value: ' values.',
                                             position: {
                                               start: {
-                                                line: 25,
+                                                line: 26,
                                                 column: 46,
-                                                offset: 1798
+                                                offset: 2225
                                               },
                                               end: {
-                                                line: 25,
+                                                line: 26,
                                                 column: 54,
-                                                offset: 1806
+                                                offset: 2233
                                               }
                                             }
                                           }
                                         ],
                                         position: {
                                           start: {
-                                            line: 25,
+                                            line: 26,
                                             column: 9,
-                                            offset: 1761
+                                            offset: 2188
                                           },
                                           end: {
-                                            line: 25,
+                                            line: 26,
                                             column: 54,
-                                            offset: 1806
+                                            offset: 2233
                                           }
                                         }
                                       }
                                     ],
                                     position: {
                                       start: {
-                                        line: 25,
+                                        line: 26,
                                         column: 7,
-                                        offset: 1759
+                                        offset: 2186
                                       },
                                       end: {
-                                        line: 25,
+                                        line: 26,
                                         column: 54,
-                                        offset: 1806
+                                        offset: 2233
                                       }
                                     }
                                   },
@@ -8637,17 +8692,17 @@ export default [
                                         children: [
                                           {
                                             type: 'inlineCode',
-                                            value: "'binary'",
+                                            value: '"binary"',
                                             position: {
                                               start: {
-                                                line: 26,
+                                                line: 27,
                                                 column: 9,
-                                                offset: 1815
+                                                offset: 2242
                                               },
                                               end: {
-                                                line: 26,
+                                                line: 27,
                                                 column: 19,
-                                                offset: 1825
+                                                offset: 2252
                                               }
                                             }
                                           },
@@ -8656,14 +8711,14 @@ export default [
                                             value: ' - iterator yields ',
                                             position: {
                                               start: {
-                                                line: 26,
+                                                line: 27,
                                                 column: 19,
-                                                offset: 1825
+                                                offset: 2252
                                               },
                                               end: {
-                                                line: 26,
+                                                line: 27,
                                                 column: 38,
-                                                offset: 1844
+                                                offset: 2271
                                               }
                                             }
                                           },
@@ -8672,14 +8727,14 @@ export default [
                                             value: 'Buffer',
                                             position: {
                                               start: {
-                                                line: 26,
+                                                line: 27,
                                                 column: 38,
-                                                offset: 1844
+                                                offset: 2271
                                               },
                                               end: {
-                                                line: 26,
+                                                line: 27,
                                                 column: 46,
-                                                offset: 1852
+                                                offset: 2279
                                               }
                                             }
                                           },
@@ -8688,77 +8743,165 @@ export default [
                                             value: ' values.',
                                             position: {
                                               start: {
-                                                line: 26,
+                                                line: 27,
                                                 column: 46,
-                                                offset: 1852
+                                                offset: 2279
                                               },
                                               end: {
-                                                line: 26,
+                                                line: 27,
                                                 column: 54,
-                                                offset: 1860
+                                                offset: 2287
                                               }
                                             }
                                           }
                                         ],
                                         position: {
                                           start: {
-                                            line: 26,
+                                            line: 27,
                                             column: 9,
-                                            offset: 1815
+                                            offset: 2242
                                           },
                                           end: {
-                                            line: 26,
+                                            line: 27,
                                             column: 54,
-                                            offset: 1860
+                                            offset: 2287
                                           }
                                         }
                                       }
                                     ],
                                     position: {
                                       start: {
-                                        line: 26,
+                                        line: 27,
                                         column: 7,
-                                        offset: 1813
+                                        offset: 2240
                                       },
                                       end: {
-                                        line: 26,
+                                        line: 27,
                                         column: 54,
-                                        offset: 1860
+                                        offset: 2287
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 25, column: 7, offset: 1759 },
+                                  start: { line: 26, column: 7, offset: 2186 },
                                   end: {
-                                    line: 26,
+                                    line: 27,
                                     column: 54,
-                                    offset: 1860
+                                    offset: 2287
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 24, column: 5, offset: 1647 },
-                              end: { line: 26, column: 54, offset: 1860 }
+                              start: { line: 25, column: 5, offset: 2074 },
+                              end: { line: 27, column: 54, offset: 2287 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'limit',
+                                    position: {
+                                      start: {
+                                        line: 28,
+                                        column: 7,
+                                        offset: 2294
+                                      },
+                                      end: {
+                                        line: 28,
+                                        column: 14,
+                                        offset: 2301
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - ',
+                                    position: {
+                                      start: {
+                                        line: 28,
+                                        column: 14,
+                                        offset: 2301
+                                      },
+                                      end: {
+                                        line: 28,
+                                        column: 17,
+                                        offset: 2304
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'number',
+                                    position: {
+                                      start: {
+                                        line: 28,
+                                        column: 17,
+                                        offset: 2304
+                                      },
+                                      end: {
+                                        line: 28,
+                                        column: 25,
+                                        offset: 2312
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the maximum number of values to yield from the iterator.',
+                                    position: {
+                                      start: {
+                                        line: 28,
+                                        column: 25,
+                                        offset: 2312
+                                      },
+                                      end: {
+                                        line: 28,
+                                        column: 84,
+                                        offset: 2371
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 28, column: 7, offset: 2294 },
+                                  end: {
+                                    line: 28,
+                                    column: 84,
+                                    offset: 2371
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 28, column: 5, offset: 2292 },
+                              end: { line: 28, column: 84, offset: 2371 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 21, column: 5, offset: 1389 },
-                          end: { line: 26, column: 54, offset: 1860 }
+                          start: { line: 22, column: 5, offset: 1448 },
+                          end: { line: 28, column: 84, offset: 2371 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 20, column: 3, offset: 1373 },
-                      end: { line: 26, column: 54, offset: 1860 }
+                      start: { line: 21, column: 3, offset: 1432 },
+                      end: { line: 28, column: 84, offset: 2371 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 19, column: 3, offset: 1295 },
-                  end: { line: 26, column: 54, offset: 1860 }
+                  start: { line: 20, column: 3, offset: 1354 },
+                  end: { line: 28, column: 84, offset: 2371 }
                 }
               },
               {
@@ -8768,14 +8911,14 @@ export default [
                     type: 'text',
                     value: 'Return:',
                     position: {
-                      start: { line: 28, column: 1, offset: 1862 },
-                      end: { line: 28, column: 8, offset: 1869 }
+                      start: { line: 30, column: 1, offset: 2373 },
+                      end: { line: 30, column: 8, offset: 2380 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 28, column: 1, offset: 1862 },
-                  end: { line: 28, column: 8, offset: 1869 }
+                  start: { line: 30, column: 1, offset: 2373 },
+                  end: { line: 30, column: 8, offset: 2380 }
                 }
               },
               {
@@ -8796,88 +8939,106 @@ export default [
                             type: 'inlineCode',
                             value: 'values',
                             position: {
-                              start: { line: 29, column: 5, offset: 1874 },
-                              end: { line: 29, column: 13, offset: 1882 }
+                              start: { line: 31, column: 5, offset: 2385 },
+                              end: { line: 31, column: 13, offset: 2393 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - ',
                             position: {
-                              start: { line: 29, column: 13, offset: 1882 },
-                              end: { line: 29, column: 16, offset: 1885 }
+                              start: { line: 31, column: 13, offset: 2393 },
+                              end: { line: 31, column: 16, offset: 2396 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'AsyncGenerator<string|Buffer>',
                             position: {
-                              start: { line: 29, column: 16, offset: 1885 },
-                              end: { line: 29, column: 47, offset: 1916 }
+                              start: { line: 31, column: 16, offset: 2396 },
+                              end: { line: 31, column: 47, offset: 2427 }
                             }
                           },
                           {
                             type: 'text',
-                            value: ' - an async generator of the values of all items in the disk sorted hash table sorted by sort-value in ascending order.',
+                            value: ' - an async generator of the values of all items in the disk sorted hash table sorted by sort value in ascending order.',
                             position: {
-                              start: { line: 29, column: 47, offset: 1916 },
-                              end: { line: 29, column: 166, offset: 2035 }
+                              start: { line: 31, column: 47, offset: 2427 },
+                              end: { line: 31, column: 166, offset: 2546 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 29, column: 5, offset: 1874 },
-                          end: { line: 29, column: 166, offset: 2035 }
+                          start: { line: 31, column: 5, offset: 2385 },
+                          end: { line: 31, column: 166, offset: 2546 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 29, column: 3, offset: 1872 },
-                      end: { line: 29, column: 166, offset: 2035 }
+                      start: { line: 31, column: 3, offset: 2383 },
+                      end: { line: 31, column: 166, offset: 2546 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 29, column: 3, offset: 1872 },
-                  end: { line: 29, column: 166, offset: 2035 }
+                  start: { line: 31, column: 3, offset: 2383 },
+                  end: { line: 31, column: 166, offset: 2546 }
                 }
               },
               {
                 type: 'code',
                 lang: 'javascript',
                 meta: null,
-                value: "await ht.set('key1', 'value1', 1)\n" +
-                  "await ht.set('key2', 'value2', 2)\n" +
-                  "await ht.set('key3', 'value3', 3)\n" +
+                value: 'await sortedHt.set("key1", "value1", 1)\n' +
+                  'await sortedHt.set("key2", "value2", 2)\n' +
+                  'await sortedHt.set("key3", "value3", 3)\n' +
                   '\n' +
-                  'for await (const value of ht.forwardIterator()) {\n' +
+                  'for await (const value of sortedHt.forwardIterator()) {\n' +
                   '  console.log(value) // value1\n' +
                   '                     // value2\n' +
                   '                     // value3\n' +
                   '}\n' +
                   '\n' +
-                  'for await (const value of ht.forwardIterator({ startingSortValue: 2, endingSortValue: 3 })) {\n' +
+                  'for await (const value of sortedHt.forwardIterator({ limit: 1 })) {\n' +
+                  '  console.log(value) // value1\n' +
+                  '                     // value2\n' +
+                  '                     // value3\n' +
+                  '}\n' +
+                  '\n' +
+                  'for await (const value of sortedHt.forwardIterator({ startingSortValue: 2, endingSortValue: 3 })) {\n' +
                   '  console.log(value) // value2\n' +
                   '                     // value3\n' +
                   '}\n' +
                   '\n' +
-                  "for await (const value of ht.forwardIterator({ exclusiveStartKey: 'key1' })) {\n" +
+                  'for await (const value of sortedHt.forwardIterator({ exclusiveStartKey: "key1" })) {\n' +
                   '  console.log(value) // value2\n' +
                   '                     // value3\n' +
                   '}\n' +
                   '\n' +
-                  "for await (const value of ht.forwardIterator({ exclusiveStartKey: 'key1', endingSortValue: 2 })) {\n" +
+                  'for await (const value of sortedHt.forwardIterator({ exclusiveStartKey: "key1", endingSortValue: 2 })) {\n' +
                   '  console.log(value) // value2\n' +
+                  '}\n' +
+                  '\n' +
+                  'await compositeSortValueHt.set("key1", "value1", "index-key1", 1)\n' +
+                  'await compositeSortValueHt.set("key2", "value2", "index-key1", 2)\n' +
+                  'await compositeSortValueHt.set("key3", "value3", "index-key1", 3)\n' +
+                  '\n' +
+                  'for await (const value of compositeSortValueHt.forwardIterator({\n' +
+                  '  startingSortValue: ["index-key1", 2],\n' +
+                  '  endingSortValue: ["index-key1", 3],\n' +
+                  '})) {\n' +
+                  '  console.log(value) // value2\n' +
+                  '                     // value3\n' +
                   '}',
                 position: {
-                  start: { line: 31, column: 1, offset: 2037 },
-                  end: { line: 55, column: 4, offset: 2738 }
+                  start: { line: 33, column: 1, offset: 2548 },
+                  end: { line: 75, column: 4, offset: 3868 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 55, column: 4, offset: 2738 }
+              end: { line: 75, column: 4, offset: 3868 }
             }
           }
         }
@@ -8889,35 +9050,37 @@ export default [
           '\n' +
           'reverseIterator(options {\n' +
           '  exclusiveStartKey: string,\n' +
-          '  startingSortValue: string|number,\n' +
-          '  endingSortValue: string|number,\n' +
-          "  valueType: 'string'|'binary',\n" +
+          '  startingSortValue: string|number|Array<string|number>,\n' +
+          '  endingSortValue: string|number|Array<string|number>,\n' +
+          '  valueType: "string"|"binary",\n' +
+          '  limit: number,\n' +
           '}) -> values AsyncGenerator<string|Buffer>\n' +
           '```\n' +
           '\n' +
-          'Returns an iterator of the values of all items in the disk sorted hash table sorted by sort-value. Item values are yielded in descending order.\n' +
+          'Returns an iterator of the values of all items in the disk sorted hash table sorted by sort value. Item values are yielded in descending order.\n' +
           '\n' +
-          'If a starting sort-value and ending sort-value are provided, the iterator returns only values of items with sort-values between the starting and ending sort-values, including values of items with sort-values equal to the starting and ending sort-values. If only a starting sort-value is provided, the iterator returns values of items with sort-values less than or equal to the starting sort-value.\n' +
+          'If a starting sort value and ending sort value are provided, the iterator returns only values of items with sort values between the starting and ending sort values, including values of items with sort values equal to the starting and ending sort values. If only a starting sort value is provided, the iterator returns values of items with sort values less than or equal to the starting sort value.\n' +
           '\n' +
-          'If an exclusive start key is provided, the iterator returns values of items with sort-values less than or equal to the sort-value of the item at the exclusive start key, not including the value of the item at the exclusive start key. The exclusive start key takes precedence over the starting sort-value.\n' +
+          'If an exclusive start key is provided, the iterator returns values of items with sort values less than or equal to the sort value of the item at the exclusive start key, not including the value of the item at the exclusive start key. The exclusive start key takes precedence over the starting sort value.\n' +
           '\n' +
           'Arguments:\n' +
           '  * (none) - retrieves the values of all items in the disk sorted hash table.\n' +
           '  * `options`\n' +
           '    * `exclusiveStartKey` - `string` - the key after which to start iterating.\n' +
-          '    * `startingSortValue` - `string|number` - the sort-value from which to start iterating.\n' +
-          '    * `endingSortValue` - `string|number` - the sort-value at which to stop iterating.\n' +
-          "    * `valueType` - `'string'|'binary'` - the type of value that the iterator yields. Defaults to `'string'`.\n" +
+          '    * `startingSortValue` - `string|number|Array<string|number>` - the sort value from which to start iterating. If this value is an array, the starting sort value is treated as a composite sort value. Composite sort values have each element of their arrays compared in order.\n' +
+          '    * `endingSortValue` - `string|number|Array<string|number>` - the sort value at which to stop iterating. If this value is an array, the ending sort value is treated as a composite sort value. Composite sort values have each element of their arrays compared in order.\n' +
+          '    * `valueType` - `"string"|"binary"` - the type of value that the iterator yields. Defaults to `"string"`.\n' +
           '      * `string` - iterator yields `string` values.\n' +
           '      * `binary` - iterator yields `Buffer` values.\n' +
+          '    * `limit` - `number` - the maximum number of values to yield from the iterator.\n' +
           '\n' +
           'Return:\n' +
-          '  * `values` - `AsyncGenerator<string|Buffer>` - an async generator of the values of all items in the disk sorted hash table sorted by sort-value in descending order.\n' +
+          '  * `values` - `AsyncGenerator<string|Buffer>` - an async generator of the values of all items in the disk sorted hash table sorted by sort value in descending order.\n' +
           '\n' +
           '```javascript\n' +
-          "await ht.set('key1', 'value1', 1)\n" +
-          "await ht.set('key2', 'value2', 2)\n" +
-          "await ht.set('key3', 'value3', 3)\n" +
+          'await ht.set("key1", "value1", 1)\n' +
+          'await ht.set("key2", "value2", 2)\n' +
+          'await ht.set("key3", "value3", 3)\n' +
           '\n' +
           'for await (const value of ht.reverseIterator()) {\n' +
           '  console.log(value) // value3\n' +
@@ -8925,18 +9088,34 @@ export default [
           '                     // value1\n' +
           '}\n' +
           '\n' +
+          'for await (const value of sortedHt.reverseIterator({ limit: 1 })) {\n' +
+          '  console.log(value) // value3\n' +
+          '}\n' +
+          '\n' +
           'for await (const value of ht.reverseIterator({ startingSortValue: 2, endingSortValue: 1 })) {\n' +
           '  console.log(value) // value2\n' +
           '                     // value1\n' +
           '}\n' +
           '\n' +
-          "for await (const value of ht.reverseIterator({ exclusiveStartKey: 'key3' })) {\n" +
+          'for await (const value of ht.reverseIterator({ exclusiveStartKey: "key3" })) {\n' +
           '  console.log(value) // value2\n' +
           '                     // value1\n' +
           '}\n' +
           '\n' +
-          "for await (const value of ht.reverseIterator({ exclusiveStartKey: 'key3', endingSortValue: 2 })) {\n" +
+          'for await (const value of ht.reverseIterator({ exclusiveStartKey: "key3", endingSortValue: 2 })) {\n' +
           '  console.log(value) // value2\n' +
+          '}\n' +
+          '\n' +
+          'await compositeSortValueHt.set("key1", "value1", "index-key1", 1)\n' +
+          'await compositeSortValueHt.set("key2", "value2", "index-key1", 2)\n' +
+          'await compositeSortValueHt.set("key3", "value3", "index-key1", 3)\n' +
+          '\n' +
+          'for await (const value of compositeSortValueHt.reverseIterator({\n' +
+          '  startingSortValue: ["index-key1", 3],\n' +
+          '  endingSortValue: ["index-key1", 2],\n' +
+          '})) {\n' +
+          '  console.log(value) // value3\n' +
+          '                     // value2\n' +
           '}\n' +
           '```',
         mdast: {
@@ -8977,13 +9156,14 @@ export default [
                   '\n' +
                   'reverseIterator(options {\n' +
                   '  exclusiveStartKey: string,\n' +
-                  '  startingSortValue: string|number,\n' +
-                  '  endingSortValue: string|number,\n' +
-                  "  valueType: 'string'|'binary',\n" +
+                  '  startingSortValue: string|number|Array<string|number>,\n' +
+                  '  endingSortValue: string|number|Array<string|number>,\n' +
+                  '  valueType: "string"|"binary",\n' +
+                  '  limit: number,\n' +
                   '}) -> values AsyncGenerator<string|Buffer>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 10, column: 4, offset: 284 }
+                  end: { line: 11, column: 4, offset: 343 }
                 }
               },
               {
@@ -8991,16 +9171,16 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'Returns an iterator of the values of all items in the disk sorted hash table sorted by sort-value. Item values are yielded in descending order.',
+                    value: 'Returns an iterator of the values of all items in the disk sorted hash table sorted by sort value. Item values are yielded in descending order.',
                     position: {
-                      start: { line: 12, column: 1, offset: 286 },
-                      end: { line: 12, column: 144, offset: 429 }
+                      start: { line: 13, column: 1, offset: 345 },
+                      end: { line: 13, column: 144, offset: 488 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 12, column: 1, offset: 286 },
-                  end: { line: 12, column: 144, offset: 429 }
+                  start: { line: 13, column: 1, offset: 345 },
+                  end: { line: 13, column: 144, offset: 488 }
                 }
               },
               {
@@ -9008,16 +9188,16 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'If a starting sort-value and ending sort-value are provided, the iterator returns only values of items with sort-values between the starting and ending sort-values, including values of items with sort-values equal to the starting and ending sort-values. If only a starting sort-value is provided, the iterator returns values of items with sort-values less than or equal to the starting sort-value.',
+                    value: 'If a starting sort value and ending sort value are provided, the iterator returns only values of items with sort values between the starting and ending sort values, including values of items with sort values equal to the starting and ending sort values. If only a starting sort value is provided, the iterator returns values of items with sort values less than or equal to the starting sort value.',
                     position: {
-                      start: { line: 14, column: 1, offset: 431 },
-                      end: { line: 14, column: 398, offset: 828 }
+                      start: { line: 15, column: 1, offset: 490 },
+                      end: { line: 15, column: 398, offset: 887 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 14, column: 1, offset: 431 },
-                  end: { line: 14, column: 398, offset: 828 }
+                  start: { line: 15, column: 1, offset: 490 },
+                  end: { line: 15, column: 398, offset: 887 }
                 }
               },
               {
@@ -9025,16 +9205,16 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'If an exclusive start key is provided, the iterator returns values of items with sort-values less than or equal to the sort-value of the item at the exclusive start key, not including the value of the item at the exclusive start key. The exclusive start key takes precedence over the starting sort-value.',
+                    value: 'If an exclusive start key is provided, the iterator returns values of items with sort values less than or equal to the sort value of the item at the exclusive start key, not including the value of the item at the exclusive start key. The exclusive start key takes precedence over the starting sort value.',
                     position: {
-                      start: { line: 16, column: 1, offset: 830 },
-                      end: { line: 16, column: 305, offset: 1134 }
+                      start: { line: 17, column: 1, offset: 889 },
+                      end: { line: 17, column: 305, offset: 1193 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 16, column: 1, offset: 830 },
-                  end: { line: 16, column: 305, offset: 1134 }
+                  start: { line: 17, column: 1, offset: 889 },
+                  end: { line: 17, column: 305, offset: 1193 }
                 }
               },
               {
@@ -9044,14 +9224,14 @@ export default [
                     type: 'text',
                     value: 'Arguments:',
                     position: {
-                      start: { line: 18, column: 1, offset: 1136 },
-                      end: { line: 18, column: 11, offset: 1146 }
+                      start: { line: 19, column: 1, offset: 1195 },
+                      end: { line: 19, column: 11, offset: 1205 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 18, column: 1, offset: 1136 },
-                  end: { line: 18, column: 11, offset: 1146 }
+                  start: { line: 19, column: 1, offset: 1195 },
+                  end: { line: 19, column: 11, offset: 1205 }
                 }
               },
               {
@@ -9072,20 +9252,20 @@ export default [
                             type: 'text',
                             value: '(none) - retrieves the values of all items in the disk sorted hash table.',
                             position: {
-                              start: { line: 19, column: 5, offset: 1151 },
-                              end: { line: 19, column: 78, offset: 1224 }
+                              start: { line: 20, column: 5, offset: 1210 },
+                              end: { line: 20, column: 78, offset: 1283 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 19, column: 5, offset: 1151 },
-                          end: { line: 19, column: 78, offset: 1224 }
+                          start: { line: 20, column: 5, offset: 1210 },
+                          end: { line: 20, column: 78, offset: 1283 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 19, column: 3, offset: 1149 },
-                      end: { line: 19, column: 78, offset: 1224 }
+                      start: { line: 20, column: 3, offset: 1208 },
+                      end: { line: 20, column: 78, offset: 1283 }
                     }
                   },
                   {
@@ -9100,14 +9280,14 @@ export default [
                             type: 'inlineCode',
                             value: 'options',
                             position: {
-                              start: { line: 20, column: 5, offset: 1229 },
-                              end: { line: 20, column: 14, offset: 1238 }
+                              start: { line: 21, column: 5, offset: 1288 },
+                              end: { line: 21, column: 14, offset: 1297 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 20, column: 5, offset: 1229 },
-                          end: { line: 20, column: 14, offset: 1238 }
+                          start: { line: 21, column: 5, offset: 1288 },
+                          end: { line: 21, column: 14, offset: 1297 }
                         }
                       },
                       {
@@ -9129,14 +9309,14 @@ export default [
                                     value: 'exclusiveStartKey',
                                     position: {
                                       start: {
-                                        line: 21,
+                                        line: 22,
                                         column: 7,
-                                        offset: 1245
+                                        offset: 1304
                                       },
                                       end: {
-                                        line: 21,
+                                        line: 22,
                                         column: 26,
-                                        offset: 1264
+                                        offset: 1323
                                       }
                                     }
                                   },
@@ -9145,14 +9325,14 @@ export default [
                                     value: ' - ',
                                     position: {
                                       start: {
-                                        line: 21,
+                                        line: 22,
                                         column: 26,
-                                        offset: 1264
+                                        offset: 1323
                                       },
                                       end: {
-                                        line: 21,
+                                        line: 22,
                                         column: 29,
-                                        offset: 1267
+                                        offset: 1326
                                       }
                                     }
                                   },
@@ -9161,14 +9341,14 @@ export default [
                                     value: 'string',
                                     position: {
                                       start: {
-                                        line: 21,
+                                        line: 22,
                                         column: 29,
-                                        offset: 1267
+                                        offset: 1326
                                       },
                                       end: {
-                                        line: 21,
+                                        line: 22,
                                         column: 37,
-                                        offset: 1275
+                                        offset: 1334
                                       }
                                     }
                                   },
@@ -9177,31 +9357,31 @@ export default [
                                     value: ' - the key after which to start iterating.',
                                     position: {
                                       start: {
-                                        line: 21,
+                                        line: 22,
                                         column: 37,
-                                        offset: 1275
+                                        offset: 1334
                                       },
                                       end: {
-                                        line: 21,
+                                        line: 22,
                                         column: 79,
-                                        offset: 1317
+                                        offset: 1376
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 21, column: 7, offset: 1245 },
+                                  start: { line: 22, column: 7, offset: 1304 },
                                   end: {
-                                    line: 21,
+                                    line: 22,
                                     column: 79,
-                                    offset: 1317
+                                    offset: 1376
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 21, column: 5, offset: 1243 },
-                              end: { line: 21, column: 79, offset: 1317 }
+                              start: { line: 22, column: 5, offset: 1302 },
+                              end: { line: 22, column: 79, offset: 1376 }
                             }
                           },
                           {
@@ -9217,14 +9397,14 @@ export default [
                                     value: 'startingSortValue',
                                     position: {
                                       start: {
-                                        line: 22,
+                                        line: 23,
                                         column: 7,
-                                        offset: 1324
+                                        offset: 1383
                                       },
                                       end: {
-                                        line: 22,
+                                        line: 23,
                                         column: 26,
-                                        offset: 1343
+                                        offset: 1402
                                       }
                                     }
                                   },
@@ -9233,63 +9413,63 @@ export default [
                                     value: ' - ',
                                     position: {
                                       start: {
-                                        line: 22,
+                                        line: 23,
                                         column: 26,
-                                        offset: 1343
+                                        offset: 1402
                                       },
                                       end: {
-                                        line: 22,
+                                        line: 23,
                                         column: 29,
-                                        offset: 1346
+                                        offset: 1405
                                       }
                                     }
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: 'string|number',
+                                    value: 'string|number|Array<string|number>',
                                     position: {
                                       start: {
-                                        line: 22,
+                                        line: 23,
                                         column: 29,
-                                        offset: 1346
+                                        offset: 1405
                                       },
                                       end: {
-                                        line: 22,
-                                        column: 44,
-                                        offset: 1361
+                                        line: 23,
+                                        column: 65,
+                                        offset: 1441
                                       }
                                     }
                                   },
                                   {
                                     type: 'text',
-                                    value: ' - the sort-value from which to start iterating.',
+                                    value: ' - the sort value from which to start iterating. If this value is an array, the starting sort value is treated as a composite sort value. Composite sort values have each element of their arrays compared in order.',
                                     position: {
                                       start: {
-                                        line: 22,
-                                        column: 44,
-                                        offset: 1361
+                                        line: 23,
+                                        column: 65,
+                                        offset: 1441
                                       },
                                       end: {
-                                        line: 22,
-                                        column: 92,
-                                        offset: 1409
+                                        line: 23,
+                                        column: 277,
+                                        offset: 1653
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 22, column: 7, offset: 1324 },
+                                  start: { line: 23, column: 7, offset: 1383 },
                                   end: {
-                                    line: 22,
-                                    column: 92,
-                                    offset: 1409
+                                    line: 23,
+                                    column: 277,
+                                    offset: 1653
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 22, column: 5, offset: 1322 },
-                              end: { line: 22, column: 92, offset: 1409 }
+                              start: { line: 23, column: 5, offset: 1381 },
+                              end: { line: 23, column: 277, offset: 1653 }
                             }
                           },
                           {
@@ -9305,14 +9485,14 @@ export default [
                                     value: 'endingSortValue',
                                     position: {
                                       start: {
-                                        line: 23,
+                                        line: 24,
                                         column: 7,
-                                        offset: 1416
+                                        offset: 1660
                                       },
                                       end: {
-                                        line: 23,
+                                        line: 24,
                                         column: 24,
-                                        offset: 1433
+                                        offset: 1677
                                       }
                                     }
                                   },
@@ -9321,63 +9501,63 @@ export default [
                                     value: ' - ',
                                     position: {
                                       start: {
-                                        line: 23,
+                                        line: 24,
                                         column: 24,
-                                        offset: 1433
+                                        offset: 1677
                                       },
                                       end: {
-                                        line: 23,
+                                        line: 24,
                                         column: 27,
-                                        offset: 1436
+                                        offset: 1680
                                       }
                                     }
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: 'string|number',
+                                    value: 'string|number|Array<string|number>',
                                     position: {
                                       start: {
-                                        line: 23,
+                                        line: 24,
                                         column: 27,
-                                        offset: 1436
+                                        offset: 1680
                                       },
                                       end: {
-                                        line: 23,
-                                        column: 42,
-                                        offset: 1451
+                                        line: 24,
+                                        column: 63,
+                                        offset: 1716
                                       }
                                     }
                                   },
                                   {
                                     type: 'text',
-                                    value: ' - the sort-value at which to stop iterating.',
+                                    value: ' - the sort value at which to stop iterating. If this value is an array, the ending sort value is treated as a composite sort value. Composite sort values have each element of their arrays compared in order.',
                                     position: {
                                       start: {
-                                        line: 23,
-                                        column: 42,
-                                        offset: 1451
+                                        line: 24,
+                                        column: 63,
+                                        offset: 1716
                                       },
                                       end: {
-                                        line: 23,
-                                        column: 87,
-                                        offset: 1496
+                                        line: 24,
+                                        column: 270,
+                                        offset: 1923
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 23, column: 7, offset: 1416 },
+                                  start: { line: 24, column: 7, offset: 1660 },
                                   end: {
-                                    line: 23,
-                                    column: 87,
-                                    offset: 1496
+                                    line: 24,
+                                    column: 270,
+                                    offset: 1923
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 23, column: 5, offset: 1414 },
-                              end: { line: 23, column: 87, offset: 1496 }
+                              start: { line: 24, column: 5, offset: 1658 },
+                              end: { line: 24, column: 270, offset: 1923 }
                             }
                           },
                           {
@@ -9393,14 +9573,14 @@ export default [
                                     value: 'valueType',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 25,
                                         column: 7,
-                                        offset: 1503
+                                        offset: 1930
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 25,
                                         column: 18,
-                                        offset: 1514
+                                        offset: 1941
                                       }
                                     }
                                   },
@@ -9409,30 +9589,30 @@ export default [
                                     value: ' - ',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 25,
                                         column: 18,
-                                        offset: 1514
+                                        offset: 1941
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 25,
                                         column: 21,
-                                        offset: 1517
+                                        offset: 1944
                                       }
                                     }
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: "'string'|'binary'",
+                                    value: '"string"|"binary"',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 25,
                                         column: 21,
-                                        offset: 1517
+                                        offset: 1944
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 25,
                                         column: 40,
-                                        offset: 1536
+                                        offset: 1963
                                       }
                                     }
                                   },
@@ -9441,30 +9621,30 @@ export default [
                                     value: ' - the type of value that the iterator yields. Defaults to ',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 25,
                                         column: 40,
-                                        offset: 1536
+                                        offset: 1963
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 25,
                                         column: 99,
-                                        offset: 1595
+                                        offset: 2022
                                       }
                                     }
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: "'string'",
+                                    value: '"string"',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 25,
                                         column: 99,
-                                        offset: 1595
+                                        offset: 2022
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 25,
                                         column: 109,
-                                        offset: 1605
+                                        offset: 2032
                                       }
                                     }
                                   },
@@ -9473,24 +9653,24 @@ export default [
                                     value: '.',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 25,
                                         column: 109,
-                                        offset: 1605
+                                        offset: 2032
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 25,
                                         column: 110,
-                                        offset: 1606
+                                        offset: 2033
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 24, column: 7, offset: 1503 },
+                                  start: { line: 25, column: 7, offset: 1930 },
                                   end: {
-                                    line: 24,
+                                    line: 25,
                                     column: 110,
-                                    offset: 1606
+                                    offset: 2033
                                   }
                                 }
                               },
@@ -9513,14 +9693,14 @@ export default [
                                             value: 'string',
                                             position: {
                                               start: {
-                                                line: 25,
+                                                line: 26,
                                                 column: 9,
-                                                offset: 1615
+                                                offset: 2042
                                               },
                                               end: {
-                                                line: 25,
+                                                line: 26,
                                                 column: 17,
-                                                offset: 1623
+                                                offset: 2050
                                               }
                                             }
                                           },
@@ -9529,14 +9709,14 @@ export default [
                                             value: ' - iterator yields ',
                                             position: {
                                               start: {
-                                                line: 25,
+                                                line: 26,
                                                 column: 17,
-                                                offset: 1623
+                                                offset: 2050
                                               },
                                               end: {
-                                                line: 25,
+                                                line: 26,
                                                 column: 36,
-                                                offset: 1642
+                                                offset: 2069
                                               }
                                             }
                                           },
@@ -9545,14 +9725,14 @@ export default [
                                             value: 'string',
                                             position: {
                                               start: {
-                                                line: 25,
+                                                line: 26,
                                                 column: 36,
-                                                offset: 1642
+                                                offset: 2069
                                               },
                                               end: {
-                                                line: 25,
+                                                line: 26,
                                                 column: 44,
-                                                offset: 1650
+                                                offset: 2077
                                               }
                                             }
                                           },
@@ -9561,42 +9741,42 @@ export default [
                                             value: ' values.',
                                             position: {
                                               start: {
-                                                line: 25,
+                                                line: 26,
                                                 column: 44,
-                                                offset: 1650
+                                                offset: 2077
                                               },
                                               end: {
-                                                line: 25,
+                                                line: 26,
                                                 column: 52,
-                                                offset: 1658
+                                                offset: 2085
                                               }
                                             }
                                           }
                                         ],
                                         position: {
                                           start: {
-                                            line: 25,
+                                            line: 26,
                                             column: 9,
-                                            offset: 1615
+                                            offset: 2042
                                           },
                                           end: {
-                                            line: 25,
+                                            line: 26,
                                             column: 52,
-                                            offset: 1658
+                                            offset: 2085
                                           }
                                         }
                                       }
                                     ],
                                     position: {
                                       start: {
-                                        line: 25,
+                                        line: 26,
                                         column: 7,
-                                        offset: 1613
+                                        offset: 2040
                                       },
                                       end: {
-                                        line: 25,
+                                        line: 26,
                                         column: 52,
-                                        offset: 1658
+                                        offset: 2085
                                       }
                                     }
                                   },
@@ -9613,14 +9793,14 @@ export default [
                                             value: 'binary',
                                             position: {
                                               start: {
-                                                line: 26,
+                                                line: 27,
                                                 column: 9,
-                                                offset: 1667
+                                                offset: 2094
                                               },
                                               end: {
-                                                line: 26,
+                                                line: 27,
                                                 column: 17,
-                                                offset: 1675
+                                                offset: 2102
                                               }
                                             }
                                           },
@@ -9629,14 +9809,14 @@ export default [
                                             value: ' - iterator yields ',
                                             position: {
                                               start: {
-                                                line: 26,
+                                                line: 27,
                                                 column: 17,
-                                                offset: 1675
+                                                offset: 2102
                                               },
                                               end: {
-                                                line: 26,
+                                                line: 27,
                                                 column: 36,
-                                                offset: 1694
+                                                offset: 2121
                                               }
                                             }
                                           },
@@ -9645,14 +9825,14 @@ export default [
                                             value: 'Buffer',
                                             position: {
                                               start: {
-                                                line: 26,
+                                                line: 27,
                                                 column: 36,
-                                                offset: 1694
+                                                offset: 2121
                                               },
                                               end: {
-                                                line: 26,
+                                                line: 27,
                                                 column: 44,
-                                                offset: 1702
+                                                offset: 2129
                                               }
                                             }
                                           },
@@ -9661,77 +9841,165 @@ export default [
                                             value: ' values.',
                                             position: {
                                               start: {
-                                                line: 26,
+                                                line: 27,
                                                 column: 44,
-                                                offset: 1702
+                                                offset: 2129
                                               },
                                               end: {
-                                                line: 26,
+                                                line: 27,
                                                 column: 52,
-                                                offset: 1710
+                                                offset: 2137
                                               }
                                             }
                                           }
                                         ],
                                         position: {
                                           start: {
-                                            line: 26,
+                                            line: 27,
                                             column: 9,
-                                            offset: 1667
+                                            offset: 2094
                                           },
                                           end: {
-                                            line: 26,
+                                            line: 27,
                                             column: 52,
-                                            offset: 1710
+                                            offset: 2137
                                           }
                                         }
                                       }
                                     ],
                                     position: {
                                       start: {
-                                        line: 26,
+                                        line: 27,
                                         column: 7,
-                                        offset: 1665
+                                        offset: 2092
                                       },
                                       end: {
-                                        line: 26,
+                                        line: 27,
                                         column: 52,
-                                        offset: 1710
+                                        offset: 2137
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 25, column: 7, offset: 1613 },
+                                  start: { line: 26, column: 7, offset: 2040 },
                                   end: {
-                                    line: 26,
+                                    line: 27,
                                     column: 52,
-                                    offset: 1710
+                                    offset: 2137
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 24, column: 5, offset: 1501 },
-                              end: { line: 26, column: 52, offset: 1710 }
+                              start: { line: 25, column: 5, offset: 1928 },
+                              end: { line: 27, column: 52, offset: 2137 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'limit',
+                                    position: {
+                                      start: {
+                                        line: 28,
+                                        column: 7,
+                                        offset: 2144
+                                      },
+                                      end: {
+                                        line: 28,
+                                        column: 14,
+                                        offset: 2151
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - ',
+                                    position: {
+                                      start: {
+                                        line: 28,
+                                        column: 14,
+                                        offset: 2151
+                                      },
+                                      end: {
+                                        line: 28,
+                                        column: 17,
+                                        offset: 2154
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'number',
+                                    position: {
+                                      start: {
+                                        line: 28,
+                                        column: 17,
+                                        offset: 2154
+                                      },
+                                      end: {
+                                        line: 28,
+                                        column: 25,
+                                        offset: 2162
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the maximum number of values to yield from the iterator.',
+                                    position: {
+                                      start: {
+                                        line: 28,
+                                        column: 25,
+                                        offset: 2162
+                                      },
+                                      end: {
+                                        line: 28,
+                                        column: 84,
+                                        offset: 2221
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 28, column: 7, offset: 2144 },
+                                  end: {
+                                    line: 28,
+                                    column: 84,
+                                    offset: 2221
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 28, column: 5, offset: 2142 },
+                              end: { line: 28, column: 84, offset: 2221 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 21, column: 5, offset: 1243 },
-                          end: { line: 26, column: 52, offset: 1710 }
+                          start: { line: 22, column: 5, offset: 1302 },
+                          end: { line: 28, column: 84, offset: 2221 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 20, column: 3, offset: 1227 },
-                      end: { line: 26, column: 52, offset: 1710 }
+                      start: { line: 21, column: 3, offset: 1286 },
+                      end: { line: 28, column: 84, offset: 2221 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 19, column: 3, offset: 1149 },
-                  end: { line: 26, column: 52, offset: 1710 }
+                  start: { line: 20, column: 3, offset: 1208 },
+                  end: { line: 28, column: 84, offset: 2221 }
                 }
               },
               {
@@ -9741,14 +10009,14 @@ export default [
                     type: 'text',
                     value: 'Return:',
                     position: {
-                      start: { line: 28, column: 1, offset: 1712 },
-                      end: { line: 28, column: 8, offset: 1719 }
+                      start: { line: 30, column: 1, offset: 2223 },
+                      end: { line: 30, column: 8, offset: 2230 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 28, column: 1, offset: 1712 },
-                  end: { line: 28, column: 8, offset: 1719 }
+                  start: { line: 30, column: 1, offset: 2223 },
+                  end: { line: 30, column: 8, offset: 2230 }
                 }
               },
               {
@@ -9769,59 +10037,59 @@ export default [
                             type: 'inlineCode',
                             value: 'values',
                             position: {
-                              start: { line: 29, column: 5, offset: 1724 },
-                              end: { line: 29, column: 13, offset: 1732 }
+                              start: { line: 31, column: 5, offset: 2235 },
+                              end: { line: 31, column: 13, offset: 2243 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - ',
                             position: {
-                              start: { line: 29, column: 13, offset: 1732 },
-                              end: { line: 29, column: 16, offset: 1735 }
+                              start: { line: 31, column: 13, offset: 2243 },
+                              end: { line: 31, column: 16, offset: 2246 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'AsyncGenerator<string|Buffer>',
                             position: {
-                              start: { line: 29, column: 16, offset: 1735 },
-                              end: { line: 29, column: 47, offset: 1766 }
+                              start: { line: 31, column: 16, offset: 2246 },
+                              end: { line: 31, column: 47, offset: 2277 }
                             }
                           },
                           {
                             type: 'text',
-                            value: ' - an async generator of the values of all items in the disk sorted hash table sorted by sort-value in descending order.',
+                            value: ' - an async generator of the values of all items in the disk sorted hash table sorted by sort value in descending order.',
                             position: {
-                              start: { line: 29, column: 47, offset: 1766 },
-                              end: { line: 29, column: 167, offset: 1886 }
+                              start: { line: 31, column: 47, offset: 2277 },
+                              end: { line: 31, column: 167, offset: 2397 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 29, column: 5, offset: 1724 },
-                          end: { line: 29, column: 167, offset: 1886 }
+                          start: { line: 31, column: 5, offset: 2235 },
+                          end: { line: 31, column: 167, offset: 2397 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 29, column: 3, offset: 1722 },
-                      end: { line: 29, column: 167, offset: 1886 }
+                      start: { line: 31, column: 3, offset: 2233 },
+                      end: { line: 31, column: 167, offset: 2397 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 29, column: 3, offset: 1722 },
-                  end: { line: 29, column: 167, offset: 1886 }
+                  start: { line: 31, column: 3, offset: 2233 },
+                  end: { line: 31, column: 167, offset: 2397 }
                 }
               },
               {
                 type: 'code',
                 lang: 'javascript',
                 meta: null,
-                value: "await ht.set('key1', 'value1', 1)\n" +
-                  "await ht.set('key2', 'value2', 2)\n" +
-                  "await ht.set('key3', 'value3', 3)\n" +
+                value: 'await ht.set("key1", "value1", 1)\n' +
+                  'await ht.set("key2", "value2", 2)\n' +
+                  'await ht.set("key3", "value3", 3)\n' +
                   '\n' +
                   'for await (const value of ht.reverseIterator()) {\n' +
                   '  console.log(value) // value3\n' +
@@ -9829,28 +10097,44 @@ export default [
                   '                     // value1\n' +
                   '}\n' +
                   '\n' +
+                  'for await (const value of sortedHt.reverseIterator({ limit: 1 })) {\n' +
+                  '  console.log(value) // value3\n' +
+                  '}\n' +
+                  '\n' +
                   'for await (const value of ht.reverseIterator({ startingSortValue: 2, endingSortValue: 1 })) {\n' +
                   '  console.log(value) // value2\n' +
                   '                     // value1\n' +
                   '}\n' +
                   '\n' +
-                  "for await (const value of ht.reverseIterator({ exclusiveStartKey: 'key3' })) {\n" +
+                  'for await (const value of ht.reverseIterator({ exclusiveStartKey: "key3" })) {\n' +
                   '  console.log(value) // value2\n' +
                   '                     // value1\n' +
                   '}\n' +
                   '\n' +
-                  "for await (const value of ht.reverseIterator({ exclusiveStartKey: 'key3', endingSortValue: 2 })) {\n" +
+                  'for await (const value of ht.reverseIterator({ exclusiveStartKey: "key3", endingSortValue: 2 })) {\n' +
                   '  console.log(value) // value2\n' +
+                  '}\n' +
+                  '\n' +
+                  'await compositeSortValueHt.set("key1", "value1", "index-key1", 1)\n' +
+                  'await compositeSortValueHt.set("key2", "value2", "index-key1", 2)\n' +
+                  'await compositeSortValueHt.set("key3", "value3", "index-key1", 3)\n' +
+                  '\n' +
+                  'for await (const value of compositeSortValueHt.reverseIterator({\n' +
+                  '  startingSortValue: ["index-key1", 3],\n' +
+                  '  endingSortValue: ["index-key1", 2],\n' +
+                  '})) {\n' +
+                  '  console.log(value) // value3\n' +
+                  '                     // value2\n' +
                   '}',
                 position: {
-                  start: { line: 31, column: 1, offset: 1888 },
-                  end: { line: 55, column: 4, offset: 2589 }
+                  start: { line: 33, column: 1, offset: 2399 },
+                  end: { line: 73, column: 4, offset: 3615 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 55, column: 4, offset: 2589 }
+              end: { line: 73, column: 4, offset: 3615 }
             }
           }
         }
@@ -9858,39 +10142,63 @@ export default [
       {
         name: 'forwardEntriesIterator',
         docs: '```coffeescript [specscript]\n' +
-          'forwardEntriesIterator() -> entries AsyncGenerator<[key string, value string, sortValue string|number]>\n' +
-          '\n' +
-          'forwardEntriesIterator(options {\n' +
+          'options {\n' +
           '  exclusiveStartKey: string,\n' +
-          '  startingSortValue: string|number,\n' +
-          '  endingSortValue: string|number,\n' +
-          "  valueType: 'string'|'binary',\n" +
-          '}) -> entries AsyncGenerator<[key string, value string|Buffer, sortValue string|number]>\n' +
+          '  startingSortValue: string|number|Array<string|number>,\n' +
+          '  endingSortValue: string|number|Array<string|number>,\n' +
+          '  valueType: "string"|"binary",\n' +
+          '  limit: number,\n' +
+          '}\n' +
+          '\n' +
+          'forwardEntriesIterator() -> entries AsyncGenerator<[\n' +
+          '  key string,\n' +
+          '  value string|Buffer,\n' +
+          '  sortValue string|number,\n' +
+          ']>\n' +
+          '\n' +
+          'forwardEntriesIterator() -> entries AsyncGenerator<[\n' +
+          '  key string,\n' +
+          '  value string|Buffer,\n' +
+          '  ...sortValue Array<string|number>,\n' +
+          ']>\n' +
+          '\n' +
+          'forwardEntriesIterator(options) -> entries AsyncGenerator<[\n' +
+          '  key string,\n' +
+          '  value string|Buffer,\n' +
+          '  sortValue string|number,\n' +
+          ']>\n' +
+          '\n' +
+          'forwardEntriesIterator(options) -> entries AsyncGenerator<[\n' +
+          '  key string,\n' +
+          '  value string|Buffer,\n' +
+          '  ...sortValue Array<string|number>,\n' +
+          ']>\n' +
           '```\n' +
           '\n' +
-          'Returns an iterator of the entries (key, value, and sort-value) of all items in the disk sorted hash table sorted by sort-value. Item entries are yielded in ascending order.\n' +
+          'Returns an iterator of the entries (key, value, and sort value) of all items in the disk sorted hash table sorted by sort value. Item entries are yielded in ascending order.\n' +
           '\n' +
-          'If a starting sort-value and ending sort-value are provided, the iterator returns only entries of items with sort-values between the starting and ending sort-values, including entries of items with sort-values equal to the starting and ending sort-values. If only a starting sort-value is provided, the iterator returns entries of items with sort-values greater than or equal to the starting sort-value. If only an ending sort-value is provided, the iterator returns entries of items with sort-values less than or equal to the ending sort-value.\n' +
+          'If a starting sort value and ending sort value are provided, the iterator returns only entries of items with sort values between the starting and ending sort values, including entries of items with sort values equal to the starting and ending sort values. If only a starting sort value is provided, the iterator returns entries of items with sort values greater than or equal to the starting sort value. If only an ending sort value is provided, the iterator returns entries of items with sort values less than or equal to the ending sort value.\n' +
           '\n' +
-          'If an exclusive start key is provided, the iterator returns entries of items with sort-values greater than or equal to the sort-value of the item at the exclusive start key, not including the entry of the item at the exclusive start key. The exclusive start key takes precedence over the starting sort-value.\n' +
+          'If an exclusive start key is provided, the iterator returns entries of items with sort values greater than or equal to the sort value of the item at the exclusive start key, not including the entry of the item at the exclusive start key. The exclusive start key takes precedence over the starting sort value.\n' +
           '\n' +
           'Arguments:\n' +
           '  * (none) - retrieves the entries of all items in the disk sorted hash table.\n' +
           '  * `options`\n' +
           '    * `exclusiveStartKey` - `string` - the key after which to start iterating.\n' +
-          '    * `startingSortValue` - `string|number` - the sort-value from which to start iterating.\n' +
-          '    * `endingSortValue` - `string|number` - the sort-value at which to stop iterating.\n' +
-          "    * `valueType` - `'string'|'binary'` - the type of value that the iterator yields. Defaults to `'string'`.\n" +
-          "      * `'string'` - iterator yields entries with `string` values.\n" +
-          "      * `'binary'` - iterator yields entries with `Buffer` values.\n" +
+          '    * `startingSortValue` - `string|number|Array<string|number>` - the sort value from which to start iterating. If this value is an array, the starting sort value is treated as a composite sort value. Composite sort values have each element of their arrays compared in order.\n' +
+          '    * `endingSortValue` - `string|number|Array<string|number>` - the sort value at which to stop iterating. If this value is an array, the ending sort value is treated as a composite sort value. Composite sort values have each element of their arrays compared in order.\n' +
+          '    * `valueType` - `"string"|"binary"` - the type of value that the iterator yields. Defaults to `"string"`.\n' +
+          '      * `"string"` - iterator yields entries with `string` values.\n' +
+          '      * `"binary"` - iterator yields entries with `Buffer` values.\n' +
+          '    * `limit` - `number` - the maximum number of entries to yield from the iterator.\n' +
           '\n' +
           'Return:\n' +
-          '  * `entries` - `AsyncGenerator<[key string, value string|Buffer, sortValue string|number]>` - an async generator of the entries of all items in the disk sorted hash table sorted by sort-value in ascending order.\n' +
+          '  * `entries` - `AsyncGenerator<[key string, value string|Buffer, sortValue string|number]>` - an async generator of the entries of all items in the disk sorted hash table sorted by sort value in ascending order.\n' +
           '\n' +
           '```javascript\n' +
-          "await ht.set('key1', 'value1', 1)\n" +
-          "await ht.set('key2', 'value2', 2)\n" +
-          "await ht.set('key3', 'value3', 3)\n" +
+          'await ht.set("key1", "value1", 1)\n' +
+          'await ht.set("key2", "value2", 2)\n' +
+          'await ht.set("key3", "value3", 3)\n' +
           '\n' +
           'for await (const [key, value, sortValue] of ht.forwardEntriesIterator()) {\n' +
           '  console.log(key, value, sortValue) // key1 value1 1\n' +
@@ -9898,18 +10206,34 @@ export default [
           '                                     // key3 value3 3\n' +
           '}\n' +
           '\n' +
+          'for await (const [key, value, sortValue] of ht.forwardEntriesIterator({ limit: 1 })) {\n' +
+          '  console.log(key, value, sortValue) // key1 value1 1\n' +
+          '}\n' +
+          '\n' +
           'for await (const [key, value, sortValue] of ht.forwardEntriesIterator({ startingSortValue: 2, endingSortValue: 3 })) {\n' +
           '  console.log(key, value, sortValue) // key2 value2 2\n' +
           '                                     // key3 value3 3\n' +
           '}\n' +
           '\n' +
-          "for await (const [key, value, sortValue] of ht.forwardEntriesIterator({ exclusiveStartKey: 'key1' })) {\n" +
+          'for await (const [key, value, sortValue] of ht.forwardEntriesIterator({ exclusiveStartKey: "key1" })) {\n' +
           '  console.log(key, value, sortValue) // key2 value2 2\n' +
           '                                     // key3 value3 3\n' +
           '}\n' +
           '\n' +
-          "for await (const [key, value, sortValue] of ht.forwardEntriesIterator({ exclusiveStartKey: 'key1', endingSortValue: 2 })) {\n" +
+          'for await (const [key, value, sortValue] of ht.forwardEntriesIterator({ exclusiveStartKey: "key1", endingSortValue: 2 })) {\n' +
           '  console.log(key, value, sortValue) // key2 value2 2\n' +
+          '}\n' +
+          '\n' +
+          'await compositeSortValueHt.set("key1", "value1", "index-key1", 1)\n' +
+          'await compositeSortValueHt.set("key2", "value2", "index-key1", 2)\n' +
+          'await compositeSortValueHt.set("key3", "value3", "index-key1", 3)\n' +
+          '\n' +
+          'for await (const [key, value, ...sortValue] of compositeSortValueHt.forwardEntriesIterator({\n' +
+          '  startingSortValue: ["index-key1", 2],\n' +
+          '  endingSortValue: ["index-key1", 3],\n' +
+          '})) {\n' +
+          '  console.log(key, value, sortValue) // key2 value2 ["index-key1", 2]\n' +
+          '                                     // key3 value3 ["index-key1", 3]\n' +
           '}\n' +
           '```',
         mdast: {
@@ -9946,17 +10270,40 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: 'forwardEntriesIterator() -> entries AsyncGenerator<[key string, value string, sortValue string|number]>\n' +
-                  '\n' +
-                  'forwardEntriesIterator(options {\n' +
+                value: 'options {\n' +
                   '  exclusiveStartKey: string,\n' +
-                  '  startingSortValue: string|number,\n' +
-                  '  endingSortValue: string|number,\n' +
-                  "  valueType: 'string'|'binary',\n" +
-                  '}) -> entries AsyncGenerator<[key string, value string|Buffer, sortValue string|number]>',
+                  '  startingSortValue: string|number|Array<string|number>,\n' +
+                  '  endingSortValue: string|number|Array<string|number>,\n' +
+                  '  valueType: "string"|"binary",\n' +
+                  '  limit: number,\n' +
+                  '}\n' +
+                  '\n' +
+                  'forwardEntriesIterator() -> entries AsyncGenerator<[\n' +
+                  '  key string,\n' +
+                  '  value string|Buffer,\n' +
+                  '  sortValue string|number,\n' +
+                  ']>\n' +
+                  '\n' +
+                  'forwardEntriesIterator() -> entries AsyncGenerator<[\n' +
+                  '  key string,\n' +
+                  '  value string|Buffer,\n' +
+                  '  ...sortValue Array<string|number>,\n' +
+                  ']>\n' +
+                  '\n' +
+                  'forwardEntriesIterator(options) -> entries AsyncGenerator<[\n' +
+                  '  key string,\n' +
+                  '  value string|Buffer,\n' +
+                  '  sortValue string|number,\n' +
+                  ']>\n' +
+                  '\n' +
+                  'forwardEntriesIterator(options) -> entries AsyncGenerator<[\n' +
+                  '  key string,\n' +
+                  '  value string|Buffer,\n' +
+                  '  ...sortValue Array<string|number>,\n' +
+                  ']>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 10, column: 4, offset: 390 }
+                  end: { line: 33, column: 4, offset: 752 }
                 }
               },
               {
@@ -9964,16 +10311,16 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'Returns an iterator of the entries (key, value, and sort-value) of all items in the disk sorted hash table sorted by sort-value. Item entries are yielded in ascending order.',
+                    value: 'Returns an iterator of the entries (key, value, and sort value) of all items in the disk sorted hash table sorted by sort value. Item entries are yielded in ascending order.',
                     position: {
-                      start: { line: 12, column: 1, offset: 392 },
-                      end: { line: 12, column: 174, offset: 565 }
+                      start: { line: 35, column: 1, offset: 754 },
+                      end: { line: 35, column: 174, offset: 927 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 12, column: 1, offset: 392 },
-                  end: { line: 12, column: 174, offset: 565 }
+                  start: { line: 35, column: 1, offset: 754 },
+                  end: { line: 35, column: 174, offset: 927 }
                 }
               },
               {
@@ -9981,16 +10328,16 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'If a starting sort-value and ending sort-value are provided, the iterator returns only entries of items with sort-values between the starting and ending sort-values, including entries of items with sort-values equal to the starting and ending sort-values. If only a starting sort-value is provided, the iterator returns entries of items with sort-values greater than or equal to the starting sort-value. If only an ending sort-value is provided, the iterator returns entries of items with sort-values less than or equal to the ending sort-value.',
+                    value: 'If a starting sort value and ending sort value are provided, the iterator returns only entries of items with sort values between the starting and ending sort values, including entries of items with sort values equal to the starting and ending sort values. If only a starting sort value is provided, the iterator returns entries of items with sort values greater than or equal to the starting sort value. If only an ending sort value is provided, the iterator returns entries of items with sort values less than or equal to the ending sort value.',
                     position: {
-                      start: { line: 14, column: 1, offset: 567 },
-                      end: { line: 14, column: 546, offset: 1112 }
+                      start: { line: 37, column: 1, offset: 929 },
+                      end: { line: 37, column: 546, offset: 1474 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 14, column: 1, offset: 567 },
-                  end: { line: 14, column: 546, offset: 1112 }
+                  start: { line: 37, column: 1, offset: 929 },
+                  end: { line: 37, column: 546, offset: 1474 }
                 }
               },
               {
@@ -9998,16 +10345,16 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'If an exclusive start key is provided, the iterator returns entries of items with sort-values greater than or equal to the sort-value of the item at the exclusive start key, not including the entry of the item at the exclusive start key. The exclusive start key takes precedence over the starting sort-value.',
+                    value: 'If an exclusive start key is provided, the iterator returns entries of items with sort values greater than or equal to the sort value of the item at the exclusive start key, not including the entry of the item at the exclusive start key. The exclusive start key takes precedence over the starting sort value.',
                     position: {
-                      start: { line: 16, column: 1, offset: 1114 },
-                      end: { line: 16, column: 309, offset: 1422 }
+                      start: { line: 39, column: 1, offset: 1476 },
+                      end: { line: 39, column: 309, offset: 1784 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 16, column: 1, offset: 1114 },
-                  end: { line: 16, column: 309, offset: 1422 }
+                  start: { line: 39, column: 1, offset: 1476 },
+                  end: { line: 39, column: 309, offset: 1784 }
                 }
               },
               {
@@ -10017,14 +10364,14 @@ export default [
                     type: 'text',
                     value: 'Arguments:',
                     position: {
-                      start: { line: 18, column: 1, offset: 1424 },
-                      end: { line: 18, column: 11, offset: 1434 }
+                      start: { line: 41, column: 1, offset: 1786 },
+                      end: { line: 41, column: 11, offset: 1796 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 18, column: 1, offset: 1424 },
-                  end: { line: 18, column: 11, offset: 1434 }
+                  start: { line: 41, column: 1, offset: 1786 },
+                  end: { line: 41, column: 11, offset: 1796 }
                 }
               },
               {
@@ -10045,20 +10392,20 @@ export default [
                             type: 'text',
                             value: '(none) - retrieves the entries of all items in the disk sorted hash table.',
                             position: {
-                              start: { line: 19, column: 5, offset: 1439 },
-                              end: { line: 19, column: 79, offset: 1513 }
+                              start: { line: 42, column: 5, offset: 1801 },
+                              end: { line: 42, column: 79, offset: 1875 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 19, column: 5, offset: 1439 },
-                          end: { line: 19, column: 79, offset: 1513 }
+                          start: { line: 42, column: 5, offset: 1801 },
+                          end: { line: 42, column: 79, offset: 1875 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 19, column: 3, offset: 1437 },
-                      end: { line: 19, column: 79, offset: 1513 }
+                      start: { line: 42, column: 3, offset: 1799 },
+                      end: { line: 42, column: 79, offset: 1875 }
                     }
                   },
                   {
@@ -10073,14 +10420,14 @@ export default [
                             type: 'inlineCode',
                             value: 'options',
                             position: {
-                              start: { line: 20, column: 5, offset: 1518 },
-                              end: { line: 20, column: 14, offset: 1527 }
+                              start: { line: 43, column: 5, offset: 1880 },
+                              end: { line: 43, column: 14, offset: 1889 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 20, column: 5, offset: 1518 },
-                          end: { line: 20, column: 14, offset: 1527 }
+                          start: { line: 43, column: 5, offset: 1880 },
+                          end: { line: 43, column: 14, offset: 1889 }
                         }
                       },
                       {
@@ -10102,14 +10449,14 @@ export default [
                                     value: 'exclusiveStartKey',
                                     position: {
                                       start: {
-                                        line: 21,
+                                        line: 44,
                                         column: 7,
-                                        offset: 1534
+                                        offset: 1896
                                       },
                                       end: {
-                                        line: 21,
+                                        line: 44,
                                         column: 26,
-                                        offset: 1553
+                                        offset: 1915
                                       }
                                     }
                                   },
@@ -10118,14 +10465,14 @@ export default [
                                     value: ' - ',
                                     position: {
                                       start: {
-                                        line: 21,
+                                        line: 44,
                                         column: 26,
-                                        offset: 1553
+                                        offset: 1915
                                       },
                                       end: {
-                                        line: 21,
+                                        line: 44,
                                         column: 29,
-                                        offset: 1556
+                                        offset: 1918
                                       }
                                     }
                                   },
@@ -10134,14 +10481,14 @@ export default [
                                     value: 'string',
                                     position: {
                                       start: {
-                                        line: 21,
+                                        line: 44,
                                         column: 29,
-                                        offset: 1556
+                                        offset: 1918
                                       },
                                       end: {
-                                        line: 21,
+                                        line: 44,
                                         column: 37,
-                                        offset: 1564
+                                        offset: 1926
                                       }
                                     }
                                   },
@@ -10150,31 +10497,31 @@ export default [
                                     value: ' - the key after which to start iterating.',
                                     position: {
                                       start: {
-                                        line: 21,
+                                        line: 44,
                                         column: 37,
-                                        offset: 1564
+                                        offset: 1926
                                       },
                                       end: {
-                                        line: 21,
+                                        line: 44,
                                         column: 79,
-                                        offset: 1606
+                                        offset: 1968
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 21, column: 7, offset: 1534 },
+                                  start: { line: 44, column: 7, offset: 1896 },
                                   end: {
-                                    line: 21,
+                                    line: 44,
                                     column: 79,
-                                    offset: 1606
+                                    offset: 1968
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 21, column: 5, offset: 1532 },
-                              end: { line: 21, column: 79, offset: 1606 }
+                              start: { line: 44, column: 5, offset: 1894 },
+                              end: { line: 44, column: 79, offset: 1968 }
                             }
                           },
                           {
@@ -10190,14 +10537,14 @@ export default [
                                     value: 'startingSortValue',
                                     position: {
                                       start: {
-                                        line: 22,
+                                        line: 45,
                                         column: 7,
-                                        offset: 1613
+                                        offset: 1975
                                       },
                                       end: {
-                                        line: 22,
+                                        line: 45,
                                         column: 26,
-                                        offset: 1632
+                                        offset: 1994
                                       }
                                     }
                                   },
@@ -10206,63 +10553,63 @@ export default [
                                     value: ' - ',
                                     position: {
                                       start: {
-                                        line: 22,
+                                        line: 45,
                                         column: 26,
-                                        offset: 1632
+                                        offset: 1994
                                       },
                                       end: {
-                                        line: 22,
+                                        line: 45,
                                         column: 29,
-                                        offset: 1635
+                                        offset: 1997
                                       }
                                     }
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: 'string|number',
+                                    value: 'string|number|Array<string|number>',
                                     position: {
                                       start: {
-                                        line: 22,
+                                        line: 45,
                                         column: 29,
-                                        offset: 1635
+                                        offset: 1997
                                       },
                                       end: {
-                                        line: 22,
-                                        column: 44,
-                                        offset: 1650
+                                        line: 45,
+                                        column: 65,
+                                        offset: 2033
                                       }
                                     }
                                   },
                                   {
                                     type: 'text',
-                                    value: ' - the sort-value from which to start iterating.',
+                                    value: ' - the sort value from which to start iterating. If this value is an array, the starting sort value is treated as a composite sort value. Composite sort values have each element of their arrays compared in order.',
                                     position: {
                                       start: {
-                                        line: 22,
-                                        column: 44,
-                                        offset: 1650
+                                        line: 45,
+                                        column: 65,
+                                        offset: 2033
                                       },
                                       end: {
-                                        line: 22,
-                                        column: 92,
-                                        offset: 1698
+                                        line: 45,
+                                        column: 277,
+                                        offset: 2245
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 22, column: 7, offset: 1613 },
+                                  start: { line: 45, column: 7, offset: 1975 },
                                   end: {
-                                    line: 22,
-                                    column: 92,
-                                    offset: 1698
+                                    line: 45,
+                                    column: 277,
+                                    offset: 2245
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 22, column: 5, offset: 1611 },
-                              end: { line: 22, column: 92, offset: 1698 }
+                              start: { line: 45, column: 5, offset: 1973 },
+                              end: { line: 45, column: 277, offset: 2245 }
                             }
                           },
                           {
@@ -10278,14 +10625,14 @@ export default [
                                     value: 'endingSortValue',
                                     position: {
                                       start: {
-                                        line: 23,
+                                        line: 46,
                                         column: 7,
-                                        offset: 1705
+                                        offset: 2252
                                       },
                                       end: {
-                                        line: 23,
+                                        line: 46,
                                         column: 24,
-                                        offset: 1722
+                                        offset: 2269
                                       }
                                     }
                                   },
@@ -10294,63 +10641,63 @@ export default [
                                     value: ' - ',
                                     position: {
                                       start: {
-                                        line: 23,
+                                        line: 46,
                                         column: 24,
-                                        offset: 1722
+                                        offset: 2269
                                       },
                                       end: {
-                                        line: 23,
+                                        line: 46,
                                         column: 27,
-                                        offset: 1725
+                                        offset: 2272
                                       }
                                     }
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: 'string|number',
+                                    value: 'string|number|Array<string|number>',
                                     position: {
                                       start: {
-                                        line: 23,
+                                        line: 46,
                                         column: 27,
-                                        offset: 1725
+                                        offset: 2272
                                       },
                                       end: {
-                                        line: 23,
-                                        column: 42,
-                                        offset: 1740
+                                        line: 46,
+                                        column: 63,
+                                        offset: 2308
                                       }
                                     }
                                   },
                                   {
                                     type: 'text',
-                                    value: ' - the sort-value at which to stop iterating.',
+                                    value: ' - the sort value at which to stop iterating. If this value is an array, the ending sort value is treated as a composite sort value. Composite sort values have each element of their arrays compared in order.',
                                     position: {
                                       start: {
-                                        line: 23,
-                                        column: 42,
-                                        offset: 1740
+                                        line: 46,
+                                        column: 63,
+                                        offset: 2308
                                       },
                                       end: {
-                                        line: 23,
-                                        column: 87,
-                                        offset: 1785
+                                        line: 46,
+                                        column: 270,
+                                        offset: 2515
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 23, column: 7, offset: 1705 },
+                                  start: { line: 46, column: 7, offset: 2252 },
                                   end: {
-                                    line: 23,
-                                    column: 87,
-                                    offset: 1785
+                                    line: 46,
+                                    column: 270,
+                                    offset: 2515
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 23, column: 5, offset: 1703 },
-                              end: { line: 23, column: 87, offset: 1785 }
+                              start: { line: 46, column: 5, offset: 2250 },
+                              end: { line: 46, column: 270, offset: 2515 }
                             }
                           },
                           {
@@ -10366,14 +10713,14 @@ export default [
                                     value: 'valueType',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 47,
                                         column: 7,
-                                        offset: 1792
+                                        offset: 2522
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 47,
                                         column: 18,
-                                        offset: 1803
+                                        offset: 2533
                                       }
                                     }
                                   },
@@ -10382,30 +10729,30 @@ export default [
                                     value: ' - ',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 47,
                                         column: 18,
-                                        offset: 1803
+                                        offset: 2533
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 47,
                                         column: 21,
-                                        offset: 1806
+                                        offset: 2536
                                       }
                                     }
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: "'string'|'binary'",
+                                    value: '"string"|"binary"',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 47,
                                         column: 21,
-                                        offset: 1806
+                                        offset: 2536
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 47,
                                         column: 40,
-                                        offset: 1825
+                                        offset: 2555
                                       }
                                     }
                                   },
@@ -10414,30 +10761,30 @@ export default [
                                     value: ' - the type of value that the iterator yields. Defaults to ',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 47,
                                         column: 40,
-                                        offset: 1825
+                                        offset: 2555
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 47,
                                         column: 99,
-                                        offset: 1884
+                                        offset: 2614
                                       }
                                     }
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: "'string'",
+                                    value: '"string"',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 47,
                                         column: 99,
-                                        offset: 1884
+                                        offset: 2614
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 47,
                                         column: 109,
-                                        offset: 1894
+                                        offset: 2624
                                       }
                                     }
                                   },
@@ -10446,24 +10793,24 @@ export default [
                                     value: '.',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 47,
                                         column: 109,
-                                        offset: 1894
+                                        offset: 2624
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 47,
                                         column: 110,
-                                        offset: 1895
+                                        offset: 2625
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 24, column: 7, offset: 1792 },
+                                  start: { line: 47, column: 7, offset: 2522 },
                                   end: {
-                                    line: 24,
+                                    line: 47,
                                     column: 110,
-                                    offset: 1895
+                                    offset: 2625
                                   }
                                 }
                               },
@@ -10483,17 +10830,17 @@ export default [
                                         children: [
                                           {
                                             type: 'inlineCode',
-                                            value: "'string'",
+                                            value: '"string"',
                                             position: {
                                               start: {
-                                                line: 25,
+                                                line: 48,
                                                 column: 9,
-                                                offset: 1904
+                                                offset: 2634
                                               },
                                               end: {
-                                                line: 25,
+                                                line: 48,
                                                 column: 19,
-                                                offset: 1914
+                                                offset: 2644
                                               }
                                             }
                                           },
@@ -10502,14 +10849,14 @@ export default [
                                             value: ' - iterator yields entries with ',
                                             position: {
                                               start: {
-                                                line: 25,
+                                                line: 48,
                                                 column: 19,
-                                                offset: 1914
+                                                offset: 2644
                                               },
                                               end: {
-                                                line: 25,
+                                                line: 48,
                                                 column: 51,
-                                                offset: 1946
+                                                offset: 2676
                                               }
                                             }
                                           },
@@ -10518,14 +10865,14 @@ export default [
                                             value: 'string',
                                             position: {
                                               start: {
-                                                line: 25,
+                                                line: 48,
                                                 column: 51,
-                                                offset: 1946
+                                                offset: 2676
                                               },
                                               end: {
-                                                line: 25,
+                                                line: 48,
                                                 column: 59,
-                                                offset: 1954
+                                                offset: 2684
                                               }
                                             }
                                           },
@@ -10534,42 +10881,42 @@ export default [
                                             value: ' values.',
                                             position: {
                                               start: {
-                                                line: 25,
+                                                line: 48,
                                                 column: 59,
-                                                offset: 1954
+                                                offset: 2684
                                               },
                                               end: {
-                                                line: 25,
+                                                line: 48,
                                                 column: 67,
-                                                offset: 1962
+                                                offset: 2692
                                               }
                                             }
                                           }
                                         ],
                                         position: {
                                           start: {
-                                            line: 25,
+                                            line: 48,
                                             column: 9,
-                                            offset: 1904
+                                            offset: 2634
                                           },
                                           end: {
-                                            line: 25,
+                                            line: 48,
                                             column: 67,
-                                            offset: 1962
+                                            offset: 2692
                                           }
                                         }
                                       }
                                     ],
                                     position: {
                                       start: {
-                                        line: 25,
+                                        line: 48,
                                         column: 7,
-                                        offset: 1902
+                                        offset: 2632
                                       },
                                       end: {
-                                        line: 25,
+                                        line: 48,
                                         column: 67,
-                                        offset: 1962
+                                        offset: 2692
                                       }
                                     }
                                   },
@@ -10583,17 +10930,17 @@ export default [
                                         children: [
                                           {
                                             type: 'inlineCode',
-                                            value: "'binary'",
+                                            value: '"binary"',
                                             position: {
                                               start: {
-                                                line: 26,
+                                                line: 49,
                                                 column: 9,
-                                                offset: 1971
+                                                offset: 2701
                                               },
                                               end: {
-                                                line: 26,
+                                                line: 49,
                                                 column: 19,
-                                                offset: 1981
+                                                offset: 2711
                                               }
                                             }
                                           },
@@ -10602,14 +10949,14 @@ export default [
                                             value: ' - iterator yields entries with ',
                                             position: {
                                               start: {
-                                                line: 26,
+                                                line: 49,
                                                 column: 19,
-                                                offset: 1981
+                                                offset: 2711
                                               },
                                               end: {
-                                                line: 26,
+                                                line: 49,
                                                 column: 51,
-                                                offset: 2013
+                                                offset: 2743
                                               }
                                             }
                                           },
@@ -10618,14 +10965,14 @@ export default [
                                             value: 'Buffer',
                                             position: {
                                               start: {
-                                                line: 26,
+                                                line: 49,
                                                 column: 51,
-                                                offset: 2013
+                                                offset: 2743
                                               },
                                               end: {
-                                                line: 26,
+                                                line: 49,
                                                 column: 59,
-                                                offset: 2021
+                                                offset: 2751
                                               }
                                             }
                                           },
@@ -10634,77 +10981,165 @@ export default [
                                             value: ' values.',
                                             position: {
                                               start: {
-                                                line: 26,
+                                                line: 49,
                                                 column: 59,
-                                                offset: 2021
+                                                offset: 2751
                                               },
                                               end: {
-                                                line: 26,
+                                                line: 49,
                                                 column: 67,
-                                                offset: 2029
+                                                offset: 2759
                                               }
                                             }
                                           }
                                         ],
                                         position: {
                                           start: {
-                                            line: 26,
+                                            line: 49,
                                             column: 9,
-                                            offset: 1971
+                                            offset: 2701
                                           },
                                           end: {
-                                            line: 26,
+                                            line: 49,
                                             column: 67,
-                                            offset: 2029
+                                            offset: 2759
                                           }
                                         }
                                       }
                                     ],
                                     position: {
                                       start: {
-                                        line: 26,
+                                        line: 49,
                                         column: 7,
-                                        offset: 1969
+                                        offset: 2699
                                       },
                                       end: {
-                                        line: 26,
+                                        line: 49,
                                         column: 67,
-                                        offset: 2029
+                                        offset: 2759
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 25, column: 7, offset: 1902 },
+                                  start: { line: 48, column: 7, offset: 2632 },
                                   end: {
-                                    line: 26,
+                                    line: 49,
                                     column: 67,
-                                    offset: 2029
+                                    offset: 2759
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 24, column: 5, offset: 1790 },
-                              end: { line: 26, column: 67, offset: 2029 }
+                              start: { line: 47, column: 5, offset: 2520 },
+                              end: { line: 49, column: 67, offset: 2759 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'limit',
+                                    position: {
+                                      start: {
+                                        line: 50,
+                                        column: 7,
+                                        offset: 2766
+                                      },
+                                      end: {
+                                        line: 50,
+                                        column: 14,
+                                        offset: 2773
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - ',
+                                    position: {
+                                      start: {
+                                        line: 50,
+                                        column: 14,
+                                        offset: 2773
+                                      },
+                                      end: {
+                                        line: 50,
+                                        column: 17,
+                                        offset: 2776
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'number',
+                                    position: {
+                                      start: {
+                                        line: 50,
+                                        column: 17,
+                                        offset: 2776
+                                      },
+                                      end: {
+                                        line: 50,
+                                        column: 25,
+                                        offset: 2784
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the maximum number of entries to yield from the iterator.',
+                                    position: {
+                                      start: {
+                                        line: 50,
+                                        column: 25,
+                                        offset: 2784
+                                      },
+                                      end: {
+                                        line: 50,
+                                        column: 85,
+                                        offset: 2844
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 50, column: 7, offset: 2766 },
+                                  end: {
+                                    line: 50,
+                                    column: 85,
+                                    offset: 2844
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 50, column: 5, offset: 2764 },
+                              end: { line: 50, column: 85, offset: 2844 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 21, column: 5, offset: 1532 },
-                          end: { line: 26, column: 67, offset: 2029 }
+                          start: { line: 44, column: 5, offset: 1894 },
+                          end: { line: 50, column: 85, offset: 2844 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 20, column: 3, offset: 1516 },
-                      end: { line: 26, column: 67, offset: 2029 }
+                      start: { line: 43, column: 3, offset: 1878 },
+                      end: { line: 50, column: 85, offset: 2844 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 19, column: 3, offset: 1437 },
-                  end: { line: 26, column: 67, offset: 2029 }
+                  start: { line: 42, column: 3, offset: 1799 },
+                  end: { line: 50, column: 85, offset: 2844 }
                 }
               },
               {
@@ -10714,14 +11149,14 @@ export default [
                     type: 'text',
                     value: 'Return:',
                     position: {
-                      start: { line: 28, column: 1, offset: 2031 },
-                      end: { line: 28, column: 8, offset: 2038 }
+                      start: { line: 52, column: 1, offset: 2846 },
+                      end: { line: 52, column: 8, offset: 2853 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 28, column: 1, offset: 2031 },
-                  end: { line: 28, column: 8, offset: 2038 }
+                  start: { line: 52, column: 1, offset: 2846 },
+                  end: { line: 52, column: 8, offset: 2853 }
                 }
               },
               {
@@ -10742,59 +11177,59 @@ export default [
                             type: 'inlineCode',
                             value: 'entries',
                             position: {
-                              start: { line: 29, column: 5, offset: 2043 },
-                              end: { line: 29, column: 14, offset: 2052 }
+                              start: { line: 53, column: 5, offset: 2858 },
+                              end: { line: 53, column: 14, offset: 2867 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - ',
                             position: {
-                              start: { line: 29, column: 14, offset: 2052 },
-                              end: { line: 29, column: 17, offset: 2055 }
+                              start: { line: 53, column: 14, offset: 2867 },
+                              end: { line: 53, column: 17, offset: 2870 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'AsyncGenerator<[key string, value string|Buffer, sortValue string|number]>',
                             position: {
-                              start: { line: 29, column: 17, offset: 2055 },
-                              end: { line: 29, column: 93, offset: 2131 }
+                              start: { line: 53, column: 17, offset: 2870 },
+                              end: { line: 53, column: 93, offset: 2946 }
                             }
                           },
                           {
                             type: 'text',
-                            value: ' - an async generator of the entries of all items in the disk sorted hash table sorted by sort-value in ascending order.',
+                            value: ' - an async generator of the entries of all items in the disk sorted hash table sorted by sort value in ascending order.',
                             position: {
-                              start: { line: 29, column: 93, offset: 2131 },
-                              end: { line: 29, column: 213, offset: 2251 }
+                              start: { line: 53, column: 93, offset: 2946 },
+                              end: { line: 53, column: 213, offset: 3066 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 29, column: 5, offset: 2043 },
-                          end: { line: 29, column: 213, offset: 2251 }
+                          start: { line: 53, column: 5, offset: 2858 },
+                          end: { line: 53, column: 213, offset: 3066 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 29, column: 3, offset: 2041 },
-                      end: { line: 29, column: 213, offset: 2251 }
+                      start: { line: 53, column: 3, offset: 2856 },
+                      end: { line: 53, column: 213, offset: 3066 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 29, column: 3, offset: 2041 },
-                  end: { line: 29, column: 213, offset: 2251 }
+                  start: { line: 53, column: 3, offset: 2856 },
+                  end: { line: 53, column: 213, offset: 3066 }
                 }
               },
               {
                 type: 'code',
                 lang: 'javascript',
                 meta: null,
-                value: "await ht.set('key1', 'value1', 1)\n" +
-                  "await ht.set('key2', 'value2', 2)\n" +
-                  "await ht.set('key3', 'value3', 3)\n" +
+                value: 'await ht.set("key1", "value1", 1)\n' +
+                  'await ht.set("key2", "value2", 2)\n' +
+                  'await ht.set("key3", "value3", 3)\n' +
                   '\n' +
                   'for await (const [key, value, sortValue] of ht.forwardEntriesIterator()) {\n' +
                   '  console.log(key, value, sortValue) // key1 value1 1\n' +
@@ -10802,28 +11237,44 @@ export default [
                   '                                     // key3 value3 3\n' +
                   '}\n' +
                   '\n' +
+                  'for await (const [key, value, sortValue] of ht.forwardEntriesIterator({ limit: 1 })) {\n' +
+                  '  console.log(key, value, sortValue) // key1 value1 1\n' +
+                  '}\n' +
+                  '\n' +
                   'for await (const [key, value, sortValue] of ht.forwardEntriesIterator({ startingSortValue: 2, endingSortValue: 3 })) {\n' +
                   '  console.log(key, value, sortValue) // key2 value2 2\n' +
                   '                                     // key3 value3 3\n' +
                   '}\n' +
                   '\n' +
-                  "for await (const [key, value, sortValue] of ht.forwardEntriesIterator({ exclusiveStartKey: 'key1' })) {\n" +
+                  'for await (const [key, value, sortValue] of ht.forwardEntriesIterator({ exclusiveStartKey: "key1" })) {\n' +
                   '  console.log(key, value, sortValue) // key2 value2 2\n' +
                   '                                     // key3 value3 3\n' +
                   '}\n' +
                   '\n' +
-                  "for await (const [key, value, sortValue] of ht.forwardEntriesIterator({ exclusiveStartKey: 'key1', endingSortValue: 2 })) {\n" +
+                  'for await (const [key, value, sortValue] of ht.forwardEntriesIterator({ exclusiveStartKey: "key1", endingSortValue: 2 })) {\n' +
                   '  console.log(key, value, sortValue) // key2 value2 2\n' +
+                  '}\n' +
+                  '\n' +
+                  'await compositeSortValueHt.set("key1", "value1", "index-key1", 1)\n' +
+                  'await compositeSortValueHt.set("key2", "value2", "index-key1", 2)\n' +
+                  'await compositeSortValueHt.set("key3", "value3", "index-key1", 3)\n' +
+                  '\n' +
+                  'for await (const [key, value, ...sortValue] of compositeSortValueHt.forwardEntriesIterator({\n' +
+                  '  startingSortValue: ["index-key1", 2],\n' +
+                  '  endingSortValue: ["index-key1", 3],\n' +
+                  '})) {\n' +
+                  '  console.log(key, value, sortValue) // key2 value2 ["index-key1", 2]\n' +
+                  '                                     // key3 value3 ["index-key1", 3]\n' +
                   '}',
                 position: {
-                  start: { line: 31, column: 1, offset: 2253 },
-                  end: { line: 55, column: 4, offset: 3238 }
+                  start: { line: 55, column: 1, offset: 3068 },
+                  end: { line: 95, column: 4, offset: 4716 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 55, column: 4, offset: 3238 }
+              end: { line: 95, column: 4, offset: 4716 }
             }
           }
         }
@@ -10831,39 +11282,63 @@ export default [
       {
         name: 'reverseEntriesIterator',
         docs: '```coffeescript [specscript]\n' +
-          'reverseEntriesIterator() -> entries AsyncGenerator<[key string, value string, sortValue string|number]>\n' +
-          '\n' +
-          'reverseEntriesIterator(options {\n' +
+          'options {\n' +
           '  exclusiveStartKey: string,\n' +
-          '  startingSortValue: string|number,\n' +
-          '  endingSortValue: string|number,\n' +
-          "  valueType: 'string'|'binary',\n" +
-          '}) -> entries AsyncGenerator<[key string, value string|Buffer, sortValue string|number]>\n' +
+          '  startingSortValue: string|number|Array<string|number>,\n' +
+          '  endingSortValue: string|number|Array<string|number>,\n' +
+          '  valueType: "string"|"binary",\n' +
+          '  limit: number,\n' +
+          '}\n' +
+          '\n' +
+          'reverseEntriesIterator() -> entries AsyncGenerator<[\n' +
+          '  key string,\n' +
+          '  value string|Buffer,\n' +
+          '  sortValue string|number,\n' +
+          ']>\n' +
+          '\n' +
+          'reverseEntriesIterator() -> entries AsyncGenerator<[\n' +
+          '  key string,\n' +
+          '  value string|Buffer,\n' +
+          '  ...sortValue Array<string|number>,\n' +
+          ']>\n' +
+          '\n' +
+          'reverseEntriesIterator(options) -> entries AsyncGenerator<[\n' +
+          '  key string,\n' +
+          '  value string|Buffer,\n' +
+          '  sortValue string|number,\n' +
+          ']>\n' +
+          '\n' +
+          'reverseEntriesIterator(options) -> entries AsyncGenerator<[\n' +
+          '  key string,\n' +
+          '  value string|Buffer,\n' +
+          '  ...sortValue Array<string|number>,\n' +
+          ']>\n' +
           '```\n' +
           '\n' +
-          'Returns an iterator of the entries (key, value, and sort-value) of all items in the disk sorted hash table sorted by sort-value. Item entries are yielded in descending order.\n' +
+          'Returns an iterator of the entries (key, value, and sort value) of all items in the disk sorted hash table sorted by sort value. Item entries are yielded in descending order.\n' +
           '\n' +
-          'If a starting sort-value and ending sort-value are provided, the iterator returns only entries of items with sort-values between the starting and ending sort-values, including entries of items with sort-values equal to the starting and ending sort-values. If only a starting sort-value is provided, the iterator returns entries of items with sort-values less than or equal to the starting sort-value.\n' +
+          'If a starting sort value and ending sort value are provided, the iterator returns only entries of items with sort values between the starting and ending sort values, including entries of items with sort values equal to the starting and ending sort values. If only a starting sort value is provided, the iterator returns entries of items with sort values less than or equal to the starting sort value.\n' +
           '\n' +
-          'If an exclusive start key is provided, the iterator returns entries of items with sort-values less than or equal to the sort-value of the item at the exclusive start key, not including the entry of the item at the exclusive start key. The exclusive start key takes precedence over the starting sort-value.\n' +
+          'If an exclusive start key is provided, the iterator returns entries of items with sort values less than or equal to the sort value of the item at the exclusive start key, not including the entry of the item at the exclusive start key. The exclusive start key takes precedence over the starting sort value.\n' +
           '\n' +
           'Arguments:\n' +
           '  * (none) - retrieves the entries of all items in the disk sorted hash table.\n' +
           '  * `options`\n' +
           '    * `exclusiveStartKey` - `string` - the key after which to start iterating.\n' +
-          '    * `startingSortValue` - `string|number` - the sort-value from which to start iterating.\n' +
-          '    * `endingSortValue` - `string|number` - the sort-value at which to stop iterating.\n' +
-          "    * `valueType` - `'string'|'binary'` - the type of value that the iterator yields. Defaults to `'string'`.\n" +
+          '    * `startingSortValue` - `string|number|Array<string|number>` - the sort value from which to start iterating. If this value is an array, the starting sort value is treated as a composite sort value. Composite sort values have each element of their arrays compared in order.\n' +
+          '    * `endingSortValue` - `string|number|Array<string|number>` - the sort value at which to stop iterating. If this value is an array, the ending sort value is treated as a composite sort value. Composite sort values have each element of their arrays compared in order.\n' +
+          '    * `valueType` - `"string"|"binary"` - the type of value that the iterator yields. Defaults to `"string"`.\n' +
           '      * `string` - iterator yields entries with `string` values.\n' +
           '      * `binary` - iterator yields entries with `Buffer` values.\n' +
+          '    * `limit` - `number` - the maximum number of entries to yield from the iterator.\n' +
           '\n' +
           'Return:\n' +
-          '  * `entries` - `AsyncGenerator<[key string, value string|Buffer, sortValue string|number]>` - an async generator of the entries of all items in the disk sorted hash table sorted by sort-value in descending order.\n' +
+          '  * `entries` - `AsyncGenerator<[key string, value string|Buffer, sortValue string|number]>` - an async generator of the entries of all items in the disk sorted hash table sorted by sort value in descending order.\n' +
           '\n' +
           '```javascript\n' +
-          "await ht.set('key1', 'value1', 1)\n" +
-          "await ht.set('key2', 'value2', 2)\n" +
-          "await ht.set('key3', 'value3', 3)\n" +
+          'await ht.set("key1", "value1", 1)\n' +
+          'await ht.set("key2", "value2", 2)\n' +
+          'await ht.set("key3", "value3", 3)\n' +
           '\n' +
           'for await (const [key, value, sortValue] of ht.reverseEntriesIterator()) {\n' +
           '  console.log(key, value, sortValue) // key3 value3 3\n' +
@@ -10871,18 +11346,34 @@ export default [
           '                                     // key1 value1 1\n' +
           '}\n' +
           '\n' +
+          'for await (const [key, value, sortValue] of ht.reverseEntriesIterator({ limit: 1 })) {\n' +
+          '  console.log(key, value, sortValue) // key3 value3 3\n' +
+          '}\n' +
+          '\n' +
           'for await (const [key, value, sortValue] of ht.reverseEntriesIterator({ startingSortValue: 2, endingSortValue: 1 })) {\n' +
           '  console.log(key, value, sortValue) // key2 value2 2\n' +
           '                                     // key1 value1 1\n' +
           '}\n' +
           '\n' +
-          "for await (const [key, value, sortValue] of ht.reverseEntriesIterator({ exclusiveStartKey: 'key3' })) {\n" +
+          'for await (const [key, value, sortValue] of ht.reverseEntriesIterator({ exclusiveStartKey: "key3" })) {\n' +
           '  console.log(key, value, sortValue) // key2 value2 2\n' +
           '                                     // key1 value1 1\n' +
           '}\n' +
           '\n' +
-          "for await (const [key, value, sortValue] of ht.reverseEntriesIterator({ exclusiveStartKey: 'key3', endingSortValue: 2 })) {\n" +
+          'for await (const [key, value, sortValue] of ht.reverseEntriesIterator({ exclusiveStartKey: "key3", endingSortValue: 2 })) {\n' +
           '  console.log(key, value, sortValue) // key2 value2 2\n' +
+          '}\n' +
+          '\n' +
+          'await compositeSortValueHt.set("key1", "value1", "index-key1", 1)\n' +
+          'await compositeSortValueHt.set("key2", "value2", "index-key1", 2)\n' +
+          'await compositeSortValueHt.set("key3", "value3", "index-key1", 3)\n' +
+          '\n' +
+          'for await (const [key, value, ...sortValue] of compositeSortValueHt.reverseEntriesIterator({\n' +
+          '  startingSortValue: ["index-key1", 3],\n' +
+          '  endingSortValue: ["index-key1", 2],\n' +
+          '})) {\n' +
+          '  console.log(key, value, sortValue) // key2 value2 ["index-key1", 3]\n' +
+          '                                     // key3 value3 ["index-key1", 2]\n' +
           '}\n' +
           '```',
         mdast: {
@@ -10919,17 +11410,40 @@ export default [
                 type: 'code',
                 lang: 'coffeescript',
                 meta: '[specscript]',
-                value: 'reverseEntriesIterator() -> entries AsyncGenerator<[key string, value string, sortValue string|number]>\n' +
-                  '\n' +
-                  'reverseEntriesIterator(options {\n' +
+                value: 'options {\n' +
                   '  exclusiveStartKey: string,\n' +
-                  '  startingSortValue: string|number,\n' +
-                  '  endingSortValue: string|number,\n' +
-                  "  valueType: 'string'|'binary',\n" +
-                  '}) -> entries AsyncGenerator<[key string, value string|Buffer, sortValue string|number]>',
+                  '  startingSortValue: string|number|Array<string|number>,\n' +
+                  '  endingSortValue: string|number|Array<string|number>,\n' +
+                  '  valueType: "string"|"binary",\n' +
+                  '  limit: number,\n' +
+                  '}\n' +
+                  '\n' +
+                  'reverseEntriesIterator() -> entries AsyncGenerator<[\n' +
+                  '  key string,\n' +
+                  '  value string|Buffer,\n' +
+                  '  sortValue string|number,\n' +
+                  ']>\n' +
+                  '\n' +
+                  'reverseEntriesIterator() -> entries AsyncGenerator<[\n' +
+                  '  key string,\n' +
+                  '  value string|Buffer,\n' +
+                  '  ...sortValue Array<string|number>,\n' +
+                  ']>\n' +
+                  '\n' +
+                  'reverseEntriesIterator(options) -> entries AsyncGenerator<[\n' +
+                  '  key string,\n' +
+                  '  value string|Buffer,\n' +
+                  '  sortValue string|number,\n' +
+                  ']>\n' +
+                  '\n' +
+                  'reverseEntriesIterator(options) -> entries AsyncGenerator<[\n' +
+                  '  key string,\n' +
+                  '  value string|Buffer,\n' +
+                  '  ...sortValue Array<string|number>,\n' +
+                  ']>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 10, column: 4, offset: 390 }
+                  end: { line: 33, column: 4, offset: 752 }
                 }
               },
               {
@@ -10937,16 +11451,16 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'Returns an iterator of the entries (key, value, and sort-value) of all items in the disk sorted hash table sorted by sort-value. Item entries are yielded in descending order.',
+                    value: 'Returns an iterator of the entries (key, value, and sort value) of all items in the disk sorted hash table sorted by sort value. Item entries are yielded in descending order.',
                     position: {
-                      start: { line: 12, column: 1, offset: 392 },
-                      end: { line: 12, column: 175, offset: 566 }
+                      start: { line: 35, column: 1, offset: 754 },
+                      end: { line: 35, column: 175, offset: 928 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 12, column: 1, offset: 392 },
-                  end: { line: 12, column: 175, offset: 566 }
+                  start: { line: 35, column: 1, offset: 754 },
+                  end: { line: 35, column: 175, offset: 928 }
                 }
               },
               {
@@ -10954,16 +11468,16 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'If a starting sort-value and ending sort-value are provided, the iterator returns only entries of items with sort-values between the starting and ending sort-values, including entries of items with sort-values equal to the starting and ending sort-values. If only a starting sort-value is provided, the iterator returns entries of items with sort-values less than or equal to the starting sort-value.',
+                    value: 'If a starting sort value and ending sort value are provided, the iterator returns only entries of items with sort values between the starting and ending sort values, including entries of items with sort values equal to the starting and ending sort values. If only a starting sort value is provided, the iterator returns entries of items with sort values less than or equal to the starting sort value.',
                     position: {
-                      start: { line: 14, column: 1, offset: 568 },
-                      end: { line: 14, column: 401, offset: 968 }
+                      start: { line: 37, column: 1, offset: 930 },
+                      end: { line: 37, column: 401, offset: 1330 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 14, column: 1, offset: 568 },
-                  end: { line: 14, column: 401, offset: 968 }
+                  start: { line: 37, column: 1, offset: 930 },
+                  end: { line: 37, column: 401, offset: 1330 }
                 }
               },
               {
@@ -10971,16 +11485,16 @@ export default [
                 children: [
                   {
                     type: 'text',
-                    value: 'If an exclusive start key is provided, the iterator returns entries of items with sort-values less than or equal to the sort-value of the item at the exclusive start key, not including the entry of the item at the exclusive start key. The exclusive start key takes precedence over the starting sort-value.',
+                    value: 'If an exclusive start key is provided, the iterator returns entries of items with sort values less than or equal to the sort value of the item at the exclusive start key, not including the entry of the item at the exclusive start key. The exclusive start key takes precedence over the starting sort value.',
                     position: {
-                      start: { line: 16, column: 1, offset: 970 },
-                      end: { line: 16, column: 306, offset: 1275 }
+                      start: { line: 39, column: 1, offset: 1332 },
+                      end: { line: 39, column: 306, offset: 1637 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 16, column: 1, offset: 970 },
-                  end: { line: 16, column: 306, offset: 1275 }
+                  start: { line: 39, column: 1, offset: 1332 },
+                  end: { line: 39, column: 306, offset: 1637 }
                 }
               },
               {
@@ -10990,14 +11504,14 @@ export default [
                     type: 'text',
                     value: 'Arguments:',
                     position: {
-                      start: { line: 18, column: 1, offset: 1277 },
-                      end: { line: 18, column: 11, offset: 1287 }
+                      start: { line: 41, column: 1, offset: 1639 },
+                      end: { line: 41, column: 11, offset: 1649 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 18, column: 1, offset: 1277 },
-                  end: { line: 18, column: 11, offset: 1287 }
+                  start: { line: 41, column: 1, offset: 1639 },
+                  end: { line: 41, column: 11, offset: 1649 }
                 }
               },
               {
@@ -11018,20 +11532,20 @@ export default [
                             type: 'text',
                             value: '(none) - retrieves the entries of all items in the disk sorted hash table.',
                             position: {
-                              start: { line: 19, column: 5, offset: 1292 },
-                              end: { line: 19, column: 79, offset: 1366 }
+                              start: { line: 42, column: 5, offset: 1654 },
+                              end: { line: 42, column: 79, offset: 1728 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 19, column: 5, offset: 1292 },
-                          end: { line: 19, column: 79, offset: 1366 }
+                          start: { line: 42, column: 5, offset: 1654 },
+                          end: { line: 42, column: 79, offset: 1728 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 19, column: 3, offset: 1290 },
-                      end: { line: 19, column: 79, offset: 1366 }
+                      start: { line: 42, column: 3, offset: 1652 },
+                      end: { line: 42, column: 79, offset: 1728 }
                     }
                   },
                   {
@@ -11046,14 +11560,14 @@ export default [
                             type: 'inlineCode',
                             value: 'options',
                             position: {
-                              start: { line: 20, column: 5, offset: 1371 },
-                              end: { line: 20, column: 14, offset: 1380 }
+                              start: { line: 43, column: 5, offset: 1733 },
+                              end: { line: 43, column: 14, offset: 1742 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 20, column: 5, offset: 1371 },
-                          end: { line: 20, column: 14, offset: 1380 }
+                          start: { line: 43, column: 5, offset: 1733 },
+                          end: { line: 43, column: 14, offset: 1742 }
                         }
                       },
                       {
@@ -11075,14 +11589,14 @@ export default [
                                     value: 'exclusiveStartKey',
                                     position: {
                                       start: {
-                                        line: 21,
+                                        line: 44,
                                         column: 7,
-                                        offset: 1387
+                                        offset: 1749
                                       },
                                       end: {
-                                        line: 21,
+                                        line: 44,
                                         column: 26,
-                                        offset: 1406
+                                        offset: 1768
                                       }
                                     }
                                   },
@@ -11091,14 +11605,14 @@ export default [
                                     value: ' - ',
                                     position: {
                                       start: {
-                                        line: 21,
+                                        line: 44,
                                         column: 26,
-                                        offset: 1406
+                                        offset: 1768
                                       },
                                       end: {
-                                        line: 21,
+                                        line: 44,
                                         column: 29,
-                                        offset: 1409
+                                        offset: 1771
                                       }
                                     }
                                   },
@@ -11107,14 +11621,14 @@ export default [
                                     value: 'string',
                                     position: {
                                       start: {
-                                        line: 21,
+                                        line: 44,
                                         column: 29,
-                                        offset: 1409
+                                        offset: 1771
                                       },
                                       end: {
-                                        line: 21,
+                                        line: 44,
                                         column: 37,
-                                        offset: 1417
+                                        offset: 1779
                                       }
                                     }
                                   },
@@ -11123,31 +11637,31 @@ export default [
                                     value: ' - the key after which to start iterating.',
                                     position: {
                                       start: {
-                                        line: 21,
+                                        line: 44,
                                         column: 37,
-                                        offset: 1417
+                                        offset: 1779
                                       },
                                       end: {
-                                        line: 21,
+                                        line: 44,
                                         column: 79,
-                                        offset: 1459
+                                        offset: 1821
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 21, column: 7, offset: 1387 },
+                                  start: { line: 44, column: 7, offset: 1749 },
                                   end: {
-                                    line: 21,
+                                    line: 44,
                                     column: 79,
-                                    offset: 1459
+                                    offset: 1821
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 21, column: 5, offset: 1385 },
-                              end: { line: 21, column: 79, offset: 1459 }
+                              start: { line: 44, column: 5, offset: 1747 },
+                              end: { line: 44, column: 79, offset: 1821 }
                             }
                           },
                           {
@@ -11163,14 +11677,14 @@ export default [
                                     value: 'startingSortValue',
                                     position: {
                                       start: {
-                                        line: 22,
+                                        line: 45,
                                         column: 7,
-                                        offset: 1466
+                                        offset: 1828
                                       },
                                       end: {
-                                        line: 22,
+                                        line: 45,
                                         column: 26,
-                                        offset: 1485
+                                        offset: 1847
                                       }
                                     }
                                   },
@@ -11179,63 +11693,63 @@ export default [
                                     value: ' - ',
                                     position: {
                                       start: {
-                                        line: 22,
+                                        line: 45,
                                         column: 26,
-                                        offset: 1485
+                                        offset: 1847
                                       },
                                       end: {
-                                        line: 22,
+                                        line: 45,
                                         column: 29,
-                                        offset: 1488
+                                        offset: 1850
                                       }
                                     }
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: 'string|number',
+                                    value: 'string|number|Array<string|number>',
                                     position: {
                                       start: {
-                                        line: 22,
+                                        line: 45,
                                         column: 29,
-                                        offset: 1488
+                                        offset: 1850
                                       },
                                       end: {
-                                        line: 22,
-                                        column: 44,
-                                        offset: 1503
+                                        line: 45,
+                                        column: 65,
+                                        offset: 1886
                                       }
                                     }
                                   },
                                   {
                                     type: 'text',
-                                    value: ' - the sort-value from which to start iterating.',
+                                    value: ' - the sort value from which to start iterating. If this value is an array, the starting sort value is treated as a composite sort value. Composite sort values have each element of their arrays compared in order.',
                                     position: {
                                       start: {
-                                        line: 22,
-                                        column: 44,
-                                        offset: 1503
+                                        line: 45,
+                                        column: 65,
+                                        offset: 1886
                                       },
                                       end: {
-                                        line: 22,
-                                        column: 92,
-                                        offset: 1551
+                                        line: 45,
+                                        column: 277,
+                                        offset: 2098
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 22, column: 7, offset: 1466 },
+                                  start: { line: 45, column: 7, offset: 1828 },
                                   end: {
-                                    line: 22,
-                                    column: 92,
-                                    offset: 1551
+                                    line: 45,
+                                    column: 277,
+                                    offset: 2098
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 22, column: 5, offset: 1464 },
-                              end: { line: 22, column: 92, offset: 1551 }
+                              start: { line: 45, column: 5, offset: 1826 },
+                              end: { line: 45, column: 277, offset: 2098 }
                             }
                           },
                           {
@@ -11251,14 +11765,14 @@ export default [
                                     value: 'endingSortValue',
                                     position: {
                                       start: {
-                                        line: 23,
+                                        line: 46,
                                         column: 7,
-                                        offset: 1558
+                                        offset: 2105
                                       },
                                       end: {
-                                        line: 23,
+                                        line: 46,
                                         column: 24,
-                                        offset: 1575
+                                        offset: 2122
                                       }
                                     }
                                   },
@@ -11267,63 +11781,63 @@ export default [
                                     value: ' - ',
                                     position: {
                                       start: {
-                                        line: 23,
+                                        line: 46,
                                         column: 24,
-                                        offset: 1575
+                                        offset: 2122
                                       },
                                       end: {
-                                        line: 23,
+                                        line: 46,
                                         column: 27,
-                                        offset: 1578
+                                        offset: 2125
                                       }
                                     }
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: 'string|number',
+                                    value: 'string|number|Array<string|number>',
                                     position: {
                                       start: {
-                                        line: 23,
+                                        line: 46,
                                         column: 27,
-                                        offset: 1578
+                                        offset: 2125
                                       },
                                       end: {
-                                        line: 23,
-                                        column: 42,
-                                        offset: 1593
+                                        line: 46,
+                                        column: 63,
+                                        offset: 2161
                                       }
                                     }
                                   },
                                   {
                                     type: 'text',
-                                    value: ' - the sort-value at which to stop iterating.',
+                                    value: ' - the sort value at which to stop iterating. If this value is an array, the ending sort value is treated as a composite sort value. Composite sort values have each element of their arrays compared in order.',
                                     position: {
                                       start: {
-                                        line: 23,
-                                        column: 42,
-                                        offset: 1593
+                                        line: 46,
+                                        column: 63,
+                                        offset: 2161
                                       },
                                       end: {
-                                        line: 23,
-                                        column: 87,
-                                        offset: 1638
+                                        line: 46,
+                                        column: 270,
+                                        offset: 2368
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 23, column: 7, offset: 1558 },
+                                  start: { line: 46, column: 7, offset: 2105 },
                                   end: {
-                                    line: 23,
-                                    column: 87,
-                                    offset: 1638
+                                    line: 46,
+                                    column: 270,
+                                    offset: 2368
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 23, column: 5, offset: 1556 },
-                              end: { line: 23, column: 87, offset: 1638 }
+                              start: { line: 46, column: 5, offset: 2103 },
+                              end: { line: 46, column: 270, offset: 2368 }
                             }
                           },
                           {
@@ -11339,14 +11853,14 @@ export default [
                                     value: 'valueType',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 47,
                                         column: 7,
-                                        offset: 1645
+                                        offset: 2375
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 47,
                                         column: 18,
-                                        offset: 1656
+                                        offset: 2386
                                       }
                                     }
                                   },
@@ -11355,30 +11869,30 @@ export default [
                                     value: ' - ',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 47,
                                         column: 18,
-                                        offset: 1656
+                                        offset: 2386
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 47,
                                         column: 21,
-                                        offset: 1659
+                                        offset: 2389
                                       }
                                     }
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: "'string'|'binary'",
+                                    value: '"string"|"binary"',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 47,
                                         column: 21,
-                                        offset: 1659
+                                        offset: 2389
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 47,
                                         column: 40,
-                                        offset: 1678
+                                        offset: 2408
                                       }
                                     }
                                   },
@@ -11387,30 +11901,30 @@ export default [
                                     value: ' - the type of value that the iterator yields. Defaults to ',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 47,
                                         column: 40,
-                                        offset: 1678
+                                        offset: 2408
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 47,
                                         column: 99,
-                                        offset: 1737
+                                        offset: 2467
                                       }
                                     }
                                   },
                                   {
                                     type: 'inlineCode',
-                                    value: "'string'",
+                                    value: '"string"',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 47,
                                         column: 99,
-                                        offset: 1737
+                                        offset: 2467
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 47,
                                         column: 109,
-                                        offset: 1747
+                                        offset: 2477
                                       }
                                     }
                                   },
@@ -11419,24 +11933,24 @@ export default [
                                     value: '.',
                                     position: {
                                       start: {
-                                        line: 24,
+                                        line: 47,
                                         column: 109,
-                                        offset: 1747
+                                        offset: 2477
                                       },
                                       end: {
-                                        line: 24,
+                                        line: 47,
                                         column: 110,
-                                        offset: 1748
+                                        offset: 2478
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 24, column: 7, offset: 1645 },
+                                  start: { line: 47, column: 7, offset: 2375 },
                                   end: {
-                                    line: 24,
+                                    line: 47,
                                     column: 110,
-                                    offset: 1748
+                                    offset: 2478
                                   }
                                 }
                               },
@@ -11459,14 +11973,14 @@ export default [
                                             value: 'string',
                                             position: {
                                               start: {
-                                                line: 25,
+                                                line: 48,
                                                 column: 9,
-                                                offset: 1757
+                                                offset: 2487
                                               },
                                               end: {
-                                                line: 25,
+                                                line: 48,
                                                 column: 17,
-                                                offset: 1765
+                                                offset: 2495
                                               }
                                             }
                                           },
@@ -11475,14 +11989,14 @@ export default [
                                             value: ' - iterator yields entries with ',
                                             position: {
                                               start: {
-                                                line: 25,
+                                                line: 48,
                                                 column: 17,
-                                                offset: 1765
+                                                offset: 2495
                                               },
                                               end: {
-                                                line: 25,
+                                                line: 48,
                                                 column: 49,
-                                                offset: 1797
+                                                offset: 2527
                                               }
                                             }
                                           },
@@ -11491,14 +12005,14 @@ export default [
                                             value: 'string',
                                             position: {
                                               start: {
-                                                line: 25,
+                                                line: 48,
                                                 column: 49,
-                                                offset: 1797
+                                                offset: 2527
                                               },
                                               end: {
-                                                line: 25,
+                                                line: 48,
                                                 column: 57,
-                                                offset: 1805
+                                                offset: 2535
                                               }
                                             }
                                           },
@@ -11507,42 +12021,42 @@ export default [
                                             value: ' values.',
                                             position: {
                                               start: {
-                                                line: 25,
+                                                line: 48,
                                                 column: 57,
-                                                offset: 1805
+                                                offset: 2535
                                               },
                                               end: {
-                                                line: 25,
+                                                line: 48,
                                                 column: 65,
-                                                offset: 1813
+                                                offset: 2543
                                               }
                                             }
                                           }
                                         ],
                                         position: {
                                           start: {
-                                            line: 25,
+                                            line: 48,
                                             column: 9,
-                                            offset: 1757
+                                            offset: 2487
                                           },
                                           end: {
-                                            line: 25,
+                                            line: 48,
                                             column: 65,
-                                            offset: 1813
+                                            offset: 2543
                                           }
                                         }
                                       }
                                     ],
                                     position: {
                                       start: {
-                                        line: 25,
+                                        line: 48,
                                         column: 7,
-                                        offset: 1755
+                                        offset: 2485
                                       },
                                       end: {
-                                        line: 25,
+                                        line: 48,
                                         column: 65,
-                                        offset: 1813
+                                        offset: 2543
                                       }
                                     }
                                   },
@@ -11559,14 +12073,14 @@ export default [
                                             value: 'binary',
                                             position: {
                                               start: {
-                                                line: 26,
+                                                line: 49,
                                                 column: 9,
-                                                offset: 1822
+                                                offset: 2552
                                               },
                                               end: {
-                                                line: 26,
+                                                line: 49,
                                                 column: 17,
-                                                offset: 1830
+                                                offset: 2560
                                               }
                                             }
                                           },
@@ -11575,14 +12089,14 @@ export default [
                                             value: ' - iterator yields entries with ',
                                             position: {
                                               start: {
-                                                line: 26,
+                                                line: 49,
                                                 column: 17,
-                                                offset: 1830
+                                                offset: 2560
                                               },
                                               end: {
-                                                line: 26,
+                                                line: 49,
                                                 column: 49,
-                                                offset: 1862
+                                                offset: 2592
                                               }
                                             }
                                           },
@@ -11591,14 +12105,14 @@ export default [
                                             value: 'Buffer',
                                             position: {
                                               start: {
-                                                line: 26,
+                                                line: 49,
                                                 column: 49,
-                                                offset: 1862
+                                                offset: 2592
                                               },
                                               end: {
-                                                line: 26,
+                                                line: 49,
                                                 column: 57,
-                                                offset: 1870
+                                                offset: 2600
                                               }
                                             }
                                           },
@@ -11607,77 +12121,165 @@ export default [
                                             value: ' values.',
                                             position: {
                                               start: {
-                                                line: 26,
+                                                line: 49,
                                                 column: 57,
-                                                offset: 1870
+                                                offset: 2600
                                               },
                                               end: {
-                                                line: 26,
+                                                line: 49,
                                                 column: 65,
-                                                offset: 1878
+                                                offset: 2608
                                               }
                                             }
                                           }
                                         ],
                                         position: {
                                           start: {
-                                            line: 26,
+                                            line: 49,
                                             column: 9,
-                                            offset: 1822
+                                            offset: 2552
                                           },
                                           end: {
-                                            line: 26,
+                                            line: 49,
                                             column: 65,
-                                            offset: 1878
+                                            offset: 2608
                                           }
                                         }
                                       }
                                     ],
                                     position: {
                                       start: {
-                                        line: 26,
+                                        line: 49,
                                         column: 7,
-                                        offset: 1820
+                                        offset: 2550
                                       },
                                       end: {
-                                        line: 26,
+                                        line: 49,
                                         column: 65,
-                                        offset: 1878
+                                        offset: 2608
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 25, column: 7, offset: 1755 },
+                                  start: { line: 48, column: 7, offset: 2485 },
                                   end: {
-                                    line: 26,
+                                    line: 49,
                                     column: 65,
-                                    offset: 1878
+                                    offset: 2608
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 24, column: 5, offset: 1643 },
-                              end: { line: 26, column: 65, offset: 1878 }
+                              start: { line: 47, column: 5, offset: 2373 },
+                              end: { line: 49, column: 65, offset: 2608 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'limit',
+                                    position: {
+                                      start: {
+                                        line: 50,
+                                        column: 7,
+                                        offset: 2615
+                                      },
+                                      end: {
+                                        line: 50,
+                                        column: 14,
+                                        offset: 2622
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - ',
+                                    position: {
+                                      start: {
+                                        line: 50,
+                                        column: 14,
+                                        offset: 2622
+                                      },
+                                      end: {
+                                        line: 50,
+                                        column: 17,
+                                        offset: 2625
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'number',
+                                    position: {
+                                      start: {
+                                        line: 50,
+                                        column: 17,
+                                        offset: 2625
+                                      },
+                                      end: {
+                                        line: 50,
+                                        column: 25,
+                                        offset: 2633
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the maximum number of entries to yield from the iterator.',
+                                    position: {
+                                      start: {
+                                        line: 50,
+                                        column: 25,
+                                        offset: 2633
+                                      },
+                                      end: {
+                                        line: 50,
+                                        column: 85,
+                                        offset: 2693
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 50, column: 7, offset: 2615 },
+                                  end: {
+                                    line: 50,
+                                    column: 85,
+                                    offset: 2693
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 50, column: 5, offset: 2613 },
+                              end: { line: 50, column: 85, offset: 2693 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 21, column: 5, offset: 1385 },
-                          end: { line: 26, column: 65, offset: 1878 }
+                          start: { line: 44, column: 5, offset: 1747 },
+                          end: { line: 50, column: 85, offset: 2693 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 20, column: 3, offset: 1369 },
-                      end: { line: 26, column: 65, offset: 1878 }
+                      start: { line: 43, column: 3, offset: 1731 },
+                      end: { line: 50, column: 85, offset: 2693 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 19, column: 3, offset: 1290 },
-                  end: { line: 26, column: 65, offset: 1878 }
+                  start: { line: 42, column: 3, offset: 1652 },
+                  end: { line: 50, column: 85, offset: 2693 }
                 }
               },
               {
@@ -11687,14 +12289,14 @@ export default [
                     type: 'text',
                     value: 'Return:',
                     position: {
-                      start: { line: 28, column: 1, offset: 1880 },
-                      end: { line: 28, column: 8, offset: 1887 }
+                      start: { line: 52, column: 1, offset: 2695 },
+                      end: { line: 52, column: 8, offset: 2702 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 28, column: 1, offset: 1880 },
-                  end: { line: 28, column: 8, offset: 1887 }
+                  start: { line: 52, column: 1, offset: 2695 },
+                  end: { line: 52, column: 8, offset: 2702 }
                 }
               },
               {
@@ -11715,59 +12317,59 @@ export default [
                             type: 'inlineCode',
                             value: 'entries',
                             position: {
-                              start: { line: 29, column: 5, offset: 1892 },
-                              end: { line: 29, column: 14, offset: 1901 }
+                              start: { line: 53, column: 5, offset: 2707 },
+                              end: { line: 53, column: 14, offset: 2716 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - ',
                             position: {
-                              start: { line: 29, column: 14, offset: 1901 },
-                              end: { line: 29, column: 17, offset: 1904 }
+                              start: { line: 53, column: 14, offset: 2716 },
+                              end: { line: 53, column: 17, offset: 2719 }
                             }
                           },
                           {
                             type: 'inlineCode',
                             value: 'AsyncGenerator<[key string, value string|Buffer, sortValue string|number]>',
                             position: {
-                              start: { line: 29, column: 17, offset: 1904 },
-                              end: { line: 29, column: 93, offset: 1980 }
+                              start: { line: 53, column: 17, offset: 2719 },
+                              end: { line: 53, column: 93, offset: 2795 }
                             }
                           },
                           {
                             type: 'text',
-                            value: ' - an async generator of the entries of all items in the disk sorted hash table sorted by sort-value in descending order.',
+                            value: ' - an async generator of the entries of all items in the disk sorted hash table sorted by sort value in descending order.',
                             position: {
-                              start: { line: 29, column: 93, offset: 1980 },
-                              end: { line: 29, column: 214, offset: 2101 }
+                              start: { line: 53, column: 93, offset: 2795 },
+                              end: { line: 53, column: 214, offset: 2916 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 29, column: 5, offset: 1892 },
-                          end: { line: 29, column: 214, offset: 2101 }
+                          start: { line: 53, column: 5, offset: 2707 },
+                          end: { line: 53, column: 214, offset: 2916 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 29, column: 3, offset: 1890 },
-                      end: { line: 29, column: 214, offset: 2101 }
+                      start: { line: 53, column: 3, offset: 2705 },
+                      end: { line: 53, column: 214, offset: 2916 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 29, column: 3, offset: 1890 },
-                  end: { line: 29, column: 214, offset: 2101 }
+                  start: { line: 53, column: 3, offset: 2705 },
+                  end: { line: 53, column: 214, offset: 2916 }
                 }
               },
               {
                 type: 'code',
                 lang: 'javascript',
                 meta: null,
-                value: "await ht.set('key1', 'value1', 1)\n" +
-                  "await ht.set('key2', 'value2', 2)\n" +
-                  "await ht.set('key3', 'value3', 3)\n" +
+                value: 'await ht.set("key1", "value1", 1)\n' +
+                  'await ht.set("key2", "value2", 2)\n' +
+                  'await ht.set("key3", "value3", 3)\n' +
                   '\n' +
                   'for await (const [key, value, sortValue] of ht.reverseEntriesIterator()) {\n' +
                   '  console.log(key, value, sortValue) // key3 value3 3\n' +
@@ -11775,28 +12377,44 @@ export default [
                   '                                     // key1 value1 1\n' +
                   '}\n' +
                   '\n' +
+                  'for await (const [key, value, sortValue] of ht.reverseEntriesIterator({ limit: 1 })) {\n' +
+                  '  console.log(key, value, sortValue) // key3 value3 3\n' +
+                  '}\n' +
+                  '\n' +
                   'for await (const [key, value, sortValue] of ht.reverseEntriesIterator({ startingSortValue: 2, endingSortValue: 1 })) {\n' +
                   '  console.log(key, value, sortValue) // key2 value2 2\n' +
                   '                                     // key1 value1 1\n' +
                   '}\n' +
                   '\n' +
-                  "for await (const [key, value, sortValue] of ht.reverseEntriesIterator({ exclusiveStartKey: 'key3' })) {\n" +
+                  'for await (const [key, value, sortValue] of ht.reverseEntriesIterator({ exclusiveStartKey: "key3" })) {\n' +
                   '  console.log(key, value, sortValue) // key2 value2 2\n' +
                   '                                     // key1 value1 1\n' +
                   '}\n' +
                   '\n' +
-                  "for await (const [key, value, sortValue] of ht.reverseEntriesIterator({ exclusiveStartKey: 'key3', endingSortValue: 2 })) {\n" +
+                  'for await (const [key, value, sortValue] of ht.reverseEntriesIterator({ exclusiveStartKey: "key3", endingSortValue: 2 })) {\n' +
                   '  console.log(key, value, sortValue) // key2 value2 2\n' +
+                  '}\n' +
+                  '\n' +
+                  'await compositeSortValueHt.set("key1", "value1", "index-key1", 1)\n' +
+                  'await compositeSortValueHt.set("key2", "value2", "index-key1", 2)\n' +
+                  'await compositeSortValueHt.set("key3", "value3", "index-key1", 3)\n' +
+                  '\n' +
+                  'for await (const [key, value, ...sortValue] of compositeSortValueHt.reverseEntriesIterator({\n' +
+                  '  startingSortValue: ["index-key1", 3],\n' +
+                  '  endingSortValue: ["index-key1", 2],\n' +
+                  '})) {\n' +
+                  '  console.log(key, value, sortValue) // key2 value2 ["index-key1", 3]\n' +
+                  '                                     // key3 value3 ["index-key1", 2]\n' +
                   '}',
                 position: {
-                  start: { line: 31, column: 1, offset: 2103 },
-                  end: { line: 55, column: 4, offset: 3088 }
+                  start: { line: 55, column: 1, offset: 2918 },
+                  end: { line: 95, column: 4, offset: 4566 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 55, column: 4, offset: 3088 }
+              end: { line: 95, column: 4, offset: 4566 }
             }
           }
         }
@@ -11816,7 +12434,7 @@ export default [
           '  * `didDelete` - `boolean` - a promise of whether the key and corresponding value were deleted.\n' +
           '\n' +
           '```javascript\n' +
-          "const didDelete = await sortedHt.delete('my-key')\n" +
+          'const didDelete = await sortedHt.delete("my-key")\n' +
           '```',
         mdast: {
           name: {
@@ -12041,7 +12659,7 @@ export default [
                 type: 'code',
                 lang: 'javascript',
                 meta: null,
-                value: "const didDelete = await sortedHt.delete('my-key')",
+                value: 'const didDelete = await sortedHt.delete("my-key")',
                 position: {
                   start: { line: 13, column: 1, offset: 300 },
                   end: { line: 15, column: 4, offset: 367 }

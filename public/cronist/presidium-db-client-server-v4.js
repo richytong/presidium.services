@@ -462,6 +462,7 @@ export default [
       '  defaultTableInitialLength: number,\n' +
       '  defaultTableItemSize: number,\n' +
       '  defaultDiskSortedHashTableDegree: number,\n' +
+      '  delimiter: string,\n' +
       '}, ...handlers Arguments<HTTP.Handler>) -> server DatabaseServer\n' +
       '```',
     mdast: {
@@ -510,16 +511,17 @@ export default [
               '  defaultTableInitialLength: number,\n' +
               '  defaultTableItemSize: number,\n' +
               '  defaultDiskSortedHashTableDegree: number,\n' +
+              '  delimiter: string,\n' +
               '}, ...handlers Arguments<HTTP.Handler>) -> server DatabaseServer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 15, column: 4, offset: 466 }
+              end: { line: 16, column: 4, offset: 487 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 15, column: 4, offset: 466 }
+          end: { line: 16, column: 4, offset: 487 }
         }
       }
     },
@@ -885,11 +887,7 @@ export default [
     methods: [
       {
         name: 'clear',
-        docs: '```specscript\n' +
-          'module DiskHashTable "https://presidium.services/docs/DiskHashTable"\n' +
-          '\n' +
-          'clear DiskHashTable.clear\n' +
-          '```',
+        docs: '```specscript\nclear() -> Promise<>\n```',
         mdast: {
           name: {
             type: 'root',
@@ -924,18 +922,16 @@ export default [
                 type: 'code',
                 lang: 'specscript',
                 meta: null,
-                value: 'module DiskHashTable "https://presidium.services/docs/DiskHashTable"\n' +
-                  '\n' +
-                  'clear DiskHashTable.clear',
+                value: 'clear() -> Promise<>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 5, column: 4, offset: 113 }
+                  end: { line: 3, column: 4, offset: 38 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 113 }
+              end: { line: 3, column: 4, offset: 38 }
             }
           }
         }
@@ -943,9 +939,7 @@ export default [
       {
         name: 'set',
         docs: '```specscript\n' +
-          'module DiskHashTable "https://presidium.services/docs/DiskHashTable"\n' +
-          '\n' +
-          'set DiskHashTable.set\n' +
+          'set(key string, value string|Buffer|Uint8Array) -> Promise<>\n' +
           '```',
         mdast: {
           name: {
@@ -981,29 +975,23 @@ export default [
                 type: 'code',
                 lang: 'specscript',
                 meta: null,
-                value: 'module DiskHashTable "https://presidium.services/docs/DiskHashTable"\n' +
-                  '\n' +
-                  'set DiskHashTable.set',
+                value: 'set(key string, value string|Buffer|Uint8Array) -> Promise<>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 5, column: 4, offset: 109 }
+                  end: { line: 3, column: 4, offset: 78 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 109 }
+              end: { line: 3, column: 4, offset: 78 }
             }
           }
         }
       },
       {
         name: 'get',
-        docs: '```specscript\n' +
-          'module DiskHashTable "https://presidium.services/docs/DiskHashTable"\n' +
-          '\n' +
-          'get DiskHashTable.get\n' +
-          '```',
+        docs: '```specscript\nget(key string) -> value Promise<string|undefined>\n```',
         mdast: {
           name: {
             type: 'root',
@@ -1038,18 +1026,16 @@ export default [
                 type: 'code',
                 lang: 'specscript',
                 meta: null,
-                value: 'module DiskHashTable "https://presidium.services/docs/DiskHashTable"\n' +
-                  '\n' +
-                  'get DiskHashTable.get',
+                value: 'get(key string) -> value Promise<string|undefined>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 5, column: 4, offset: 109 }
+                  end: { line: 3, column: 4, offset: 68 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 109 }
+              end: { line: 3, column: 4, offset: 68 }
             }
           }
         }
@@ -1057,9 +1043,7 @@ export default [
       {
         name: 'getBinary',
         docs: '```specscript\n' +
-          'module DiskHashTable "https://presidium.services/docs/DiskHashTable"\n' +
-          '\n' +
-          'getBinary DiskHashTable.getBinary\n' +
+          'getBinary(key string) -> binaryValue Promise<Buffer|undefined>\n' +
           '```',
         mdast: {
           name: {
@@ -1095,29 +1079,23 @@ export default [
                 type: 'code',
                 lang: 'specscript',
                 meta: null,
-                value: 'module DiskHashTable "https://presidium.services/docs/DiskHashTable"\n' +
-                  '\n' +
-                  'getBinary DiskHashTable.getBinary',
+                value: 'getBinary(key string) -> binaryValue Promise<Buffer|undefined>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 5, column: 4, offset: 121 }
+                  end: { line: 3, column: 4, offset: 80 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 121 }
+              end: { line: 3, column: 4, offset: 80 }
             }
           }
         }
       },
       {
         name: 'delete',
-        docs: '```specscript\n' +
-          'module DiskHashTable "https://presidium.services/docs/DiskHashTable"\n' +
-          '\n' +
-          'delete DiskHashTable.delete\n' +
-          '```',
+        docs: '```specscript\ndelete(key string) -> didDelete Promise<boolean>\n```',
         mdast: {
           name: {
             type: 'root',
@@ -1152,18 +1130,16 @@ export default [
                 type: 'code',
                 lang: 'specscript',
                 meta: null,
-                value: 'module DiskHashTable "https://presidium.services/docs/DiskHashTable"\n' +
-                  '\n' +
-                  'delete DiskHashTable.delete',
+                value: 'delete(key string) -> didDelete Promise<boolean>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 5, column: 4, offset: 115 }
+                  end: { line: 3, column: 4, offset: 66 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 115 }
+              end: { line: 3, column: 4, offset: 66 }
             }
           }
         }
@@ -1222,9 +1198,11 @@ export default [
       {
         name: 'iterator',
         docs: '```specscript\n' +
+          'iterator() -> values AsyncGenerator<string>\n' +
+          '\n' +
           'iterator(options {\n' +
           '  valueType: "string"|"binary",\n' +
-          '}) -> values AsyncIterator<string|Buffer>\n' +
+          '}) -> values AsyncGenerator<string|Buffer>\n' +
           '```',
         mdast: {
           name: {
@@ -1260,18 +1238,20 @@ export default [
                 type: 'code',
                 lang: 'specscript',
                 meta: null,
-                value: 'iterator(options {\n' +
+                value: 'iterator() -> values AsyncGenerator<string>\n' +
+                  '\n' +
+                  'iterator(options {\n' +
                   '  valueType: "string"|"binary",\n' +
-                  '}) -> values AsyncIterator<string|Buffer>',
+                  '}) -> values AsyncGenerator<string|Buffer>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 5, column: 4, offset: 110 }
+                  end: { line: 7, column: 4, offset: 156 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 110 }
+              end: { line: 7, column: 4, offset: 156 }
             }
           }
         }
@@ -1279,9 +1259,11 @@ export default [
       {
         name: 'entriesIterator',
         docs: '```specscript\n' +
+          'entriesIterator() -> entries AsyncGenerator<[key string, value string]>\n' +
+          '\n' +
           'entriesIterator(options {\n' +
-          "  valueType: 'string'|'binary',\n" +
-          '}) -> entries AsyncIterator<[key string, value string|Buffer]>\n' +
+          '  valueType: "string"|"binary",\n' +
+          '}) -> entries AsyncGenerator<[key string, value string|Buffer]>\n' +
           '```',
         mdast: {
           name: {
@@ -1317,18 +1299,20 @@ export default [
                 type: 'code',
                 lang: 'specscript',
                 meta: null,
-                value: 'entriesIterator(options {\n' +
-                  "  valueType: 'string'|'binary',\n" +
-                  '}) -> entries AsyncIterator<[key string, value string|Buffer]>',
+                value: 'entriesIterator() -> entries AsyncGenerator<[key string, value string]>\n' +
+                  '\n' +
+                  'entriesIterator(options {\n' +
+                  '  valueType: "string"|"binary",\n' +
+                  '}) -> entries AsyncGenerator<[key string, value string|Buffer]>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 5, column: 4, offset: 138 }
+                  end: { line: 7, column: 4, offset: 212 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 138 }
+              end: { line: 7, column: 4, offset: 212 }
             }
           }
         }
@@ -1342,7 +1326,7 @@ export default [
       'new DiskSortedHashTableClient(options {\n' +
       '  serverUrl: string,\n' +
       '  tableName: string,\n' +
-      '  sortValueType: "string"|"number",\n' +
+      '  sortValueType: "string"|"number"|Array<"string"|"number">,\n' +
       '  degree: number,\n' +
       '  delimiter: string,\n' +
       '}) -> DiskSortedHashTableClient\n' +
@@ -1384,30 +1368,26 @@ export default [
             value: 'new DiskSortedHashTableClient(options {\n' +
               '  serverUrl: string,\n' +
               '  tableName: string,\n' +
-              '  sortValueType: "string"|"number",\n' +
+              '  sortValueType: "string"|"number"|Array<"string"|"number">,\n' +
               '  degree: number,\n' +
               '  delimiter: string,\n' +
               '}) -> DiskSortedHashTableClient',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 9, column: 4, offset: 206 }
+              end: { line: 9, column: 4, offset: 231 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 206 }
+          end: { line: 9, column: 4, offset: 231 }
         }
       }
     },
     methods: [
       {
         name: 'clear',
-        docs: '```specscript\n' +
-          'module DiskSortedHashTable "https://presidium.services/docs/DiskSortedHashTable"\n' +
-          '\n' +
-          'clear DiskSortedHashTable.clear\n' +
-          '```',
+        docs: '```specscript\nclear() -> Promise<>\n```',
         mdast: {
           name: {
             type: 'root',
@@ -1442,18 +1422,16 @@ export default [
                 type: 'code',
                 lang: 'specscript',
                 meta: null,
-                value: 'module DiskSortedHashTable "https://presidium.services/docs/DiskSortedHashTable"\n' +
-                  '\n' +
-                  'clear DiskSortedHashTable.clear',
+                value: 'clear() -> Promise<>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 5, column: 4, offset: 131 }
+                  end: { line: 3, column: 4, offset: 38 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 131 }
+              end: { line: 3, column: 4, offset: 38 }
             }
           }
         }
@@ -1461,9 +1439,9 @@ export default [
       {
         name: 'set',
         docs: '```specscript\n' +
-          'module DiskSortedHashTable "https://presidium.services/docs/DiskSortedHashTable"\n' +
+          'set(key string, value string|Buffer|Uint8Array, sortValue string|number) -> Promise<>\n' +
           '\n' +
-          'set DiskSortedHashTable.set\n' +
+          'set(key string, value string|Buffer|Uint8Array, ...sortValue Array<string|number>) -> Promise<>\n' +
           '```',
         mdast: {
           name: {
@@ -1499,29 +1477,25 @@ export default [
                 type: 'code',
                 lang: 'specscript',
                 meta: null,
-                value: 'module DiskSortedHashTable "https://presidium.services/docs/DiskSortedHashTable"\n' +
+                value: 'set(key string, value string|Buffer|Uint8Array, sortValue string|number) -> Promise<>\n' +
                   '\n' +
-                  'set DiskSortedHashTable.set',
+                  'set(key string, value string|Buffer|Uint8Array, ...sortValue Array<string|number>) -> Promise<>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 5, column: 4, offset: 127 }
+                  end: { line: 5, column: 4, offset: 200 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 127 }
+              end: { line: 5, column: 4, offset: 200 }
             }
           }
         }
       },
       {
         name: 'get',
-        docs: '```specscript\n' +
-          'module DiskSortedHashTable "https://presidium.services/docs/DiskSortedHashTable"\n' +
-          '\n' +
-          'get DiskSortedHashTable.get\n' +
-          '```',
+        docs: '```specscript\nget(key string) -> value Promise<string|undefined>\n```',
         mdast: {
           name: {
             type: 'root',
@@ -1556,18 +1530,16 @@ export default [
                 type: 'code',
                 lang: 'specscript',
                 meta: null,
-                value: 'module DiskSortedHashTable "https://presidium.services/docs/DiskSortedHashTable"\n' +
-                  '\n' +
-                  'get DiskSortedHashTable.get',
+                value: 'get(key string) -> value Promise<string|undefined>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 5, column: 4, offset: 127 }
+                  end: { line: 3, column: 4, offset: 68 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 127 }
+              end: { line: 3, column: 4, offset: 68 }
             }
           }
         }
@@ -1575,9 +1547,7 @@ export default [
       {
         name: 'getBinary',
         docs: '```specscript\n' +
-          'module DiskSortedHashTable "https://presidium.services/docs/DiskSortedHashTable"\n' +
-          '\n' +
-          'getBinary DiskSortedHashTable.getBinary\n' +
+          'getBinary(key string) -> binaryValue Promise<Buffer|undefined>\n' +
           '```',
         mdast: {
           name: {
@@ -1613,18 +1583,16 @@ export default [
                 type: 'code',
                 lang: 'specscript',
                 meta: null,
-                value: 'module DiskSortedHashTable "https://presidium.services/docs/DiskSortedHashTable"\n' +
-                  '\n' +
-                  'getBinary DiskSortedHashTable.getBinary',
+                value: 'getBinary(key string) -> binaryValue Promise<Buffer|undefined>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 5, column: 4, offset: 139 }
+                  end: { line: 3, column: 4, offset: 80 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 139 }
+              end: { line: 3, column: 4, offset: 80 }
             }
           }
         }
@@ -1634,9 +1602,10 @@ export default [
         docs: '```specscript\n' +
           'forwardIterator(options {\n' +
           '  exclusiveStartKey: string, \n' +
-          '  startingSortValue: string|number,\n' +
-          '  endingSortValue: string|number,\n' +
-          "  valueType: 'string'|'binary',\n" +
+          '  startingSortValue: string|number|Array<string|number>,\n' +
+          '  endingSortValue: string|number|Array<string|number>,\n' +
+          '  valueType: "string"|"binary",\n' +
+          '  limit: number,\n' +
           '}) -> values AsyncIterator<string|Buffer>\n' +
           '```',
         mdast: {
@@ -1675,19 +1644,20 @@ export default [
                 meta: null,
                 value: 'forwardIterator(options {\n' +
                   '  exclusiveStartKey: string, \n' +
-                  '  startingSortValue: string|number,\n' +
-                  '  endingSortValue: string|number,\n' +
-                  "  valueType: 'string'|'binary',\n" +
+                  '  startingSortValue: string|number|Array<string|number>,\n' +
+                  '  endingSortValue: string|number|Array<string|number>,\n' +
+                  '  valueType: "string"|"binary",\n' +
+                  '  limit: number,\n' +
                   '}) -> values AsyncIterator<string|Buffer>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 8, column: 4, offset: 217 }
+                  end: { line: 9, column: 4, offset: 276 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 8, column: 4, offset: 217 }
+              end: { line: 9, column: 4, offset: 276 }
             }
           }
         }
@@ -1697,9 +1667,10 @@ export default [
         docs: '```specscript\n' +
           'reverseIterator(options {\n' +
           '  exclusiveStartKey: string, \n' +
-          '  startingSortValue: string|number,\n' +
-          '  endingSortValue: string|number,\n' +
-          "  valueType: 'string'|'binary',\n" +
+          '  startingSortValue: string|number|Array<string|number>,\n' +
+          '  endingSortValue: string|number|Array<string|number>,\n' +
+          '  valueType: "string"|"binary",\n' +
+          '  limit: number,\n' +
           '}) -> values AsyncIterator<string|Buffer>\n' +
           '```',
         mdast: {
@@ -1738,19 +1709,20 @@ export default [
                 meta: null,
                 value: 'reverseIterator(options {\n' +
                   '  exclusiveStartKey: string, \n' +
-                  '  startingSortValue: string|number,\n' +
-                  '  endingSortValue: string|number,\n' +
-                  "  valueType: 'string'|'binary',\n" +
+                  '  startingSortValue: string|number|Array<string|number>,\n' +
+                  '  endingSortValue: string|number|Array<string|number>,\n' +
+                  '  valueType: "string"|"binary",\n' +
+                  '  limit: number,\n' +
                   '}) -> values AsyncIterator<string|Buffer>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 8, column: 4, offset: 217 }
+                  end: { line: 9, column: 4, offset: 276 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 8, column: 4, offset: 217 }
+              end: { line: 9, column: 4, offset: 276 }
             }
           }
         }
@@ -1758,12 +1730,37 @@ export default [
       {
         name: 'forwardEntriesIterator',
         docs: '```specscript\n' +
-          'forwardEntriesIterator(options {\n' +
-          '  exclusiveStartKey: string, \n' +
-          '  startingSortValue: string|number,\n' +
-          '  endingSortValue: string|number,\n' +
-          "  valueType: 'string'|'binary',\n" +
-          '}) -> values AsyncIterator<string|Buffer>\n' +
+          'options {\n' +
+          '  exclusiveStartKey: string,\n' +
+          '  startingSortValue: string|number|Array<string|number>,\n' +
+          '  endingSortValue: string|number|Array<string|number>,\n' +
+          '  valueType: "string"|"binary",\n' +
+          '  limit: number,\n' +
+          '}\n' +
+          '\n' +
+          'forwardEntriesIterator() -> entries AsyncGenerator<[\n' +
+          '  key string,\n' +
+          '  value string|Buffer,\n' +
+          '  sortValue string|number,\n' +
+          ']>\n' +
+          '\n' +
+          'forwardEntriesIterator() -> entries AsyncGenerator<[\n' +
+          '  key string,\n' +
+          '  value string|Buffer,\n' +
+          '  ...sortValue Array<string|number>,\n' +
+          ']>\n' +
+          '\n' +
+          'forwardEntriesIterator(options) -> entries AsyncGenerator<[\n' +
+          '  key string,\n' +
+          '  value string|Buffer,\n' +
+          '  sortValue string|number,\n' +
+          ']>\n' +
+          '\n' +
+          'forwardEntriesIterator(options) -> entries AsyncGenerator<[\n' +
+          '  key string,\n' +
+          '  value string|Buffer,\n' +
+          '  ...sortValue Array<string|number>,\n' +
+          ']>\n' +
           '```',
         mdast: {
           name: {
@@ -1799,21 +1796,46 @@ export default [
                 type: 'code',
                 lang: 'specscript',
                 meta: null,
-                value: 'forwardEntriesIterator(options {\n' +
-                  '  exclusiveStartKey: string, \n' +
-                  '  startingSortValue: string|number,\n' +
-                  '  endingSortValue: string|number,\n' +
-                  "  valueType: 'string'|'binary',\n" +
-                  '}) -> values AsyncIterator<string|Buffer>',
+                value: 'options {\n' +
+                  '  exclusiveStartKey: string,\n' +
+                  '  startingSortValue: string|number|Array<string|number>,\n' +
+                  '  endingSortValue: string|number|Array<string|number>,\n' +
+                  '  valueType: "string"|"binary",\n' +
+                  '  limit: number,\n' +
+                  '}\n' +
+                  '\n' +
+                  'forwardEntriesIterator() -> entries AsyncGenerator<[\n' +
+                  '  key string,\n' +
+                  '  value string|Buffer,\n' +
+                  '  sortValue string|number,\n' +
+                  ']>\n' +
+                  '\n' +
+                  'forwardEntriesIterator() -> entries AsyncGenerator<[\n' +
+                  '  key string,\n' +
+                  '  value string|Buffer,\n' +
+                  '  ...sortValue Array<string|number>,\n' +
+                  ']>\n' +
+                  '\n' +
+                  'forwardEntriesIterator(options) -> entries AsyncGenerator<[\n' +
+                  '  key string,\n' +
+                  '  value string|Buffer,\n' +
+                  '  sortValue string|number,\n' +
+                  ']>\n' +
+                  '\n' +
+                  'forwardEntriesIterator(options) -> entries AsyncGenerator<[\n' +
+                  '  key string,\n' +
+                  '  value string|Buffer,\n' +
+                  '  ...sortValue Array<string|number>,\n' +
+                  ']>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 8, column: 4, offset: 224 }
+                  end: { line: 33, column: 4, offset: 737 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 8, column: 4, offset: 224 }
+              end: { line: 33, column: 4, offset: 737 }
             }
           }
         }
@@ -1821,9 +1843,37 @@ export default [
       {
         name: 'reverseEntriesIterator',
         docs: '```specscript\n' +
-          'module DiskSortedHashTable "https://presidium.services/docs/DiskSortedHashTable"\n' +
+          'options {\n' +
+          '  exclusiveStartKey: string,\n' +
+          '  startingSortValue: string|number|Array<string|number>,\n' +
+          '  endingSortValue: string|number|Array<string|number>,\n' +
+          '  valueType: "string"|"binary",\n' +
+          '  limit: number,\n' +
+          '}\n' +
           '\n' +
-          'reverseEntriesIterator DiskSortedHashTable.reverseEntriesIterator\n' +
+          'reverseEntriesIterator() -> entries AsyncGenerator<[\n' +
+          '  key string,\n' +
+          '  value string|Buffer,\n' +
+          '  sortValue string|number,\n' +
+          ']>\n' +
+          '\n' +
+          'reverseEntriesIterator() -> entries AsyncGenerator<[\n' +
+          '  key string,\n' +
+          '  value string|Buffer,\n' +
+          '  ...sortValue Array<string|number>,\n' +
+          ']>\n' +
+          '\n' +
+          'reverseEntriesIterator(options) -> entries AsyncGenerator<[\n' +
+          '  key string,\n' +
+          '  value string|Buffer,\n' +
+          '  sortValue string|number,\n' +
+          ']>\n' +
+          '\n' +
+          'reverseEntriesIterator(options) -> entries AsyncGenerator<[\n' +
+          '  key string,\n' +
+          '  value string|Buffer,\n' +
+          '  ...sortValue Array<string|number>,\n' +
+          ']>\n' +
           '```',
         mdast: {
           name: {
@@ -1859,29 +1909,53 @@ export default [
                 type: 'code',
                 lang: 'specscript',
                 meta: null,
-                value: 'module DiskSortedHashTable "https://presidium.services/docs/DiskSortedHashTable"\n' +
+                value: 'options {\n' +
+                  '  exclusiveStartKey: string,\n' +
+                  '  startingSortValue: string|number|Array<string|number>,\n' +
+                  '  endingSortValue: string|number|Array<string|number>,\n' +
+                  '  valueType: "string"|"binary",\n' +
+                  '  limit: number,\n' +
+                  '}\n' +
                   '\n' +
-                  'reverseEntriesIterator DiskSortedHashTable.reverseEntriesIterator',
+                  'reverseEntriesIterator() -> entries AsyncGenerator<[\n' +
+                  '  key string,\n' +
+                  '  value string|Buffer,\n' +
+                  '  sortValue string|number,\n' +
+                  ']>\n' +
+                  '\n' +
+                  'reverseEntriesIterator() -> entries AsyncGenerator<[\n' +
+                  '  key string,\n' +
+                  '  value string|Buffer,\n' +
+                  '  ...sortValue Array<string|number>,\n' +
+                  ']>\n' +
+                  '\n' +
+                  'reverseEntriesIterator(options) -> entries AsyncGenerator<[\n' +
+                  '  key string,\n' +
+                  '  value string|Buffer,\n' +
+                  '  sortValue string|number,\n' +
+                  ']>\n' +
+                  '\n' +
+                  'reverseEntriesIterator(options) -> entries AsyncGenerator<[\n' +
+                  '  key string,\n' +
+                  '  value string|Buffer,\n' +
+                  '  ...sortValue Array<string|number>,\n' +
+                  ']>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 5, column: 4, offset: 165 }
+                  end: { line: 33, column: 4, offset: 737 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 165 }
+              end: { line: 33, column: 4, offset: 737 }
             }
           }
         }
       },
       {
         name: 'delete',
-        docs: '```specscript\n' +
-          'module DiskSortedHashTable "https://presidium.services/docs/DiskSortedHashTable"\n' +
-          '\n' +
-          'delete DiskSortedHashTable.delete\n' +
-          '```',
+        docs: '```specscript\ndelete(key string) -> didDelete Promise<boolean>\n```',
         mdast: {
           name: {
             type: 'root',
@@ -1916,18 +1990,16 @@ export default [
                 type: 'code',
                 lang: 'specscript',
                 meta: null,
-                value: 'module DiskSortedHashTable "https://presidium.services/docs/DiskSortedHashTable"\n' +
-                  '\n' +
-                  'delete DiskSortedHashTable.delete',
+                value: 'delete(key string) -> didDelete Promise<boolean>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 5, column: 4, offset: 133 }
+                  end: { line: 3, column: 4, offset: 66 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 133 }
+              end: { line: 3, column: 4, offset: 66 }
             }
           }
         }
@@ -2751,5 +2823,58 @@ export default [
     },
     methods: [],
     fileName: '/home/richard/code/presidium.services/../presidium-db-client-server/parseString.js'
+  },
+  {
+    name: 'toString',
+    docs: '```specscript\ntoString(value) -> string\n```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'toString',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 9, offset: 8 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 9, offset: 8 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 9, offset: 8 }
+        }
+      },
+      docs: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'specscript',
+            meta: null,
+            value: 'toString(value) -> string',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 43 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 43 }
+        }
+      }
+    },
+    methods: [],
+    fileName: '/home/richard/code/presidium.services/../presidium-db-client-server/toString.js'
   }
 ]
