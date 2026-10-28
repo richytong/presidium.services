@@ -9,6 +9,7 @@ function createClassNames(filenames) {
     && filename != 'Archive.js'
     && filename != 'internal'
     && filename != 'LICENSE'
+    && !filename.includes("internal")
   ).map(filename => filename.replace('.js', ''))
 }
 

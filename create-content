@@ -92,6 +92,8 @@ const createMdast = async function () {
   const presidiumDBMajorVersion = presidiumDBVersion.split(".")[0]
   const presidiumDBClientAndServerVersion = require("../presidium-db-client-server/package").version
   const presidiumDBClientAndServerMajorVersion = presidiumDBClientAndServerVersion.split(".")[0]
+  const presidiumFileClientAndServerVersion = require("../presidium-file-client-server/package").version
+  const presidiumFileClientAndServerMajorVersion = presidiumDBClientAndServerVersion.split(".")[0]
 
   console.log(`Creating mdast/presidium-v${presidiumMajorVersion}-readme.js`)
   await createMdastFile(
@@ -129,10 +131,20 @@ const createMdast = async function () {
     },
   )
 
-  console.log(`Creating cronist/presidium-db-client-server-v${presidiumDBClientAndServerMajorVersion}.js`)
+  console.log(`Creating cronist/presidium-db-client-server-v${presidiumFileClientAndServerMajorVersion}.js`)
   await createCronistFile(
     `${__dirname}/../presidium-db-client-server`,
-    `${__dirname}/public/cronist/presidium-db-client-server-v${presidiumDBClientAndServerMajorVersion}.js`,
+    `${__dirname}/public/cronist/presidium-db-client-server-v${presidiumFileClientAndServerMajorVersion}.js`,
+    {
+      requiredKeys: ["name", "docs"],
+      ignoreDirs: ["node_modules", "archive"],
+    },
+  )
+
+  console.log(`Creating cronist/presidium-file-client-server-v${presidiumFileClientAndServerMajorVersion}.js`)
+  await createCronistFile(
+    `${__dirname}/../presidium-file-client-server`,
+    `${__dirname}/public/cronist/presidium-file-client-server-v${presidiumFileClientAndServerMajorVersion}.js`,
     {
       requiredKeys: ["name", "docs"],
       ignoreDirs: ["node_modules", "archive"],

@@ -268,17 +268,23 @@ export default [
   {
     name: 'DatabaseLoadBalancer',
     docs: '```specscript\n' +
-      'module HTTP "https://presidium.services/docs/HTTP"\n' +
+      'module http "https://nodejs.org/api/http.html"\n' +
       '\n' +
-      'HTTP.Handler(HTTP.Request, HTTP.Response) -> ()\n' +
+      'type HttpHandler(http.ClientRequest, http.ServerResponse) -> Promise<>|undefined\n' +
       '\n' +
-      'new DatabaseLoadBalancer(\n' +
-      '  hash(tableName string, key string, length number) -> Promise|number,\n' +
-      '  options {\n' +
-      '    serverIps: Array<string>|Array<Array<string>>,\n' +
-      '  },\n' +
-      '  ...handlers Arguments<HTTP.Handler>\n' +
-      ')\n' +
+      'new DatabaseLoadBalancer(options {\n' +
+      '  serverIps: Array<string>|Array<Array<string>>,\n' +
+      '}, ...handlers Arguments<HttpHandler>) -> DatabaseLoadBalancer\n' +
+      '\n' +
+      'hash(\n' +
+      '  tableName string,\n' +
+      '  key string,\n' +
+      '  serverIpslength number\n' +
+      ') -> serverIndex Promise|number\n' +
+      '\n' +
+      'new DatabaseLoadBalancer(hash, options {\n' +
+      '  serverIps: Array<string>|Array<Array<string>>,\n' +
+      '}, ...handlers Arguments<HttpHandler>) -> DatabaseLoadBalancer\n' +
       '```',
     mdast: {
       name: {
@@ -314,26 +320,32 @@ export default [
             type: 'code',
             lang: 'specscript',
             meta: null,
-            value: 'module HTTP "https://presidium.services/docs/HTTP"\n' +
+            value: 'module http "https://nodejs.org/api/http.html"\n' +
               '\n' +
-              'HTTP.Handler(HTTP.Request, HTTP.Response) -> ()\n' +
+              'type HttpHandler(http.ClientRequest, http.ServerResponse) -> Promise<>|undefined\n' +
               '\n' +
-              'new DatabaseLoadBalancer(\n' +
-              '  hash(tableName string, key string, length number) -> Promise|number,\n' +
-              '  options {\n' +
-              '    serverIps: Array<string>|Array<Array<string>>,\n' +
-              '  },\n' +
-              '  ...handlers Arguments<HTTP.Handler>\n' +
-              ')',
+              'new DatabaseLoadBalancer(options {\n' +
+              '  serverIps: Array<string>|Array<Array<string>>,\n' +
+              '}, ...handlers Arguments<HttpHandler>) -> DatabaseLoadBalancer\n' +
+              '\n' +
+              'hash(\n' +
+              '  tableName string,\n' +
+              '  key string,\n' +
+              '  serverIpslength number\n' +
+              ') -> serverIndex Promise|number\n' +
+              '\n' +
+              'new DatabaseLoadBalancer(hash, options {\n' +
+              '  serverIps: Array<string>|Array<Array<string>>,\n' +
+              '}, ...handlers Arguments<HttpHandler>) -> DatabaseLoadBalancer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 13, column: 4, offset: 323 }
+              end: { line: 19, column: 4, offset: 546 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 13, column: 4, offset: 323 }
+          end: { line: 19, column: 4, offset: 546 }
         }
       }
     },
@@ -450,9 +462,9 @@ export default [
   {
     name: 'DatabaseServer',
     docs: '```specscript\n' +
-      'module HTTP "https://presidium.services/docs/HTTP"\n' +
+      'module http "https://nodejs.org/api/http.html"\n' +
       '\n' +
-      'HTTP.Handler(request HTTP.Request, response HTTP.Response) -> ()\n' +
+      'type HttpHandler(http.ClientRequest, http.ServerResponse) -> Promise<>|undefined\n' +
       '\n' +
       'new DatabaseServer(options {\n' +
       '  databasePath: string,\n' +
@@ -463,7 +475,7 @@ export default [
       '  defaultTableItemSize: number,\n' +
       '  defaultDiskSortedHashTableDegree: number,\n' +
       '  delimiter: string,\n' +
-      '}, ...handlers Arguments<HTTP.Handler>) -> server DatabaseServer\n' +
+      '}, ...handlers Arguments<HttpHandler>) -> server DatabaseServer\n' +
       '```',
     mdast: {
       name: {
@@ -499,9 +511,9 @@ export default [
             type: 'code',
             lang: 'specscript',
             meta: null,
-            value: 'module HTTP "https://presidium.services/docs/HTTP"\n' +
+            value: 'module http "https://nodejs.org/api/http.html"\n' +
               '\n' +
-              'HTTP.Handler(request HTTP.Request, response HTTP.Response) -> ()\n' +
+              'type HttpHandler(http.ClientRequest, http.ServerResponse) -> Promise<>|undefined\n' +
               '\n' +
               'new DatabaseServer(options {\n' +
               '  databasePath: string,\n' +
@@ -512,16 +524,16 @@ export default [
               '  defaultTableItemSize: number,\n' +
               '  defaultDiskSortedHashTableDegree: number,\n' +
               '  delimiter: string,\n' +
-              '}, ...handlers Arguments<HTTP.Handler>) -> server DatabaseServer',
+              '}, ...handlers Arguments<HttpHandler>) -> server DatabaseServer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 16, column: 4, offset: 487 }
+              end: { line: 16, column: 4, offset: 498 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 16, column: 4, offset: 487 }
+          end: { line: 16, column: 4, offset: 498 }
         }
       }
     },
@@ -2535,6 +2547,61 @@ export default [
     },
     methods: [],
     fileName: '/home/richard/code/presidium.services/../presidium-db-client-server/handleServerResponse.js'
+  },
+  {
+    name: 'hash',
+    docs: '```specscript\n' +
+      'hash(tableName string, key string, length number) -> index number\n' +
+      '```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'hash',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 5, offset: 4 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 5, offset: 4 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 5, offset: 4 }
+        }
+      },
+      docs: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'specscript',
+            meta: null,
+            value: 'hash(tableName string, key string, length number) -> index number',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 83 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 83 }
+        }
+      }
+    },
+    methods: [],
+    fileName: '/home/richard/code/presidium.services/../presidium-db-client-server/hash.js'
   },
   {
     name: 'healthCheckHandler',
