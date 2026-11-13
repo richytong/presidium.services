@@ -154221,7 +154221,7 @@ export default [
       {
         name: 'Array',
         docs: '```specscript\n' +
-          'Validator.Array(data) -> Array\n' +
+          'Validator.Array(data any) -> Array\n' +
           '\n' +
           'Validator.Array(validator function) -> arrayValidator\n' +
           '\n' +
@@ -154261,20 +154261,20 @@ export default [
                 type: 'code',
                 lang: 'specscript',
                 meta: null,
-                value: 'Validator.Array(data) -> Array\n' +
+                value: 'Validator.Array(data any) -> Array\n' +
                   '\n' +
                   'Validator.Array(validator function) -> arrayValidator\n' +
                   '\n' +
                   'arrayValidator(data any) -> result Array',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 7, column: 4, offset: 145 }
+                  end: { line: 7, column: 4, offset: 149 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 7, column: 4, offset: 145 }
+              end: { line: 7, column: 4, offset: 149 }
             }
           }
         }
@@ -154486,7 +154486,7 @@ export default [
       {
         name: 'OneOf',
         docs: '```specscript\n' +
-          'Validator.OneOf(...values Arguments) -> oneOfValidator\n' +
+          'Validator.OneOf(...values Arguments<function|any>) -> oneOfValidator\n' +
           '\n' +
           'oneOfValidator(data any) -> result string|number\n' +
           '```',
@@ -154524,18 +154524,18 @@ export default [
                 type: 'code',
                 lang: 'specscript',
                 meta: null,
-                value: 'Validator.OneOf(...values Arguments) -> oneOfValidator\n' +
+                value: 'Validator.OneOf(...values Arguments<function|any>) -> oneOfValidator\n' +
                   '\n' +
                   'oneOfValidator(data any) -> result string|number',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 5, column: 4, offset: 122 }
+                  end: { line: 5, column: 4, offset: 136 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 122 }
+              end: { line: 5, column: 4, offset: 136 }
             }
           }
         }

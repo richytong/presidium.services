@@ -770,7 +770,7 @@ export default [
           '  headerPath: string,\n' +
           '  initialLength: number,\n' +
           '  itemSize: number,\n' +
-          '  sortValueType: "number"|"string",\n' +
+          '  sortValueType: "string"|"number"|Array<"string"|"number">,\n' +
           '  degree: number,\n' +
           '  resizeRatio: number,\n' +
           '  resizeFactor: number,\n' +
@@ -815,20 +815,20 @@ export default [
                   '  headerPath: string,\n' +
                   '  initialLength: number,\n' +
                   '  itemSize: number,\n' +
-                  '  sortValueType: "number"|"string",\n' +
+                  '  sortValueType: "string"|"number"|Array<"string"|"number">,\n' +
                   '  degree: number,\n' +
                   '  resizeRatio: number,\n' +
                   '  resizeFactor: number,\n' +
                   '}) -> Promise<>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 12, column: 4, offset: 279 }
+                  end: { line: 12, column: 4, offset: 304 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 279 }
+              end: { line: 12, column: 4, offset: 304 }
             }
           }
         }
