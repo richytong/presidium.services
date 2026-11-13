@@ -42,6 +42,15 @@
   <loc>https://presidium.services/docs/ECR</loc>
 </url>
 <url>
+  <loc>https://presidium.services/docs/FileLoadBalancer</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/FileServer</loc>
+</url>
+<url>
+  <loc>https://presidium.services/docs/FileClient</loc>
+</url>
+<url>
   <loc>https://presidium.services/docs/GoogleChromeDevTools</loc>
 </url>
 <url>
