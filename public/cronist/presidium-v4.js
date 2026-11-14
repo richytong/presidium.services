@@ -20222,6 +20222,7 @@ export default [
           '  rollbackMonitor: 15e9|number,\n' +
           '  rollbackMaxFailureRatio: 0.15|number,\n' +
           '  network: string,\n' +
+          '  networks: Array<string>,\n' +
           '  cmd: Array<string|number>,\n' +
           '  workdir: path string,\n' +
           '  env: Object<string>,\n' +
@@ -20374,6 +20375,7 @@ export default [
                   '  rollbackMonitor: 15e9|number,\n' +
                   '  rollbackMaxFailureRatio: 0.15|number,\n' +
                   '  network: string,\n' +
+                  '  networks: Array<string>,\n' +
                   '  cmd: Array<string|number>,\n' +
                   '  workdir: path string,\n' +
                   '  env: Object<string>,\n' +
@@ -20391,7 +20393,7 @@ export default [
                   '}>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 54, column: 4, offset: 1618 }
+                  end: { line: 55, column: 4, offset: 1645 }
                 }
               },
               {
@@ -20401,14 +20403,14 @@ export default [
                     type: 'text',
                     value: 'Creates a Docker service. The current node (server) must be a manager node in a Docker swarm.',
                     position: {
-                      start: { line: 56, column: 1, offset: 1620 },
-                      end: { line: 56, column: 94, offset: 1713 }
+                      start: { line: 57, column: 1, offset: 1647 },
+                      end: { line: 57, column: 94, offset: 1740 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 56, column: 1, offset: 1620 },
-                  end: { line: 56, column: 94, offset: 1713 }
+                  start: { line: 57, column: 1, offset: 1647 },
+                  end: { line: 57, column: 94, offset: 1740 }
                 }
               },
               {
@@ -20418,14 +20420,14 @@ export default [
                     type: 'text',
                     value: 'Arguments:',
                     position: {
-                      start: { line: 58, column: 1, offset: 1715 },
-                      end: { line: 58, column: 11, offset: 1725 }
+                      start: { line: 59, column: 1, offset: 1742 },
+                      end: { line: 59, column: 11, offset: 1752 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 58, column: 1, offset: 1715 },
-                  end: { line: 58, column: 11, offset: 1725 }
+                  start: { line: 59, column: 1, offset: 1742 },
+                  end: { line: 59, column: 11, offset: 1752 }
                 }
               },
               {
@@ -20446,28 +20448,28 @@ export default [
                             type: 'inlineCode',
                             value: 'service',
                             position: {
-                              start: { line: 59, column: 5, offset: 1730 },
-                              end: { line: 59, column: 14, offset: 1739 }
+                              start: { line: 60, column: 5, offset: 1757 },
+                              end: { line: 60, column: 14, offset: 1766 }
                             }
                           },
                           {
                             type: 'text',
                             value: ' - the Docker service name.',
                             position: {
-                              start: { line: 59, column: 14, offset: 1739 },
-                              end: { line: 59, column: 41, offset: 1766 }
+                              start: { line: 60, column: 14, offset: 1766 },
+                              end: { line: 60, column: 41, offset: 1793 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 59, column: 5, offset: 1730 },
-                          end: { line: 59, column: 41, offset: 1766 }
+                          start: { line: 60, column: 5, offset: 1757 },
+                          end: { line: 60, column: 41, offset: 1793 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 59, column: 3, offset: 1728 },
-                      end: { line: 59, column: 41, offset: 1766 }
+                      start: { line: 60, column: 3, offset: 1755 },
+                      end: { line: 60, column: 41, offset: 1793 }
                     }
                   },
                   {
@@ -20482,14 +20484,14 @@ export default [
                             type: 'inlineCode',
                             value: 'options',
                             position: {
-                              start: { line: 60, column: 5, offset: 1771 },
-                              end: { line: 60, column: 14, offset: 1780 }
+                              start: { line: 61, column: 5, offset: 1798 },
+                              end: { line: 61, column: 14, offset: 1807 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 60, column: 5, offset: 1771 },
-                          end: { line: 60, column: 14, offset: 1780 }
+                          start: { line: 61, column: 5, offset: 1798 },
+                          end: { line: 61, column: 14, offset: 1807 }
                         }
                       },
                       {
@@ -20511,14 +20513,14 @@ export default [
                                     value: 'image',
                                     position: {
                                       start: {
-                                        line: 61,
+                                        line: 62,
                                         column: 7,
-                                        offset: 1787
+                                        offset: 1814
                                       },
                                       end: {
-                                        line: 61,
+                                        line: 62,
                                         column: 14,
-                                        offset: 1794
+                                        offset: 1821
                                       }
                                     }
                                   },
@@ -20527,31 +20529,31 @@ export default [
                                     value: ' - the Docker image of the Docker service.',
                                     position: {
                                       start: {
-                                        line: 61,
+                                        line: 62,
                                         column: 14,
-                                        offset: 1794
+                                        offset: 1821
                                       },
                                       end: {
-                                        line: 61,
+                                        line: 62,
                                         column: 56,
-                                        offset: 1836
+                                        offset: 1863
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 61, column: 7, offset: 1787 },
+                                  start: { line: 62, column: 7, offset: 1814 },
                                   end: {
-                                    line: 61,
+                                    line: 62,
                                     column: 56,
-                                    offset: 1836
+                                    offset: 1863
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 61, column: 5, offset: 1785 },
-                              end: { line: 61, column: 56, offset: 1836 }
+                              start: { line: 62, column: 5, offset: 1812 },
+                              end: { line: 62, column: 56, offset: 1863 }
                             }
                           },
                           {
@@ -20567,14 +20569,14 @@ export default [
                                     value: 'replicas',
                                     position: {
                                       start: {
-                                        line: 62,
+                                        line: 63,
                                         column: 7,
-                                        offset: 1843
+                                        offset: 1870
                                       },
                                       end: {
-                                        line: 62,
+                                        line: 63,
                                         column: 17,
-                                        offset: 1853
+                                        offset: 1880
                                       }
                                     }
                                   },
@@ -20583,14 +20585,14 @@ export default [
                                     value: ' - the number of containers that the Docker service will run across all nodes of the Docker swarm. If ',
                                     position: {
                                       start: {
-                                        line: 62,
+                                        line: 63,
                                         column: 17,
-                                        offset: 1853
+                                        offset: 1880
                                       },
                                       end: {
-                                        line: 62,
+                                        line: 63,
                                         column: 119,
-                                        offset: 1955
+                                        offset: 1982
                                       }
                                     }
                                   },
@@ -20599,14 +20601,14 @@ export default [
                                     value: 'replicas',
                                     position: {
                                       start: {
-                                        line: 62,
+                                        line: 63,
                                         column: 119,
-                                        offset: 1955
+                                        offset: 1982
                                       },
                                       end: {
-                                        line: 62,
+                                        line: 63,
                                         column: 129,
-                                        offset: 1965
+                                        offset: 1992
                                       }
                                     }
                                   },
@@ -20615,31 +20617,31 @@ export default [
                                     value: ' is set to "global", the Docker service will run containers on each node of the Docker swarm.',
                                     position: {
                                       start: {
-                                        line: 62,
+                                        line: 63,
                                         column: 129,
-                                        offset: 1965
+                                        offset: 1992
                                       },
                                       end: {
-                                        line: 62,
+                                        line: 63,
                                         column: 222,
-                                        offset: 2058
+                                        offset: 2085
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 62, column: 7, offset: 1843 },
+                                  start: { line: 63, column: 7, offset: 1870 },
                                   end: {
-                                    line: 62,
+                                    line: 63,
                                     column: 222,
-                                    offset: 2058
+                                    offset: 2085
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 62, column: 5, offset: 1841 },
-                              end: { line: 62, column: 222, offset: 2058 }
+                              start: { line: 63, column: 5, offset: 1868 },
+                              end: { line: 63, column: 222, offset: 2085 }
                             }
                           },
                           {
@@ -20655,14 +20657,14 @@ export default [
                                     value: 'restart',
                                     position: {
                                       start: {
-                                        line: 63,
+                                        line: 64,
                                         column: 7,
-                                        offset: 2065
+                                        offset: 2092
                                       },
                                       end: {
-                                        line: 63,
+                                        line: 64,
                                         column: 16,
-                                        offset: 2074
+                                        offset: 2101
                                       }
                                     }
                                   },
@@ -20671,31 +20673,31 @@ export default [
                                     value: ' - the restart policy for the Docker service.',
                                     position: {
                                       start: {
-                                        line: 63,
+                                        line: 64,
                                         column: 16,
-                                        offset: 2074
+                                        offset: 2101
                                       },
                                       end: {
-                                        line: 63,
+                                        line: 64,
                                         column: 61,
-                                        offset: 2119
+                                        offset: 2146
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 63, column: 7, offset: 2065 },
+                                  start: { line: 64, column: 7, offset: 2092 },
                                   end: {
-                                    line: 63,
+                                    line: 64,
                                     column: 61,
-                                    offset: 2119
+                                    offset: 2146
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 63, column: 5, offset: 2063 },
-                              end: { line: 63, column: 61, offset: 2119 }
+                              start: { line: 64, column: 5, offset: 2090 },
+                              end: { line: 64, column: 61, offset: 2146 }
                             }
                           },
                           {
@@ -20711,14 +20713,14 @@ export default [
                                     value: 'restartDelay',
                                     position: {
                                       start: {
-                                        line: 64,
+                                        line: 65,
                                         column: 7,
-                                        offset: 2126
+                                        offset: 2153
                                       },
                                       end: {
-                                        line: 64,
+                                        line: 65,
                                         column: 21,
-                                        offset: 2140
+                                        offset: 2167
                                       }
                                     }
                                   },
@@ -20727,31 +20729,31 @@ export default [
                                     value: ' - the delay between restarts for the Docker service.',
                                     position: {
                                       start: {
-                                        line: 64,
+                                        line: 65,
                                         column: 21,
-                                        offset: 2140
+                                        offset: 2167
                                       },
                                       end: {
-                                        line: 64,
+                                        line: 65,
                                         column: 74,
-                                        offset: 2193
+                                        offset: 2220
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 64, column: 7, offset: 2126 },
+                                  start: { line: 65, column: 7, offset: 2153 },
                                   end: {
-                                    line: 64,
+                                    line: 65,
                                     column: 74,
-                                    offset: 2193
+                                    offset: 2220
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 64, column: 5, offset: 2124 },
-                              end: { line: 64, column: 74, offset: 2193 }
+                              start: { line: 65, column: 5, offset: 2151 },
+                              end: { line: 65, column: 74, offset: 2220 }
                             }
                           },
                           {
@@ -20767,14 +20769,14 @@ export default [
                                     value: 'logDriver',
                                     position: {
                                       start: {
-                                        line: 65,
+                                        line: 66,
                                         column: 7,
-                                        offset: 2200
+                                        offset: 2227
                                       },
                                       end: {
-                                        line: 65,
+                                        line: 66,
                                         column: 18,
-                                        offset: 2211
+                                        offset: 2238
                                       }
                                     }
                                   },
@@ -20783,31 +20785,31 @@ export default [
                                     value: ' - the logging driver of the Docker service.',
                                     position: {
                                       start: {
-                                        line: 65,
+                                        line: 66,
                                         column: 18,
-                                        offset: 2211
+                                        offset: 2238
                                       },
                                       end: {
-                                        line: 65,
+                                        line: 66,
                                         column: 62,
-                                        offset: 2255
+                                        offset: 2282
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 65, column: 7, offset: 2200 },
+                                  start: { line: 66, column: 7, offset: 2227 },
                                   end: {
-                                    line: 65,
+                                    line: 66,
                                     column: 62,
-                                    offset: 2255
+                                    offset: 2282
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 65, column: 5, offset: 2198 },
-                              end: { line: 65, column: 62, offset: 2255 }
+                              start: { line: 66, column: 5, offset: 2225 },
+                              end: { line: 66, column: 62, offset: 2282 }
                             }
                           },
                           {
@@ -20823,14 +20825,14 @@ export default [
                                     value: 'logDriverOptions',
                                     position: {
                                       start: {
-                                        line: 66,
+                                        line: 67,
                                         column: 7,
-                                        offset: 2262
+                                        offset: 2289
                                       },
                                       end: {
-                                        line: 66,
+                                        line: 67,
                                         column: 25,
-                                        offset: 2280
+                                        offset: 2307
                                       }
                                     }
                                   },
@@ -20839,31 +20841,31 @@ export default [
                                     value: ' - driver-specific configuration options for the logging driver.',
                                     position: {
                                       start: {
-                                        line: 66,
+                                        line: 67,
                                         column: 25,
-                                        offset: 2280
+                                        offset: 2307
                                       },
                                       end: {
-                                        line: 66,
+                                        line: 67,
                                         column: 89,
-                                        offset: 2344
+                                        offset: 2371
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 66, column: 7, offset: 2262 },
+                                  start: { line: 67, column: 7, offset: 2289 },
                                   end: {
-                                    line: 66,
+                                    line: 67,
                                     column: 89,
-                                    offset: 2344
+                                    offset: 2371
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 66, column: 5, offset: 2260 },
-                              end: { line: 66, column: 89, offset: 2344 }
+                              start: { line: 67, column: 5, offset: 2287 },
+                              end: { line: 67, column: 89, offset: 2371 }
                             }
                           },
                           {
@@ -20879,14 +20881,14 @@ export default [
                                     value: 'publish',
                                     position: {
                                       start: {
-                                        line: 67,
+                                        line: 68,
                                         column: 7,
-                                        offset: 2351
+                                        offset: 2378
                                       },
                                       end: {
-                                        line: 67,
+                                        line: 68,
                                         column: 16,
-                                        offset: 2360
+                                        offset: 2387
                                       }
                                     }
                                   },
@@ -20895,31 +20897,31 @@ export default [
                                     value: ' - object of mappings of host ports to Docker service ports with optional protocols.',
                                     position: {
                                       start: {
-                                        line: 67,
+                                        line: 68,
                                         column: 16,
-                                        offset: 2360
+                                        offset: 2387
                                       },
                                       end: {
-                                        line: 67,
+                                        line: 68,
                                         column: 100,
-                                        offset: 2444
+                                        offset: 2471
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 67, column: 7, offset: 2351 },
+                                  start: { line: 68, column: 7, offset: 2378 },
                                   end: {
-                                    line: 67,
+                                    line: 68,
                                     column: 100,
-                                    offset: 2444
+                                    offset: 2471
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 67, column: 5, offset: 2349 },
-                              end: { line: 67, column: 100, offset: 2444 }
+                              start: { line: 68, column: 5, offset: 2376 },
+                              end: { line: 68, column: 100, offset: 2471 }
                             }
                           },
                           {
@@ -20935,14 +20937,14 @@ export default [
                                     value: 'healthCmd',
                                     position: {
                                       start: {
-                                        line: 68,
+                                        line: 69,
                                         column: 7,
-                                        offset: 2451
+                                        offset: 2478
                                       },
                                       end: {
-                                        line: 68,
+                                        line: 69,
                                         column: 18,
-                                        offset: 2462
+                                        offset: 2489
                                       }
                                     }
                                   },
@@ -20951,31 +20953,31 @@ export default [
                                     value: ' - a command that checks the health of the Docker service. The health check fails if the command errors. The command is run inside each Docker container of the Docker service.',
                                     position: {
                                       start: {
-                                        line: 68,
+                                        line: 69,
                                         column: 18,
-                                        offset: 2462
+                                        offset: 2489
                                       },
                                       end: {
-                                        line: 68,
+                                        line: 69,
                                         column: 193,
-                                        offset: 2637
+                                        offset: 2664
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 68, column: 7, offset: 2451 },
+                                  start: { line: 69, column: 7, offset: 2478 },
                                   end: {
-                                    line: 68,
+                                    line: 69,
                                     column: 193,
-                                    offset: 2637
+                                    offset: 2664
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 68, column: 5, offset: 2449 },
-                              end: { line: 68, column: 193, offset: 2637 }
+                              start: { line: 69, column: 5, offset: 2476 },
+                              end: { line: 69, column: 193, offset: 2664 }
                             }
                           },
                           {
@@ -20991,14 +20993,14 @@ export default [
                                     value: 'healthInterval',
                                     position: {
                                       start: {
-                                        line: 69,
+                                        line: 70,
                                         column: 7,
-                                        offset: 2644
+                                        offset: 2671
                                       },
                                       end: {
-                                        line: 69,
+                                        line: 70,
                                         column: 23,
-                                        offset: 2660
+                                        offset: 2687
                                       }
                                     }
                                   },
@@ -21007,14 +21009,14 @@ export default [
                                     value: ' - time in nanoseconds to wait between healthchecks. Defaults to ',
                                     position: {
                                       start: {
-                                        line: 69,
+                                        line: 70,
                                         column: 23,
-                                        offset: 2660
+                                        offset: 2687
                                       },
                                       end: {
-                                        line: 69,
+                                        line: 70,
                                         column: 88,
-                                        offset: 2725
+                                        offset: 2752
                                       }
                                     }
                                   },
@@ -21023,14 +21025,14 @@ export default [
                                     value: '10e9',
                                     position: {
                                       start: {
-                                        line: 69,
+                                        line: 70,
                                         column: 88,
-                                        offset: 2725
+                                        offset: 2752
                                       },
                                       end: {
-                                        line: 69,
+                                        line: 70,
                                         column: 94,
-                                        offset: 2731
+                                        offset: 2758
                                       }
                                     }
                                   },
@@ -21039,31 +21041,31 @@ export default [
                                     value: '.',
                                     position: {
                                       start: {
-                                        line: 69,
+                                        line: 70,
                                         column: 94,
-                                        offset: 2731
+                                        offset: 2758
                                       },
                                       end: {
-                                        line: 69,
+                                        line: 70,
                                         column: 95,
-                                        offset: 2732
+                                        offset: 2759
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 69, column: 7, offset: 2644 },
+                                  start: { line: 70, column: 7, offset: 2671 },
                                   end: {
-                                    line: 69,
+                                    line: 70,
                                     column: 95,
-                                    offset: 2732
+                                    offset: 2759
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 69, column: 5, offset: 2642 },
-                              end: { line: 69, column: 95, offset: 2732 }
+                              start: { line: 70, column: 5, offset: 2669 },
+                              end: { line: 70, column: 95, offset: 2759 }
                             }
                           },
                           {
@@ -21079,14 +21081,14 @@ export default [
                                     value: 'healthTimeout',
                                     position: {
                                       start: {
-                                        line: 70,
+                                        line: 71,
                                         column: 7,
-                                        offset: 2739
+                                        offset: 2766
                                       },
                                       end: {
-                                        line: 70,
+                                        line: 71,
                                         column: 22,
-                                        offset: 2754
+                                        offset: 2781
                                       }
                                     }
                                   },
@@ -21095,14 +21097,14 @@ export default [
                                     value: ' - time in nanoseconds to wait before the healthcheck fails. Defaults to ',
                                     position: {
                                       start: {
-                                        line: 70,
+                                        line: 71,
                                         column: 22,
-                                        offset: 2754
+                                        offset: 2781
                                       },
                                       end: {
-                                        line: 70,
+                                        line: 71,
                                         column: 95,
-                                        offset: 2827
+                                        offset: 2854
                                       }
                                     }
                                   },
@@ -21111,14 +21113,14 @@ export default [
                                     value: '20e9',
                                     position: {
                                       start: {
-                                        line: 70,
+                                        line: 71,
                                         column: 95,
-                                        offset: 2827
+                                        offset: 2854
                                       },
                                       end: {
-                                        line: 70,
+                                        line: 71,
                                         column: 101,
-                                        offset: 2833
+                                        offset: 2860
                                       }
                                     }
                                   },
@@ -21127,31 +21129,31 @@ export default [
                                     value: '.',
                                     position: {
                                       start: {
-                                        line: 70,
+                                        line: 71,
                                         column: 101,
-                                        offset: 2833
+                                        offset: 2860
                                       },
                                       end: {
-                                        line: 70,
+                                        line: 71,
                                         column: 102,
-                                        offset: 2834
+                                        offset: 2861
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 70, column: 7, offset: 2739 },
+                                  start: { line: 71, column: 7, offset: 2766 },
                                   end: {
-                                    line: 70,
+                                    line: 71,
                                     column: 102,
-                                    offset: 2834
+                                    offset: 2861
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 70, column: 5, offset: 2737 },
-                              end: { line: 70, column: 102, offset: 2834 }
+                              start: { line: 71, column: 5, offset: 2764 },
+                              end: { line: 71, column: 102, offset: 2861 }
                             }
                           },
                           {
@@ -21167,14 +21169,14 @@ export default [
                                     value: 'healthRetries',
                                     position: {
                                       start: {
-                                        line: 71,
+                                        line: 72,
                                         column: 7,
-                                        offset: 2841
+                                        offset: 2868
                                       },
                                       end: {
-                                        line: 71,
+                                        line: 72,
                                         column: 22,
-                                        offset: 2856
+                                        offset: 2883
                                       }
                                     }
                                   },
@@ -21183,14 +21185,14 @@ export default [
                                     value: ' - number of times to retry the health check before the Docker container is considered unhealhty. Defaults to ',
                                     position: {
                                       start: {
-                                        line: 71,
+                                        line: 72,
                                         column: 22,
-                                        offset: 2856
+                                        offset: 2883
                                       },
                                       end: {
-                                        line: 71,
+                                        line: 72,
                                         column: 132,
-                                        offset: 2966
+                                        offset: 2993
                                       }
                                     }
                                   },
@@ -21199,14 +21201,14 @@ export default [
                                     value: '5',
                                     position: {
                                       start: {
-                                        line: 71,
+                                        line: 72,
                                         column: 132,
-                                        offset: 2966
+                                        offset: 2993
                                       },
                                       end: {
-                                        line: 71,
+                                        line: 72,
                                         column: 135,
-                                        offset: 2969
+                                        offset: 2996
                                       }
                                     }
                                   },
@@ -21215,31 +21217,31 @@ export default [
                                     value: '.',
                                     position: {
                                       start: {
-                                        line: 71,
+                                        line: 72,
                                         column: 135,
-                                        offset: 2969
+                                        offset: 2996
                                       },
                                       end: {
-                                        line: 71,
+                                        line: 72,
                                         column: 136,
-                                        offset: 2970
+                                        offset: 2997
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 71, column: 7, offset: 2841 },
+                                  start: { line: 72, column: 7, offset: 2868 },
                                   end: {
-                                    line: 71,
+                                    line: 72,
                                     column: 136,
-                                    offset: 2970
+                                    offset: 2997
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 71, column: 5, offset: 2839 },
-                              end: { line: 71, column: 136, offset: 2970 }
+                              start: { line: 72, column: 5, offset: 2866 },
+                              end: { line: 72, column: 136, offset: 2997 }
                             }
                           },
                           {
@@ -21255,14 +21257,14 @@ export default [
                                     value: 'healthStartPeriod',
                                     position: {
                                       start: {
-                                        line: 72,
+                                        line: 73,
                                         column: 7,
-                                        offset: 2977
+                                        offset: 3004
                                       },
                                       end: {
-                                        line: 72,
+                                        line: 73,
                                         column: 26,
-                                        offset: 2996
+                                        offset: 3023
                                       }
                                     }
                                   },
@@ -21271,31 +21273,31 @@ export default [
                                     value: ' - time in nanoseconds to wait when the Docker container starts up before running the first health check command.',
                                     position: {
                                       start: {
-                                        line: 72,
+                                        line: 73,
                                         column: 26,
-                                        offset: 2996
+                                        offset: 3023
                                       },
                                       end: {
-                                        line: 72,
+                                        line: 73,
                                         column: 139,
-                                        offset: 3109
+                                        offset: 3136
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 72, column: 7, offset: 2977 },
+                                  start: { line: 73, column: 7, offset: 3004 },
                                   end: {
-                                    line: 72,
+                                    line: 73,
                                     column: 139,
-                                    offset: 3109
+                                    offset: 3136
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 72, column: 5, offset: 2975 },
-                              end: { line: 72, column: 139, offset: 3109 }
+                              start: { line: 73, column: 5, offset: 3002 },
+                              end: { line: 73, column: 139, offset: 3136 }
                             }
                           },
                           {
@@ -21311,14 +21313,14 @@ export default [
                                     value: 'memory',
                                     position: {
                                       start: {
-                                        line: 73,
+                                        line: 74,
                                         column: 7,
-                                        offset: 3116
+                                        offset: 3143
                                       },
                                       end: {
-                                        line: 73,
+                                        line: 74,
                                         column: 15,
-                                        offset: 3124
+                                        offset: 3151
                                       }
                                     }
                                   },
@@ -21327,31 +21329,31 @@ export default [
                                     value: ' - memory limit of each container of the Docker service in bytes.',
                                     position: {
                                       start: {
-                                        line: 73,
+                                        line: 74,
                                         column: 15,
-                                        offset: 3124
+                                        offset: 3151
                                       },
                                       end: {
-                                        line: 73,
+                                        line: 74,
                                         column: 80,
-                                        offset: 3189
+                                        offset: 3216
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 73, column: 7, offset: 3116 },
+                                  start: { line: 74, column: 7, offset: 3143 },
                                   end: {
-                                    line: 73,
+                                    line: 74,
                                     column: 80,
-                                    offset: 3189
+                                    offset: 3216
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 73, column: 5, offset: 3114 },
-                              end: { line: 73, column: 80, offset: 3189 }
+                              start: { line: 74, column: 5, offset: 3141 },
+                              end: { line: 74, column: 80, offset: 3216 }
                             }
                           },
                           {
@@ -21367,14 +21369,14 @@ export default [
                                     value: 'cpus',
                                     position: {
                                       start: {
-                                        line: 74,
+                                        line: 75,
                                         column: 7,
-                                        offset: 3196
+                                        offset: 3223
                                       },
                                       end: {
-                                        line: 74,
+                                        line: 75,
                                         column: 13,
-                                        offset: 3202
+                                        offset: 3229
                                       }
                                     }
                                   },
@@ -21383,31 +21385,31 @@ export default [
                                     value: ' - CPU quota of each container of the Docker service in CPUs.',
                                     position: {
                                       start: {
-                                        line: 74,
+                                        line: 75,
                                         column: 13,
-                                        offset: 3202
+                                        offset: 3229
                                       },
                                       end: {
-                                        line: 74,
+                                        line: 75,
                                         column: 74,
-                                        offset: 3263
+                                        offset: 3290
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 74, column: 7, offset: 3196 },
+                                  start: { line: 75, column: 7, offset: 3223 },
                                   end: {
-                                    line: 74,
+                                    line: 75,
                                     column: 74,
-                                    offset: 3263
+                                    offset: 3290
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 74, column: 5, offset: 3194 },
-                              end: { line: 74, column: 74, offset: 3263 }
+                              start: { line: 75, column: 5, offset: 3221 },
+                              end: { line: 75, column: 74, offset: 3290 }
                             }
                           },
                           {
@@ -21423,14 +21425,14 @@ export default [
                                     value: 'mounts',
                                     position: {
                                       start: {
-                                        line: 75,
+                                        line: 76,
                                         column: 7,
-                                        offset: 3270
+                                        offset: 3297
                                       },
                                       end: {
-                                        line: 75,
+                                        line: 76,
                                         column: 15,
-                                        offset: 3278
+                                        offset: 3305
                                       }
                                     }
                                   },
@@ -21439,31 +21441,31 @@ export default [
                                     value: " - specification of each Docker service container's volumes or mounts.",
                                     position: {
                                       start: {
-                                        line: 75,
+                                        line: 76,
                                         column: 15,
-                                        offset: 3278
+                                        offset: 3305
                                       },
                                       end: {
-                                        line: 75,
+                                        line: 76,
                                         column: 85,
-                                        offset: 3348
+                                        offset: 3375
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 75, column: 7, offset: 3270 },
+                                  start: { line: 76, column: 7, offset: 3297 },
                                   end: {
-                                    line: 75,
+                                    line: 76,
                                     column: 85,
-                                    offset: 3348
+                                    offset: 3375
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 75, column: 5, offset: 3268 },
-                              end: { line: 75, column: 85, offset: 3348 }
+                              start: { line: 76, column: 5, offset: 3295 },
+                              end: { line: 76, column: 85, offset: 3375 }
                             }
                           },
                           {
@@ -21479,14 +21481,14 @@ export default [
                                     value: 'updateParallelism',
                                     position: {
                                       start: {
-                                        line: 76,
+                                        line: 77,
                                         column: 7,
-                                        offset: 3355
+                                        offset: 3382
                                       },
                                       end: {
-                                        line: 76,
+                                        line: 77,
                                         column: 26,
-                                        offset: 3374
+                                        offset: 3401
                                       }
                                     }
                                   },
@@ -21495,14 +21497,14 @@ export default [
                                     value: ' - the maximum number of tasks to be updated in one iteration. ',
                                     position: {
                                       start: {
-                                        line: 76,
+                                        line: 77,
                                         column: 26,
-                                        offset: 3374
+                                        offset: 3401
                                       },
                                       end: {
-                                        line: 76,
+                                        line: 77,
                                         column: 89,
-                                        offset: 3437
+                                        offset: 3464
                                       }
                                     }
                                   },
@@ -21511,14 +21513,14 @@ export default [
                                     value: '0',
                                     position: {
                                       start: {
-                                        line: 76,
+                                        line: 77,
                                         column: 89,
-                                        offset: 3437
+                                        offset: 3464
                                       },
                                       end: {
-                                        line: 76,
+                                        line: 77,
                                         column: 92,
-                                        offset: 3440
+                                        offset: 3467
                                       }
                                     }
                                   },
@@ -21527,14 +21529,14 @@ export default [
                                     value: ' means unlimited parallelism. Defaults to ',
                                     position: {
                                       start: {
-                                        line: 76,
+                                        line: 77,
                                         column: 92,
-                                        offset: 3440
+                                        offset: 3467
                                       },
                                       end: {
-                                        line: 76,
+                                        line: 77,
                                         column: 134,
-                                        offset: 3482
+                                        offset: 3509
                                       }
                                     }
                                   },
@@ -21543,14 +21545,14 @@ export default [
                                     value: '2',
                                     position: {
                                       start: {
-                                        line: 76,
+                                        line: 77,
                                         column: 134,
-                                        offset: 3482
+                                        offset: 3509
                                       },
                                       end: {
-                                        line: 76,
+                                        line: 77,
                                         column: 137,
-                                        offset: 3485
+                                        offset: 3512
                                       }
                                     }
                                   },
@@ -21559,31 +21561,31 @@ export default [
                                     value: '.',
                                     position: {
                                       start: {
-                                        line: 76,
+                                        line: 77,
                                         column: 137,
-                                        offset: 3485
+                                        offset: 3512
                                       },
                                       end: {
-                                        line: 76,
+                                        line: 77,
                                         column: 138,
-                                        offset: 3486
+                                        offset: 3513
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 76, column: 7, offset: 3355 },
+                                  start: { line: 77, column: 7, offset: 3382 },
                                   end: {
-                                    line: 76,
+                                    line: 77,
                                     column: 138,
-                                    offset: 3486
+                                    offset: 3513
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 76, column: 5, offset: 3353 },
-                              end: { line: 76, column: 138, offset: 3486 }
+                              start: { line: 77, column: 5, offset: 3380 },
+                              end: { line: 77, column: 138, offset: 3513 }
                             }
                           },
                           {
@@ -21599,14 +21601,14 @@ export default [
                                     value: 'updateDelay',
                                     position: {
                                       start: {
-                                        line: 77,
+                                        line: 78,
                                         column: 7,
-                                        offset: 3493
+                                        offset: 3520
                                       },
                                       end: {
-                                        line: 77,
+                                        line: 78,
                                         column: 20,
-                                        offset: 3506
+                                        offset: 3533
                                       }
                                     }
                                   },
@@ -21615,14 +21617,14 @@ export default [
                                     value: ' - the delay in nanoseconds between task updates. Defaults to ',
                                     position: {
                                       start: {
-                                        line: 77,
+                                        line: 78,
                                         column: 20,
-                                        offset: 3506
+                                        offset: 3533
                                       },
                                       end: {
-                                        line: 77,
+                                        line: 78,
                                         column: 82,
-                                        offset: 3568
+                                        offset: 3595
                                       }
                                     }
                                   },
@@ -21631,14 +21633,14 @@ export default [
                                     value: '1e9',
                                     position: {
                                       start: {
-                                        line: 77,
+                                        line: 78,
                                         column: 82,
-                                        offset: 3568
+                                        offset: 3595
                                       },
                                       end: {
-                                        line: 77,
+                                        line: 78,
                                         column: 87,
-                                        offset: 3573
+                                        offset: 3600
                                       }
                                     }
                                   },
@@ -21647,31 +21649,31 @@ export default [
                                     value: '.',
                                     position: {
                                       start: {
-                                        line: 77,
+                                        line: 78,
                                         column: 87,
-                                        offset: 3573
+                                        offset: 3600
                                       },
                                       end: {
-                                        line: 77,
+                                        line: 78,
                                         column: 88,
-                                        offset: 3574
+                                        offset: 3601
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 77, column: 7, offset: 3493 },
+                                  start: { line: 78, column: 7, offset: 3520 },
                                   end: {
-                                    line: 77,
+                                    line: 78,
                                     column: 88,
-                                    offset: 3574
+                                    offset: 3601
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 77, column: 5, offset: 3491 },
-                              end: { line: 77, column: 88, offset: 3574 }
+                              start: { line: 78, column: 5, offset: 3518 },
+                              end: { line: 78, column: 88, offset: 3601 }
                             }
                           },
                           {
@@ -21687,14 +21689,14 @@ export default [
                                     value: 'updateFailureAction',
                                     position: {
                                       start: {
-                                        line: 78,
+                                        line: 79,
                                         column: 7,
-                                        offset: 3581
+                                        offset: 3608
                                       },
                                       end: {
-                                        line: 78,
+                                        line: 79,
                                         column: 28,
-                                        offset: 3602
+                                        offset: 3629
                                       }
                                     }
                                   },
@@ -21703,31 +21705,31 @@ export default [
                                     value: ' - the action to take if an updated task fails to run, or stops running during the task updates.',
                                     position: {
                                       start: {
-                                        line: 78,
+                                        line: 79,
                                         column: 28,
-                                        offset: 3602
+                                        offset: 3629
                                       },
                                       end: {
-                                        line: 78,
+                                        line: 79,
                                         column: 124,
-                                        offset: 3698
+                                        offset: 3725
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 78, column: 7, offset: 3581 },
+                                  start: { line: 79, column: 7, offset: 3608 },
                                   end: {
-                                    line: 78,
+                                    line: 79,
                                     column: 124,
-                                    offset: 3698
+                                    offset: 3725
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 78, column: 5, offset: 3579 },
-                              end: { line: 78, column: 124, offset: 3698 }
+                              start: { line: 79, column: 5, offset: 3606 },
+                              end: { line: 79, column: 124, offset: 3725 }
                             }
                           },
                           {
@@ -21743,14 +21745,14 @@ export default [
                                     value: 'updateMonitor',
                                     position: {
                                       start: {
-                                        line: 79,
+                                        line: 80,
                                         column: 7,
-                                        offset: 3705
+                                        offset: 3732
                                       },
                                       end: {
-                                        line: 79,
+                                        line: 80,
                                         column: 22,
-                                        offset: 3720
+                                        offset: 3747
                                       }
                                     }
                                   },
@@ -21759,14 +21761,14 @@ export default [
                                     value: ' - the amount of time in nanoseconds to monitor each updated task for failures. Defaults to ',
                                     position: {
                                       start: {
-                                        line: 79,
+                                        line: 80,
                                         column: 22,
-                                        offset: 3720
+                                        offset: 3747
                                       },
                                       end: {
-                                        line: 79,
+                                        line: 80,
                                         column: 114,
-                                        offset: 3812
+                                        offset: 3839
                                       }
                                     }
                                   },
@@ -21775,14 +21777,14 @@ export default [
                                     value: '15e9',
                                     position: {
                                       start: {
-                                        line: 79,
+                                        line: 80,
                                         column: 114,
-                                        offset: 3812
+                                        offset: 3839
                                       },
                                       end: {
-                                        line: 79,
+                                        line: 80,
                                         column: 120,
-                                        offset: 3818
+                                        offset: 3845
                                       }
                                     }
                                   },
@@ -21791,31 +21793,31 @@ export default [
                                     value: '.',
                                     position: {
                                       start: {
-                                        line: 79,
+                                        line: 80,
                                         column: 120,
-                                        offset: 3818
+                                        offset: 3845
                                       },
                                       end: {
-                                        line: 79,
+                                        line: 80,
                                         column: 121,
-                                        offset: 3819
+                                        offset: 3846
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 79, column: 7, offset: 3705 },
+                                  start: { line: 80, column: 7, offset: 3732 },
                                   end: {
-                                    line: 79,
+                                    line: 80,
                                     column: 121,
-                                    offset: 3819
+                                    offset: 3846
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 79, column: 5, offset: 3703 },
-                              end: { line: 79, column: 121, offset: 3819 }
+                              start: { line: 80, column: 5, offset: 3730 },
+                              end: { line: 80, column: 121, offset: 3846 }
                             }
                           },
                           {
@@ -21831,14 +21833,14 @@ export default [
                                     value: 'updateMaxFailureRatio',
                                     position: {
                                       start: {
-                                        line: 80,
+                                        line: 81,
                                         column: 7,
-                                        offset: 3826
+                                        offset: 3853
                                       },
                                       end: {
-                                        line: 80,
+                                        line: 81,
                                         column: 30,
-                                        offset: 3849
+                                        offset: 3876
                                       }
                                     }
                                   },
@@ -21847,14 +21849,14 @@ export default [
                                     value: ' - the maximum ratio of tasks that may fail during an update before the failure action is invoked. Defaults to ',
                                     position: {
                                       start: {
-                                        line: 80,
+                                        line: 81,
                                         column: 30,
-                                        offset: 3849
+                                        offset: 3876
                                       },
                                       end: {
-                                        line: 80,
+                                        line: 81,
                                         column: 141,
-                                        offset: 3960
+                                        offset: 3987
                                       }
                                     }
                                   },
@@ -21863,14 +21865,14 @@ export default [
                                     value: '0.15',
                                     position: {
                                       start: {
-                                        line: 80,
+                                        line: 81,
                                         column: 141,
-                                        offset: 3960
+                                        offset: 3987
                                       },
                                       end: {
-                                        line: 80,
+                                        line: 81,
                                         column: 147,
-                                        offset: 3966
+                                        offset: 3993
                                       }
                                     }
                                   },
@@ -21879,31 +21881,31 @@ export default [
                                     value: '.',
                                     position: {
                                       start: {
-                                        line: 80,
+                                        line: 81,
                                         column: 147,
-                                        offset: 3966
+                                        offset: 3993
                                       },
                                       end: {
-                                        line: 80,
+                                        line: 81,
                                         column: 148,
-                                        offset: 3967
+                                        offset: 3994
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 80, column: 7, offset: 3826 },
+                                  start: { line: 81, column: 7, offset: 3853 },
                                   end: {
-                                    line: 80,
+                                    line: 81,
                                     column: 148,
-                                    offset: 3967
+                                    offset: 3994
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 80, column: 5, offset: 3824 },
-                              end: { line: 80, column: 148, offset: 3967 }
+                              start: { line: 81, column: 5, offset: 3851 },
+                              end: { line: 81, column: 148, offset: 3994 }
                             }
                           },
                           {
@@ -21919,14 +21921,14 @@ export default [
                                     value: 'rollbackParallelism',
                                     position: {
                                       start: {
-                                        line: 81,
+                                        line: 82,
                                         column: 7,
-                                        offset: 3974
+                                        offset: 4001
                                       },
                                       end: {
-                                        line: 81,
+                                        line: 82,
                                         column: 28,
-                                        offset: 3995
+                                        offset: 4022
                                       }
                                     }
                                   },
@@ -21935,14 +21937,14 @@ export default [
                                     value: ' - the maximum number of tasks to be rolled back in one iteration. ',
                                     position: {
                                       start: {
-                                        line: 81,
+                                        line: 82,
                                         column: 28,
-                                        offset: 3995
+                                        offset: 4022
                                       },
                                       end: {
-                                        line: 81,
+                                        line: 82,
                                         column: 95,
-                                        offset: 4062
+                                        offset: 4089
                                       }
                                     }
                                   },
@@ -21951,14 +21953,14 @@ export default [
                                     value: '0',
                                     position: {
                                       start: {
-                                        line: 81,
+                                        line: 82,
                                         column: 95,
-                                        offset: 4062
+                                        offset: 4089
                                       },
                                       end: {
-                                        line: 81,
+                                        line: 82,
                                         column: 98,
-                                        offset: 4065
+                                        offset: 4092
                                       }
                                     }
                                   },
@@ -21967,14 +21969,14 @@ export default [
                                     value: ' means unlimited parallelism. Defaults to ',
                                     position: {
                                       start: {
-                                        line: 81,
+                                        line: 82,
                                         column: 98,
-                                        offset: 4065
+                                        offset: 4092
                                       },
                                       end: {
-                                        line: 81,
+                                        line: 82,
                                         column: 140,
-                                        offset: 4107
+                                        offset: 4134
                                       }
                                     }
                                   },
@@ -21983,14 +21985,14 @@ export default [
                                     value: '1',
                                     position: {
                                       start: {
-                                        line: 81,
+                                        line: 82,
                                         column: 140,
-                                        offset: 4107
+                                        offset: 4134
                                       },
                                       end: {
-                                        line: 81,
+                                        line: 82,
                                         column: 143,
-                                        offset: 4110
+                                        offset: 4137
                                       }
                                     }
                                   },
@@ -21999,31 +22001,31 @@ export default [
                                     value: '.',
                                     position: {
                                       start: {
-                                        line: 81,
+                                        line: 82,
                                         column: 143,
-                                        offset: 4110
+                                        offset: 4137
                                       },
                                       end: {
-                                        line: 81,
+                                        line: 82,
                                         column: 144,
-                                        offset: 4111
+                                        offset: 4138
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 81, column: 7, offset: 3974 },
+                                  start: { line: 82, column: 7, offset: 4001 },
                                   end: {
-                                    line: 81,
+                                    line: 82,
                                     column: 144,
-                                    offset: 4111
+                                    offset: 4138
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 81, column: 5, offset: 3972 },
-                              end: { line: 81, column: 144, offset: 4111 }
+                              start: { line: 82, column: 5, offset: 3999 },
+                              end: { line: 82, column: 144, offset: 4138 }
                             }
                           },
                           {
@@ -22039,14 +22041,14 @@ export default [
                                     value: 'rollbackDelay',
                                     position: {
                                       start: {
-                                        line: 82,
+                                        line: 83,
                                         column: 7,
-                                        offset: 4118
+                                        offset: 4145
                                       },
                                       end: {
-                                        line: 82,
+                                        line: 83,
                                         column: 22,
-                                        offset: 4133
+                                        offset: 4160
                                       }
                                     }
                                   },
@@ -22055,14 +22057,14 @@ export default [
                                     value: ' - the delay in nanoseconds between rollback iterations. Defaults to ',
                                     position: {
                                       start: {
-                                        line: 82,
+                                        line: 83,
                                         column: 22,
-                                        offset: 4133
+                                        offset: 4160
                                       },
                                       end: {
-                                        line: 82,
+                                        line: 83,
                                         column: 91,
-                                        offset: 4202
+                                        offset: 4229
                                       }
                                     }
                                   },
@@ -22071,14 +22073,14 @@ export default [
                                     value: '1e9',
                                     position: {
                                       start: {
-                                        line: 82,
+                                        line: 83,
                                         column: 91,
-                                        offset: 4202
+                                        offset: 4229
                                       },
                                       end: {
-                                        line: 82,
+                                        line: 83,
                                         column: 96,
-                                        offset: 4207
+                                        offset: 4234
                                       }
                                     }
                                   },
@@ -22087,31 +22089,31 @@ export default [
                                     value: '.',
                                     position: {
                                       start: {
-                                        line: 82,
+                                        line: 83,
                                         column: 96,
-                                        offset: 4207
+                                        offset: 4234
                                       },
                                       end: {
-                                        line: 82,
+                                        line: 83,
                                         column: 97,
-                                        offset: 4208
+                                        offset: 4235
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 82, column: 7, offset: 4118 },
+                                  start: { line: 83, column: 7, offset: 4145 },
                                   end: {
-                                    line: 82,
+                                    line: 83,
                                     column: 97,
-                                    offset: 4208
+                                    offset: 4235
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 82, column: 5, offset: 4116 },
-                              end: { line: 82, column: 97, offset: 4208 }
+                              start: { line: 83, column: 5, offset: 4143 },
+                              end: { line: 83, column: 97, offset: 4235 }
                             }
                           },
                           {
@@ -22127,14 +22129,14 @@ export default [
                                     value: 'rollbackFailureAction',
                                     position: {
                                       start: {
-                                        line: 83,
+                                        line: 84,
                                         column: 7,
-                                        offset: 4215
+                                        offset: 4242
                                       },
                                       end: {
-                                        line: 83,
+                                        line: 84,
                                         column: 30,
-                                        offset: 4238
+                                        offset: 4265
                                       }
                                     }
                                   },
@@ -22143,14 +22145,14 @@ export default [
                                     value: ' - the action to take if a rolled back task fails to run, or stops running during the rollback. Defaults to ',
                                     position: {
                                       start: {
-                                        line: 83,
+                                        line: 84,
                                         column: 30,
-                                        offset: 4238
+                                        offset: 4265
                                       },
                                       end: {
-                                        line: 83,
+                                        line: 84,
                                         column: 138,
-                                        offset: 4346
+                                        offset: 4373
                                       }
                                     }
                                   },
@@ -22159,14 +22161,14 @@ export default [
                                     value: '"pause"',
                                     position: {
                                       start: {
-                                        line: 83,
+                                        line: 84,
                                         column: 138,
-                                        offset: 4346
+                                        offset: 4373
                                       },
                                       end: {
-                                        line: 83,
+                                        line: 84,
                                         column: 147,
-                                        offset: 4355
+                                        offset: 4382
                                       }
                                     }
                                   },
@@ -22175,31 +22177,31 @@ export default [
                                     value: '.',
                                     position: {
                                       start: {
-                                        line: 83,
+                                        line: 84,
                                         column: 147,
-                                        offset: 4355
+                                        offset: 4382
                                       },
                                       end: {
-                                        line: 83,
+                                        line: 84,
                                         column: 148,
-                                        offset: 4356
+                                        offset: 4383
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 83, column: 7, offset: 4215 },
+                                  start: { line: 84, column: 7, offset: 4242 },
                                   end: {
-                                    line: 83,
+                                    line: 84,
                                     column: 148,
-                                    offset: 4356
+                                    offset: 4383
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 83, column: 5, offset: 4213 },
-                              end: { line: 83, column: 148, offset: 4356 }
+                              start: { line: 84, column: 5, offset: 4240 },
+                              end: { line: 84, column: 148, offset: 4383 }
                             }
                           },
                           {
@@ -22215,14 +22217,14 @@ export default [
                                     value: 'rollbackMonitor',
                                     position: {
                                       start: {
-                                        line: 84,
+                                        line: 85,
                                         column: 7,
-                                        offset: 4363
+                                        offset: 4390
                                       },
                                       end: {
-                                        line: 84,
+                                        line: 85,
                                         column: 24,
-                                        offset: 4380
+                                        offset: 4407
                                       }
                                     }
                                   },
@@ -22231,14 +22233,14 @@ export default [
                                     value: ' - the amount of time in nanoseconds to monitor each rolled back task for failures. Defaults to ',
                                     position: {
                                       start: {
-                                        line: 84,
+                                        line: 85,
                                         column: 24,
-                                        offset: 4380
+                                        offset: 4407
                                       },
                                       end: {
-                                        line: 84,
+                                        line: 85,
                                         column: 120,
-                                        offset: 4476
+                                        offset: 4503
                                       }
                                     }
                                   },
@@ -22247,14 +22249,14 @@ export default [
                                     value: '15e9',
                                     position: {
                                       start: {
-                                        line: 84,
+                                        line: 85,
                                         column: 120,
-                                        offset: 4476
+                                        offset: 4503
                                       },
                                       end: {
-                                        line: 84,
+                                        line: 85,
                                         column: 126,
-                                        offset: 4482
+                                        offset: 4509
                                       }
                                     }
                                   },
@@ -22263,31 +22265,31 @@ export default [
                                     value: '.',
                                     position: {
                                       start: {
-                                        line: 84,
+                                        line: 85,
                                         column: 126,
-                                        offset: 4482
+                                        offset: 4509
                                       },
                                       end: {
-                                        line: 84,
+                                        line: 85,
                                         column: 127,
-                                        offset: 4483
+                                        offset: 4510
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 84, column: 7, offset: 4363 },
+                                  start: { line: 85, column: 7, offset: 4390 },
                                   end: {
-                                    line: 84,
+                                    line: 85,
                                     column: 127,
-                                    offset: 4483
+                                    offset: 4510
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 84, column: 5, offset: 4361 },
-                              end: { line: 84, column: 127, offset: 4483 }
+                              start: { line: 85, column: 5, offset: 4388 },
+                              end: { line: 85, column: 127, offset: 4510 }
                             }
                           },
                           {
@@ -22303,14 +22305,14 @@ export default [
                                     value: 'rollbackMaxFailureRatio',
                                     position: {
                                       start: {
-                                        line: 85,
+                                        line: 86,
                                         column: 7,
-                                        offset: 4490
+                                        offset: 4517
                                       },
                                       end: {
-                                        line: 85,
+                                        line: 86,
                                         column: 32,
-                                        offset: 4515
+                                        offset: 4542
                                       }
                                     }
                                   },
@@ -22319,14 +22321,14 @@ export default [
                                     value: ' - the maximum ratio of tasks that may fail during a rollback before the failure action is invoked. Defaults to ',
                                     position: {
                                       start: {
-                                        line: 85,
+                                        line: 86,
                                         column: 32,
-                                        offset: 4515
+                                        offset: 4542
                                       },
                                       end: {
-                                        line: 85,
+                                        line: 86,
                                         column: 144,
-                                        offset: 4627
+                                        offset: 4654
                                       }
                                     }
                                   },
@@ -22335,14 +22337,14 @@ export default [
                                     value: '0.15',
                                     position: {
                                       start: {
-                                        line: 85,
+                                        line: 86,
                                         column: 144,
-                                        offset: 4627
+                                        offset: 4654
                                       },
                                       end: {
-                                        line: 85,
+                                        line: 86,
                                         column: 150,
-                                        offset: 4633
+                                        offset: 4660
                                       }
                                     }
                                   },
@@ -22351,31 +22353,31 @@ export default [
                                     value: '.',
                                     position: {
                                       start: {
-                                        line: 85,
+                                        line: 86,
                                         column: 150,
-                                        offset: 4633
+                                        offset: 4660
                                       },
                                       end: {
-                                        line: 85,
+                                        line: 86,
                                         column: 151,
-                                        offset: 4634
+                                        offset: 4661
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 85, column: 7, offset: 4490 },
+                                  start: { line: 86, column: 7, offset: 4517 },
                                   end: {
-                                    line: 85,
+                                    line: 86,
                                     column: 151,
-                                    offset: 4634
+                                    offset: 4661
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 85, column: 5, offset: 4488 },
-                              end: { line: 85, column: 151, offset: 4634 }
+                              start: { line: 86, column: 5, offset: 4515 },
+                              end: { line: 86, column: 151, offset: 4661 }
                             }
                           },
                           {
@@ -22391,14 +22393,14 @@ export default [
                                     value: 'network',
                                     position: {
                                       start: {
-                                        line: 86,
+                                        line: 87,
                                         column: 7,
-                                        offset: 4641
+                                        offset: 4668
                                       },
                                       end: {
-                                        line: 86,
+                                        line: 87,
                                         column: 16,
-                                        offset: 4650
+                                        offset: 4677
                                       }
                                     }
                                   },
@@ -22407,31 +22409,31 @@ export default [
                                     value: ' - the network name or ID for attachment.',
                                     position: {
                                       start: {
-                                        line: 86,
+                                        line: 87,
                                         column: 16,
-                                        offset: 4650
+                                        offset: 4677
                                       },
                                       end: {
-                                        line: 86,
+                                        line: 87,
                                         column: 57,
-                                        offset: 4691
+                                        offset: 4718
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 86, column: 7, offset: 4641 },
+                                  start: { line: 87, column: 7, offset: 4668 },
                                   end: {
-                                    line: 86,
+                                    line: 87,
                                     column: 57,
-                                    offset: 4691
+                                    offset: 4718
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 86, column: 5, offset: 4639 },
-                              end: { line: 86, column: 57, offset: 4691 }
+                              start: { line: 87, column: 5, offset: 4666 },
+                              end: { line: 87, column: 57, offset: 4718 }
                             }
                           },
                           {
@@ -22447,14 +22449,14 @@ export default [
                                     value: 'networks',
                                     position: {
                                       start: {
-                                        line: 87,
+                                        line: 88,
                                         column: 7,
-                                        offset: 4698
+                                        offset: 4725
                                       },
                                       end: {
-                                        line: 87,
+                                        line: 88,
                                         column: 17,
-                                        offset: 4708
+                                        offset: 4735
                                       }
                                     }
                                   },
@@ -22463,31 +22465,31 @@ export default [
                                     value: ' - the names or IDs of networks for attachment.',
                                     position: {
                                       start: {
-                                        line: 87,
+                                        line: 88,
                                         column: 17,
-                                        offset: 4708
+                                        offset: 4735
                                       },
                                       end: {
-                                        line: 87,
+                                        line: 88,
                                         column: 64,
-                                        offset: 4755
+                                        offset: 4782
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 87, column: 7, offset: 4698 },
+                                  start: { line: 88, column: 7, offset: 4725 },
                                   end: {
-                                    line: 87,
+                                    line: 88,
                                     column: 64,
-                                    offset: 4755
+                                    offset: 4782
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 87, column: 5, offset: 4696 },
-                              end: { line: 87, column: 64, offset: 4755 }
+                              start: { line: 88, column: 5, offset: 4723 },
+                              end: { line: 88, column: 64, offset: 4782 }
                             }
                           },
                           {
@@ -22503,14 +22505,14 @@ export default [
                                     value: 'cmd',
                                     position: {
                                       start: {
-                                        line: 88,
+                                        line: 89,
                                         column: 7,
-                                        offset: 4762
+                                        offset: 4789
                                       },
                                       end: {
-                                        line: 88,
+                                        line: 89,
                                         column: 12,
-                                        offset: 4767
+                                        offset: 4794
                                       }
                                     }
                                   },
@@ -22519,31 +22521,31 @@ export default [
                                     value: ' - the command that to be run by the Docker service.',
                                     position: {
                                       start: {
-                                        line: 88,
+                                        line: 89,
                                         column: 12,
-                                        offset: 4767
+                                        offset: 4794
                                       },
                                       end: {
-                                        line: 88,
+                                        line: 89,
                                         column: 64,
-                                        offset: 4819
+                                        offset: 4846
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 88, column: 7, offset: 4762 },
+                                  start: { line: 89, column: 7, offset: 4789 },
                                   end: {
-                                    line: 88,
+                                    line: 89,
                                     column: 64,
-                                    offset: 4819
+                                    offset: 4846
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 88, column: 5, offset: 4760 },
-                              end: { line: 88, column: 64, offset: 4819 }
+                              start: { line: 89, column: 5, offset: 4787 },
+                              end: { line: 89, column: 64, offset: 4846 }
                             }
                           },
                           {
@@ -22559,14 +22561,14 @@ export default [
                                     value: 'workdir',
                                     position: {
                                       start: {
-                                        line: 89,
+                                        line: 90,
                                         column: 7,
-                                        offset: 4826
+                                        offset: 4853
                                       },
                                       end: {
-                                        line: 89,
+                                        line: 90,
                                         column: 16,
-                                        offset: 4835
+                                        offset: 4862
                                       }
                                     }
                                   },
@@ -22575,31 +22577,31 @@ export default [
                                     value: ' - the working directory of the containers of the Docker service.',
                                     position: {
                                       start: {
-                                        line: 89,
+                                        line: 90,
                                         column: 16,
-                                        offset: 4835
+                                        offset: 4862
                                       },
                                       end: {
-                                        line: 89,
+                                        line: 90,
                                         column: 81,
-                                        offset: 4900
+                                        offset: 4927
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 89, column: 7, offset: 4826 },
+                                  start: { line: 90, column: 7, offset: 4853 },
                                   end: {
-                                    line: 89,
+                                    line: 90,
                                     column: 81,
-                                    offset: 4900
+                                    offset: 4927
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 89, column: 5, offset: 4824 },
-                              end: { line: 89, column: 81, offset: 4900 }
+                              start: { line: 90, column: 5, offset: 4851 },
+                              end: { line: 90, column: 81, offset: 4927 }
                             }
                           },
                           {
@@ -22615,14 +22617,14 @@ export default [
                                     value: 'env',
                                     position: {
                                       start: {
-                                        line: 90,
+                                        line: 91,
                                         column: 7,
-                                        offset: 4907
+                                        offset: 4934
                                       },
                                       end: {
-                                        line: 90,
+                                        line: 91,
                                         column: 12,
-                                        offset: 4912
+                                        offset: 4939
                                       }
                                     }
                                   },
@@ -22631,14 +22633,14 @@ export default [
                                     value: ' - an object of the Docker service"s environment variables. Maps environment variable names to environment variable values, e.g. ',
                                     position: {
                                       start: {
-                                        line: 90,
+                                        line: 91,
                                         column: 12,
-                                        offset: 4912
+                                        offset: 4939
                                       },
                                       end: {
-                                        line: 90,
+                                        line: 91,
                                         column: 141,
-                                        offset: 5041
+                                        offset: 5068
                                       }
                                     }
                                   },
@@ -22647,14 +22649,14 @@ export default [
                                     value: `{ FOO: "bar' }`,
                                     position: {
                                       start: {
-                                        line: 90,
+                                        line: 91,
                                         column: 141,
-                                        offset: 5041
+                                        offset: 5068
                                       },
                                       end: {
-                                        line: 90,
+                                        line: 91,
                                         column: 157,
-                                        offset: 5057
+                                        offset: 5084
                                       }
                                     }
                                   },
@@ -22663,31 +22665,31 @@ export default [
                                     value: '.',
                                     position: {
                                       start: {
-                                        line: 90,
+                                        line: 91,
                                         column: 157,
-                                        offset: 5057
+                                        offset: 5084
                                       },
                                       end: {
-                                        line: 90,
+                                        line: 91,
                                         column: 158,
-                                        offset: 5058
+                                        offset: 5085
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 90, column: 7, offset: 4907 },
+                                  start: { line: 91, column: 7, offset: 4934 },
                                   end: {
-                                    line: 90,
+                                    line: 91,
                                     column: 158,
-                                    offset: 5058
+                                    offset: 5085
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 90, column: 5, offset: 4905 },
-                              end: { line: 90, column: 158, offset: 5058 }
+                              start: { line: 91, column: 5, offset: 4932 },
+                              end: { line: 91, column: 158, offset: 5085 }
                             }
                           },
                           {
@@ -22703,14 +22705,14 @@ export default [
                                     value: 'labels',
                                     position: {
                                       start: {
-                                        line: 91,
+                                        line: 92,
                                         column: 7,
-                                        offset: 5065
+                                        offset: 5092
                                       },
                                       end: {
-                                        line: 91,
+                                        line: 92,
                                         column: 15,
-                                        offset: 5073
+                                        offset: 5100
                                       }
                                     }
                                   },
@@ -22719,31 +22721,31 @@ export default [
                                     value: ' - object of user-defined key/value metadata.',
                                     position: {
                                       start: {
-                                        line: 91,
+                                        line: 92,
                                         column: 15,
-                                        offset: 5073
+                                        offset: 5100
                                       },
                                       end: {
-                                        line: 91,
+                                        line: 92,
                                         column: 60,
-                                        offset: 5118
+                                        offset: 5145
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 91, column: 7, offset: 5065 },
+                                  start: { line: 92, column: 7, offset: 5092 },
                                   end: {
-                                    line: 91,
+                                    line: 92,
                                     column: 60,
-                                    offset: 5118
+                                    offset: 5145
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 91, column: 5, offset: 5063 },
-                              end: { line: 91, column: 60, offset: 5118 }
+                              start: { line: 92, column: 5, offset: 5090 },
+                              end: { line: 92, column: 60, offset: 5145 }
                             }
                           },
                           {
@@ -22759,14 +22761,14 @@ export default [
                                     value: 'username',
                                     position: {
                                       start: {
-                                        line: 92,
+                                        line: 93,
                                         column: 7,
-                                        offset: 5125
+                                        offset: 5152
                                       },
                                       end: {
-                                        line: 92,
+                                        line: 93,
                                         column: 17,
-                                        offset: 5135
+                                        offset: 5162
                                       }
                                     }
                                   },
@@ -22775,31 +22777,31 @@ export default [
                                     value: ' - authentication credentials.',
                                     position: {
                                       start: {
-                                        line: 92,
+                                        line: 93,
                                         column: 17,
-                                        offset: 5135
+                                        offset: 5162
                                       },
                                       end: {
-                                        line: 92,
+                                        line: 93,
                                         column: 47,
-                                        offset: 5165
+                                        offset: 5192
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 92, column: 7, offset: 5125 },
+                                  start: { line: 93, column: 7, offset: 5152 },
                                   end: {
-                                    line: 92,
+                                    line: 93,
                                     column: 47,
-                                    offset: 5165
+                                    offset: 5192
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 92, column: 5, offset: 5123 },
-                              end: { line: 92, column: 47, offset: 5165 }
+                              start: { line: 93, column: 5, offset: 5150 },
+                              end: { line: 93, column: 47, offset: 5192 }
                             }
                           },
                           {
@@ -22815,14 +22817,14 @@ export default [
                                     value: 'password',
                                     position: {
                                       start: {
-                                        line: 93,
+                                        line: 94,
                                         column: 7,
-                                        offset: 5172
+                                        offset: 5199
                                       },
                                       end: {
-                                        line: 93,
+                                        line: 94,
                                         column: 17,
-                                        offset: 5182
+                                        offset: 5209
                                       }
                                     }
                                   },
@@ -22831,31 +22833,31 @@ export default [
                                     value: ' - authentication credentials.',
                                     position: {
                                       start: {
-                                        line: 93,
+                                        line: 94,
                                         column: 17,
-                                        offset: 5182
+                                        offset: 5209
                                       },
                                       end: {
-                                        line: 93,
+                                        line: 94,
                                         column: 47,
-                                        offset: 5212
+                                        offset: 5239
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 93, column: 7, offset: 5172 },
+                                  start: { line: 94, column: 7, offset: 5199 },
                                   end: {
-                                    line: 93,
+                                    line: 94,
                                     column: 47,
-                                    offset: 5212
+                                    offset: 5239
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 93, column: 5, offset: 5170 },
-                              end: { line: 93, column: 47, offset: 5212 }
+                              start: { line: 94, column: 5, offset: 5197 },
+                              end: { line: 94, column: 47, offset: 5239 }
                             }
                           },
                           {
@@ -22871,14 +22873,14 @@ export default [
                                     value: 'email',
                                     position: {
                                       start: {
-                                        line: 94,
+                                        line: 95,
                                         column: 7,
-                                        offset: 5219
+                                        offset: 5246
                                       },
                                       end: {
-                                        line: 94,
+                                        line: 95,
                                         column: 14,
-                                        offset: 5226
+                                        offset: 5253
                                       }
                                     }
                                   },
@@ -22887,31 +22889,31 @@ export default [
                                     value: ' - authentication credentials.',
                                     position: {
                                       start: {
-                                        line: 94,
+                                        line: 95,
                                         column: 14,
-                                        offset: 5226
+                                        offset: 5253
                                       },
                                       end: {
-                                        line: 94,
+                                        line: 95,
                                         column: 44,
-                                        offset: 5256
+                                        offset: 5283
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 94, column: 7, offset: 5219 },
+                                  start: { line: 95, column: 7, offset: 5246 },
                                   end: {
-                                    line: 94,
+                                    line: 95,
                                     column: 44,
-                                    offset: 5256
+                                    offset: 5283
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 94, column: 5, offset: 5217 },
-                              end: { line: 94, column: 44, offset: 5256 }
+                              start: { line: 95, column: 5, offset: 5244 },
+                              end: { line: 95, column: 44, offset: 5283 }
                             }
                           },
                           {
@@ -22927,14 +22929,14 @@ export default [
                                     value: 'serveraddress',
                                     position: {
                                       start: {
-                                        line: 95,
+                                        line: 96,
                                         column: 7,
-                                        offset: 5263
+                                        offset: 5290
                                       },
                                       end: {
-                                        line: 95,
+                                        line: 96,
                                         column: 22,
-                                        offset: 5278
+                                        offset: 5305
                                       }
                                     }
                                   },
@@ -22943,31 +22945,31 @@ export default [
                                     value: ' - domain or IP of the registry server.',
                                     position: {
                                       start: {
-                                        line: 95,
+                                        line: 96,
                                         column: 22,
-                                        offset: 5278
+                                        offset: 5305
                                       },
                                       end: {
-                                        line: 95,
+                                        line: 96,
                                         column: 61,
-                                        offset: 5317
+                                        offset: 5344
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 95, column: 7, offset: 5263 },
+                                  start: { line: 96, column: 7, offset: 5290 },
                                   end: {
-                                    line: 95,
+                                    line: 96,
                                     column: 61,
-                                    offset: 5317
+                                    offset: 5344
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 95, column: 5, offset: 5261 },
-                              end: { line: 95, column: 61, offset: 5317 }
+                              start: { line: 96, column: 5, offset: 5288 },
+                              end: { line: 96, column: 61, offset: 5344 }
                             }
                           },
                           {
@@ -22983,14 +22985,14 @@ export default [
                                     value: 'IdentityToken',
                                     position: {
                                       start: {
-                                        line: 96,
+                                        line: 97,
                                         column: 7,
-                                        offset: 5324
+                                        offset: 5351
                                       },
                                       end: {
-                                        line: 96,
+                                        line: 97,
                                         column: 22,
-                                        offset: 5339
+                                        offset: 5366
                                       }
                                     }
                                   },
@@ -22999,49 +23001,49 @@ export default [
                                     value: ' - a token for authenticating users in place of username and password.',
                                     position: {
                                       start: {
-                                        line: 96,
+                                        line: 97,
                                         column: 22,
-                                        offset: 5339
+                                        offset: 5366
                                       },
                                       end: {
-                                        line: 96,
+                                        line: 97,
                                         column: 92,
-                                        offset: 5409
+                                        offset: 5436
                                       }
                                     }
                                   }
                                 ],
                                 position: {
-                                  start: { line: 96, column: 7, offset: 5324 },
+                                  start: { line: 97, column: 7, offset: 5351 },
                                   end: {
-                                    line: 96,
+                                    line: 97,
                                     column: 92,
-                                    offset: 5409
+                                    offset: 5436
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 96, column: 5, offset: 5322 },
-                              end: { line: 96, column: 92, offset: 5409 }
+                              start: { line: 97, column: 5, offset: 5349 },
+                              end: { line: 97, column: 92, offset: 5436 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 61, column: 5, offset: 1785 },
-                          end: { line: 96, column: 92, offset: 5409 }
+                          start: { line: 62, column: 5, offset: 1812 },
+                          end: { line: 97, column: 92, offset: 5436 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 60, column: 3, offset: 1769 },
-                      end: { line: 96, column: 92, offset: 5409 }
+                      start: { line: 61, column: 3, offset: 1796 },
+                      end: { line: 97, column: 92, offset: 5436 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 59, column: 3, offset: 1728 },
-                  end: { line: 96, column: 92, offset: 5409 }
+                  start: { line: 60, column: 3, offset: 1755 },
+                  end: { line: 97, column: 92, offset: 5436 }
                 }
               },
               {
@@ -23051,14 +23053,14 @@ export default [
                     type: 'text',
                     value: 'Return:',
                     position: {
-                      start: { line: 98, column: 1, offset: 5411 },
-                      end: { line: 98, column: 8, offset: 5418 }
+                      start: { line: 99, column: 1, offset: 5438 },
+                      end: { line: 99, column: 8, offset: 5445 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 98, column: 1, offset: 5411 },
-                  end: { line: 98, column: 8, offset: 5418 }
+                  start: { line: 99, column: 1, offset: 5438 },
+                  end: { line: 99, column: 8, offset: 5445 }
                 }
               },
               {
@@ -23079,14 +23081,14 @@ export default [
                             type: 'inlineCode',
                             value: 'data',
                             position: {
-                              start: { line: 99, column: 5, offset: 5423 },
-                              end: { line: 99, column: 11, offset: 5429 }
+                              start: { line: 100, column: 5, offset: 5450 },
+                              end: { line: 100, column: 11, offset: 5456 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 99, column: 5, offset: 5423 },
-                          end: { line: 99, column: 11, offset: 5429 }
+                          start: { line: 100, column: 5, offset: 5450 },
+                          end: { line: 100, column: 11, offset: 5456 }
                         }
                       },
                       {
@@ -23108,14 +23110,14 @@ export default [
                                     value: 'ID',
                                     position: {
                                       start: {
-                                        line: 100,
+                                        line: 101,
                                         column: 7,
-                                        offset: 5436
+                                        offset: 5463
                                       },
                                       end: {
-                                        line: 100,
+                                        line: 101,
                                         column: 11,
-                                        offset: 5440
+                                        offset: 5467
                                       }
                                     }
                                   },
@@ -23124,35 +23126,35 @@ export default [
                                     value: ' - the ID of the created Docker service.',
                                     position: {
                                       start: {
-                                        line: 100,
+                                        line: 101,
                                         column: 11,
-                                        offset: 5440
+                                        offset: 5467
                                       },
                                       end: {
-                                        line: 100,
+                                        line: 101,
                                         column: 51,
-                                        offset: 5480
+                                        offset: 5507
                                       }
                                     }
                                   }
                                 ],
                                 position: {
                                   start: {
-                                    line: 100,
+                                    line: 101,
                                     column: 7,
-                                    offset: 5436
+                                    offset: 5463
                                   },
                                   end: {
-                                    line: 100,
+                                    line: 101,
                                     column: 51,
-                                    offset: 5480
+                                    offset: 5507
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 100, column: 5, offset: 5434 },
-                              end: { line: 100, column: 51, offset: 5480 }
+                              start: { line: 101, column: 5, offset: 5461 },
+                              end: { line: 101, column: 51, offset: 5507 }
                             }
                           },
                           {
@@ -23168,14 +23170,14 @@ export default [
                                     value: 'Warnings',
                                     position: {
                                       start: {
-                                        line: 101,
+                                        line: 102,
                                         column: 7,
-                                        offset: 5487
+                                        offset: 5514
                                       },
                                       end: {
-                                        line: 101,
+                                        line: 102,
                                         column: 17,
-                                        offset: 5497
+                                        offset: 5524
                                       }
                                     }
                                   },
@@ -23184,53 +23186,53 @@ export default [
                                     value: ' - warnings encountered when creating the Docker service.',
                                     position: {
                                       start: {
-                                        line: 101,
+                                        line: 102,
                                         column: 17,
-                                        offset: 5497
+                                        offset: 5524
                                       },
                                       end: {
-                                        line: 101,
+                                        line: 102,
                                         column: 74,
-                                        offset: 5554
+                                        offset: 5581
                                       }
                                     }
                                   }
                                 ],
                                 position: {
                                   start: {
-                                    line: 101,
+                                    line: 102,
                                     column: 7,
-                                    offset: 5487
+                                    offset: 5514
                                   },
                                   end: {
-                                    line: 101,
+                                    line: 102,
                                     column: 74,
-                                    offset: 5554
+                                    offset: 5581
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 101, column: 5, offset: 5485 },
-                              end: { line: 101, column: 74, offset: 5554 }
+                              start: { line: 102, column: 5, offset: 5512 },
+                              end: { line: 102, column: 74, offset: 5581 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 100, column: 5, offset: 5434 },
-                          end: { line: 101, column: 74, offset: 5554 }
+                          start: { line: 101, column: 5, offset: 5461 },
+                          end: { line: 102, column: 74, offset: 5581 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 99, column: 3, offset: 5421 },
-                      end: { line: 101, column: 74, offset: 5554 }
+                      start: { line: 100, column: 3, offset: 5448 },
+                      end: { line: 102, column: 74, offset: 5581 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 99, column: 3, offset: 5421 },
-                  end: { line: 101, column: 74, offset: 5554 }
+                  start: { line: 100, column: 3, offset: 5448 },
+                  end: { line: 102, column: 74, offset: 5581 }
                 }
               },
               {
@@ -23250,8 +23252,8 @@ export default [
                   '  healthCmd: ["wget", "--no-verbose", "--tries=1", "--spider", "localhost:3001"],\n' +
                   '})',
                 position: {
-                  start: { line: 103, column: 1, offset: 5556 },
-                  end: { line: 116, column: 4, offset: 5986 }
+                  start: { line: 104, column: 1, offset: 5583 },
+                  end: { line: 117, column: 4, offset: 6013 }
                 }
               },
               {
@@ -23261,14 +23263,14 @@ export default [
                     type: 'text',
                     value: 'References:',
                     position: {
-                      start: { line: 118, column: 1, offset: 5988 },
-                      end: { line: 118, column: 12, offset: 5999 }
+                      start: { line: 119, column: 1, offset: 6015 },
+                      end: { line: 119, column: 12, offset: 6026 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 118, column: 1, offset: 5988 },
-                  end: { line: 118, column: 12, offset: 5999 }
+                  start: { line: 119, column: 1, offset: 6015 },
+                  end: { line: 119, column: 12, offset: 6026 }
                 }
               },
               {
@@ -23295,45 +23297,45 @@ export default [
                                 value: 'Docker Swarm',
                                 position: {
                                   start: {
-                                    line: 119,
+                                    line: 120,
                                     column: 6,
-                                    offset: 6005
+                                    offset: 6032
                                   },
                                   end: {
-                                    line: 119,
+                                    line: 120,
                                     column: 18,
-                                    offset: 6017
+                                    offset: 6044
                                   }
                                 }
                               }
                             ],
                             position: {
-                              start: { line: 119, column: 5, offset: 6004 },
-                              end: { line: 119, column: 58, offset: 6057 }
+                              start: { line: 120, column: 5, offset: 6031 },
+                              end: { line: 120, column: 58, offset: 6084 }
                             }
                           }
                         ],
                         position: {
-                          start: { line: 119, column: 5, offset: 6004 },
-                          end: { line: 119, column: 58, offset: 6057 }
+                          start: { line: 120, column: 5, offset: 6031 },
+                          end: { line: 120, column: 58, offset: 6084 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 119, column: 3, offset: 6002 },
-                      end: { line: 119, column: 58, offset: 6057 }
+                      start: { line: 120, column: 3, offset: 6029 },
+                      end: { line: 120, column: 58, offset: 6084 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 119, column: 3, offset: 6002 },
-                  end: { line: 119, column: 58, offset: 6057 }
+                  start: { line: 120, column: 3, offset: 6029 },
+                  end: { line: 120, column: 58, offset: 6084 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 119, column: 58, offset: 6057 }
+              end: { line: 120, column: 58, offset: 6084 }
             }
           }
         }
