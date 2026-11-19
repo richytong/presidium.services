@@ -2416,10 +2416,12 @@ export default [
   },
   {
     name: 'errorHandler',
-    docs: '```specscript\n' +
-      'module HTTP "https://presidium.services/docs/HTTP"\n' +
-      '\n' +
-      'errorHandler(error Error, request HTTP.Request, response HTTP.Response) -> ()\n' +
+    docs: '```coffeescript [specscript]\n' +
+      'errorHandler(\n' +
+      '  error Error,\n' +
+      '  request http.ClientRequest,\n' +
+      '  response http.ServerResponse\n' +
+      ') -> undefined\n' +
       '```',
     mdast: {
       name: {
@@ -2453,20 +2455,22 @@ export default [
         children: [
           {
             type: 'code',
-            lang: 'specscript',
-            meta: null,
-            value: 'module HTTP "https://presidium.services/docs/HTTP"\n' +
-              '\n' +
-              'errorHandler(error Error, request HTTP.Request, response HTTP.Response) -> ()',
+            lang: 'coffeescript',
+            meta: '[specscript]',
+            value: 'errorHandler(\n' +
+              '  error Error,\n' +
+              '  request http.ClientRequest,\n' +
+              '  response http.ServerResponse\n' +
+              ') -> undefined',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 147 }
+              end: { line: 7, column: 4, offset: 137 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 5, column: 4, offset: 147 }
+          end: { line: 7, column: 4, offset: 137 }
         }
       }
     },

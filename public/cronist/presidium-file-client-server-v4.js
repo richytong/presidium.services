@@ -458,8 +458,10 @@ export default [
       'new FileServer(options {\n' +
       '  dir: string,\n' +
       '  databasePath: string,\n' +
+      '  metadataTableName: string,\n' +
       '  metadataTableInitialLength: number,\n' +
       '  metadataTableItemSize: number,\n' +
+      '  cors: boolean,\n' +
       '}, ...handlers Array<HttpHandler>) -> FileServer\n' +
       '```',
     mdast: {
@@ -503,18 +505,20 @@ export default [
               'new FileServer(options {\n' +
               '  dir: string,\n' +
               '  databasePath: string,\n' +
+              '  metadataTableName: string,\n' +
               '  metadataTableInitialLength: number,\n' +
               '  metadataTableItemSize: number,\n' +
+              '  cors: boolean,\n' +
               '}, ...handlers Array<HttpHandler>) -> FileServer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 331 }
+              end: { line: 14, column: 4, offset: 377 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 12, column: 4, offset: 331 }
+          end: { line: 14, column: 4, offset: 377 }
         }
       }
     },
