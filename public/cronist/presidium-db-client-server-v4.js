@@ -468,12 +468,6 @@ export default [
       '\n' +
       'new DatabaseServer(options {\n' +
       '  databasePath: string,\n' +
-      '  manifestTableName: string,\n' +
-      '  manifestTableInitialLength: number,\n' +
-      '  manifestTableItemSize: number,\n' +
-      '  defaultTableInitialLength: number,\n' +
-      '  defaultTableItemSize: number,\n' +
-      '  defaultDiskSortedHashTableDegree: number,\n' +
       '  delimiter: string,\n' +
       '}, ...handlers Arguments<HttpHandler>) -> server DatabaseServer\n' +
       '```',
@@ -517,30 +511,24 @@ export default [
               '\n' +
               'new DatabaseServer(options {\n' +
               '  databasePath: string,\n' +
-              '  manifestTableName: string,\n' +
-              '  manifestTableInitialLength: number,\n' +
-              '  manifestTableItemSize: number,\n' +
-              '  defaultTableInitialLength: number,\n' +
-              '  defaultTableItemSize: number,\n' +
-              '  defaultDiskSortedHashTableDegree: number,\n' +
               '  delimiter: string,\n' +
               '}, ...handlers Arguments<HttpHandler>) -> server DatabaseServer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 16, column: 4, offset: 498 }
+              end: { line: 10, column: 4, offset: 285 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 16, column: 4, offset: 498 }
+          end: { line: 10, column: 4, offset: 285 }
         }
       }
     },
     methods: [
       {
         name: 'init',
-        docs: '```specscript\ninit() -> Promise<>\n```',
+        docs: '```specscript\ninit() -> Promise<>\n```\n\nDEPRECATED',
         mdast: {
           name: {
             type: 'root',
@@ -580,11 +568,28 @@ export default [
                   start: { line: 1, column: 1, offset: 0 },
                   end: { line: 3, column: 4, offset: 37 }
                 }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'DEPRECATED',
+                    position: {
+                      start: { line: 5, column: 1, offset: 39 },
+                      end: { line: 5, column: 11, offset: 49 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 5, column: 1, offset: 39 },
+                  end: { line: 5, column: 11, offset: 49 }
+                }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 3, column: 4, offset: 37 }
+              end: { line: 5, column: 11, offset: 49 }
             }
           }
         }
@@ -699,8 +704,6 @@ export default [
         name: 'registerDiskHashTable',
         docs: '```specscript\n' +
           'registerDiskHashTable(tableName string, config {\n' +
-          '  storagePath: string,\n' +
-          '  headerPath: string,\n' +
           '  initialLength: number,\n' +
           '  itemSize: number,\n' +
           '  resizeRatio: number,\n' +
@@ -742,8 +745,6 @@ export default [
                 lang: 'specscript',
                 meta: null,
                 value: 'registerDiskHashTable(tableName string, config {\n' +
-                  '  storagePath: string,\n' +
-                  '  headerPath: string,\n' +
                   '  initialLength: number,\n' +
                   '  itemSize: number,\n' +
                   '  resizeRatio: number,\n' +
@@ -751,13 +752,13 @@ export default [
                   '}) -> Promise<>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 10, column: 4, offset: 219 }
+                  end: { line: 8, column: 4, offset: 174 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 10, column: 4, offset: 219 }
+              end: { line: 8, column: 4, offset: 174 }
             }
           }
         }
@@ -766,8 +767,6 @@ export default [
         name: 'registerDiskSortedHashTable',
         docs: '```specscript\n' +
           'registerDiskSortedHashTable(tableName string, config {\n' +
-          '  storagePath: string,\n' +
-          '  headerPath: string,\n' +
           '  initialLength: number,\n' +
           '  itemSize: number,\n' +
           '  sortValueType: "string"|"number"|Array<"string"|"number">,\n' +
@@ -811,8 +810,6 @@ export default [
                 lang: 'specscript',
                 meta: null,
                 value: 'registerDiskSortedHashTable(tableName string, config {\n' +
-                  '  storagePath: string,\n' +
-                  '  headerPath: string,\n' +
                   '  initialLength: number,\n' +
                   '  itemSize: number,\n' +
                   '  sortValueType: "string"|"number"|Array<"string"|"number">,\n' +
@@ -822,13 +819,13 @@ export default [
                   '}) -> Promise<>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 12, column: 4, offset: 304 }
+                  end: { line: 10, column: 4, offset: 259 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 304 }
+              end: { line: 10, column: 4, offset: 259 }
             }
           }
         }
@@ -842,7 +839,11 @@ export default [
       'new DiskHashTableClient(options {\n' +
       '  serverUrl: string,\n' +
       '  tableName: string,\n' +
+      '  initialLength: number,\n' +
+      '  itemSize: number,\n' +
       '  delimiter: string,\n' +
+      '  resizeRatio: number,\n' +
+      '  resizeFactor: number,\n' +
       '}) -> DiskHashTableClient\n' +
       '```',
     mdast: {
@@ -882,21 +883,76 @@ export default [
             value: 'new DiskHashTableClient(options {\n' +
               '  serverUrl: string,\n' +
               '  tableName: string,\n' +
+              '  initialLength: number,\n' +
+              '  itemSize: number,\n' +
               '  delimiter: string,\n' +
+              '  resizeRatio: number,\n' +
+              '  resizeFactor: number,\n' +
               '}) -> DiskHashTableClient',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 7, column: 4, offset: 140 }
+              end: { line: 11, column: 4, offset: 232 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 7, column: 4, offset: 140 }
+          end: { line: 11, column: 4, offset: 232 }
         }
       }
     },
     methods: [
+      {
+        name: 'register',
+        docs: '```specscript\nregister() -> Promise<>\n```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'register',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 9, offset: 8 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 9, offset: 8 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 9, offset: 8 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'specscript',
+                meta: null,
+                value: 'register() -> Promise<>',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 4, offset: 41 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 41 }
+            }
+          }
+        }
+      },
       {
         name: 'clear',
         docs: '```specscript\nclear() -> Promise<>\n```',
@@ -1338,9 +1394,13 @@ export default [
       'new DiskSortedHashTableClient(options {\n' +
       '  serverUrl: string,\n' +
       '  tableName: string,\n' +
+      '  initialLength: number,\n' +
+      '  itemSize: number,\n' +
       '  sortValueType: "string"|"number"|Array<"string"|"number">,\n' +
       '  degree: number,\n' +
       '  delimiter: string,\n' +
+      '  resizeRatio: number,\n' +
+      '  resizeFactor: number,\n' +
       '}) -> DiskSortedHashTableClient\n' +
       '```',
     mdast: {
@@ -1380,23 +1440,78 @@ export default [
             value: 'new DiskSortedHashTableClient(options {\n' +
               '  serverUrl: string,\n' +
               '  tableName: string,\n' +
+              '  initialLength: number,\n' +
+              '  itemSize: number,\n' +
               '  sortValueType: "string"|"number"|Array<"string"|"number">,\n' +
               '  degree: number,\n' +
               '  delimiter: string,\n' +
+              '  resizeRatio: number,\n' +
+              '  resizeFactor: number,\n' +
               '}) -> DiskSortedHashTableClient',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 9, column: 4, offset: 231 }
+              end: { line: 13, column: 4, offset: 323 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 9, column: 4, offset: 231 }
+          end: { line: 13, column: 4, offset: 323 }
         }
       }
     },
     methods: [
+      {
+        name: 'register',
+        docs: '```specscript\nregister() -> Promise<>\n```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'register',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 9, offset: 8 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 9, offset: 8 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 9, offset: 8 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'specscript',
+                meta: null,
+                value: 'register() -> Promise<>',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 4, offset: 41 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 41 }
+            }
+          }
+        }
+      },
       {
         name: 'clear',
         docs: '```specscript\nclear() -> Promise<>\n```',
@@ -2296,11 +2411,12 @@ export default [
     fileName: '/home/richard/code/presidium.services/../presidium-db-client-server/buffersToEntry.js'
   },
   {
-    name: 'getHt',
+    name: 'databaseHandler',
     docs: '```specscript\n' +
+      'module DiskHashTable "https://presidium.services/docs/DiskHashTable"\n' +
       'module HTTP "https://presidium.services/docs/HTTP"\n' +
       '\n' +
-      'getHt(tableName string, request HTTP.Request) -> ht DiskHashTable|DiskSortedHashTable\n' +
+      'databaseHandler(HTTP.Request, HTTP.Response) -> ()\n' +
       '```',
     mdast: {
       name: {
@@ -2311,71 +2427,7 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'getHt',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 6, offset: 5 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 6, offset: 5 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 1, column: 6, offset: 5 }
-        }
-      },
-      docs: {
-        type: 'root',
-        children: [
-          {
-            type: 'code',
-            lang: 'specscript',
-            meta: null,
-            value: 'module HTTP "https://presidium.services/docs/HTTP"\n' +
-              '\n' +
-              'getHt(tableName string, request HTTP.Request) -> ht DiskHashTable|DiskSortedHashTable',
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 155 }
-            }
-          }
-        ],
-        position: {
-          start: { line: 1, column: 1, offset: 0 },
-          end: { line: 5, column: 4, offset: 155 }
-        }
-      }
-    },
-    methods: [
-      {
-        name: 'databaseHandler',
-        docs: '```specscript\n' +
-          'module DiskHashTable "https://presidium.services/docs/DiskHashTable"\n' +
-          'module HTTP "https://presidium.services/docs/HTTP"\n' +
-          '\n' +
-          'databaseHandler(HTTP.Request, HTTP.Response) -> ()\n' +
-          '```',
-        mdast: {
-          name: {
-            type: 'root',
-            children: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'databaseHandler',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 16, offset: 15 }
-                    }
-                  }
-                ],
+                value: 'databaseHandler',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
                   end: { line: 1, column: 16, offset: 15 }
@@ -2386,32 +2438,37 @@ export default [
               start: { line: 1, column: 1, offset: 0 },
               end: { line: 1, column: 16, offset: 15 }
             }
-          },
-          docs: {
-            type: 'root',
-            children: [
-              {
-                type: 'code',
-                lang: 'specscript',
-                meta: null,
-                value: 'module DiskHashTable "https://presidium.services/docs/DiskHashTable"\n' +
-                  'module HTTP "https://presidium.services/docs/HTTP"\n' +
-                  '\n' +
-                  'databaseHandler(HTTP.Request, HTTP.Response) -> ()',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 6, column: 4, offset: 189 }
-                }
-              }
-            ],
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 16, offset: 15 }
+        }
+      },
+      docs: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'specscript',
+            meta: null,
+            value: 'module DiskHashTable "https://presidium.services/docs/DiskHashTable"\n' +
+              'module HTTP "https://presidium.services/docs/HTTP"\n' +
+              '\n' +
+              'databaseHandler(HTTP.Request, HTTP.Response) -> ()',
             position: {
               start: { line: 1, column: 1, offset: 0 },
               end: { line: 6, column: 4, offset: 189 }
             }
           }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 6, column: 4, offset: 189 }
         }
       }
-    ],
+    },
+    methods: [],
     fileName: '/home/richard/code/presidium.services/../presidium-db-client-server/databaseHandler.js'
   },
   {
@@ -2476,6 +2533,59 @@ export default [
     },
     methods: [],
     fileName: '/home/richard/code/presidium.services/../presidium-db-client-server/errorHandler.js'
+  },
+  {
+    name: 'exists',
+    docs: '```specscript\nexists(value any) -> boolean\n```',
+    mdast: {
+      name: {
+        type: 'root',
+        children: [
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'exists',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 7, offset: 6 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 7, offset: 6 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 1, column: 7, offset: 6 }
+        }
+      },
+      docs: {
+        type: 'root',
+        children: [
+          {
+            type: 'code',
+            lang: 'specscript',
+            meta: null,
+            value: 'exists(value any) -> boolean',
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 3, column: 4, offset: 46 }
+            }
+          }
+        ],
+        position: {
+          start: { line: 1, column: 1, offset: 0 },
+          end: { line: 3, column: 4, offset: 46 }
+        }
+      }
+    },
+    methods: [],
+    fileName: '/home/richard/code/presidium.services/../presidium-db-client-server/exists.js'
   },
   {
     name: 'handleServerResponse',
