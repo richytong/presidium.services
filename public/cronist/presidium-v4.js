@@ -147782,20 +147782,28 @@ export default [
   {
     name: 'Secrets',
     docs: '```coffeescript [specscript]\n' +
-      'Secrets(filepath string) -> secrets Promise<Object>\n' +
+      'Secrets(secretsFilepath string) -> secrets Promise<Object>\n' +
       '```\n' +
       '\n' +
-      'Presidium Secrets class. Consumes the `.secrets` file in the current directory.\n' +
+      'Presidium Secrets class. Consumes the secrets file upon reading.\n' +
       '\n' +
       'Arguments:\n' +
-      "  * `filepath` - optional path to the secrets file. Defaults to `'.secrets'`.\n" +
+      "  * `secretsFilepath` - `string` - optional path to the secrets file. Defaults to `'.secrets'`.\n" +
       '\n' +
       'Return:\n' +
-      '  * `secrets` - a promise of an object of secret key-value pairs.\n' +
+      '  * `secrets` - `Promise<Object>` - a promise of an object of secret key-value pairs.\n' +
       '\n' +
       '```javascript\n' +
       'const secrets = await Secrets()\n' +
       'console.log(secrets.mySecret) // ********\n' +
+      '```\n' +
+      '\n' +
+      '## Secrets File Format\n' +
+      'The secrets file should be a list of key-value pairs separated by an equal sign (`=`), for example:\n' +
+      '```\n' +
+      'SECRET_1=value1\n' +
+      'SECRET_2=value2\n' +
+      'SECRET_3=value2\n' +
       '```',
     mdast: {
       name: {
@@ -147831,10 +147839,10 @@ export default [
             type: 'code',
             lang: 'coffeescript',
             meta: '[specscript]',
-            value: 'Secrets(filepath string) -> secrets Promise<Object>',
+            value: 'Secrets(secretsFilepath string) -> secrets Promise<Object>',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 3, column: 4, offset: 84 }
+              end: { line: 3, column: 4, offset: 91 }
             }
           },
           {
@@ -147842,32 +147850,16 @@ export default [
             children: [
               {
                 type: 'text',
-                value: 'Presidium Secrets class. Consumes the ',
+                value: 'Presidium Secrets class. Consumes the secrets file upon reading.',
                 position: {
-                  start: { line: 5, column: 1, offset: 86 },
-                  end: { line: 5, column: 39, offset: 124 }
-                }
-              },
-              {
-                type: 'inlineCode',
-                value: '.secrets',
-                position: {
-                  start: { line: 5, column: 39, offset: 124 },
-                  end: { line: 5, column: 49, offset: 134 }
-                }
-              },
-              {
-                type: 'text',
-                value: ' file in the current directory.',
-                position: {
-                  start: { line: 5, column: 49, offset: 134 },
-                  end: { line: 5, column: 80, offset: 165 }
+                  start: { line: 5, column: 1, offset: 93 },
+                  end: { line: 5, column: 65, offset: 157 }
                 }
               }
             ],
             position: {
-              start: { line: 5, column: 1, offset: 86 },
-              end: { line: 5, column: 80, offset: 165 }
+              start: { line: 5, column: 1, offset: 93 },
+              end: { line: 5, column: 65, offset: 157 }
             }
           },
           {
@@ -147877,14 +147869,14 @@ export default [
                 type: 'text',
                 value: 'Arguments:',
                 position: {
-                  start: { line: 7, column: 1, offset: 167 },
-                  end: { line: 7, column: 11, offset: 177 }
+                  start: { line: 7, column: 1, offset: 159 },
+                  end: { line: 7, column: 11, offset: 169 }
                 }
               }
             ],
             position: {
-              start: { line: 7, column: 1, offset: 167 },
-              end: { line: 7, column: 11, offset: 177 }
+              start: { line: 7, column: 1, offset: 159 },
+              end: { line: 7, column: 11, offset: 169 }
             }
           },
           {
@@ -147903,52 +147895,68 @@ export default [
                     children: [
                       {
                         type: 'inlineCode',
-                        value: 'filepath',
+                        value: 'secretsFilepath',
                         position: {
-                          start: { line: 8, column: 5, offset: 182 },
-                          end: { line: 8, column: 15, offset: 192 }
+                          start: { line: 8, column: 5, offset: 174 },
+                          end: { line: 8, column: 22, offset: 191 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ' - ',
+                        position: {
+                          start: { line: 8, column: 22, offset: 191 },
+                          end: { line: 8, column: 25, offset: 194 }
+                        }
+                      },
+                      {
+                        type: 'inlineCode',
+                        value: 'string',
+                        position: {
+                          start: { line: 8, column: 25, offset: 194 },
+                          end: { line: 8, column: 33, offset: 202 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - optional path to the secrets file. Defaults to ',
                         position: {
-                          start: { line: 8, column: 15, offset: 192 },
-                          end: { line: 8, column: 65, offset: 242 }
+                          start: { line: 8, column: 33, offset: 202 },
+                          end: { line: 8, column: 83, offset: 252 }
                         }
                       },
                       {
                         type: 'inlineCode',
                         value: "'.secrets'",
                         position: {
-                          start: { line: 8, column: 65, offset: 242 },
-                          end: { line: 8, column: 77, offset: 254 }
+                          start: { line: 8, column: 83, offset: 252 },
+                          end: { line: 8, column: 95, offset: 264 }
                         }
                       },
                       {
                         type: 'text',
                         value: '.',
                         position: {
-                          start: { line: 8, column: 77, offset: 254 },
-                          end: { line: 8, column: 78, offset: 255 }
+                          start: { line: 8, column: 95, offset: 264 },
+                          end: { line: 8, column: 96, offset: 265 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 8, column: 5, offset: 182 },
-                      end: { line: 8, column: 78, offset: 255 }
+                      start: { line: 8, column: 5, offset: 174 },
+                      end: { line: 8, column: 96, offset: 265 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 8, column: 3, offset: 180 },
-                  end: { line: 8, column: 78, offset: 255 }
+                  start: { line: 8, column: 3, offset: 172 },
+                  end: { line: 8, column: 96, offset: 265 }
                 }
               }
             ],
             position: {
-              start: { line: 8, column: 3, offset: 180 },
-              end: { line: 8, column: 78, offset: 255 }
+              start: { line: 8, column: 3, offset: 172 },
+              end: { line: 8, column: 96, offset: 265 }
             }
           },
           {
@@ -147958,14 +147966,14 @@ export default [
                 type: 'text',
                 value: 'Return:',
                 position: {
-                  start: { line: 10, column: 1, offset: 257 },
-                  end: { line: 10, column: 8, offset: 264 }
+                  start: { line: 10, column: 1, offset: 267 },
+                  end: { line: 10, column: 8, offset: 274 }
                 }
               }
             ],
             position: {
-              start: { line: 10, column: 1, offset: 257 },
-              end: { line: 10, column: 8, offset: 264 }
+              start: { line: 10, column: 1, offset: 267 },
+              end: { line: 10, column: 8, offset: 274 }
             }
           },
           {
@@ -147986,34 +147994,50 @@ export default [
                         type: 'inlineCode',
                         value: 'secrets',
                         position: {
-                          start: { line: 11, column: 5, offset: 269 },
-                          end: { line: 11, column: 14, offset: 278 }
+                          start: { line: 11, column: 5, offset: 279 },
+                          end: { line: 11, column: 14, offset: 288 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ' - ',
+                        position: {
+                          start: { line: 11, column: 14, offset: 288 },
+                          end: { line: 11, column: 17, offset: 291 }
+                        }
+                      },
+                      {
+                        type: 'inlineCode',
+                        value: 'Promise<Object>',
+                        position: {
+                          start: { line: 11, column: 17, offset: 291 },
+                          end: { line: 11, column: 34, offset: 308 }
                         }
                       },
                       {
                         type: 'text',
                         value: ' - a promise of an object of secret key-value pairs.',
                         position: {
-                          start: { line: 11, column: 14, offset: 278 },
-                          end: { line: 11, column: 66, offset: 330 }
+                          start: { line: 11, column: 34, offset: 308 },
+                          end: { line: 11, column: 86, offset: 360 }
                         }
                       }
                     ],
                     position: {
-                      start: { line: 11, column: 5, offset: 269 },
-                      end: { line: 11, column: 66, offset: 330 }
+                      start: { line: 11, column: 5, offset: 279 },
+                      end: { line: 11, column: 86, offset: 360 }
                     }
                   }
                 ],
                 position: {
-                  start: { line: 11, column: 3, offset: 267 },
-                  end: { line: 11, column: 66, offset: 330 }
+                  start: { line: 11, column: 3, offset: 277 },
+                  end: { line: 11, column: 86, offset: 360 }
                 }
               }
             ],
             position: {
-              start: { line: 11, column: 3, offset: 267 },
-              end: { line: 11, column: 66, offset: 330 }
+              start: { line: 11, column: 3, offset: 277 },
+              end: { line: 11, column: 86, offset: 360 }
             }
           },
           {
@@ -148023,14 +148047,75 @@ export default [
             value: 'const secrets = await Secrets()\n' +
               'console.log(secrets.mySecret) // ********',
             position: {
-              start: { line: 13, column: 1, offset: 332 },
-              end: { line: 16, column: 4, offset: 423 }
+              start: { line: 13, column: 1, offset: 362 },
+              end: { line: 16, column: 4, offset: 453 }
+            }
+          },
+          {
+            type: 'heading',
+            depth: 2,
+            children: [
+              {
+                type: 'text',
+                value: 'Secrets File Format',
+                position: {
+                  start: { line: 18, column: 4, offset: 458 },
+                  end: { line: 18, column: 23, offset: 477 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 18, column: 1, offset: 455 },
+              end: { line: 18, column: 23, offset: 477 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'The secrets file should be a list of key-value pairs separated by an equal sign (',
+                position: {
+                  start: { line: 19, column: 1, offset: 478 },
+                  end: { line: 19, column: 82, offset: 559 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: '=',
+                position: {
+                  start: { line: 19, column: 82, offset: 559 },
+                  end: { line: 19, column: 85, offset: 562 }
+                }
+              },
+              {
+                type: 'text',
+                value: '), for example:',
+                position: {
+                  start: { line: 19, column: 85, offset: 562 },
+                  end: { line: 19, column: 100, offset: 577 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 19, column: 1, offset: 478 },
+              end: { line: 19, column: 100, offset: 577 }
+            }
+          },
+          {
+            type: 'code',
+            lang: null,
+            meta: null,
+            value: 'SECRET_1=value1\nSECRET_2=value2\nSECRET_3=value2',
+            position: {
+              start: { line: 20, column: 1, offset: 578 },
+              end: { line: 24, column: 4, offset: 633 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 16, column: 4, offset: 423 }
+          end: { line: 24, column: 4, offset: 633 }
         }
       }
     },

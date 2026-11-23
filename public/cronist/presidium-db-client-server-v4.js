@@ -2229,7 +2229,7 @@ export default [
       '  entryLength number,\n' +
       '  encoding string,\n' +
       '  valueType string,\n' +
-      '  sortValueType string\n' +
+      '  sortValueType "string"|"number"|Array<"string"|"number">\n' +
       ') -> Array<string, Buffer>\n' +
       '```',
     mdast: {
@@ -2278,17 +2278,17 @@ export default [
               '  entryLength number,\n' +
               '  encoding string,\n' +
               '  valueType string,\n' +
-              '  sortValueType string\n' +
+              '  sortValueType "string"|"number"|Array<"string"|"number">\n' +
               ') -> Array<string, Buffer>',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 16, column: 4, offset: 299 }
+              end: { line: 16, column: 4, offset: 335 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 16, column: 4, offset: 299 }
+          end: { line: 16, column: 4, offset: 335 }
         }
       }
     },
