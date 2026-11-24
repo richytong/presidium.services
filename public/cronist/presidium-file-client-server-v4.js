@@ -457,11 +457,8 @@ export default [
       '\n' +
       'new FileServer(options {\n' +
       '  dir: string,\n' +
-      '  databasePath: string,\n' +
-      '  metadataTableName: string,\n' +
-      '  metadataTableInitialLength: number,\n' +
-      '  metadataTableItemSize: number,\n' +
       '  cors: boolean,\n' +
+      '  delimiter: string,\n' +
       '}, ...handlers Array<HttpHandler>) -> FileServer\n' +
       '```',
     mdast: {
@@ -504,76 +501,22 @@ export default [
               '\n' +
               'new FileServer(options {\n' +
               '  dir: string,\n' +
-              '  databasePath: string,\n' +
-              '  metadataTableName: string,\n' +
-              '  metadataTableInitialLength: number,\n' +
-              '  metadataTableItemSize: number,\n' +
               '  cors: boolean,\n' +
+              '  delimiter: string,\n' +
               '}, ...handlers Array<HttpHandler>) -> FileServer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 14, column: 4, offset: 377 }
+              end: { line: 11, column: 4, offset: 274 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 14, column: 4, offset: 377 }
+          end: { line: 11, column: 4, offset: 274 }
         }
       }
     },
     methods: [
-      {
-        name: 'init',
-        docs: '```specscript\ninit() -> Promise<>\n```',
-        mdast: {
-          name: {
-            type: 'root',
-            children: [
-              {
-                type: 'paragraph',
-                children: [
-                  {
-                    type: 'text',
-                    value: 'init',
-                    position: {
-                      start: { line: 1, column: 1, offset: 0 },
-                      end: { line: 1, column: 5, offset: 4 }
-                    }
-                  }
-                ],
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 1, column: 5, offset: 4 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 1, column: 5, offset: 4 }
-            }
-          },
-          docs: {
-            type: 'root',
-            children: [
-              {
-                type: 'code',
-                lang: 'specscript',
-                meta: null,
-                value: 'init() -> Promise<>',
-                position: {
-                  start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 3, column: 4, offset: 37 }
-                }
-              }
-            ],
-            position: {
-              start: { line: 1, column: 1, offset: 0 },
-              end: { line: 3, column: 4, offset: 37 }
-            }
-          }
-        }
-      },
       {
         name: 'listen',
         docs: '```specscript\n' +

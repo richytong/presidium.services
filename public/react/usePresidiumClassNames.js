@@ -5,6 +5,7 @@ import defaultFilenames from '../presidium/v4-filenames.js'
 function createClassNames(filenames) {
   return filenames.filter(filename =>
     filename != 'index.js'
+    && filename != 'global.js'
     && filename != 'userAgent.js'
     && filename != 'Archive.js'
     && filename != 'internal'
