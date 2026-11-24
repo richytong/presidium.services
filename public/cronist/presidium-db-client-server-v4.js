@@ -6387,7 +6387,7 @@ export default [
           '  * `Promise<number>` - a promise of the number of items in the disk hash table on the database server.\n' +
           '\n' +
           '```javascript\n' +
-          'const count = ht.count()\n' +
+          'const count = await ht.count()\n' +
           '```',
         mdast: {
           name: {
@@ -6572,16 +6572,16 @@ export default [
                 type: 'code',
                 lang: 'javascript',
                 meta: null,
-                value: 'const count = ht.count()',
+                value: 'const count = await ht.count()',
                 position: {
                   start: { line: 13, column: 1, offset: 258 },
-                  end: { line: 15, column: 4, offset: 300 }
+                  end: { line: 15, column: 4, offset: 306 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 15, column: 4, offset: 300 }
+              end: { line: 15, column: 4, offset: 306 }
             }
           }
         }
