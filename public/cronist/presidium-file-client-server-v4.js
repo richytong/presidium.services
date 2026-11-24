@@ -4,7 +4,22 @@ export default [
     docs: '```specscript\n' +
       'new FileClient(options {\n' +
       '  serverUrl: string,\n' +
-      '}) -> FileClient\n' +
+      '}) -> fileClient FileClient\n' +
+      '```\n' +
+      '\n' +
+      'Presidium FileClient class. Creates a file client.\n' +
+      '\n' +
+      'Arguments:\n' +
+      '  * `options`\n' +
+      '    * `serverUrl` - `string` - the url of the file server.\n' +
+      '\n' +
+      'Return:\n' +
+      '  * `fileClient` - [`FileClient`](/docs/FileClient) - a FileClient instance.\n' +
+      '\n' +
+      '```javascript\n' +
+      'const fileClient = new FileClient({\n' +
+      '  serverUrl: "http://your-file-load-balancer-server:8080",\n' +
+      '})\n' +
       '```',
     mdast: {
       name: {
@@ -40,16 +55,260 @@ export default [
             type: 'code',
             lang: 'specscript',
             meta: null,
-            value: 'new FileClient(options {\n  serverUrl: string,\n}) -> FileClient',
+            value: 'new FileClient(options {\n' +
+              '  serverUrl: string,\n' +
+              '}) -> fileClient FileClient',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 80 }
+              end: { line: 5, column: 4, offset: 91 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Presidium FileClient class. Creates a file client.',
+                position: {
+                  start: { line: 7, column: 1, offset: 93 },
+                  end: { line: 7, column: 51, offset: 143 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 7, column: 1, offset: 93 },
+              end: { line: 7, column: 51, offset: 143 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Arguments:',
+                position: {
+                  start: { line: 9, column: 1, offset: 145 },
+                  end: { line: 9, column: 11, offset: 155 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 9, column: 1, offset: 145 },
+              end: { line: 9, column: 11, offset: 155 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'options',
+                        position: {
+                          start: { line: 10, column: 5, offset: 160 },
+                          end: { line: 10, column: 14, offset: 169 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 10, column: 5, offset: 160 },
+                      end: { line: 10, column: 14, offset: 169 }
+                    }
+                  },
+                  {
+                    type: 'list',
+                    ordered: false,
+                    start: null,
+                    spread: false,
+                    children: [
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'serverUrl',
+                                position: {
+                                  start: { line: 11, column: 7, offset: 176 },
+                                  end: { line: 11, column: 18, offset: 187 }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - ',
+                                position: {
+                                  start: { line: 11, column: 18, offset: 187 },
+                                  end: { line: 11, column: 21, offset: 190 }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'string',
+                                position: {
+                                  start: { line: 11, column: 21, offset: 190 },
+                                  end: { line: 11, column: 29, offset: 198 }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - the url of the file server.',
+                                position: {
+                                  start: { line: 11, column: 29, offset: 198 },
+                                  end: { line: 11, column: 59, offset: 228 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 11, column: 7, offset: 176 },
+                              end: { line: 11, column: 59, offset: 228 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 11, column: 5, offset: 174 },
+                          end: { line: 11, column: 59, offset: 228 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 11, column: 5, offset: 174 },
+                      end: { line: 11, column: 59, offset: 228 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 10, column: 3, offset: 158 },
+                  end: { line: 11, column: 59, offset: 228 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 10, column: 3, offset: 158 },
+              end: { line: 11, column: 59, offset: 228 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Return:',
+                position: {
+                  start: { line: 13, column: 1, offset: 230 },
+                  end: { line: 13, column: 8, offset: 237 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 13, column: 1, offset: 230 },
+              end: { line: 13, column: 8, offset: 237 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'fileClient',
+                        position: {
+                          start: { line: 14, column: 5, offset: 242 },
+                          end: { line: 14, column: 17, offset: 254 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ' - ',
+                        position: {
+                          start: { line: 14, column: 17, offset: 254 },
+                          end: { line: 14, column: 20, offset: 257 }
+                        }
+                      },
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/FileClient',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'FileClient',
+                            position: {
+                              start: { line: 14, column: 21, offset: 258 },
+                              end: { line: 14, column: 33, offset: 270 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 14, column: 20, offset: 257 },
+                          end: { line: 14, column: 52, offset: 289 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ' - a FileClient instance.',
+                        position: {
+                          start: { line: 14, column: 52, offset: 289 },
+                          end: { line: 14, column: 77, offset: 314 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 14, column: 5, offset: 242 },
+                      end: { line: 14, column: 77, offset: 314 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 14, column: 3, offset: 240 },
+                  end: { line: 14, column: 77, offset: 314 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 14, column: 3, offset: 240 },
+              end: { line: 14, column: 77, offset: 314 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: null,
+            value: 'const fileClient = new FileClient({\n' +
+              '  serverUrl: "http://your-file-load-balancer-server:8080",\n' +
+              '})',
+            position: {
+              start: { line: 16, column: 1, offset: 316 },
+              end: { line: 20, column: 4, offset: 431 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 5, column: 4, offset: 80 }
+          end: { line: 20, column: 4, offset: 431 }
         }
       }
     },
@@ -70,6 +329,31 @@ export default [
           '    ContentEncoding: string,\n' +
           '  },\n' +
           '}>\n' +
+          '```\n' +
+          '\n' +
+          'Writes file data to the file server at the specified URL.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * `url` - `string` - the URL of the file on the file server.\n' +
+          '  * `fileStream` - `stream.Readable` - the file data.\n' +
+          '  * `options`\n' +
+          '    * `ContentType` - `string` - the content type or mime type of the file. Represents the value of the `Content-Type` header of the file served by the file server.\n' +
+          '    * `ContentEncoding` - `string` - the content encoding of the file. Represents the value of the `Content-Encoding` header of the file served by the file server.\n' +
+          '\n' +
+          'Return:\n' +
+          '  * `data` - `Promise<object>`\n' +
+          '    * `metadata`\n' +
+          '      * `Url` - `string` - the URL of the file on the file server.\n' +
+          '      * `ContentLength` - `number` - the length in bytes of the file data. Represents the value of the `Content-Length` header of the file served by the file server.\n' +
+          '      * `ContentType` - `string` - the content type or mime type of the file. Represents the value of the `Content-Type` header of the file served by the file server.\n' +
+          '      * `ContentEncoding` - `string` - the content encoding of the file. Represents the value of the `Content-Encoding` header of the file served by the file server.\n' +
+          '\n' +
+          '```javascript\n' +
+          'const yourMedia = fs.createWriteStream("/path/to/your-media.mp4")\n' +
+          '\n' +
+          'await fileClient.write("/assets/your-media.mp4", yourMedia, {\n' +
+          '  ContentType: "video/mp4",\n' +
+          '})\n' +
           '```',
         mdast: {
           name: {
@@ -122,11 +406,1088 @@ export default [
                   start: { line: 1, column: 1, offset: 0 },
                   end: { line: 15, column: 4, offset: 316 }
                 }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Writes file data to the file server at the specified URL.',
+                    position: {
+                      start: { line: 17, column: 1, offset: 318 },
+                      end: { line: 17, column: 58, offset: 375 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 17, column: 1, offset: 318 },
+                  end: { line: 17, column: 58, offset: 375 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 19, column: 1, offset: 377 },
+                      end: { line: 19, column: 11, offset: 387 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 19, column: 1, offset: 377 },
+                  end: { line: 19, column: 11, offset: 387 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'url',
+                            position: {
+                              start: { line: 20, column: 5, offset: 392 },
+                              end: { line: 20, column: 10, offset: 397 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - ',
+                            position: {
+                              start: { line: 20, column: 10, offset: 397 },
+                              end: { line: 20, column: 13, offset: 400 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'string',
+                            position: {
+                              start: { line: 20, column: 13, offset: 400 },
+                              end: { line: 20, column: 21, offset: 408 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - the URL of the file on the file server.',
+                            position: {
+                              start: { line: 20, column: 21, offset: 408 },
+                              end: { line: 20, column: 63, offset: 450 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 20, column: 5, offset: 392 },
+                          end: { line: 20, column: 63, offset: 450 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 20, column: 3, offset: 390 },
+                      end: { line: 20, column: 63, offset: 450 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'fileStream',
+                            position: {
+                              start: { line: 21, column: 5, offset: 455 },
+                              end: { line: 21, column: 17, offset: 467 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - ',
+                            position: {
+                              start: { line: 21, column: 17, offset: 467 },
+                              end: { line: 21, column: 20, offset: 470 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'stream.Readable',
+                            position: {
+                              start: { line: 21, column: 20, offset: 470 },
+                              end: { line: 21, column: 37, offset: 487 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - the file data.',
+                            position: {
+                              start: { line: 21, column: 37, offset: 487 },
+                              end: { line: 21, column: 54, offset: 504 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 21, column: 5, offset: 455 },
+                          end: { line: 21, column: 54, offset: 504 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 21, column: 3, offset: 453 },
+                      end: { line: 21, column: 54, offset: 504 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'options',
+                            position: {
+                              start: { line: 22, column: 5, offset: 509 },
+                              end: { line: 22, column: 14, offset: 518 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 22, column: 5, offset: 509 },
+                          end: { line: 22, column: 14, offset: 518 }
+                        }
+                      },
+                      {
+                        type: 'list',
+                        ordered: false,
+                        start: null,
+                        spread: false,
+                        children: [
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'ContentType',
+                                    position: {
+                                      start: {
+                                        line: 23,
+                                        column: 7,
+                                        offset: 525
+                                      },
+                                      end: {
+                                        line: 23,
+                                        column: 20,
+                                        offset: 538
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - ',
+                                    position: {
+                                      start: {
+                                        line: 23,
+                                        column: 20,
+                                        offset: 538
+                                      },
+                                      end: {
+                                        line: 23,
+                                        column: 23,
+                                        offset: 541
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'string',
+                                    position: {
+                                      start: {
+                                        line: 23,
+                                        column: 23,
+                                        offset: 541
+                                      },
+                                      end: {
+                                        line: 23,
+                                        column: 31,
+                                        offset: 549
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the content type or mime type of the file. Represents the value of the ',
+                                    position: {
+                                      start: {
+                                        line: 23,
+                                        column: 31,
+                                        offset: 549
+                                      },
+                                      end: {
+                                        line: 23,
+                                        column: 105,
+                                        offset: 623
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Content-Type',
+                                    position: {
+                                      start: {
+                                        line: 23,
+                                        column: 105,
+                                        offset: 623
+                                      },
+                                      end: {
+                                        line: 23,
+                                        column: 119,
+                                        offset: 637
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' header of the file served by the file server.',
+                                    position: {
+                                      start: {
+                                        line: 23,
+                                        column: 119,
+                                        offset: 637
+                                      },
+                                      end: {
+                                        line: 23,
+                                        column: 165,
+                                        offset: 683
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 23, column: 7, offset: 525 },
+                                  end: {
+                                    line: 23,
+                                    column: 165,
+                                    offset: 683
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 23, column: 5, offset: 523 },
+                              end: { line: 23, column: 165, offset: 683 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'ContentEncoding',
+                                    position: {
+                                      start: {
+                                        line: 24,
+                                        column: 7,
+                                        offset: 690
+                                      },
+                                      end: {
+                                        line: 24,
+                                        column: 24,
+                                        offset: 707
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - ',
+                                    position: {
+                                      start: {
+                                        line: 24,
+                                        column: 24,
+                                        offset: 707
+                                      },
+                                      end: {
+                                        line: 24,
+                                        column: 27,
+                                        offset: 710
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'string',
+                                    position: {
+                                      start: {
+                                        line: 24,
+                                        column: 27,
+                                        offset: 710
+                                      },
+                                      end: {
+                                        line: 24,
+                                        column: 35,
+                                        offset: 718
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the content encoding of the file. Represents the value of the ',
+                                    position: {
+                                      start: {
+                                        line: 24,
+                                        column: 35,
+                                        offset: 718
+                                      },
+                                      end: {
+                                        line: 24,
+                                        column: 100,
+                                        offset: 783
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Content-Encoding',
+                                    position: {
+                                      start: {
+                                        line: 24,
+                                        column: 100,
+                                        offset: 783
+                                      },
+                                      end: {
+                                        line: 24,
+                                        column: 118,
+                                        offset: 801
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' header of the file served by the file server.',
+                                    position: {
+                                      start: {
+                                        line: 24,
+                                        column: 118,
+                                        offset: 801
+                                      },
+                                      end: {
+                                        line: 24,
+                                        column: 164,
+                                        offset: 847
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 24, column: 7, offset: 690 },
+                                  end: {
+                                    line: 24,
+                                    column: 164,
+                                    offset: 847
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 24, column: 5, offset: 688 },
+                              end: { line: 24, column: 164, offset: 847 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 23, column: 5, offset: 523 },
+                          end: { line: 24, column: 164, offset: 847 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 22, column: 3, offset: 507 },
+                      end: { line: 24, column: 164, offset: 847 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 20, column: 3, offset: 390 },
+                  end: { line: 24, column: 164, offset: 847 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 26, column: 1, offset: 849 },
+                      end: { line: 26, column: 8, offset: 856 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 26, column: 1, offset: 849 },
+                  end: { line: 26, column: 8, offset: 856 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'data',
+                            position: {
+                              start: { line: 27, column: 5, offset: 861 },
+                              end: { line: 27, column: 11, offset: 867 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - ',
+                            position: {
+                              start: { line: 27, column: 11, offset: 867 },
+                              end: { line: 27, column: 14, offset: 870 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'Promise<object>',
+                            position: {
+                              start: { line: 27, column: 14, offset: 870 },
+                              end: { line: 27, column: 31, offset: 887 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 27, column: 5, offset: 861 },
+                          end: { line: 27, column: 31, offset: 887 }
+                        }
+                      },
+                      {
+                        type: 'list',
+                        ordered: false,
+                        start: null,
+                        spread: false,
+                        children: [
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'metadata',
+                                    position: {
+                                      start: {
+                                        line: 28,
+                                        column: 7,
+                                        offset: 894
+                                      },
+                                      end: {
+                                        line: 28,
+                                        column: 17,
+                                        offset: 904
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 28, column: 7, offset: 894 },
+                                  end: { line: 28, column: 17, offset: 904 }
+                                }
+                              },
+                              {
+                                type: 'list',
+                                ordered: false,
+                                start: null,
+                                spread: false,
+                                children: [
+                                  {
+                                    type: 'listItem',
+                                    spread: false,
+                                    checked: null,
+                                    children: [
+                                      {
+                                        type: 'paragraph',
+                                        children: [
+                                          {
+                                            type: 'inlineCode',
+                                            value: 'Url',
+                                            position: {
+                                              start: {
+                                                line: 29,
+                                                column: 9,
+                                                offset: 913
+                                              },
+                                              end: {
+                                                line: 29,
+                                                column: 14,
+                                                offset: 918
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'text',
+                                            value: ' - ',
+                                            position: {
+                                              start: {
+                                                line: 29,
+                                                column: 14,
+                                                offset: 918
+                                              },
+                                              end: {
+                                                line: 29,
+                                                column: 17,
+                                                offset: 921
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'inlineCode',
+                                            value: 'string',
+                                            position: {
+                                              start: {
+                                                line: 29,
+                                                column: 17,
+                                                offset: 921
+                                              },
+                                              end: {
+                                                line: 29,
+                                                column: 25,
+                                                offset: 929
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'text',
+                                            value: ' - the URL of the file on the file server.',
+                                            position: {
+                                              start: {
+                                                line: 29,
+                                                column: 25,
+                                                offset: 929
+                                              },
+                                              end: {
+                                                line: 29,
+                                                column: 67,
+                                                offset: 971
+                                              }
+                                            }
+                                          }
+                                        ],
+                                        position: {
+                                          start: {
+                                            line: 29,
+                                            column: 9,
+                                            offset: 913
+                                          },
+                                          end: {
+                                            line: 29,
+                                            column: 67,
+                                            offset: 971
+                                          }
+                                        }
+                                      }
+                                    ],
+                                    position: {
+                                      start: {
+                                        line: 29,
+                                        column: 7,
+                                        offset: 911
+                                      },
+                                      end: {
+                                        line: 29,
+                                        column: 67,
+                                        offset: 971
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'listItem',
+                                    spread: false,
+                                    checked: null,
+                                    children: [
+                                      {
+                                        type: 'paragraph',
+                                        children: [
+                                          {
+                                            type: 'inlineCode',
+                                            value: 'ContentLength',
+                                            position: {
+                                              start: {
+                                                line: 30,
+                                                column: 9,
+                                                offset: 980
+                                              },
+                                              end: {
+                                                line: 30,
+                                                column: 24,
+                                                offset: 995
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'text',
+                                            value: ' - ',
+                                            position: {
+                                              start: {
+                                                line: 30,
+                                                column: 24,
+                                                offset: 995
+                                              },
+                                              end: {
+                                                line: 30,
+                                                column: 27,
+                                                offset: 998
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'inlineCode',
+                                            value: 'number',
+                                            position: {
+                                              start: {
+                                                line: 30,
+                                                column: 27,
+                                                offset: 998
+                                              },
+                                              end: {
+                                                line: 30,
+                                                column: 35,
+                                                offset: 1006
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'text',
+                                            value: ' - the length in bytes of the file data. Represents the value of the ',
+                                            position: {
+                                              start: {
+                                                line: 30,
+                                                column: 35,
+                                                offset: 1006
+                                              },
+                                              end: {
+                                                line: 30,
+                                                column: 104,
+                                                offset: 1075
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'inlineCode',
+                                            value: 'Content-Length',
+                                            position: {
+                                              start: {
+                                                line: 30,
+                                                column: 104,
+                                                offset: 1075
+                                              },
+                                              end: {
+                                                line: 30,
+                                                column: 120,
+                                                offset: 1091
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'text',
+                                            value: ' header of the file served by the file server.',
+                                            position: {
+                                              start: {
+                                                line: 30,
+                                                column: 120,
+                                                offset: 1091
+                                              },
+                                              end: {
+                                                line: 30,
+                                                column: 166,
+                                                offset: 1137
+                                              }
+                                            }
+                                          }
+                                        ],
+                                        position: {
+                                          start: {
+                                            line: 30,
+                                            column: 9,
+                                            offset: 980
+                                          },
+                                          end: {
+                                            line: 30,
+                                            column: 166,
+                                            offset: 1137
+                                          }
+                                        }
+                                      }
+                                    ],
+                                    position: {
+                                      start: {
+                                        line: 30,
+                                        column: 7,
+                                        offset: 978
+                                      },
+                                      end: {
+                                        line: 30,
+                                        column: 166,
+                                        offset: 1137
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'listItem',
+                                    spread: false,
+                                    checked: null,
+                                    children: [
+                                      {
+                                        type: 'paragraph',
+                                        children: [
+                                          {
+                                            type: 'inlineCode',
+                                            value: 'ContentType',
+                                            position: {
+                                              start: {
+                                                line: 31,
+                                                column: 9,
+                                                offset: 1146
+                                              },
+                                              end: {
+                                                line: 31,
+                                                column: 22,
+                                                offset: 1159
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'text',
+                                            value: ' - ',
+                                            position: {
+                                              start: {
+                                                line: 31,
+                                                column: 22,
+                                                offset: 1159
+                                              },
+                                              end: {
+                                                line: 31,
+                                                column: 25,
+                                                offset: 1162
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'inlineCode',
+                                            value: 'string',
+                                            position: {
+                                              start: {
+                                                line: 31,
+                                                column: 25,
+                                                offset: 1162
+                                              },
+                                              end: {
+                                                line: 31,
+                                                column: 33,
+                                                offset: 1170
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'text',
+                                            value: ' - the content type or mime type of the file. Represents the value of the ',
+                                            position: {
+                                              start: {
+                                                line: 31,
+                                                column: 33,
+                                                offset: 1170
+                                              },
+                                              end: {
+                                                line: 31,
+                                                column: 107,
+                                                offset: 1244
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'inlineCode',
+                                            value: 'Content-Type',
+                                            position: {
+                                              start: {
+                                                line: 31,
+                                                column: 107,
+                                                offset: 1244
+                                              },
+                                              end: {
+                                                line: 31,
+                                                column: 121,
+                                                offset: 1258
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'text',
+                                            value: ' header of the file served by the file server.',
+                                            position: {
+                                              start: {
+                                                line: 31,
+                                                column: 121,
+                                                offset: 1258
+                                              },
+                                              end: {
+                                                line: 31,
+                                                column: 167,
+                                                offset: 1304
+                                              }
+                                            }
+                                          }
+                                        ],
+                                        position: {
+                                          start: {
+                                            line: 31,
+                                            column: 9,
+                                            offset: 1146
+                                          },
+                                          end: {
+                                            line: 31,
+                                            column: 167,
+                                            offset: 1304
+                                          }
+                                        }
+                                      }
+                                    ],
+                                    position: {
+                                      start: {
+                                        line: 31,
+                                        column: 7,
+                                        offset: 1144
+                                      },
+                                      end: {
+                                        line: 31,
+                                        column: 167,
+                                        offset: 1304
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'listItem',
+                                    spread: false,
+                                    checked: null,
+                                    children: [
+                                      {
+                                        type: 'paragraph',
+                                        children: [
+                                          {
+                                            type: 'inlineCode',
+                                            value: 'ContentEncoding',
+                                            position: {
+                                              start: {
+                                                line: 32,
+                                                column: 9,
+                                                offset: 1313
+                                              },
+                                              end: {
+                                                line: 32,
+                                                column: 26,
+                                                offset: 1330
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'text',
+                                            value: ' - ',
+                                            position: {
+                                              start: {
+                                                line: 32,
+                                                column: 26,
+                                                offset: 1330
+                                              },
+                                              end: {
+                                                line: 32,
+                                                column: 29,
+                                                offset: 1333
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'inlineCode',
+                                            value: 'string',
+                                            position: {
+                                              start: {
+                                                line: 32,
+                                                column: 29,
+                                                offset: 1333
+                                              },
+                                              end: {
+                                                line: 32,
+                                                column: 37,
+                                                offset: 1341
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'text',
+                                            value: ' - the content encoding of the file. Represents the value of the ',
+                                            position: {
+                                              start: {
+                                                line: 32,
+                                                column: 37,
+                                                offset: 1341
+                                              },
+                                              end: {
+                                                line: 32,
+                                                column: 102,
+                                                offset: 1406
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'inlineCode',
+                                            value: 'Content-Encoding',
+                                            position: {
+                                              start: {
+                                                line: 32,
+                                                column: 102,
+                                                offset: 1406
+                                              },
+                                              end: {
+                                                line: 32,
+                                                column: 120,
+                                                offset: 1424
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type: 'text',
+                                            value: ' header of the file served by the file server.',
+                                            position: {
+                                              start: {
+                                                line: 32,
+                                                column: 120,
+                                                offset: 1424
+                                              },
+                                              end: {
+                                                line: 32,
+                                                column: 166,
+                                                offset: 1470
+                                              }
+                                            }
+                                          }
+                                        ],
+                                        position: {
+                                          start: {
+                                            line: 32,
+                                            column: 9,
+                                            offset: 1313
+                                          },
+                                          end: {
+                                            line: 32,
+                                            column: 166,
+                                            offset: 1470
+                                          }
+                                        }
+                                      }
+                                    ],
+                                    position: {
+                                      start: {
+                                        line: 32,
+                                        column: 7,
+                                        offset: 1311
+                                      },
+                                      end: {
+                                        line: 32,
+                                        column: 166,
+                                        offset: 1470
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 29, column: 7, offset: 911 },
+                                  end: {
+                                    line: 32,
+                                    column: 166,
+                                    offset: 1470
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 28, column: 5, offset: 892 },
+                              end: { line: 32, column: 166, offset: 1470 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 28, column: 5, offset: 892 },
+                          end: { line: 32, column: 166, offset: 1470 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 27, column: 3, offset: 859 },
+                      end: { line: 32, column: 166, offset: 1470 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 27, column: 3, offset: 859 },
+                  end: { line: 32, column: 166, offset: 1470 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'const yourMedia = fs.createWriteStream("/path/to/your-media.mp4")\n' +
+                  '\n' +
+                  'await fileClient.write("/assets/your-media.mp4", yourMedia, {\n' +
+                  '  ContentType: "video/mp4",\n' +
+                  '})',
+                position: {
+                  start: { line: 34, column: 1, offset: 1472 },
+                  end: { line: 40, column: 4, offset: 1649 }
+                }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 15, column: 4, offset: 316 }
+              end: { line: 40, column: 4, offset: 1649 }
             }
           }
         }
@@ -144,7 +1505,25 @@ export default [
           '}>\n' +
           '\n' +
           'read(url string) -> Promise<undefined>\n' +
-          '```',
+          '```\n' +
+          '\n' +
+          'Reads file data from the file server at the specified URL.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * `url` - `string` - the URL of the file on the file server.\n' +
+          '\n' +
+          'Return:\n' +
+          '  * `data` - `Promise<object>`\n' +
+          '    * `FileStream` - `stream.Readable` - the file data.\n' +
+          '    * `ContentLength` - `number` - the length in bytes of the file data. Represents the value of the `Content-Length` header of the file served by the file server.\n' +
+          '    * `ContentType` - `string` - the content type or mime type of the file. Represents the value of the `Content-Type` header of the file served by the file server.\n' +
+          '    * `ContentEncoding` - `string` - the content encoding of the file. Represents the value of the `Content-Encoding` header of the file served by the file server.\n' +
+          '\n' +
+          '```javascript\n' +
+          'const data = await fileClient.read("/assets/your-media.mp4")\n' +
+          '```\n' +
+          '\n' +
+          'See [Requesting a file resource from clients](/docs/FileServer#requesting-a-file-resource-from-clients) for accessing file resources from browser and mobile clients.',
         mdast: {
           name: {
             type: 'root',
@@ -193,11 +1572,692 @@ export default [
                   start: { line: 1, column: 1, offset: 0 },
                   end: { line: 12, column: 4, offset: 253 }
                 }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Reads file data from the file server at the specified URL.',
+                    position: {
+                      start: { line: 14, column: 1, offset: 255 },
+                      end: { line: 14, column: 59, offset: 313 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 14, column: 1, offset: 255 },
+                  end: { line: 14, column: 59, offset: 313 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 16, column: 1, offset: 315 },
+                      end: { line: 16, column: 11, offset: 325 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 16, column: 1, offset: 315 },
+                  end: { line: 16, column: 11, offset: 325 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'url',
+                            position: {
+                              start: { line: 17, column: 5, offset: 330 },
+                              end: { line: 17, column: 10, offset: 335 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - ',
+                            position: {
+                              start: { line: 17, column: 10, offset: 335 },
+                              end: { line: 17, column: 13, offset: 338 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'string',
+                            position: {
+                              start: { line: 17, column: 13, offset: 338 },
+                              end: { line: 17, column: 21, offset: 346 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - the URL of the file on the file server.',
+                            position: {
+                              start: { line: 17, column: 21, offset: 346 },
+                              end: { line: 17, column: 63, offset: 388 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 17, column: 5, offset: 330 },
+                          end: { line: 17, column: 63, offset: 388 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 17, column: 3, offset: 328 },
+                      end: { line: 17, column: 63, offset: 388 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 17, column: 3, offset: 328 },
+                  end: { line: 17, column: 63, offset: 388 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 19, column: 1, offset: 390 },
+                      end: { line: 19, column: 8, offset: 397 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 19, column: 1, offset: 390 },
+                  end: { line: 19, column: 8, offset: 397 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'data',
+                            position: {
+                              start: { line: 20, column: 5, offset: 402 },
+                              end: { line: 20, column: 11, offset: 408 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - ',
+                            position: {
+                              start: { line: 20, column: 11, offset: 408 },
+                              end: { line: 20, column: 14, offset: 411 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'Promise<object>',
+                            position: {
+                              start: { line: 20, column: 14, offset: 411 },
+                              end: { line: 20, column: 31, offset: 428 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 20, column: 5, offset: 402 },
+                          end: { line: 20, column: 31, offset: 428 }
+                        }
+                      },
+                      {
+                        type: 'list',
+                        ordered: false,
+                        start: null,
+                        spread: false,
+                        children: [
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'FileStream',
+                                    position: {
+                                      start: {
+                                        line: 21,
+                                        column: 7,
+                                        offset: 435
+                                      },
+                                      end: {
+                                        line: 21,
+                                        column: 19,
+                                        offset: 447
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - ',
+                                    position: {
+                                      start: {
+                                        line: 21,
+                                        column: 19,
+                                        offset: 447
+                                      },
+                                      end: {
+                                        line: 21,
+                                        column: 22,
+                                        offset: 450
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'stream.Readable',
+                                    position: {
+                                      start: {
+                                        line: 21,
+                                        column: 22,
+                                        offset: 450
+                                      },
+                                      end: {
+                                        line: 21,
+                                        column: 39,
+                                        offset: 467
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the file data.',
+                                    position: {
+                                      start: {
+                                        line: 21,
+                                        column: 39,
+                                        offset: 467
+                                      },
+                                      end: {
+                                        line: 21,
+                                        column: 56,
+                                        offset: 484
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 21, column: 7, offset: 435 },
+                                  end: { line: 21, column: 56, offset: 484 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 21, column: 5, offset: 433 },
+                              end: { line: 21, column: 56, offset: 484 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'ContentLength',
+                                    position: {
+                                      start: {
+                                        line: 22,
+                                        column: 7,
+                                        offset: 491
+                                      },
+                                      end: {
+                                        line: 22,
+                                        column: 22,
+                                        offset: 506
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - ',
+                                    position: {
+                                      start: {
+                                        line: 22,
+                                        column: 22,
+                                        offset: 506
+                                      },
+                                      end: {
+                                        line: 22,
+                                        column: 25,
+                                        offset: 509
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'number',
+                                    position: {
+                                      start: {
+                                        line: 22,
+                                        column: 25,
+                                        offset: 509
+                                      },
+                                      end: {
+                                        line: 22,
+                                        column: 33,
+                                        offset: 517
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the length in bytes of the file data. Represents the value of the ',
+                                    position: {
+                                      start: {
+                                        line: 22,
+                                        column: 33,
+                                        offset: 517
+                                      },
+                                      end: {
+                                        line: 22,
+                                        column: 102,
+                                        offset: 586
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Content-Length',
+                                    position: {
+                                      start: {
+                                        line: 22,
+                                        column: 102,
+                                        offset: 586
+                                      },
+                                      end: {
+                                        line: 22,
+                                        column: 118,
+                                        offset: 602
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' header of the file served by the file server.',
+                                    position: {
+                                      start: {
+                                        line: 22,
+                                        column: 118,
+                                        offset: 602
+                                      },
+                                      end: {
+                                        line: 22,
+                                        column: 164,
+                                        offset: 648
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 22, column: 7, offset: 491 },
+                                  end: {
+                                    line: 22,
+                                    column: 164,
+                                    offset: 648
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 22, column: 5, offset: 489 },
+                              end: { line: 22, column: 164, offset: 648 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'ContentType',
+                                    position: {
+                                      start: {
+                                        line: 23,
+                                        column: 7,
+                                        offset: 655
+                                      },
+                                      end: {
+                                        line: 23,
+                                        column: 20,
+                                        offset: 668
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - ',
+                                    position: {
+                                      start: {
+                                        line: 23,
+                                        column: 20,
+                                        offset: 668
+                                      },
+                                      end: {
+                                        line: 23,
+                                        column: 23,
+                                        offset: 671
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'string',
+                                    position: {
+                                      start: {
+                                        line: 23,
+                                        column: 23,
+                                        offset: 671
+                                      },
+                                      end: {
+                                        line: 23,
+                                        column: 31,
+                                        offset: 679
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the content type or mime type of the file. Represents the value of the ',
+                                    position: {
+                                      start: {
+                                        line: 23,
+                                        column: 31,
+                                        offset: 679
+                                      },
+                                      end: {
+                                        line: 23,
+                                        column: 105,
+                                        offset: 753
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Content-Type',
+                                    position: {
+                                      start: {
+                                        line: 23,
+                                        column: 105,
+                                        offset: 753
+                                      },
+                                      end: {
+                                        line: 23,
+                                        column: 119,
+                                        offset: 767
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' header of the file served by the file server.',
+                                    position: {
+                                      start: {
+                                        line: 23,
+                                        column: 119,
+                                        offset: 767
+                                      },
+                                      end: {
+                                        line: 23,
+                                        column: 165,
+                                        offset: 813
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 23, column: 7, offset: 655 },
+                                  end: {
+                                    line: 23,
+                                    column: 165,
+                                    offset: 813
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 23, column: 5, offset: 653 },
+                              end: { line: 23, column: 165, offset: 813 }
+                            }
+                          },
+                          {
+                            type: 'listItem',
+                            spread: false,
+                            checked: null,
+                            children: [
+                              {
+                                type: 'paragraph',
+                                children: [
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'ContentEncoding',
+                                    position: {
+                                      start: {
+                                        line: 24,
+                                        column: 7,
+                                        offset: 820
+                                      },
+                                      end: {
+                                        line: 24,
+                                        column: 24,
+                                        offset: 837
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - ',
+                                    position: {
+                                      start: {
+                                        line: 24,
+                                        column: 24,
+                                        offset: 837
+                                      },
+                                      end: {
+                                        line: 24,
+                                        column: 27,
+                                        offset: 840
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'string',
+                                    position: {
+                                      start: {
+                                        line: 24,
+                                        column: 27,
+                                        offset: 840
+                                      },
+                                      end: {
+                                        line: 24,
+                                        column: 35,
+                                        offset: 848
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' - the content encoding of the file. Represents the value of the ',
+                                    position: {
+                                      start: {
+                                        line: 24,
+                                        column: 35,
+                                        offset: 848
+                                      },
+                                      end: {
+                                        line: 24,
+                                        column: 100,
+                                        offset: 913
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'inlineCode',
+                                    value: 'Content-Encoding',
+                                    position: {
+                                      start: {
+                                        line: 24,
+                                        column: 100,
+                                        offset: 913
+                                      },
+                                      end: {
+                                        line: 24,
+                                        column: 118,
+                                        offset: 931
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type: 'text',
+                                    value: ' header of the file served by the file server.',
+                                    position: {
+                                      start: {
+                                        line: 24,
+                                        column: 118,
+                                        offset: 931
+                                      },
+                                      end: {
+                                        line: 24,
+                                        column: 164,
+                                        offset: 977
+                                      }
+                                    }
+                                  }
+                                ],
+                                position: {
+                                  start: { line: 24, column: 7, offset: 820 },
+                                  end: {
+                                    line: 24,
+                                    column: 164,
+                                    offset: 977
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 24, column: 5, offset: 818 },
+                              end: { line: 24, column: 164, offset: 977 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 21, column: 5, offset: 433 },
+                          end: { line: 24, column: 164, offset: 977 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 20, column: 3, offset: 400 },
+                      end: { line: 24, column: 164, offset: 977 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 20, column: 3, offset: 400 },
+                  end: { line: 24, column: 164, offset: 977 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'const data = await fileClient.read("/assets/your-media.mp4")',
+                position: {
+                  start: { line: 26, column: 1, offset: 979 },
+                  end: { line: 28, column: 4, offset: 1057 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'See ',
+                    position: {
+                      start: { line: 30, column: 1, offset: 1059 },
+                      end: { line: 30, column: 5, offset: 1063 }
+                    }
+                  },
+                  {
+                    type: 'link',
+                    title: null,
+                    url: '/docs/FileServer#requesting-a-file-resource-from-clients',
+                    children: [
+                      {
+                        type: 'text',
+                        value: 'Requesting a file resource from clients',
+                        position: {
+                          start: { line: 30, column: 6, offset: 1064 },
+                          end: { line: 30, column: 45, offset: 1103 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 30, column: 5, offset: 1063 },
+                      end: { line: 30, column: 104, offset: 1162 }
+                    }
+                  },
+                  {
+                    type: 'text',
+                    value: ' for accessing file resources from browser and mobile clients.',
+                    position: {
+                      start: { line: 30, column: 104, offset: 1162 },
+                      end: { line: 30, column: 166, offset: 1224 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 30, column: 1, offset: 1059 },
+                  end: { line: 30, column: 166, offset: 1224 }
+                }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 12, column: 4, offset: 253 }
+              end: { line: 30, column: 166, offset: 1224 }
             }
           }
         }
@@ -205,9 +2265,19 @@ export default [
       {
         name: 'delete',
         docs: '```specscript\n' +
-          'module stream "https://nodejs.org/api/stream.html"\n' +
-          '\n' +
           'delete(url string) -> didDelete Promise<boolean>\n' +
+          '```\n' +
+          '\n' +
+          'Deletes the file data indicated by the specified URL from the file server.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * `url` - `string` - the URL of the file on the file server.\n' +
+          '\n' +
+          'Return:\n' +
+          '  * `didDelete` - `Promise<boolean>` - whether the file data was found and deleted on the file server.\n' +
+          '\n' +
+          '```javascript\n' +
+          'await fileClient.delete("/assets/your-media.mp4")\n' +
           '```',
         mdast: {
           name: {
@@ -243,18 +2313,205 @@ export default [
                 type: 'code',
                 lang: 'specscript',
                 meta: null,
-                value: 'module stream "https://nodejs.org/api/stream.html"\n' +
-                  '\n' +
-                  'delete(url string) -> didDelete Promise<boolean>',
+                value: 'delete(url string) -> didDelete Promise<boolean>',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 5, column: 4, offset: 118 }
+                  end: { line: 3, column: 4, offset: 66 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Deletes the file data indicated by the specified URL from the file server.',
+                    position: {
+                      start: { line: 5, column: 1, offset: 68 },
+                      end: { line: 5, column: 75, offset: 142 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 5, column: 1, offset: 68 },
+                  end: { line: 5, column: 75, offset: 142 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 7, column: 1, offset: 144 },
+                      end: { line: 7, column: 11, offset: 154 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 7, column: 1, offset: 144 },
+                  end: { line: 7, column: 11, offset: 154 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'url',
+                            position: {
+                              start: { line: 8, column: 5, offset: 159 },
+                              end: { line: 8, column: 10, offset: 164 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - ',
+                            position: {
+                              start: { line: 8, column: 10, offset: 164 },
+                              end: { line: 8, column: 13, offset: 167 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'string',
+                            position: {
+                              start: { line: 8, column: 13, offset: 167 },
+                              end: { line: 8, column: 21, offset: 175 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - the URL of the file on the file server.',
+                            position: {
+                              start: { line: 8, column: 21, offset: 175 },
+                              end: { line: 8, column: 63, offset: 217 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 8, column: 5, offset: 159 },
+                          end: { line: 8, column: 63, offset: 217 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 8, column: 3, offset: 157 },
+                      end: { line: 8, column: 63, offset: 217 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 3, offset: 157 },
+                  end: { line: 8, column: 63, offset: 217 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 10, column: 1, offset: 219 },
+                      end: { line: 10, column: 8, offset: 226 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 10, column: 1, offset: 219 },
+                  end: { line: 10, column: 8, offset: 226 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'didDelete',
+                            position: {
+                              start: { line: 11, column: 5, offset: 231 },
+                              end: { line: 11, column: 16, offset: 242 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - ',
+                            position: {
+                              start: { line: 11, column: 16, offset: 242 },
+                              end: { line: 11, column: 19, offset: 245 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'Promise<boolean>',
+                            position: {
+                              start: { line: 11, column: 19, offset: 245 },
+                              end: { line: 11, column: 37, offset: 263 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - whether the file data was found and deleted on the file server.',
+                            position: {
+                              start: { line: 11, column: 37, offset: 263 },
+                              end: { line: 11, column: 103, offset: 329 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 11, column: 5, offset: 231 },
+                          end: { line: 11, column: 103, offset: 329 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 11, column: 3, offset: 229 },
+                      end: { line: 11, column: 103, offset: 329 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 3, offset: 229 },
+                  end: { line: 11, column: 103, offset: 329 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'await fileClient.delete("/assets/your-media.mp4")',
+                position: {
+                  start: { line: 13, column: 1, offset: 331 },
+                  end: { line: 15, column: 4, offset: 398 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 5, column: 4, offset: 118 }
+              end: { line: 15, column: 4, offset: 398 }
             }
           }
         }
@@ -270,14 +2527,42 @@ export default [
       'type HttpHandler(http.ClientRequest, http.ServerResponse) -> Promise<>|undefined\n' +
       '\n' +
       'new FileLoadBalancer(options {\n' +
-      '  serverIps: Array<string>|Array<Array<string>>,\n' +
+      '  serverAddresses: Array<string>|Array<Array<string>>,\n' +
       '}, ...handlers Arguments<HttpHandler>) -> FileLoadBalancer\n' +
       '\n' +
-      'hash(fileUrl string, serverIpsLength number) -> serverIndex Promise|number\n' +
+      'hash(fileUrl string, serverAddressesLength number) -> serverIndex Promise|number\n' +
       '\n' +
       'new FileLoadBalancer(hash, options {\n' +
-      '  serverIps: Array<string>|Array<Array<string>>,\n' +
+      '  serverAddresses: Array<string>|Array<Array<string>>,\n' +
       '}, ...handlers Arguments<HttpHandler>) -> FileLoadBalancer\n' +
+      '```\n' +
+      '\n' +
+      'Presidium FileLoadBalancer class. Creates a file load balancer server.\n' +
+      '\n' +
+      'Arguments:\n' +
+      '  * `options`\n' +
+      '    * `serverAddresses` - `Array<string>|Array<Array<string>>` - the server addresses to load balance. An array of arrays of server addresses means the request data should be replicated across the array of server addresses indicated by the hash function.\n' +
+      '  * `hash` - `function` - a function that resolves the index of the server address to route a request. Defaults to an MD5 hash function.\n' +
+      '  * `handlers` - `Arguments<HttpHandler>` - HTTP handlers that process the request in order before it is processed by the file load balancer server.\n' +
+      '\n' +
+      'Return:\n' +
+      '  * `server` - [`FileLoadBalancer`](/docs/FileLoadBalancer) - a FileLoadBalancer instance.\n' +
+      '\n' +
+      '```javascript\n' +
+      'const server = new FileLoadBalancer({\n' +
+      '  serverAddresses: ["10.0.0.1:8080", "10.0.0.2:8080", "10.0.0.3:8080"],\n' +
+      '})\n' +
+      '\n' +
+      'server.listen(8080, () => {\n' +
+      '  console.log("File load balancer server listening on port 8080")\n' +
+      '})\n' +
+      '```\n' +
+      '\n' +
+      '## Requesting a file resource from clients\n' +
+      'Files stored on the file servers load balanced by the file load balancer server can be accessed by clients with a GET request to the file load balancer server at the url of the file.\n' +
+      '\n' +
+      '```html\n' +
+      '<img src="http://your-file-load-balancer-server-ip:8999/assets/your-media.mp4" alt="">\n' +
       '```',
     mdast: {
       name: {
@@ -318,23 +2603,422 @@ export default [
               'type HttpHandler(http.ClientRequest, http.ServerResponse) -> Promise<>|undefined\n' +
               '\n' +
               'new FileLoadBalancer(options {\n' +
-              '  serverIps: Array<string>|Array<Array<string>>,\n' +
+              '  serverAddresses: Array<string>|Array<Array<string>>,\n' +
               '}, ...handlers Arguments<HttpHandler>) -> FileLoadBalancer\n' +
               '\n' +
-              'hash(fileUrl string, serverIpsLength number) -> serverIndex Promise|number\n' +
+              'hash(fileUrl string, serverAddressesLength number) -> serverIndex Promise|number\n' +
               '\n' +
               'new FileLoadBalancer(hash, options {\n' +
-              '  serverIps: Array<string>|Array<Array<string>>,\n' +
+              '  serverAddresses: Array<string>|Array<Array<string>>,\n' +
               '}, ...handlers Arguments<HttpHandler>) -> FileLoadBalancer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 15, column: 4, offset: 508 }
+              end: { line: 15, column: 4, offset: 526 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Presidium FileLoadBalancer class. Creates a file load balancer server.',
+                position: {
+                  start: { line: 17, column: 1, offset: 528 },
+                  end: { line: 17, column: 71, offset: 598 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 17, column: 1, offset: 528 },
+              end: { line: 17, column: 71, offset: 598 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Arguments:',
+                position: {
+                  start: { line: 19, column: 1, offset: 600 },
+                  end: { line: 19, column: 11, offset: 610 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 19, column: 1, offset: 600 },
+              end: { line: 19, column: 11, offset: 610 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'options',
+                        position: {
+                          start: { line: 20, column: 5, offset: 615 },
+                          end: { line: 20, column: 14, offset: 624 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 20, column: 5, offset: 615 },
+                      end: { line: 20, column: 14, offset: 624 }
+                    }
+                  },
+                  {
+                    type: 'list',
+                    ordered: false,
+                    start: null,
+                    spread: false,
+                    children: [
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'serverAddresses',
+                                position: {
+                                  start: { line: 21, column: 7, offset: 631 },
+                                  end: { line: 21, column: 24, offset: 648 }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - ',
+                                position: {
+                                  start: { line: 21, column: 24, offset: 648 },
+                                  end: { line: 21, column: 27, offset: 651 }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'Array<string>|Array<Array<string>>',
+                                position: {
+                                  start: { line: 21, column: 27, offset: 651 },
+                                  end: { line: 21, column: 63, offset: 687 }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - the server addresses to load balance. An array of arrays of server addresses means the request data should be replicated across the array of server addresses indicated by the hash function.',
+                                position: {
+                                  start: { line: 21, column: 63, offset: 687 },
+                                  end: {
+                                    line: 21,
+                                    column: 255,
+                                    offset: 879
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 21, column: 7, offset: 631 },
+                              end: { line: 21, column: 255, offset: 879 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 21, column: 5, offset: 629 },
+                          end: { line: 21, column: 255, offset: 879 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 21, column: 5, offset: 629 },
+                      end: { line: 21, column: 255, offset: 879 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 20, column: 3, offset: 613 },
+                  end: { line: 21, column: 255, offset: 879 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'hash',
+                        position: {
+                          start: { line: 22, column: 5, offset: 884 },
+                          end: { line: 22, column: 11, offset: 890 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ' - ',
+                        position: {
+                          start: { line: 22, column: 11, offset: 890 },
+                          end: { line: 22, column: 14, offset: 893 }
+                        }
+                      },
+                      {
+                        type: 'inlineCode',
+                        value: 'function',
+                        position: {
+                          start: { line: 22, column: 14, offset: 893 },
+                          end: { line: 22, column: 24, offset: 903 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ' - a function that resolves the index of the server address to route a request. Defaults to an MD5 hash function.',
+                        position: {
+                          start: { line: 22, column: 24, offset: 903 },
+                          end: { line: 22, column: 137, offset: 1016 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 22, column: 5, offset: 884 },
+                      end: { line: 22, column: 137, offset: 1016 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 22, column: 3, offset: 882 },
+                  end: { line: 22, column: 137, offset: 1016 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'handlers',
+                        position: {
+                          start: { line: 23, column: 5, offset: 1021 },
+                          end: { line: 23, column: 15, offset: 1031 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ' - ',
+                        position: {
+                          start: { line: 23, column: 15, offset: 1031 },
+                          end: { line: 23, column: 18, offset: 1034 }
+                        }
+                      },
+                      {
+                        type: 'inlineCode',
+                        value: 'Arguments<HttpHandler>',
+                        position: {
+                          start: { line: 23, column: 18, offset: 1034 },
+                          end: { line: 23, column: 42, offset: 1058 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ' - HTTP handlers that process the request in order before it is processed by the file load balancer server.',
+                        position: {
+                          start: { line: 23, column: 42, offset: 1058 },
+                          end: { line: 23, column: 149, offset: 1165 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 23, column: 5, offset: 1021 },
+                      end: { line: 23, column: 149, offset: 1165 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 23, column: 3, offset: 1019 },
+                  end: { line: 23, column: 149, offset: 1165 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 20, column: 3, offset: 613 },
+              end: { line: 23, column: 149, offset: 1165 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Return:',
+                position: {
+                  start: { line: 25, column: 1, offset: 1167 },
+                  end: { line: 25, column: 8, offset: 1174 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 25, column: 1, offset: 1167 },
+              end: { line: 25, column: 8, offset: 1174 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'server',
+                        position: {
+                          start: { line: 26, column: 5, offset: 1179 },
+                          end: { line: 26, column: 13, offset: 1187 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ' - ',
+                        position: {
+                          start: { line: 26, column: 13, offset: 1187 },
+                          end: { line: 26, column: 16, offset: 1190 }
+                        }
+                      },
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/FileLoadBalancer',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'FileLoadBalancer',
+                            position: {
+                              start: { line: 26, column: 17, offset: 1191 },
+                              end: { line: 26, column: 35, offset: 1209 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 26, column: 16, offset: 1190 },
+                          end: { line: 26, column: 60, offset: 1234 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ' - a FileLoadBalancer instance.',
+                        position: {
+                          start: { line: 26, column: 60, offset: 1234 },
+                          end: { line: 26, column: 91, offset: 1265 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 26, column: 5, offset: 1179 },
+                      end: { line: 26, column: 91, offset: 1265 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 26, column: 3, offset: 1177 },
+                  end: { line: 26, column: 91, offset: 1265 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 26, column: 3, offset: 1177 },
+              end: { line: 26, column: 91, offset: 1265 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: null,
+            value: 'const server = new FileLoadBalancer({\n' +
+              '  serverAddresses: ["10.0.0.1:8080", "10.0.0.2:8080", "10.0.0.3:8080"],\n' +
+              '})\n' +
+              '\n' +
+              'server.listen(8080, () => {\n' +
+              '  console.log("File load balancer server listening on port 8080")\n' +
+              '})',
+            position: {
+              start: { line: 28, column: 1, offset: 1267 },
+              end: { line: 36, column: 4, offset: 1495 }
+            }
+          },
+          {
+            type: 'heading',
+            depth: 2,
+            children: [
+              {
+                type: 'text',
+                value: 'Requesting a file resource from clients',
+                position: {
+                  start: { line: 38, column: 4, offset: 1500 },
+                  end: { line: 38, column: 43, offset: 1539 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 38, column: 1, offset: 1497 },
+              end: { line: 38, column: 43, offset: 1539 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Files stored on the file servers load balanced by the file load balancer server can be accessed by clients with a GET request to the file load balancer server at the url of the file.',
+                position: {
+                  start: { line: 39, column: 1, offset: 1540 },
+                  end: { line: 39, column: 183, offset: 1722 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 39, column: 1, offset: 1540 },
+              end: { line: 39, column: 183, offset: 1722 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'html',
+            meta: null,
+            value: '<img src="http://your-file-load-balancer-server-ip:8999/assets/your-media.mp4" alt="">',
+            position: {
+              start: { line: 41, column: 1, offset: 1724 },
+              end: { line: 43, column: 4, offset: 1822 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 15, column: 4, offset: 508 }
+          end: { line: 43, column: 4, offset: 1822 }
         }
       }
     },
@@ -342,8 +3026,21 @@ export default [
       {
         name: 'listen',
         docs: '```specscript\n' +
-          'listen(port number) -> ()\n' +
-          'listen(port number, callback function) -> ()\n' +
+          'listen(port number) -> undefined\n' +
+          'listen(port number, callback function) -> undefined\n' +
+          '```\n' +
+          '\n' +
+          'Starts the file load balancer server listening on the specified port with an optional callback function.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * `port` - `number` - the port on which the file load balancer server will listen.\n' +
+          '  * `callback` - `function` - a callback function to call once the file load balancer server has started listening.\n' +
+          '\n' +
+          'Return:\n' +
+          '  * `undefined`\n' +
+          '\n' +
+          '```javascript\n' +
+          'server.listen(8080)\n' +
           '```',
         mdast: {
           name: {
@@ -379,24 +3076,255 @@ export default [
                 type: 'code',
                 lang: 'specscript',
                 meta: null,
-                value: 'listen(port number) -> ()\n' +
-                  'listen(port number, callback function) -> ()',
+                value: 'listen(port number) -> undefined\n' +
+                  'listen(port number, callback function) -> undefined',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 4, column: 4, offset: 88 }
+                  end: { line: 4, column: 4, offset: 102 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Starts the file load balancer server listening on the specified port with an optional callback function.',
+                    position: {
+                      start: { line: 6, column: 1, offset: 104 },
+                      end: { line: 6, column: 105, offset: 208 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 6, column: 1, offset: 104 },
+                  end: { line: 6, column: 105, offset: 208 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 8, column: 1, offset: 210 },
+                      end: { line: 8, column: 11, offset: 220 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 1, offset: 210 },
+                  end: { line: 8, column: 11, offset: 220 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'port',
+                            position: {
+                              start: { line: 9, column: 5, offset: 225 },
+                              end: { line: 9, column: 11, offset: 231 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - ',
+                            position: {
+                              start: { line: 9, column: 11, offset: 231 },
+                              end: { line: 9, column: 14, offset: 234 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'number',
+                            position: {
+                              start: { line: 9, column: 14, offset: 234 },
+                              end: { line: 9, column: 22, offset: 242 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - the port on which the file load balancer server will listen.',
+                            position: {
+                              start: { line: 9, column: 22, offset: 242 },
+                              end: { line: 9, column: 85, offset: 305 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 9, column: 5, offset: 225 },
+                          end: { line: 9, column: 85, offset: 305 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 9, column: 3, offset: 223 },
+                      end: { line: 9, column: 85, offset: 305 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'callback',
+                            position: {
+                              start: { line: 10, column: 5, offset: 310 },
+                              end: { line: 10, column: 15, offset: 320 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - ',
+                            position: {
+                              start: { line: 10, column: 15, offset: 320 },
+                              end: { line: 10, column: 18, offset: 323 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'function',
+                            position: {
+                              start: { line: 10, column: 18, offset: 323 },
+                              end: { line: 10, column: 28, offset: 333 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - a callback function to call once the file load balancer server has started listening.',
+                            position: {
+                              start: { line: 10, column: 28, offset: 333 },
+                              end: { line: 10, column: 116, offset: 421 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 10, column: 5, offset: 310 },
+                          end: { line: 10, column: 116, offset: 421 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 10, column: 3, offset: 308 },
+                      end: { line: 10, column: 116, offset: 421 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 9, column: 3, offset: 223 },
+                  end: { line: 10, column: 116, offset: 421 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 12, column: 1, offset: 423 },
+                      end: { line: 12, column: 8, offset: 430 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 12, column: 1, offset: 423 },
+                  end: { line: 12, column: 8, offset: 430 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'undefined',
+                            position: {
+                              start: { line: 13, column: 5, offset: 435 },
+                              end: { line: 13, column: 16, offset: 446 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 13, column: 5, offset: 435 },
+                          end: { line: 13, column: 16, offset: 446 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 13, column: 3, offset: 433 },
+                      end: { line: 13, column: 16, offset: 446 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 13, column: 3, offset: 433 },
+                  end: { line: 13, column: 16, offset: 446 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'server.listen(8080)',
+                position: {
+                  start: { line: 15, column: 1, offset: 448 },
+                  end: { line: 17, column: 4, offset: 485 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 4, column: 4, offset: 88 }
+              end: { line: 17, column: 4, offset: 485 }
             }
           }
         }
       },
       {
         name: 'close',
-        docs: '```specscript\nclose() -> ()\n```',
+        docs: '```specscript\n' +
+          'close() -> undefined\n' +
+          '```\n' +
+          '\n' +
+          'Closes the file load balancer server.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * (none)\n' +
+          '\n' +
+          'Return:\n' +
+          '  * `undefined`\n' +
+          '\n' +
+          '```javascript\n' +
+          'server.close()\n' +
+          '```',
         mdast: {
           name: {
             type: 'root',
@@ -431,16 +3359,157 @@ export default [
                 type: 'code',
                 lang: 'specscript',
                 meta: null,
-                value: 'close() -> ()',
+                value: 'close() -> undefined',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 3, column: 4, offset: 31 }
+                  end: { line: 3, column: 4, offset: 38 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Closes the file load balancer server.',
+                    position: {
+                      start: { line: 5, column: 1, offset: 40 },
+                      end: { line: 5, column: 38, offset: 77 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 5, column: 1, offset: 40 },
+                  end: { line: 5, column: 38, offset: 77 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 7, column: 1, offset: 79 },
+                      end: { line: 7, column: 11, offset: 89 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 7, column: 1, offset: 79 },
+                  end: { line: 7, column: 11, offset: 89 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'text',
+                            value: '(none)',
+                            position: {
+                              start: { line: 8, column: 5, offset: 94 },
+                              end: { line: 8, column: 11, offset: 100 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 8, column: 5, offset: 94 },
+                          end: { line: 8, column: 11, offset: 100 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 8, column: 3, offset: 92 },
+                      end: { line: 8, column: 11, offset: 100 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 3, offset: 92 },
+                  end: { line: 8, column: 11, offset: 100 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 10, column: 1, offset: 102 },
+                      end: { line: 10, column: 8, offset: 109 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 10, column: 1, offset: 102 },
+                  end: { line: 10, column: 8, offset: 109 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'undefined',
+                            position: {
+                              start: { line: 11, column: 5, offset: 114 },
+                              end: { line: 11, column: 16, offset: 125 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 11, column: 5, offset: 114 },
+                          end: { line: 11, column: 16, offset: 125 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 11, column: 3, offset: 112 },
+                      end: { line: 11, column: 16, offset: 125 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 3, offset: 112 },
+                  end: { line: 11, column: 16, offset: 125 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'server.close()',
+                position: {
+                  start: { line: 13, column: 1, offset: 127 },
+                  end: { line: 15, column: 4, offset: 159 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 3, column: 4, offset: 31 }
+              end: { line: 15, column: 4, offset: 159 }
             }
           }
         }
@@ -453,13 +3522,42 @@ export default [
     docs: '```specscript\n' +
       'module http "https://nodejs.org/api/http.html"\n' +
       '\n' +
-      'type HttpHandler(request http.ClientRequest, response http.ServerResponse) -> ()\n' +
+      'type HttpHandler(request http.ClientRequest, response http.ServerResponse) -> undefined\n' +
       '\n' +
       'new FileServer(options {\n' +
       '  dir: string,\n' +
       '  cors: boolean,\n' +
       '  delimiter: string,\n' +
       '}, ...handlers Array<HttpHandler>) -> FileServer\n' +
+      '```\n' +
+      '\n' +
+      'Presidium FileServer class. Creates a file server.\n' +
+      '\n' +
+      'Arguments:\n' +
+      '  * `options`\n' +
+      '    * `dir` - `string` - the absolute path on the machine running the file server to the directory of the file server files.\n' +
+      '    * `cors` - `boolean` - whether to enable cross-origin resource sharing for all origins.\n' +
+      '    * `delimiter` - `string` - a character or string that will separate the file data from the metadata during storage.\n' +
+      '  * `handlers` - `Arguments<HttpHandler>` - HTTP handlers that process the request in order before it is processed by the file server.\n' +
+      '\n' +
+      'Return:\n' +
+      '  * `server` - [`FileServer`](/docs/FileServer) - a FileServer instance.\n' +
+      '\n' +
+      '```javascript\n' +
+      'const server = new FileServer({\n' +
+      '  databasePath: `${__dirname}/file`,\n' +
+      '})\n' +
+      '\n' +
+      'server.listen(8080, () => {\n' +
+      '  console.log("File server listening on port 8080")\n' +
+      '})\n' +
+      '```\n' +
+      '\n' +
+      '## Requesting a file resource from clients\n' +
+      'Files stored on the file server can be accessed by clients with a GET request to the file server at the url of the file.\n' +
+      '\n' +
+      '```html\n' +
+      '<img src="http://your-file-server-ip:8999/assets/your-media.mp4" alt="">\n' +
       '```',
     mdast: {
       name: {
@@ -497,7 +3595,7 @@ export default [
             meta: null,
             value: 'module http "https://nodejs.org/api/http.html"\n' +
               '\n' +
-              'type HttpHandler(request http.ClientRequest, response http.ServerResponse) -> ()\n' +
+              'type HttpHandler(request http.ClientRequest, response http.ServerResponse) -> undefined\n' +
               '\n' +
               'new FileServer(options {\n' +
               '  dir: string,\n' +
@@ -506,13 +3604,468 @@ export default [
               '}, ...handlers Array<HttpHandler>) -> FileServer',
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 11, column: 4, offset: 274 }
+              end: { line: 11, column: 4, offset: 281 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Presidium FileServer class. Creates a file server.',
+                position: {
+                  start: { line: 13, column: 1, offset: 283 },
+                  end: { line: 13, column: 51, offset: 333 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 13, column: 1, offset: 283 },
+              end: { line: 13, column: 51, offset: 333 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Arguments:',
+                position: {
+                  start: { line: 15, column: 1, offset: 335 },
+                  end: { line: 15, column: 11, offset: 345 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 15, column: 1, offset: 335 },
+              end: { line: 15, column: 11, offset: 345 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'options',
+                        position: {
+                          start: { line: 16, column: 5, offset: 350 },
+                          end: { line: 16, column: 14, offset: 359 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 16, column: 5, offset: 350 },
+                      end: { line: 16, column: 14, offset: 359 }
+                    }
+                  },
+                  {
+                    type: 'list',
+                    ordered: false,
+                    start: null,
+                    spread: false,
+                    children: [
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'dir',
+                                position: {
+                                  start: { line: 17, column: 7, offset: 366 },
+                                  end: { line: 17, column: 12, offset: 371 }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - ',
+                                position: {
+                                  start: { line: 17, column: 12, offset: 371 },
+                                  end: { line: 17, column: 15, offset: 374 }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'string',
+                                position: {
+                                  start: { line: 17, column: 15, offset: 374 },
+                                  end: { line: 17, column: 23, offset: 382 }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - the absolute path on the machine running the file server to the directory of the file server files.',
+                                position: {
+                                  start: { line: 17, column: 23, offset: 382 },
+                                  end: {
+                                    line: 17,
+                                    column: 125,
+                                    offset: 484
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 17, column: 7, offset: 366 },
+                              end: { line: 17, column: 125, offset: 484 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 17, column: 5, offset: 364 },
+                          end: { line: 17, column: 125, offset: 484 }
+                        }
+                      },
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'cors',
+                                position: {
+                                  start: { line: 18, column: 7, offset: 491 },
+                                  end: { line: 18, column: 13, offset: 497 }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - ',
+                                position: {
+                                  start: { line: 18, column: 13, offset: 497 },
+                                  end: { line: 18, column: 16, offset: 500 }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'boolean',
+                                position: {
+                                  start: { line: 18, column: 16, offset: 500 },
+                                  end: { line: 18, column: 25, offset: 509 }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - whether to enable cross-origin resource sharing for all origins.',
+                                position: {
+                                  start: { line: 18, column: 25, offset: 509 },
+                                  end: { line: 18, column: 92, offset: 576 }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 18, column: 7, offset: 491 },
+                              end: { line: 18, column: 92, offset: 576 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 18, column: 5, offset: 489 },
+                          end: { line: 18, column: 92, offset: 576 }
+                        }
+                      },
+                      {
+                        type: 'listItem',
+                        spread: false,
+                        checked: null,
+                        children: [
+                          {
+                            type: 'paragraph',
+                            children: [
+                              {
+                                type: 'inlineCode',
+                                value: 'delimiter',
+                                position: {
+                                  start: { line: 19, column: 7, offset: 583 },
+                                  end: { line: 19, column: 18, offset: 594 }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - ',
+                                position: {
+                                  start: { line: 19, column: 18, offset: 594 },
+                                  end: { line: 19, column: 21, offset: 597 }
+                                }
+                              },
+                              {
+                                type: 'inlineCode',
+                                value: 'string',
+                                position: {
+                                  start: { line: 19, column: 21, offset: 597 },
+                                  end: { line: 19, column: 29, offset: 605 }
+                                }
+                              },
+                              {
+                                type: 'text',
+                                value: ' - a character or string that will separate the file data from the metadata during storage.',
+                                position: {
+                                  start: { line: 19, column: 29, offset: 605 },
+                                  end: {
+                                    line: 19,
+                                    column: 120,
+                                    offset: 696
+                                  }
+                                }
+                              }
+                            ],
+                            position: {
+                              start: { line: 19, column: 7, offset: 583 },
+                              end: { line: 19, column: 120, offset: 696 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 19, column: 5, offset: 581 },
+                          end: { line: 19, column: 120, offset: 696 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 17, column: 5, offset: 364 },
+                      end: { line: 19, column: 120, offset: 696 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 16, column: 3, offset: 348 },
+                  end: { line: 19, column: 120, offset: 696 }
+                }
+              },
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'handlers',
+                        position: {
+                          start: { line: 20, column: 5, offset: 701 },
+                          end: { line: 20, column: 15, offset: 711 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ' - ',
+                        position: {
+                          start: { line: 20, column: 15, offset: 711 },
+                          end: { line: 20, column: 18, offset: 714 }
+                        }
+                      },
+                      {
+                        type: 'inlineCode',
+                        value: 'Arguments<HttpHandler>',
+                        position: {
+                          start: { line: 20, column: 18, offset: 714 },
+                          end: { line: 20, column: 42, offset: 738 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ' - HTTP handlers that process the request in order before it is processed by the file server.',
+                        position: {
+                          start: { line: 20, column: 42, offset: 738 },
+                          end: { line: 20, column: 135, offset: 831 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 20, column: 5, offset: 701 },
+                      end: { line: 20, column: 135, offset: 831 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 20, column: 3, offset: 699 },
+                  end: { line: 20, column: 135, offset: 831 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 16, column: 3, offset: 348 },
+              end: { line: 20, column: 135, offset: 831 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Return:',
+                position: {
+                  start: { line: 22, column: 1, offset: 833 },
+                  end: { line: 22, column: 8, offset: 840 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 22, column: 1, offset: 833 },
+              end: { line: 22, column: 8, offset: 840 }
+            }
+          },
+          {
+            type: 'list',
+            ordered: false,
+            start: null,
+            spread: false,
+            children: [
+              {
+                type: 'listItem',
+                spread: false,
+                checked: null,
+                children: [
+                  {
+                    type: 'paragraph',
+                    children: [
+                      {
+                        type: 'inlineCode',
+                        value: 'server',
+                        position: {
+                          start: { line: 23, column: 5, offset: 845 },
+                          end: { line: 23, column: 13, offset: 853 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ' - ',
+                        position: {
+                          start: { line: 23, column: 13, offset: 853 },
+                          end: { line: 23, column: 16, offset: 856 }
+                        }
+                      },
+                      {
+                        type: 'link',
+                        title: null,
+                        url: '/docs/FileServer',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'FileServer',
+                            position: {
+                              start: { line: 23, column: 17, offset: 857 },
+                              end: { line: 23, column: 29, offset: 869 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 23, column: 16, offset: 856 },
+                          end: { line: 23, column: 48, offset: 888 }
+                        }
+                      },
+                      {
+                        type: 'text',
+                        value: ' - a FileServer instance.',
+                        position: {
+                          start: { line: 23, column: 48, offset: 888 },
+                          end: { line: 23, column: 73, offset: 913 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 23, column: 5, offset: 845 },
+                      end: { line: 23, column: 73, offset: 913 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 23, column: 3, offset: 843 },
+                  end: { line: 23, column: 73, offset: 913 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 23, column: 3, offset: 843 },
+              end: { line: 23, column: 73, offset: 913 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'javascript',
+            meta: null,
+            value: 'const server = new FileServer({\n' +
+              '  databasePath: `${__dirname}/file`,\n' +
+              '})\n' +
+              '\n' +
+              'server.listen(8080, () => {\n' +
+              '  console.log("File server listening on port 8080")\n' +
+              '})',
+            position: {
+              start: { line: 25, column: 1, offset: 915 },
+              end: { line: 33, column: 4, offset: 1088 }
+            }
+          },
+          {
+            type: 'heading',
+            depth: 2,
+            children: [
+              {
+                type: 'text',
+                value: 'Requesting a file resource from clients',
+                position: {
+                  start: { line: 35, column: 4, offset: 1093 },
+                  end: { line: 35, column: 43, offset: 1132 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 35, column: 1, offset: 1090 },
+              end: { line: 35, column: 43, offset: 1132 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'Files stored on the file server can be accessed by clients with a GET request to the file server at the url of the file.',
+                position: {
+                  start: { line: 36, column: 1, offset: 1133 },
+                  end: { line: 36, column: 121, offset: 1253 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 36, column: 1, offset: 1133 },
+              end: { line: 36, column: 121, offset: 1253 }
+            }
+          },
+          {
+            type: 'code',
+            lang: 'html',
+            meta: null,
+            value: '<img src="http://your-file-server-ip:8999/assets/your-media.mp4" alt="">',
+            position: {
+              start: { line: 38, column: 1, offset: 1255 },
+              end: { line: 40, column: 4, offset: 1339 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 11, column: 4, offset: 274 }
+          end: { line: 40, column: 4, offset: 1339 }
         }
       }
     },
@@ -520,8 +4073,21 @@ export default [
       {
         name: 'listen',
         docs: '```specscript\n' +
-          'listen(port number) -> ()\n' +
-          'listen(port number, callback function) -> ()\n' +
+          'listen(port number) -> undefined\n' +
+          'listen(port number, callback function) -> undefined\n' +
+          '```\n' +
+          '\n' +
+          'Starts the file server listening on the specified port with an optional callback function.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * `port` - `number` - the port on which the file server will listen.\n' +
+          '  * `callback` - `function` - a callback function to call once the file server has started listening.\n' +
+          '\n' +
+          'Return:\n' +
+          '  * `undefined`\n' +
+          '\n' +
+          '```javascript\n' +
+          'server.listen(8080)\n' +
           '```',
         mdast: {
           name: {
@@ -557,24 +4123,255 @@ export default [
                 type: 'code',
                 lang: 'specscript',
                 meta: null,
-                value: 'listen(port number) -> ()\n' +
-                  'listen(port number, callback function) -> ()',
+                value: 'listen(port number) -> undefined\n' +
+                  'listen(port number, callback function) -> undefined',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 4, column: 4, offset: 88 }
+                  end: { line: 4, column: 4, offset: 102 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Starts the file server listening on the specified port with an optional callback function.',
+                    position: {
+                      start: { line: 6, column: 1, offset: 104 },
+                      end: { line: 6, column: 91, offset: 194 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 6, column: 1, offset: 104 },
+                  end: { line: 6, column: 91, offset: 194 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 8, column: 1, offset: 196 },
+                      end: { line: 8, column: 11, offset: 206 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 1, offset: 196 },
+                  end: { line: 8, column: 11, offset: 206 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'port',
+                            position: {
+                              start: { line: 9, column: 5, offset: 211 },
+                              end: { line: 9, column: 11, offset: 217 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - ',
+                            position: {
+                              start: { line: 9, column: 11, offset: 217 },
+                              end: { line: 9, column: 14, offset: 220 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'number',
+                            position: {
+                              start: { line: 9, column: 14, offset: 220 },
+                              end: { line: 9, column: 22, offset: 228 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - the port on which the file server will listen.',
+                            position: {
+                              start: { line: 9, column: 22, offset: 228 },
+                              end: { line: 9, column: 71, offset: 277 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 9, column: 5, offset: 211 },
+                          end: { line: 9, column: 71, offset: 277 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 9, column: 3, offset: 209 },
+                      end: { line: 9, column: 71, offset: 277 }
+                    }
+                  },
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'callback',
+                            position: {
+                              start: { line: 10, column: 5, offset: 282 },
+                              end: { line: 10, column: 15, offset: 292 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - ',
+                            position: {
+                              start: { line: 10, column: 15, offset: 292 },
+                              end: { line: 10, column: 18, offset: 295 }
+                            }
+                          },
+                          {
+                            type: 'inlineCode',
+                            value: 'function',
+                            position: {
+                              start: { line: 10, column: 18, offset: 295 },
+                              end: { line: 10, column: 28, offset: 305 }
+                            }
+                          },
+                          {
+                            type: 'text',
+                            value: ' - a callback function to call once the file server has started listening.',
+                            position: {
+                              start: { line: 10, column: 28, offset: 305 },
+                              end: { line: 10, column: 102, offset: 379 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 10, column: 5, offset: 282 },
+                          end: { line: 10, column: 102, offset: 379 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 10, column: 3, offset: 280 },
+                      end: { line: 10, column: 102, offset: 379 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 9, column: 3, offset: 209 },
+                  end: { line: 10, column: 102, offset: 379 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 12, column: 1, offset: 381 },
+                      end: { line: 12, column: 8, offset: 388 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 12, column: 1, offset: 381 },
+                  end: { line: 12, column: 8, offset: 388 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'undefined',
+                            position: {
+                              start: { line: 13, column: 5, offset: 393 },
+                              end: { line: 13, column: 16, offset: 404 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 13, column: 5, offset: 393 },
+                          end: { line: 13, column: 16, offset: 404 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 13, column: 3, offset: 391 },
+                      end: { line: 13, column: 16, offset: 404 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 13, column: 3, offset: 391 },
+                  end: { line: 13, column: 16, offset: 404 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'server.listen(8080)',
+                position: {
+                  start: { line: 15, column: 1, offset: 406 },
+                  end: { line: 17, column: 4, offset: 443 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 4, column: 4, offset: 88 }
+              end: { line: 17, column: 4, offset: 443 }
             }
           }
         }
       },
       {
         name: 'close',
-        docs: '```specscript\nclose() -> ()\n```',
+        docs: '```specscript\n' +
+          'close() -> undefined\n' +
+          '```\n' +
+          '\n' +
+          'Closes the file server.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * (none)\n' +
+          '\n' +
+          'Return:\n' +
+          '  * `undefined`\n' +
+          '\n' +
+          '```javascript\n' +
+          'server.close()\n' +
+          '```',
         mdast: {
           name: {
             type: 'root',
@@ -609,16 +4406,157 @@ export default [
                 type: 'code',
                 lang: 'specscript',
                 meta: null,
-                value: 'close() -> ()',
+                value: 'close() -> undefined',
                 position: {
                   start: { line: 1, column: 1, offset: 0 },
-                  end: { line: 3, column: 4, offset: 31 }
+                  end: { line: 3, column: 4, offset: 38 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Closes the file server.',
+                    position: {
+                      start: { line: 5, column: 1, offset: 40 },
+                      end: { line: 5, column: 24, offset: 63 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 5, column: 1, offset: 40 },
+                  end: { line: 5, column: 24, offset: 63 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 7, column: 1, offset: 65 },
+                      end: { line: 7, column: 11, offset: 75 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 7, column: 1, offset: 65 },
+                  end: { line: 7, column: 11, offset: 75 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'text',
+                            value: '(none)',
+                            position: {
+                              start: { line: 8, column: 5, offset: 80 },
+                              end: { line: 8, column: 11, offset: 86 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 8, column: 5, offset: 80 },
+                          end: { line: 8, column: 11, offset: 86 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 8, column: 3, offset: 78 },
+                      end: { line: 8, column: 11, offset: 86 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 3, offset: 78 },
+                  end: { line: 8, column: 11, offset: 86 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 10, column: 1, offset: 88 },
+                      end: { line: 10, column: 8, offset: 95 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 10, column: 1, offset: 88 },
+                  end: { line: 10, column: 8, offset: 95 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'inlineCode',
+                            value: 'undefined',
+                            position: {
+                              start: { line: 11, column: 5, offset: 100 },
+                              end: { line: 11, column: 16, offset: 111 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 11, column: 5, offset: 100 },
+                          end: { line: 11, column: 16, offset: 111 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 11, column: 3, offset: 98 },
+                      end: { line: 11, column: 16, offset: 111 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 3, offset: 98 },
+                  end: { line: 11, column: 16, offset: 111 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'server.close()',
+                position: {
+                  start: { line: 13, column: 1, offset: 113 },
+                  end: { line: 15, column: 4, offset: 145 }
                 }
               }
             ],
             position: {
               start: { line: 1, column: 1, offset: 0 },
-              end: { line: 3, column: 4, offset: 31 }
+              end: { line: 15, column: 4, offset: 145 }
             }
           }
         }
