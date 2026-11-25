@@ -3581,11 +3581,15 @@ export default [
       'const server = new FileServer({\n' +
       '  databasePath: `${__dirname}/file`,\n' +
       '})\n' +
+      'await server.init()\n' +
       '\n' +
       'server.listen(8080, () => {\n' +
       '  console.log("File server listening on port 8080")\n' +
       '})\n' +
       '```\n' +
+      '\n' +
+      '## Metadata database directory\n' +
+      'A metadata database directory is created to store metadata about the files. The metadata database directory is always located at `<dir>/__metadata`.\n' +
       '\n' +
       '## Requesting a file resource from clients\n' +
       'Files stored on the file server can be accessed by clients with a GET request to the file server at the url of the file.\n' +
@@ -4078,13 +4082,65 @@ export default [
             value: 'const server = new FileServer({\n' +
               '  databasePath: `${__dirname}/file`,\n' +
               '})\n' +
+              'await server.init()\n' +
               '\n' +
               'server.listen(8080, () => {\n' +
               '  console.log("File server listening on port 8080")\n' +
               '})',
             position: {
               start: { line: 25, column: 1, offset: 1103 },
-              end: { line: 33, column: 4, offset: 1276 }
+              end: { line: 34, column: 4, offset: 1296 }
+            }
+          },
+          {
+            type: 'heading',
+            depth: 2,
+            children: [
+              {
+                type: 'text',
+                value: 'Metadata database directory',
+                position: {
+                  start: { line: 36, column: 4, offset: 1301 },
+                  end: { line: 36, column: 31, offset: 1328 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 36, column: 1, offset: 1298 },
+              end: { line: 36, column: 31, offset: 1328 }
+            }
+          },
+          {
+            type: 'paragraph',
+            children: [
+              {
+                type: 'text',
+                value: 'A metadata database directory is created to store metadata about the files. The metadata database directory is always located at ',
+                position: {
+                  start: { line: 37, column: 1, offset: 1329 },
+                  end: { line: 37, column: 130, offset: 1458 }
+                }
+              },
+              {
+                type: 'inlineCode',
+                value: '<dir>/__metadata',
+                position: {
+                  start: { line: 37, column: 130, offset: 1458 },
+                  end: { line: 37, column: 148, offset: 1476 }
+                }
+              },
+              {
+                type: 'text',
+                value: '.',
+                position: {
+                  start: { line: 37, column: 148, offset: 1476 },
+                  end: { line: 37, column: 149, offset: 1477 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 37, column: 1, offset: 1329 },
+              end: { line: 37, column: 149, offset: 1477 }
             }
           },
           {
@@ -4095,14 +4151,14 @@ export default [
                 type: 'text',
                 value: 'Requesting a file resource from clients',
                 position: {
-                  start: { line: 35, column: 4, offset: 1281 },
-                  end: { line: 35, column: 43, offset: 1320 }
+                  start: { line: 39, column: 4, offset: 1482 },
+                  end: { line: 39, column: 43, offset: 1521 }
                 }
               }
             ],
             position: {
-              start: { line: 35, column: 1, offset: 1278 },
-              end: { line: 35, column: 43, offset: 1320 }
+              start: { line: 39, column: 1, offset: 1479 },
+              end: { line: 39, column: 43, offset: 1521 }
             }
           },
           {
@@ -4112,14 +4168,14 @@ export default [
                 type: 'text',
                 value: 'Files stored on the file server can be accessed by clients with a GET request to the file server at the url of the file.',
                 position: {
-                  start: { line: 36, column: 1, offset: 1321 },
-                  end: { line: 36, column: 121, offset: 1441 }
+                  start: { line: 40, column: 1, offset: 1522 },
+                  end: { line: 40, column: 121, offset: 1642 }
                 }
               }
             ],
             position: {
-              start: { line: 36, column: 1, offset: 1321 },
-              end: { line: 36, column: 121, offset: 1441 }
+              start: { line: 40, column: 1, offset: 1522 },
+              end: { line: 40, column: 121, offset: 1642 }
             }
           },
           {
@@ -4128,18 +4184,224 @@ export default [
             meta: null,
             value: '<img src="http://your-file-server-ip:8999/assets/your-media.mp4" alt="">',
             position: {
-              start: { line: 38, column: 1, offset: 1443 },
-              end: { line: 40, column: 4, offset: 1527 }
+              start: { line: 42, column: 1, offset: 1644 },
+              end: { line: 44, column: 4, offset: 1728 }
             }
           }
         ],
         position: {
           start: { line: 1, column: 1, offset: 0 },
-          end: { line: 40, column: 4, offset: 1527 }
+          end: { line: 44, column: 4, offset: 1728 }
         }
       }
     },
     methods: [
+      {
+        name: 'init',
+        docs: '```specscript\n' +
+          'init() -> Promise<>\n' +
+          '```\n' +
+          '\n' +
+          'Initializes the file server.\n' +
+          '\n' +
+          'Arguments:\n' +
+          '  * (none)\n' +
+          '\n' +
+          'Return:\n' +
+          '  * Empty promise.\n' +
+          '\n' +
+          '```javascript\n' +
+          'await server.init()\n' +
+          '```',
+        mdast: {
+          name: {
+            type: 'root',
+            children: [
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'init',
+                    position: {
+                      start: { line: 1, column: 1, offset: 0 },
+                      end: { line: 1, column: 5, offset: 4 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 1, column: 5, offset: 4 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 1, column: 5, offset: 4 }
+            }
+          },
+          docs: {
+            type: 'root',
+            children: [
+              {
+                type: 'code',
+                lang: 'specscript',
+                meta: null,
+                value: 'init() -> Promise<>',
+                position: {
+                  start: { line: 1, column: 1, offset: 0 },
+                  end: { line: 3, column: 4, offset: 37 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Initializes the file server.',
+                    position: {
+                      start: { line: 5, column: 1, offset: 39 },
+                      end: { line: 5, column: 29, offset: 67 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 5, column: 1, offset: 39 },
+                  end: { line: 5, column: 29, offset: 67 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Arguments:',
+                    position: {
+                      start: { line: 7, column: 1, offset: 69 },
+                      end: { line: 7, column: 11, offset: 79 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 7, column: 1, offset: 69 },
+                  end: { line: 7, column: 11, offset: 79 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'text',
+                            value: '(none)',
+                            position: {
+                              start: { line: 8, column: 5, offset: 84 },
+                              end: { line: 8, column: 11, offset: 90 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 8, column: 5, offset: 84 },
+                          end: { line: 8, column: 11, offset: 90 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 8, column: 3, offset: 82 },
+                      end: { line: 8, column: 11, offset: 90 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 8, column: 3, offset: 82 },
+                  end: { line: 8, column: 11, offset: 90 }
+                }
+              },
+              {
+                type: 'paragraph',
+                children: [
+                  {
+                    type: 'text',
+                    value: 'Return:',
+                    position: {
+                      start: { line: 10, column: 1, offset: 92 },
+                      end: { line: 10, column: 8, offset: 99 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 10, column: 1, offset: 92 },
+                  end: { line: 10, column: 8, offset: 99 }
+                }
+              },
+              {
+                type: 'list',
+                ordered: false,
+                start: null,
+                spread: false,
+                children: [
+                  {
+                    type: 'listItem',
+                    spread: false,
+                    checked: null,
+                    children: [
+                      {
+                        type: 'paragraph',
+                        children: [
+                          {
+                            type: 'text',
+                            value: 'Empty promise.',
+                            position: {
+                              start: { line: 11, column: 5, offset: 104 },
+                              end: { line: 11, column: 19, offset: 118 }
+                            }
+                          }
+                        ],
+                        position: {
+                          start: { line: 11, column: 5, offset: 104 },
+                          end: { line: 11, column: 19, offset: 118 }
+                        }
+                      }
+                    ],
+                    position: {
+                      start: { line: 11, column: 3, offset: 102 },
+                      end: { line: 11, column: 19, offset: 118 }
+                    }
+                  }
+                ],
+                position: {
+                  start: { line: 11, column: 3, offset: 102 },
+                  end: { line: 11, column: 19, offset: 118 }
+                }
+              },
+              {
+                type: 'code',
+                lang: 'javascript',
+                meta: null,
+                value: 'await server.init()',
+                position: {
+                  start: { line: 13, column: 1, offset: 120 },
+                  end: { line: 15, column: 4, offset: 157 }
+                }
+              }
+            ],
+            position: {
+              start: { line: 1, column: 1, offset: 0 },
+              end: { line: 15, column: 4, offset: 157 }
+            }
+          }
+        }
+      },
       {
         name: 'listen',
         docs: '```specscript\n' +
